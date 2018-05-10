@@ -1,6 +1,6 @@
 ---
-title: "Azure PowerShell Değişiklik Günlüğü | Microsoft Docs"
-description: "Azure PowerShell'in en son sürümünde yapılan değişikliklerin geçmişi aşağıda verilmiştir."
+title: Azure PowerShell Değişiklik Günlüğü | Microsoft Docs
+description: Azure PowerShell'in en son sürümünde yapılan değişikliklerin geçmişi aşağıda verilmiştir.
 services: azure
 author: sdwheeler
 ms.author: sewhee
@@ -9,13 +9,13 @@ ms.service: azure-powershell
 ms.product: azure
 ms.devlang: powershell
 ms.topic: conceptual
-ms.workload: 
+ms.workload: ''
 ms.date: 05/18/2017
 ms.openlocfilehash: 0a3f152751fee569d3ac5fba6bcff8c1737f7b8c
-ms.sourcegitcommit: 226527be7cb647acfe2ea9ab151185053ab3c6db
+ms.sourcegitcommit: 37bfbf11fd0967a8e7977c692ab829d286baf88a
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/29/2017
+ms.lasthandoff: 05/08/2018
 ---
 # <a name="release-notes"></a>Sürüm notları
 
@@ -47,7 +47,7 @@ My-CmdletWithConfirmation –Confirm:$false -Force
     + Set-AzureRmStorageAccount
 * Azure Ağı
   - Sanal Ağ Eşlemesi için yeni cmdlet eklendi
-* Azure Redis Önbelleği
+* Azure Redis Cache
   - Reset-AzureRmRedisCache için yeni cmdlet eklendi
   - Export-AzureRmRedisCache için yeni cmdlet eklendi
   - Import-AzureRmRedisCache için yeni cmdlet eklendi

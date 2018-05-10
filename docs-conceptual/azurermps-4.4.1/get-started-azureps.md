@@ -1,6 +1,6 @@
 ---
-title: "Azure PowerShell’i kullanmaya başlama | Microsoft Docs"
-description: 
+title: Azure PowerShell’i kullanmaya başlama | Microsoft Docs
+description: ''
 services: azure
 author: sdwheeler
 ms.author: sewhee
@@ -11,10 +11,10 @@ ms.devlang: powershell
 ms.topic: get-started-article
 ms.date: 11/15/2017
 ms.openlocfilehash: cbe8507a89c048351dab64e28552596ed802bf21
-ms.sourcegitcommit: 5fe9a579d2e0d1cb5a05aadaeba5db784f1b18fa
+ms.sourcegitcommit: 37bfbf11fd0967a8e7977c692ab829d286baf88a
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 05/08/2018
 ---
 # <a name="getting-started-with-azure-powershell"></a>Azure PowerShell’i kullanmaya başlama
 
@@ -367,7 +367,7 @@ Azure PowerShell’i kullanmanın yolları hakkında daha fazla bilgi edinmek i�
 * [Azure PowerShell ile oturum açma](authenticate-azureps.md)
 * [Azure PowerShell ile Azure aboneliklerini yönetme](manage-subscriptions-azureps.md)
 * [Azure PowerShell’i kullanarak Azure’da hizmet sorumluları oluşturma](create-azure-service-principal-azureps.md)
-* Eski bir sürümden geçiş yapmayla ilgili Sürüm notlarını okuyun: [https://github.com/Azure/azure-powershell/tree/dev/documentation/release-notes](https://github.com/Azure/azure-powershell/tree/dev/documentation/release-notes).
+* Eski bir sürümden geçiş ile ilgili olarak Sürüm notlarını okuyun: [https://github.com/Azure/azure-powershell/tree/dev/documentation/release-notes](https://github.com/Azure/azure-powershell/tree/dev/documentation/release-notes).
 * Topluluktan yardım alın:
   * [MSDN'deki Azure forumu](http://go.microsoft.com/fwlink/p/?LinkId=320212)
   * [stackoverflow](http://go.microsoft.com/fwlink/?LinkId=320213)

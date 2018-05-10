@@ -11,10 +11,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 01/12/2018
 ms.openlocfilehash: 64a86dfd4af7f3f0a91501e9a096ff190f7100cb
-ms.sourcegitcommit: 15bf69bf95eceb936b3a429e741add95c308826a
+ms.sourcegitcommit: 37bfbf11fd0967a8e7977c692ab829d286baf88a
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 05/08/2018
 ---
 # <a name="install-and-configure-azure-powershell-on-macos-and-linux"></a>Azure PowerShell'i macOS ve Linux'a yükleme ve yapılandırma
 
@@ -77,7 +77,7 @@ Yukarıdaki komut, `https://aka.ms/devicelogin` adresine gidip verilen kodu girm
 * Azure hizmetleri için Resource Manager ve Hizmet Yönetim arabirimlerini kullanan yönetim düzlemi cmdlet'leri.
   - Sanal Makine
   - App Service (Web siteleri)
-  - SQL Database
+  - SQL Veritabanı
   - Depolama
   - Ağ
 
