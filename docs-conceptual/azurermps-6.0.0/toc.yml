@@ -1,0 +1,62 @@
+- name: Azure PowerShell
+  href: overview.md
+  items:
+    - name: Yükleme
+      href: install-azurerm-ps.md
+      items:
+        - name: macOS ve Linux'a yükleme
+          href: install-azurermps-maclinux.md
+        - name: Diğer yükleme yöntemleri
+          href: other-install.md
+    - name: başlarken
+      href: get-started-azureps.md
+    - name: Cloud Shell
+      href: 'https://docs.microsoft.com/azure/cloud-shell/overview'
+    - name: Oturum açma
+      href: authenticate-azureps.md
+      items:
+        - name: Hizmet sorumlusu oluşturma
+          href: create-azure-service-principal-azureps.md
+        - name: Kalıcı kimlik bilgilerini kullanma
+          href: context-persistence.md
+    - name: Sorgular
+      href: queries-azureps.md
+    - name: Biçimlendirme
+      href: formatting-output.md
+    - name: Abonelikler
+      href: manage-subscriptions-azureps.md
+    - name: Dağıtma
+      items:
+        - name: Resource Manager şablonlarını kullanarak dağıtma
+          href: /azure/azure-resource-manager/resource-group-template-deploy
+        - name: Resource Manager şablonlarını dışarı aktarma
+          href: /azure/azure-resource-manager/resource-manager-export-template-powershell
+        - name: SAS belirteci ile özel Resource Manager şablonu dağıtma
+          href: /azure/azure-resource-manager/resource-manager-powershell-sas-token
+    - name: Kavramlar
+      items:
+        - name: Deneysel modülleri kullanma
+          href: using-experimental-modules.md
+        - name: PowerShell işlerini kullanma
+          href: using-psjobs.md
+    - name: Sürüm notları
+      href: release-notes-azureps.md
+      items:
+        - name: Azure PowerShell 6.x için hataya neden olan değişiklikler
+          href: migration-guide.6.0.0.md
+- name: Öğreticiler
+  items:
+    - name: Sanal Makineler Oluşturma
+      href: azureps-vm-tutorial.yml
+- name: Örnek Betikler
+  items:
+    - name: Linux Sanal Makineleri
+      href: /azure/virtual-machines/linux/powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json
+    - name: Windows Sanal Makineleri
+      href: /azure/virtual-machines/windows/powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json
+    - name: Web Apps
+      href: /azure/app-service-web/app-service-powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json
+    - name: SQL Veritabanları
+      href: /azure/sql-database/sql-database-powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json
+    - name: Cosmos DB
+      href: /azure/cosmos-db/powershell-samples?toc=%2fpowershell%2fmodules%2ftoc.json

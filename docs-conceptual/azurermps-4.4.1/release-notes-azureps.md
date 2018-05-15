@@ -1,6 +1,6 @@
 ---
-title: "Azure PowerShell Değişiklik Günlüğü | Microsoft Docs"
-description: "Azure PowerShell'in en son sürümünde yapılan değişikliklerin geçmişi aşağıda verilmiştir."
+title: Azure PowerShell Değişiklik Günlüğü | Microsoft Docs
+description: Azure PowerShell'in en son sürümünde yapılan değişikliklerin geçmişi aşağıda verilmiştir.
 services: azure
 author: sdwheeler
 ms.author: sewhee
@@ -9,13 +9,13 @@ ms.service: azure-powershell
 ms.product: azure
 ms.devlang: powershell
 ms.topic: conceptual
-ms.workload: 
+ms.workload: ''
 ms.date: 07/26/2017
 ms.openlocfilehash: d8a891673df343551cbd805016c2d25ee4e31c8c
-ms.sourcegitcommit: b256bf48e15ee98865de0fae50e7b81878b03a54
+ms.sourcegitcommit: 37bfbf11fd0967a8e7977c692ab829d286baf88a
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 05/08/2018
 ---
 # <a name="release-notes"></a>Sürüm notları
 
@@ -230,7 +230,7 @@ Azure PowerShell'in bu sürümünde yapılan değişikliklerin listesi aşağıd
   * Get-AzureRmVM -Status çıkışını almak için MaintenanceRedeployStatus öğesini kullanıma sunma
   * Get-AzureRmComputeResourceSku öğesinin tablo biçimine yönelik Restriction ve Capability öğelerini kullanıma sunma
 * DataLakeStore
-  * Sorun için düzeltme: https://github.com/Azure/azure-powershell/issues/4323
+  * Şu sorun düzeltildi: https://github.com/Azure/azure-powershell/issues/4323
 * EventHub
   * NamespaceAttributes öğesine ResourceGroup özelliği eklendi
     - 'ResourceGroup', Ad Alanının bulunduğu kaynak grubunun adını alır
@@ -305,9 +305,9 @@ Azure PowerShell'in bu sürümünde yapılan değişikliklerin listesi aşağıd
       - Update-AzureRmDisk
       - Update-AzureRmSnapshot
 * Profil
-    - RDFE’de etkileşimli olmayan kullanıcı kimlik doğrulaması ile ilgili sorun çözüldü (bağlantı)[https://github.com/Azure/azure-powershell/issues/4299]
+    - RDFE’de etkileşimli olmayan kullanıcı kimlik doğrulaması ile ilgili sorun düzeltildi (bağlantı)[https://github.com/Azure/azure-powershell/issues/4299]
 * ServiceManagement
-    - Etkileşimli olmayan kullanıcı kimlik doğrulaması ile ilgili sorun çözüldü (bağlantı)[https://github.com/Azure/azure-powershell/issues/4299]
+    - Etkileşimli olmayan kullanıcı kimlik doğrulaması ile ilgili sorun düzeltildi (bağlantı)[https://github.com/Azure/azure-powershell/issues/4299]
 
 ## <a name="2017711---version-420"></a>2017.7.11 - Sürüm 4.2.0
 * AnalysisServices
@@ -315,7 +315,7 @@ Azure PowerShell'in bu sürümünde yapılan değişikliklerin listesi aşağıd
         - Analysis Services sunucu günlüğünü getirmeye yönelik Export-AzureAnalysisServicesInstanceLog API’si kullanıma sunuldu
 * Otomasyon
     * New-AzureRmAutomationSchedule için Haftalık ve Aylık zamanlamalarda TimeZone değerini doğru ayarlama
-        - Bu sorunla ilgili daha fazla bilgi için bkz. https://github.com/Azure/azure-powershell/issues/3043
+        - Bu sorunla ilgili daha fazla bilgi bulabilirsiniz: https://github.com/Azure/azure-powershell/issues/3043
 * AzureBatch
     - Yeni Get-AzureBatchJobPreparationAndReleaseTaskStatus cmdlet’i eklendi.
     - Get-AzureBatchNodeFileContent parametrelerine bayt aralığı başlangıcı ve bitişi eklendi.
@@ -370,7 +370,7 @@ Azure PowerShell'in bu sürümünde yapılan değişikliklerin listesi aşağıd
         - Add-AzureRmDataLakeStoreItemContent
 * Dns
     * Get-AzureRmDnsZone için kanal oluşturma senaryosundaki hata düzeltildi
-        - Daha fazla bilgi şurada bulunabilir: https://github.com/Azure/azure-powershell/issues/4203
+        - Buradan daha fazla bilgi bulabilirsiniz: https://github.com/Azure/azure-powershell/issues/4203
 * HDInsight
     * Operations Management Suite’i (OMS) etkinleştirme/devre dışı bırakma desteği eklendi
     * Yeni cmdlet’ler
@@ -437,7 +437,7 @@ Azure PowerShell'in bu sürümünde yapılan değişikliklerin listesi aşağıd
         - Get-AzureRmVirtualNetworkUsageList
 * Profil
     * Import-AzureRmContext veya Save-AzureRmContext kullanılırken karşılaşılan hata düzeltildi
-        - Bu sorunla ilgili daha fazla bilgi için bkz. https://github.com/Azure/azure-powershell/issues/3954
+        - Bu sorunla ilgili daha fazla bilgi bulabilirsiniz: https://github.com/Azure/azure-powershell/issues/3954
 * RecoveryServices.SiteRecovery
     * Azure Site Recovery işlemleri için yeni bir modül kullanıma sunuluyor.
         - Tüm cmdlet’ler AzureRmRecoveryServicesAsr* ile başlar
@@ -447,7 +447,7 @@ Azure PowerShell'in bu sürümünde yapılan değişikliklerin listesi aşağıd
     * Eski sunucu sürümü (2.0) artık mevcut olmadığı için sunucu yükseltme cmdlet’leri kullanımdan kaldırıldı.
     * SQL sunucusu kaynağı için bir kaynak kimliği sağlamayı desteklemek üzere New-AzureRmSqlServer ve Set-AzureRmSqlServer cmdlet’lerine yeni isteğe bağlı "AssignIdentity" parametresi eklendi
     * ResourceGroupName parametresi Get-AzureRmSqlServer için artık isteğe bağlıdır
-        - Sorunla ilgili daha fazla bilgi için bkz. https://github.com/Azure/azure-powershell/issues/635
+        - Aşağıdaki sorunla ilgili daha fazla bilgi bulabilirsiniz: https://github.com/Azure/azure-powershell/issues/635
 * ExpressRoute için ServiceManagement:
     * New-AzureBgpPeering cmdlet’i aşağıdaki yeni seçenekleri içerecek şekilde güncelleştirildi:
         - PeerAddressType : İlgili adres ailesi türünün BGP Eşliğini oluşturmak için "IPv4" veya "IPv6" değerleri belirtilebilir
@@ -533,7 +533,7 @@ Azure PowerShell'in bu sürümünde yapılan değişikliklerin listesi aşağıd
       * AzureRM.profile 2.x sürümleriyle geri dönük uyumluluk için `-EnvironmentName` parametre diğer adı eklendi
 
 ## <a name="20170512---version-401"></a>2017.05.12 - Sürüm 4.0.1
- * Çevrimdışı senaryolarda New-AzureStorageContext ile karşılaşılan sorun düzeltildi: https://github.com/Azure/azure-powershell/issues/3939
+ * Çevrimdışı senaryolarda New-AzureStorageContext ile ilgili senaryo düzeltildi: https://github.com/Azure/azure-powershell/issues/3939
 
 ## <a name="20170510---version-400"></a>2017.05.10 - Sürüm 4.0.0
 
@@ -554,7 +554,7 @@ Azure PowerShell'in bu sürümünde yapılan değişikliklerin listesi aşağıd
   - PS VM nesnesinden yinelenen DataDiskNames ve NetworkInterfaceIDs özellikleri kaldırıldı.
   - Remove-AzureRmVMDataDisk ve Remove-AzureRmVMNetworkInterface cmdlet'lerindeki Make DataDiskNames ve NetworkInterfaceIDs parametreleri isteğe bağlı hale getirildi.
   - Get cmdlet'leri liste nesnesi döndürdüğünde karşılaşılan kanal sorunu düzeltildi.
-  - RDFE cmdlet'leriyle çakışan cmdlet'ler yeniden adlandırıldı. Daha fazla bilgi için bkz. https://github.com/Azure/azure-powershell/issues/2917
+  - RDFE cmdlet'leriyle çakışan cmdlet'ler yeniden adlandırıldı. Daha ayrıntılı bilgi için https://github.com/Azure/azure-powershell/issues/2917 sorununa bakın
     + `New-AzureVMSqlServerAutoBackupConfig`, `New-AzureRmVMSqlServerAutoBackupConfig` olarak yeniden adlandırıldı
     + `New-AzureVMSqlServerAutoPatchingConfig`, `New-AzureRmVMSqlServerAutoPatchingConfig` olarak yeniden adlandırıldı
     + `New-AzureVMSqlServerKeyVaultCredentialConfig`, `New-AzureRmVMSqlServerKeyVaultCredentialConfig` olarak yeniden adlandırıldı
