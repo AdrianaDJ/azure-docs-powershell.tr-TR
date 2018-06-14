@@ -1,19 +1,18 @@
 ---
 title: PowerShell oturumları arasında kullanıcı oturumlarını sürdürme
 description: Bu makalede Azure PowerShell’in kimlik bilgilerini ve diğer kullanıcı bilgilerini birden fazla PowerShell oturumunda yeniden kullanmanıza olanak tanıyan yeni özellikleri açıklanmaktadır.
-services: azure
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 08/31/2017
-ms.openlocfilehash: 678d08c24cf254cd904850071872eea18c6bf6cf
-ms.sourcegitcommit: 2eea03b7ac19ad6d7c8097743d33c7ddb9c4df77
+ms.openlocfilehash: 5ae4f03207b74df06a2cb81ea1cd0516a4abd2dd
+ms.sourcegitcommit: bcf80dfd7fbe17e82e7ad029802cfe8a2f02b15c
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34821607"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35323127"
 ---
 # <a name="persisting-user-logins-across-powershell-sessions"></a>PowerShell oturumları arasında kullanıcı oturumlarını sürdürme
 
@@ -76,7 +75,7 @@ Bağlam oluşturmak için Azure'da oturum açmanız gerekir. `Connect-AzureRmAcc
 
 Oturum açtıktan sonra yeni bir bağlam eklemek için `Set-AzureRmContext` (veya diğer adıyla `Select-AzureRmSubscription`) cmdlet’ini kullanın.
 
-```powershell
+```azurepowershell-interactive
 PS C:\> Set-AzureRMContext -Subscription "Contoso Subscription 1" -Name "Contoso1"
 ```
 
@@ -84,7 +83,7 @@ PS C:\> Set-AzureRMContext -Subscription "Contoso Subscription 1" -Name "Contoso
 
 Var olan bir bağlamı yeniden adlandırmak için `Rename-AzureRmContext` cmdlet'ini kullanın. Örnek:
 
-```powershell
+```azurepowershell-interactive
 PS C:\> Rename-AzureRmContext '[user1@contoso.org; 123456-7890-1234-564321]` 'Contoso2'
 ```
 
@@ -92,7 +91,7 @@ Bu örnekte, otomatik adı `[user1@contoso.org; 123456-7890-1234-564321]` olan b
 
 Son olarak, bir bağlamı kaldırmak için `Remove-AzureRmContext` cmdlet'ini kullanın.  Örnek:
 
-```powershell
+```azurepowershell-interactive
 PS C:\> Remove-AzureRmContext Contoso2
 ```
 
@@ -102,7 +101,7 @@ PS C:\> Remove-AzureRmContext Contoso2
 
 `Disconnect-AzureRmAccount` (aynı zamanda `Logout-AzureRmAccount` olarak bilinir) kullanarak bir kullanıcı ya da hizmet sorumlusuna ait tüm kimlik bilgilerini ve ilişkili bağlamları kaldırabilirsiniz. Parametre olmadan çalıştırıldığında, `Disconnect-AzureRmAccount` cmdlet'i mevcut bağlamda Kullanıcı veya Hizmet Sorumlusu ile ilişkili tüm kimlik bilgilerini ve bağlamları kaldırır. Belirli bir sorumluyu hedeflemek için bir Kullanıcı Adı, Hizmet Asıl Adı ya da bağlam geçirebilirsiniz.
 
-```powershell
+```azurepowershell-interactive
 Disconnect-AzureRmAccount user1@contoso.org
 ```
 
@@ -112,7 +111,7 @@ Bazı durumlarda, diğer oturumları etkilemeden bir PowerShell oturumundaki ba�
 
 Örnek olarak, diğer pencereleri etkilemeden mevcut PowerShell oturumundaki varsayılan bağlamı veya açılan bir sonraki oturumda kullanılan bağlamı değiştirmek için şunu kullanın:
 
-```powershell
+```azurepowershell-interactive
 PS C:\> Select-AzureRmContext Contoso1 -Scope Process
 ```
 
@@ -120,7 +119,7 @@ PS C:\> Select-AzureRmContext Contoso1 -Scope Process
 
 Bağlam Otomatik Kaydetme ayarı, kullanıcının Azure PowerShell dizinine (`%AppData%\Roaming\Windows Azure PowerShell`) kaydedilir. Bilgisayar hesaplarının bazı türleri bu dizine erişemeyebilir. Bu tür senaryolar için ortam değişkenini kullanabilirsiniz
 
-```powershell
+```azurepowershell-interactive
 $env:AzureRmContextAutoSave="true" | "false"
 ```
 

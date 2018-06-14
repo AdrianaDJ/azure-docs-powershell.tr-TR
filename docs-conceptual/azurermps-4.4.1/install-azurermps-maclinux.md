@@ -1,19 +1,18 @@
 ---
 title: Azure PowerShell'i macOS ve Linux'ta yükleme ve yapılandırma | Microsoft Docs
 description: Azure PowerShell'i macOS ve Linux'ta yükleme ve ilk kez kullanmak üzere yapılandırma.
-services: azure
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 01/12/2018
-ms.openlocfilehash: 18f07d3eebcce74988a02b78f2cc85f7663ed225
-ms.sourcegitcommit: 2eea03b7ac19ad6d7c8097743d33c7ddb9c4df77
+ms.openlocfilehash: 336acecfdaee0eee0862805064ac5aab90a32982
+ms.sourcegitcommit: c98e3a21037ebd82936828bcb544eed902b24212
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34821913"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "34853551"
 ---
 # <a name="install-and-configure-azure-powershell-on-macos-and-linux"></a>Azure PowerShell'i macOS ve Linux'a yükleme ve yapılandırma
 

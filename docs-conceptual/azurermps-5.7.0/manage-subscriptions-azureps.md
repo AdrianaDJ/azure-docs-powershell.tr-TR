@@ -1,19 +1,18 @@
 ---
-title: Azure PowerShell ile Azure aboneliklerini yönetme | Microsoft Docs
+title: Azure PowerShell ile Azure aboneliklerini yönetme
 description: Azure PowerShell ile Azure aboneliklerini yönetme
-keywords: Azure PowerShell, abonelik
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/30/2017
-ms.openlocfilehash: d28da700efbc2927cb3f73ae696759fb1e0c0cd6
-ms.sourcegitcommit: 2eea03b7ac19ad6d7c8097743d33c7ddb9c4df77
+ms.openlocfilehash: fbd2fe315efbdfb2147218229d51e983e2b61361
+ms.sourcegitcommit: bcf80dfd7fbe17e82e7ad029802cfe8a2f02b15c
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34821964"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35323365"
 ---
 # <a name="manage-multiple-azure-subscriptions"></a>Birden çok Azure aboneliğini yönetme
 
@@ -21,11 +20,11 @@ Azure ile ilk kez tanışıyorsanız, muhtemelen yalnızca bir aboneliğiniz var
 
 1. Hesabınızdaki tüm aboneliklerin listesini edinin.
 
-    ```powershell
+    ```azurepowershell-interactive
     Get-AzureRmSubscription
     ```
 
-    ```
+    ```output
     Environment           : AzureCloud
     Account               : username@contoso.com
     TenantId              : XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
@@ -50,17 +49,17 @@ Azure ile ilk kez tanışıyorsanız, muhtemelen yalnızca bir aboneliğiniz var
 
 2. Varsayılanı ayarlayın.
 
-    ```powershell
+    ```azurepowershell-interactive
     Select-AzureRmSubscription -SubscriptionName "My Demos"
     ```
 
 3. `Get-AzureRmContext` cmdlet’ini çalıştırarak değişikliği doğrulayın.
 
-    ```powershell
+    ```azurepowershell-interactive
     Get-AzureRmContext
     ```
 
-    ```
+    ```output
     Environment           : AzureCloud
     Account               : username@contoso.com
     TenantId              : XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
