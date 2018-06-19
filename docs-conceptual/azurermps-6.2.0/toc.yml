@@ -17,27 +17,27 @@
       items:
         - name: Hizmet sorumlusu oluşturma
           href: create-azure-service-principal-azureps.md
-        - name: Kalıcı kimlik bilgilerini kullanma
+        - name: Kalıcı kimlik bilgileri
           href: context-persistence.md
     - name: Sorgular
       href: queries-azureps.md
-    - name: Biçimlendirme
+    - name: Çıkışı biçimlendirme
       href: formatting-output.md
-    - name: Abonelikler
+    - name: Abonelikleri yönetme
       href: manage-subscriptions-azureps.md
     - name: Dağıtma
       items:
-        - name: Resource Manager şablonlarını kullanarak dağıtma
+        - name: Resource Manager şablonlarını dağıtma
           href: /azure/azure-resource-manager/resource-group-template-deploy
         - name: Resource Manager şablonlarını dışarı aktarma
           href: /azure/azure-resource-manager/resource-manager-export-template-powershell
-        - name: SAS belirteci ile özel Resource Manager şablonu dağıtma
+        - name: Özel Resource Manager şablonlarını dağıtma
           href: /azure/azure-resource-manager/resource-manager-powershell-sas-token
     - name: Kavramlar
       items:
-        - name: Deneysel modülleri kullanma
+        - name: Deneysel modüller
           href: using-experimental-modules.md
-        - name: PowerShell işlerini kullanma
+        - name: PowerShell işleri
           href: using-psjobs.md
     - name: Sürüm notları
       href: release-notes-azureps.md

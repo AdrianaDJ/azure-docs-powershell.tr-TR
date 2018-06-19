@@ -1,25 +1,24 @@
 ---
-title: Azure kaynaklarını sorgulama ve sonuçları biçimlendirme | Microsoft Docs
+title: Azure PowerShell cmdlet'lerinin çıkışını sorgulama
 description: Azure’daki kaynakları sorgulama ve sonuçları biçimlendirme.
-services: azure
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 03/30/2017
-ms.openlocfilehash: dde1702f512be70ece137059797e29c75926e231
-ms.sourcegitcommit: 2eea03b7ac19ad6d7c8097743d33c7ddb9c4df77
+ms.date: 06/08/2018
+ms.openlocfilehash: daa39ada5b4e969264b6e8596dc7b090bb196fd5
+ms.sourcegitcommit: bcf80dfd7fbe17e82e7ad029802cfe8a2f02b15c
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34820315"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35323093"
 ---
-# <a name="querying-for-azure-resources"></a>Azure kaynaklarını sorgulama
+# <a name="query-output-of-azure-powershell-cmdlets"></a>Azure PowerShell cmdlet'lerinin çıkışını sorgulama
 
 PowerShell’de sorgu işlemleri yerleşik cmdlet’ler kullanılarak gerçekleştirilebilir. PowerShell’de cmdlet adları **_Fiil-İsim_** biçiminde olur. **_Get_** fiilini kullanan cmdlet’ler sorgu cmdlet’leridir. Cmdlet isimleri, cmdlet fiilleri tarafından üzerinde eylem gerçekleştirilen Azure kaynağı türleridir.
 
-## <a name="selecting-simple-properties"></a>Basit özellikleri seçerek
+## <a name="select-simple-properties"></a>Basit özellikleri seçme
 
 Azure PowerShell’de her cmdlet için tanımlı bir varsayılan biçimlendirme vardır. Her kaynak türünün en yaygın özellikleri, otomatik olarak bir tablo ya da liste biçiminde görüntülenir. Çıktı biçimlendirme hakkında daha fazla bilgi edinmek için bkz. [Sorgu sonuçlarını biçimlendirme](formatting-output.md).
 
@@ -51,7 +50,7 @@ MyUnbuntu1610 MYWESTEURG        westeurope
 MyWin2016VM   MYWESTEURG        westeurope
 ```
 
-## <a name="selecting-complex-nested-properties"></a>Karmaşık iç içe özellikler seçme
+## <a name="select-complex-nested-properties"></a>Karmaşık iç içe özellikleri seçme
 
 Seçmek istediğiniz özellik JSON çıktısında derin olarak iç içe yerleştirilmişse, bu iç içe özelliğin tam yolunu sağlamanız gerekir. Aşağıdaki örnekte `Get-AzureRmVM` cmdlet’inden VM Adı ve işletim sistemi türünün nasıl seçileceği gösterilir.
 
@@ -66,7 +65,7 @@ MyUnbuntu1610   Linux
 MyWin2016VM   Windows
 ```
 
-## <a name="filter-result-using-the-where-object-cmdlet"></a>Where-Object cmdlet’ini kullanarak sonucu filtreleme
+## <a name="filter-results-with-the-where-object-cmdlet"></a>Where-Object cmdlet’iyle sonuçları filtreleme
 
 `Where-Object` cmdlet’i, sonucu herhangi bir özellik değerine göre filtrelemenize imkan tanır. Aşağıdaki örnekte, filtre yalnızca adında "RGD" metni geçen VM’leri seçer.
 

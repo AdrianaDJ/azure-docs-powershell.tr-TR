@@ -1,44 +1,39 @@
 ---
-title: Azure PowerShell'i macOS ve Linux'ta yükleme ve yapılandırma | Microsoft Docs
-description: Azure PowerShell'i macOS ve Linux'ta yükleme ve ilk kez kullanmak üzere yapılandırma.
-services: azure
+title: Azure PowerShell'i macOS veya Linux'a yükleme
+description: Azure PowerShell'i macOS veya Linux'a yükleme.
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 01/12/2018
-ms.openlocfilehash: 4dae78779758f240668db5a809b4c1bc1cfc34c7
-ms.sourcegitcommit: 2eea03b7ac19ad6d7c8097743d33c7ddb9c4df77
+ms.date: 06/06/2018
+ms.openlocfilehash: 17912c155255b6fdfd3cfb9242163b67d405dc03
+ms.sourcegitcommit: bcf80dfd7fbe17e82e7ad029802cfe8a2f02b15c
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34819924"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35323263"
 ---
-# <a name="install-and-configure-azure-powershell-on-macos-and-linux"></a>Azure PowerShell'i macOS ve Linux'a yükleme ve yapılandırma
+# <a name="install-azure-powershell-on-macos-or-linux"></a>Azure PowerShell'i macOS veya Linux'a yükleme
 
-PowerShell Core v6 ve Azure PowerShell artık Windows dışındaki platformlara yüklenebilir.
-Azure PowerShell'i macOS ve Linux'a yükleme adımları Windows ile benzerdir, ancak önce PowerShell Core v6'yı yüklemeniz gerekir.
+Windows dışındaki platformlarda Azure PowerShell'i PowerShell Core v6 üzerinde çalıştırmak mümkündür. Windows için .NET Framework üzerine kurulan standart Azure PowerShell yerine, bu ürün .NET Core için oluşturulmuştur ve .Net Core çalışma zamanını destekleyen tüm platformlarda çalıştırılabilir.
 
 > [!NOTE]
-
 > PowerShell Core v6 ve .NET Core için Azure PowerShell hala beta sürümündedir.
-> Bu ürünler için sınırlı destek sunulur. Herhangi bir sorunla karşılaşır veya hata bulursanız, lütfen bunları GitHub üzerinden bildirin.
+> Bu ürünler için sınırlı destek sunulur. Herhangi bir sorunla karşılaşır veya hata bulursanız, lütfen GitHub üzerinden bir sorun girin.
 >
 > * [PowerShell Core v6 ile ilgili sorunlar](https://github.com/PowerShell/PowerShell/issues)
 > * [Azure PowerShell ile ilgili sorunlar](https://github.com/azure/azure-docs-powershell/issues)
 
-## <a name="step-1-install-powershell-core-v6"></a>1. Adım: PowerShell Core v6'yı yükleme
+## <a name="install-powershell-core-v6"></a>PowerShell Core v6'yı yükleme
 
-PowerShell Core v6'yı yükleme adımları, hedef işletim sistemine göre değişiklik gösterir.
-PowerShell Core v6 Windows'a da yüklenebilir, ancak bu makalede macOS ve Linux ele alınmışır. Azure PowerShell'i Windows üzerinde kullanmak isterseniz, Windows'a yönelik [yükleme](./install-azurerm-ps.md) makalesine bakın.
+Linux veya macOS’ta PowerShell Core v6’yı yükleme adımları, Linux dağıtımına ve işletim sistemi sürümüne göre değişir.
+Şu makalelerde ayrıntılı yönergeler bulunabilir:
 
-Linux veya macOS’ta **PowerShell Core v6**’yı yükleme adımları, Linux dağıtımına ve işletim sistemi sürümüne göre değişkenlik gösterir.
-Şu makalede ayrıntılı yönergeler bulunabilir:
+- [macOS'ta PowerShell Core'u yükleme](/powershell/scripting/setup/installing-powershell-core-on-macos)
+- [Linux'ta PowerShell Core'u yükleme](/powershell/scripting/setup/installing-powershell-core-on-linux)
 
-- [macOS ve Linux’ta PowerShell Core’u yükleme](/powershell/scripting/setup/installing-powershell-core-on-macos-and-linux)
-
-## <a name="step-2-install-azure-powershell-for-net-core"></a>2. Adım: .NET Core için Azure PowerShell'i yükleme
+## <a name="install-azure-powershell-for-net-core"></a>.NET Core için Azure PowerShell'i yükleme
 
 PowerShell Core v6, PowerShellGet modülü önceden yüklü biçimde gelir. Bu sayede PowerShell Galerisi'nde yayımlanmış olan modüller kolayca yüklenebilir. Azure PowerShell'i yüklemek için yeni bir PowerShell oturumu açın ve aşağıdaki komutu çalıştırın:
 
@@ -46,7 +41,7 @@ PowerShell Core v6, PowerShellGet modülü önceden yüklü biçimde gelir. Bu s
 Install-Module AzureRM.NetCore
 ```
 
-## <a name="step-3-load-the-azurermnetcore-module"></a>3. Adım: AzureRM.Netcore modülünü yükleme
+## <a name="load-the-azurermnetcore-module"></a>AzureRM.Netcore modülünü yükleme
 
 Modül yüklendikten sonra modülü PowerShell oturumunuza yüklemeniz gerekir. Modüller `Import-Module` cmdlet’i kullanılarak aşağıdaki gibi yüklenir:
 

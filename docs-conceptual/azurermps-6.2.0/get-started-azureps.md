@@ -1,25 +1,32 @@
 ---
-title: Azure PowerShell’i kullanmaya başlama | Microsoft Docs
+title: Azure PowerShell’i kullanmaya başlama
 description: ''
-services: azure
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: get-started-article
 ms.date: 11/15/2017
-ms.openlocfilehash: fa9be1722b8260c4737c180eec79ae836235654c
-ms.sourcegitcommit: 2eea03b7ac19ad6d7c8097743d33c7ddb9c4df77
+ms.openlocfilehash: cfb7ff30b442bb345931728dab131e1b80e58989
+ms.sourcegitcommit: bcf80dfd7fbe17e82e7ad029802cfe8a2f02b15c
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34821896"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35323144"
 ---
-# <a name="getting-started-with-azure-powershell"></a>Azure PowerShell’i kullanmaya başlama
+# <a name="get-started-with-azure-powershell"></a>Azure PowerShell’i kullanmaya başlama
 
-Azure PowerShell, Azure kaynaklarını komut satırından yönetmek ve Azure Resource Manager’da çalışacak otomasyon betikleri oluşturmak için tasarlanmıştır. [Azure Cloud Shell](/azure/cloud-shell/overview) ile tarayıcınızda kullanabilir veya yerel makinenize yükleyip herhangi bir PowerShell oturumunda kullanabilirsiniz. Bu makale, Azure CLI 2.0’ı kullanmaya başlamanıza yardımcı olur ve bunun ardındaki temel kavramları öğretir.
+Azure PowerShell, Azure kaynaklarını komut satırından yönetmek ve Azure Resource Manager’da çalışacak otomasyon betikleri oluşturmak için tasarlanmıştır. Bunu [Azure Cloud Shell](/azure/cloud-shell/overview) ile tarayıcınızda kullanabilir veya yerel makinenize yükleyebilirsiniz. Bu makale Azure PowerShell'i kullanmaya başlamanıza yardımcı olur ve bu ürünün ardındaki temel kavramları öğretir.
 
-## <a name="connect"></a>Bağlan
+## <a name="install-azure-powershell"></a>Azure PowerShell'i yükleme
+
+İlk adım, Azure PowerShell’in en son sürümünü yüklediğinizden emin olmaktır. En son sürüm hakkında bilgi edinmek için [sürüm notlarına](./release-notes-azureps.md) bakın.
+
+1. [Azure PowerShell'i yükleme](install-azurerm-ps.md).
+
+2. Yüklemenin başarılı olduğunu doğrulamak için, komut satırınızdan `Get-Module AzureRM -ListAvailable` komutunu çalıştırın.
+
+## <a name="azure-cloud-shell"></a>Azure Cloud Shell 
 
 Başlamanın en kolay yolu [Cloud Shell’i başlatmaktır](/azure/cloud-shell/quickstart).
 
@@ -37,15 +44,7 @@ Depolama alanınız oluşturulduktan sonra Cloud Shell, tarayıcıda bir PowerSh
 
 Ayrıca Azure PowerShell yükleyip bir PowerShell oturumunda yerel olarak kullanabilirsiniz.
 
-## <a name="install-azure-powershell"></a>Azure PowerShell'i yükleme
-
-İlk adım, Azure PowerShell’in en son sürümünü yüklediğinizden emin olmaktır. En son sürüm hakkında bilgi edinmek için [sürüm notlarına](./release-notes-azureps.md) bakın.
-
-1. [Azure PowerShell'i yükleme](install-azurerm-ps.md).
-
-2. Yüklemenin başarılı olduğunu doğrulamak için, komut satırınızdan `Get-Module AzureRM -ListAvailable` komutunu çalıştırın.
-
-## <a name="log-in-to-azure"></a>Azure'da oturum açma
+## <a name="sign-in-to-azure"></a>Azure'da oturum açma
 
 Etkileşimli olarak oturum açın:
 
