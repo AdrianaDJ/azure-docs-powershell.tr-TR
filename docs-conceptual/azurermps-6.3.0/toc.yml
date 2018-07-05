@@ -6,7 +6,7 @@
       items:
         - name: macOS veya Linux'a yükleme
           href: install-azurermps-maclinux.md
-        - name: MSI veya WebPI ile yükleme
+        - name: MSI ile yükleme
           href: other-install.md
         - name: Docker’da çalıştırma
           href: azurerm-ps-in-docker.md
@@ -46,8 +46,8 @@
     - name: Sürüm notları
       href: release-notes-azureps.md
       items:
-        - name: Azure PowerShell 5.x için bozucu değişiklikler
-          href: migration-guide.5.0.0.md
+        - name: Azure PowerShell 6.x için hataya neden olan değişiklikler
+          href: migration-guide.6.0.0.md
 - name: Öğreticiler
   items:
     - name: Sanal Makineler Oluşturma

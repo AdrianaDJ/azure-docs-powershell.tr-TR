@@ -1,37 +1,38 @@
 ---
-title: Azure PowerShell'i yükleme ve yapılandırma | Microsoft Docs
-description: Azure PowerShell’i ilk kez kullanmak üzere yükleme ve yapılandırma.
+title: PowerShellGet ile Windows'da Azure PowerShell yükleme
+description: Azure PowerShell PowerShellGet ile nasıl yüklenir
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 03/27/2018
-ms.openlocfilehash: 8819a0ba2dfb6bc3f88e80581257180aa1558ba4
-ms.sourcegitcommit: c98e3a21037ebd82936828bcb544eed902b24212
+ms.date: 06/15/2018
+ms.openlocfilehash: dc5a1c59d23e37acf11aa7831ddc6e1edbd7f73e
+ms.sourcegitcommit: 4c775721461210431bd913f28d1f1e6f1976880a
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "34853823"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37091427"
 ---
-# <a name="install-and-configure-azure-powershell"></a><span data-ttu-id="b9aac-103">Azure PowerShell'i yükleyip yapılandırma</span><span class="sxs-lookup"><span data-stu-id="b9aac-103">Install and configure Azure PowerShell</span></span>
+# <a name="install-azure-powershell-on-windows-with-powershellget"></a><span data-ttu-id="6a0f2-103">PowerShellGet ile Windows'da Azure PowerShell yükleme</span><span class="sxs-lookup"><span data-stu-id="6a0f2-103">Install Azure PowerShell on Windows with PowerShellGet</span></span>
 
-<span data-ttu-id="b9aac-104">Bu makalede Azure PowerShell modüllerini Windows ortamına yüklemek için uygulanması gereken adımlar açıklanmaktadır.</span><span class="sxs-lookup"><span data-stu-id="b9aac-104">This article explains the steps to install the Azure PowerShell modules in a Windows environment.</span></span>
-<span data-ttu-id="b9aac-105">Azure PowerShell'i macOS veya Linux'a yüklemek istiyorsanız şu makaleye bakın: [Azure PowerShell'i macOS ve Linux'ta yükleme ve yapılandırma](install-azurermps-maclinux.md).</span><span class="sxs-lookup"><span data-stu-id="b9aac-105">If you want to use Azure PowerShell on macOS or Linux, see the following article: [Install and configure Azure PowerShell on macOS and Linux](install-azurermps-maclinux.md).</span></span>
+<span data-ttu-id="6a0f2-104">Bu makalede PowerShellGet kullanarak Azure PowerShell modüllerini Windows ortamına yüklemek için uygulanması gereken adımlar açıklanır.</span><span class="sxs-lookup"><span data-stu-id="6a0f2-104">This article explains the steps to install the Azure PowerShell modules in a Windows environment using PowerShellGet.</span></span> <span data-ttu-id="6a0f2-105">PowerShellGet ve modül yönetimi, Azure PowerShell'i yüklemek için tercih edilen yoldur. Ancak bunun yerine Web Platformu Yükleyicisi veya MSI paketi kullanarak yükleyecekseniz bkz. [Diğer yükleme yöntemleri](other-install.md).</span><span class="sxs-lookup"><span data-stu-id="6a0f2-105">PowerShellGet and module management is the preferred way to install Azure PowerShell but if you would rather install with the Web Platform Installer or MSI package, see [Other installation methods](other-install.md).</span></span>
 
-<span data-ttu-id="b9aac-106">Azure PowerShell'in PowerShell Galerisi'nden yüklenmesi, tercih edilen yükleme yöntemidir.</span><span class="sxs-lookup"><span data-stu-id="b9aac-106">Installing Azure PowerShell from the PowerShell Gallery is the preferred method of installation.</span></span>
+<span data-ttu-id="6a0f2-106">Azure PowerShell'i farklı platformlara yükleme talimatları için bkz. [Azure PowerShell'i macOS ve Linux'ta yükleme ve yapılandırma](install-azurermps-maclinux.md).</span><span class="sxs-lookup"><span data-stu-id="6a0f2-106">For instructions to install Azure PowerShell on other platforms, see [Install and configure Azure PowerShell on macOS and Linux](install-azurermps-maclinux.md).</span></span>
 
-## <a name="step-1-install-powershellget"></a><span data-ttu-id="b9aac-107">1. Adım: PowerShellGet yükleme</span><span class="sxs-lookup"><span data-stu-id="b9aac-107">Step 1: Install PowerShellGet</span></span>
+<span data-ttu-id="6a0f2-107">Azure klasik dağıtım modeli, Azure PowerShell'in bu sürümü tarafından desteklenmez.</span><span class="sxs-lookup"><span data-stu-id="6a0f2-107">The Azure classic deployment model is not supported by this version of Azure PowerShell.</span></span> <span data-ttu-id="6a0f2-108">Klasik dağıtımlar için [Azure PowerShell Service Management modülünü yükleme](/powershell/azure/servicemanagement/install-azure-ps) talimatlarını izleyin.</span><span class="sxs-lookup"><span data-stu-id="6a0f2-108">For support for classic deployments, follow the instructions in [Install the Azure PowerShell Service Management module](/powershell/azure/servicemanagement/install-azure-ps).</span></span>
 
-<span data-ttu-id="b9aac-108">PowerShell Galerisi’nden yükleme yapabilmek için PowerShellGet modülü gerekir.</span><span class="sxs-lookup"><span data-stu-id="b9aac-108">Installing items from the PowerShell Gallery requires the PowerShellGet module.</span></span> <span data-ttu-id="b9aac-109">Uygun PowerShellGet sürümüne ve diğer sistem gereksinimlerine sahip olduğunuzdan emin olun.</span><span class="sxs-lookup"><span data-stu-id="b9aac-109">Make sure you have the appropriate version of PowerShellGet and other system requirements.</span></span> <span data-ttu-id="b9aac-110">PowerShellGet’in sisteminizde yüklü olup olmadığını görmek için aşağıdaki komutu çalıştırın.</span><span class="sxs-lookup"><span data-stu-id="b9aac-110">Run the following command to see if you have PowerShellGet installed on your system.</span></span>
+## <a name="requirements"></a><span data-ttu-id="6a0f2-109">Gereksinimler</span><span class="sxs-lookup"><span data-stu-id="6a0f2-109">Requirements</span></span>
+
+<span data-ttu-id="6a0f2-110">Azure PowerShell'i yüklemek için PowerShellGet sürüm 1.1.2.0 veya üzeri gerekir.</span><span class="sxs-lookup"><span data-stu-id="6a0f2-110">To install Azure PowerShell, you need PowerShellGet version 1.1.2.0 or higher.</span></span> <span data-ttu-id="6a0f2-111">Sisteminizde mevcut olup olmadığını görmek için şu komutu çalıştırın:</span><span class="sxs-lookup"><span data-stu-id="6a0f2-111">To check if it is available on your system, run the following command:</span></span>
 
 ```powershell
 Get-Module -Name PowerShellGet -ListAvailable | Select-Object -Property Name,Version,Path
 ```
 
-<span data-ttu-id="b9aac-111">Aşağıdaki çıktıya benzer bir sonuç görmeniz gerekir:</span><span class="sxs-lookup"><span data-stu-id="b9aac-111">You should see something similar to the following output:</span></span>
+<span data-ttu-id="6a0f2-112">Aşağıdaki çıktıya benzer bir sonuç görmeniz gerekir:</span><span class="sxs-lookup"><span data-stu-id="6a0f2-112">You should see something similar to the following output:</span></span>
 
-```Output
+```output
 Name          Version Path
 ----          ------- ----
 Name          Version Path
@@ -40,130 +41,95 @@ PowerShellGet 1.6.0   C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1
 PowerShellGet 1.0.0.1 C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.0.0.1\PowerShellGet.psd1
 ```
 
-<span data-ttu-id="b9aac-112">PowerShellGet 1.1.2.0 veya üzeri bir sürüm gereklidir.</span><span class="sxs-lookup"><span data-stu-id="b9aac-112">You need PowerShellGet version 1.1.2.0 or higher.</span></span> <span data-ttu-id="b9aac-113">PowerShellGet’i güncelleştirmek için şu komutu kullanın:</span><span class="sxs-lookup"><span data-stu-id="b9aac-113">To update PowerShellGet, use the following command:</span></span>
+<span data-ttu-id="6a0f2-113">PowerShellGet yüklemenizi güncelleştirmeniz gerekiyorsa şu komutu çalıştırın:</span><span class="sxs-lookup"><span data-stu-id="6a0f2-113">If you need to update your installation of PowerShellGet, run the following command:</span></span>
 
 ```powershell
 Install-Module PowerShellGet -Force
 ```
 
-<span data-ttu-id="b9aac-114">PowerShellGet yüklü değilse bu makalenin [PowerShellGet edinme](#how-to-get-powershellget) bölümüne bakın.</span><span class="sxs-lookup"><span data-stu-id="b9aac-114">If you do not have PowerShellGet installed, see the [How to get PowerShellGet](#how-to-get-powershellget) section of this article.</span></span>
+<span data-ttu-id="6a0f2-114">PowerShellGet yüklü değilse aşağıdaki tablodan sisteminize özgü yönergeleri izleyin.</span><span class="sxs-lookup"><span data-stu-id="6a0f2-114">If you don't have PowerShellGet installed, follow the instructions in the table below for your system.</span></span>
+
+|<span data-ttu-id="6a0f2-115">Senaryo</span><span class="sxs-lookup"><span data-stu-id="6a0f2-115">Scenario</span></span>|<span data-ttu-id="6a0f2-116">Yükleme yönergeleri</span><span class="sxs-lookup"><span data-stu-id="6a0f2-116">Install instructions</span></span>|
+|---|---|
+|<span data-ttu-id="6a0f2-117">Windows 10</span><span class="sxs-lookup"><span data-stu-id="6a0f2-117">Windows 10</span></span><br/><span data-ttu-id="6a0f2-118">Windows Server 2016</span><span class="sxs-lookup"><span data-stu-id="6a0f2-118">Windows Server 2016</span></span>|<span data-ttu-id="6a0f2-119">İşletim sisteminde bulunan Windows Management Framework (WMF) 5.0’da yerleşiktir</span><span class="sxs-lookup"><span data-stu-id="6a0f2-119">Built into Windows Management Framework (WMF) 5.0 included in the OS</span></span>|
+|<span data-ttu-id="6a0f2-120">PowerShell 5'e yükseltme</span><span class="sxs-lookup"><span data-stu-id="6a0f2-120">Upgrade to PowerShell 5</span></span>| <ol><li>[<span data-ttu-id="6a0f2-121">WMF’nin en son sürümünü yükleyin</span><span class="sxs-lookup"><span data-stu-id="6a0f2-121">Install the latest version of WMF</span></span>](https://www.microsoft.com/en-us/download/details.aspx?id=54616)</li><li><span data-ttu-id="6a0f2-122">Şu komutu çalıştırın:</span><span class="sxs-lookup"><span data-stu-id="6a0f2-122">Run the following command:</span></span><br/>```Install-Module PowerShellGet -Force```</li></ol>|
+|<span data-ttu-id="6a0f2-123">PowerShell 3 veya PowerShell 4 yüklü Windows</span><span class="sxs-lookup"><span data-stu-id="6a0f2-123">Windows with PowerShell 3 or PowerShell 4</span></span>|<ol><span data-ttu-id="6a0f2-124"><il>[PackageManagement modüllerini alın](http://go.microsoft.com/fwlink/?LinkID=746217)</il></span><span class="sxs-lookup"><span data-stu-id="6a0f2-124"><il>[Get the PackageManagement modules](http://go.microsoft.com/fwlink/?LinkID=746217)</il></span></span><li><span data-ttu-id="6a0f2-125">Şu komutu çalıştırın:</span><span class="sxs-lookup"><span data-stu-id="6a0f2-125">Run the following command:</span></span><br/>```Install-Module PowerShellGet -Force```</li></ol>|
 
 > [!NOTE]
-> <span data-ttu-id="b9aac-115">PowerShellGet kullanımı, betikleri çalıştırmanıza olanak tanıyan bir Yürütme İlkesi gerektirir.</span><span class="sxs-lookup"><span data-stu-id="b9aac-115">Using PowerShellGet requires an Execution Policy that allows you to run scripts.</span></span> <span data-ttu-id="b9aac-116">PowerShell'in Yürütme İlkesi hakkında daha fazla bilgi için bkz. [Yürütme İlkeleri Hakkında](/powershell/module/microsoft.powershell.core/about/about_execution_policies).</span><span class="sxs-lookup"><span data-stu-id="b9aac-116">For more information about PowerShell's Execution Policy, see [About Execution Policies](/powershell/module/microsoft.powershell.core/about/about_execution_policies).</span></span>
+> <span data-ttu-id="6a0f2-126">PowerShellGet kullanımı, betikleri çalıştırmanıza olanak tanıyan bir Yürütme İlkesi gerektirir.</span><span class="sxs-lookup"><span data-stu-id="6a0f2-126">Using PowerShellGet requires an Execution Policy that allows you to run scripts.</span></span> <span data-ttu-id="6a0f2-127">PowerShell'in Yürütme İlkesi hakkında daha fazla bilgi için bkz. [Yürütme İlkeleri Hakkında](/powershell/module/microsoft.powershell.core/about/about_execution_policies).</span><span class="sxs-lookup"><span data-stu-id="6a0f2-127">For more information about PowerShell's Execution Policy, see [About Execution Policies](/powershell/module/microsoft.powershell.core/about/about_execution_policies).</span></span>
 
-## <a name="step-2-install-azure-powershell"></a><span data-ttu-id="b9aac-117">2. Adım: Azure PowerShell'i yükleme</span><span class="sxs-lookup"><span data-stu-id="b9aac-117">Step 2: Install Azure PowerShell</span></span>
+## <a name="install-the-azure-powershell-module"></a><span data-ttu-id="6a0f2-128">Azure PowerShell modülünü yükleme</span><span class="sxs-lookup"><span data-stu-id="6a0f2-128">Install the Azure PowerShell module</span></span>
 
-<span data-ttu-id="b9aac-118">Azure PowerShell’in PowerShell Galerisi’nden yüklenebilmesi için yükseltilmiş ayrıcalıklar gerekir.</span><span class="sxs-lookup"><span data-stu-id="b9aac-118">Installing Azure PowerShell from the PowerShell Gallery requires elevated privileges.</span></span> <span data-ttu-id="b9aac-119">Yükseltilmiş bir PowerShell oturumunda aşağıdaki komutu çalıştırın:</span><span class="sxs-lookup"><span data-stu-id="b9aac-119">Run the following command from an elevated PowerShell session:</span></span>
+<span data-ttu-id="6a0f2-129">PowerShell Galerisi'ndeki modülleri yüklemek için yükseltilmiş ayrıcalıklara ihtiyacınız vardır.</span><span class="sxs-lookup"><span data-stu-id="6a0f2-129">You need elevated privileges to install modules from the PowerShell Gallery.</span></span> <span data-ttu-id="6a0f2-130">Azure PowerShell'i yüklemek için yükseltilmiş oturumda şu komutu çalıştırın:</span><span class="sxs-lookup"><span data-stu-id="6a0f2-130">To install Azure PowerShell, run the following command in an elevated session:</span></span>
 
 ```powershell
-# Install the Azure Resource Manager modules from the PowerShell Gallery
-Install-Module -Name AzureRM -AllowClobber
+Install-Module -Name AzureRM
 ```
 
-<span data-ttu-id="b9aac-120">PowerShell Galerisi varsayılan olarak PowerShellGet için Güvenilir depo şeklinde yapılandırılmamıştır.</span><span class="sxs-lookup"><span data-stu-id="b9aac-120">By default, the PowerShell gallery is not configured as a Trusted repository for PowerShellGet.</span></span> <span data-ttu-id="b9aac-121">PSGallery'yi ilk kez kullandığınızda şu istemle karşılaşırsınız:</span><span class="sxs-lookup"><span data-stu-id="b9aac-121">The first time you use the PSGallery you see the following prompt:</span></span>
+> [!NOTE]
+> <span data-ttu-id="6a0f2-131">NuGet sürümünüz 2.8.5.201'den eskiyse, en son NuGet sürümünü indirip yüklemeniz istenir.</span><span class="sxs-lookup"><span data-stu-id="6a0f2-131">If you have a version older than 2.8.5.201 of NuGet, you are prompted to download and install the latest version of NuGet.</span></span>
 
-```Output
+<span data-ttu-id="6a0f2-132">PowerShell galerisi varsayılan olarak PowerShellGet için güvenilir depo olarak yapılandırılmamıştır.</span><span class="sxs-lookup"><span data-stu-id="6a0f2-132">By default, the PowerShell gallery isn't configured as a trusted repository for PowerShellGet.</span></span> <span data-ttu-id="6a0f2-133">PSGallery'yi ilk kez kullandığınızda şu istemle karşılaşırsınız:</span><span class="sxs-lookup"><span data-stu-id="6a0f2-133">The first time you use the PSGallery you see the following prompt:</span></span>
+
+```output
 Untrusted repository
 
 You are installing the modules from an untrusted repository. If you trust this repository, change
 its InstallationPolicy value by running the Set-PSRepository cmdlet.
 
 Are you sure you want to install the modules from 'PSGallery'?
-[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"): Y
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 
-<span data-ttu-id="b9aac-122">Yükleme işlemine devam etmek için "Evet" veya "Tümüne Evet" yanıtını verin.</span><span class="sxs-lookup"><span data-stu-id="b9aac-122">Answer 'Yes' or 'Yes to All' to continue with the installation.</span></span>
+<span data-ttu-id="6a0f2-134">Yükleme işlemine devam etmek için `Yes` veya `Yes to All` yanıtını verin.</span><span class="sxs-lookup"><span data-stu-id="6a0f2-134">Answer `Yes` or `Yes to All` to continue with the installation.</span></span>
 
-> [!NOTE]
-> <span data-ttu-id="b9aac-123">NuGet sürümünüz 2.8.5.201'den eskiyse, en son NuGet sürümünü indirip yüklemeniz istenir.</span><span class="sxs-lookup"><span data-stu-id="b9aac-123">If you have a version older than 2.8.5.201 of NuGet, you are prompted to download and install the latest version of NuGet.</span></span>
+<span data-ttu-id="6a0f2-135">`AzureRM` modülü, Azure PowerShell cmdlet’leri için toplu bir modüldür.</span><span class="sxs-lookup"><span data-stu-id="6a0f2-135">The `AzureRM` module is a rollup module for the Azure PowerShell cmdlets.</span></span> <span data-ttu-id="6a0f2-136">Bu modülü yüklediğinizde kullanılabilir durumdaki tüm Azure Resource Manager modülleri indirilir ve cmdlet'leri kullanıma sunulur.</span><span class="sxs-lookup"><span data-stu-id="6a0f2-136">Installing it downloads all of the available Azure Resource Manager modules, and makes their cmdlets available for use.</span></span>
 
-<span data-ttu-id="b9aac-124">AzureRM modülü, Azure Resource Manager cmdlet’leri için toplu bir modüldür.</span><span class="sxs-lookup"><span data-stu-id="b9aac-124">The AzureRM module is a rollup module for the Azure Resource Manager cmdlets.</span></span> <span data-ttu-id="b9aac-125">AzureRM modülünü yüklediğinizde, daha önce yüklenmemiş diğer Azure PowerShell modülleri PowerShell Galerisi'nden indirilir.</span><span class="sxs-lookup"><span data-stu-id="b9aac-125">When you install the AzureRM module, any Azure PowerShell module not previously installed is downloaded and from the PowerShell Gallery.</span></span>
+## <a name="sign-in"></a><span data-ttu-id="6a0f2-137">Oturum aç</span><span class="sxs-lookup"><span data-stu-id="6a0f2-137">Sign in</span></span>
 
-<span data-ttu-id="b9aac-126">Azure PowerShell'in önceki sürümlerinden biri sisteminizde yüklüyse hata iletisiyle karşılaşabilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="b9aac-126">If you have a previous version of Azure PowerShell installed you may receive an error.</span></span> <span data-ttu-id="b9aac-127">Bu sorunu çözmek için bu makalenin [Azure PowerShell'in yeni bir sürümüne güncelleştirme](#update-azps) bölümünü inceleyin.</span><span class="sxs-lookup"><span data-stu-id="b9aac-127">To resolve this issue, see the [Updating to a new version of Azure PowerShell](#update-azps) section of this article.</span></span>
-
-## <a name="step-3-load-the-azurerm-module"></a><span data-ttu-id="b9aac-128">3. Adım: AzureRM modülünü yükleme</span><span class="sxs-lookup"><span data-stu-id="b9aac-128">Step 3: Load the AzureRM module</span></span>
-<span data-ttu-id="b9aac-129">Modül yüklendikten sonra modülü PowerShell oturumunuza yüklemeniz gerekir.</span><span class="sxs-lookup"><span data-stu-id="b9aac-129">Once the module is installed, you need to load the module into your PowerShell session.</span></span> <span data-ttu-id="b9aac-130">Bunu normal (yükseltilmiş olmayan) bir PowerShell oturumunda yapmanız gerekir.</span><span class="sxs-lookup"><span data-stu-id="b9aac-130">You should do this in a normal (non-elevated) PowerShell session.</span></span> <span data-ttu-id="b9aac-131">Modüller `Import-Module` cmdlet’i kullanılarak aşağıdaki gibi yüklenir:</span><span class="sxs-lookup"><span data-stu-id="b9aac-131">Modules are loaded using the `Import-Module` cmdlet, as follows:</span></span>
+<span data-ttu-id="6a0f2-138">Azure PowerShell ile çalışmaya başlamak için `AzureRM` modülünü geçerli PowerShell oturumunuza [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) cmdlet'iyle yüklemeniz ve Azure kimlik bilgilerinizle oturum açmanız gerekir.</span><span class="sxs-lookup"><span data-stu-id="6a0f2-138">To start working with Azure PowerShell, you need to load `AzureRM` into your current PowerShell session with the [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) cmdlet, and then sign in with your Azure credentials.</span></span>
 
 ```powershell
-Import-Module -Name AzureRM
+# Import the module into the PowerShell session
+Import-Module AzureRM
+# Connect to Azure with an interactive dialog for sign-in
+Connect-AzureRmAccount
 ```
 
-## <a name="next-steps"></a><span data-ttu-id="b9aac-132">Sonraki Adımlar</span><span class="sxs-lookup"><span data-stu-id="b9aac-132">Next Steps</span></span>
+<span data-ttu-id="6a0f2-139">Bu adımları, başlattığınız her yeni PowerShell oturumu için tekrarlamanız gerekir.</span><span class="sxs-lookup"><span data-stu-id="6a0f2-139">You'll need to repeat these steps for every new PowerShell session you start.</span></span> <span data-ttu-id="6a0f2-140">`AzureRM` modülünün otomatik olarak içeri aktarılması için bir PowerShell profili oluşturmanız gerekir. Ayrıntılı bilgi için bkz. [Profiller Hakkında](/powershell/module/microsoft.powershell.core/about/about_profiles).</span><span class="sxs-lookup"><span data-stu-id="6a0f2-140">Automatically importing the `AzureRM` module requires setting up a PowerShell profile, which you can learn about in [About Profiles](/powershell/module/microsoft.powershell.core/about/about_profiles).</span></span>
+<span data-ttu-id="6a0f2-141">Azure oturum açma bilgilerinizin oturumlar arasında geçiş yaparken silinmemesi için bkz. [Kullanıcı kimlik bilgilerini PowerShell oturumlarında kalıcı hale getirme](context-persistence.md).</span><span class="sxs-lookup"><span data-stu-id="6a0f2-141">To learn how to persist your Azure sign in across sessions, see [Persist user credentials across PowerShell sessions](context-persistence.md).</span></span>
 
-<span data-ttu-id="b9aac-133">Azure PowerShell kullanma hakkında daha fazla bilgi için aşağıdaki makalelere bakın:</span><span class="sxs-lookup"><span data-stu-id="b9aac-133">For more information about using Azure PowerShell, see the following articles:</span></span>
+## <a name="update-the-azure-powershell-module"></a><span data-ttu-id="6a0f2-142">Azure PowerShell modülünü güncelleştirme</span><span class="sxs-lookup"><span data-stu-id="6a0f2-142">Update the Azure PowerShell module</span></span>
 
-* [<span data-ttu-id="b9aac-134">Azure PowerShell’i kullanmaya başlama</span><span class="sxs-lookup"><span data-stu-id="b9aac-134">Get started with Azure PowerShell</span></span>](get-started-azureps.md)
-
-## <a name="reporting-issues-and-feedback"></a><span data-ttu-id="b9aac-135">Sorunları bildirme ve geri bildirimde bulunma</span><span class="sxs-lookup"><span data-stu-id="b9aac-135">Reporting issues and feedback</span></span>
-
-<span data-ttu-id="b9aac-136">Araçla ilgili bir hatayla karşılaşırsanız, GitHub deposunun [Sorunlar](https://github.com/Azure/azure-powershell/issues) bölümünden sorunu bildirin.</span><span class="sxs-lookup"><span data-stu-id="b9aac-136">If you encounter any bugs with the tool, file an issue in the [Issues](https://github.com/Azure/azure-powershell/issues) section of our GitHub repo.</span></span> <span data-ttu-id="b9aac-137">Komut satırından geri bildirim sağlamak için `Send-Feedback` cmdlet'ini kullanın.</span><span class="sxs-lookup"><span data-stu-id="b9aac-137">To provide feedback from the command line, use the `Send-Feedback` cmdlet.</span></span>
-
-## <a name="frequently-asked-questions"></a><span data-ttu-id="b9aac-138">Sık sorulan sorular</span><span class="sxs-lookup"><span data-stu-id="b9aac-138">Frequently asked questions</span></span>
-
-### <a name="how-to-get-powershellget"></a><span data-ttu-id="b9aac-139">PowerShellGet edinme</span><span class="sxs-lookup"><span data-stu-id="b9aac-139">How to get PowerShellGet</span></span>
-
-|<span data-ttu-id="b9aac-140">Senaryo</span><span class="sxs-lookup"><span data-stu-id="b9aac-140">Scenario</span></span>|<span data-ttu-id="b9aac-141">Yükleme yönergeleri</span><span class="sxs-lookup"><span data-stu-id="b9aac-141">Install instructions</span></span>|
-|---|---|
-|<span data-ttu-id="b9aac-142">Windows 10</span><span class="sxs-lookup"><span data-stu-id="b9aac-142">Windows 10</span></span><br/><span data-ttu-id="b9aac-143">Windows Server 2016</span><span class="sxs-lookup"><span data-stu-id="b9aac-143">Windows Server 2016</span></span>|<span data-ttu-id="b9aac-144">İşletim sisteminde bulunan Windows Management Framework (WMF) 5.0’da yerleşiktir</span><span class="sxs-lookup"><span data-stu-id="b9aac-144">Built into Windows Management Framework (WMF) 5.0 included in the OS</span></span>|
-|<span data-ttu-id="b9aac-145">PowerShell 5'e yükseltme yapmak istiyorum</span><span class="sxs-lookup"><span data-stu-id="b9aac-145">I want to upgrade to PowerShell 5</span></span>|<ol><li>[<span data-ttu-id="b9aac-146">WMF’nin en son sürümünü yükleyin</span><span class="sxs-lookup"><span data-stu-id="b9aac-146">Install the latest version of WMF</span></span>](https://www.microsoft.com/en-us/download/details.aspx?id=54616)</li><li><span data-ttu-id="b9aac-147">Şu komutu çalıştırın:</span><span class="sxs-lookup"><span data-stu-id="b9aac-147">Run the following command:</span></span><br/>```Install-Module PowerShellGet -Force```</li></ol>|
-|<span data-ttu-id="b9aac-148">Windows’un PowerShell 3 veya PowerShell 4 içeren bir sürümünü çalıştırıyorum</span><span class="sxs-lookup"><span data-stu-id="b9aac-148">I am running on a version of Windows with PowerShell 3 or PowerShell 4</span></span>|<ol><span data-ttu-id="b9aac-149"><il>[PackageManagement modüllerini alın](http://go.microsoft.com/fwlink/?LinkID=746217)</il></span><span class="sxs-lookup"><span data-stu-id="b9aac-149"><il>[Get the PackageManagement modules](http://go.microsoft.com/fwlink/?LinkID=746217)</il></span></span><li><span data-ttu-id="b9aac-150">Şu komutu çalıştırın:</span><span class="sxs-lookup"><span data-stu-id="b9aac-150">Run the following command:</span></span><br/>```Install-Module PowerShellGet -Force```</li></ol>|
-
-<a id="helpmechoose"></a>
-### <a name="checking-the-version-of-azure-powershell"></a><span data-ttu-id="b9aac-151">Azure PowerShell sürümünü denetleme</span><span class="sxs-lookup"><span data-stu-id="b9aac-151">Checking the version of Azure PowerShell</span></span>
-
-<span data-ttu-id="b9aac-152">En son sürüme mümkün olan en kısa sürede yükseltme yapmanız önerilse de, Azure PowerShell’in birkaç sürümü desteklenmektedir.</span><span class="sxs-lookup"><span data-stu-id="b9aac-152">Although we encourage you to upgrade to the latest version as early as possible, several versions of Azure PowerShell are supported.</span></span> <span data-ttu-id="b9aac-153">Azure PowerShell'in yüklü olan sürümünü belirlemek için komut satırından `Get-Module AzureRM` komutunu çalıştırın.</span><span class="sxs-lookup"><span data-stu-id="b9aac-153">To determine the version of Azure PowerShell you have installed, run `Get-Module AzureRM` from your command line.</span></span>
+<span data-ttu-id="6a0f2-143">Azure PowerShell yüklemenizi güncelleştirmek için [Update-Module](/powershell/module/powershellget/update-module) cmdlet'ini çalıştırabilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="6a0f2-143">You can update your Azure PowerShell installation by running [Update-Module](/powershell/module/powershellget/update-module).</span></span> <span data-ttu-id="6a0f2-144">Bu komut önceki sürümleri __kaldırmaz__.</span><span class="sxs-lookup"><span data-stu-id="6a0f2-144">This command does __not__ uninstall earlier versions.</span></span>
 
 ```powershell
-Get-Module AzureRM -ListAvailable | Select-Object -Property Name,Version,Path
+Update-Module -Name AzureRM
 ```
 
-### <a name="support-for-classic-deployment-methods"></a><span data-ttu-id="b9aac-154">Klasik dağıtım yöntemleri için destek</span><span class="sxs-lookup"><span data-stu-id="b9aac-154">Support for classic deployment methods</span></span>
+<span data-ttu-id="6a0f2-145">Sisteminizdeki eski Azure PowerShell sürümlerini kaldırmak isterseniz bkz. [Azure PowerShell modülünü kaldırma](uninstall-azurerm-ps.md).</span><span class="sxs-lookup"><span data-stu-id="6a0f2-145">If you want to remove older versions of Azure PowerShell from your system, see [Uninstall the Azure PowerShell module](uninstall-azurerm-ps.md).</span></span>
 
-<span data-ttu-id="b9aac-155">Klasik dağıtım modelini kullanan dağıtımlarınız varsa, Azure PowerShell'in Hizmet Yönetimi sürümünü yükleyebilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="b9aac-155">If you have deployments that use the classic deployment model you can install the Service Management version of Azure PowerShell.</span></span> <span data-ttu-id="b9aac-156">Daha fazla bilgi için bkz. [Azure PowerShell Hizmet Yönetimi modülünü yükleme](/powershell/azure/servicemanagement/install-azure-ps).</span><span class="sxs-lookup"><span data-stu-id="b9aac-156">For more information, see [Install the Azure PowerShell Service Management module](/powershell/azure/servicemanagement/install-azure-ps).</span></span> <span data-ttu-id="b9aac-157">Azure ve AzureRM modülleri ortak bağımlılıklara sahiptir.</span><span class="sxs-lookup"><span data-stu-id="b9aac-157">The Azure and AzureRM modules share common dependencies.</span></span> <span data-ttu-id="b9aac-158">Hem Azure hem de AzureRM modüllerini kullanıyorsanız her paket için aynı sürümü yüklemeniz gerekir.</span><span class="sxs-lookup"><span data-stu-id="b9aac-158">If you use both the Azure and AzureRM modules, you should install the same version of each package.</span></span>
+## <a name="use-multiple-versions-of-azure-powershell"></a><span data-ttu-id="6a0f2-146">Azure PowerShell'in birden çok sürümünü kullanma</span><span class="sxs-lookup"><span data-stu-id="6a0f2-146">Use multiple versions of Azure PowerShell</span></span>
 
-### <a id="update-azps"></a><span data-ttu-id="b9aac-159">Azure PowerShell'in yeni bir sürümüne güncelleştirme</span><span class="sxs-lookup"><span data-stu-id="b9aac-159">Updating to a new version of Azure PowerShell</span></span>
-
-<span data-ttu-id="b9aac-160">Hizmet Yönetimi modülünü içeren eski bir Azure PowerShell sürümü yüklüyse şu hata iletisiyle karşılaşabilirsiniz:</span><span class="sxs-lookup"><span data-stu-id="b9aac-160">If you have a previous version of Azure PowerShell installed that includes the Service Management module, you may receive the following error:</span></span>
-
-```Output
-PackageManagement\Install-Package : A command with name 'Get-AzureStorageContainerAcl' is already
-available on this system. This module 'Azure.Storage' may override the existing commands. If you
-still want to install this module 'Azure.Storage', use -AllowClobber parameter.
-
-At C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.0.0.1\PSModule.psm1:1772 char:21
-+ ...          $null = PackageManagement\Install-Package @PSBoundParameters
-+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : InvalidOperation: (Microsoft.Power....InstallPackage:InstallPackage) [Install-Package], Exception
-    + FullyQualifiedErrorId : CommandAlreadyAvailable,Validate-ModuleCommandAlreadyAvailable,Microsoft.PowerShell.PackageManagement.Cmdlets.InstallPackage
-```
-
-<span data-ttu-id="b9aac-161">Hata iletisinde de belirtildiği üzere modülü yüklemek için -AllowClobber parametresini kullanmanız gerekir.</span><span class="sxs-lookup"><span data-stu-id="b9aac-161">As the error message states, you need to use the -AllowClobber parameter to install the module.</span></span> <span data-ttu-id="b9aac-162">Aşağıdaki komutu kullanın:</span><span class="sxs-lookup"><span data-stu-id="b9aac-162">Use the following command:</span></span>
+<span data-ttu-id="6a0f2-147">Azure PowerShell'in birden çok sürümünü yükleyebilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="6a0f2-147">It's possible to install multiple versions of Azure PowerShell.</span></span> <span data-ttu-id="6a0f2-148">Şirket içi Azure Stack kaynaklarıyla çalışıyorsanız, PowerShell 5.0 güncelleştirmesini alamayan eski bir Windows sürümünü çalıştırıyorsanız veya Azure klasik dağıtım modelini kullanıyorsanız birden fazla sürüme ihtiyaç duyabilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="6a0f2-148">You might need more than one version if you work with on-premises Azure Stack resources, run an older version of Windows that you can't update to PowerShell 5.0, or use the Azure classic deployment model.</span></span> <span data-ttu-id="6a0f2-149">Eski bir sürümü yüklemek için yükleme sırasında `-RequiredVersion` bağımsız değişkenini belirtin.</span><span class="sxs-lookup"><span data-stu-id="6a0f2-149">To install an older version, provide the `-RequiredVersion` argument when installing.</span></span>
 
 ```powershell
-# Install the Azure Resource Manager modules from the PowerShell Gallery
-Install-Module -Name AzureRM -AllowClobber
-```
-
-<span data-ttu-id="b9aac-163">Daha fazla bilgi için [Install-Module](https://msdn.microsoft.com/powershell/reference/5.1/PowerShellGet/install-module) yardım konusuna bakın.</span><span class="sxs-lookup"><span data-stu-id="b9aac-163">For more information, see the help topic for [Install-Module](https://msdn.microsoft.com/powershell/reference/5.1/PowerShellGet/install-module).</span></span>
-
-### <a name="installing-module-versions-side-by-side"></a><span data-ttu-id="b9aac-164">Modül sürümlerini yan yana yükleme</span><span class="sxs-lookup"><span data-stu-id="b9aac-164">Installing module versions side by side</span></span>
-
-<span data-ttu-id="b9aac-165">PowerShellGet yükleme yöntemi, birden fazla sürümün yüklenmesini destekleyen tek yöntemdir.</span><span class="sxs-lookup"><span data-stu-id="b9aac-165">The PowerShellGet method of installation is the only method that supports the installation of multiple versions.</span></span> <span data-ttu-id="b9aac-166">Örneğin, güncelleştirmek için zaman veya kaynaklara sahip olmadığınız önceki bir Azure PowerShell sürümünü kullanarak yazdığınız betikler olabilir.</span><span class="sxs-lookup"><span data-stu-id="b9aac-166">For example, you may have scripts written using a previous version of Azure PowerShell that you don't have the time or resources to updated.</span></span> <span data-ttu-id="b9aac-167">Aşağıdaki komutlar birden fazla Azure PowerShell sürümünün nasıl yükleneceğini göstermektedir:</span><span class="sxs-lookup"><span data-stu-id="b9aac-167">The following commands illustrate how to install multiple versions of Azure PowerShell:</span></span>
-
-```powershell
-Install-Module -Name AzureRM -RequiredVersion 3.7.0
+# Install version 1.2.9 of Azure PowerShell
 Install-Module -Name AzureRM -RequiredVersion 1.2.9
 ```
 
-<span data-ttu-id="b9aac-168">Bir PowerShell oturumunda modülün yalnızca bir sürümü yüklenebilir.</span><span class="sxs-lookup"><span data-stu-id="b9aac-168">Only one version of the module can be loaded in a PowerShell session.</span></span> <span data-ttu-id="b9aac-169">AzureRM cmdlet’lerinin belirli bir sürümünü içeri aktarmak için yeni bir PowerShell penceresi açıp `Import-Module` seçeneğini kullanmanız gerekir:</span><span class="sxs-lookup"><span data-stu-id="b9aac-169">You must open a new PowerShell window and use `Import-Module` to import a specific version of the AzureRM cmdlets:</span></span>
+<span data-ttu-id="6a0f2-150">Azure PowerShell modülünü yüklerken varsayılan olarak son sürüm yüklenir.</span><span class="sxs-lookup"><span data-stu-id="6a0f2-150">When loading the Azure PowerShell module the latest version is loaded by default.</span></span> <span data-ttu-id="6a0f2-151">Farklı bir sürümü yüklemek için `-RequiredVersion` bağımsız değişkenini belirtin.</span><span class="sxs-lookup"><span data-stu-id="6a0f2-151">To load a different version, provide the `-RequiredVersion` argument.</span></span>
 
 ```powershell
+# Load version 1.2.9 of Azure PowerShell
 Import-Module -Name AzureRM -RequiredVersion 1.2.9
 ```
 
-> [!NOTE]
-> <span data-ttu-id="b9aac-170">Sürüm 2.1.0 ve sürüm 1.2.6, yan yana yüklenip kullanılmak üzere tasarlanmış ilk modül sürümleridir.</span><span class="sxs-lookup"><span data-stu-id="b9aac-170">Version 2.1.0 and version 1.2.6 are the first module versions designed to be installed and used side by side.</span></span> <span data-ttu-id="b9aac-171">Azure PowerShell'in önceki sürümlerinden biri yüklenirken **AzureRM.Profile** modülünün uyumlu olmayan sürümleri yüklenir.</span><span class="sxs-lookup"><span data-stu-id="b9aac-171">When loading an earlier version of the Azure PowerShell, incompatible versions of the **AzureRM.Profile** module are loaded.</span></span> <span data-ttu-id="b9aac-172">Bu işlemin sonucunda cmdlet'leri her çalıştırdığınızda oturum açmanız istenir.</span><span class="sxs-lookup"><span data-stu-id="b9aac-172">This results in the cmdlets prompting you to log in whenever you execute a cmdlet.</span></span>
+## <a name="provide-feedback"></a><span data-ttu-id="6a0f2-152">Geri bildirimde bulunma</span><span class="sxs-lookup"><span data-stu-id="6a0f2-152">Provide feedback</span></span>
 
-### <a name="other-installation-methods"></a><span data-ttu-id="b9aac-173">Diğer yükleme yöntemleri</span><span class="sxs-lookup"><span data-stu-id="b9aac-173">Other installation methods</span></span>
+<span data-ttu-id="6a0f2-153">Azure Powershell kullanırken bir hatayla karşılaşırsanız lütfen [GitHub'da sorun bildirin](https://github.com/Azure/azure-powershell/issues).</span><span class="sxs-lookup"><span data-stu-id="6a0f2-153">If you find a bug when using Azure Powershell, please [file an issue on GitHub](https://github.com/Azure/azure-powershell/issues).</span></span>
+<span data-ttu-id="6a0f2-154">Komut satırından geri bildirim sağlamak için [Send-Feedback](/powershell/module/azurerm.profile/send-feedback) cmdlet'ini kullanın.</span><span class="sxs-lookup"><span data-stu-id="6a0f2-154">To provide feedback from the command line, use the [Send-Feedback](/powershell/module/azurerm.profile/send-feedback) cmdlet.</span></span>
 
-<span data-ttu-id="b9aac-174">Web Platformu Yükleyicisi veya MSI Paketi kullanarak yükleme hakkında bilgi için bkz. [Diğer yükleme yöntemleri](other-install.md)</span><span class="sxs-lookup"><span data-stu-id="b9aac-174">For information about installing using the Web Platform Installer or the MSI Package, see [Other installation methods](other-install.md)</span></span>
+## <a name="next-steps"></a><span data-ttu-id="6a0f2-155">Sonraki Adımlar</span><span class="sxs-lookup"><span data-stu-id="6a0f2-155">Next Steps</span></span>
+
+<span data-ttu-id="6a0f2-156">Azure PowerShell'i kullanmaya başlamak için, [Azure PowerShell'i kullanmaya başlama](get-started-azureps.md) bölümünü inceleyerek modül ve özellikleri hakkında daha fazla bilgi edinin.</span><span class="sxs-lookup"><span data-stu-id="6a0f2-156">To get started using Azure PowerShell, see [Get Started with Azure PowerShell](get-started-azureps.md) to learn more about the module and its features.</span></span>
