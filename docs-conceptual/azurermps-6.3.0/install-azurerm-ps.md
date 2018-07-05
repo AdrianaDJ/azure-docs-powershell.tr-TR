@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 06/15/2018
-ms.openlocfilehash: dc5a1c59d23e37acf11aa7831ddc6e1edbd7f73e
+ms.openlocfilehash: 0d8019a7acaf2ba3baaa0772a76285ec497c991c
 ms.sourcegitcommit: 4c775721461210431bd913f28d1f1e6f1976880a
 ms.translationtype: HT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 06/28/2018
-ms.locfileid: "37091427"
+ms.locfileid: "37091478"
 ---
 # <a name="install-azure-powershell-on-windows-with-powershellget"></a>PowerShellGet ile Windows'da Azure PowerShell yükleme
 
@@ -24,39 +24,13 @@ Azure klasik dağıtım modeli, Azure PowerShell'in bu sürümü tarafından des
 
 ## <a name="requirements"></a>Gereksinimler
 
-Azure PowerShell'i yüklemek için PowerShellGet sürüm 1.1.2.0 veya üzeri gerekir. Sisteminizde mevcut olup olmadığını görmek için şu komutu çalıştırın:
+Azure PowerShell, 6.0 sürümünden itibaren Windows'da PowerShell 5.0 veya üzeri bir sürümün yüklü olmasını gerektirir. Makinenizde çalışan PowerShell sürümü kontrol etmek için şu komutu çalıştırın:
 
 ```powershell
-Get-Module -Name PowerShellGet -ListAvailable | Select-Object -Property Name,Version,Path
+$PSVersionTable.PSVersion
 ```
 
-Aşağıdaki çıktıya benzer bir sonuç görmeniz gerekir:
-
-```output
-Name          Version Path
-----          ------- ----
-Name          Version Path
-----          ------- ----
-PowerShellGet 1.6.0   C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.6.0\PowerShellGet.psd1
-PowerShellGet 1.0.0.1 C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.0.0.1\PowerShellGet.psd1
-```
-
-PowerShellGet yüklemenizi güncelleştirmeniz gerekiyorsa şu komutu çalıştırın:
-
-```powershell
-Install-Module PowerShellGet -Force
-```
-
-PowerShellGet yüklü değilse aşağıdaki tablodan sisteminize özgü yönergeleri izleyin.
-
-|Senaryo|Yükleme yönergeleri|
-|---|---|
-|Windows 10<br/>Windows Server 2016|İşletim sisteminde bulunan Windows Management Framework (WMF) 5.0’da yerleşiktir|
-|PowerShell 5'e yükseltme| <ol><li>[WMF’nin en son sürümünü yükleyin](https://www.microsoft.com/en-us/download/details.aspx?id=54616)</li><li>Şu komutu çalıştırın:<br/>```Install-Module PowerShellGet -Force```</li></ol>|
-|PowerShell 3 veya PowerShell 4 yüklü Windows|<ol><il>[PackageManagement modüllerini alın](http://go.microsoft.com/fwlink/?LinkID=746217)</il><li>Şu komutu çalıştırın:<br/>```Install-Module PowerShellGet -Force```</li></ol>|
-
-> [!NOTE]
-> PowerShellGet kullanımı, betikleri çalıştırmanıza olanak tanıyan bir Yürütme İlkesi gerektirir. PowerShell'in Yürütme İlkesi hakkında daha fazla bilgi için bkz. [Yürütme İlkeleri Hakkında](/powershell/module/microsoft.powershell.core/about/about_execution_policies).
+Sürümünüz eskiyse bkz. [Windows PowerShell'in mevcut sürümünü yükseltme](/powershell/scripting/setup/installing-windows-powershell?view=powershell-6#upgrading-existing-windows-powershell).
 
 ## <a name="install-the-azure-powershell-module"></a>Azure PowerShell modülünü yükleme
 
