@@ -16,7 +16,7 @@
       href: get-started-azureps.md
     - name: Cloud Shell
       href: 'https://docs.microsoft.com/azure/cloud-shell/overview'
-    - name: Oturum açma
+    - name: Oturum aç
       href: authenticate-azureps.md
       items:
         - name: Hizmet sorumlusu oluşturma

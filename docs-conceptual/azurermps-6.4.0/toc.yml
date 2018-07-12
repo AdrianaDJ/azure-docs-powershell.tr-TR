@@ -4,15 +4,19 @@
     - name: Yükleme
       href: install-azurerm-ps.md
       items:
-        - name: macOS ve Linux'a yükleme
+        - name: macOS veya Linux'a yükleme
           href: install-azurermps-maclinux.md
-        - name: Diğer yükleme yöntemleri
+        - name: MSI ile yükleme
           href: other-install.md
+        - name: Docker’da çalıştırma
+          href: azurerm-ps-in-docker.md
+    - name: Kaldırma
+      href: uninstall-azurerm-ps.md
     - name: başlarken
       href: get-started-azureps.md
     - name: Cloud Shell
       href: 'https://docs.microsoft.com/azure/cloud-shell/overview'
-    - name: Oturum aç
+    - name: Oturum açma
       href: authenticate-azureps.md
       items:
         - name: Hizmet sorumlusu oluşturma
@@ -37,11 +41,17 @@
       items:
         - name: Deneysel modüller
           href: using-experimental-modules.md
+        - name: PowerShell işleri
+          href: using-psjobs.md
     - name: Sürüm notları
       href: release-notes-azureps.md
       items:
-        - name: Azure PowerShell 4.x için bozucu değişiklikler
-          href: migration-guide.4.0.0.md
+        - name: Azure PowerShell 6.x için hataya neden olan değişiklikler
+          href: migration-guide.6.0.0.md
+- name: Öğreticiler
+  items:
+    - name: Sanal Makineler Oluşturma
+      href: azureps-vm-tutorial.yml
 - name: Örnek Betikler
   items:
     - name: Linux Sanal Makineleri
