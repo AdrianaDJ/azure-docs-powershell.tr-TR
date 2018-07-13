@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 06/15/2018
-ms.openlocfilehash: 0d8019a7acaf2ba3baaa0772a76285ec497c991c
-ms.sourcegitcommit: de0e60800df1add9f3400166faacca202ef567d9
+ms.openlocfilehash: 99c102340e430dbca94538f3bd0e810c79266cd9
+ms.sourcegitcommit: f08f501b75a97ceef59c21f42158bf135a354eaa
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37406721"
+ms.lasthandoff: 07/09/2018
+ms.locfileid: "37926170"
 ---
 # <a name="install-azure-powershell-on-windows-with-powershellget"></a>PowerShellGet ile Windows'da Azure PowerShell yükleme
 
@@ -24,13 +24,16 @@ Azure klasik dağıtım modeli, Azure PowerShell'in bu sürümü tarafından des
 
 ## <a name="requirements"></a>Gereksinimler
 
-Azure PowerShell, 6.0 sürümünden itibaren Windows'da PowerShell 5.0 veya üzeri bir sürümün yüklü olmasını gerektirir. Makinenizde çalışan PowerShell sürümü kontrol etmek için şu komutu çalıştırın:
+Azure PowerShell sürüm 6.0'dan başlayarak, Azure PowerShell için PowerShell sürüm 5.0 gereklidir. Makinenizde çalışan PowerShell sürümü kontrol etmek için şu komutu çalıştırın:
 
 ```powershell
 $PSVersionTable.PSVersion
 ```
 
 Sürümünüz eskiyse bkz. [Windows PowerShell'in mevcut sürümünü yükseltme](/powershell/scripting/setup/installing-windows-powershell?view=powershell-6#upgrading-existing-windows-powershell).
+
+> [!IMPORTANT]
+> Bu belgede açıklanan AzureRM modülü .NET Framework kullanır. Bu da, .NET Core kullanan PowerShell 6.0 ile uyumsuz olmasına neden olur. PowerShell 6.0 kullanıyorsanız, [macOS ve Linux için yükleme yönergelerini](install-azurermps-maclinux.md) izleyin. 
 
 ## <a name="install-the-azure-powershell-module"></a>Azure PowerShell modülünü yükleme
 

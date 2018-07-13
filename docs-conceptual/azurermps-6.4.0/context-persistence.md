@@ -7,16 +7,16 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 08/31/2017
-ms.openlocfilehash: aa374c6e93124fb4b428aa8c4854f7424f494bff
-ms.sourcegitcommit: de0e60800df1add9f3400166faacca202ef567d9
+ms.openlocfilehash: 76e08c462bb34bd2b16a11f70f14c4584b72795a
+ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37406697"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38100367"
 ---
 # <a name="persisting-user-credentials-across-powershell-sessions"></a>Kullanıcı kimlik bilgilerini PowerShell oturumlarında kalıcı hale getirme
 
-Azure PowerShell’in Eylül 2017 sürümünde, Azure Resource Manager cmdlet’leri **Azure Bağlam Otomatik Kaydı** adlı yeni bir özelliği kullanıma sunmuştur. Bu özellik aşağıdaki birkaç yeni kullanıcı senaryosunu mümkün kılar:
+Azure PowerShell aşağıdaki özellikleri getiren **Azure Context Autosave** adlı bir özellik sunar:
 
 - Yeni PowerShell oturumlarında yeniden kullanım için oturum açma bilgilerini tutma.
 - Uzun süre çalışan cmdlet'leri yürütmek için arka plan görevlerini daha kolay kullanma.
@@ -36,14 +36,12 @@ Azure PowerShell’in Eylül 2017 sürümünde, Azure Resource Manager cmdlet’
 
 Önceki sürümlerde, Azure Bağlamınızın yeni bir PowerShell oturumu açtığınız her durumda oluşturulması gerekiyordu. Azure PowerShell v4.4.0’dan itibaren, Azure Bağlamlarının otomatik kaydedilmesini ve yeni bir PowerShell oturumu açtığınız her durumda yeniden kullanılmasını sağlayabilirsiniz.
 
-## <a name="automatically-saving-the-context-for-the-next-login"></a>Sonraki oturum için bağlamı otomatik olarak kaydetme
+## <a name="automatically-saving-the-context-for-the-next-sign-in"></a>Sonraki oturum için bağlamı otomatik olarak kaydetme
 
-Azure PowerShell varsayılan olarak PowerShell oturumunuzu her kapattığınızda bağlam bilgilerinizi siler.
+Sürüm 6.3.0'dan başlayarak, Azure PowerShell oturumlar arasında bağlam bilgilerinizi otomatik olarak tutar. PowerShell’i bağlam ve kimlik bilgilerinizi unutacak şekilde ayarlamak için `Disable-AzureRmContextAutoSave` seçeneğini kullanın. Açtığınız her PowerShell oturumunda Azure oturumu açmanız gerekecektir.
 
 Azure PowerShell’in PowerShell oturumu kapatıldıktan sonra bağlamınızı hatırlamasına izin vermek için `Enable-AzureRmContextAutosave` kullanın. Bağlam ve kimlik bilgileri, kullanıcı dizininizdeki (`%AppData%\Roaming\Windows Azure PowerShell`) özel bir gizli klasöre otomatik olarak kaydedilir.
 Daha sonra, her yeni PowerShell oturumu son oturumunuzda kullanılan bağlamı hedefler.
-
-PowerShell’i bağlam ve kimlik bilgilerinizi unutacak şekilde ayarlamak için `Disable-AzureRmContextAutoSave` seçeneğini kullanın. Açtığınız her PowerShell oturumunda Azure oturumu açmanız gerekecektir.
 
 Azure bağlamlarını yönetmenizi sağlayan cmdlet’ler, hassas denetime de olanak tanır. Değişikliklerin yalnızca mevcut PowerShell oturumunda (`Process` kapsamı) veya her PowerShell oturumunda (`CurrentUser` kapsamı) geçerli olmasını istiyorsanız. Bu seçenekler [Bağlam Kapsamlarını Kullanma](#Using-Context-Scopes) bölümünde daha ayrıntılı olarak ele alınmıştır.
 
@@ -71,7 +69,7 @@ Arka plan görevinin sonucunu öğrenmek istediğiniz, `Get-Job` seçeneğini ku
 
 ## <a name="creating-selecting-renaming-and-removing-contexts"></a>Bağlam oluşturma, seçme, yeniden adlandırma ve kaldırma
 
-Bağlam oluşturmak için Azure'da oturum açmanız gerekir. `Connect-AzureRmAccount` cmdlet’i (veya diğer adıyla `Login-AzureRmAccount`), sonraki Azure PowerShell cmdlet’leri tarafından kullanılan varsayılan bağlamı ayarlar ve oturum açma bilgilerinizin izin verdiği tüm kiracı ya da aboneliklere erişmenize olanak tanır.
+Bağlam oluşturmak için Azure'da oturum açmanız gerekir. `Connect-AzureRmAccount` cmdlet’i (veya diğer adıyla `Login-AzureRmAccount`), sonraki Azure PowerShell cmdlet’leri tarafından kullanılan varsayılan bağlamı ayarlar ve kimlik bilgilerinizin izin verdiği tüm kiracı ya da aboneliklere erişmenize olanak tanır.
 
 Oturum açtıktan sonra yeni bir bağlam eklemek için `Set-AzureRmContext` (veya diğer adıyla `Select-AzureRmSubscription`) cmdlet’ini kullanın.
 
@@ -140,7 +138,7 @@ Bağlam yönetmeye yönelik yeni cmdlet'ler
 Mevcut profil cmdlet'lerinde yapılan değişiklikler
 
 - [Add-AzureRmAccount][login] - İşlem veya mevcut kullanıcı için oturum açma kapsamının ayarlanmasına izin verir.
-  Oturum açtıktan sonra varsayılan bağlamı adlandırmaya olanak tanır.
+  Kimlik doğrulamasından sonra varsayılan bağlamı adlandırmaya olanak tanır.
 - [Import-AzureRmContext][import] - İşlem veya mevcut kullanıcı için oturum açma kapsamının ayarlanmasına izin verir.
 - [Set-AzureRmContext][set-context] - Mevcut adlandırılmış bağlamların ve işlem ya da mevcut kullanıcıdaki kapsam değişikliklerinin seçilmesine olanak tanır.
 

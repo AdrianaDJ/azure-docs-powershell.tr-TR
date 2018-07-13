@@ -7,16 +7,16 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/15/2017
-ms.openlocfilehash: e2eb6767d16dd15529b35b7a4134f4dcdd257d60
-ms.sourcegitcommit: de0e60800df1add9f3400166faacca202ef567d9
+ms.openlocfilehash: 20194ac2282d602ba61bf130791edac9f4ffae6c
+ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37406659"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38100231"
 ---
 # <a name="sign-in-with-azure-powershell"></a>Azure PowerShell ile oturum açma
 
-Azure PowerShell, birden fazla oturum açma yöntemini destekler. Hizmeti kullanmaya başlamanın en basit yolu, komut satırından etkileşimli olarak oturum açmaktır.
+Azure PowerShell, birden fazla kimlik doğrulama yöntemini destekler. Hizmeti kullanmaya başlamanın en basit yolu, komut satırından etkileşimli olarak oturum açmaktır.
 
 ## <a name="sign-in-interactively"></a>Etkileşimli olarak oturum açma
 
@@ -29,7 +29,7 @@ Connect-AzureRmAccount
 Bu cmdlet çalıştırıldığında, Azure hesabınızla ilişkilendirilmiş e-posta adresinizle parolanızı soran bir iletişim kutusu açar. Kimlik doğrulaması yaptığınızda, bu bilgiler geçerli PowerShell oturumu için kaydedilir, iletişim kutusu kapatılır ve tüm Azure PowerShell cmdlet'lerine erişim kazanırsınız.
 
 > [!IMPORTANT]
-> Bu oturum açma işlemi _yalnızca_ geçerli PowerShell oturumuna yöneliktir. Oturum açma işleminin birden çok oturumda kalıcı olmasını sağlamak için, [Kalıcı Kimlik Bilgileri](context-persistence.md) makalesine bakın.
+> Azure PowerShell 6.3.0'dan başlayarak, Windows'da oturumunuz açık kaldığı sürece kimlik bilgileriniz birden çok PowerShell oturumu arasında paylaşılır. Daha fazla bilgi için, [Kalıcı Kimlik Bilgileri](context-persistence.md) makalesine bakın.
 
 ## <a name="sign-in-with-a-service-principal"></a>Hizmet sorumlusu ile oturum açma
 

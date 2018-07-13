@@ -1,22 +1,22 @@
 ---
-title: PowerShell oturumları arasında kullanıcı oturumlarını sürdürme
-description: Bu makalede Azure PowerShell’in kimlik bilgilerini ve diğer kullanıcı bilgilerini birden fazla PowerShell oturumunda yeniden kullanmanıza olanak tanıyan yeni özellikleri açıklanmaktadır.
+title: Kullanıcı kimlik bilgilerini PowerShell oturumlarında kalıcı hale getirme
+description: Farklı PowerShell oturumlarında Azure kimlik bilgilerini ve diğer bilgileri yeniden kullanmayı öğrenin.
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 08/31/2017
-ms.openlocfilehash: 5ae4f03207b74df06a2cb81ea1cd0516a4abd2dd
-ms.sourcegitcommit: bcf80dfd7fbe17e82e7ad029802cfe8a2f02b15c
+ms.openlocfilehash: 3107f77987745faa7ec57ea4811c62a38a7b2aa2
+ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35323127"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38100265"
 ---
-# <a name="persisting-user-logins-across-powershell-sessions"></a>PowerShell oturumları arasında kullanıcı oturumlarını sürdürme
+# <a name="persisting-user-credentials-across-powershell-sessions"></a>Kullanıcı kimlik bilgilerini PowerShell oturumlarında kalıcı hale getirme
 
-Azure PowerShell’in Eylül 2017 sürümünde, Azure Resource Manager cmdlet’leri **Azure Bağlam Otomatik Kaydı** adlı yeni bir özelliği kullanıma sunmuştur. Bu özellik aşağıdaki birkaç yeni kullanıcı senaryosunu mümkün kılar:
+Azure PowerShell aşağıdaki özellikleri getiren **Azure Context Autosave** adlı bir özellik sunar:
 
 - Yeni PowerShell oturumlarında yeniden kullanım için oturum açma bilgilerini tutma.
 - Uzun süre çalışan cmdlet'leri yürütmek için arka plan görevlerini daha kolay kullanma.
@@ -36,7 +36,7 @@ Azure PowerShell’in Eylül 2017 sürümünde, Azure Resource Manager cmdlet’
 
 Önceki sürümlerde, Azure Bağlamınızın yeni bir PowerShell oturumu açtığınız her durumda oluşturulması gerekiyordu. Azure PowerShell v4.4.0’dan itibaren, Azure Bağlamlarının otomatik kaydedilmesini ve yeni bir PowerShell oturumu açtığınız her durumda yeniden kullanılmasını sağlayabilirsiniz.
 
-## <a name="automatically-saving-the-context-for-the-next-login"></a>Sonraki oturum için bağlamı otomatik olarak kaydetme
+## <a name="automatically-saving-the-context-for-the-next-sign-in"></a>Sonraki oturum için bağlamı otomatik olarak kaydetme
 
 Azure PowerShell varsayılan olarak PowerShell oturumunuzu her kapattığınızda bağlam bilgilerinizi siler.
 
@@ -71,7 +71,7 @@ Arka plan görevinin sonucunu öğrenmek istediğiniz, `Get-Job` seçeneğini ku
 
 ## <a name="creating-selecting-renaming-and-removing-contexts"></a>Bağlam oluşturma, seçme, yeniden adlandırma ve kaldırma
 
-Bağlam oluşturmak için Azure'da oturum açmanız gerekir. `Connect-AzureRmAccount` cmdlet’i (veya diğer adıyla `Login-AzureRmAccount`), sonraki Azure PowerShell cmdlet’leri tarafından kullanılan varsayılan bağlamı ayarlar ve oturum açma bilgilerinizin izin verdiği tüm kiracı ya da aboneliklere erişmenize olanak tanır.
+Bağlam oluşturmak için Azure'da oturum açmanız gerekir. `Connect-AzureRmAccount` cmdlet’i (veya diğer adıyla `Login-AzureRmAccount`), sonraki Azure PowerShell cmdlet’leri tarafından kullanılan varsayılan bağlamı ayarlar ve kimlik bilgilerinizin izin verdiği tüm kiracı ya da aboneliklere erişmenize olanak tanır.
 
 Oturum açtıktan sonra yeni bir bağlam eklemek için `Set-AzureRmContext` (veya diğer adıyla `Select-AzureRmSubscription`) cmdlet’ini kullanın.
 
@@ -140,7 +140,7 @@ Bağlam yönetmeye yönelik yeni cmdlet'ler
 Mevcut profil cmdlet'lerinde yapılan değişiklikler
 
 - [Add-AzureRmAccount][login] - İşlem veya mevcut kullanıcı için oturum açma kapsamının ayarlanmasına izin verir.
-  Oturum açtıktan sonra varsayılan bağlamı adlandırmaya olanak tanır.
+  Kimlik doğrulamasından sonra varsayılan bağlamı adlandırmaya olanak tanır.
 - [Import-AzureRmContext][import] - İşlem veya mevcut kullanıcı için oturum açma kapsamının ayarlanmasına izin verir.
 - [Set-AzureRmContext][set-context] - Mevcut adlandırılmış bağlamların ve işlem ya da mevcut kullanıcıdaki kapsam değişikliklerinin seçilmesine olanak tanır.
 
