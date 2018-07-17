@@ -1,5 +1,0 @@
-- name: Genel Bakış
-  href: overview.md
-  items:
-    - name: Yükleme
-      href: install-azure-ps.md
