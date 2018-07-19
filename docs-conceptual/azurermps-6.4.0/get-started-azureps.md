@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: get-started-article
 ms.date: 11/15/2017
-ms.openlocfilehash: 0228db32c313626029d1a54b8d5c2c8ddbfae7a8
+ms.openlocfilehash: 5354a75e969e084d6457d0566a516705f365476f
 ms.sourcegitcommit: cb1fd248920d7efca67bd6c738a3b47206df7890
 ms.translationtype: HT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 07/13/2018
-ms.locfileid: "39025047"
+ms.locfileid: "39025421"
 ---
 # <a name="get-started-with-azure-powershell"></a>Azure PowerShell’i kullanmaya başlama
 
@@ -48,7 +48,7 @@ Ayrıca Azure PowerShell yükleyip bir PowerShell oturumunda yerel olarak kullan
 
 Etkileşimli olarak oturum açın:
 
-1. `Connect-AzureRmAccount` yazın. Azure kimlik bilgilerinizi isteyen bir iletişim kutusu açılır. '-Environment' seçeneğini kullanarak Azure Çin veya Azure Almanya’da oturum açabilirsiniz.
+1. `Connect-AzureRmAccount` yazın. Azure kimlik bilgilerinizi isteyen bir iletişim kutusu açılır. '-Environment' seçeneğini kullanarak Azure Çin veya Azure Almanya için kimlik doğrulaması yapabilirsiniz.
 
    Örneğin: Connect-AzureRmAccount -Environment AzureChinaCloud
 
