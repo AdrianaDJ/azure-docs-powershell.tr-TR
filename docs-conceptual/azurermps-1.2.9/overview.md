@@ -8,12 +8,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.manager: carmonm
 ms.date: 08/31/2017
-ms.openlocfilehash: d36952b38a36a5196ee5b38ed048366da5416f0b
-ms.sourcegitcommit: 2eea03b7ac19ad6d7c8097743d33c7ddb9c4df77
+ms.openlocfilehash: ff5ee02b11b6f0649e20b056c14fc8a9b3ba6276
+ms.sourcegitcommit: cb1fd248920d7efca67bd6c738a3b47206df7890
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34819992"
+ms.lasthandoff: 07/13/2018
+ms.locfileid: "39025030"
 ---
 # <a name="overview-of-azure-powershell"></a>Azure PowerShell’e Genel Bakış
 
@@ -31,8 +31,7 @@ Aşağıdaki örnekler, yaygın senaryoları Azure PowerShell ile nasıl gerçek
 > [!NOTE]
 > Dönüştürülemeyen klasik dağıtım modelini kullanan dağıtımlarınız varsa, Azure PowerShell'in Hizmet Yönetimi sürümünü yükleyebilirsiniz. Daha fazla bilgi için bkz. [Azure PowerShell Hizmet Yönetimi modülünü yükleme](/powershell/azure/servicemanagement/install-azure-ps).
 
-
-### <a name="need-help-with-powershell"></a>PowerShell konusunda yardıma mı ihtiyacınız var?
+## <a name="learn-powershell-basics"></a>PowerShell temel bilgilerini öğrenme
 
 PowerShell'i tanımıyorsanız, PowerShell'e giriş makalesi size yardımcı olabilir.
 
