@@ -6,13 +6,13 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 5/1/2018
-ms.openlocfilehash: 4f9c99152fd6ddc23aec005c8e8957e545e65246
-ms.sourcegitcommit: dca906e73e943aac207cee23b79915773419c673
+ms.date: 05/01/2018
+ms.openlocfilehash: 72a0e9ca8562dc06a1fe2718658172ce9ee20f0e
+ms.sourcegitcommit: 971f19181b2cd68b7845bbebdb22858c06541c8c
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43250046"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43383949"
 ---
 # <a name="breaking-changes-for-microsoft-azure-powershell-600"></a>Microsoft Azure PowerShell 6.0.0 için hataya neden olan değişiklikler
 
@@ -22,7 +22,7 @@ Bu belge, Microsoft Azure PowerShell cmdlet’lerini kullananlar için hem bozuc
 
 - [Hataya neden olan genel değişiklikler](#general-breaking-changes)
     - [Gereken en düşük PowerShell sürümü 5.0’a yükseldi](#minimum-powershell-version-required-bumped-to-50)
-    - [Varsayılan olarak etkinleştirilen bağlam otomatik kaydı](#context-autosaved-enabled-by-default)
+    - [Varsayılan olarak etkinleştirilen bağlam otomatik kaydı](#context-autosave-enabled-by-default)
     - [Etiket diğer adlarının kaldırılması](#removal-of-tags-alias)
 - [AzureRM.Compute cmdlet’lerinde hataya neden olan değişiklikler](#breaking-changes-to-azurermcompute-cmdlets)
 - [AzureRM.DataLakeStore cmdlet’lerinde hataya neden olan değişiklikler](#breaking-changes-to-azurermdatalakestore-cmdlets)
