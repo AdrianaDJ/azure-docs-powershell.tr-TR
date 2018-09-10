@@ -7,19 +7,68 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.workload: ''
-ms.date: 5/1/2018
-ms.openlocfilehash: 6043d17df1b5e91521bad31e65372c10ee6a5c6a
-ms.sourcegitcommit: dca906e73e943aac207cee23b79915773419c673
+ms.date: 08/28/2018
+ms.openlocfilehash: f4f3141998be14f0b5b223aed1af283534bf061d
+ms.sourcegitcommit: 971f19181b2cd68b7845bbebdb22858c06541c8c
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43250018"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43383847"
 ---
 # <a name="release-notes"></a>Sürüm notları
 
 Azure PowerShell'in bu sürümünde yapılan değişikliklerin listesi aşağıda verilmiştir.
 
 ---
+## <a name="681---august-2018"></a>6.8.1 - Ağustos 2018
+#### <a name="general"></a>Genel
+* Varsayılan kaynak gruplarının ayarlanmamasına neden olan sorun düzeltildi.
+* Ortak çalışma zamanı bütünleştirilmiş kodları güncelleştirildi
+
+#### <a name="azurermapimanagement"></a>AzureRM.ApiManagement
+* Varsayılan kaynak gruplarının ayarlanmamasına neden olan sorun düzeltildi.
+* https://github.com/Azure/azure-powershell/issues/6603 sorunu düzeltildi
+    - Import-AzureRmApiManagementApi ve *-AzureRmApiManagementCertificate cmdlet’leri artık göreli yolları işleyebiliyor
+* https://github.com/Azure/azure-powershell/issues/6879 sorunu düzeltildi
+    - CertificateInformation, Set-AzureRmApiManagement cmdlet’inin düzgün çalışmasını sağlayan, ayarlanabilir bir özelliktir. 4.0.4-preview nuget’e yükselterek düzeltildi
+* https://github.com/Azure/azure-powershell/issues/6853 sorunu düzeltildi
+    - Odata filtresi Ürün üzerinde Ada Göre Arama için düzeltildi
+* https://github.com/Azure/azure-powershell/issues/6814 sorunu düzeltildi
+    - Odata filtresi API üzerinde Ada Göre Arama için düzeltildi
+* Azure İzleyici günlükçüsüne yönelik destek eklendi
+
+
+#### <a name="azurermcompute"></a>AzureRM.Compute
+* Hata çıktısında hedefin eksik olmasına neden olan sorun düzeltildi.
+* Yönetilen diske sahip VM için depolama hesabı türüyle ilgili sorun düzeltildi
+* Varsayılan kaynak gruplarının ayarlanmamasına neden olan sorun düzeltildi.
+* Azure Çin gibi diğer ortamlar için AEM Uzantı cmdlet'leri düzeltildi
+
+#### <a name="azurermnetwork"></a>AzureRM.Network
+* Varsayılan cmdlet çıkış gösterimi, tablo görünümü olarak değiştirildi
+
+#### <a name="azurermpowerbiembedded"></a>AzureRM.PowerBIEmbedded
+* Duraklatılmış kapasite ölçeklendirilmeye çalışılırken Update-AzureRmPowerBIEmbeddedCapacity üzerindeki hata düzeltildi
+
+
+#### <a name="azurermresources"></a>AzureRM.Resources
+* Market’ten yönetilen uygulama oluşturmayla ilgili sorun düzeltildi.
+
+#### <a name="azurermservicebus"></a>AzureRM.ServiceBus
+* Düzeltilen sorunlar
+    - https://github.com/Azure/azure-powershell/issues/5058
+    - https://github.com/Azure/azure-powershell/issues/5055
+    - https://github.com/Azure/azure-powershell/issues/6891
+
+#### <a name="azurermtrafficmanager"></a>AzureRM.TrafficManager
+* Çoklu değer yönlendirme yöntemi desteği eklendi
+    - Çoklu değer yönlendirme için yeni 'MaxReturn' parametresi
+* Alt ağ yönlendirme yöntemi desteği eklendi
+    - Uç noktalarda IP adresi aralıkları (alt ağları) desteği
+* Profillerde Özel Üst Bilgi desteği eklendi
+* Profillerde Beklenen durum kodu aralığı desteği eklendi
+* Uç noktalarda Özel Üst Bilgi desteği eklendi
+
 ## <a name="680---august-2018"></a>6.8.0 - Ağustos 2018
 #### <a name="general"></a>Genel
 * Varsayılan kaynak gruplarının ayarlanmamasına neden olan sorun düzeltildi.
