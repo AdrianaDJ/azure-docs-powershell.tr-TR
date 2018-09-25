@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/15/2017
-ms.openlocfilehash: caacf32af78b98e8d9d455a8c4dd0bbb698d355f
-ms.sourcegitcommit: cb1fd248920d7efca67bd6c738a3b47206df7890
+ms.openlocfilehash: 71a2554052f5a25ea86fe44b6dcf5d9343c81f3e
+ms.sourcegitcommit: bc88e64c494337821274d6a66c1edad656c119c5
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39024588"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46301114"
 ---
 # <a name="log-in-with-azure-powershell"></a>Azure PowerShell ile oturum açma
 
@@ -51,11 +51,11 @@ Hizmet sorumluları kaynakları düzenlemek amacıyla kullanabileceğiniz, etkil
     CurrentStorageAccount :
     ```
 
-### <a name="log-in-using-an-azure-vm-managed-service-identity"></a>Azure VM Yönetilen Hizmet Kimliği kullanarak oturum açma
+### <a name="log-in-using-managed-identities-for-azure-resources"></a>Azure kaynakları için yönetilen kimlikleri kullanarak oturum açma
 
-Yönetilen Hizmet Kimliği (MSI), Azure Active Directory’nin bir önizleme özelliğidir. Oturum açmak için bir MSI hizmet sorumlusu kullanabilir ve diğer kaynaklara erişmek için yalnızca uygulamaya yönelik bir erişim belirteci edinebilirsiniz.
+Azure kaynakları için yönetilen kimlikler bir Azure Active Directory özelliğidir. Oturum açmak için bir yönetilen kimlik hizmet sorumlusu kullanabilir ve diğer kaynaklara erişmek için yalnızca uygulamaya yönelik bir erişim belirteci alabilirsiniz.
 
-MSI hakkında daha fazla bilgi için bkz. [Oturum açma ve belirteç edinme için Azure VM Yönetilen Hizmet Kimliği’ni (MSI) kullanma](/azure/active-directory/msi-how-to-get-access-token-using-msi).
+Azure kaynaklarına ilişkin yönetilen kimlikler hakkında daha fazla bilgi için bkz. [Erişim belirteci almak için Azure VM'de Azure kaynaklarına ilişkin yönetilen kimlikleri kullanma](/azure/active-directory/managed-identities-azure-resources/how-to-use-vm-token).
 
 ## <a name="log-in-to-another-cloud"></a>Başka bir bulut oturumu açma
 
