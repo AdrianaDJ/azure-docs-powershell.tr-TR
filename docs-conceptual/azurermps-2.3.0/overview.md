@@ -1,6 +1,6 @@
 ---
-title: Azure Stack Yönetici için PowerShell’e genel bakış | Microsoft Docs
-description: Yükleme ve yapılandırma yönergeleriyle birlikte Azure Stack Yönetici için PowerShell’e genel bakış.
+title: Azure Stack PowerShell’e genel bakış | Microsoft Docs
+description: Yükleme ve yapılandırma yönergeleriyle birlikte Azure Stack için PowerShell’e genel bakış.
 author: bganapa
 ms.author: bganapa
 manager: knithinc
@@ -8,47 +8,53 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.manager: knithinc
 ms.date: 09/21/2018
-ms.openlocfilehash: fb892daeafb1365ea62324392ac806cf9f3d39cf
+ms.openlocfilehash: d514e43d82bcb51f65831dc506e58e8747db0381
 ms.sourcegitcommit: 19dffee617477001f98d43e39a50ce1fad087b74
 ms.translationtype: HT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 09/27/2018
-ms.locfileid: "47179148"
+ms.locfileid: "47178468"
 ---
-# <a name="azure-stack-module-130"></a>Azure Stack Modülü 1.3.0
+# <a name="azurerm-module-230"></a>AzureRM Modülü 2.3.0
 
 ## <a name="requirements"></a>Gereksinimler:
-Desteklenen en düşük Azure Stack sürümü 1804’tür.
+Desteklenen en düşük Azure Stack sürümü 1808 sürümüdür.
 
 Not: Daha önceki bir sürümü kullanıyorsanız sürüm 1.2.11’i yükleyin
 
-## <a name="known-issues"></a>Bilinen sorunlar:
-
-- Uyarıyı Kapatma için Azure Stack sürümü 1803 gereklidir
-- Bazı Depolama cmdlet’leri için Azure Stack sürümü 1804 gereklidir
-- New-AzsOffer komutu genel durumlu bir teklif oluşturmaya izin vermez. Durumu değiştirmek için Set-AzsOffer cmdlet’inin sonradan çağrılması gerekir.
-- IP Havuzu, yeniden dağıtma olmadan kaldırılamaz
-
-## <a name="breaking-changes"></a>Hataya Neden Olan Değişiklikler
-1.2.11’den geçirilen tüm hataya neden olan değişiklikler burada https://aka.ms/azspowershellmigration belgelenmiştir
 
 ## <a name="install"></a>Yükleme
-```
-# Remove previous Versions
-Uninstall-Module AzureRM.AzureStackAdmin -Force
-Uninstall-Module AzureRM.AzureStackStorage -Force
+```powershell
+# Remove previous versions of AzureStack modules
 Uninstall-Module -Name AzureStack -Force 
+Uninstall-Module -Name AzureRM -Force 
+Uninstall-Module AzureRM.AzureStackAdmin -Force -ErrorAction Continue
+Uninstall-Module AzureRM.AzureStackStorage -Force -ErrorAction Continue
+Get-Module Azs.* -ListAvailable | Uninstall-Module -Force
+Get-Module Azure.* -ListAvailable | Uninstall-Module -Force
 
 
 # Install the AzureRM.Bootstrapper module. Select Yes when prompted to install NuGet
 Install-Module -Name AzureRm.BootStrapper
 
 # Install and import the API Version Profile required by Azure Stack into the current PowerShell session.
-Use-AzureRmProfile -Profile 2017-03-09-profile -Force
+Use-AzureRmProfile -Profile 2018-03-01-hybrid -Force
 
-# Install Azure Stack Admin Module
-Install-Module -Name AzureStack -RequiredVersion 1.3.0
 ```
+
+##<a name="release-notes"></a>Sürüm Notları
+* 2.3.0 sürümünde birçok hataya neden olan değişiklik bulunmaktadır. 1.2.11 sürümünden yükseltmek için https://aka.ms/azspowershellmigration sayfasındaki geçiş kılavuzuna bakabilirsiniz
+* Bu sürüm özel Azure Stack API profili 2018-03-01-hybrid sürümüne karşılık gelmektedir
+* Tüm modüller AzureRm.Profile modülü bağımlılığı için daha büyük veya eşit hale geldi.
+* Modüller tarafından desteklenen API sürümleri güncelleştirildi. 
+    * İşlem - 30.03.2017
+    * Ağ - 01.10.2017
+    * Depolama - 01.01.2016
+    * Kaynaklar - 01.02.2018
+    * Anahtar Kasası - 01.10.2016
+    * DNS - 01.04.2016
+* Bu kaynak türlerinin her biri için tam kapsamlı API sürümü eşlemesi için bkz. https://github.com/Azure/azure-rest-api-specs/blob/master/profile/2018-03-01-hybrid.json
+
 ## <a name="content"></a>İçerik:
 ### <a name="azure-bridge"></a>Azure Bridge
 Resimleri Azure’dan genel olarak dağıtmaya olanak tanıyan Azure Stack AzureBridge yönetici modülünün önizleme sürümü.
@@ -63,7 +69,7 @@ Yöneticilerin şunları yapmasını sağlayan Yedekleme yönetici modülünün 
 Azure Stack sisteminde toplu veri kullanımını görüntülemenin bir yolunu sağlayan Azure Stack Ticaret yönetici modülünün önizleme sürümü.
 
 ### <a name="compute"></a>İşlem
-Kota işleme, platform resimleri ve sanal makine eklentilerini yönetme işlevini sunan Azure Stack İşlem yönetici modülünün önizleme sürümü.
+Kota işleme, platform görüntüleri, yönetilen diskler ve sanal makine eklentilerini yönetme işlevini sunan Azure Stack İşlem yönetici modülünün önizleme sürümü.
 
 ### <a name="fabric"></a>Fabric
 Yöneticilerin altyapı bileşenlerini görüntülemesine ve yönetmesine olanak tanıyan Azure Stack Fabric yönetici modülünün önizleme sürümü:
