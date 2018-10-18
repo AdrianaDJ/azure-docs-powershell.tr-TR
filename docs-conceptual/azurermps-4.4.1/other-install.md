@@ -7,16 +7,16 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/06/2017
-ms.openlocfilehash: abf6aad6a04ffcf15b8fc38b47477caa1a04e015
-ms.sourcegitcommit: cb1fd248920d7efca67bd6c738a3b47206df7890
+ms.openlocfilehash: b23d8071c3c91bee1387c54cce1a34004ecdd9ad
+ms.sourcegitcommit: f6f5e256143aa6c097de3e57e930d8badea49f30
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39025404"
+ms.lasthandoff: 10/18/2018
+ms.locfileid: "49399170"
 ---
 # <a name="other-installation-methods"></a>Diğer yükleme yöntemleri
 
-Azure PowerShell’i yüklemek için birden çok yöntem vardır. Tercih edilen yöntem, PowerShell Galerisi ile PowerShellGet’i kullanmaktır. Azure PowerShell, Web Platformu Yükleyicisi (WebPI) ya da GitHub'dan indirilebilen MSI dosyası kullanılarak Windows'a yüklenebilir. Azure PowerShell bir Docker kapsayıcısına da yüklenebilir.
+Azure PowerShell’i yüklemek için birden çok yöntem vardır. Tercih edilen yöntem, PowerShell Galerisi ile PowerShellGet’i kullanmaktır. Azure PowerShell, Web Platformu Yükleyicisi (WebPI) ya da GitHub'dan indirilebilen MSI dosyası kullanılarak Windows'a yüklenebilir.
 
 ## <a name="install-on-windows-using-the-web-platform-installer"></a>Web Platformu Yükleyicisini kullanarak Windows'a yükleme
 
@@ -64,28 +64,3 @@ Import-Module "$env:ProgramFiles(x86)\Microsoft SDKs\Azure\PowerShell\AzureRM.ps
 
 Azure PowerShell, [GitHub](https://github.com/Azure/azure-powershell/releases/latest)’dan indirilebilen MSI dosyası kullanılarak yüklenebilir. Azure modüllerinin önceki sürümlerini yüklediyseniz, bunlar yükleyici tarafından otomatik olarak kaldırılır. MSI paketi, modülleri `$env:ProgramFiles\WindowsPowerShell\Modules` konumuna yükler ancak sürüme özel klasörler oluşturmaz.
 
-## <a name="install-in-a-docker-container"></a>Bir Docker kapsayıcısına yükleme
-
-Azure PowerShell ile önceden yapılandırılmış bir Docker görüntüsü sunuyoruz.
-
-Kapsayıcıyı `docker run` komutuyla çalıştırın.
-
-```powershell
-docker run azuresdk/azure-powershell
-```
-
-Ayrıca, bir PowerShell Core kapsayıcısı olarak bir cmdlet alt kümesi sunarız.
-
-Mac/Linux için `latest` görüntüsünü kullanın.
-
-```bash
-docker run azuresdk/azure-powershell-core:latest
-```
-
-Windows için `nanoserver` görüntüsünü kullanın.
-
-```powershell
-docker run azuresdk/azure-powershell-core:nanoserver
-```
-
-Azure PowerShell, [PowerShell Galerisi](https://www.powershellgallery.com/)’nden `Install-Module` aracılığıyla görüntüye yüklenir.

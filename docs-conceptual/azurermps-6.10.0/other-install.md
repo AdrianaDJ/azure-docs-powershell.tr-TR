@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/11/2018
-ms.openlocfilehash: 6bf66e312557f047a9393e26b9de736c1c55c261
-ms.sourcegitcommit: a749eb729f583c9d0dd86141bbd04984d77ae9ab
+ms.openlocfilehash: 52fa80542af39a2a768cc54e5b6bd8d0b8246c9f
+ms.sourcegitcommit: f6f5e256143aa6c097de3e57e930d8badea49f30
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "48889267"
+ms.lasthandoff: 10/18/2018
+ms.locfileid: "49399034"
 ---
 # <a name="install-azure-powershell-on-windows-with-msi"></a>MSI ile Windows'a Azure PowerShell yükleme
 
@@ -21,8 +21,6 @@ Bu yükleme yöntemlerini ancak sisteminiz için gerekli olduğunda kullanın. A
 
 > [!NOTE]
 > Azure PowerShell 6.x ve üzeri sürümler için Web Platformu Yükleyicisi ile yükleme desteği sunulmamaktadır. Web Platformu Yükleyicisi'ni kullanmanız gerekiyorsa lütfen MSI kullanmayı veya Azure PowerShell'in eski bir sürümünü yüklemeyi deneyin.
-
-Azure PowerShell'i bir Docker kapsayıcısında çalıştırmak için bkz. [Azure PowerShell'i Docker'da çalıştırma](azurerm-ps-in-docker.md).
 
 Linux veya macOS ortamlarına yüklemek için bkz. [Azure PowerShell'i macOS veya Linux'a yükleme](install-azurermps-maclinux.md).
 
