@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/30/2017
-ms.openlocfilehash: 73aa50b75366bc1e095c00c3d25429afdde21835
-ms.sourcegitcommit: cb1fd248920d7efca67bd6c738a3b47206df7890
+ms.openlocfilehash: 9ae0d661630bf4e080b3bbaa7f357c384ef68cc4
+ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39024656"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51211511"
 ---
 # <a name="formatting-query-results"></a>Sorgu sonuçlarını biçimlendirme
 
@@ -29,7 +29,7 @@ Varsayılan olarak her PowerShell cmdlet’i, cmdlet’in okunmasını kolaylaş
 
 Bu örnekte, varsayılan aboneliğimizdeki Azure VM'lerinin listesini alırız.  Get-AzureRmVM komutu, varsayılan olarak bir tablo biçiminde çıktı oluşturur.
 
-```powershell
+```powershell-interactive
 Get-AzureRmVM
 ```
 
@@ -42,7 +42,7 @@ MYWESTEURG          MyWin2016VM westeurope Standard_DS1_v2 Windows   mywin2016vm
 
 Döndürülen sütunları sınırlamak isterseniz `Format-Table` cmdlet’ini kullanabilirsiniz. Aşağıdaki örnekte, aynı sanal makine listesini alıyoruz ancak çıktıyı yalnızca VM’nin adı, kaynak grubu ve VM’nin konumu ile sınırlıyoruz.  `-Autosize` parametresi, sütunları veri boyutuna göre boyutlandırır.
 
-```powershell
+```powershell-interactive
 Get-AzureRmVM | Format-Table Name,ResourceGroupName,Location -AutoSize
 ```
 
@@ -55,7 +55,7 @@ MyWin2016VM   MYWESTEURG        westeurope
 
 İsterseniz bilgileri bir liste biçiminde görüntüleyebilirsiniz. Aşağıdaki örnekte `Format-List` cmdlet’i kullanılarak bunun nasıl yapılacağı gösterilir.
 
-```powershell
+```powershell-interactive
 Get-AzureRmVM | Format-List Name,VmId,Location,ResourceGroupName
 ```
 
@@ -75,7 +75,7 @@ ResourceGroupName : MYWESTEURG
 
 PowerShell, gereksinimlerinizi karşılamak için kullanabileceğiniz birden çok çıktı biçimi de sunar.  Aşağıdaki örnekte, `Select-Object` cmdlet’ini kullanarak aboneliğimizdeki sanal makinelerin özniteliklerini alır ve çıktıyı bir veritabanı ya da elektronik tabloya kolayca aktarılabilmesi için CSV biçimine dönüştürürüz.
 
-```powershell
+```powershell-interactive
 Get-AzureRmVM | Select-Object ResourceGroupName,Id,VmId,Name,Location,ProvisioningState | ConvertTo-Csv -NoTypeInformation
 ```
 
@@ -87,7 +87,7 @@ Get-AzureRmVM | Select-Object ResourceGroupName,Id,VmId,Name,Location,Provisioni
 
 Çıktıyı JSON biçimine de dönüştürebilirsiniz.  Aşağıdaki örnekte aynı VM listesi oluşturulur, ancak çıktı biçimi JSON olarak değiştirilir.
 
-```powershell
+```powershell-interactive
 Get-AzureRmVM | Select-Object ResourceGroupName,Id,VmId,Name,Location,ProvisioningState | ConvertTo-Json
 ```
 

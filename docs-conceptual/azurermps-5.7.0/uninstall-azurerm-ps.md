@@ -7,12 +7,12 @@ ms.author: sttramer
 ms.manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.openlocfilehash: f19f9fc9fb9afabdddcbfc98864c63762753e6f0
-ms.sourcegitcommit: cb1fd248920d7efca67bd6c738a3b47206df7890
+ms.openlocfilehash: 3828a6f9d60a68c2837cc201a50d8707324f4f0a
+ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39024673"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51211239"
 ---
 # <a name="uninstall-the-azure-powershell-module"></a>Azure PowerShell modülünü kaldırma
 
@@ -36,7 +36,7 @@ Azure PowerShell'i PowerShellGet kullanarak yüklediyseniz [Uninstall-Module](/p
 
 Azure PowerShell'in tek bir sürümünü tamamen kaldırmak için aşağıdaki betiği kullanabilirsiniz. Betik PowerShell Galerisi'ne sorgu göndererek bağımlı alt modüllerin listesini alır. Ardından her alt modülün doğru sürümünü kaldırır.
 
-```powershell
+```powershell-interactive
 function Uninstall-AllModules {
   param(
     [Parameter(Mandatory=$true)]
@@ -70,7 +70,7 @@ function Uninstall-AllModules {
 
 Bu işlevi kullanmak için kodu kopyalayıp PowerShell oturumunuza yapıştırın. Aşağıdaki örnekte bu işlevi Azure PowerShell'in eski bir sürümünü kaldırma amacıyla nasıl çalıştıracağınızı görebilirsiniz.
 
-```powershell
+```powershell-interactive
 Uninstall-AllModules -TargetModule AzureRM -Version 4.4.1 -Force
 ```
 

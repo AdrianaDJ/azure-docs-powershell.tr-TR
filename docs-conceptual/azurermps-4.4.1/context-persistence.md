@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 08/31/2017
-ms.openlocfilehash: 12a57f9aaf445fe95f731e09a6dcd174b97aa3fe
-ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
+ms.openlocfilehash: 85de158cd2a4c3a38f653a530db8e6fae50cb37f
+ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38100197"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51211137"
 ---
 # <a name="persisting-user-credentials-across-powershell-sessions"></a>Kullanıcı kimlik bilgilerini PowerShell oturumlarında kalıcı hale getirme
 
@@ -55,7 +55,7 @@ Azure bağlamlarını yönetmenizi sağlayan cmdlet’ler, hassas denetime de ol
 
   Birçok AzureRM cmdlet’i, bağlamı cmdlet’e parametre olarak geçirmenize olanak tanır. Bağlamı bir arka plan işine aşağıdaki örnekte gösterildiği gibi geçirebilirsiniz:
 
-  ```powershell
+  ```powershell-interactive
   PS C:\> $job = Start-Job { param ($ctx) New-AzureRmVm -AzureRmContext $ctx [... Additional parameters ...]} -ArgumentList (Get-AzureRmContext)
   ```
 
@@ -63,7 +63,7 @@ Azure bağlamlarını yönetmenizi sağlayan cmdlet’ler, hassas denetime de ol
 
   **Bağlam Otomatik Kaydı**’nı etkinleştirdiyseniz, arka plan işlerinde otomatik olarak kayıtlı varsayılan bağlam kullanılır.
 
-  ```powershell
+  ```powershell-interactive
   PS C:\> $job = Start-Job { New-AzureRmVm [... Additional parameters ...]}
   ```
 

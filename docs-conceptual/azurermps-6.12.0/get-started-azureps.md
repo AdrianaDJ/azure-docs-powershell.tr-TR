@@ -1,24 +1,32 @@
 ---
-title: Azure PowerShell’i kullanmaya başlama | Microsoft Docs
+title: Azure PowerShell’i kullanmaya başlama
 description: ''
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: get-started-article
-ms.date: 11/15/2017
-ms.openlocfilehash: 7eb5e3fad31b5a92be1cfb36aefdaa7b920bae5f
+ms.date: 09/11/2018
+ms.openlocfilehash: 5378cdb9d70aa0d2dc617d06d3c887ec20eb7767
 ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
 ms.translationtype: HT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 11/07/2018
-ms.locfileid: "51211035"
+ms.locfileid: "51213212"
 ---
-# <a name="getting-started-with-azure-powershell"></a>Azure PowerShell’i kullanmaya başlama
+# <a name="get-started-with-azure-powershell"></a>Azure PowerShell’i kullanmaya başlama
 
-Azure PowerShell, Azure kaynaklarını komut satırından yönetmek ve Azure Resource Manager’da çalışacak otomasyon betikleri oluşturmak için tasarlanmıştır. [Azure Cloud Shell](/azure/cloud-shell/overview) ile tarayıcınızda kullanabilir veya yerel makinenize yükleyip herhangi bir PowerShell oturumunda kullanabilirsiniz. Bu makale, Azure CLI 2.0’ı kullanmaya başlamanıza yardımcı olur ve bunun ardındaki temel kavramları öğretir.
+Azure PowerShell, Azure kaynaklarını komut satırından yönetmek ve Azure Resource Manager’da çalışacak otomasyon betikleri oluşturmak için tasarlanmıştır. Bunu [Azure Cloud Shell](/azure/cloud-shell/overview) ile tarayıcınızda kullanabilir veya yerel makinenize yükleyebilirsiniz. Bu makale Azure PowerShell'i kullanmaya başlamanıza yardımcı olur ve bu ürünün ardındaki temel kavramları öğretir.
 
-## <a name="connect"></a>Bağlan
+## <a name="install-azure-powershell"></a>Azure PowerShell'i yükleme
+
+İlk adım, Azure PowerShell’in en son sürümünü yüklediğinizden emin olmaktır. En son sürüm hakkında bilgi edinmek için [sürüm notlarına](./release-notes-azureps.md) bakın.
+
+1. [Azure PowerShell'i yükleme](install-azurerm-ps.md).
+
+2. Yüklemenin başarılı olduğunu doğrulamak için, komut satırınızdan `Get-Module AzureRM -ListAvailable` komutunu çalıştırın.
+
+## <a name="azure-cloud-shell"></a>Azure Cloud Shell
 
 Başlamanın en kolay yolu [Cloud Shell’i başlatmaktır](/azure/cloud-shell/quickstart).
 
@@ -36,39 +44,122 @@ Depolama alanınız oluşturulduktan sonra Cloud Shell, tarayıcıda bir PowerSh
 
 Ayrıca Azure PowerShell yükleyip bir PowerShell oturumunda yerel olarak kullanabilirsiniz.
 
-## <a name="install-azure-powershell"></a>Azure PowerShell'i yükleme
-
-İlk adım, Azure PowerShell’in en son sürümünü yüklediğinizden emin olmaktır. En son sürüm hakkında bilgi edinmek için [sürüm notlarına](./release-notes-azureps.md) bakın.
-
-1. [Azure PowerShell'i yükleme](install-azurerm-ps.md).
-
-2. Yüklemenin başarılı olduğunu doğrulamak için, komut satırınızdan `Get-Module AzureRM -ListAvailable` komutunu çalıştırın.
-
 ## <a name="sign-in-to-azure"></a>Azure'da oturum açma
 
 Etkileşimli olarak oturum açın:
 
-1. `Login-AzureRmAccount` yazın. Azure kimlik bilgilerinizi isteyen bir iletişim kutusu açılır. '-EnvironmentName' seçeneğini kullanarak Azure Çin veya Azure Almanya için kimlik doğrulaması yapabilirsiniz.
+1. `Connect-AzureRmAccount` yazın. Azure kimlik bilgilerinizi isteyen bir iletişim kutusu açılır. '-Environment' seçeneğini kullanarak Azure Çin veya Azure Almanya için kimlik doğrulaması yapabilirsiniz.
 
-   Örneğin: Login-AzureRmAccount -EnvironmentName AzureChinaCloud
+   Örneğin: Connect-AzureRmAccount -Environment AzureChinaCloud
 
 2. Hesabınızla ilişkili e-posta adresini ve parolayı yazın. Azure, kimlik bilgilerini doğrulayıp kaydeder ve pencereyi kapatır.
 
 Bir Azure hesabında oturum açtıktan sonra, Azure PowerShell cmdlet'lerini kullanarak aboneliğinizdeki kaynaklara erişebilir ve bunları yönetebilirsiniz.
 
-## <a name="create-a-resource-group"></a>Kaynak grubu oluşturma
+## <a name="create-a-windows-virtual-machine-using-simple-defaults"></a>Basit varsayılanları kullanarak Windows sanal makinesi oluşturma
 
-Artık her şeyi ayarladığımıza göre, şimdi de Azure PowerShell’i kullanarak Azure içinde kaynaklar oluşturabiliriz.
+`New-AzureRmVM` cmdlet’i yeni sanal makine oluşturmayı kolaylaştıran, basitleştirilmiş bir söz dizimi sağlar. Sağlamanız gereken yalnızca iki parametre değeri vardır: VM’nin adı ve VM’deki yerel yönetici hesabının kimlik bilgileri.
 
-İlk önce bir Kaynak Grubu oluşturun. Azure’daki Kaynak Grupları, mantıksal olarak bir araya getirmek istediğiniz birden çok kaynağı yönetmek için bir yol sağlar. Örneğin, uygulama veya proje için bir Kaynak Grubu oluşturup, bunu içine bir sanal makine, veritabanı ve CDN hizmeti ekleyebilirsiniz.
+İlk olarak kimlik bilgisi nesnesini oluşturun.
+
+```azurepowershell-interactive
+$cred = Get-Credential -Message "Enter a username and password for the virtual machine."
+```
+
+```output
+Windows PowerShell credential request.
+Enter a username and password for the virtual machine.
+User: localAdmin
+Password for user localAdmin: *********
+```
+
+Sonra VM’yi oluşturun.
+
+```azurepowershell-interactive
+New-AzureRmVM -Name SampleVM -Credential $cred
+```
+
+```output
+ResourceGroupName        : SampleVM
+Id                       : /subscriptions/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/resourceGroups/SampleVM/providers/Microsoft.Compute/virtualMachines/SampleVM
+VmId                     : 43f6275d-ce50-49c8-a831-5d5974006e63
+Name                     : SampleVM
+Type                     : Microsoft.Compute/virtualMachines
+Location                 : eastus
+Tags                     : {}
+HardwareProfile          : {VmSize}
+NetworkProfile           : {NetworkInterfaces}
+OSProfile                : {ComputerName, AdminUsername, WindowsConfiguration, Secrets}
+ProvisioningState        : Succeeded
+StorageProfile           : {ImageReference, OsDisk, DataDisks}
+FullyQualifiedDomainName : samplevm-2c0867.eastus.cloudapp.azure.com
+```
+
+Başka nelerin oluşturulduğunu ve VM’nin nasıl yapılandırıldığını merak ediyor olabilirsiniz. İlk olarak, kaynak gruplarımıza bakalım.
+
+```azurepowershell-interactive
+Get-AzureRmResourceGroup | Select-Object ResourceGroupName,Location
+```
+
+```output
+ResourceGroupName          Location
+-----------------          --------
+cloud-shell-storage-westus westus
+SampleVM                   eastus
+```
+
+**cloud-shell-storage-westus** kaynak grubu, Cloud Shell’i ilk kez kullandığınızda oluşturulur. **SampleVM** kaynak grubu `New-AzureRmVM` cmdlet’i tarafından oluşturuldu.
+
+Bu yeni kaynak grubunda başka hangi kaynaklar oluşturuldu?
+
+```azurepowershell-interactive
+Get-AzureRmResource |
+  Where ResourceGroupName -eq SampleVM |
+    Select-Object ResourceGroupName,Location,ResourceType,Name
+```
+
+```output
+ResourceGroupName          Location ResourceType                            Name
+-----------------          -------- ------------                            ----
+SAMPLEVM                   eastus   Microsoft.Compute/disks                 SampleVM_OsDisk_1_9b286c54b168457fa1f8c47...
+SampleVM                   eastus   Microsoft.Compute/virtualMachines       SampleVM
+SampleVM                   eastus   Microsoft.Network/networkInterfaces     SampleVM
+SampleVM                   eastus   Microsoft.Network/networkSecurityGroups SampleVM
+SampleVM                   eastus   Microsoft.Network/publicIPAddresses     SampleVM
+SampleVM                   eastus   Microsoft.Network/virtualNetworks       SampleVM
+```
+
+VM hakkında daha fazla bilgi edinelim. Bu örnek, VM oluşturmak için kullanılan İşletim Sistemi Görüntüsü hakkında nasıl bilgi alınacağını gösterir.
+
+```azurepowershell-interactive
+Get-AzureRmVM -Name SampleVM -ResourceGroupName SampleVM |
+  Select-Object -ExpandProperty StorageProfile |
+    Select-Object -ExpandProperty ImageReference
+```
+
+```output
+Publisher : MicrosoftWindowsServer
+Offer     : WindowsServer
+Sku       : 2016-Datacenter
+Version   : latest
+Id        :
+```
+
+## <a name="create-a-fully-configured-linux-virtual-machine"></a>Tam olarak yapılandırılmış bir Linux Sanal Makinesi oluşturma
+
+Önceki örnekte, Windows sanal makinesi oluşturmak için basitleştirilmiş söz dizimi ve varsayılan parametre değerleri kullanıldı. Bu örnekte, sanal makinenin tüm seçenekler için değerler sunuyoruz.
+
+### <a name="create-a-resource-group"></a>Kaynak grubu oluşturma
+
+Bu örnekte, bir Kaynak Grubu oluşturmak istiyoruz. Azure’daki Kaynak Grupları, mantıksal olarak bir araya getirmek istediğiniz birden çok kaynağı yönetmek için bir yol sağlar. Örneğin, uygulama veya proje için bir Kaynak Grubu oluşturup, bunu içine bir sanal makine, veritabanı ve CDN hizmeti ekleyebilirsiniz.
 
 Azure’un westeurope bölgesinde "MyResourceGroup" adlı bir kaynak grubu oluşturalım. Bunu yapmak için aşağıdaki komutu yazın:
 
-```powershell-interactive
+```azurepowershell-interactive
 New-AzureRmResourceGroup -Name 'myResourceGroup' -Location 'westeurope'
 ```
 
-```Output
+```output
 ResourceGroupName : myResourceGroup
 Location          : westeurope
 ProvisioningState : Succeeded
@@ -76,112 +167,20 @@ Tags              :
 ResourceId        : /subscriptions/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/resourceGroups/myResourceGroup
 ```
 
-## <a name="create-a-windows-virtual-machine"></a>Windows Sanal Makinesi oluşturma
+Bu yeni kaynak grubu, oluşturduğumuz yeni VM için gereken tüm kaynakları kapsayacak şekilde kullanılır. Yeni bir Linux VM oluşturmak için önce diğer gerekli kaynakları oluşturup bir yapılandırmaya atamamız gerekir. Daha sonra, bu yapılandırmayı kullanarak VM’yi oluşturabiliriz. Ayrıca, kullanıcı profilinizin .ssh dizininde `id_rsa.pub` adlı bir SSH genel anahtarınız da olmalıdır.
 
-Artık kaynak grubumuz olduğuna göre, şimdi de bu grubun içinde bir Windows sanal makinesi oluşturalım. Yeni bir VM oluşturmak için önce diğer gerekli kaynakları oluşturup bir yapılandırmaya atamamız gerekir. Daha sonra, bu yapılandırmayı kullanarak VM’yi oluşturabiliriz.
-
-### <a name="create-the-required-network-resources"></a>Gerekli ağ kaynaklarını oluşturma
+#### <a name="create-the-required-network-resources"></a>Gerekli ağ kaynaklarını oluşturma
 
 İlk olarak, sanal ağ oluşturma işleminde kullanılacak bir alt ağ yapılandırması oluşturmamız gerekir. Bu VM’ye bağlanabilmek için genel bir IP adresi de oluştururuz. Genel adrese erişimin güvenliğini sağlamak için bir ağ güvenlik grubu oluştururuz. Son olarak, önceki kaynakların tamamını kullanarak sanal NIC’yi oluştururuz.
 
-```powershell-interactive
-# Variables for common values
-$resourceGroup = "myResourceGroup"
-$location = "westeurope"
-$vmName = "myWindowsVM"
-
-# Create a subnet configuration
-$subnetConfig = New-AzureRmVirtualNetworkSubnetConfig -Name mySubnet1 -AddressPrefix 192.168.1.0/24
-
-# Create a virtual network
-$vnet = New-AzureRmVirtualNetwork -ResourceGroupName $resourceGroup -Location $location `
-  -Name MYvNET1 -AddressPrefix 192.168.0.0/16 -Subnet $subnetConfig
-
-# Create a public IP address and specify a DNS name
-$publicIp = New-AzureRmPublicIpAddress -ResourceGroupName $resourceGroup -Location $location `
-  -Name "mypublicdns$(Get-Random)" -AllocationMethod Static -IdleTimeoutInMinutes 4
-$publicIp | Select-Object Name,IpAddress
-
-# Create an inbound network security group rule for port 3389
-$nsgRuleRDP = New-AzureRmNetworkSecurityRuleConfig -Name myNetworkSecurityGroupRuleRDP  -Protocol Tcp `
-  -Direction Inbound -Priority 1000 -SourceAddressPrefix * -SourcePortRange * -DestinationAddressPrefix * `
-  -DestinationPortRange 3389 -Access Allow
-
-# Create a network security group
-$nsg = New-AzureRmNetworkSecurityGroup -ResourceGroupName $resourceGroup -Location $location `
-  -Name myNetworkSecurityGroup1 -SecurityRules $nsgRuleRDP
-
-# Create a virtual network card and associate with public IP address and NSG
-$nic = New-AzureRmNetworkInterface -Name myNic1 -ResourceGroupName $resourceGroup -Location $location `
-  -SubnetId $vnet.Subnets[0].Id -PublicIpAddressId $publicIp.Id -NetworkSecurityGroupId $nsg.Id
-```
-
-### <a name="create-the-virtual-machine"></a>Sanal makineyi oluşturma
-
-Öncelikle işletim sistemi için bir kimlik bilgileri kümesine ihtiyacımız vardır.
-
-```powershell-interactive
-# Create user object
-$cred = Get-Credential -Message "Enter a username and password for the virtual machine."
-```
-
-Artık gerekli kaynaklara sahip olduğumuza göre, VM’yi oluşturabiliriz. Bu adım için bir VM yapılandırma nesnesi oluşturur, sonra da bu yapılandırmayı kullanarak VM’yi oluştururuz.
-
-```powershell-interactive
-# Create a virtual machine configuration
-$vmConfig = New-AzureRmVMConfig -VMName $vmName -VMSize Standard_D1 |
-  Set-AzureRmVMOperatingSystem -Windows -ComputerName $vmName -Credential $cred |
-  Set-AzureRmVMSourceImage -PublisherName MicrosoftWindowsServer -Offer WindowsServer -Skus 2016-Datacenter -Version latest |
-  Add-AzureRmVMNetworkInterface -Id $nic.Id
-
-# Create a virtual machine
-New-AzureRmVM -ResourceGroupName $resourceGroup -Location $location -VM $vmConfig
-```
-
-VM tümüyle oluşturulduğunda ve kullanıma hazır olduğunda, `New-AzureRmVM` komutu sonuçları çıkarır.
-
-```Output
-RequestId IsSuccessStatusCode StatusCode ReasonPhrase
---------- ------------------- ---------- ------------
-                         True         OK OK
-```
-
-Şimdi, Uzak Masaüstü’nü ve VM’nin genel IP adresini kullanarak yeni oluşturduğunuz Windows Server VM’de oturum açın. Aşağıdaki komut, önceki betikte oluşturulan genel IP adresini görüntüler.
-
-```powershell-interactive
-$publicIp | Select-Object Name,IpAddress
-```
-
-```Output
-Name                  IpAddress
-----                  ---------
-mypublicdns1400512543 xx.xx.xx.xx
-```
-
-Windows tabanlı bir sistemdeyseniz, bunu komut satırından mstsc komutunu kullanarak gerçekleştirebilirsiniz:
-
-```powershell-interactive
-mstsc /v:xx.xxx.xx.xxx
-```
-
-Oturum açmak için, VM’yi oluştururken kullandığınız kullanıcı adı/parola bileşimini sağlayın.
-
-## <a name="create-a-linux-virtual-machine"></a>Linux Sanal Makinesi oluşturma
-
-Yeni bir Linux VM oluşturmak için önce diğer gerekli kaynakları oluşturup bir yapılandırmaya atamamız gerekir. Daha sonra, bu yapılandırmayı kullanarak VM’yi oluşturabiliriz. Burada, kaynak grubunu zaten daha önce gösterildiği gibi oluşturduğunuz varsayılır. Ayrıca, kullanıcı profilinizin .ssh dizininde `id_rsa.pub` adlı bir SSH genel anahtarınız da olmalıdır.
-
-### <a name="create-the-required-network-resources"></a>Gerekli ağ kaynaklarını oluşturma
-
-İlk olarak, sanal ağ oluşturma işleminde kullanılacak bir alt ağ yapılandırması oluşturmamız gerekir. Bu VM’ye bağlanabilmek için genel bir IP adresi de oluştururuz. Genel adrese erişimin güvenliğini sağlamak için bir ağ güvenlik grubu oluştururuz. Son olarak, önceki kaynakların tamamını kullanarak sanal NIC’yi oluştururuz.
-
-```powershell-interactive
+```azurepowershell-interactive
 # Variables for common values
 $resourceGroup = "myResourceGroup"
 $location = "westeurope"
 $vmName = "myLinuxVM"
 
 # Definer user name and blank password
-$securePassword = ConvertTo-SecureString ' ' -AsPlainText -Force
+$securePassword = ConvertTo-SecureString 'azurepassword' -AsPlainText -Force
 $cred = New-Object System.Management.Automation.PSCredential ("azureuser", $securePassword)
 
 # Create a subnet configuration
@@ -210,11 +209,11 @@ $nic = New-AzureRmNetworkInterface -Name myNic2 -ResourceGroupName $resourceGrou
   -SubnetId $vnet.Subnets[0].Id -PublicIpAddressId $publicIp.Id -NetworkSecurityGroupId $nsg.Id
 ```
 
-### <a name="create-the-virtual-machine"></a>Sanal makineyi oluşturma
+### <a name="create-the-vm-configuration"></a>VM yapılandırmasını oluşturma
 
-Artık gerekli kaynaklara sahip olduğumuza göre, VM’yi oluşturabiliriz. Bu adım için bir VM yapılandırma nesnesi oluşturur, sonra da bu yapılandırmayı kullanarak VM’yi oluştururuz.
+Gerekli kaynaklara sahip olduğumuza göre artık VM yapılandırması nesnesini oluşturabiliriz.
 
-```powershell-interactive
+```azurepowershell-interactive
 # Create a virtual machine configuration
 $vmConfig = New-AzureRmVMConfig -VMName $vmName -VMSize Standard_D1 |
   Set-AzureRmVMOperatingSystem -Linux -ComputerName $vmName -Credential $cred -DisablePasswordAuthentication |
@@ -222,20 +221,25 @@ $vmConfig = New-AzureRmVMConfig -VMName $vmName -VMSize Standard_D1 |
   Add-AzureRmVMNetworkInterface -Id $nic.Id
 
 # Configure SSH Keys
-$sshPublicKey = Get-Content "$env:USERPROFILE\.ssh\id_rsa.pub"
+$sshPublicKey = Get-Content -Raw "$env:USERPROFILE\.ssh\id_rsa.pub"
 Add-AzureRmVMSshPublicKey -VM $vmConfig -KeyData $sshPublicKey -Path "/home/azureuser/.ssh/authorized_keys"
+```
 
-# Create a virtual machine
+### <a name="create-the-virtual-machine"></a>Sanal makineyi oluşturma
+
+Artık VM yapılandırması nesnesini kullanarak VM’yi oluşturabiliriz.
+
+```azurepowershell-interactive
 New-AzureRmVM -ResourceGroupName $resourceGroup -Location $location -VM $vmConfig
 ```
 
-Artık VM oluşturulduğuna göre, bu VM’nin genel IP adresiyle SSH’yi kullanarak yeni Linux VM’nizde oturum açabilirsiniz:
+Artık VM oluşturulduğundan, bu VM’nin genel IP adresiyle SSH’yi kullanarak yeni Linux VM’nizde oturum açabilirsiniz:
 
 ```bash
 ssh xx.xxx.xxx.xxx
 ```
 
-```Output
+```output
 Welcome to Ubuntu 14.04.4 LTS (GNU/Linux 3.19.0-65-generic x86_64)
 
  * Documentation:  https://help.ubuntu.com/
@@ -272,13 +276,13 @@ Buraya kadar size Kaynak Grubu, Linux VM ve Windows Server VM’nin nasıl oluş
 
 Örneğin, yeni oluşturduğumuz VM’lerle ilişkilendirebileceğimiz bir Azure Ağ Yük Dengeleyicisi oluşturmak için, aşağıdaki oluşturma komutunu kullanabiliriz:
 
-```powershell-interactive
+```azurepowershell-interactive
 New-AzureRmLoadBalancer -Name MyLoadBalancer -ResourceGroupName myResourceGroup -Location westeurope
 ```
 
 Ayrıca, aşağıdaki komutu kullanarak altyapımız için yeni bir özel Sanal Ağ (Azure’da adı çoğunlukla "VNet" olarak geçer) oluşturabiliriz:
 
-```powershell-interactive
+```azurepowershell-interactive
 $subnetConfig = New-AzureRmVirtualNetworkSubnetConfig -Name mySubnet2 -AddressPrefix 10.0.0.0/16
 $vnet = New-AzureRmVirtualNetwork -ResourceGroupName myResourceGroup -Location westeurope `
   -Name MYvNET3 -AddressPrefix 10.0.0.0/16 -Subnet $subnetConfig
@@ -288,7 +292,7 @@ Azure’u ve Azure PowerShell’i güçlü kılan, bunları yalnızca bulut taba
 
 Örneğin, Azure PowerShell’i kullanarak bir Azure Uygulama Hizmeti oluşturabilirsiniz. Azure Uygulama Hizmeti, altyapı konusunda kaygılanmadan web uygulamalarını barındırmak için harika bir yol sağlayan bir yönetilen platform hizmetidir. Azure Uygulama Hizmetini oluşturduktan sonra, aşağıdaki komutları kullanarak Uygulama Hizmetinin içinde iki yeni Azure Web Uygulaması oluşturabilirsiniz:
 
-```powershell-interactive
+```azurepowershell-interactive
 # Create an Azure AppService that we can host any number of web apps within
 New-AzureRmAppServicePlan -Name MyAppServicePlan -Tier Basic -NumberofWorkers 2 -WorkerSize Small -ResourceGroupName myResourceGroup -Location westeurope
 
@@ -299,15 +303,15 @@ New-AzureRmWebApp -Name MyWebApp43433 -AppServicePlan MyAppServicePlan -Resource
 
 ## <a name="listing-deployed-resources"></a>Dağıtılan kaynakları listeleme
 
-Azure’da çalışmakta olan kaynakları listelemek için `Get-AzureRmResource` cmdlet’ini kullanabilirsiniz. Aşağıdaki örnekte, yeni kaynak grubunda biraz önce oluşturduğumuz kaynaklar gösterilmektedir.
+Azure’da çalışmakta olan kaynakları listelemek için `Get-AzureRmResource` cmdlet’ini kullanabilirsiniz. Aşağıdaki örnekte, yeni kaynak grubunda oluşturduğumuz kaynaklar gösterilir.
 
-```powershell-interactive
+```azurepowershell-interactive
 Get-AzureRmResource |
   Where-Object ResourceGroupName -eq myResourceGroup |
     Select-Object Name,Location,ResourceType
 ```
 
-```Output
+```output
 Name                                                  Location   ResourceType
 ----                                                  --------   ------------
 myLinuxVM_OsDisk_1_36ca038791f642ba91270879088c249a   westeurope Microsoft.Compute/disks
@@ -330,33 +334,34 @@ micromyresomywi032907510                              westeurope Microsoft.Stora
 
 Azure hesabınızı temizlemek için bu örnekte oluşturduğumuz kaynakları kaldırmak istersiniz. Artık ihtiyacınız olmayan kaynakları silmek için `Remove-AzureRm*` cmdlet’lerini kullanabilirsiniz. Oluşturduğumuz Windows VM’yi kaldırmak için aşağıdaki komutu kullanın:
 
-```powershell-interactive
+```azurepowershell-interactive
 Remove-AzureRmVM -Name myWindowsVM -ResourceGroupName myResourceGroup
 ```
 
 Kaynağı kaldırmak istediğinizi onaylamanız istenir.
 
-```Output
+```output
 Confirm
 Are you sure you want to remove resource group 'myResourceGroup'
 [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): Y
 ```
 
-Birçok kaynağı tek seferde silme seçeneğini de kullanabilirsiniz. Örneğin, aşağıdaki komut, bu Başlangıç öğreticisindeki tüm örnekler için kullandığımız "MyResourceGroup" adlı kaynak grubunu tamamen siler. Bu komut, kaynak grubunu ve gruptaki tüm kaynakları kaldırır.
+Bir kerede birçok kaynağı da silebilirsiniz. Örneğin, aşağıdaki komut, tüm örnekler için kullandığımız "MyResourceGroup" adlı kaynak grubunu siler.
+Gruptaki tüm kaynaklar da silinir.
 
-```powershell-interactive
+```azurepowershell-interactive
 Remove-AzureRmResourceGroup -Name myResourceGroup
 ```
 
-```Output
+```output
 Confirm
 Are you sure you want to remove resource group 'myResourceGroup'
 [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): Y
 ```
 
-Bu işlemin tamamlanması birkaç dakika sürebilir.
+Kaynakların sayısına ve türüne bağlı olarak bu görevin tamamlanması birkaç dakika sürebilir.
 
-## <a name="get-samples"></a>Örnekleri edinin
+## <a name="get-samples"></a>Örnekleri alın
 
 Azure PowerShell’i kullanmanın yolları hakkında daha fazla bilgi edinmek için [Linux VM’ler](/azure/virtual-machines/virtual-machines-linux-powershell-samples?toc=%2fpowershell%2fazure%%2ftoc.json), [Windows VM’ler](/azure/virtual-machines/virtual-machines-windows-powershell-samples?toc=%2fpowershell%2fazure%%2ftoc.json), [Web Apps](/azure/app-service-web/app-service-powershell-samples?toc=%2fpowershell%2fazure%%2ftoc.json) ve [SQL Veritabanları](/azure/sql-database/sql-database-powershell-samples?toc=%2fpowershell%2fazure%%2ftoc.json)’na yönelik en yaygın betiklerimizi inceleyin.
 
@@ -365,7 +370,7 @@ Azure PowerShell’i kullanmanın yolları hakkında daha fazla bilgi edinmek i�
 * [Azure PowerShell ile oturum açma](authenticate-azureps.md)
 * [Azure PowerShell ile Azure aboneliklerini yönetme](manage-subscriptions-azureps.md)
 * [Azure PowerShell’i kullanarak Azure’da hizmet sorumluları oluşturma](create-azure-service-principal-azureps.md)
-* Eski bir sürümden geçiş ile ilgili olarak Sürüm notlarını okuyun: [https://github.com/Azure/azure-powershell/tree/dev/documentation/release-notes](https://github.com/Azure/azure-powershell/tree/dev/documentation/release-notes).
+* Eski bir sürümden geçişle ilgili olarak sürüm notlarını okuyun: [https://github.com/Azure/azure-powershell/tree/dev/documentation/release-notes](https://github.com/Azure/azure-powershell/tree/dev/documentation/release-notes).
 * Topluluktan yardım alın:
   * [MSDN'deki Azure forumu](http://go.microsoft.com/fwlink/p/?LinkId=320212)
   * [stackoverflow](http://go.microsoft.com/fwlink/?LinkId=320213)

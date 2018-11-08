@@ -16,12 +16,12 @@ metadata:
   ms.technology: azure-powershell
   ms.topic: tutorial
   clicktale: true
-  ms.openlocfilehash: 44fc35219e108b47cfa1fac35b1444e20d0cc1a3
-  ms.sourcegitcommit: 1f699b72bf544d92459da9d888cc0091f9415b65
+  ms.openlocfilehash: aa674d7dabce15dd59a011947852cd4054d0600a
+  ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
   ms.translationtype: HT
   ms.contentlocale: tr-TR
-  ms.lasthandoff: 11/06/2018
-  ms.locfileid: "50971661"
+  ms.lasthandoff: 11/07/2018
+  ms.locfileid: "51213092"
 items:
 - durationInMinutes: 1
   content: >-
@@ -38,7 +38,7 @@ items:
     Azure PowerShell’in yerel bir yüklemesini kullanıyorsanız diğer adımları uygulamadan önce oturum açmanız gerekir.
 
 
-    ```powershell
+    ```powershell-interactive
 
     Connect-AzureRmAccount
 
@@ -54,7 +54,7 @@ items:
     Bu öğreticide, oluşturulan kaynakların tümü `TutorialResources` adlı tek bir gruba dahil edilir.
 
 
-    ```powershell
+    ```powershell-interactive
 
     New-AzureRmResourceGroup -Name TutorialResources -Location eastus
 
@@ -80,7 +80,7 @@ items:
     Yeni bir sanal makine oluşturabilmek için Windows VM’nin yönetici hesabının kullanıcı adını ve parolasını içeren bir kimlik bilgisi nesnesi oluşturmanız gerekir.
 
 
-    ```powershell
+    ```powershell-interactive
 
     $cred = Get-Credential -Message "Enter a username and password for the virtual machine."
 
@@ -110,7 +110,7 @@ items:
     Windows çalıştıran yeni bir sanal makine oluşturun.
 
 
-    ```powershell
+    ```powershell-interactive
 
     $vmParams = @{
       ResourceGroupName = 'TutorialResources'
@@ -143,7 +143,7 @@ items:
     VM hazır hale geldikten sonra Azure Portal’da veya \$newVM1 değişkenini inceleyerek sonuçları görüntüleyebilirsiniz.
 
 
-    ```powershell
+    ```powershell-interactive
 
     $newVM1
 
@@ -186,7 +186,7 @@ items:
     Şimdi, yeni oluşturduğumuz VM'den biraz daha ayrıntılı bilgi alalım. Bu örnekte, oluşturduğumuz VM’nin ve yönetici hesabının Adını doğrulayacağız.
 
 
-    ```powershell
+    ```powershell-interactive
 
     $newVM1.OSProfile | Select-Object ComputerName,AdminUserName
 
@@ -207,7 +207,7 @@ items:
     Ağ yapılandırması hakkında belirli bilgiler almak için diğer Azure PowerShell komutlarını kullanabiliriz.
 
 
-    ```powershell
+    ```powershell-interactive
 
     $newVM1 | Get-AzureRmNetworkInterface |
       Select-Object -ExpandProperty IpConfigurations |
@@ -232,7 +232,7 @@ items:
     VM’nin çalışır durumda olduğunu doğrulamak için Uzak Masaüstü aracılığıyla bağlantı kurmamız gerekiyor. Bunun için Genel IP adresini bilmemiz gerekir.
 
 
-    ```powershell
+    ```powershell-interactive
 
     $publicIp = Get-AzureRmPublicIpAddress -Name tutorialPublicIp -ResourceGroupName TutorialResources
 
@@ -259,7 +259,7 @@ items:
     VM’ye Uzak Masaüstü aracılığıyla bağlanmak için yerel makinenizden aşağıdaki komutu çalıştırabilirsiniz.
 
 
-    ```powershell
+    ```powershell-interactive
 
     mstsc.exe /v <PUBLIC_IP_ADDRESS>
 
@@ -273,7 +273,7 @@ items:
     İkinci VM mevcut alt ağı kullanır.
 
 
-    ```powershell
+    ```powershell-interactive
 
     $vm2Params = @{
       ResourceGroupName = 'TutorialResources'
@@ -328,7 +328,7 @@ items:
     Genel IP adresi \$newVM2 nesnesinin FullyQualifiedDomainName özelliğinde döndürüldüğünden, yeni VM’nin genel IP adresini almaya yönelik birkaç adımı atlayabilirsiniz. Uzak Masaüstü kullanarak bağlantı kurmak için aşağıdaki komutu kullanın.
 
 
-    ```powershell
+    ```powershell-interactive
 
     mstsc.exe /v $newVM2.FullyQualifiedDomainName
 
@@ -339,7 +339,7 @@ items:
     Öğretici tamamlandığına göre oluşturulan kaynakları temizlemenin zamanı geldi. `Remove-AzureRmResource` komutuyla kaynakları tek tek silebilirsiniz ancak bir kaynak grubundaki tüm kaynakları kaldırmanın en güvenli yolu `Remove-AzureRmResourceGroup` komutunu kullanarak grubu silmektir.
 
 
-    ```powershell
+    ```powershell-interactive
 
     $job = Remove-AzureRmResourceGroup -Name TutorialResources -Force -AsJob
 
@@ -363,7 +363,7 @@ items:
     Bu komut, öğretici sırasında oluşturulan kaynakları siler ve bunların doğru sırada serbest bırakılmasını sağlar. Silme işlemi gerçekleşirken `-AsJob` parametresi, PowerShell’in engellenmesini önler. Silme işlemi tamamlanana kadar bekleyin ve aşağıdaki komutu kullanın:
 
 
-    ```powershell
+    ```powershell-interactive
 
     Wait-Job -Id $job.Id
 

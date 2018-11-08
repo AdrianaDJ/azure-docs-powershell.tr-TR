@@ -6,15 +6,15 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 09/05/2017
-ms.openlocfilehash: 09858da9981c1136e2a39a079962c5b8fc39bde9
+ms.date: 09/11/2018
+ms.openlocfilehash: 245d69d3bcee3c502babe82395341efad2bc96d0
 ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
 ms.translationtype: HT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 11/07/2018
-ms.locfileid: "51211919"
+ms.locfileid: "51213192"
 ---
-# <a name="using-experimental-azure-powershell-modules"></a>Deneysel Azure PowerShell modüllerini kullanma
+# <a name="use-experimental-azure-powershell-modules"></a>Deneysel Azure PowerShell modüllerini kullanma
 
 Azure PowerShell ekibi Azure’da geliştirici araçlarına (özellikle CLI’ler) vurgu yaparak Azure PowerShell deneyiminde çok sayıda geliştirmeyi denemektedir.
 
@@ -30,11 +30,11 @@ Deneysel modüller şu adlandırma kuralını kullanır: `AzureRM.*.Experiments`
 
 Deneysel modüller, tıpkı mevcut Azure PowerShell modülleri gibi PowerShell Galerisinde yayımlanır. Deneysel modüllerin listesini görüntülemek için şu komutu çalıştırın:
 
-```powershell-interactive
+```azurepowershell-interactive
 Find-Module AzureRM.*.Experiments
 ```
 
-```Output
+```output
 Version Name                         Repository Description
 ------- ----                         ---------- -----------
 1.0.25  AzureRM.Compute.Experiments  PSGallery  Azure Compute experiments for VM creation
@@ -43,7 +43,7 @@ Version Name                         Repository Description
 
 Deneysel modülü yüklemek için, yükseltilmiş bir PowerShell oturumunda aşağıdaki komutları kullanın:
 
-```powershell-interactive
+```azurepowershell-interactive
 Install-Module AzureRM.Compute.Experiments
 Install-Module AzureRM.Websites.Experiments
 ```
@@ -89,8 +89,8 @@ Deneysel geliştirmeler, takımın deneme ile doğrulamayı istediği önemli bi
 
 Örneğin, "Web uygulaması oluşturma" senaryosunda mevcut bir git deposuna bir "azure" uzak birimini otomatik olarak ekleyen `-Git` veya `-AddRemote` olabilir.
 
-- Ayarlanabilir Varsayılanlar - Kullanıcılar `-ResourceGroupName` ve `-Location` gibi bazı yaygın parametrelerin varsayılan değerlerini ayarlayabilmelidir.
+- Ayarlanabilir Varsayılanlar - Kullanıcıların `-ResourceGroupName` ve `-Location` gibi yaygın parametreler için varsayılan değerleri ayarlayabilmesi gerekir.
 
-- Boyut Varsayılanları - Birçok Kaynak Sağlayıcısı farklı adlar kullandığından, kaynak "boyutları" kafa karıştırıcı olabilir (örneğin, "Standard\_DS1\_v2" veya "S1"). Bununla birlikte, çoğu kullanıcı daha çok maliyetle ilgilenir. Bu nedenle, bir fiyatlandırma zamanlamasına göre "evrensel" boyutlar tanımlamak mantıklıdır. Kullanıcılar belirli bir boyutu seçebilir veya bütçe kaynağına göre _en iyi seçeneği_ Azure PowerShell’in seçmesine izin verebilir.
+- Boyut Varsayılanları - Birçok Kaynak Sağlayıcısı farklı adlar kullandığından, kaynak "boyutları" kafa karıştırıcı olabilir (örneğin, "Standard\_DS1\_v2" veya "S1"). Bununla birlikte, çoğu kullanıcı daha çok maliyetle ilgilenir. Dolayısıyla bir fiyatlandırma zamanlamasına göre "evrensel" boyutlar tanımlamak mantıklıdır. Kullanıcılar belirli bir boyutu seçebilir veya bütçe kaynağına göre _en iyi seçeneği_ Azure PowerShell’in seçmesine izin verebilir.
 
-- Çıktı Biçimi - Azure PowerShell şu anda `PSObject` döndürmektedir ve çok az konsol çıktısı mevcuttur. Azure PowerShell’in kullanılan "akıllı varsayılanlar" ile ilgili bazı bilgileri kullanıcıya göstermesi gerekebilir.
+- Çıkış Biçimi - Azure PowerShell şu anda `PSObject` döndürmektedir ve çok az konsol çıkışı vardır. Azure PowerShell’in kullanılan "akıllı varsayılanlar" hakkındaki bazı bilgileri kullanıcıya göstermesi gerekebilir.

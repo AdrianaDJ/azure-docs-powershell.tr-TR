@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/15/2017
-ms.openlocfilehash: 71a2554052f5a25ea86fe44b6dcf5d9343c81f3e
-ms.sourcegitcommit: ff44dec6418a449757bded3c6ebe0a7d4c05ee6e
+ms.openlocfilehash: edbf17141cac4ea6e41282c8e1dd07c5b738351c
+ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "50737943"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51211613"
 ---
 # <a name="log-in-with-azure-powershell"></a>Azure PowerShell ile oturum açma
 
@@ -32,13 +32,13 @@ Hizmet sorumluları kaynakları düzenlemek amacıyla kullanabileceğiniz, etkil
 
 2. Hizmet sorumlusu ile oturum açın.
 
-    ```powershell
+    ```powershell-interactive
     Login-AzureRmAccount -ServicePrincipal -ApplicationId  "http://my-app" -Credential $pscredential -TenantId $tenantid
     ```
 
     TenantId’nizi almak için etkileşimli olarak oturum açın ve aboneliğinizden TenantId’yi edinin.
 
-    ```powershell
+    ```powershell-interactive
     Get-AzureRmSubscription
     ```
 
@@ -61,13 +61,13 @@ Azure kaynaklarına ilişkin yönetilen kimlikler hakkında daha fazla bilgi iç
 
 Azure Cloud Services, devletlerin veri işleme düzenlemelerine uygun farklı ortamlar sunar. Azure hesabınız kamu bulutlarından birindeyse oturum açtığınızda ilgili ortamı belirtmeniz gerekir. Örneğin hesabınız Çin bulutundaysa şu komutla oturum açmanız gerekir:
 
-```powershell
+```powershell-interactive
 Login-AzureRmAccount -EnvironmentName AzureChinaCloud
 ```
 
 Kullanabileceğiniz ortamların listesine ulaşmak için şu komutu kullanın:
 
-```powershell
+```powershell-interactive
 Get-AzureRmEnvironment | Select-Object Name
 ```
 

@@ -8,11 +8,11 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/09/2018
 ms.openlocfilehash: 390285bcf483e75b7a2b77d345ccb108669f66e5
-ms.sourcegitcommit: 1f699b72bf544d92459da9d888cc0091f9415b65
+ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "50971593"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51213124"
 ---
 # <a name="format-azurepowershell-cmdlet-output"></a>Azure PowerShell cmdlet'inin çıkışını biçimlendirme
 

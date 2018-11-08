@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 10/05/2018
-ms.openlocfilehash: e7d27c6f6d980c54e45620b179cf2e26ffed17f0
-ms.sourcegitcommit: 1f699b72bf544d92459da9d888cc0091f9415b65
+ms.openlocfilehash: f60ea1c608be4b1c8319d53303713ba039276abc
+ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "50972664"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51213116"
 ---
 # <a name="install-azure-powershell-on-macos-or-linux"></a>Azure PowerShell'i macOS veya Linux'a yükleme
 
@@ -46,7 +46,7 @@ pwsh
 
 Azure PowerShell'i yüklemek için şu komutu çalıştırın:
 
-```powershell
+```powershell-interactive
 Install-Module Az
 ```
 
@@ -75,7 +75,7 @@ Yükleme işlemine devam etmek için `Yes` veya `Yes to All` yanıtını verin.
 
 Var olan `AzureRM` modülüyle uyumlu çalışması için yeni `Az` modülü `AzureRM` cmdlet'leri için geriye doğru uyumlu takma ad oluşturma imkanına sahiptir. Modülü ilk kez kullanmadan önce aşağıdaki komutu kullanarak bu diğer adları ayarlayın:
 
-```powershell
+```powershell-interactive
 # Import the module into the PowerShell session
 Import-Module Az
 # Enable AzureRM aliases for the user
@@ -95,7 +95,7 @@ Bu işlem diğer adları yalnızca geçerli kullanıcı için ayarlar. Diğer ad
 
 Azure PowerShell ile çalışmaya başlamak için `Az` modülünü PowerShell oturumunuza [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) cmdlet'iyle yükledikten sonra Azure kimlik bilgilerinizle oturum açmanız gerekir. Modülü içeri aktarmak için yükseltilmiş ayrıcalıklara __gerek yoktur__.
 
-```powershell
+```powershell-interactive
 # Import the module into the PowerShell session
 Import-Module Az
 # Connect to Azure with an interactive dialog for sign-in

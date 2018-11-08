@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: get-started-article
 ms.date: 11/15/2017
-ms.openlocfilehash: 3a0d3d1d970f4458e66167fb55c840598ce59e13
-ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
+ms.openlocfilehash: 3114f9e9b36dc374f9fb2d402c448cff7fef0aa3
+ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38100435"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51211460"
 ---
 # <a name="getting-started-with-azure-powershell"></a>Azure PowerShell’i kullanmaya başlama
 
@@ -64,7 +64,7 @@ Artık her şeyi ayarladığımıza göre, şimdi de Azure PowerShell’i kullan
 
 Azure’un westeurope bölgesinde "MyResourceGroup" adlı bir kaynak grubu oluşturalım. Bunu yapmak için aşağıdaki komutu yazın:
 
-```powershell
+```powershell-interactive
 New-AzureRmResourceGroup -Name 'myResourceGroup' -Location 'westeurope'
 ```
 
@@ -84,7 +84,7 @@ Artık kaynak grubumuz olduğuna göre, şimdi de bu grubun içinde bir Windows 
 
 İlk olarak, sanal ağ oluşturma işleminde kullanılacak bir alt ağ yapılandırması oluşturmamız gerekir. Bu VM’ye bağlanabilmek için genel bir IP adresi de oluştururuz. Genel adrese erişimin güvenliğini sağlamak için bir ağ güvenlik grubu oluştururuz. Son olarak, önceki kaynakların tamamını kullanarak sanal NIC’yi oluştururuz.
 
-```powershell
+```powershell-interactive
 # Variables for common values
 $resourceGroup = "myResourceGroup"
 $location = "westeurope"
@@ -120,14 +120,14 @@ $nic = New-AzureRmNetworkInterface -Name myNic1 -ResourceGroupName $resourceGrou
 
 Öncelikle işletim sistemi için bir kimlik bilgileri kümesine ihtiyacımız vardır.
 
-```powershell
+```powershell-interactive
 # Create user object
 $cred = Get-Credential -Message "Enter a username and password for the virtual machine."
 ```
 
 Artık gerekli kaynaklara sahip olduğumuza göre, VM’yi oluşturabiliriz. Bu adım için bir VM yapılandırma nesnesi oluşturur, sonra da bu yapılandırmayı kullanarak VM’yi oluştururuz.
 
-```powershell
+```powershell-interactive
 # Create a virtual machine configuration
 $vmConfig = New-AzureRmVMConfig -VMName $vmName -VMSize Standard_D1 |
   Set-AzureRmVMOperatingSystem -Windows -ComputerName $vmName -Credential $cred |
@@ -148,7 +148,7 @@ RequestId IsSuccessStatusCode StatusCode ReasonPhrase
 
 Şimdi, Uzak Masaüstü’nü ve VM’nin genel IP adresini kullanarak yeni oluşturduğunuz Windows Server VM’de oturum açın. Aşağıdaki komut, önceki betikte oluşturulan genel IP adresini görüntüler.
 
-```powershell
+```powershell-interactive
 $publicIp | Select-Object Name,IpAddress
 ```
 
@@ -160,7 +160,7 @@ mypublicdns1400512543 xx.xx.xx.xx
 
 Windows tabanlı bir sistemdeyseniz, bunu komut satırından mstsc komutunu kullanarak gerçekleştirebilirsiniz:
 
-```powershell
+```powershell-interactive
 mstsc /v:xx.xxx.xx.xxx
 ```
 
@@ -174,7 +174,7 @@ Yeni bir Linux VM oluşturmak için önce diğer gerekli kaynakları oluşturup 
 
 İlk olarak, sanal ağ oluşturma işleminde kullanılacak bir alt ağ yapılandırması oluşturmamız gerekir. Bu VM’ye bağlanabilmek için genel bir IP adresi de oluştururuz. Genel adrese erişimin güvenliğini sağlamak için bir ağ güvenlik grubu oluştururuz. Son olarak, önceki kaynakların tamamını kullanarak sanal NIC’yi oluştururuz.
 
-```powershell
+```powershell-interactive
 # Variables for common values
 $resourceGroup = "myResourceGroup"
 $location = "westeurope"
@@ -214,7 +214,7 @@ $nic = New-AzureRmNetworkInterface -Name myNic2 -ResourceGroupName $resourceGrou
 
 Artık gerekli kaynaklara sahip olduğumuza göre, VM’yi oluşturabiliriz. Bu adım için bir VM yapılandırma nesnesi oluşturur, sonra da bu yapılandırmayı kullanarak VM’yi oluştururuz.
 
-```powershell
+```powershell-interactive
 # Create a virtual machine configuration
 $vmConfig = New-AzureRmVMConfig -VMName $vmName -VMSize Standard_D1 |
   Set-AzureRmVMOperatingSystem -Linux -ComputerName $vmName -Credential $cred -DisablePasswordAuthentication |
@@ -272,13 +272,13 @@ Buraya kadar size Kaynak Grubu, Linux VM ve Windows Server VM’nin nasıl oluş
 
 Örneğin, yeni oluşturduğumuz VM’lerle ilişkilendirebileceğimiz bir Azure Ağ Yük Dengeleyicisi oluşturmak için, aşağıdaki oluşturma komutunu kullanabiliriz:
 
-```powershell
+```powershell-interactive
 New-AzureRmLoadBalancer -Name MyLoadBalancer -ResourceGroupName myResourceGroup -Location westeurope
 ```
 
 Ayrıca, aşağıdaki komutu kullanarak altyapımız için yeni bir özel Sanal Ağ (Azure’da adı çoğunlukla "VNet" olarak geçer) oluşturabiliriz:
 
-```powershell
+```powershell-interactive
 $subnetConfig = New-AzureRmVirtualNetworkSubnetConfig -Name mySubnet2 -AddressPrefix 10.0.0.0/16
 $vnet = New-AzureRmVirtualNetwork -ResourceGroupName myResourceGroup -Location westeurope `
   -Name MYvNET3 -AddressPrefix 10.0.0.0/16 -Subnet $subnetConfig
@@ -288,7 +288,7 @@ Azure’u ve Azure PowerShell’i güçlü kılan, bunları yalnızca bulut taba
 
 Örneğin, Azure PowerShell’i kullanarak bir Azure Uygulama Hizmeti oluşturabilirsiniz. Azure Uygulama Hizmeti, altyapı konusunda kaygılanmadan web uygulamalarını barındırmak için harika bir yol sağlayan bir yönetilen platform hizmetidir. Azure Uygulama Hizmetini oluşturduktan sonra, aşağıdaki komutları kullanarak Uygulama Hizmetinin içinde iki yeni Azure Web Uygulaması oluşturabilirsiniz:
 
-```powershell
+```powershell-interactive
 # Create an Azure AppService that we can host any number of web apps within
 New-AzureRmAppServicePlan -Name MyAppServicePlan -Tier Basic -NumberofWorkers 2 -WorkerSize Small -ResourceGroupName myResourceGroup -Location westeurope
 
@@ -301,7 +301,7 @@ New-AzureRmWebApp -Name MyWebApp43433 -AppServicePlan MyAppServicePlan -Resource
 
 Azure’da çalışmakta olan kaynakları listelemek için `Get-AzureRmResource` cmdlet’ini kullanabilirsiniz. Aşağıdaki örnekte, yeni kaynak grubunda biraz önce oluşturduğumuz kaynaklar gösterilmektedir.
 
-```powershell
+```powershell-interactive
 Get-AzureRmResource |
   Where-Object ResourceGroupName -eq myResourceGroup |
     Select-Object Name,Location,ResourceType
@@ -330,7 +330,7 @@ micromyresomywi032907510                              westeurope Microsoft.Stora
 
 Azure hesabınızı temizlemek için bu örnekte oluşturduğumuz kaynakları kaldırmak istersiniz. Artık ihtiyacınız olmayan kaynakları silmek için `Remove-AzureRm*` cmdlet’lerini kullanabilirsiniz. Oluşturduğumuz Windows VM’yi kaldırmak için aşağıdaki komutu kullanın:
 
-```powershell
+```powershell-interactive
 Remove-AzureRmVM -Name myWindowsVM -ResourceGroupName myResourceGroup
 ```
 
@@ -344,7 +344,7 @@ Are you sure you want to remove resource group 'myResourceGroup'
 
 Birçok kaynağı tek seferde silme seçeneğini de kullanabilirsiniz. Örneğin, aşağıdaki komut, bu Başlangıç öğreticisindeki tüm örnekler için kullandığımız "MyResourceGroup" adlı kaynak grubunu tamamen siler. Bu komut, kaynak grubunu ve gruptaki tüm kaynakları kaldırır.
 
-```powershell
+```powershell-interactive
 Remove-AzureRmResourceGroup -Name myResourceGroup
 ```
 
