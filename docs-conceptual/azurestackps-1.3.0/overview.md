@@ -9,30 +9,30 @@ ms.topic: conceptual
 ms.manager: knithinc
 ms.date: 09/21/2018
 ms.openlocfilehash: fb892daeafb1365ea62324392ac806cf9f3d39cf
-ms.sourcegitcommit: ac4b53bb42a25aae013a9d8cd9ae98ada9397274
+ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51274339"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51211987"
 ---
-# <a name="azure-stack-module-130"></a><span data-ttu-id="72087-103">Azure Stack Modülü 1.3.0</span><span class="sxs-lookup"><span data-stu-id="72087-103">Azure Stack Module 1.3.0</span></span>
+# <a name="azure-stack-module-130"></a><span data-ttu-id="fbb14-103">Azure Stack Modülü 1.3.0</span><span class="sxs-lookup"><span data-stu-id="fbb14-103">Azure Stack Module 1.3.0</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="72087-104">Gereksinimler:</span><span class="sxs-lookup"><span data-stu-id="72087-104">Requirements:</span></span>
-<span data-ttu-id="72087-105">Desteklenen en düşük Azure Stack sürümü 1804’tür.</span><span class="sxs-lookup"><span data-stu-id="72087-105">Minimum supported Azure Stack version is 1804.</span></span>
+## <a name="requirements"></a><span data-ttu-id="fbb14-104">Gereksinimler:</span><span class="sxs-lookup"><span data-stu-id="fbb14-104">Requirements:</span></span>
+<span data-ttu-id="fbb14-105">Desteklenen en düşük Azure Stack sürümü 1804’tür.</span><span class="sxs-lookup"><span data-stu-id="fbb14-105">Minimum supported Azure Stack version is 1804.</span></span>
 
-<span data-ttu-id="72087-106">Not: Daha önceki bir sürümü kullanıyorsanız sürüm 1.2.11’i yükleyin</span><span class="sxs-lookup"><span data-stu-id="72087-106">Note: If you are using an earlier version install version 1.2.11</span></span>
+<span data-ttu-id="fbb14-106">Not: Daha önceki bir sürümü kullanıyorsanız sürüm 1.2.11’i yükleyin</span><span class="sxs-lookup"><span data-stu-id="fbb14-106">Note: If you are using an earlier version install version 1.2.11</span></span>
 
-## <a name="known-issues"></a><span data-ttu-id="72087-107">Bilinen sorunlar:</span><span class="sxs-lookup"><span data-stu-id="72087-107">Known issues:</span></span>
+## <a name="known-issues"></a><span data-ttu-id="fbb14-107">Bilinen sorunlar:</span><span class="sxs-lookup"><span data-stu-id="fbb14-107">Known issues:</span></span>
 
-- <span data-ttu-id="72087-108">Uyarıyı Kapatma için Azure Stack sürümü 1803 gereklidir</span><span class="sxs-lookup"><span data-stu-id="72087-108">Close Alert requires Azure Stack version 1803</span></span>
-- <span data-ttu-id="72087-109">Bazı Depolama cmdlet’leri için Azure Stack sürümü 1804 gereklidir</span><span class="sxs-lookup"><span data-stu-id="72087-109">Some Storage cmdlets do require Azure Stack version 1804</span></span>
-- <span data-ttu-id="72087-110">New-AzsOffer komutu genel durumlu bir teklif oluşturmaya izin vermez.</span><span class="sxs-lookup"><span data-stu-id="72087-110">New-AzsOffer does not allow to create an offer with state public.</span></span> <span data-ttu-id="72087-111">Durumu değiştirmek için Set-AzsOffer cmdlet’inin sonradan çağrılması gerekir.</span><span class="sxs-lookup"><span data-stu-id="72087-111">The Set-AzsOffer cmdlet needs to be called afterwards to change the state.</span></span>
-- <span data-ttu-id="72087-112">IP Havuzu, yeniden dağıtma olmadan kaldırılamaz</span><span class="sxs-lookup"><span data-stu-id="72087-112">An IP Pool cannot be removed without a redeployment</span></span>
+- <span data-ttu-id="fbb14-108">Uyarıyı Kapatma için Azure Stack sürümü 1803 gereklidir</span><span class="sxs-lookup"><span data-stu-id="fbb14-108">Close Alert requires Azure Stack version 1803</span></span>
+- <span data-ttu-id="fbb14-109">Bazı Depolama cmdlet’leri için Azure Stack sürümü 1804 gereklidir</span><span class="sxs-lookup"><span data-stu-id="fbb14-109">Some Storage cmdlets do require Azure Stack version 1804</span></span>
+- <span data-ttu-id="fbb14-110">New-AzsOffer komutu genel durumlu bir teklif oluşturmaya izin vermez.</span><span class="sxs-lookup"><span data-stu-id="fbb14-110">New-AzsOffer does not allow to create an offer with state public.</span></span> <span data-ttu-id="fbb14-111">Durumu değiştirmek için Set-AzsOffer cmdlet’inin sonradan çağrılması gerekir.</span><span class="sxs-lookup"><span data-stu-id="fbb14-111">The Set-AzsOffer cmdlet needs to be called afterwards to change the state.</span></span>
+- <span data-ttu-id="fbb14-112">IP Havuzu, yeniden dağıtma olmadan kaldırılamaz</span><span class="sxs-lookup"><span data-stu-id="fbb14-112">An IP Pool cannot be removed without a redeployment</span></span>
 
-## <a name="breaking-changes"></a><span data-ttu-id="72087-113">Hataya Neden Olan Değişiklikler</span><span class="sxs-lookup"><span data-stu-id="72087-113">Breaking Changes</span></span>
-<span data-ttu-id="72087-114">1.2.11’den geçirilen tüm hataya neden olan değişiklikler burada https://aka.ms/azspowershellmigration belgelenmiştir</span><span class="sxs-lookup"><span data-stu-id="72087-114">All breaking changes migrating from 1.2.11 are documented here https://aka.ms/azspowershellmigration</span></span>
+## <a name="breaking-changes"></a><span data-ttu-id="fbb14-113">Hataya Neden Olan Değişiklikler</span><span class="sxs-lookup"><span data-stu-id="fbb14-113">Breaking Changes</span></span>
+<span data-ttu-id="fbb14-114">1.2.11’den geçirilen tüm hataya neden olan değişiklikler burada https://aka.ms/azspowershellmigration belgelenmiştir</span><span class="sxs-lookup"><span data-stu-id="fbb14-114">All breaking changes migrating from 1.2.11 are documented here https://aka.ms/azspowershellmigration</span></span>
 
-## <a name="install"></a><span data-ttu-id="72087-115">Yükleme</span><span class="sxs-lookup"><span data-stu-id="72087-115">Install</span></span>
+## <a name="install"></a><span data-ttu-id="fbb14-115">Yükleme</span><span class="sxs-lookup"><span data-stu-id="fbb14-115">Install</span></span>
 ```
 # Remove previous Versions
 Uninstall-Module AzureRM.AzureStackAdmin -Force
@@ -49,70 +49,70 @@ Use-AzureRmProfile -Profile 2017-03-09-profile -Force
 # Install Azure Stack Admin Module
 Install-Module -Name AzureStack -RequiredVersion 1.3.0
 ```
-## <a name="content"></a><span data-ttu-id="72087-116">İçerik:</span><span class="sxs-lookup"><span data-stu-id="72087-116">Content:</span></span>
-### <a name="azure-bridge"></a><span data-ttu-id="72087-117">Azure Bridge</span><span class="sxs-lookup"><span data-stu-id="72087-117">Azure Bridge</span></span>
-<span data-ttu-id="72087-118">Resimleri Azure’dan genel olarak dağıtmaya olanak tanıyan Azure Stack AzureBridge yönetici modülünün önizleme sürümü.</span><span class="sxs-lookup"><span data-stu-id="72087-118">Preview release of the Azure Stack AzureBridge administrator module which allows you to syndicate images from Azure.</span></span>
+## <a name="content"></a><span data-ttu-id="fbb14-116">İçerik:</span><span class="sxs-lookup"><span data-stu-id="fbb14-116">Content:</span></span>
+### <a name="azure-bridge"></a><span data-ttu-id="fbb14-117">Azure Bridge</span><span class="sxs-lookup"><span data-stu-id="fbb14-117">Azure Bridge</span></span>
+<span data-ttu-id="fbb14-118">Resimleri Azure’dan genel olarak dağıtmaya olanak tanıyan Azure Stack AzureBridge yönetici modülünün önizleme sürümü.</span><span class="sxs-lookup"><span data-stu-id="fbb14-118">Preview release of the Azure Stack AzureBridge administrator module which allows you to syndicate images from Azure.</span></span>
 
-### <a name="backup"></a><span data-ttu-id="72087-119">Backup</span><span class="sxs-lookup"><span data-stu-id="72087-119">Backup</span></span>
-<span data-ttu-id="72087-120">Yöneticilerin şunları yapmasını sağlayan Yedekleme yönetici modülünün önizleme sürümü:</span><span class="sxs-lookup"><span data-stu-id="72087-120">Preview release of the Backup administrator module that allows administrators to:</span></span>
-- <span data-ttu-id="72087-121">Yedeklemelerin nerede depolandığını yapılandırma</span><span class="sxs-lookup"><span data-stu-id="72087-121">Configure where backups are stored</span></span>
-- <span data-ttu-id="72087-122">yedekleme gerçekleştirme</span><span class="sxs-lookup"><span data-stu-id="72087-122">Perform backups</span></span>
-- <span data-ttu-id="72087-123">Tamamlanan yedeklemeyi listeleme ve geri yükleme</span><span class="sxs-lookup"><span data-stu-id="72087-123">List and restore completed backup</span></span>
+### <a name="backup"></a><span data-ttu-id="fbb14-119">Backup</span><span class="sxs-lookup"><span data-stu-id="fbb14-119">Backup</span></span>
+<span data-ttu-id="fbb14-120">Yöneticilerin şunları yapmasını sağlayan Yedekleme yönetici modülünün önizleme sürümü:</span><span class="sxs-lookup"><span data-stu-id="fbb14-120">Preview release of the Backup administrator module that allows administrators to:</span></span>
+- <span data-ttu-id="fbb14-121">Yedeklemelerin nerede depolandığını yapılandırma</span><span class="sxs-lookup"><span data-stu-id="fbb14-121">Configure where backups are stored</span></span>
+- <span data-ttu-id="fbb14-122">yedekleme gerçekleştirme</span><span class="sxs-lookup"><span data-stu-id="fbb14-122">Perform backups</span></span>
+- <span data-ttu-id="fbb14-123">Tamamlanan yedeklemeyi listeleme ve geri yükleme</span><span class="sxs-lookup"><span data-stu-id="fbb14-123">List and restore completed backup</span></span>
 
-### <a name="commerce"></a><span data-ttu-id="72087-124">Ticaret</span><span class="sxs-lookup"><span data-stu-id="72087-124">Commerce</span></span>
-<span data-ttu-id="72087-125">Azure Stack sisteminde toplu veri kullanımını görüntülemenin bir yolunu sağlayan Azure Stack Ticaret yönetici modülünün önizleme sürümü.</span><span class="sxs-lookup"><span data-stu-id="72087-125">Preview release of the Azure Stack Commerce administrator module which provides a way to view aggregate data usage across your Azure Stack system.</span></span>
+### <a name="commerce"></a><span data-ttu-id="fbb14-124">Ticaret</span><span class="sxs-lookup"><span data-stu-id="fbb14-124">Commerce</span></span>
+<span data-ttu-id="fbb14-125">Azure Stack sisteminde toplu veri kullanımını görüntülemenin bir yolunu sağlayan Azure Stack Ticaret yönetici modülünün önizleme sürümü.</span><span class="sxs-lookup"><span data-stu-id="fbb14-125">Preview release of the Azure Stack Commerce administrator module which provides a way to view aggregate data usage across your Azure Stack system.</span></span>
 
-### <a name="compute"></a><span data-ttu-id="72087-126">İşlem</span><span class="sxs-lookup"><span data-stu-id="72087-126">Compute</span></span>
-<span data-ttu-id="72087-127">Kota işleme, platform resimleri ve sanal makine eklentilerini yönetme işlevini sunan Azure Stack İşlem yönetici modülünün önizleme sürümü.</span><span class="sxs-lookup"><span data-stu-id="72087-127">Preview release of the Azure Stack Compute administrator module which provides functionality to manage compute quotas, platform images, and virtual machine extensions.</span></span>
+### <a name="compute"></a><span data-ttu-id="fbb14-126">İşlem</span><span class="sxs-lookup"><span data-stu-id="fbb14-126">Compute</span></span>
+<span data-ttu-id="fbb14-127">Kota işleme, platform resimleri ve sanal makine eklentilerini yönetme işlevini sunan Azure Stack İşlem yönetici modülünün önizleme sürümü.</span><span class="sxs-lookup"><span data-stu-id="fbb14-127">Preview release of the Azure Stack Compute administrator module which provides functionality to manage compute quotas, platform images, and virtual machine extensions.</span></span>
 
-### <a name="fabric"></a><span data-ttu-id="72087-128">Fabric</span><span class="sxs-lookup"><span data-stu-id="72087-128">Fabric</span></span>
-<span data-ttu-id="72087-129">Yöneticilerin altyapı bileşenlerini görüntülemesine ve yönetmesine olanak tanıyan Azure Stack Fabric yönetici modülünün önizleme sürümü:</span><span class="sxs-lookup"><span data-stu-id="72087-129">Preview release of the Azure Stack Fabric administrator module which allows administrators to view and manage infrastructure components:</span></span>
-- <span data-ttu-id="72087-130">Ölçek birimi düğümlerinin Durdurulması, Başlatılması ve Kapatılması</span><span class="sxs-lookup"><span data-stu-id="72087-130">Stop, Start and Shutdown of scale unit nodes</span></span>
-- <span data-ttu-id="72087-131">FRU ilişkili etkinlikler için ölçek birimi düğümlerinin Boşaltılması ve Sürdürülmesi</span><span class="sxs-lookup"><span data-stu-id="72087-131">Drain and Resume of scale unit nodes for FRU related activities</span></span>
-- <span data-ttu-id="72087-132">Ölçek birimi düğümlerinin onarımı</span><span class="sxs-lookup"><span data-stu-id="72087-132">Repair of scale unit nodes</span></span>
-- <span data-ttu-id="72087-133">Altyapı rolünün yeniden başlatılması</span><span class="sxs-lookup"><span data-stu-id="72087-133">Restart of Infrastructure role</span></span>
-- <span data-ttu-id="72087-134">Altyapı rolü örneklerinin Durdurulması, Başlatılması ve Kapatılması</span><span class="sxs-lookup"><span data-stu-id="72087-134">Stop, Start and Shutdown of Infrastructure role instances</span></span>
-- <span data-ttu-id="72087-135">Yeni IP Havuzları oluşturma</span><span class="sxs-lookup"><span data-stu-id="72087-135">Create new IP Pools</span></span>
+### <a name="fabric"></a><span data-ttu-id="fbb14-128">Fabric</span><span class="sxs-lookup"><span data-stu-id="fbb14-128">Fabric</span></span>
+<span data-ttu-id="fbb14-129">Yöneticilerin altyapı bileşenlerini görüntülemesine ve yönetmesine olanak tanıyan Azure Stack Fabric yönetici modülünün önizleme sürümü:</span><span class="sxs-lookup"><span data-stu-id="fbb14-129">Preview release of the Azure Stack Fabric administrator module which allows administrators to view and manage infrastructure components:</span></span>
+- <span data-ttu-id="fbb14-130">Ölçek birimi düğümlerinin Durdurulması, Başlatılması ve Kapatılması</span><span class="sxs-lookup"><span data-stu-id="fbb14-130">Stop, Start and Shutdown of scale unit nodes</span></span>
+- <span data-ttu-id="fbb14-131">FRU ilişkili etkinlikler için ölçek birimi düğümlerinin Boşaltılması ve Sürdürülmesi</span><span class="sxs-lookup"><span data-stu-id="fbb14-131">Drain and Resume of scale unit nodes for FRU related activities</span></span>
+- <span data-ttu-id="fbb14-132">Ölçek birimi düğümlerinin onarımı</span><span class="sxs-lookup"><span data-stu-id="fbb14-132">Repair of scale unit nodes</span></span>
+- <span data-ttu-id="fbb14-133">Altyapı rolünün yeniden başlatılması</span><span class="sxs-lookup"><span data-stu-id="fbb14-133">Restart of Infrastructure role</span></span>
+- <span data-ttu-id="fbb14-134">Altyapı rolü örneklerinin Durdurulması, Başlatılması ve Kapatılması</span><span class="sxs-lookup"><span data-stu-id="fbb14-134">Stop, Start and Shutdown of Infrastructure role instances</span></span>
+- <span data-ttu-id="fbb14-135">Yeni IP Havuzları oluşturma</span><span class="sxs-lookup"><span data-stu-id="fbb14-135">Create new IP Pools</span></span>
 
 
-### <a name="gallery"></a><span data-ttu-id="72087-136">Galeri</span><span class="sxs-lookup"><span data-stu-id="72087-136">Gallery</span></span>
-<span data-ttu-id="72087-137">Azure Stack marketinde galeri öğelerini yönetme işlevini sunan Azure Stack Galeri yönetici modülünün önizleme sürümü.</span><span class="sxs-lookup"><span data-stu-id="72087-137">Preview release of the Azure Stack Gallery administrator module which provides functionality to manage gallery items in the Azure Stack marketplace.</span></span>
+### <a name="gallery"></a><span data-ttu-id="fbb14-136">Galeri</span><span class="sxs-lookup"><span data-stu-id="fbb14-136">Gallery</span></span>
+<span data-ttu-id="fbb14-137">Azure Stack marketinde galeri öğelerini yönetme işlevini sunan Azure Stack Galeri yönetici modülünün önizleme sürümü.</span><span class="sxs-lookup"><span data-stu-id="fbb14-137">Preview release of the Azure Stack Gallery administrator module which provides functionality to manage gallery items in the Azure Stack marketplace.</span></span>
 
-### <a name="infrastructure-insights"></a><span data-ttu-id="72087-138">Altyapı Öngörüleri</span><span class="sxs-lookup"><span data-stu-id="72087-138">Infrastructure Insights</span></span>
-<span data-ttu-id="72087-139">Yöneticilere şunları yapmasını sağlayan Infrastructure Insights yönetici modülünün önizleme sürümü:</span><span class="sxs-lookup"><span data-stu-id="72087-139">Preview release of the Infrastructure Insights administrator module which allows administrators:</span></span>
-- <span data-ttu-id="72087-140">Azure Stack damga kaynaklarının sistem durumunu görüntüleme</span><span class="sxs-lookup"><span data-stu-id="72087-140">View the health of their Azure Stack stamp resources</span></span>
-- <span data-ttu-id="72087-141">Uyarıları görüntüleme ve yönetme</span><span class="sxs-lookup"><span data-stu-id="72087-141">View and manage alerts</span></span>
+### <a name="infrastructure-insights"></a><span data-ttu-id="fbb14-138">Altyapı Öngörüleri</span><span class="sxs-lookup"><span data-stu-id="fbb14-138">Infrastructure Insights</span></span>
+<span data-ttu-id="fbb14-139">Yöneticilere şunları yapmasını sağlayan Infrastructure Insights yönetici modülünün önizleme sürümü:</span><span class="sxs-lookup"><span data-stu-id="fbb14-139">Preview release of the Infrastructure Insights administrator module which allows administrators:</span></span>
+- <span data-ttu-id="fbb14-140">Azure Stack damga kaynaklarının sistem durumunu görüntüleme</span><span class="sxs-lookup"><span data-stu-id="fbb14-140">View the health of their Azure Stack stamp resources</span></span>
+- <span data-ttu-id="fbb14-141">Uyarıları görüntüleme ve yönetme</span><span class="sxs-lookup"><span data-stu-id="fbb14-141">View and manage alerts</span></span>
 
-### <a name="keyvault"></a><span data-ttu-id="72087-142">KeyVault</span><span class="sxs-lookup"><span data-stu-id="72087-142">KeyVault</span></span>
-<span data-ttu-id="72087-143">Yöneticinin KeyVault kotalarını görüntülemesine oplanak tanıyan Azure Stack KeyVault yönetici modülünün önizleme sürümü.</span><span class="sxs-lookup"><span data-stu-id="72087-143">Preview release of the Azure Stack KeyVault administrator module which allows administrator to view KeyVault quotas.</span></span>
+### <a name="keyvault"></a><span data-ttu-id="fbb14-142">KeyVault</span><span class="sxs-lookup"><span data-stu-id="fbb14-142">KeyVault</span></span>
+<span data-ttu-id="fbb14-143">Yöneticinin KeyVault kotalarını görüntülemesine oplanak tanıyan Azure Stack KeyVault yönetici modülünün önizleme sürümü.</span><span class="sxs-lookup"><span data-stu-id="fbb14-143">Preview release of the Azure Stack KeyVault administrator module which allows administrator to view KeyVault quotas.</span></span>
 
-### <a name="network"></a><span data-ttu-id="72087-144">Ağ</span><span class="sxs-lookup"><span data-stu-id="72087-144">Network</span></span>
-<span data-ttu-id="72087-145">Şunlara olanak tanıyan Ağ yöneticisi modülünün önizleme sürümü:</span><span class="sxs-lookup"><span data-stu-id="72087-145">Preview release of the Network administrator module which allows:</span></span>
-- <span data-ttu-id="72087-146">Ağ kotalarının yönetimi</span><span class="sxs-lookup"><span data-stu-id="72087-146">Management of network quotas</span></span>
-- <span data-ttu-id="72087-147">Genel IP adresleri, sanal ağlar, yük dengeleyicileri gibi ayrılan ağ kaynaklarını görüntüleme</span><span class="sxs-lookup"><span data-stu-id="72087-147">View allocated network resources such as public IP addresses, virtual networks, load balancers</span></span>
-- <span data-ttu-id="72087-148">Yönetici genel bakışı gösteren bir cmdlet sunar</span><span class="sxs-lookup"><span data-stu-id="72087-148">Provides a cmdlet which displays an administrator overview</span></span>
+### <a name="network"></a><span data-ttu-id="fbb14-144">Ağ</span><span class="sxs-lookup"><span data-stu-id="fbb14-144">Network</span></span>
+<span data-ttu-id="fbb14-145">Şunlara olanak tanıyan Ağ yöneticisi modülünün önizleme sürümü:</span><span class="sxs-lookup"><span data-stu-id="fbb14-145">Preview release of the Network administrator module which allows:</span></span>
+- <span data-ttu-id="fbb14-146">Ağ kotalarının yönetimi</span><span class="sxs-lookup"><span data-stu-id="fbb14-146">Management of network quotas</span></span>
+- <span data-ttu-id="fbb14-147">Genel IP adresleri, sanal ağlar, yük dengeleyicileri gibi ayrılan ağ kaynaklarını görüntüleme</span><span class="sxs-lookup"><span data-stu-id="fbb14-147">View allocated network resources such as public IP addresses, virtual networks, load balancers</span></span>
+- <span data-ttu-id="fbb14-148">Yönetici genel bakışı gösteren bir cmdlet sunar</span><span class="sxs-lookup"><span data-stu-id="fbb14-148">Provides a cmdlet which displays an administrator overview</span></span>
 
-### <a name="storage"></a><span data-ttu-id="72087-149">Depolama</span><span class="sxs-lookup"><span data-stu-id="72087-149">Storage</span></span>
-<span data-ttu-id="72087-150">Azure Stack Depolama yönetici modülünün önizleme sürümü.</span><span class="sxs-lookup"><span data-stu-id="72087-150">Preview release of the Azure Stack Storage administrator module.</span></span>  <span data-ttu-id="72087-151">Bu sürümde şunların yapılmasını sağlayan işlevleri sunuyoruz:</span><span class="sxs-lookup"><span data-stu-id="72087-151">In this release we provide the functionality to:</span></span>
-- <span data-ttu-id="72087-152">Depolama kotalarını yönetme</span><span class="sxs-lookup"><span data-stu-id="72087-152">Manage storage quotas</span></span>
-- <span data-ttu-id="72087-153">Silinen depolama kaynaklarına yönelik atık toplama</span><span class="sxs-lookup"><span data-stu-id="72087-153">Garbage collect deleted storage resources</span></span>
-- <span data-ttu-id="72087-154">Silinen depolama hesaplarını geri yükleme</span><span class="sxs-lookup"><span data-stu-id="72087-154">Restore deleted storage accounts</span></span>
-- <span data-ttu-id="72087-155">Kapsayıcıları bir paydan diğerine geçirme</span><span class="sxs-lookup"><span data-stu-id="72087-155">Migrate containers from one share to another</span></span>
-- <span data-ttu-id="72087-156">Bireysel depolama bileşenleri hakkında bilgileri görüntüleme</span><span class="sxs-lookup"><span data-stu-id="72087-156">View information about the individual storage components</span></span>
-- <span data-ttu-id="72087-157">Kullanım ve performans bilgilerini görüntüleme</span><span class="sxs-lookup"><span data-stu-id="72087-157">View usage and performance information</span></span>
+### <a name="storage"></a><span data-ttu-id="fbb14-149">Depolama</span><span class="sxs-lookup"><span data-stu-id="fbb14-149">Storage</span></span>
+<span data-ttu-id="fbb14-150">Azure Stack Depolama yönetici modülünün önizleme sürümü.</span><span class="sxs-lookup"><span data-stu-id="fbb14-150">Preview release of the Azure Stack Storage administrator module.</span></span>  <span data-ttu-id="fbb14-151">Bu sürümde şunların yapılmasını sağlayan işlevleri sunuyoruz:</span><span class="sxs-lookup"><span data-stu-id="fbb14-151">In this release we provide the functionality to:</span></span>
+- <span data-ttu-id="fbb14-152">Depolama kotalarını yönetme</span><span class="sxs-lookup"><span data-stu-id="fbb14-152">Manage storage quotas</span></span>
+- <span data-ttu-id="fbb14-153">Silinen depolama kaynaklarına yönelik atık toplama</span><span class="sxs-lookup"><span data-stu-id="fbb14-153">Garbage collect deleted storage resources</span></span>
+- <span data-ttu-id="fbb14-154">Silinen depolama hesaplarını geri yükleme</span><span class="sxs-lookup"><span data-stu-id="fbb14-154">Restore deleted storage accounts</span></span>
+- <span data-ttu-id="fbb14-155">Kapsayıcıları bir paydan diğerine geçirme</span><span class="sxs-lookup"><span data-stu-id="fbb14-155">Migrate containers from one share to another</span></span>
+- <span data-ttu-id="fbb14-156">Bireysel depolama bileşenleri hakkında bilgileri görüntüleme</span><span class="sxs-lookup"><span data-stu-id="fbb14-156">View information about the individual storage components</span></span>
+- <span data-ttu-id="fbb14-157">Kullanım ve performans bilgilerini görüntüleme</span><span class="sxs-lookup"><span data-stu-id="fbb14-157">View usage and performance information</span></span>
 
-### <a name="subscription-admin"></a><span data-ttu-id="72087-158">Abonelik Yöneticisi</span><span class="sxs-lookup"><span data-stu-id="72087-158">Subscription Admin</span></span>
-<span data-ttu-id="72087-159">Azure Stack Aboneliği yönetici modülünün önizleme sürümü.</span><span class="sxs-lookup"><span data-stu-id="72087-159">Preview release of the Azure Stack Subscription administrator module.</span></span>  <span data-ttu-id="72087-160">Bu modül yöneticilerin şunları yapmasını sağlayan işlevler sunar:</span><span class="sxs-lookup"><span data-stu-id="72087-160">This module provides functionality for administrators to:</span></span>
-- <span data-ttu-id="72087-161">Plan ve teklifleri yönetme</span><span class="sxs-lookup"><span data-stu-id="72087-161">Manage plans and offers</span></span>
-- <span data-ttu-id="72087-162">Kullanım ve performans bilgilerini görüntüleme</span><span class="sxs-lookup"><span data-stu-id="72087-162">View usage and performance information</span></span>
-- <span data-ttu-id="72087-163">RBAC’yi yönetme</span><span class="sxs-lookup"><span data-stu-id="72087-163">Manage RBAC</span></span>
+### <a name="subscription-admin"></a><span data-ttu-id="fbb14-158">Abonelik Yöneticisi</span><span class="sxs-lookup"><span data-stu-id="fbb14-158">Subscription Admin</span></span>
+<span data-ttu-id="fbb14-159">Azure Stack Aboneliği yönetici modülünün önizleme sürümü.</span><span class="sxs-lookup"><span data-stu-id="fbb14-159">Preview release of the Azure Stack Subscription administrator module.</span></span>  <span data-ttu-id="fbb14-160">Bu modül yöneticilerin şunları yapmasını sağlayan işlevler sunar:</span><span class="sxs-lookup"><span data-stu-id="fbb14-160">This module provides functionality for administrators to:</span></span>
+- <span data-ttu-id="fbb14-161">Plan ve teklifleri yönetme</span><span class="sxs-lookup"><span data-stu-id="fbb14-161">Manage plans and offers</span></span>
+- <span data-ttu-id="fbb14-162">Kullanım ve performans bilgilerini görüntüleme</span><span class="sxs-lookup"><span data-stu-id="fbb14-162">View usage and performance information</span></span>
+- <span data-ttu-id="fbb14-163">RBAC’yi yönetme</span><span class="sxs-lookup"><span data-stu-id="fbb14-163">Manage RBAC</span></span>
 
-### <a name="subscription"></a><span data-ttu-id="72087-164">Abonelik</span><span class="sxs-lookup"><span data-stu-id="72087-164">Subscription</span></span>
-<span data-ttu-id="72087-165">Azure Stack Aboneliği modülünün önizleme sürümü.</span><span class="sxs-lookup"><span data-stu-id="72087-165">Preview release of the Azure Stack Subscription module.</span></span>  <span data-ttu-id="72087-166">Bu modül kullanıcıların şunları yapmasını sağlayan işlevler sunar:</span><span class="sxs-lookup"><span data-stu-id="72087-166">This module provides functionality for Users to:</span></span>
-- <span data-ttu-id="72087-167">Abonelikleri Oluşturma, Silme ve Güncelleştirme</span><span class="sxs-lookup"><span data-stu-id="72087-167">Create, Delete and Update Subscriptions</span></span>
+### <a name="subscription"></a><span data-ttu-id="fbb14-164">Abonelik</span><span class="sxs-lookup"><span data-stu-id="fbb14-164">Subscription</span></span>
+<span data-ttu-id="fbb14-165">Azure Stack Aboneliği modülünün önizleme sürümü.</span><span class="sxs-lookup"><span data-stu-id="fbb14-165">Preview release of the Azure Stack Subscription module.</span></span>  <span data-ttu-id="fbb14-166">Bu modül kullanıcıların şunları yapmasını sağlayan işlevler sunar:</span><span class="sxs-lookup"><span data-stu-id="fbb14-166">This module provides functionality for Users to:</span></span>
+- <span data-ttu-id="fbb14-167">Abonelikleri Oluşturma, Silme ve Güncelleştirme</span><span class="sxs-lookup"><span data-stu-id="fbb14-167">Create, Delete and Update Subscriptions</span></span>
 
-### <a name="update"></a><span data-ttu-id="72087-168">Güncelleştirme</span><span class="sxs-lookup"><span data-stu-id="72087-168">Update</span></span>
-<span data-ttu-id="72087-169">Azure Stack Güncelleştirme yönetici modülünün önizleme sürümü.</span><span class="sxs-lookup"><span data-stu-id="72087-169">Preview release of the Azure Stack Update administrator module.</span></span>  <span data-ttu-id="72087-170">Bu modülde yöneticiler şunları yapabilir:</span><span class="sxs-lookup"><span data-stu-id="72087-170">In this module administrators can:</span></span>
-- <span data-ttu-id="72087-171">Kullanılabilir güncelleştirmeleri listeleme ve yükleme</span><span class="sxs-lookup"><span data-stu-id="72087-171">List and install available updates</span></span>
-- <span data-ttu-id="72087-172">Kesintiye uğrayan güncelleştirmeleri sürdürme</span><span class="sxs-lookup"><span data-stu-id="72087-172">Resume interrupted updates</span></span>
-- <span data-ttu-id="72087-173">Yüklü güncelleştirmeleri görüntüleme</span><span class="sxs-lookup"><span data-stu-id="72087-173">View installed updates</span></span>
+### <a name="update"></a><span data-ttu-id="fbb14-168">Güncelleştirme</span><span class="sxs-lookup"><span data-stu-id="fbb14-168">Update</span></span>
+<span data-ttu-id="fbb14-169">Azure Stack Güncelleştirme yönetici modülünün önizleme sürümü.</span><span class="sxs-lookup"><span data-stu-id="fbb14-169">Preview release of the Azure Stack Update administrator module.</span></span>  <span data-ttu-id="fbb14-170">Bu modülde yöneticiler şunları yapabilir:</span><span class="sxs-lookup"><span data-stu-id="fbb14-170">In this module administrators can:</span></span>
+- <span data-ttu-id="fbb14-171">Kullanılabilir güncelleştirmeleri listeleme ve yükleme</span><span class="sxs-lookup"><span data-stu-id="fbb14-171">List and install available updates</span></span>
+- <span data-ttu-id="fbb14-172">Kesintiye uğrayan güncelleştirmeleri sürdürme</span><span class="sxs-lookup"><span data-stu-id="fbb14-172">Resume interrupted updates</span></span>
+- <span data-ttu-id="fbb14-173">Yüklü güncelleştirmeleri görüntüleme</span><span class="sxs-lookup"><span data-stu-id="fbb14-173">View installed updates</span></span>
