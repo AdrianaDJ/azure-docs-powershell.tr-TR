@@ -8,12 +8,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.manager: knithinc
 ms.date: 09/21/2018
-ms.openlocfilehash: 0cb2fe38ef43657fb02627f9b5bc728eacb3062a
-ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
+ms.openlocfilehash: cd415e862bfaa2b767cce108689ebaf34ef74305
+ms.sourcegitcommit: ac4b53bb42a25aae013a9d8cd9ae98ada9397274
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51211704"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51274407"
 ---
 # <a name="azurerm-module-230"></a>AzureRM Modülü 2.3.0
 
@@ -42,7 +42,7 @@ Use-AzureRmProfile -Profile 2018-03-01-hybrid -Force
 
 ```
 
-##<a name="release-notes"></a>Sürüm Notları
+## <a name="release-notes"></a>Sürüm Notları
 * 2.3.0 sürümünde birçok hataya neden olan değişiklik bulunmaktadır. 1.2.11 sürümünden yükseltmek için https://aka.ms/azspowershellmigration sayfasındaki geçiş kılavuzuna bakabilirsiniz
 * Bu sürüm özel Azure Stack API profili 2018-03-01-hybrid sürümüne karşılık gelmektedir
 * Tüm modüller AzureRm.Profile modülü bağımlılığı için daha büyük veya eşit hale geldi.

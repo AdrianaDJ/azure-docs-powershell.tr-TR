@@ -8,12 +8,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.workload: ''
 ms.date: 07/26/2017
-ms.openlocfilehash: 6f0e304c499fc8bf4909e2825d52cd63b1fcbf5d
-ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
+ms.openlocfilehash: 563f84c3af98de066611dd80102e552b31f12883
+ms.sourcegitcommit: ac4b53bb42a25aae013a9d8cd9ae98ada9397274
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38100500"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51274934"
 ---
 # <a name="release-notes"></a>Sürüm notları
 
@@ -262,14 +262,15 @@ Azure PowerShell'in bu sürümünde yapılan değişikliklerin listesi aşağıd
       - Remove-AzureRMRoleDefinition
       - Set-AzureRMRoleDefinition
 * ServiceBus
-    * NameSpace, Queue ve Topic için AuthorizationRules öğesine yönelik aşağıdaki yeni commandlet’ler eklendi. Yetkilendirme kuralı işlemleri, ayarlanan parametreye göre uygulanır.
-     - New-AzureRmServiceBusAuthorizationRule - Mevcut ServiceBus NameSpace/Queue/Topic için yeni bir AuthorizationRule ekler.
-     - Get-AzureRmServiceBusAuthorizationRule - Mevcut ServiceBus NameSpace/Queue/Topic için AuthorizationRule / AuthorizationRules Listesini alır.
-     - Set-AzureRmServiceBusAuthorizationRule - Servicebus NameSpace/Queue/Topic için mevcut AuthorizationRule özelliklerini güncelleştirir.
-     - New-AzureRmServiceBusKey - Mevcut ServiceBus NameSpace/Queue/Topic için AuthorizationRule öğesine yönelik yeni bir Birincil/İkincil Anahtar oluşturur.
-     - Get-AzureRmServiceBusKey - Mevcut ServiceBus NameSpace/Queue/Topic için AuthorizationRule öğesinin Birincil/İkincil Anahtarını alır.
-     - Remove-AzureRmServiceBusNamespaceAuthorizationRule - ServiceBus NameSpace/Queue/Topic için mevcut AuthorizationRule öğesini siler.
-    * NamespceAttributes öğesine Kaynak Grubu özelliği eklendi
+  * NameSpace, Queue ve Topic için AuthorizationRules öğesine yönelik aşağıdaki yeni commandlet’ler eklendi. Yetkilendirme kuralı işlemleri, ayarlanan parametreye göre uygulanır.
+    - New-AzureRmServiceBusAuthorizationRule - Mevcut ServiceBus NameSpace/Queue/Topic için yeni bir AuthorizationRule ekler.
+    - Get-AzureRmServiceBusAuthorizationRule - Mevcut ServiceBus NameSpace/Queue/Topic için AuthorizationRule / AuthorizationRules Listesini alır.
+    - Set-AzureRmServiceBusAuthorizationRule - Servicebus NameSpace/Queue/Topic için mevcut AuthorizationRule özelliklerini güncelleştirir.
+    - New-AzureRmServiceBusKey - Mevcut ServiceBus NameSpace/Queue/Topic için AuthorizationRule öğesine yönelik yeni bir Birincil/İkincil Anahtar oluşturur.
+    - Get-AzureRmServiceBusKey - Mevcut ServiceBus NameSpace/Queue/Topic için AuthorizationRule öğesinin Birincil/İkincil Anahtarını alır.
+    - Remove-AzureRmServiceBusNamespaceAuthorizationRule - ServiceBus NameSpace/Queue/Topic için mevcut AuthorizationRule öğesini siler.
+  * NamespceAttributes öğesine Kaynak Grubu özelliği eklendi
+
 * Sql
     * Set-AzureRmSqlServerTransparentDataEncryptionProtector, Şifreleme Koruyucu Türü AzureKeyVault olarak ayarlandığında bir uyarı görüntülemek ve onay gerektirmek üzere güncelleştiriliyor
     * Denetim ayarları için yeni güncelleştirilmiş cmdlet’ler ekleniyor
@@ -297,15 +298,16 @@ Azure PowerShell'in bu sürümünde yapılan değişikliklerin listesi aşağıd
 
 ## <a name="20170717---version-421"></a>2017.07.17 - Sürüm 4.2.1
 * İşlem
-    - VM Diskleri ve VM Diski anlık görüntüleri için oluşturma ve güncelleştirme cmdlet’leri ile ilgili sorun çözüldü (bağlantı)[https://github.com/azure/azure-powershell/issues/4309]
-      - New-AzureRmDisk
-      - New-AzureRmSnapshot
-      - Update-AzureRmDisk
-      - Update-AzureRmSnapshot
+  - VM Diskleri ve VM Diski anlık görüntüleri için oluşturma ve güncelleştirme cmdlet’leri ile ilgili sorun çözüldü (bağlantı)[<https://github.com/azure/azure-powershell/issues/4309>]
+    - New-AzureRmDisk
+    - New-AzureRmSnapshot
+    - Update-AzureRmDisk
+    - Update-AzureRmSnapshot
 * Profil
-    - RDFE’de etkileşimli olmayan kullanıcı kimlik doğrulaması ile ilgili sorun düzeltildi (bağlantı)[https://github.com/Azure/azure-powershell/issues/4299]
+  - RDFE’de etkileşimli olmayan kullanıcı kimlik doğrulaması ile ilgili sorun düzeltildi (bağlantı)[<https://github.com/Azure/azure-powershell/issues/4299>]
+
 * ServiceManagement
-    - Etkileşimli olmayan kullanıcı kimlik doğrulaması ile ilgili sorun düzeltildi (bağlantı)[https://github.com/Azure/azure-powershell/issues/4299]
+  - Etkileşimli olmayan kullanıcı kimlik doğrulaması ile ilgili sorun düzeltildi (bağlantı)[<https://github.com/Azure/azure-powershell/issues/4299>]
 
 ## <a name="2017711---version-420"></a>2017.7.11 - Sürüm 4.2.0
 * AnalysisServices
@@ -660,7 +662,7 @@ Azure PowerShell'in bu sürümünde yapılan değişikliklerin listesi aşağıd
 * ServiceBus
 
   - Hata Düzeltmesi: ServiceBus Kuyruğu nesnesi özellik değerleri null olarak belirlenmişti, nesne Kuyruğu güncelleştirmek için Set-AzureRmServiceBusQueue cmdlet'inde giriş parametresi olarak kullanılıyor.
-   - Etkilenen özellikler: LockDuration, EntityAvailabilityStatus, DuplicateDetectionHistoryTimeWindow, MaxDeliveryCount ve MessageCount
+    - Etkilenen özellikler: LockDuration, EntityAvailabilityStatus, DuplicateDetectionHistoryTimeWindow, MaxDeliveryCount ve MessageCount
 * ServiceFabric
 
   - Service Fabric için cmdlet'ler eklendi
