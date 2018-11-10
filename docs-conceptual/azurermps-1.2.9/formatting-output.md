@@ -8,26 +8,26 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/30/2017
 ms.openlocfilehash: 37f240d371150928f10cb2811c4bb5f1b585c2f3
-ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
+ms.sourcegitcommit: ac4b53bb42a25aae013a9d8cd9ae98ada9397274
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51210933"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51273880"
 ---
-# <a name="formatting-query-results"></a><span data-ttu-id="61508-103">Sorgu sonuçlarını biçimlendirme</span><span class="sxs-lookup"><span data-stu-id="61508-103">Formatting query results</span></span>
+# <a name="formatting-query-results"></a><span data-ttu-id="d1a66-103">Sorgu sonuçlarını biçimlendirme</span><span class="sxs-lookup"><span data-stu-id="d1a66-103">Formatting query results</span></span>
 
-<span data-ttu-id="61508-104">Varsayılan olarak her PowerShell cmdlet’i, cmdlet’in okunmasını kolaylaştıran önceden tanımlanmış çıktı biçimlendirmesine sahiptir.</span><span class="sxs-lookup"><span data-stu-id="61508-104">By default each PowerShell cmdlet has predefined formatting of output making it easy to read.</span></span>  <span data-ttu-id="61508-105">PowerShell, çıktıyı ayarlama veya cmdlet çıktısını aşağıdaki cmdlet’ler ile farklı bir biçime dönüştürme esnekliğini de sağlar:</span><span class="sxs-lookup"><span data-stu-id="61508-105">PowerShell also provides the flexibility to adjust the output or convert the cmdlet output to a different format with the following cmdlets:</span></span>
+<span data-ttu-id="d1a66-104">Varsayılan olarak her PowerShell cmdlet’i, cmdlet’in okunmasını kolaylaştıran önceden tanımlanmış çıktı biçimlendirmesine sahiptir.</span><span class="sxs-lookup"><span data-stu-id="d1a66-104">By default each PowerShell cmdlet has predefined formatting of output making it easy to read.</span></span>  <span data-ttu-id="d1a66-105">PowerShell, çıktıyı ayarlama veya cmdlet çıktısını aşağıdaki cmdlet’ler ile farklı bir biçime dönüştürme esnekliğini de sağlar:</span><span class="sxs-lookup"><span data-stu-id="d1a66-105">PowerShell also provides the flexibility to adjust the output or convert the cmdlet output to a different format with the following cmdlets:</span></span>
 
-| <span data-ttu-id="61508-106">Biçimlendirme</span><span class="sxs-lookup"><span data-stu-id="61508-106">Formatting</span></span>      | <span data-ttu-id="61508-107">Dönüştürme</span><span class="sxs-lookup"><span data-stu-id="61508-107">Conversion</span></span>       |
+| <span data-ttu-id="d1a66-106">Biçimlendirme</span><span class="sxs-lookup"><span data-stu-id="d1a66-106">Formatting</span></span>      | <span data-ttu-id="d1a66-107">Dönüştürme</span><span class="sxs-lookup"><span data-stu-id="d1a66-107">Conversion</span></span>       |
 |-----------------|------------------|
 | `Format-Custom` | `ConvertTo-Csv`  |
 | `Format-List`   | `ConvertTo-Html` |
 | `Format-Table`  | `ConvertTo-Json` |
 | `Format-Wide`   | `ConvertTo-Xml`  |
 
-## <a name="formatting-examples"></a><span data-ttu-id="61508-108">Biçimlendirme örnekleri</span><span class="sxs-lookup"><span data-stu-id="61508-108">Formatting examples</span></span>
+## <a name="formatting-examples"></a><span data-ttu-id="d1a66-108">Biçimlendirme örnekleri</span><span class="sxs-lookup"><span data-stu-id="d1a66-108">Formatting examples</span></span>
 
-<span data-ttu-id="61508-109">Bu örnekte, varsayılan aboneliğimizdeki Azure VM'lerinin listesini alırız.</span><span class="sxs-lookup"><span data-stu-id="61508-109">In this example we get a list of Azure VMs in our default subscription.</span></span>  <span data-ttu-id="61508-110">Get-AzureRmVM komutu, varsayılan olarak bir tablo biçiminde çıktı oluşturur.</span><span class="sxs-lookup"><span data-stu-id="61508-110">The Get-AzureRmVM command defaults output into a table format.</span></span>
+<span data-ttu-id="d1a66-109">Bu örnekte, varsayılan aboneliğimizdeki Azure VM'lerinin listesini alırız.</span><span class="sxs-lookup"><span data-stu-id="d1a66-109">In this example we get a list of Azure VMs in our default subscription.</span></span>  <span data-ttu-id="d1a66-110">Get-AzureRmVM komutu, varsayılan olarak bir tablo biçiminde çıktı oluşturur.</span><span class="sxs-lookup"><span data-stu-id="d1a66-110">The Get-AzureRmVM command defaults output into a table format.</span></span>
 
 ```powershell-interactive
 Get-AzureRmVM
@@ -40,7 +40,7 @@ MYWESTEURG        MyUnbuntu1610 westeurope Standard_DS1_v2   Linux myunbuntu1610
 MYWESTEURG          MyWin2016VM westeurope Standard_DS1_v2 Windows   mywin2016vm880         Succeeded
 ```
 
-<span data-ttu-id="61508-111">Döndürülen sütunları sınırlamak isterseniz `Format-Table` cmdlet’ini kullanabilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="61508-111">If you would like to limit the columns returned you can use the `Format-Table` cmdlet.</span></span> <span data-ttu-id="61508-112">Aşağıdaki örnekte, aynı sanal makine listesini alıyoruz ancak çıktıyı yalnızca VM’nin adı, kaynak grubu ve VM’nin konumu ile sınırlıyoruz.</span><span class="sxs-lookup"><span data-stu-id="61508-112">In the following example we get the same list of virtual machines but restrict the output to just the name of the VM, the resource group, and the location of the VM.</span></span>  <span data-ttu-id="61508-113">`-Autosize` parametresi, sütunları veri boyutuna göre boyutlandırır.</span><span class="sxs-lookup"><span data-stu-id="61508-113">The `-Autosize` parameter sizes the columns according to the size of the data.</span></span>
+<span data-ttu-id="d1a66-111">Döndürülen sütunları sınırlamak isterseniz `Format-Table` cmdlet’ini kullanabilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="d1a66-111">If you would like to limit the columns returned you can use the `Format-Table` cmdlet.</span></span> <span data-ttu-id="d1a66-112">Aşağıdaki örnekte, aynı sanal makine listesini alıyoruz ancak çıktıyı yalnızca VM’nin adı, kaynak grubu ve VM’nin konumu ile sınırlıyoruz.</span><span class="sxs-lookup"><span data-stu-id="d1a66-112">In the following example we get the same list of virtual machines but restrict the output to just the name of the VM, the resource group, and the location of the VM.</span></span>  <span data-ttu-id="d1a66-113">`-Autosize` parametresi, sütunları veri boyutuna göre boyutlandırır.</span><span class="sxs-lookup"><span data-stu-id="d1a66-113">The `-Autosize` parameter sizes the columns according to the size of the data.</span></span>
 
 ```powershell-interactive
 Get-AzureRmVM | Format-Table Name,ResourceGroupName,Location -AutoSize
@@ -53,7 +53,7 @@ MyUnbuntu1610 MYWESTEURG        westeurope
 MyWin2016VM   MYWESTEURG        westeurope
 ```
 
-<span data-ttu-id="61508-114">İsterseniz bilgileri bir liste biçiminde görüntüleyebilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="61508-114">If you would prefer you can view information in a list format.</span></span> <span data-ttu-id="61508-115">Aşağıdaki örnekte `Format-List` cmdlet’i kullanılarak bunun nasıl yapılacağı gösterilir.</span><span class="sxs-lookup"><span data-stu-id="61508-115">The following example shows this using the`Format-List` cmdlet.</span></span>
+<span data-ttu-id="d1a66-114">İsterseniz bilgileri bir liste biçiminde görüntüleyebilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="d1a66-114">If you would prefer you can view information in a list format.</span></span> <span data-ttu-id="d1a66-115">Aşağıdaki örnekte `Format-List` cmdlet’i kullanılarak bunun nasıl yapılacağı gösterilir.</span><span class="sxs-lookup"><span data-stu-id="d1a66-115">The following example shows this using the`Format-List` cmdlet.</span></span>
 
 ```powershell-interactive
 Get-AzureVM | Format-List Name,VmId,Location,ResourceGroupName
@@ -71,9 +71,9 @@ Location          : westeurope
 ResourceGroupName : MYWESTEURG
 ```
 
-## <a name="converting-to-other-data-types"></a><span data-ttu-id="61508-116">Diğer veri türlerine dönüştürme</span><span class="sxs-lookup"><span data-stu-id="61508-116">Converting to other data types</span></span>
+## <a name="converting-to-other-data-types"></a><span data-ttu-id="d1a66-116">Diğer veri türlerine dönüştürme</span><span class="sxs-lookup"><span data-stu-id="d1a66-116">Converting to other data types</span></span>
 
-<span data-ttu-id="61508-117">PowerShell, gereksinimlerinizi karşılamak için kullanabileceğiniz birden çok çıktı biçimi de sunar.</span><span class="sxs-lookup"><span data-stu-id="61508-117">PowerShell also offers multiple output format you can use to meet your needs.</span></span>  <span data-ttu-id="61508-118">Aşağıdaki örnekte, `Select-Object` cmdlet’ini kullanarak aboneliğimizdeki sanal makinelerin özniteliklerini alır ve çıktıyı bir veritabanı ya da elektronik tabloya kolayca aktarılabilmesi için CSV biçimine dönüştürürüz.</span><span class="sxs-lookup"><span data-stu-id="61508-118">In the following example we use the `Select-Object` cmdlet to get attributes of the virtual machines in our subscription and and convert the output to CSV format for easy import into a database or spreadsheet.</span></span>
+<span data-ttu-id="d1a66-117">PowerShell, gereksinimlerinizi karşılamak için kullanabileceğiniz birden çok çıktı biçimi de sunar.</span><span class="sxs-lookup"><span data-stu-id="d1a66-117">PowerShell also offers multiple output format you can use to meet your needs.</span></span>  <span data-ttu-id="d1a66-118">Aşağıdaki örnekte, `Select-Object` cmdlet’ini kullanarak aboneliğimizdeki sanal makinelerin özniteliklerini alır ve çıktıyı bir veritabanı ya da elektronik tabloya kolayca aktarılabilmesi için CSV biçimine dönüştürürüz.</span><span class="sxs-lookup"><span data-stu-id="d1a66-118">In the following example we use the `Select-Object` cmdlet to get attributes of the virtual machines in our subscription and and convert the output to CSV format for easy import into a database or spreadsheet.</span></span>
 
 ```powershell-interactive
 Get-AzureRmVM | Select-Object ResourceGroupName,Id,VmId,Name,Location,ProvisioningState | ConvertTo-Csv -NoTypeInformation
@@ -85,7 +85,7 @@ Get-AzureRmVM | Select-Object ResourceGroupName,Id,VmId,Name,Location,Provisioni
 "MYWESTUERG","/subscriptions/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/resourceGroups/MYWESTUERG/providers/Microsoft.Compute/virtualMachines/MyWin2016VM","4650c755-fc2b-4fc7-a5bc-298d5c00808f","MyWin2016VM","westeurope","Succeeded"
 ```
 
-<span data-ttu-id="61508-119">Çıktıyı JSON biçimine de dönüştürebilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="61508-119">You can also convert the output into JSON format.</span></span>  <span data-ttu-id="61508-120">Aşağıdaki örnekte aynı VM listesi oluşturulur, ancak çıktı biçimi JSON olarak değiştirilir.</span><span class="sxs-lookup"><span data-stu-id="61508-120">The following example creates the same list of VMs but changes the output format to JSON.</span></span>
+<span data-ttu-id="d1a66-119">Çıktıyı JSON biçimine de dönüştürebilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="d1a66-119">You can also convert the output into JSON format.</span></span>  <span data-ttu-id="d1a66-120">Aşağıdaki örnekte aynı VM listesi oluşturulur, ancak çıktı biçimi JSON olarak değiştirilir.</span><span class="sxs-lookup"><span data-stu-id="d1a66-120">The following example creates the same list of VMs but changes the output format to JSON.</span></span>
 
 ```powershell-interactive
 Get-AzureRmVM | Select-Object ResourceGroupName,Id,VmId,Name,Location,ProvisioningState | ConvertTo-Json
