@@ -7,17 +7,28 @@ ms.author: sttramer
 ms.manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.openlocfilehash: 3543dbb692a41bd3b417bb3d771e67c52d57c340
-ms.sourcegitcommit: ac4b53bb42a25aae013a9d8cd9ae98ada9397274
+ms.openlocfilehash: 5f51683896fffe56332ac0a43179ad1f894d8d75
+ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51274662"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51213060"
 ---
 # <a name="uninstall-the-azure-powershell-module"></a>Azure PowerShell modülünü kaldırma
 
 Bu makalede Azure PowerShell'in eski bir sürümünü veya tamamını sisteminizden kaldırmayı öğreneceksiniz. Azure PowerShell'i tamamen kaldırmaya karar verdiyseniz [Send-Feedback](/powershell/module/azurerm.profile/send-feedback) cmdlet'ini kullanarak geri bildirimlerinizi bizimle paylaşın.
 Bir hatayla karşılaştıysanız [bir GitHub sorunu girerek](https://github.com/azure/azure-powershell/issues) bize bildirirseniz seviniriz.
+
+## <a name="uninstall-msi"></a>MSI yüklemesini kaldırma
+
+Azure PowerShell'i MSI paketini kullanarak yüklediyseniz kaldırma işlemini PowerShell yerine Windows sisteminden gerçekleştirmeniz gerekir.
+
+| Platform | Yönergeler |
+|----------|--------------|
+| Windows 10 | Başlat > Ayarlar > Uygulamalar |
+| Windows 7 </br>Windows 8 | Başlat > Denetim Masası > Programlar > Program kaldır |
+
+Bu ekrandaki program listesinde "Azure PowerShell"i bulabilir ve kaldırabilirsiniz.
 
 ## <a name="uninstall-from-powershell"></a>PowerShell'den kaldırma
 
@@ -80,14 +91,3 @@ Bu komutu kaldırmak istediğiniz her Azure PowerShell sürümü için çalışt
 $versions = (get-installedmodule AzureRM -AllVersions | Select-Object Version)
 $versions[1..($versions.Length-1)]  | foreach { Uninstall-AllModules -TargetModule AzureRM -Version ($_.Version) -Force }
 ```
-
-## <a name="uninstall-msi"></a>MSI yüklemesini kaldırma
-
-Azure PowerShell'i MSI paketini kullanarak yüklediyseniz kaldırma işlemini PowerShell yerine Windows sisteminden gerçekleştirmeniz gerekir.
-
-| Platform | Yönergeler |
-|----------|--------------|
-| Windows 10 | Başlat > Ayarlar > Uygulamalar |
-| Windows 7 </br>Windows 8 | Başlat > Denetim Masası > Programlar > Program kaldır |
-
-Bu ekrandaki program listesinde "Azure PowerShell"i bulabilir ve kaldırabilirsiniz.
