@@ -8,12 +8,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.manager: carmonm
 ms.date: 09/11/2018
-ms.openlocfilehash: 32decf653a956d0b0b202b38a238f42fa831ecae
-ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
+ms.openlocfilehash: bdd8e69a2ea9df8b4fff100e1f3cc4c82d2d9d9d
+ms.sourcegitcommit: ac4b53bb42a25aae013a9d8cd9ae98ada9397274
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51213052"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51274985"
 ---
 # <a name="overview-of-azure-powershell"></a>Azure PowerShell’e Genel Bakış
 
@@ -28,8 +28,7 @@ Aşağıdaki örnekler, yaygın senaryoları Azure PowerShell ile nasıl gerçek
 * [Web Apps](/azure/app-service-web/app-service-powershell-samples?toc=/powershell/azure/toc.json)
 * [SQL Veritabanları](/azure/sql-database/sql-database-powershell-samples?toc=/powershell/azure/toc.json)
 
-> [!NOTE]
-> Dönüştürülemeyen klasik dağıtım modelini kullanan dağıtımlarınız varsa, Azure PowerShell'in Hizmet Yönetimi sürümünü yükleyebilirsiniz. Daha fazla bilgi için bkz. [Azure PowerShell Hizmet Yönetimi modülünü yükleme](/powershell/azure/servicemanagement/install-azure-ps).
+[!INCLUDE[az-replacing-azurerm](../includes/az-replacing-azurerm.md)]
 
 ## <a name="learn-powershell-basics"></a>PowerShell temel bilgilerini öğrenme
 
