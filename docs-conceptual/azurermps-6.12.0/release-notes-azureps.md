@@ -8,12 +8,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.workload: ''
 ms.date: 08/28/2018
-ms.openlocfilehash: c60bc9197266cc1da37cc9af7baf03e7ba8fb7ac
-ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
+ms.openlocfilehash: 8a7b184ed06eb078956229fa67d02840014e3aaf
+ms.sourcegitcommit: ac4b53bb42a25aae013a9d8cd9ae98ada9397274
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51213108"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51275529"
 ---
 # <a name="release-notes"></a>Sürüm notları
 
@@ -164,7 +164,7 @@ Azure PowerShell'in bu sürümünde yapılan değişikliklerin listesi aşağıd
 #### <a name="azurermprofile"></a>AzureRM.Profile
 * Depolama ortak kodunda küçük değişiklikler yapıldı
 * Yardım dosyaları tüm parametre türlerini içerecek şekilde güncelleştirildi.
-- ServicePrincipalCertificateWithSubscriptionId parametre kümesindeki -ServicePrincipal parametresi zorunlu olmaktan çıkarıldı 
+* ServicePrincipalCertificateWithSubscriptionId parametre kümesindeki -ServicePrincipal parametresi zorunlu olmaktan çıkarıldı 
 
 #### <a name="azurestorage"></a>Azure Depolama
 * OAuth ile Depolama Bağlamı oluşturma desteği eklendi. 
@@ -403,7 +403,7 @@ Azure PowerShell'in bu sürümünde yapılan değişikliklerin listesi aşağıd
 
 #### <a name="azurestorage"></a>Azure Depolama
 * Azure Dosya Paylaşımı kotasındaki 5 TB'lık sınır kaldırıldı
-- Set-AzureStorageShareQuota
+* Set-AzureStorageShareQuota
 
 #### <a name="azurermanalysisservices"></a>AzureRM.AnalysisServices
 * Azure ClientRuntime'ın en son sürümüne güncelleştirildi.
@@ -680,8 +680,8 @@ Azure PowerShell'in bu sürümünde yapılan değişikliklerin listesi aşağıd
 
 #### <a name="azurestorage"></a>Azure Depolama
 * Salt yazılır Sas belirteciyle Karşıya Yükleme Blobu veya Dosyası desteği
-- Set-AzureStorageBlobContent
-- Set-AzureStorageFileContent
+* Set-AzureStorageBlobContent
+* Set-AzureStorageFileContent
 
 #### <a name="azurermanalysisservices"></a>AzureRM.AnalysisServices
 * AS'ye gerekli ResourceGroupName özelliği eklendi.
