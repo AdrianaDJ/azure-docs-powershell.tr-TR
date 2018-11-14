@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/05/2017
-ms.openlocfilehash: ac571363d79c83b268b5c25f65b14f16d4b86e71
-ms.sourcegitcommit: bcf80dfd7fbe17e82e7ad029802cfe8a2f02b15c
+ms.openlocfilehash: ff58693c8ec21b7e50e37bd85975a9ae3980a5e7
+ms.sourcegitcommit: ac4b53bb42a25aae013a9d8cd9ae98ada9397274
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35323042"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51275733"
 ---
 # <a name="using-experimental-azure-powershell-modules"></a>Deneysel Azure PowerShell modüllerini kullanma
 
@@ -63,7 +63,7 @@ Azure CLI 2.0, "kullanmaya başlama" senaryolarını son kullanıcılar için ko
 
 Temel iyileştirmeler, "sağduyu" olarak kabul edilir ve bu güncelleştirmelerin uygulamaya geçirilmesi için az miktarda deneme gerekir.
 
-- Senaryoya Dayalı Cmdlet’ler - **All*- cmdlet’leri Azure REST hizmeti değil, senaryolar çevresinde tasarlanmalıdır.
+- Senaryoya Dayalı Cmdlet’ler - <em>*Tümü</em>- Cmdlet’ler Azure REST hizmeti değil, senaryolar çevresinde tasarlanmalıdır.
 
 - Daha Kısa Adları - Cmdlet'lerin adlarını (örneğin, `New-AzureRmVM` => `New-AzVm`) ve parametrelerin adlarını (örneğin, `-ResourceGroupName` => `-Rg`) içerir. "Eski" cmdlet’lerle uyumluluk için diğer adları kullanın. _Geriye doğru uyumlu_ parametre kümeleri sağlayın.
 
