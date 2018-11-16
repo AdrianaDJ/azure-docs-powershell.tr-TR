@@ -10,16 +10,16 @@ ms.topic: conceptual
 ms.workload: ''
 ms.date: 09/26/2018
 ms.openlocfilehash: 7e384fdf66fce1102b7723018175ba6cc276ccc5
-ms.sourcegitcommit: ac4b53bb42a25aae013a9d8cd9ae98ada9397274
+ms.sourcegitcommit: 4afdba3cd7e1d348876ce59f3503fdcd258f79ab
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51273931"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "51576411"
 ---
-# <a name="release-notes"></a><span data-ttu-id="cd291-103">Sürüm notları</span><span class="sxs-lookup"><span data-stu-id="cd291-103">Release notes</span></span>
+# <a name="release-notes"></a><span data-ttu-id="9b2b7-103">Sürüm notları</span><span class="sxs-lookup"><span data-stu-id="9b2b7-103">Release notes</span></span>
 
-<span data-ttu-id="cd291-104">Azure Dağıtım Yöneticisi’nin bu sürümünde yapılan değişikliklerin listesi aşağıda verilmiştir.</span><span class="sxs-lookup"><span data-stu-id="cd291-104">This is a list of changes made to Azure Deployment Manager in this release.</span></span>
+<span data-ttu-id="9b2b7-104">Azure Dağıtım Yöneticisi’nin bu sürümünde yapılan değişikliklerin listesi aşağıda verilmiştir.</span><span class="sxs-lookup"><span data-stu-id="9b2b7-104">This is a list of changes made to Azure Deployment Manager in this release.</span></span>
 
 ---
-## <a name="090---september-2018"></a><span data-ttu-id="cd291-105">0.9.0 - Eylül 2018</span><span class="sxs-lookup"><span data-stu-id="cd291-105">0.9.0 - September 2018</span></span>
-* <span data-ttu-id="cd291-106">İlk sürüm: Piyasaya çıkarmayı ve ilişkili kaynakları yönetmeye yönelik destek eklendi.</span><span class="sxs-lookup"><span data-stu-id="cd291-106">First release - add support to manage rollouts and associated resources.</span></span>
+## <a name="090---september-2018"></a><span data-ttu-id="9b2b7-105">0.9.0 - Eylül 2018</span><span class="sxs-lookup"><span data-stu-id="9b2b7-105">0.9.0 - September 2018</span></span>
+* <span data-ttu-id="9b2b7-106">İlk sürüm: Piyasaya çıkarmayı ve ilişkili kaynakları yönetmeye yönelik destek eklendi.</span><span class="sxs-lookup"><span data-stu-id="9b2b7-106">First release - add support to manage rollouts and associated resources.</span></span>
