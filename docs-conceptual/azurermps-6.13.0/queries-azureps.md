@@ -1,30 +1,30 @@
 ---
-title: Azure kaynaklarını sorgulama ve sonuçları biçimlendirme | Microsoft Docs
+title: Azure PowerShell cmdlet'lerinin çıkışını sorgulama
 description: Azure’daki kaynakları sorgulama ve sonuçları biçimlendirme.
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 03/30/2017
-ms.openlocfilehash: 9a7627a25f9bbd196b1d615229e45a6e1ce7a7d9
+ms.date: 09/11/2018
+ms.openlocfilehash: 6bd1bea43303e9f5a2b46d63a3ac51b4c4031b9f
 ms.sourcegitcommit: 80a3da199954d0ab78765715fb49793e89a30f12
 ms.translationtype: HT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 11/22/2018
-ms.locfileid: "52258409"
+ms.locfileid: "52259861"
 ---
-# <a name="querying-for-azure-resources"></a>Azure kaynaklarını sorgulama
+# <a name="query-output-of-azure-powershell-cmdlets"></a>Azure PowerShell cmdlet'lerinin çıkışını sorgulama
 
 PowerShell’de sorgu işlemleri yerleşik cmdlet’ler kullanılarak gerçekleştirilebilir. PowerShell’de cmdlet adları **_Fiil-İsim_** biçiminde olur. **_Get_** fiilini kullanan cmdlet’ler sorgu cmdlet’leridir. Cmdlet isimleri, cmdlet fiilleri tarafından üzerinde eylem gerçekleştirilen Azure kaynağı türleridir.
 
-## <a name="selecting-simple-properties"></a>Basit özellikleri seçerek
+## <a name="select-simple-properties"></a>Basit özellikleri seçme
 
 Azure PowerShell’de her cmdlet için tanımlı bir varsayılan biçimlendirme vardır. Her kaynak türünün en yaygın özellikleri, otomatik olarak bir tablo ya da liste biçiminde görüntülenir. Çıktı biçimlendirme hakkında daha fazla bilgi edinmek için bkz. [Sorgu sonuçlarını biçimlendirme](formatting-output.md).
 
 Hesabınızdaki VM’lerin listesini sorgulamak için `Get-AzureRmVM` cmdlet’ini kullanın.
 
-```powershell-interactive
+```azurepowershell-interactive
 Get-AzureRmVM
 ```
 
@@ -39,7 +39,7 @@ MYWESTEURG          MyWin2016VM westeurope Standard_DS1_v2 Windows   mywin2016vm
 
 `Select-Object` cmdlet’ini kullanarak ilginizi çeken belirli özellikleri seçebilirsiniz.
 
-```powershell-interactive
+```azurepowershell-interactive
 Get-AzureRmVM | Select Name,ResourceGroupName,Location
 ```
 
@@ -50,11 +50,11 @@ MyUnbuntu1610 MYWESTEURG        westeurope
 MyWin2016VM   MYWESTEURG        westeurope
 ```
 
-## <a name="selecting-complex-nested-properties"></a>Karmaşık iç içe özellikler seçme
+## <a name="select-complex-nested-properties"></a>Karmaşık iç içe özellikleri seçme
 
-Seçmek istediğiniz özellik JSON çıktısında derin olarak iç içe yerleştirilmişse, bu iç içe özelliğin tam yolunu sağlamanız gerekir. Aşağıdaki örnekte `Get-AzureRmVM` cmdlet’inden VM Adı ve işletim sistemi türünün nasıl seçileceği gösterilir.
+İstediğiniz özellik JSON çıkışında iç içe yerleştirilmişse, özelliğin tam yolunu sağlamanız gerekir. Aşağıdaki örnekte `Get-AzureRmVM` cmdlet’inden VM Adı ve işletim sistemi türünün nasıl seçileceği gösterilir.
 
-```powershell-interactive
+```azurepowershell-interactive
 Get-AzureRmVM | Select Name,@{Name='OSType'; Expression={$_.StorageProfile.OSDisk.OSType}}
 ```
 
@@ -65,11 +65,11 @@ MyUnbuntu1610   Linux
 MyWin2016VM   Windows
 ```
 
-## <a name="filter-result-using-the-where-object-cmdlet"></a>Where-Object cmdlet’ini kullanarak sonucu filtreleme
+## <a name="filter-results-with-the-where-object-cmdlet"></a>Where-Object cmdlet’iyle sonuçları filtreleme
 
 `Where-Object` cmdlet’i, sonucu herhangi bir özellik değerine göre filtrelemenize imkan tanır. Aşağıdaki örnekte, filtre yalnızca adında "RGD" metni geçen VM’leri seçer.
 
-```powershell-interactive
+```azurepowershell-interactive
 Get-AzureRmVM | Where ResourceGroupName -like RGD* | Select ResourceGroupName,Name
 ```
 
@@ -82,7 +82,7 @@ RGDEMO001          KBDemo020
 
 Bir sonraki örnekte sonuçlar, boyutu 'Standart_DS1_V2' olan VM’leri döndürür.
 
-```powershell-interactive
+```azurepowershell-interactive
 Get-AzureRmVM | Where vmSize -eq Standard_DS1_V2
 ```
 
