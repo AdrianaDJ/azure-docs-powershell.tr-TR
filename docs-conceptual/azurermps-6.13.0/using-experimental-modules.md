@@ -6,15 +6,15 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 09/05/2017
-ms.openlocfilehash: ff58693c8ec21b7e50e37bd85975a9ae3980a5e7
+ms.date: 09/11/2018
+ms.openlocfilehash: 77d0ce36ae3ab7c7bddd3febef4600fc9652850f
 ms.sourcegitcommit: 80a3da199954d0ab78765715fb49793e89a30f12
 ms.translationtype: HT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 11/22/2018
-ms.locfileid: "52259140"
+ms.locfileid: "52259871"
 ---
-# <a name="using-experimental-azure-powershell-modules"></a>Deneysel Azure PowerShell modüllerini kullanma
+# <a name="use-experimental-azure-powershell-modules"></a>Deneysel Azure PowerShell modüllerini kullanma
 
 Azure PowerShell ekibi Azure’da geliştirici araçlarına (özellikle CLI’ler) vurgu yaparak Azure PowerShell deneyiminde çok sayıda geliştirmeyi denemektedir.
 
@@ -89,8 +89,8 @@ Deneysel geliştirmeler, takımın deneme ile doğrulamayı istediği önemli bi
 
 Örneğin, "Web uygulaması oluşturma" senaryosunda mevcut bir git deposuna bir "azure" uzak birimini otomatik olarak ekleyen `-Git` veya `-AddRemote` olabilir.
 
-- Ayarlanabilir Varsayılanlar - Kullanıcılar `-ResourceGroupName` ve `-Location` gibi bazı yaygın parametrelerin varsayılan değerlerini ayarlayabilmelidir.
+- Ayarlanabilir Varsayılanlar - Kullanıcıların `-ResourceGroupName` ve `-Location` gibi yaygın parametreler için varsayılan değerleri ayarlayabilmesi gerekir.
 
-- Boyut Varsayılanları - Birçok Kaynak Sağlayıcısı farklı adlar kullandığından, kaynak "boyutları" kafa karıştırıcı olabilir (örneğin, "Standard\_DS1\_v2" veya "S1"). Bununla birlikte, çoğu kullanıcı daha çok maliyetle ilgilenir. Bu nedenle, bir fiyatlandırma zamanlamasına göre "evrensel" boyutlar tanımlamak mantıklıdır. Kullanıcılar belirli bir boyutu seçebilir veya bütçe kaynağına göre _en iyi seçeneği_ Azure PowerShell’in seçmesine izin verebilir.
+- Boyut Varsayılanları - Birçok Kaynak Sağlayıcısı farklı adlar kullandığından, kaynak "boyutları" kafa karıştırıcı olabilir (örneğin, "Standard\_DS1\_v2" veya "S1"). Bununla birlikte, çoğu kullanıcı daha çok maliyetle ilgilenir. Dolayısıyla bir fiyatlandırma zamanlamasına göre "evrensel" boyutlar tanımlamak mantıklıdır. Kullanıcılar belirli bir boyutu seçebilir veya bütçe kaynağına göre _en iyi seçeneği_ Azure PowerShell’in seçmesine izin verebilir.
 
-- Çıktı Biçimi - Azure PowerShell şu anda `PSObject` döndürmektedir ve çok az konsol çıktısı mevcuttur. Azure PowerShell’in kullanılan "akıllı varsayılanlar" ile ilgili bazı bilgileri kullanıcıya göstermesi gerekebilir.
+- Çıkış Biçimi - Azure PowerShell şu anda `PSObject` döndürmektedir ve çok az konsol çıkışı vardır. Azure PowerShell’in kullanılan "akıllı varsayılanlar" hakkındaki bazı bilgileri kullanıcıya göstermesi gerekebilir.
