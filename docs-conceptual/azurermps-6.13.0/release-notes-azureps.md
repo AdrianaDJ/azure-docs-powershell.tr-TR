@@ -139,7 +139,7 @@ Azure PowerShell'in bu sürümünde yapılan değişikliklerin listesi aşağıd
 * Kurtarma hizmetlerinde Azure dosya paylaşımları için destek eklendi.
 
 #### <a name="azurermresources"></a>AzureRM.Resources
-* https://github.com/Azure/azure-powershell/issues/7402 düzeltmesi
+* [https://github.com/Azure/azure-powershell/issues/7402](https://github.com/Azure/azure-powershell/issues/7402) düzeltmesi
     - 'Get-AzureRmResource' için '-ResourceId' parametresi kullanılarak kaynakların listelenmesine olanak tanındı
 
 #### <a name="azurermservicebus"></a>AzureRM.ServiceBus
@@ -375,13 +375,13 @@ Azure PowerShell'in bu sürümünde yapılan değişikliklerin listesi aşağıd
 
 #### <a name="azurermapimanagement"></a>AzureRM.ApiManagement
 * Varsayılan kaynak gruplarının ayarlanmamasına neden olan sorun düzeltildi.
-* https://github.com/Azure/azure-powershell/issues/6603 sorunu düzeltildi
+* [https://github.com/Azure/azure-powershell/issues/6603](https://github.com/Azure/azure-powershell/issues/6603) sorunu düzeltildi
     - Import-AzureRmApiManagementApi ve *-AzureRmApiManagementCertificate cmdlet’leri artık göreli yolları işleyebiliyor
-* https://github.com/Azure/azure-powershell/issues/6879 sorunu düzeltildi
+* [https://github.com/Azure/azure-powershell/issues/6879](https://github.com/Azure/azure-powershell/issues/6879) sorunu düzeltildi
     - CertificateInformation, Set-AzureRmApiManagement cmdlet’inin düzgün çalışmasını sağlayan, ayarlanabilir bir özelliktir. 4.0.4-preview nuget’e yükselterek düzeltildi
-* https://github.com/Azure/azure-powershell/issues/6853 sorunu düzeltildi
+* [https://github.com/Azure/azure-powershell/issues/6853](https://github.com/Azure/azure-powershell/issues/6853) sorunu düzeltildi
     - Odata filtresi Ürün üzerinde Ada Göre Arama için düzeltildi
-* https://github.com/Azure/azure-powershell/issues/6814 sorunu düzeltildi
+* [https://github.com/Azure/azure-powershell/issues/6814](https://github.com/Azure/azure-powershell/issues/6814) sorunu düzeltildi
     - Odata filtresi API üzerinde Ada Göre Arama için düzeltildi
 * Azure İzleyici günlükçüsüne yönelik destek eklendi
 
@@ -670,11 +670,11 @@ Azure PowerShell'in bu sürümünde yapılan değişikliklerin listesi aşağıd
 * Cmdlet'lerin çıkış türü özelliklerine Ps1XmlAttribute eklendi.
 
 #### <a name="azurermapimanagement"></a>AzureRM.ApiManagement
-* https://github.com/Azure/azure-powershell/issues/6370 sorunu düzeltildi
+* [https://github.com/Azure/azure-powershell/issues/6370](https://github.com/Azure/azure-powershell/issues/6370) sorunu düzeltildi
     - PsApiManagementApi'yi ApiContract'e çevirmek için Automapper hatası düzeltildi
-* https://github.com/Azure/azure-powershell/issues/6515 sorunu düzeltildi
+* [https://github.com/Azure/azure-powershell/issues/6515](https://github.com/Azure/azure-powershell/issues/6515) sorunu düzeltildi
     - Kodlama Türü ile aşırı yüklemeyi önlemek için File.Save hatası düzeltildi
-* https://github.com/Azure/azure-powershell/issues/6560 sorunu düzeltildi
+* [https://github.com/Azure/azure-powershell/issues/6560](https://github.com/Azure/azure-powershell/issues/6560) sorunu düzeltildi
     - apiId üzerindeki desen özel durumunu düzelten 4.0.3 Nuget sürümüne yükseltildi
 
 #### <a name="azurermcompute"></a>AzureRM.Compute
