@@ -8,22 +8,22 @@ ms.manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.openlocfilehash: bf1f81b4929ec066eeb888da4ba1303430f026b4
-ms.sourcegitcommit: 80a3da199954d0ab78765715fb49793e89a30f12
+ms.sourcegitcommit: 558436c824d9b59731aa9b963cdc8df4dea932e7
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "52259901"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "52586590"
 ---
-# <a name="uninstall-the-azure-powershell-module"></a><span data-ttu-id="4462a-103">Azure PowerShell modülünü kaldırma</span><span class="sxs-lookup"><span data-stu-id="4462a-103">Uninstall the Azure PowerShell module</span></span>
+# <a name="uninstall-the-azure-powershell-module"></a><span data-ttu-id="1090c-103">Azure PowerShell modülünü kaldırma</span><span class="sxs-lookup"><span data-stu-id="1090c-103">Uninstall the Azure PowerShell module</span></span>
 
-<span data-ttu-id="4462a-104">Bu makalede Azure PowerShell'in eski bir sürümünü veya tamamını sisteminizden kaldırmayı öğreneceksiniz.</span><span class="sxs-lookup"><span data-stu-id="4462a-104">This article tells you how to uninstall an older version of Azure PowerShell, or completely remove it from your system.</span></span> <span data-ttu-id="4462a-105">Azure PowerShell'i tamamen kaldırmaya karar verdiyseniz [Send-Feedback](/powershell/module/azurerm.profile/send-feedback) cmdlet'ini kullanarak geri bildirimlerinizi bizimle paylaşın.</span><span class="sxs-lookup"><span data-stu-id="4462a-105">If you've decided to completely uninstall the Azure PowerShell, give us some feedback through the [Send-Feedback](/powershell/module/azurerm.profile/send-feedback) cmdlet.</span></span>
-<span data-ttu-id="4462a-106">Bir hatayla karşılaştığınızda [bir GitHub sorunu girerek](https://github.com/azure/azure-powershell/issues) bize bildirirseniz seviniriz.</span><span class="sxs-lookup"><span data-stu-id="4462a-106">If you encounter a bug, we'd appreciate it if you [file a GitHub issue](https://github.com/azure/azure-powershell/issues).</span></span>
+<span data-ttu-id="1090c-104">Bu makalede Azure PowerShell'in eski bir sürümünü veya tamamını sisteminizden kaldırmayı öğreneceksiniz.</span><span class="sxs-lookup"><span data-stu-id="1090c-104">This article tells you how to uninstall an older version of Azure PowerShell, or completely remove it from your system.</span></span> <span data-ttu-id="1090c-105">Azure PowerShell'i tamamen kaldırmaya karar verdiyseniz [Send-Feedback](/powershell/module/azurerm.profile/send-feedback) cmdlet'ini kullanarak geri bildirimlerinizi bizimle paylaşın.</span><span class="sxs-lookup"><span data-stu-id="1090c-105">If you've decided to completely uninstall the Azure PowerShell, give us some feedback through the [Send-Feedback](/powershell/module/azurerm.profile/send-feedback) cmdlet.</span></span>
+<span data-ttu-id="1090c-106">Bir hatayla karşılaştığınızda [bir GitHub sorunu girerek](https://github.com/azure/azure-powershell/issues) bize bildirirseniz seviniriz.</span><span class="sxs-lookup"><span data-stu-id="1090c-106">If you encounter a bug, we'd appreciate it if you [file a GitHub issue](https://github.com/azure/azure-powershell/issues).</span></span>
 
-## <a name="uninstall-from-powershell"></a><span data-ttu-id="4462a-107">PowerShell'den kaldırma</span><span class="sxs-lookup"><span data-stu-id="4462a-107">Uninstall from PowerShell</span></span>
+## <a name="uninstall-from-powershell"></a><span data-ttu-id="1090c-107">PowerShell'den kaldırma</span><span class="sxs-lookup"><span data-stu-id="1090c-107">Uninstall from PowerShell</span></span>
 
-<span data-ttu-id="4462a-108">Azure PowerShell'i PowerShellGet kullanarak yüklediyseniz [Uninstall-Module](/powershell/module/powershellget/uninstall-module) cmdlet'ini kullanabilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="4462a-108">If you installed Azure PowerShell using PowerShellGet, you can use the [Uninstall-Module](/powershell/module/powershellget/uninstall-module) cmdlet.</span></span> <span data-ttu-id="4462a-109">Ancak `Uninstall-Module` yalnızca bir modülü kaldırır.</span><span class="sxs-lookup"><span data-stu-id="4462a-109">However, `Uninstall-Module` only uninstalls one module.</span></span> <span data-ttu-id="4462a-110">Azure PowerShell'i tamamen kaldırmak için her modülü ayrıca kaldırmanız gerekir.</span><span class="sxs-lookup"><span data-stu-id="4462a-110">To remove Azure PowerShell completely, you must uninstall each module individually.</span></span> <span data-ttu-id="4462a-111">Birden çok Azure PowerShell sürümü yüklediyseniz kaldırma işlemi karmaşık hale gelebilir.</span><span class="sxs-lookup"><span data-stu-id="4462a-111">Uninstallation can be complicated if you have more than one version of Azure PowerShell installed.</span></span>
+<span data-ttu-id="1090c-108">Azure PowerShell'i PowerShellGet kullanarak yüklediyseniz [Uninstall-Module](/powershell/module/powershellget/uninstall-module) cmdlet'ini kullanabilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="1090c-108">If you installed Azure PowerShell using PowerShellGet, you can use the [Uninstall-Module](/powershell/module/powershellget/uninstall-module) cmdlet.</span></span> <span data-ttu-id="1090c-109">Ancak `Uninstall-Module` yalnızca bir modülü kaldırır.</span><span class="sxs-lookup"><span data-stu-id="1090c-109">However, `Uninstall-Module` only uninstalls one module.</span></span> <span data-ttu-id="1090c-110">Azure PowerShell'i tamamen kaldırmak için her modülü ayrıca kaldırmanız gerekir.</span><span class="sxs-lookup"><span data-stu-id="1090c-110">To remove Azure PowerShell completely, you must uninstall each module individually.</span></span> <span data-ttu-id="1090c-111">Birden çok Azure PowerShell sürümü yüklediyseniz kaldırma işlemi karmaşık hale gelebilir.</span><span class="sxs-lookup"><span data-stu-id="1090c-111">Uninstallation can be complicated if you have more than one version of Azure PowerShell installed.</span></span>
 
-<span data-ttu-id="4462a-112">Aşağıdaki betik PowerShell Galerisi'ne sorgu göndererek bağımlı alt modüllerin listesini alır.</span><span class="sxs-lookup"><span data-stu-id="4462a-112">The following script queries the PowerShell Gallery to get a list of dependent submodules.</span></span> <span data-ttu-id="4462a-113">Ardından her alt modülün doğru sürümünü kaldırır.</span><span class="sxs-lookup"><span data-stu-id="4462a-113">Then, the script uninstalls the correct version of each submodule.</span></span>
+<span data-ttu-id="1090c-112">Aşağıdaki betik PowerShell Galerisi'ne sorgu göndererek bağımlı alt modüllerin listesini alır.</span><span class="sxs-lookup"><span data-stu-id="1090c-112">The following script queries the PowerShell Gallery to get a list of dependent submodules.</span></span> <span data-ttu-id="1090c-113">Ardından her alt modülün doğru sürümünü kaldırır.</span><span class="sxs-lookup"><span data-stu-id="1090c-113">Then, the script uninstalls the correct version of each submodule.</span></span>
 
 ```powershell-interactive
 function Uninstall-AllModules {
@@ -57,13 +57,13 @@ function Uninstall-AllModules {
 }
 ```
 
-<span data-ttu-id="4462a-114">Bu işlevi kullanmak için kodu kopyalayıp PowerShell oturumunuza yapıştırın.</span><span class="sxs-lookup"><span data-stu-id="4462a-114">To use this function, copy and paste the code into your PowerShell session.</span></span> <span data-ttu-id="4462a-115">Aşağıdaki örnekte bu işlevi Azure PowerShell'in eski bir sürümünü kaldırma amacıyla nasıl çalıştıracağınızı görebilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="4462a-115">The following example shows how to run the function to remove an older version of Azure PowerShell.</span></span>
+<span data-ttu-id="1090c-114">Bu işlevi kullanmak için kodu kopyalayıp PowerShell oturumunuza yapıştırın.</span><span class="sxs-lookup"><span data-stu-id="1090c-114">To use this function, copy and paste the code into your PowerShell session.</span></span> <span data-ttu-id="1090c-115">Aşağıdaki örnekte bu işlevi Azure PowerShell'in eski bir sürümünü kaldırma amacıyla nasıl çalıştıracağınızı görebilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="1090c-115">The following example shows how to run the function to remove an older version of Azure PowerShell.</span></span>
 
 ```powershell-interactive
 Uninstall-AllModules -TargetModule AzureRM -Version 4.4.1 -Force
 ```
 
-<span data-ttu-id="4462a-116">Betik çalışırken kaldırılan alt modüllerin adını ve sürümünü görüntüler.</span><span class="sxs-lookup"><span data-stu-id="4462a-116">As the script runs, it will display the name and version of each submodule that is being uninstalled.</span></span>
+<span data-ttu-id="1090c-116">Betik çalışırken kaldırılan alt modüllerin adını ve sürümünü görüntüler.</span><span class="sxs-lookup"><span data-stu-id="1090c-116">As the script runs, it will display the name and version of each submodule that is being uninstalled.</span></span>
 
 ```output
 Creating list of dependencies...
@@ -74,20 +74,20 @@ Uninstalling Azure.AnalysisServices version 0.4.7
 ...
 ```
 
-<span data-ttu-id="4462a-117">Bu komutu kaldırmak istediğiniz her Azure PowerShell sürümü için çalıştırın.</span><span class="sxs-lookup"><span data-stu-id="4462a-117">Run this command for every version of Azure PowerShell that you want to uninstall.</span></span> <span data-ttu-id="4462a-118">Kolaylık sağlamak için, aşağıdaki betik AzureRM'nin en son sürümü __dışındaki__ tüm sürümlerini kaldıracak.</span><span class="sxs-lookup"><span data-stu-id="4462a-118">For convenience, the following script will uninstall all versions of AzureRM __except__ for the latest.</span></span>
+<span data-ttu-id="1090c-117">Bu komutu kaldırmak istediğiniz her Azure PowerShell sürümü için çalıştırın.</span><span class="sxs-lookup"><span data-stu-id="1090c-117">Run this command for every version of Azure PowerShell that you want to uninstall.</span></span> <span data-ttu-id="1090c-118">Kolaylık sağlamak için, aşağıdaki betik AzureRM'nin en son sürümü __dışındaki__ tüm sürümlerini kaldıracak.</span><span class="sxs-lookup"><span data-stu-id="1090c-118">For convenience, the following script will uninstall all versions of AzureRM __except__ for the latest.</span></span>
 
 ```powershell-interactive
 $versions = (get-installedmodule AzureRM -AllVersions | Select-Object Version)
 $versions[1..($versions.Length-1)]  | foreach { Uninstall-AllModules -TargetModule AzureRM -Version ($_.Version) -Force }
 ```
 
-## <a name="uninstall-msi"></a><span data-ttu-id="4462a-119">MSI yüklemesini kaldırma</span><span class="sxs-lookup"><span data-stu-id="4462a-119">Uninstall MSI</span></span>
+## <a name="uninstall-msi"></a><span data-ttu-id="1090c-119">MSI yüklemesini kaldırma</span><span class="sxs-lookup"><span data-stu-id="1090c-119">Uninstall MSI</span></span>
 
-<span data-ttu-id="4462a-120">Azure PowerShell'i MSI paketini kullanarak yüklediyseniz kaldırma işlemini PowerShell yerine Windows sisteminden gerçekleştirmeniz gerekir.</span><span class="sxs-lookup"><span data-stu-id="4462a-120">If you installed Azure PowerShell using the MSI package, you must uninstall through the Windows system rather than PowerShell.</span></span>
+<span data-ttu-id="1090c-120">Azure PowerShell'i MSI paketini kullanarak yüklediyseniz kaldırma işlemini PowerShell yerine Windows sisteminden gerçekleştirmeniz gerekir.</span><span class="sxs-lookup"><span data-stu-id="1090c-120">If you installed Azure PowerShell using the MSI package, you must uninstall through the Windows system rather than PowerShell.</span></span>
 
-| <span data-ttu-id="4462a-121">Platform</span><span class="sxs-lookup"><span data-stu-id="4462a-121">Platform</span></span> | <span data-ttu-id="4462a-122">Yönergeler</span><span class="sxs-lookup"><span data-stu-id="4462a-122">Instructions</span></span> |
+| <span data-ttu-id="1090c-121">Platform</span><span class="sxs-lookup"><span data-stu-id="1090c-121">Platform</span></span> | <span data-ttu-id="1090c-122">Yönergeler</span><span class="sxs-lookup"><span data-stu-id="1090c-122">Instructions</span></span> |
 |----------|--------------|
-| <span data-ttu-id="4462a-123">Windows 10</span><span class="sxs-lookup"><span data-stu-id="4462a-123">Windows 10</span></span> | <span data-ttu-id="4462a-124">Başlat > Ayarlar > Uygulamalar</span><span class="sxs-lookup"><span data-stu-id="4462a-124">Start > Settings > Apps</span></span> |
-| <span data-ttu-id="4462a-125">Windows 7</span><span class="sxs-lookup"><span data-stu-id="4462a-125">Windows 7</span></span> </br><span data-ttu-id="4462a-126">Windows 8</span><span class="sxs-lookup"><span data-stu-id="4462a-126">Windows 8</span></span> | <span data-ttu-id="4462a-127">Başlat > Denetim Masası > Programlar > Program kaldır</span><span class="sxs-lookup"><span data-stu-id="4462a-127">Start > Control Panel > Programs > Uninstall a program</span></span> |
+| <span data-ttu-id="1090c-123">Windows 10</span><span class="sxs-lookup"><span data-stu-id="1090c-123">Windows 10</span></span> | <span data-ttu-id="1090c-124">Başlat > Ayarlar > Uygulamalar</span><span class="sxs-lookup"><span data-stu-id="1090c-124">Start > Settings > Apps</span></span> |
+| <span data-ttu-id="1090c-125">Windows 7</span><span class="sxs-lookup"><span data-stu-id="1090c-125">Windows 7</span></span> </br><span data-ttu-id="1090c-126">Windows 8</span><span class="sxs-lookup"><span data-stu-id="1090c-126">Windows 8</span></span> | <span data-ttu-id="1090c-127">Başlat > Denetim Masası > Programlar > Program kaldır</span><span class="sxs-lookup"><span data-stu-id="1090c-127">Start > Control Panel > Programs > Uninstall a program</span></span> |
 
-<span data-ttu-id="4462a-128">Bu ekrandaki program listesinde "Azure PowerShell"i bulabilir ve kaldırabilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="4462a-128">Once on this screen you should see "Azure PowerShell" in the program listing, and can uninstall from there.</span></span>
+<span data-ttu-id="1090c-128">Bu ekrandaki program listesinde "Azure PowerShell"i bulabilir ve kaldırabilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="1090c-128">Once on this screen you should see "Azure PowerShell" in the program listing, and can uninstall from there.</span></span>
