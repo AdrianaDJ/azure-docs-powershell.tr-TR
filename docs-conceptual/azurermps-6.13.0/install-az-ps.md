@@ -6,13 +6,13 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 11/16/2018
-ms.openlocfilehash: 32e96c6459c9db0c4b9eda0cc170c85ba99a22ca
-ms.sourcegitcommit: 80a3da199954d0ab78765715fb49793e89a30f12
+ms.date: 11/26/2018
+ms.openlocfilehash: 3d52b18750341f220dc8e10d6bf89796457c5a10
+ms.sourcegitcommit: 558436c824d9b59731aa9b963cdc8df4dea932e7
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "52260021"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "52588188"
 ---
 # <a name="install-the-azure-powershell-az-module"></a>Azure PowerShell 'Az' modülünü yükleme
 
@@ -32,7 +32,9 @@ Eski bir sürümünüz varsa veya PowerShell'i yüklemeniz gerekiyorsa, bkz. [Po
 
 > [!IMPORTANT]
 >
-> Bir sistemde aynı anda hem `AzureRM` hem de `Az` modülleri yüklü olmamalıdır. `Az` modülünü yüklemek için `AzureRM` modülünün kaldırılması gerekir. Bunun nasıl yapılacağını açıklayan yönergeler için bkz. [Azure PowerShell modülünü kaldırma (AzureRM)](uninstall-azurerm-ps.md).
+> `AzureRM` ve `Az` modüllerini aynı anda yükleyebilirsiniz. İki modül de yüklüyse __diğer adları etkinleştirmeyin__.
+> Diğer adların etkinleştirilmesi, `AzureRM` cmdlet’leri ile `Az` komut diğer adları arasında çakışmalara neden olur ve bu da beklenmeyen davranışlara yol açabilir.
+> `Az` modülünü yüklemeden önce `AzureRM` modülünü kaldırmanız önerilir. Dilediğiniz zaman `AzureRM` modülünü kaldırabilir veya diğer adları etkinleştirebilirsiniz. Kaldırma yönergeleri için bkz. [Azure PowerShell modülünü (AzureRM) kaldırma](uninstall-azurerm-ps.md). 
 
 Modülleri genel kapsamda yüklemek için, PowerShell Galerisi'ndeki modülleri yüklemek üzere yükseltilmiş ayrıcalıklara ihtiyacınız vardır. Azure PowerShell'i yüklemek için, aşağıdaki komutu yükseltilmiş oturumda çalıştırın (Windows'da "Yönetici Olarak Çalıştır" ile ya da macOS veya Linux'ta süper kullanıcı ayrıcalıklarıyla):
 
