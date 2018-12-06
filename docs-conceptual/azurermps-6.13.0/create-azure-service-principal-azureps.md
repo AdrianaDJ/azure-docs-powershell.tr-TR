@@ -9,39 +9,39 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/09/2018
 ms.openlocfilehash: 2db1ada32e5a9285c27ec3f569b622c9c33a06b0
-ms.sourcegitcommit: 558436c824d9b59731aa9b963cdc8df4dea932e7
+ms.sourcegitcommit: 93f93b90ef88c2659be95f3acaba514fe9639169
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "52587814"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52826638"
 ---
-# <a name="create-an-azure-service-principal-with-azure-powershell"></a><span data-ttu-id="f4c3e-104">Azure PowerShell ile bir Azure hizmet sorumlusu oluşturma</span><span class="sxs-lookup"><span data-stu-id="f4c3e-104">Create an Azure service principal with Azure PowerShell</span></span>
+# <a name="create-an-azure-service-principal-with-azure-powershell"></a><span data-ttu-id="97ac5-104">Azure PowerShell ile bir Azure hizmet sorumlusu oluşturma</span><span class="sxs-lookup"><span data-stu-id="97ac5-104">Create an Azure service principal with Azure PowerShell</span></span>
 
-<span data-ttu-id="f4c3e-105">Uygulamanızı veya hizmetinizi Azure PowerShell ile yönetmeyi planlıyorsanız, uygulamanızı kendi kimlik bilgileriniz altında değil bir Azure Active Directory (AAD) hizmet sorumlusu altında çalıştırın.</span><span class="sxs-lookup"><span data-stu-id="f4c3e-105">If you plan to manage your app or service with Azure PowerShell, you should run it under an Azure Active Directory (AAD) service principal, rather than your own credentials.</span></span> <span data-ttu-id="f4c3e-106">Bu makalede, Azure PowerShell ile bir güvenlik sorumlusu oluşturma işlemi adım adım gösterilir.</span><span class="sxs-lookup"><span data-stu-id="f4c3e-106">This article steps you through creating a security principal with Azure PowerShell.</span></span>
+<span data-ttu-id="97ac5-105">Uygulamanızı veya hizmetinizi Azure PowerShell ile yönetmeyi planlıyorsanız, uygulamanızı kendi kimlik bilgileriniz altında değil bir Azure Active Directory (AAD) hizmet sorumlusu altında çalıştırın.</span><span class="sxs-lookup"><span data-stu-id="97ac5-105">If you plan to manage your app or service with Azure PowerShell, you should run it under an Azure Active Directory (AAD) service principal, rather than your own credentials.</span></span> <span data-ttu-id="97ac5-106">Bu makalede, Azure PowerShell ile bir güvenlik sorumlusu oluşturma işlemi adım adım gösterilir.</span><span class="sxs-lookup"><span data-stu-id="97ac5-106">This article steps you through creating a security principal with Azure PowerShell.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="f4c3e-107">Azure portalı aracılığıyla da hizmet sorumlusu oluşturabilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="f4c3e-107">You can also create a service principal through the Azure portal.</span></span> <span data-ttu-id="f4c3e-108">Daha ayrıntılı bilgi edinmek için [Kaynaklara erişebilen bir Active Directory uygulaması ve hizmet sorumlusu oluşturmak için portalı kullanma](/azure/azure-resource-manager/resource-group-create-service-principal-portal) konusunu okuyun.</span><span class="sxs-lookup"><span data-stu-id="f4c3e-108">Read [Use portal to create Active Directory application and service principal that can access resources](/azure/azure-resource-manager/resource-group-create-service-principal-portal) for more details.</span></span>
+> <span data-ttu-id="97ac5-107">Azure portalı aracılığıyla da hizmet sorumlusu oluşturabilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="97ac5-107">You can also create a service principal through the Azure portal.</span></span> <span data-ttu-id="97ac5-108">Daha ayrıntılı bilgi edinmek için [Kaynaklara erişebilen bir Active Directory uygulaması ve hizmet sorumlusu oluşturmak için portalı kullanma](/azure/azure-resource-manager/resource-group-create-service-principal-portal) konusunu okuyun.</span><span class="sxs-lookup"><span data-stu-id="97ac5-108">Read [Use portal to create Active Directory application and service principal that can access resources](/azure/azure-resource-manager/resource-group-create-service-principal-portal) for more details.</span></span>
 
-## <a name="what-is-a-service-principal"></a><span data-ttu-id="f4c3e-109">'Hizmet sorumlusu' nedir?</span><span class="sxs-lookup"><span data-stu-id="f4c3e-109">What is a 'service principal'?</span></span>
+## <a name="what-is-a-service-principal"></a><span data-ttu-id="97ac5-109">'Hizmet sorumlusu' nedir?</span><span class="sxs-lookup"><span data-stu-id="97ac5-109">What is a 'service principal'?</span></span>
 
-<span data-ttu-id="f4c3e-110">Azure hizmet sorumlusu, kullanıcı tarafından oluşturulan uygulamalar, hizmetler ve otomasyon araçlarının belirli Azure kaynaklarına erişmek için kullandığı bir güvenlik kimliğidir.</span><span class="sxs-lookup"><span data-stu-id="f4c3e-110">An Azure service principal is a security identity used by user-created apps, services, and automation tools to access specific Azure resources.</span></span> <span data-ttu-id="f4c3e-111">Bunu belirli bir rolü olan ve izinleri sıkı bir şekilde denetlenen bir "kullanıcı kimliği" (kullanıcı adı ve parola veya sertifika) olarak düşünebilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="f4c3e-111">Think of it as a 'user identity' (username and password or certificate) with a specific role, and tightly controlled permissions.</span></span> <span data-ttu-id="f4c3e-112">Genel kullanıcı kimliğinin aksine, hizmet sorumlusunun yalnızca belirli şeyleri yapabilmesi gerekir.</span><span class="sxs-lookup"><span data-stu-id="f4c3e-112">A service principal should only need to do specific things, unlike a general user identity.</span></span> <span data-ttu-id="f4c3e-113">Hizmet sorumlusuna yönetim görevlerini gerçekleştirmesi için gereken en düşük izin düzeyini atamanız, güvenliği geliştirir.</span><span class="sxs-lookup"><span data-stu-id="f4c3e-113">It improves security if you only grant it the minimum permissions level needed to perform its management tasks.</span></span>
+<span data-ttu-id="97ac5-110">Azure hizmet sorumlusu, kullanıcı tarafından oluşturulan uygulamalar, hizmetler ve otomasyon araçlarının belirli Azure kaynaklarına erişmek için kullandığı bir güvenlik kimliğidir.</span><span class="sxs-lookup"><span data-stu-id="97ac5-110">An Azure service principal is a security identity used by user-created apps, services, and automation tools to access specific Azure resources.</span></span> <span data-ttu-id="97ac5-111">Bunu belirli bir rolü olan ve izinleri sıkı bir şekilde denetlenen bir "kullanıcı kimliği" (kullanıcı adı ve parola veya sertifika) olarak düşünebilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="97ac5-111">Think of it as a 'user identity' (username and password or certificate) with a specific role, and tightly controlled permissions.</span></span> <span data-ttu-id="97ac5-112">Genel kullanıcı kimliğinin aksine, hizmet sorumlusunun yalnızca belirli şeyleri yapabilmesi gerekir.</span><span class="sxs-lookup"><span data-stu-id="97ac5-112">A service principal should only need to do specific things, unlike a general user identity.</span></span> <span data-ttu-id="97ac5-113">Hizmet sorumlusuna yönetim görevlerini gerçekleştirmesi için gereken en düşük izin düzeyini atamanız, güvenliği geliştirir.</span><span class="sxs-lookup"><span data-stu-id="97ac5-113">It improves security if you only grant it the minimum permissions level needed to perform its management tasks.</span></span>
 
-## <a name="verify-your-own-permission-level"></a><span data-ttu-id="f4c3e-114">Kendi izin düzeyinizi doğrulama</span><span class="sxs-lookup"><span data-stu-id="f4c3e-114">Verify your own permission level</span></span>
+## <a name="verify-your-own-permission-level"></a><span data-ttu-id="97ac5-114">Kendi izin düzeyinizi doğrulama</span><span class="sxs-lookup"><span data-stu-id="97ac5-114">Verify your own permission level</span></span>
 
-<span data-ttu-id="f4c3e-115">Öncelikle hem Azure Active Directory’nizde hem de Azure aboneliğinizde yeterli izinlere sahip olmanız gerekir.</span><span class="sxs-lookup"><span data-stu-id="f4c3e-115">First, you must have sufficient permissions in both your Azure Active Directory and your Azure subscription.</span></span> <span data-ttu-id="f4c3e-116">Active Directory’de uygulama oluşturabilmeniz ve hizmet sorumlusuna rol atayabilmeniz gerekir.</span><span class="sxs-lookup"><span data-stu-id="f4c3e-116">You must be able to create an app in the Active Directory and assign a role to the service principal.</span></span>
+<span data-ttu-id="97ac5-115">Öncelikle hem Azure Active Directory’nizde hem de Azure aboneliğinizde yeterli izinlere sahip olmanız gerekir.</span><span class="sxs-lookup"><span data-stu-id="97ac5-115">First, you must have sufficient permissions in both your Azure Active Directory and your Azure subscription.</span></span> <span data-ttu-id="97ac5-116">Active Directory’de uygulama oluşturabilmeniz ve hizmet sorumlusuna rol atayabilmeniz gerekir.</span><span class="sxs-lookup"><span data-stu-id="97ac5-116">You must be able to create an app in the Active Directory and assign a role to the service principal.</span></span>
 
-<span data-ttu-id="f4c3e-117">Hesabınızın doğru izinlere sahip olup olmadığını denetlemenin en kolay yolu portalı kullanmaktır.</span><span class="sxs-lookup"><span data-stu-id="f4c3e-117">The easiest way to check whether your account has the right permissions is through the portal.</span></span> <span data-ttu-id="f4c3e-118">Bkz. [Portalda gerekli izinleri denetleme](/azure/azure-resource-manager/resource-group-create-service-principal-portal#required-permissions).</span><span class="sxs-lookup"><span data-stu-id="f4c3e-118">See [Check required permission in portal](/azure/azure-resource-manager/resource-group-create-service-principal-portal#required-permissions).</span></span>
+<span data-ttu-id="97ac5-117">Hesabınızın doğru izinlere sahip olup olmadığını denetlemenin en kolay yolu portalı kullanmaktır.</span><span class="sxs-lookup"><span data-stu-id="97ac5-117">The easiest way to check whether your account has the right permissions is through the portal.</span></span> <span data-ttu-id="97ac5-118">Bkz. [Portalda gerekli izinleri denetleme](/azure/azure-resource-manager/resource-group-create-service-principal-portal#required-permissions).</span><span class="sxs-lookup"><span data-stu-id="97ac5-118">See [Check required permission in portal](/azure/azure-resource-manager/resource-group-create-service-principal-portal#required-permissions).</span></span>
 
-## <a name="create-a-service-principal-for-your-app"></a><span data-ttu-id="f4c3e-119">Uygulamanız için hizmet sorumlusu oluşturma</span><span class="sxs-lookup"><span data-stu-id="f4c3e-119">Create a service principal for your app</span></span>
+## <a name="create-a-service-principal-for-your-app"></a><span data-ttu-id="97ac5-119">Uygulamanız için hizmet sorumlusu oluşturma</span><span class="sxs-lookup"><span data-stu-id="97ac5-119">Create a service principal for your app</span></span>
 
-<span data-ttu-id="f4c3e-120">Azure hesabınızda oturum açıldıktan sonra hizmet sorumlusunu oluşturabilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="f4c3e-120">Once signed in to your Azure account, you can create the service principal.</span></span> <span data-ttu-id="f4c3e-121">Dağıtılan uygulamanızı tanımlamak için aşağıdaki yollardan birine sahip olmanız gerekir:</span><span class="sxs-lookup"><span data-stu-id="f4c3e-121">You must have one of the following ways to identify your deployed app:</span></span>
+<span data-ttu-id="97ac5-120">Azure hesabınızda oturum açıldıktan sonra hizmet sorumlusunu oluşturabilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="97ac5-120">Once signed in to your Azure account, you can create the service principal.</span></span> <span data-ttu-id="97ac5-121">Dağıtılan uygulamanızı tanımlamak için aşağıdaki yollardan birine sahip olmanız gerekir:</span><span class="sxs-lookup"><span data-stu-id="97ac5-121">You must have one of the following ways to identify your deployed app:</span></span>
 
-* <span data-ttu-id="f4c3e-122">Dağıtılan uygulamanızın benzersiz adı (aşağıdaki örneklerde yer alan "MyDemoWebApp" gibi) veya</span><span class="sxs-lookup"><span data-stu-id="f4c3e-122">The unique name of your deployed app, such as "MyDemoWebApp" in the following examples, or</span></span>
-* <span data-ttu-id="f4c3e-123">Uygulama Kimliği, yani dağıtılan uygulama, hizmet veya nesnenizle ilişkili benzersiz GUID</span><span class="sxs-lookup"><span data-stu-id="f4c3e-123">the Application ID, the unique GUID associated with your deployed app, service, or object</span></span>
+* <span data-ttu-id="97ac5-122">Dağıtılan uygulamanızın benzersiz adı (aşağıdaki örneklerde yer alan "MyDemoWebApp" gibi) veya</span><span class="sxs-lookup"><span data-stu-id="97ac5-122">The unique name of your deployed app, such as "MyDemoWebApp" in the following examples, or</span></span>
+* <span data-ttu-id="97ac5-123">Uygulama Kimliği, yani dağıtılan uygulama, hizmet veya nesnenizle ilişkili benzersiz GUID</span><span class="sxs-lookup"><span data-stu-id="97ac5-123">the Application ID, the unique GUID associated with your deployed app, service, or object</span></span>
 
-### <a name="get-information-about-your-application"></a><span data-ttu-id="f4c3e-124">Uygulamanız ile ilgili bilgi edinme</span><span class="sxs-lookup"><span data-stu-id="f4c3e-124">Get information about your application</span></span>
+### <a name="get-information-about-your-application"></a><span data-ttu-id="97ac5-124">Uygulamanız ile ilgili bilgi edinme</span><span class="sxs-lookup"><span data-stu-id="97ac5-124">Get information about your application</span></span>
 
-<span data-ttu-id="f4c3e-125">Uygulamanızla ilgili bilgileri almak için `Get-AzureRmADApplication` cmdlet’ini kullanılabilir.</span><span class="sxs-lookup"><span data-stu-id="f4c3e-125">The `Get-AzureRmADApplication` cmdlet can be used to get information about your application.</span></span>
+<span data-ttu-id="97ac5-125">Uygulamanızla ilgili bilgileri almak için `Get-AzureRmADApplication` cmdlet’ini kullanılabilir.</span><span class="sxs-lookup"><span data-stu-id="97ac5-125">The `Get-AzureRmADApplication` cmdlet can be used to get information about your application.</span></span>
 
 ```azurepowershell-interactive
 Get-AzureRmADApplication -DisplayNameStartWith MyDemoWebApp
@@ -59,9 +59,9 @@ AppPermissions          :
 ReplyUrls               : {}
 ```
 
-### <a name="create-a-service-principal-for-your-application"></a><span data-ttu-id="f4c3e-126">Uygulamanız için hizmet sorumlusu oluşturma</span><span class="sxs-lookup"><span data-stu-id="f4c3e-126">Create a service principal for your application</span></span>
+### <a name="create-a-service-principal-for-your-application"></a><span data-ttu-id="97ac5-126">Uygulamanız için hizmet sorumlusu oluşturma</span><span class="sxs-lookup"><span data-stu-id="97ac5-126">Create a service principal for your application</span></span>
 
-<span data-ttu-id="f4c3e-127">Hizmet sorumlusunu oluşturmak için `New-AzureRmADServicePrincipal` cmdlet’i kullanılır.</span><span class="sxs-lookup"><span data-stu-id="f4c3e-127">The `New-AzureRmADServicePrincipal` cmdlet is used to create the service principal.</span></span>
+<span data-ttu-id="97ac5-127">Hizmet sorumlusunu oluşturmak için `New-AzureRmADServicePrincipal` cmdlet’i kullanılır.</span><span class="sxs-lookup"><span data-stu-id="97ac5-127">The `New-AzureRmADServicePrincipal` cmdlet is used to create the service principal.</span></span>
 
 ```azurepowershell-interactive
 $servicePrincipal = New-AzureRmADServicePrincipal -ApplicationId 00c01aaa-1603-49fc-b6df-b78c4e5138b4
@@ -77,7 +77,7 @@ AdfsId                :
 Type                  : ServicePrincipal
 ```
 
-<span data-ttu-id="f4c3e-128">Buradan dilerseniz doğrudan $servicePrincipal.Secret özelliğini Connect-AzureRmAccount içinde kullanabilir (aşağıdaki "Hizmet sorumlusunu kullanarak oturum açma" bölümüne bakın) veya bu SecureString’i daha sonra kullanmak için düz metine dönüştürebilirsiniz:</span><span class="sxs-lookup"><span data-stu-id="f4c3e-128">From here, you can either directly use the $servicePrincipal.Secret property in Connect-AzureRmAccount (see "Sign in using the service principal" below), or you can convert this SecureString to a plain text string for later usage:</span></span>
+<span data-ttu-id="97ac5-128">Buradan dilerseniz doğrudan $servicePrincipal.Secret özelliğini Connect-AzureRmAccount içinde kullanabilir (aşağıdaki "Hizmet sorumlusunu kullanarak oturum açma" bölümüne bakın) veya bu SecureString’i daha sonra kullanmak için düz metine dönüştürebilirsiniz:</span><span class="sxs-lookup"><span data-stu-id="97ac5-128">From here, you can either directly use the $servicePrincipal.Secret property in Connect-AzureRmAccount (see "Sign in using the service principal" below), or you can convert this SecureString to a plain text string for later usage:</span></span>
 
 ```azurepowershell-interactive
 $BSTR = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($servicePrincipal.Secret)
@@ -85,16 +85,16 @@ $password = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto($BSTR)
 [Runtime.InteropServices.Marshal]::ZeroFreeBSTR($BSTR)
 ```
 
-### <a name="sign-in-using-the-service-principal"></a><span data-ttu-id="f4c3e-129">Hizmet sorumlusunu kullanarak oturum açma</span><span class="sxs-lookup"><span data-stu-id="f4c3e-129">Sign in using the service principal</span></span>
+### <a name="sign-in-using-the-service-principal"></a><span data-ttu-id="97ac5-129">Hizmet sorumlusunu kullanarak oturum açma</span><span class="sxs-lookup"><span data-stu-id="97ac5-129">Sign in using the service principal</span></span>
 
-<span data-ttu-id="f4c3e-130">Artık sağladığınız *appId* ve otomatik olarak oluşturulan *parola* ile uygulamanızın yeni hizmet sorumlusu olarak oturum açabilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="f4c3e-130">You can now sign in as the new service principal for your app using the *appId* you provided and *password* that was automatically generated.</span></span> <span data-ttu-id="f4c3e-131">Hizmet sorumlusu için Kiracı Kimliğine de ihtiyacınız vardır.</span><span class="sxs-lookup"><span data-stu-id="f4c3e-131">You also need the Tenant ID for the service principal.</span></span> <span data-ttu-id="f4c3e-132">Kiracı Kimliğiniz, Azure’da kişisel kimlik bilgilerinizle oturum açtığınızda görüntülenir.</span><span class="sxs-lookup"><span data-stu-id="f4c3e-132">Your Tenant ID is displayed when you sign into Azure with your personal credentials.</span></span> <span data-ttu-id="f4c3e-133">Hizmet sorumlusuyla oturum açmak için aşağıdaki komutları kullanın:</span><span class="sxs-lookup"><span data-stu-id="f4c3e-133">To sign in with a service principal, use the following commands:</span></span>
+<span data-ttu-id="97ac5-130">Artık sağladığınız *appId* ve otomatik olarak oluşturulan *parola* ile uygulamanızın yeni hizmet sorumlusu olarak oturum açabilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="97ac5-130">You can now sign in as the new service principal for your app using the *appId* you provided and *password* that was automatically generated.</span></span> <span data-ttu-id="97ac5-131">Hizmet sorumlusu için Kiracı Kimliğine de ihtiyacınız vardır.</span><span class="sxs-lookup"><span data-stu-id="97ac5-131">You also need the Tenant ID for the service principal.</span></span> <span data-ttu-id="97ac5-132">Kiracı Kimliğiniz, Azure’da kişisel kimlik bilgilerinizle oturum açtığınızda görüntülenir.</span><span class="sxs-lookup"><span data-stu-id="97ac5-132">Your Tenant ID is displayed when you sign into Azure with your personal credentials.</span></span> <span data-ttu-id="97ac5-133">Hizmet sorumlusuyla oturum açmak için aşağıdaki komutları kullanın:</span><span class="sxs-lookup"><span data-stu-id="97ac5-133">To sign in with a service principal, use the following commands:</span></span>
 
 ```azurepowershell-interactive
 $cred = New-Object System.Management.Automation.PSCredential ("00c01aaa-1603-49fc-b6df-b78c4e5138b4", $servicePrincipal.Secret)
 Connect-AzureRmAccount -Credential $cred -ServicePrincipal -TenantId XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
 ```
 
-<span data-ttu-id="f4c3e-134">Başarılı bir oturum açma işleminden sonra şöyle bir çıkış görürsünüz:</span><span class="sxs-lookup"><span data-stu-id="f4c3e-134">After a successful sign-in you see output like:</span></span>
+<span data-ttu-id="97ac5-134">Başarılı bir oturum açma işleminden sonra şöyle bir çıkış görürsünüz:</span><span class="sxs-lookup"><span data-stu-id="97ac5-134">After a successful sign-in you see output like:</span></span>
 
 ```output
 Environment           : AzureCloud
@@ -105,23 +105,23 @@ SubscriptionName      :
 CurrentStorageAccount :
 ```
 
-<span data-ttu-id="f4c3e-135">Tebrikler!</span><span class="sxs-lookup"><span data-stu-id="f4c3e-135">Congratulations!</span></span> <span data-ttu-id="f4c3e-136">Uygulamanızı çalıştırmak için bu kimlik bilgilerini kullanabilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="f4c3e-136">You can use these credentials to run your app.</span></span> <span data-ttu-id="f4c3e-137">Ardından, hizmet sorumlusunun izinlerini ayarlamanız gerekir.</span><span class="sxs-lookup"><span data-stu-id="f4c3e-137">Next, you need to adjust the permissions of the service principal.</span></span>
+<span data-ttu-id="97ac5-135">Tebrikler!</span><span class="sxs-lookup"><span data-stu-id="97ac5-135">Congratulations!</span></span> <span data-ttu-id="97ac5-136">Uygulamanızı çalıştırmak için bu kimlik bilgilerini kullanabilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="97ac5-136">You can use these credentials to run your app.</span></span> <span data-ttu-id="97ac5-137">Ardından, hizmet sorumlusunun izinlerini ayarlamanız gerekir.</span><span class="sxs-lookup"><span data-stu-id="97ac5-137">Next, you need to adjust the permissions of the service principal.</span></span>
 
-## <a name="managing-roles"></a><span data-ttu-id="f4c3e-138">Rolleri yönetme</span><span class="sxs-lookup"><span data-stu-id="f4c3e-138">Managing roles</span></span>
+## <a name="managing-roles"></a><span data-ttu-id="97ac5-138">Rolleri yönetme</span><span class="sxs-lookup"><span data-stu-id="97ac5-138">Managing roles</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="f4c3e-139">Azure Rol Tabanlı Erişim Denetimi (RBAC), kullanıcı ve hizmet sorumlularının rollerini tanımlama ve yönetmeye yönelik bir modeldir.</span><span class="sxs-lookup"><span data-stu-id="f4c3e-139">Azure Role-Based Access Control (RBAC) is a model for defining and managing roles for user and service principals.</span></span> <span data-ttu-id="f4c3e-140">Rollerin kendileriyle ilişkili izin kümeleri vardır ve bir sorumlunun okuyabileceği, erişebileceği, yazabileceği ya da yönetebileceği kaynakları bunlar belirler.</span><span class="sxs-lookup"><span data-stu-id="f4c3e-140">Roles have sets of permissions associated with them, which determine the resources a principal can read, access, write, or manage.</span></span> <span data-ttu-id="f4c3e-141">RBAC ve roller hakkında daha fazla bilgi edinmek için bkz. [RBAC: Yerleşik roller](/azure/active-directory/role-based-access-built-in-roles).</span><span class="sxs-lookup"><span data-stu-id="f4c3e-141">For more information on RBAC and roles, see [RBAC: Built-in roles](/azure/active-directory/role-based-access-built-in-roles).</span></span>
+> <span data-ttu-id="97ac5-139">Azure Rol Tabanlı Erişim Denetimi (RBAC), kullanıcı ve hizmet sorumlularının rollerini tanımlama ve yönetmeye yönelik bir modeldir.</span><span class="sxs-lookup"><span data-stu-id="97ac5-139">Azure Role-Based Access Control (RBAC) is a model for defining and managing roles for user and service principals.</span></span> <span data-ttu-id="97ac5-140">Rollerin kendileriyle ilişkili izin kümeleri vardır ve bir sorumlunun okuyabileceği, erişebileceği, yazabileceği ya da yönetebileceği kaynakları bunlar belirler.</span><span class="sxs-lookup"><span data-stu-id="97ac5-140">Roles have sets of permissions associated with them, which determine the resources a principal can read, access, write, or manage.</span></span> <span data-ttu-id="97ac5-141">RBAC ve roller hakkında daha fazla bilgi edinmek için bkz. [RBAC: Yerleşik roller](/azure/active-directory/role-based-access-built-in-roles).</span><span class="sxs-lookup"><span data-stu-id="97ac5-141">For more information on RBAC and roles, see [RBAC: Built-in roles](/azure/active-directory/role-based-access-built-in-roles).</span></span>
 
-<span data-ttu-id="f4c3e-142">Azure PowerShell, rol atamalarını yönetmek için aşağıdaki cmdlet’leri sunar:</span><span class="sxs-lookup"><span data-stu-id="f4c3e-142">Azure PowerShell provides the following cmdlets to manage role assignments:</span></span>
+<span data-ttu-id="97ac5-142">Azure PowerShell, rol atamalarını yönetmek için aşağıdaki cmdlet’leri sunar:</span><span class="sxs-lookup"><span data-stu-id="97ac5-142">Azure PowerShell provides the following cmdlets to manage role assignments:</span></span>
 
-* [<span data-ttu-id="f4c3e-143">Get-AzureRmRoleAssignment</span><span class="sxs-lookup"><span data-stu-id="f4c3e-143">Get-AzureRmRoleAssignment</span></span>](/powershell/module/azurerm.resources/get-azurermroleassignment)
-* [<span data-ttu-id="f4c3e-144">New-AzureRmRoleAssignment</span><span class="sxs-lookup"><span data-stu-id="f4c3e-144">New-AzureRmRoleAssignment</span></span>](/powershell/module/azurerm.resources/new-azurermroleassignment)
-* [<span data-ttu-id="f4c3e-145">Remove-AzureRmRoleAssignment</span><span class="sxs-lookup"><span data-stu-id="f4c3e-145">Remove-AzureRmRoleAssignment</span></span>](/powershell/module/azurerm.resources/remove-azurermroleassignment)
+* [<span data-ttu-id="97ac5-143">Get-AzureRmRoleAssignment</span><span class="sxs-lookup"><span data-stu-id="97ac5-143">Get-AzureRmRoleAssignment</span></span>](/powershell/module/azurerm.resources/get-azurermroleassignment)
+* [<span data-ttu-id="97ac5-144">New-AzureRmRoleAssignment</span><span class="sxs-lookup"><span data-stu-id="97ac5-144">New-AzureRmRoleAssignment</span></span>](/powershell/module/azurerm.resources/new-azurermroleassignment)
+* [<span data-ttu-id="97ac5-145">Remove-AzureRmRoleAssignment</span><span class="sxs-lookup"><span data-stu-id="97ac5-145">Remove-AzureRmRoleAssignment</span></span>](/powershell/module/azurerm.resources/remove-azurermroleassignment)
 
-<span data-ttu-id="f4c3e-146">Bir hizmet sorumlusunun varsayılan rolü **Katkıda Bulunan**’dır.</span><span class="sxs-lookup"><span data-stu-id="f4c3e-146">The default role for a service principal is **Contributor**.</span></span> <span data-ttu-id="f4c3e-147">Geniş izinleri göz önünde bulundurulduğunda, uygulamanızın Azure hizmetleriyle gerçekleştirdiği etkileşimlerin kapsamına bağlı olarak, doğru bir seçim olmayabilir.</span><span class="sxs-lookup"><span data-stu-id="f4c3e-147">It may not be the best choice depending on the scope of your app's interactions with Azure services, given its broad permissions.</span></span>
-<span data-ttu-id="f4c3e-148">**Okuyucu** rolü daha kısıtlayıcıdır ve salt okunur uygulamalar için iyi bir seçim olabilir.</span><span class="sxs-lookup"><span data-stu-id="f4c3e-148">The **Reader** role is more restrictive and can be a good choice for read-only apps.</span></span> <span data-ttu-id="f4c3e-149">Azure portalı aracılığıyla role özel izinlerin ayrıntılarını görüntüleyebilir veya özel roller oluşturabilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="f4c3e-149">You can view details on role-specific permissions or create custom ones through the Azure portal.</span></span>
+<span data-ttu-id="97ac5-146">Bir hizmet sorumlusunun varsayılan rolü **Katkıda Bulunan**’dır.</span><span class="sxs-lookup"><span data-stu-id="97ac5-146">The default role for a service principal is **Contributor**.</span></span> <span data-ttu-id="97ac5-147">Geniş izinleri göz önünde bulundurulduğunda, uygulamanızın Azure hizmetleriyle gerçekleştirdiği etkileşimlerin kapsamına bağlı olarak, doğru bir seçim olmayabilir.</span><span class="sxs-lookup"><span data-stu-id="97ac5-147">It may not be the best choice depending on the scope of your app's interactions with Azure services, given its broad permissions.</span></span>
+<span data-ttu-id="97ac5-148">**Okuyucu** rolü daha kısıtlayıcıdır ve salt okunur uygulamalar için iyi bir seçim olabilir.</span><span class="sxs-lookup"><span data-stu-id="97ac5-148">The **Reader** role is more restrictive and can be a good choice for read-only apps.</span></span> <span data-ttu-id="97ac5-149">Azure portalı aracılığıyla role özel izinlerin ayrıntılarını görüntüleyebilir veya özel roller oluşturabilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="97ac5-149">You can view details on role-specific permissions or create custom ones through the Azure portal.</span></span>
 
-<span data-ttu-id="f4c3e-150">Bu örnekte, bir önceki örneğimize **Okuyucu** rolünü ekleyip **Katkıda Bulunan** rolünü siliyoruz:</span><span class="sxs-lookup"><span data-stu-id="f4c3e-150">In this example, we add the **Reader** role to our prior example, and delete the **Contributor** one:</span></span>
+<span data-ttu-id="97ac5-150">Bu örnekte, bir önceki örneğimize **Okuyucu** rolünü ekleyip **Katkıda Bulunan** rolünü siliyoruz:</span><span class="sxs-lookup"><span data-stu-id="97ac5-150">In this example, we add the **Reader** role to our prior example, and delete the **Contributor** one:</span></span>
 
 ```azurepowershell-interactive
 New-AzureRmRoleAssignment -ResourceGroupName myRG -ObjectId 698138e7-d7b6-4738-a866-b4e3081a69e4 -RoleDefinitionName Reader
@@ -142,7 +142,7 @@ ObjectType         : ServicePrincipal
 Remove-AzureRmRoleAssignment -ResourceGroupName myRG -ObjectId 698138e7-d7b6-4738-a866-b4e3081a69e4 -RoleDefinitionName Contributor
 ```
 
-<span data-ttu-id="f4c3e-151">Şu anda atanmış olan rolleri görüntülemek için:</span><span class="sxs-lookup"><span data-stu-id="f4c3e-151">To view the current roles assigned:</span></span>
+<span data-ttu-id="97ac5-151">Şu anda atanmış olan rolleri görüntülemek için:</span><span class="sxs-lookup"><span data-stu-id="97ac5-151">To view the current roles assigned:</span></span>
 
 ```azurepowershell-interactive
 Get-AzureRmRoleAssignment -ResourceGroupName myRG -ObjectId 698138e7-d7b6-4738-a866-b4e3081a69e4
@@ -159,18 +159,18 @@ ObjectId           : 698138e7-d7b6-4738-a866-b4e3081a69e4
 ObjectType         : ServicePrincipal
 ```
 
-<span data-ttu-id="f4c3e-152">Rol yönetimi için diğer Azure PowerShell cmdlet’leri:</span><span class="sxs-lookup"><span data-stu-id="f4c3e-152">Other Azure PowerShell cmdlets for role management:</span></span>
+<span data-ttu-id="97ac5-152">Rol yönetimi için diğer Azure PowerShell cmdlet’leri:</span><span class="sxs-lookup"><span data-stu-id="97ac5-152">Other Azure PowerShell cmdlets for role management:</span></span>
 
-* [<span data-ttu-id="f4c3e-153">Get-AzureRmRoleDefinition</span><span class="sxs-lookup"><span data-stu-id="f4c3e-153">Get-AzureRmRoleDefinition</span></span>](/powershell/module/azurerm.resources/Get-AzureRmRoleDefinition)
-* [<span data-ttu-id="f4c3e-154">New-AzureRmRoleDefinition</span><span class="sxs-lookup"><span data-stu-id="f4c3e-154">New-AzureRmRoleDefinition</span></span>](/powershell/module/azurerm.resources/New-AzureRmRoleDefinition)
-* [<span data-ttu-id="f4c3e-155">Remove-AzureRmRoleDefinition</span><span class="sxs-lookup"><span data-stu-id="f4c3e-155">Remove-AzureRmRoleDefinition</span></span>](/powershell/module/azurerm.resources/Remove-AzureRmRoleDefinition)
-* [<span data-ttu-id="f4c3e-156">Set-AzureRmRoleDefinition</span><span class="sxs-lookup"><span data-stu-id="f4c3e-156">Set-AzureRmRoleDefinition</span></span>](/powershell/module/azurerm.resources/Set-AzureRmRoleDefinition)
+* [<span data-ttu-id="97ac5-153">Get-AzureRmRoleDefinition</span><span class="sxs-lookup"><span data-stu-id="97ac5-153">Get-AzureRmRoleDefinition</span></span>](/powershell/module/azurerm.resources/Get-AzureRmRoleDefinition)
+* [<span data-ttu-id="97ac5-154">New-AzureRmRoleDefinition</span><span class="sxs-lookup"><span data-stu-id="97ac5-154">New-AzureRmRoleDefinition</span></span>](/powershell/module/azurerm.resources/New-AzureRmRoleDefinition)
+* [<span data-ttu-id="97ac5-155">Remove-AzureRmRoleDefinition</span><span class="sxs-lookup"><span data-stu-id="97ac5-155">Remove-AzureRmRoleDefinition</span></span>](/powershell/module/azurerm.resources/Remove-AzureRmRoleDefinition)
+* [<span data-ttu-id="97ac5-156">Set-AzureRmRoleDefinition</span><span class="sxs-lookup"><span data-stu-id="97ac5-156">Set-AzureRmRoleDefinition</span></span>](/powershell/module/azurerm.resources/Set-AzureRmRoleDefinition)
 
-## <a name="change-the-credentials-of-the-security-principal"></a><span data-ttu-id="f4c3e-157">Güvenlik sorumlusunun kimlik bilgilerini değiştirme</span><span class="sxs-lookup"><span data-stu-id="f4c3e-157">Change the credentials of the security principal</span></span>
+## <a name="change-the-credentials-of-the-security-principal"></a><span data-ttu-id="97ac5-157">Güvenlik sorumlusunun kimlik bilgilerini değiştirme</span><span class="sxs-lookup"><span data-stu-id="97ac5-157">Change the credentials of the security principal</span></span>
 
-<span data-ttu-id="f4c3e-158">Düzenli aralıklarla izinleri gözden geçirmek ve parolayı güncelleştirmek, güvenlik açısından iyi bir uygulamadır.</span><span class="sxs-lookup"><span data-stu-id="f4c3e-158">It's a good security practice to review the permissions and update the password regularly.</span></span> <span data-ttu-id="f4c3e-159">Uygulamanız değiştikçe güvenlik kimlik bilgilerini yönetmek ve değiştirmek de isteyebilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="f4c3e-159">You may also want to manage and modify the security credentials as your app changes.</span></span> <span data-ttu-id="f4c3e-160">Örneğin, yeni bir parola oluşturup eskisini kaldırarak hizmet sorumlusunun parolasını değiştirebiliriz.</span><span class="sxs-lookup"><span data-stu-id="f4c3e-160">For example, we can change the password of the service principal by creating a new password and removing the old one.</span></span>
+<span data-ttu-id="97ac5-158">Düzenli aralıklarla izinleri gözden geçirmek ve parolayı güncelleştirmek, güvenlik açısından iyi bir uygulamadır.</span><span class="sxs-lookup"><span data-stu-id="97ac5-158">It's a good security practice to review the permissions and update the password regularly.</span></span> <span data-ttu-id="97ac5-159">Uygulamanız değiştikçe güvenlik kimlik bilgilerini yönetmek ve değiştirmek de isteyebilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="97ac5-159">You may also want to manage and modify the security credentials as your app changes.</span></span> <span data-ttu-id="97ac5-160">Örneğin, yeni bir parola oluşturup eskisini kaldırarak hizmet sorumlusunun parolasını değiştirebiliriz.</span><span class="sxs-lookup"><span data-stu-id="97ac5-160">For example, we can change the password of the service principal by creating a new password and removing the old one.</span></span>
 
-### <a name="add-a-new-password-for-the-service-principal"></a><span data-ttu-id="f4c3e-161">Hizmet sorumlusu için yeni parola ekleme</span><span class="sxs-lookup"><span data-stu-id="f4c3e-161">Add a new password for the service principal</span></span>
+### <a name="add-a-new-password-for-the-service-principal"></a><span data-ttu-id="97ac5-161">Hizmet sorumlusu için yeni parola ekleme</span><span class="sxs-lookup"><span data-stu-id="97ac5-161">Add a new password for the service principal</span></span>
 
 ```azurepowershell-interactive
 New-AzureRmADSpCredential -ServicePrincipalName http://MyDemoWebApp
@@ -184,7 +184,7 @@ KeyId     : 6f801c3e-6fcd-42b9-be8e-320b17ba1d36
 Type      : Password
 ```
 
-### <a name="get-a-list-of-credentials-for-the-service-principal"></a><span data-ttu-id="f4c3e-162">Hizmet sorumlusunun kimlik bilgilerinin listesini alma</span><span class="sxs-lookup"><span data-stu-id="f4c3e-162">Get a list of credentials for the service principal</span></span>
+### <a name="get-a-list-of-credentials-for-the-service-principal"></a><span data-ttu-id="97ac5-162">Hizmet sorumlusunun kimlik bilgilerinin listesini alma</span><span class="sxs-lookup"><span data-stu-id="97ac5-162">Get a list of credentials for the service principal</span></span>
 
 ```azurepowershell-interactive
 Get-AzureRmADSpCredential -ServicePrincipalName http://MyDemoWebApp
@@ -197,7 +197,7 @@ StartDate           EndDate             KeyId                                Typ
 5/5/2016 4:55:27 PM 5/5/2017 4:55:27 PM ca9d4846-4972-4c70-b6f5-a4effa60b9bc Password
 ```
 
-### <a name="remove-the-old-password-from-the-service-principal"></a><span data-ttu-id="f4c3e-163">Hizmet sorumlusundan eski parolayı kaldırma</span><span class="sxs-lookup"><span data-stu-id="f4c3e-163">Remove the old password from the service principal</span></span>
+### <a name="remove-the-old-password-from-the-service-principal"></a><span data-ttu-id="97ac5-163">Hizmet sorumlusundan eski parolayı kaldırma</span><span class="sxs-lookup"><span data-stu-id="97ac5-163">Remove the old password from the service principal</span></span>
 
 ```azurepowershell-interactive
 Remove-AzureRmADSpCredential -ServicePrincipalName http://MyDemoWebApp -KeyId ca9d4846-4972-4c70-b6f5-a4effa60b9bc
@@ -210,7 +210,7 @@ service principal objectId '698138e7-d7b6-4738-a866-b4e3081a69e4'.
 [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): Y
 ```
 
-### <a name="verify-the-list-of-credentials-for-the-service-principal"></a><span data-ttu-id="f4c3e-164">Hizmet sorumlusunun kimlik bilgileri listesini doğrulama</span><span class="sxs-lookup"><span data-stu-id="f4c3e-164">Verify the list of credentials for the service principal</span></span>
+### <a name="verify-the-list-of-credentials-for-the-service-principal"></a><span data-ttu-id="97ac5-164">Hizmet sorumlusunun kimlik bilgileri listesini doğrulama</span><span class="sxs-lookup"><span data-stu-id="97ac5-164">Verify the list of credentials for the service principal</span></span>
 
 ```azurepowershell-interactive
 Get-AzureRmADSpCredential -ServicePrincipalName http://MyDemoWebApp
@@ -222,7 +222,7 @@ StartDate           EndDate             KeyId                                Typ
 3/8/2017 5:58:24 PM 3/8/2018 5:58:24 PM 6f801c3e-6fcd-42b9-be8e-320b17ba1d36 Password
 ```
 
-### <a name="get-information-about-the-service-principal"></a><span data-ttu-id="f4c3e-165">Hizmet sorumlusuyla ilgili bilgi edinme</span><span class="sxs-lookup"><span data-stu-id="f4c3e-165">Get information about the service principal</span></span>
+### <a name="get-information-about-the-service-principal"></a><span data-ttu-id="97ac5-165">Hizmet sorumlusuyla ilgili bilgi edinme</span><span class="sxs-lookup"><span data-stu-id="97ac5-165">Get information about the service principal</span></span>
 
 ```azurepowershell-interactive
 $svcprincipal = Get-AzureRmADServicePrincipal -ObjectId 698138e7-d7b6-4738-a866-b4e3081a69e4
