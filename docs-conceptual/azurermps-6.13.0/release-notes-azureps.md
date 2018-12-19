@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.workload: ''
 ms.date: 08/28/2018
 ms.openlocfilehash: 7f517f0b3768a2075557b131158ee1264ea9ab3f
-ms.sourcegitcommit: 558436c824d9b59731aa9b963cdc8df4dea932e7
+ms.sourcegitcommit: 087c588169786c005a3c177624fb3ac6c8870125
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "52587848"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53218230"
 ---
 # <a name="release-notes"></a>Sürüm notları
 
@@ -168,8 +168,8 @@ Azure PowerShell'in bu sürümünde yapılan değişikliklerin listesi aşağıd
 * Sanal Ağ Kuralları desteği ekleme
     - Get-AzureRmDataLakeStoreVirtualNetworkRule: Azure Data Lake Store sanal ağ kuralını alır veya listeler.
     - Add-AzureRmDataLakeStoreVirtualNetworkRule: Belirtilen Data Lake Store hesabına sanal ağ kuralı ekler.
-    - Set-AzureRmDataLakeStoreVirtualNetworkRule: Belirtilen Data Lake Store hesabında belirtilen sanal ağ kuralını değiştirir.
-    - Remove-AzureRmDataLakeStoreVirtualNetworkRule: Azure Data Lake Store sanal ağ kuralını siler.
+    - Set-AzureRmDataLakeStoreVirtualNetworkRule: Belirtilen Data Lake Store hesabındaki belirtilen sanal ağ kuralını değiştirir.
+    - Remove-AzureRmDataLakeStoreVirtualNetworkRule: Bir Azure Data Lake Store sanal ağ kuralını siler.
 
 #### <a name="azurermnetwork"></a>AzureRM.Network
 * Test-AzureRmNetworkWatcherConnectivity cmdlet'i güncelleştirildi, arka uca protokol değerini geçiriyor.
@@ -271,7 +271,7 @@ Azure PowerShell'in bu sürümünde yapılan değişikliklerin listesi aşağıd
   - Set-AzureRmLoadBalancerOutboundRuleConfig
   - Remove-AzureRmLoadBalancerOutboundRuleConfig
 * PSNetworkInterface için yeni HostedWorkloads özelliği eklendi
-* ARM aracılığıyla Azure Güvenlik Duvarı özelliği için yeni cmdlet'ler eklendi
+* Özellik için yeni cmdlet'ler eklendi: ARM aracılığıyla Azure Güvenlik Duvarı
   - Get-AzureRmFirewall eklendi
   - Set-AzureRmFirewall eklendi
   - New-AzureRmFirewall eklendi
@@ -776,9 +776,9 @@ Azure PowerShell'in bu sürümünde yapılan değişikliklerin listesi aşağıd
 #### <a name="azurermnetwork"></a>AzureRM.Network
 * Set/Add-AzureRmVirtualNetworkPeering için birden çok Kiracıdaki Sanal Makineler arasında eşleme etkinleştirildi
 * Aşağıdaki cmdlet’ler Application Gateway için güncelleştirildi
-    - New-AzureRmApplicationGateway : EnableFIPS bayrağı ve Zones desteği eklendi
-    - New-AzureRmApplicationGatewaySku : Yeni Standard_v2 ve WAF_v2 sku'ları eklendi
-    - Set-AzureRmApplicationGatewaySku : Yeni Standard_v2 ve WAF_v2 sku'ları eklendi
+    - New-AzureRmApplicationGateway: EnableFIPS bayrağı ve Bölgeler desteği eklendi
+    - New-AzureRmApplicationGatewaySku: Yeni Standard_v2 ve WAF_v2 sku'ları eklendi
+    - Set-AzureRmApplicationGatewaySku: Yeni Standard_v2 ve WAF_v2 sku'ları eklendi
 * RouteTable cmdlet’leri en son oluşturucu sürümüyle yeniden oluşturuldu
 
 #### <a name="azurermrelay"></a>AzureRM.Relay
@@ -852,7 +852,7 @@ Azure PowerShell'in bu sürümünde yapılan değişikliklerin listesi aşağıd
 
 #### <a name="azurermnetwork"></a>AzureRM.Network
 * Zone-Redundant VirtualNetworkGateways için yeni SKU'lar kullanıma sunuldu
-* ARM aracılığıyla ExpressRoute Partner API'leri özelliği için yeni komutlar eklendi
+* Özellik için yeni komutlar eklendi: ARM aracılığıyla ExpressRoute İş Ortağı API’leri
     - Get-AzureRmExpressRouteCrossConnection eklendi
     - Set-AzureRmExpressRouteCrossConnection eklendi
     - Add-AzureRmExpressRouteCrossConnectionPeering eklendi
@@ -1006,7 +1006,7 @@ Azure PowerShell'in bu sürümünde yapılan değişikliklerin listesi aşağıd
 * Özel CA tarafından Kök veya CA olarak yayınlanan Sertifikaları yükleme desteği eklendi
 * Özel SSL sertifikalarını KeyVault ve Çoklu ara sunucu ana bilgisayar adlarıyla kabul etme desteği eklendi
 * MSI kimliği desteği eklendi
-* İlkeleri Url ile kabul etme desteği eklendi NOT: Aşağıdaki cmdlet’ler gelecekteki sürümlerde kullanım dışı kalacaktır
+* Url aracılığıyla İlkeleri kabul etmek için destek eklendi NOT: Aşağıdaki cmdlet’ler gelecek sürümde kullanım dışı bırakılacaktır
    - Import-AzureRmApiManagementHostnameCertificate
    - New-AzureRmApiManagementHostnameConfiguration
    - Set-AzureRmApiManagementHostnames

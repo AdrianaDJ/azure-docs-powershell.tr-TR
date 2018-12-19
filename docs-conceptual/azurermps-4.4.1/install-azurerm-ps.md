@@ -8,16 +8,16 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/27/2018
 ms.openlocfilehash: ef796bcb81e24b1942c644aad2b4ec7705916b02
-ms.sourcegitcommit: 558436c824d9b59731aa9b963cdc8df4dea932e7
+ms.sourcegitcommit: 087c588169786c005a3c177624fb3ac6c8870125
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "52588154"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53217754"
 ---
 # <a name="install-and-configure-azure-powershell"></a>Azure PowerShell'i yükleyip yapılandırma
 
 Bu makalede Azure PowerShell modüllerini Windows ortamına yüklemek için uygulanması gereken adımlar açıklanmaktadır.
-Azure PowerShell'i macOS veya Linux'a yüklemek istiyorsanız şu makaleye bakın: [Azure PowerShell'i macOS ve Linux'ta yükleme ve yapılandırma](install-azurermps-maclinux.md).
+macOS veya Linux üzerinde Azure PowerShell kullanmak istiyorsanız aşağıdaki makaleye bakın: [Azure PowerShell’i macOS ve Linux’a yükleme ve yapılandırma](install-azurermps-maclinux.md).
 
 Azure PowerShell'in PowerShell Galerisi'nden yüklenmesi, tercih edilen yükleme yöntemidir.
 

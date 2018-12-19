@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.workload: ''
 ms.date: 07/26/2017
 ms.openlocfilehash: 563f84c3af98de066611dd80102e552b31f12883
-ms.sourcegitcommit: 558436c824d9b59731aa9b963cdc8df4dea932e7
+ms.sourcegitcommit: 087c588169786c005a3c177624fb3ac6c8870125
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "52587933"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53217312"
 ---
 # <a name="release-notes"></a>Sürüm notları
 
@@ -37,23 +37,23 @@ Azure PowerShell'in bu sürümünde yapılan değişikliklerin listesi aşağıd
   * Get-AzureRmCognitiveServicesAccount artık sayfalamayı doğru şekilde destekleyebiliyor.
 * İşlem
   * Çalıştır Komutu özelliği:
-    - Yeni 'Invoke-AzureRmVMRunCommand' cmdlet’i bir VM üzerinde çalıştır komutunu çağırır
-    - Yeni 'Get-AzureRmVMRunCommandDocument' cmdlet’i, kullanılabilir çalıştır komutu belgelerini gösterir
+    - Yeni cmdlet: 'Invoke-AzureRmVMRunCommand' bir VM üzerinde çalıştırma komutunu çağırır
+    - Yeni cmdlet: 'Get-AzureRmVMRunCommandDocument' kullanılabilir çalıştırma komutu belgelerini gösterir
   * 'StorageAccountType' parametresi Set-AzureRmDataDisk’e eklendi
   * Sanal makine, VM ölçek kümesi ve disk için Kullanılabilirlik Alanı desteği
-    - Yeni 'Zone' parametresi New-AzureRmVM, New-AzureRmVMConfig, New-AzureRmVmssConfig, New-AzureRmDiskConfig’e eklendi
+    - Yeni parametre: 'Bölge' New-AzureRmVM, New-AzureRmVMConfig, New-AzureRmVmssConfig, New-AzureRmDiskConfig’e eklenir
   * VM ölçek kümesi sıralı yükseltme özelliği:
-    - Yeni 'Start-AzureRmVmssRollingOSUpgrade' cmdlet’i, VM ölçek kümesinin işletim sistemi sıralı yükseltmesini çağırır
-    - Yeni 'Set-AzureRmVmssRollingUpgradePolicy' cmdlet’i, VM ölçek kümesi sıralı yükseltmesi için yükseltme ilkesini ayarlar.
-    - Yeni 'Stop-AzureRmVmssRollingUpgrade' cmdlet’i, VM ölçek kümesinin sıralı yükseltmesini iptal eder
-    - Yeni 'Get-AzureRmVmssRollingUpgrade' cmdlet’i, VM ölçek kümesi sıralı yükseltmesinin durumunu gösterir.
+    - Yeni cmdlet: 'Start-AzureRmVmssRollingOSUpgrade', VM ölçek kümesinin işletim sistemi sıralı yükseltmesini çağırır
+    - Yeni cmdlet: 'Set-AzureRmVmssRollingUpgradePolicy', VM ölçek kümesi sıralı yükseltmesi için yükseltme ilkesini ayarlar.
+    - Yeni cmdlet: 'Stop-AzureRmVmssRollingUpgrade', VM ölçek kümesinin sıralı yükseltmesini iptal eder
+    - Yeni cmdlet: 'Get-AzureRmVmssRollingUpgrade', VM ölçek kümesi sıralı yükseltmesinin durumunu gösterir.
   * Sistem tarafından atanan kimlik için AssignIdentity anahtar parametresi kullanılma sunuldu.
-    - Yeni 'AssignIdentity' parametresi New-AzureRmVMConfig, New-AzureRmVmssConfig ve Update-AzureRmVM’ye eklendi
+    - Yeni parametre: 'AssignIdentity' New-AzureRmVMConfig, New-AzureRmVmssConfig ve Update-AzureRmVM’ye eklendi
   * Vmss disk şifreleme özelliği:
-    - Yeni 'Set-AzureRmVmssDiskEncryptionExtension' cmdlet’i, VM ölçek kümesinde disk şifrelemeyi etkinleştirir
-    - Yeni 'Disable-AzureRmVmssDiskEncryption' cmdlet’i, VM ölçek kümesinde disk şifrelemeyi devre dışı bırakır
-    - Yeni 'Get-AzureRmVmssDiskEncryptionStatus' cmdlet’i bir VM ölçek kümesinin disk şifreleme durumunu gösterir
-    - Yeni 'Get-AzureRmVmssVMDiskEncryptionStatus' cmdlet’i bir VM ölçek kümesindeki VM’lerin disk şifreleme durumunu gösterir
+    - Yeni cmdlet: 'Set-AzureRmVmssDiskEncryptionExtension', VM ölçek kümesinde disk şifrelemeyi etkinleştirir
+    - Yeni cmdlet: 'Disable-AzureRmVmssDiskEncryption', VM ölçek kümesinde disk şifrelemeyi devre dışı bırakır
+    - Yeni cmdlet: 'Get-AzureRmVmssDiskEncryptionStatus', bir VM ölçek kümesinin disk şifreleme durumunu gösterir
+    - Yeni cmdlet: 'Get-AzureRmVmssVMDiskEncryptionStatus', bir VM ölçek kümesindeki VM’lerin disk şifreleme durumunu gösterir
 * ContainerInstance
   * Azure Container Örneği için PowerShell cmdlet'leri eklendi
     - New-AzureRmContainerGroup
@@ -94,9 +94,9 @@ Azure PowerShell'in bu sürümünde yapılan değişikliklerin listesi aşağıd
     * Undo-AzureKeyVaultCertificateRemoval
 * Ağ
   * Sanal Ağ Alt Ağlarına uç nokta hizmetleri desteği eklendi
-    - Add-AzureRmVirtualSubnetConfig güncelleştirildi: İsteğe bağlı -ServiceEndpoint parametresi eklendi
-    - New-AzureRmVirtualSubnetConfig güncelleştirildi: İsteğe bağlı -ServiceEndpoint parametresi eklendi
-    - Set-AzureRmVirtualSubnetConfig güncelleştirildi: İsteğe bağlı -ServiceEndpoint parametresi eklendi
+    - Add-AzureRmVirtualSubnetConfig güncelleştirildi: İsteğe bağlı - ServiceEndpoint parametresi eklendi
+    - New-AzureRmVirtualSubnetConfig güncelleştirildi: İsteğe bağlı - ServiceEndpoint parametresi eklendi
+    - Set-AzureRmVirtualSubnetConfig güncelleştirildi: İsteğe bağlı - ServiceEndpoint parametresi eklendi
   * Konumda mevcut olan uç nokta hizmetlerini listeleyen cmdlet eklendi
     - Get-AzureRmVirtualNetworkAvailableEndpointService
   * Aşağıdaki komutlara dış yarıçap tabanlı P2S kimlik doğrulamasını yapılandırma becerisi eklendi
@@ -114,7 +114,7 @@ Azure PowerShell'in bu sürümünde yapılan değişikliklerin listesi aşağıd
     - Add-AzureRMLoadBalancerRuleConfig güncelleştirildi: İsteğe bağlı DisableOutboundSNAT parametresi eklendi
     - Set-AzureRMLoadBalancerRuleConfig güncelleştirildi: İsteğe bağlı DisableOutboundSNAT parametresi eklendi
   * IkeV2 P2S desteği eklendi
-    - New-AzureRmVirtualNetworkGateway güncelleştirildi: İsteğe bağlı -VpnClientProtocol parametresi [ "SSTP", "IkeV2" ] varsayılan değeriyle eklendi
+    - New-AzureRmVirtualNetworkGateway güncelleştirildi: İsteğe bağlı -VpnClientProtocol parametresi eklendi, varsayılan değer [ "SSTP", "IkeV2" ]
     - Set-AzureRmVirtualNetworkGateway güncelleştirildi: İsteğe bağlı -VpnClientProtocol parametresi eklendi
   * Ağ Güvenlik Kuralları ve Etkili Ağ Güvenliği Kuralları’na MultiValued kural desteği eklendi
     - Add-AzureRmNetworkSecurityRuleConfig güncelleştirildi: SourcePortRange, DestinationPortRange, SourceAddressPrefix parametreleri bir dize listesi kabul edecek şekilde güncelleştirildi
@@ -219,8 +219,8 @@ Azure PowerShell'in bu sürümünde yapılan değişikliklerin listesi aşağıd
   * StartAzureAutomationDscCompilationJob ve ImportAzureAutomationDscNodeConfiguration içinde NodeConfiguration Derleme sürümü oluşturma desteği eklendi
   * Mevcut sorunlar için hata düzeltmeleri - #3775 içindeki diğer ad ve HybridWorkers için runOn diğer adı ve desteği sorunu düzeltildi.
 * İşlem
-  * Set-AzureRmVMAEMExtension: Yeni Premium Disk boyutları için destek ekleme
-  * Set-AzureRmVMAEMExtension: M serisi için destek ekleme
+  * Set-AzureRmVMAEMExtension: Yeni Premium Disk boyutları için destek eklendi
+  * Set-AzureRmVMAEMExtension: M serisi için destek eklendi
   * Add-AzureRmVmssExtension öğesine ForceUpdateTag parametresi ekleme
   * New-AzureRmVmssIpConfig öğesine Primary parametresi ekleme
   * Add-AzureRmVmssNetworkInterfaceConfig öğesine EnableAcceleratedNetworking parametresi ekleme
@@ -338,7 +338,7 @@ Azure PowerShell'in bu sürümünde yapılan değişikliklerin listesi aşağıd
         - New-AzureRmVmssConfig’e 'IdentityType' parametresi eklendi
         - Get-AzureRmVmss, belirli bir Vmss’nin kimlik bilgilerini gösteriyor
     * Vmss Önyükleme Tanılaması özelliği:
-        - Vmss nesnesinin önyükleme tanılamasını ayarlayamaya yönelik yeni cmdlet: Set-AzureRmVmssBootDiagnostics
+        - Vmss nesnesinin önyükleme tanılamasını ayarlamaya yönelik yeni cmdlet: Set-AzureRmVmssBootDiagnostics
         - New-AzureRmVmssConfig’e 'BootDiagnostic' parametresi eklendi
     * Vmss LicenseType özelliği:
         - New-AzureRmVmssConfig’e 'LicenseType' parametresi eklendi
@@ -383,8 +383,8 @@ Azure PowerShell'in bu sürümünde yapılan değişikliklerin listesi aşağıd
 * Insights
     * Sorun 4215 (değişiklik isteği), Get-AzureRmLog cmdlet’inin zaman penceresindeki 15 günlük sınır ortadan kaldırıldı. Ayrıca birim testi adlarında küçük değişiklikler yapıldı.
     * Get-AzureRmLog için Sorun 3957 çözüldü
-        - Sorun #1: Arka uç, her birinde 200 kayıt olup sonraki sayfaya devam belirteci ile bağlanan sayfalar halinde kayıtlar döndürüyor. Müşteriler daha fazlası olduğunu bildikleri durumlarda cmdlet’in yalnızca 200 kayıt döndürdüğünü görüyordu. Bu durum, MaxEvents için ayarladıkları ve 200’den az olmayan değerden bağımsız olarak gerçekleşiyordu.
-        - Sorun 2: Belgeler bu cmdlet hakkında yanlış veriler içeriyordu, örn. varsayılan zaman penceresi 1 saatti.
+        - Sorun 1: Arka uç, her birinde 200 kayıt olup sonraki sayfaya devam belirteci ile bağlanan sayfalar halinde kayıtlar döndürüyor. Müşteriler daha fazlası olduğunu bildikleri durumlarda cmdlet’in yalnızca 200 kayıt döndürdüğünü görüyordu. Bu durum, MaxEvents için ayarladıkları ve 200’den az olmayan değerden bağımsız olarak gerçekleşiyordu.
+        - Sorun 2: Belgeler bu cmdlet hakkında yanlış veriler içeriyordu. Örn. varsayılan zaman penceresi 1 saatti.
         - Düzeltme 1: Cmdlet artık MaxEvents değerine veya küme sonuna ulaşana kadar arka uç tarafından döndürülen devam belirtecini takip etmektedir.<br>MaxEvents için varsayılan değer 1000 ve en büyük değer 100000’dir. 1’den küçük tüm MaxEvents değerleri yok sayılmakta ve yerine varsayılan değer kullanılmaktadır. Bu değerler ve davranış değişmemiştir, ancak şu anda doğru şekilde belgelenmektedir.<br>Cmdlet adı artık olaylar hakkında değil, yalnızca Günlükler hakkında bilgi verdiği için, MaxEvents’e ilişkin bir diğer ad eklendi.
         - Düzeltme 2: Belgeler doğru ve daha ayrıntılı bilgiler içeriyor: yeni diğer ad, doğru zaman penceresi, doğru varsayılan değer, en küçük ve en büyük değerler.
 * KeyVault
@@ -399,8 +399,8 @@ Azure PowerShell'in bu sürümünde yapılan değişikliklerin listesi aşağıd
             - Add-AzureRmApplicationGatewaySslPolicy
             - New-AzureRmApplicationGatewaySslPolicy
             - Set-AzureRmApplicationGatewaySslPolicy
-        - Get-AzureRmApplicationGatewayAvailableSslOptions (Diğer ad: List-AzureRmApplicationGatewayAvailableSslOptions) eklendi
-        - Get-AzureRmApplicationGatewaySslPredefinedPolicy (Diğer ad: List-AzureRmApplicationGatewaySslPredefinedPolicy) eklendi
+        - Get-AzureRmApplicationGatewayAvailableSslOptions eklendi (Diğer ad: List-AzureRmApplicationGatewayAvailableSslOptions)
+        - Get-AzureRmApplicationGatewaySslPredefinedPolicy eklendi (Diğer ad: List-AzureRmApplicationGatewaySslPredefinedPolicy)
     * Application Gateway’de yeniden yönlendirme desteği eklendi
         - Add-AzureRmApplicationGatewayRedirectConfiguration eklendi
         - Get-AzureRmApplicationGatewayRedirectConfiguration eklendi
@@ -465,14 +465,14 @@ Azure PowerShell'in bu sürümünde yapılan değişikliklerin listesi aşağıd
 * İşlem
     * Birden fazla yönetilen disk içeren sanal makineler için Test-AzureRmVMAEMExtension düzeltildi
     * Set-AzureRmVMAEMExtension güncelleştirildi: Premium yönetilen diskler için önbelleğe alma bilgileri eklendi
-    * Add-AzureRmVhd: Vhd üzerindeki boyut sınırı 4 TB’a yükseltildi.
+    * Add-AzureRmVhd: Vhd üzerindeki boyut sınırı 4 TB’ye yükseltildi.
     * Stop-AzureRmVM: STayProvisioned parametresinin belgeleri netleştirildi
     * New-AzureRmDiskUpdateConfig
       * CreateOption, StorageAccountId, ImageReference, SourceUri, SourceResourceId parametreleri kullanımdan kaldırıldı
-    * Set-AzureRmDiskUpdateImageReference: Cmdlet kullanımdan kaldırıldı
+    * Set-AzureRmDiskUpdateImageReference: Kullanım dışı bırakılan cmdlet
     * New-AzureRmSnapshotUpdateConfig
       * CreateOption, StorageAccountId, ImageReference, SourceUri, SourceResourceId parametreleri kullanımdan kaldırıldı
-    * Set-AzureRmSnapshotUpdateImageReference: Cmdlet kullanımdan kaldırıldı
+    * Set-AzureRmSnapshotUpdateImageReference: Kullanım Dışı Bırakılan Cmdlet
 * DataLakeStore
     * Enable-AzureRmDataLakeStoreKeyVault (Enable-AdlStoreKeyVault)
       * Bir DataLake Deposu için KeyVault ile yönetilen şifreleme etkinleştirildi
@@ -522,7 +522,7 @@ Azure PowerShell'in bu sürümünde yapılan değişikliklerin listesi aşağıd
     * Yeni 'MonitorIntervalInSeconds', 'MonitorTimeoutInSeconds', 'MonitorToleratedNumberOfFailures' İzleyici ayarları
     * Yeni 'TCP' İzleyici protokolü
 * ServiceManagement
-    * Add-AzureVhd: Vhd üzerindeki boyut sınırı 4 TB’a yükseltildi.
+    * Add-AzureVhd: Vhd üzerindeki boyut sınırı 4 TB’ye yükseltildi.
     * New-AzureBGPPeering: LegacyMode desteği
 * Azure Depolama
     * Joker karakterleri kabul eden parametrelere ilişkin yardım ve StorageContext türü güncelleştirildi
@@ -614,7 +614,7 @@ Azure PowerShell'in bu sürümünde yapılan değişikliklerin listesi aşağıd
     + Gizli diziler yedeklenip geri yüklenebilir, Anahtarlar için desteklenen işlevlerle birlikte kullanılabilir
 
   - Anahtarlar ve Gizli Diziler için yedekleme cmdlet'leri artık giriş parametresi için karşılık gelen bir nesneyi kabul ediyor
-    + Çağrıda bulunan alma ve yedekleme işlemlerini bir arada kullanabilir: Get-AzureKeyVaultKey -VaultName myVault -Name myKey | Backup-AzureKeyVaultKey
+    + Çağıran, alma ve yedekleme işlemlerini birbirine zincirleyebilir: Get-AzureKeyVaultKey -VaultName myVault -Name myKey | Backup-AzureKeyVaultKey
 
   - Yedekleme cmdlet'i artık var olan bir dosyanın üzerine yazmak için -Force anahtarı kullanılmasını destekliyor
     + Var olan dosyanın üzerine yazma girişiminin artık işlemi sonlandırmayacağını, kullanıcıya nasıl devam etmek istediğinin sorulacağını unutmayın.

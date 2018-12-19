@@ -9,18 +9,18 @@ ms.topic: conceptual
 ms.manager: knithinc
 ms.date: 09/21/2018
 ms.openlocfilehash: cd415e862bfaa2b767cce108689ebaf34ef74305
-ms.sourcegitcommit: 558436c824d9b59731aa9b963cdc8df4dea932e7
+ms.sourcegitcommit: 087c588169786c005a3c177624fb3ac6c8870125
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "52586930"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53218162"
 ---
 # <a name="azurerm-module-230"></a>AzureRM Modülü 2.3.0
 
 ## <a name="requirements"></a>Gereksinimler:
 Desteklenen en düşük Azure Stack sürümü 1808 sürümüdür.
 
-Not: Daha önceki bir sürümü kullanıyorsanız sürüm 1.2.11’i yükleyin
+Not: Daha önceki bir sürümü kullanıyorsanız 1.2.11 sürümünü yükleyin
 
 
 ## <a name="install"></a>Yükleme

@@ -8,19 +8,19 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.manager: knithinc
 ms.date: 09/21/2018
-ms.openlocfilehash: fb892daeafb1365ea62324392ac806cf9f3d39cf
-ms.sourcegitcommit: 558436c824d9b59731aa9b963cdc8df4dea932e7
+ms.openlocfilehash: 3add10651334a9c8a1e4ebfd5c8b9cfbf0cc7981
+ms.sourcegitcommit: 087c588169786c005a3c177624fb3ac6c8870125
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "52586675"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53218026"
 ---
 # <a name="azure-stack-module-130"></a>Azure Stack Modülü 1.3.0
 
 ## <a name="requirements"></a>Gereksinimler:
 Desteklenen en düşük Azure Stack sürümü 1804’tür.
 
-Not: Daha önceki bir sürümü kullanıyorsanız sürüm 1.2.11’i yükleyin
+Not: Daha önceki bir sürümü kullanıyorsanız 1.2.11 sürümünü yükleyin
 
 ## <a name="known-issues"></a>Bilinen sorunlar:
 

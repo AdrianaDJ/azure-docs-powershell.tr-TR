@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.workload: ''
 ms.date: 2/20/2018
 ms.openlocfilehash: 1a9d38cd60ba596c085e5ee9f8d815e238362b1f
-ms.sourcegitcommit: 558436c824d9b59731aa9b963cdc8df4dea932e7
+ms.sourcegitcommit: 087c588169786c005a3c177624fb3ac6c8870125
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "52586726"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53218111"
 ---
 # <a name="release-notes"></a>Sürüm notları
 
@@ -147,7 +147,7 @@ Son sürümden sonraki değişiklikler: https://github.com/Azure/azure-powershel
     - Update-AzureRmRecoveryServicesAsrProtectionDirection
 
 #### <a name="azurermstorage"></a>AzureRM.Storage
-* New ve Set StorageAccount cmdlet’lerindeki EnableEncryptionService ve DisableEncryptionService parametreleri, Bekleyen Şifreleme varsayılan olarak etkinleştirildiğinden ve devre dışı bırakılamadığından artık kullanılmıyor.
+* Yeni ve ayarlanan Depolama Hesabı cmdlet’lerindeki EnableEncryptionService ve DisableEncryptionService parametreleri, Bekleyen Şifreleme varsayılan olarak etkinleştirildiğinden ve devre dışı bırakılamadığından artık kullanılmıyor.
     - New-AzureRmStorageAccount
     - Set-AzureRmStorageAccount
 
@@ -182,9 +182,9 @@ Son sürümden sonraki değişiklikler: https://github.com/Azure/azure-powershel
 * 'New-AzureRmVMSS', bağlantı dizelerini ayrıntılı modda yazdırır.
 * 'New-AzureRmVmss', genel IP adresini, yük dengeleme kurallarını, gelen NAT kurallarını destekler.
 * WriteAccelerator özelliği
-    - Şu cmdlet’lere WriteAccelerator anahtar parametresi eklendi: Set-AzureRmVMOSDisk Set-AzureRmVMDataDisk Add-AzureRmVMDataDisk Add-AzureRmVmssDataDisk
-    - Şu cmdlet’e OsDiskWriteAccelerator anahtar parametresi eklendi:     Set-AzureRmVmssStorageProfile.
-    - Şu cmdlet’lere OsDiskWriteAccelerator Boole parametresi eklendi:     Update-AzureRmVM     Update-AzureRmVmss
+    - Aşağıdaki cmdlet’lere WriteAccelerator anahtar parametresi eklendi: Set-AzureRmVMOSDisk Set-AzureRmVMDataDisk Add-AzureRmVMDataDisk Add-AzureRmVmssDataDisk
+    - Aşağıdaki cmdlet’lere OsDiskWriteAccelerator anahtar parametresi eklendi:     Set-AzureRmVmssStorageProfile.
+    - Aşağıdaki cmdlet’lere OsDiskWriteAccelerator Boole parametresi eklendi:     Update-AzureRmVM     Update-AzureRmVmss
 
 #### <a name="azurermdatafactories"></a>AzureRM.DataFactories
 * Bazı şifreleme işlemleri için anlamlı bir hataya yol açmayan kimlik bilgileri şifreleme sorunu düzeltildi
@@ -280,11 +280,11 @@ Son sürümden sonraki değişiklikler: https://github.com/Azure/azure-powershel
 * RouteTable ve effectiveRoute’a DisableBgpRoutePropagation özelliği eklendi.
 
 #### <a name="azurermresources"></a>AzureRM.Resources
-* Register-AzureRmProviderFeature: Belgelerdeki eksik örnekler eklendi
-* Register-AzureRmResourceProvider: Belgelerdeki eksik örnekler eklendi
+* Register-AzureRmProviderFeature: Eksik örnek belgelere eklendi
+* Register-AzureRmResourceProvider: Eksik örnek belgelere eklendi
 
 #### <a name="azurermstorage"></a>AzureRM.Storage
-* New ve Set StorageAccount cmdlet’lerindeki EnableEncryptionService ve DisableEncryptionService parametreleri, Bekleyen Şifreleme varsayılan olarak etkinleştirildiğinden ve devre dışı bırakılamadığından artık kullanılmıyor.
+* Yeni ve ayarlanan Depolama Hesabı cmdlet’lerindeki EnableEncryptionService ve DisableEncryptionService parametreleri, Bekleyen Şifreleme varsayılan olarak etkinleştirildiğinden ve devre dışı bırakılamadığından artık kullanılmıyor.
     - New-AzureRmStorageAccount
     - Set-AzureRmStorageAccount
 
@@ -623,7 +623,7 @@ Son sürümden sonraki değişiklikler: https://github.com/Azure/azure-powershel
   - Get-AzureRmComputeResourceSku, bölge bilgilerini gösterir.
   - [https://github.com/Azure/azure-powershell/issues/5038](https://github.com/Azure/azure-powershell/issues/5038) sorununu düzeltmek için Disable-AzureRmVmssDiskEncryption öğesini güncelleştirin
   - Uzun süre çalışan İşlem cmdlet’leri için -AsJob desteği eklendi. Seçilen cmdlet’lerin arka planda çalışmasını ve ilerlemeyi izleyip denetlemek için bir iş döndürmesini sağlar.
-    - Etkilenen cmdlet’ler şunları içerir: Sanal Makineler ve Sanal Makine Ölçek Kümeleri için New-, Update-, Set-, Remove-, Start-, Restart-, Stop- cmdlet’leri
+    - Etkilenen cmdlet’ler şunlardır: Sanal Makineler ve Sanal Makine Ölçek Kümeleri için New-, Update-, Set-, Remove-, Start-, Restart-, Stop- cmdlet’leri
     - New-AzureRmVM cmdlet’ine akıllı varsayılanları kullanarak bir Sanal Makine ve tüm gerekli kaynakları oluşturan basitleştirilmiş parametre kümesi eklendi
 * ContainerInstance
   - Azure Container Instance SDK’sı uygulama 2017-10-01
@@ -721,7 +721,7 @@ Son sürümden sonraki değişiklikler: https://github.com/Azure/azure-powershel
   - AzureRM.StreamAnalytics
 
 ## <a name="2017118---version-500"></a>2017.11.8 - Sürüm 5.0.0
-* Not: Bu bir önemli değişiklik yayınıdır. Sunulan önemli değişikliklerin tam listesi için lütfen geçiş kılavuzuna (https://aka.ms/azps-migration-guide)) bakın.
+* NOT: Bu bir hataya neden olan değişiklik yayınıdır. Sunulan önemli değişikliklerin tam listesi için lütfen geçiş kılavuzuna (https://aka.ms/azps-migration-guide)) bakın.
 * AzureRM’deki tüm cmdlet'ler artık çevrimiçi yardımı destekler
   - Çevrimiçi yardımı varsayılan İnternet tarayıcınızda açmak için Get-Help komutunu -Online parametresiyle birlikte çalıştırın
 * AnalysisServices
