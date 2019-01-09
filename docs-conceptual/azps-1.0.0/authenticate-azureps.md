@@ -6,13 +6,13 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 09/09/2018
-ms.openlocfilehash: 92d9f7ed3c3cc111683fb6bf0f66107b73b7e96c
-ms.sourcegitcommit: 6685809f054203bd733c84f68acc69e53e5cca8c
+ms.date: 10/29/2018
+ms.openlocfilehash: 8b085720aeabe26c1293ece193e050b31f99a693
+ms.sourcegitcommit: ae81b08a45d8729fc8d40156422e3eb2e94de8c7
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 01/02/2019
-ms.locfileid: "53982901"
+ms.lasthandoff: 12/27/2018
+ms.locfileid: "53786688"
 ---
 # <a name="sign-in-with-azure-powershell"></a>Azure PowerShell ile oturum açma
 
@@ -20,16 +20,18 @@ Azure PowerShell, çeşitli kimlik doğrulama yöntemlerini destekler. Hizmeti k
 
 ## <a name="sign-in-interactively"></a>Etkileşimli olarak oturum açma
 
-Etkileşimli olarak oturum açmak için [Connect-AzureRmAccount](/powershell/module/azurerm.profile/connect-azurermaccount) cmdlet'ini kullanın.
+Etkileşimli olarak oturum açmak için [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount) cmdlet'ini kullanın.
 
 ```azurepowershell-interactive
-Connect-AzureRmAccount
+Connect-AzAccount
 ```
 
-Bu cmdlet çalıştırıldığında, Azure hesabınızla ilişkilendirilmiş e-posta adresinizle parolanızı soran bir iletişim kutusu açar. Bu kimlik doğrulaması geçerli PowerShell oturumunu süresince kullanılır.
+Bu cmdlet çalıştırıldığında bir belirteç dizesi sunar. Oturum açmak için bu dizeyi kopyalayıp bir tarayıcıda https://microsoft.com/devicelogin sayfasına yapıştırın. Ardından Azure’a bağlanmak için PowerShell oturumunuzun kimliği doğrulanır. Bu kimlik doğrulaması geçerli PowerShell oturumunu süresince kullanılır.
 
 > [!IMPORTANT]
-> Azure PowerShell 6.3.0'dan başlayarak, Windows'da oturumunuz açık kaldığı sürece kimlik bilgileriniz birden çok PowerShell oturumu arasında paylaşılır. Daha fazla bilgi için, [Kalıcı Kimlik Bilgileri](context-persistence.md) makalesine bakın.
+>
+> Oturumunuz açık kaldığı sürece kimlik bilgileriniz birden çok PowerShell oturumu arasında paylaşılır.
+> Daha fazla bilgi için, [Kalıcı Kimlik Bilgileri](context-persistence.md) makalesine bakın.
 
 ## <a name="sign-in-with-a-service-principal"></a>Hizmet sorumlusu ile oturum açma
 
@@ -37,11 +39,11 @@ Hizmet sorumluları etkileşimli olmayan Azure hesaplarıdır. Diğer kullanıc�
 
 Azure PowerShell'le kullanmak üzere hizmet sorumlusu oluşturmayı öğrenmek için, bkz. [Azure PowerShell ile Azure hizmet sorumlusu oluşturma](create-azure-service-principal-azureps.md).
 
-Hizmet sorumlusuyla oturum açmak için `Connect-AzureRmAccount` cmdlet'iyle `-ServicePrincipal` bağımsız değişkenini kullanın. Hizmet sorumlusunun oturum açma kimlik bilgilerine ve hizmet sorumlusuyla ilişkilendirilmiş kiracı kimliğine de ihtiyacınız vardır. Hizmet sorumlusunun kimlik bilgilerini uygun bir nesne olarak almak için [Get-Credential](/powershell/module/microsoft.powershell.security/get-credential) cmdlet'ini kullanın. Bu cmdlet, hizmet sorumlusu kimliğini ve parolasını girmeniz için bir iletişim kutusu görüntüler.
+Hizmet sorumlusuyla oturum açmak için `Connect-AzAccount` cmdlet'iyle `-ServicePrincipal` bağımsız değişkenini kullanın. Hizmet sorumlusunun uygulama kimliğine, oturum açma kimlik bilgilerine ve hizmet sorumlusuyla ilişkilendirilmiş kiracı kimliğine de ihtiyacınız vardır. Hizmet sorumlusunun kimlik bilgilerini uygun bir nesne olarak almak için [Get-Credential](/powershell/module/microsoft.powershell.security/get-credential) cmdlet'ini kullanın. Bu cmdlet, hizmet sorumlusu kullanıcı kimliği ve parolası için bir istem sunar.
 
 ```azurepowershell-interactive
 $pscredential = Get-Credential
-Connect-AzureRmAccount -ServicePrincipal -Credential $pscredential -TenantId $tenantid
+Connect-AzAccount -ServicePrincipal -ApplicationId  "http://my-app" -Credential $pscredential -TenantId $tenantid
 ```
 
 ## <a name="sign-in-using-an-azure-managed-service-identity"></a>Azure Yönetilen Hizmet Kimliği kullanarak oturum açma
@@ -55,7 +57,7 @@ Azure kaynaklarına ilişkin yönetilen kimlikler hakkında daha fazla bilgi iç
 [Bulut Çözümü Sağlayıcısı (CSP)](https://azure.microsoft.com/en-us/offers/ms-azr-0145p/) olarak oturum açmak için `-TenantId` kullanılması gerekir. Normalde bu parametre kiracı kimliği veya etki alanı adı olarak sağlanabilir. Ancak CSP olarak oturum açmak için **kiracı kimliği** sağlanmalıdır.
 
 ```azurepowershell-interactive
-Connect-AzureRmAccount -TenantId 'xxxx-xxxx-xxxx-xxxx'
+Connect-AzAccount -TenantId 'xxxx-xxxx-xxxx-xxxx'
 ```
 
 ## <a name="sign-in-to-another-cloud"></a>Başka bir bulut oturumu açma
@@ -65,13 +67,13 @@ Bölgesel buluttaki hesaplar için, oturum açarken `-Environment` bağımsız d
 Örneğin, hesabınız Çin bulutundaysa:
 
 ```azurepowershell-interactive
-Connect-AzureRmAccount -Environment AzureChinaCloud
+Connect-AzAccount -Environment AzureChinaCloud
 ```
 
 Aşağıdaki komut, kullanılabilir ortamların listesini alır:
 
 ```azurepowershell-interactive
-Get-AzureRmEnvironment | Select-Object Name
+Get-AzEnvironment | Select-Object Name
 ```
 
 ## <a name="learn-more-about-managing-azure-role-based-access"></a>Azure rol tabanlı erişimi yönetme hakkında daha fazla bilgi edinin
@@ -80,10 +82,10 @@ Azure’da kimlik doğrulama ve abonelik yönetimi hakkında daha fazla bilgi ed
 
 Rol yönetimi için Azure PowerShell cmdlet'leri:
 
-* [Get-AzureRmRoleAssignment](/powershell/module/AzureRM.Resources/Get-AzureRmRoleAssignment)
-* [Get-AzureRmRoleDefinition](/powershell/module/AzureRM.Resources/Get-AzureRmRoleDefinition)
-* [New-AzureRmRoleAssignment](/powershell/module/AzureRM.Resources/New-AzureRmRoleAssignment)
-* [New-AzureRmRoleDefinition](/powershell/module/AzureRM.Resources/New-AzureRmRoleDefinition)
-* [Remove-AzureRmRoleAssignment](/powershell/module/AzureRM.Resources/Remove-AzureRmRoleAssignment)
-* [Remove-AzureRmRoleDefinition](/powershell/module/AzureRM.Resources/Remove-AzureRmRoleDefinition)
-* [Set-AzureRmRoleDefinition](/powershell/module/AzureRM.Resources/Set-AzureRmRoleDefinition)
+* [Get-AzRoleAssignment](/powershell/module/az.Resources/Get-azRoleAssignment)
+* [Get-AzRoleDefinition](/powershell/module/az.Resources/Get-azRoleDefinition)
+* [New-AzRoleAssignment](/powershell/module/az.Resources/New-azRoleAssignment)
+* [New-AzRoleDefinition](/powershell/module/az.Resources/New-azRoleDefinition)
+* [Remove-AzRoleAssignment](/powershell/module/az.Resources/Remove-azRoleAssignment)
+* [Remove-AzRoleDefinition](/powershell/module/az.Resources/Remove-azRoleDefinition)
+* [Set-AzRoleDefinition](/powershell/module/az.Resources/Set-azRoleDefinition)
