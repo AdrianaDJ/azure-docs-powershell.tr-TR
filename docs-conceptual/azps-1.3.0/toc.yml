@@ -2,15 +2,12 @@ items:
 - name: Azure PowerShell
   href: overview.md
   items:
+  - name: Yeni Az modülüne giriş
+    href: new-azureps-module-az.md
   - name: Yükleme
-    href: install-azurerm-ps.md
-    items:
-    - name: macOS veya Linux'a yükleme
-      href: install-azurermps-maclinux.md
-    - name: MSI ile yükleme
-      href: other-install.md
+    href: install-az-ps.md
   - name: Kaldırma
-    href: uninstall-azurerm-ps.md
+    href: uninstall-az-ps.md
   - name: başlarken
     href: get-started-azureps.md
   - name: Cloud Shell
@@ -22,6 +19,8 @@ items:
       href: create-azure-service-principal-azureps.md
     - name: Kalıcı kimlik bilgileri
       href: context-persistence.md
+  - name: AzureRM’den geçiş
+    href: migrate-from-azurerm-to-az.md
   - name: Sorgular
     href: queries-azureps.md
   - name: Çıkışı biçimlendirme
@@ -45,8 +44,8 @@ items:
   - name: Sürüm notları
     href: release-notes-azureps.md
     items:
-    - name: Azure PowerShell 6.x için hataya neden olan değişiklikler
-      href: migration-guide.6.0.0.md
+    - name: Az 1.0.0 için yeni değişiklikler
+      href: migrate-az-1.0.0.md
 - name: Öğreticiler
   items:
   - name: Sanal Makineler Oluşturma
@@ -63,9 +62,9 @@ items:
     href: /azure/sql-database/sql-database-powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json
   - name: Cosmos DB
     href: /azure/cosmos-db/powershell-samples?toc=%2fpowershell%2fmodules%2ftoc.json
-ms.openlocfilehash: 44b6c7eaf75dfd1119ba6a0cc4888834a1fc698a
+ms.openlocfilehash: 5954dc3821f68af8bba916fc4832038ca24b5ca5
 ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
 ms.translationtype: HT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 02/12/2019
-ms.locfileid: "56156307"
+ms.locfileid: "56145025"

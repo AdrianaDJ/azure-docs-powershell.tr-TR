@@ -7,24 +7,21 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 09/09/2018
-ms.openlocfilehash: 2db1ada32e5a9285c27ec3f569b622c9c33a06b0
+ms.date: 12/13/2018
+ms.openlocfilehash: 3e1c5ad280bdb29ce479dd0a478d0ed58237f969
 ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
 ms.translationtype: HT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 02/12/2019
-ms.locfileid: "56145048"
+ms.locfileid: "56154166"
 ---
 # <a name="create-an-azure-service-principal-with-azure-powershell"></a>Azure PowerShell ile bir Azure hizmet sorumlusu oluşturma
 
 Uygulamanızı veya hizmetinizi Azure PowerShell ile yönetmeyi planlıyorsanız, uygulamanızı kendi kimlik bilgileriniz altında değil bir Azure Active Directory (AAD) hizmet sorumlusu altında çalıştırın. Bu makalede, Azure PowerShell ile bir güvenlik sorumlusu oluşturma işlemi adım adım gösterilir.
 
-> [!NOTE]
-> Azure portalı aracılığıyla da hizmet sorumlusu oluşturabilirsiniz. Daha ayrıntılı bilgi edinmek için [Kaynaklara erişebilen bir Active Directory uygulaması ve hizmet sorumlusu oluşturmak için portalı kullanma](/azure/azure-resource-manager/resource-group-create-service-principal-portal) konusunu okuyun.
+## <a name="what-is-a-service-principal"></a>Hizmet sorumlusu nedir?
 
-## <a name="what-is-a-service-principal"></a>'Hizmet sorumlusu' nedir?
-
-Azure hizmet sorumlusu, kullanıcı tarafından oluşturulan uygulamalar, hizmetler ve otomasyon araçlarının belirli Azure kaynaklarına erişmek için kullandığı bir güvenlik kimliğidir. Bunu belirli bir rolü olan ve izinleri sıkı bir şekilde denetlenen bir "kullanıcı kimliği" (kullanıcı adı ve parola veya sertifika) olarak düşünebilirsiniz. Genel kullanıcı kimliğinin aksine, hizmet sorumlusunun yalnızca belirli şeyleri yapabilmesi gerekir. Hizmet sorumlusuna yönetim görevlerini gerçekleştirmesi için gereken en düşük izin düzeyini atamanız, güvenliği geliştirir.
+Azure hizmet sorumlusu, kullanıcı tarafından oluşturulan uygulamalar, hizmetler ve otomasyon araçlarının belirli Azure kaynaklarına erişmek için kullandığı bir güvenlik kimliğidir. Hizmet sorumlularına görevlerine özel izinler atanır ve bu sayede güvenlik üzerinde daha iyi denetime sahip olursunuz. Genellikle her tür değişikliği yapma yetkisine sahip olan genel bir kullanıcı kimliğinden farklıdır.
 
 ## <a name="verify-your-own-permission-level"></a>Kendi izin düzeyinizi doğrulama
 
@@ -36,15 +33,16 @@ Hesabınızın doğru izinlere sahip olup olmadığını denetlemenin en kolay y
 
 Azure hesabınızda oturum açıldıktan sonra hizmet sorumlusunu oluşturabilirsiniz. Dağıtılan uygulamanızı tanımlamak için aşağıdaki yollardan birine sahip olmanız gerekir:
 
-* Dağıtılan uygulamanızın benzersiz adı (aşağıdaki örneklerde yer alan "MyDemoWebApp" gibi) veya
+* Dağıtılan uygulamanızın benzersiz adı (aşağıdaki örneklerde yer alan "MyDemoWebApp" gibi)
 * Uygulama Kimliği, yani dağıtılan uygulama, hizmet veya nesnenizle ilişkili benzersiz GUID
 
 ### <a name="get-information-about-your-application"></a>Uygulamanız ile ilgili bilgi edinme
 
-Uygulamanızla ilgili bilgileri almak için `Get-AzureRmADApplication` cmdlet’ini kullanılabilir.
+Uygulamanızla ilgili bilgileri almak için `Get-AzADApplication` cmdlet’ini kullanılabilir.
 
 ```azurepowershell-interactive
-Get-AzureRmADApplication -DisplayNameStartWith MyDemoWebApp
+$app = Get-AzADApplication -DisplayNameStartWith MyDemoWebApp
+$app
 ```
 
 ```output
@@ -61,10 +59,10 @@ ReplyUrls               : {}
 
 ### <a name="create-a-service-principal-for-your-application"></a>Uygulamanız için hizmet sorumlusu oluşturma
 
-Hizmet sorumlusunu oluşturmak için `New-AzureRmADServicePrincipal` cmdlet’i kullanılır.
+Hizmet sorumlusunu oluşturmak için `New-AzADServicePrincipal` cmdlet’i kullanılır.
 
 ```azurepowershell-interactive
-$servicePrincipal = New-AzureRmADServicePrincipal -ApplicationId 00c01aaa-1603-49fc-b6df-b78c4e5138b4
+$servicePrincipal = New-AzADServicePrincipal -ApplicationId 00c01aaa-1603-49fc-b6df-b78c4e5138b4
 ```
 
 ```output
@@ -77,7 +75,7 @@ AdfsId                :
 Type                  : ServicePrincipal
 ```
 
-Buradan dilerseniz doğrudan $servicePrincipal.Secret özelliğini Connect-AzureRmAccount içinde kullanabilir (aşağıdaki "Hizmet sorumlusunu kullanarak oturum açma" bölümüne bakın) veya bu SecureString’i daha sonra kullanmak için düz metine dönüştürebilirsiniz:
+Bundan sonra, `$servicePrincipal.Secret` özelliğini `Connect-AzAccount` için bir bağımsız değişken olarak doğrudan kullanabilir (bkz. "Hizmet sorumlusunu kullanarak oturum açma") veya `SecureString` dizesini düz metin dizesine dönüştürebilirsiniz:
 
 ```azurepowershell-interactive
 $BSTR = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($servicePrincipal.Secret)
@@ -87,11 +85,12 @@ $password = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto($BSTR)
 
 ### <a name="sign-in-using-the-service-principal"></a>Hizmet sorumlusunu kullanarak oturum açma
 
-Artık sağladığınız *appId* ve otomatik olarak oluşturulan *parola* ile uygulamanızın yeni hizmet sorumlusu olarak oturum açabilirsiniz. Hizmet sorumlusu için Kiracı Kimliğine de ihtiyacınız vardır. Kiracı Kimliğiniz, Azure’da kişisel kimlik bilgilerinizle oturum açtığınızda görüntülenir. Hizmet sorumlusuyla oturum açmak için aşağıdaki komutları kullanın:
+Artık sağladığınız `appId` ve oluşturulan `password` ile uygulamanızın yeni hizmet sorumlusu olarak oturum  
+açabilirsiniz. Hizmet sorumlusu için Kiracı Kimliğine de ihtiyacınız vardır. Kiracı Kimliğiniz, Azure’da kişisel kimlik bilgilerinizle oturum açtığınızda görüntülenir. Hizmet sorumlusuyla oturum açmak için şu komutları kullanın:
 
 ```azurepowershell-interactive
 $cred = New-Object System.Management.Automation.PSCredential ("00c01aaa-1603-49fc-b6df-b78c4e5138b4", $servicePrincipal.Secret)
-Connect-AzureRmAccount -Credential $cred -ServicePrincipal -TenantId XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
+Connect-AzAccount -Credential $cred -ServicePrincipal -TenantId XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
 ```
 
 Başarılı bir oturum açma işleminden sonra şöyle bir çıkış görürsünüz:
@@ -114,9 +113,9 @@ Tebrikler! Uygulamanızı çalıştırmak için bu kimlik bilgilerini kullanabil
 
 Azure PowerShell, rol atamalarını yönetmek için aşağıdaki cmdlet’leri sunar:
 
-* [Get-AzureRmRoleAssignment](/powershell/module/azurerm.resources/get-azurermroleassignment)
-* [New-AzureRmRoleAssignment](/powershell/module/azurerm.resources/new-azurermroleassignment)
-* [Remove-AzureRmRoleAssignment](/powershell/module/azurerm.resources/remove-azurermroleassignment)
+* [Get-AzRoleAssignment](/powershell/module/az.resources/get-azroleassignment)
+* [New-AzRoleAssignment](/powershell/module/az.resources/new-azroleassignment)
+* [Remove-AzRoleAssignment](/powershell/module/az.resources/remove-azroleassignment)
 
 Bir hizmet sorumlusunun varsayılan rolü **Katkıda Bulunan**’dır. Geniş izinleri göz önünde bulundurulduğunda, uygulamanızın Azure hizmetleriyle gerçekleştirdiği etkileşimlerin kapsamına bağlı olarak, doğru bir seçim olmayabilir.
 **Okuyucu** rolü daha kısıtlayıcıdır ve salt okunur uygulamalar için iyi bir seçim olabilir. Azure portalı aracılığıyla role özel izinlerin ayrıntılarını görüntüleyebilir veya özel roller oluşturabilirsiniz.
@@ -124,7 +123,7 @@ Bir hizmet sorumlusunun varsayılan rolü **Katkıda Bulunan**’dır. Geniş iz
 Bu örnekte, bir önceki örneğimize **Okuyucu** rolünü ekleyip **Katkıda Bulunan** rolünü siliyoruz:
 
 ```azurepowershell-interactive
-New-AzureRmRoleAssignment -ResourceGroupName myRG -ObjectId 698138e7-d7b6-4738-a866-b4e3081a69e4 -RoleDefinitionName Reader
+New-AzRoleAssignment -ResourceGroupName myRG -ObjectId 698138e7-d7b6-4738-a866-b4e3081a69e4 -RoleDefinitionName Reader
 ```
 
 ```output
@@ -139,13 +138,13 @@ ObjectType         : ServicePrincipal
 ```
 
 ```azurepowershell-interactive
-Remove-AzureRmRoleAssignment -ResourceGroupName myRG -ObjectId 698138e7-d7b6-4738-a866-b4e3081a69e4 -RoleDefinitionName Contributor
+Remove-AzRoleAssignment -ResourceGroupName myRG -ObjectId 698138e7-d7b6-4738-a866-b4e3081a69e4 -RoleDefinitionName Contributor
 ```
 
 Şu anda atanmış olan rolleri görüntülemek için:
 
 ```azurepowershell-interactive
-Get-AzureRmRoleAssignment -ResourceGroupName myRG -ObjectId 698138e7-d7b6-4738-a866-b4e3081a69e4
+Get-AzRoleAssignment -ResourceGroupName myRG -ObjectId 698138e7-d7b6-4738-a866-b4e3081a69e4
 ```
 
 ```output
@@ -161,10 +160,10 @@ ObjectType         : ServicePrincipal
 
 Rol yönetimi için diğer Azure PowerShell cmdlet’leri:
 
-* [Get-AzureRmRoleDefinition](/powershell/module/azurerm.resources/Get-AzureRmRoleDefinition)
-* [New-AzureRmRoleDefinition](/powershell/module/azurerm.resources/New-AzureRmRoleDefinition)
-* [Remove-AzureRmRoleDefinition](/powershell/module/azurerm.resources/Remove-AzureRmRoleDefinition)
-* [Set-AzureRmRoleDefinition](/powershell/module/azurerm.resources/Set-AzureRmRoleDefinition)
+* [Get-AzRoleDefinition](/powershell/module/az.resources/Get-azRoleDefinition)
+* [New-AzRoleDefinition](/powershell/module/az.resources/New-azRoleDefinition)
+* [Remove-AzRoleDefinition](/powershell/module/az.resources/Remove-azRoleDefinition)
+* [Set-AzRoleDefinition](/powershell/module/az.resources/Set-azRoleDefinition)
 
 ## <a name="change-the-credentials-of-the-security-principal"></a>Güvenlik sorumlusunun kimlik bilgilerini değiştirme
 
@@ -173,7 +172,7 @@ Düzenli aralıklarla izinleri gözden geçirmek ve parolayı güncelleştirmek,
 ### <a name="add-a-new-password-for-the-service-principal"></a>Hizmet sorumlusu için yeni parola ekleme
 
 ```azurepowershell-interactive
-New-AzureRmADSpCredential -ServicePrincipalName http://MyDemoWebApp
+New-AzADSpCredential -ServicePrincipalName http://MyDemoWebApp
 ```
 
 ```output
@@ -187,7 +186,7 @@ Type      : Password
 ### <a name="get-a-list-of-credentials-for-the-service-principal"></a>Hizmet sorumlusunun kimlik bilgilerinin listesini alma
 
 ```azurepowershell-interactive
-Get-AzureRmADSpCredential -ServicePrincipalName http://MyDemoWebApp
+Get-AzADSpCredential -ServicePrincipalName http://MyDemoWebApp
 ```
 
 ```output
@@ -200,7 +199,7 @@ StartDate           EndDate             KeyId                                Typ
 ### <a name="remove-the-old-password-from-the-service-principal"></a>Hizmet sorumlusundan eski parolayı kaldırma
 
 ```azurepowershell-interactive
-Remove-AzureRmADSpCredential -ServicePrincipalName http://MyDemoWebApp -KeyId ca9d4846-4972-4c70-b6f5-a4effa60b9bc
+Remove-AzADSpCredential -ServicePrincipalName http://MyDemoWebApp -KeyId ca9d4846-4972-4c70-b6f5-a4effa60b9bc
 ```
 
 ```output
@@ -213,7 +212,7 @@ service principal objectId '698138e7-d7b6-4738-a866-b4e3081a69e4'.
 ### <a name="verify-the-list-of-credentials-for-the-service-principal"></a>Hizmet sorumlusunun kimlik bilgileri listesini doğrulama
 
 ```azurepowershell-interactive
-Get-AzureRmADSpCredential -ServicePrincipalName http://MyDemoWebApp
+Get-AzADSpCredential -ServicePrincipalName http://MyDemoWebApp
 ```
 
 ```output
@@ -225,7 +224,7 @@ StartDate           EndDate             KeyId                                Typ
 ### <a name="get-information-about-the-service-principal"></a>Hizmet sorumlusuyla ilgili bilgi edinme
 
 ```azurepowershell-interactive
-$svcprincipal = Get-AzureRmADServicePrincipal -ObjectId 698138e7-d7b6-4738-a866-b4e3081a69e4
+$svcprincipal = Get-AzADServicePrincipal -ObjectId 698138e7-d7b6-4738-a866-b4e3081a69e4
 $svcprincipal | Select-Object *
 ```
 
