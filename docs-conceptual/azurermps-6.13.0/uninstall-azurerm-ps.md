@@ -7,12 +7,12 @@ ms.author: sttramer
 ms.manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.openlocfilehash: 7456e45fe9a94d3c1e809dfd075a090448001607
-ms.sourcegitcommit: 6685809f054203bd733c84f68acc69e53e5cca8c
+ms.openlocfilehash: a0afae1ba51fdb34425c91049e08d7388f434d7d
+ms.sourcegitcommit: 0b5b0434fba7a752b0199256e04fa34f06aaf33a
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 01/02/2019
-ms.locfileid: "53982837"
+ms.lasthandoff: 02/21/2019
+ms.locfileid: "56464987"
 ---
 # <a name="uninstall-the-azure-powershell-module"></a>Azure PowerShell modülünü kaldırma
 
@@ -20,7 +20,7 @@ Bu makalede Azure PowerShell'in eski bir sürümünü veya tamamını sisteminiz
 Bir hatayla karşılaştığınızda [bir GitHub sorunu girerek](https://github.com/azure/azure-powershell/issues) bize bildirirseniz seviniriz.
 
 
-## <a name="uninstall-msi"></a>MSI yüklemesini kaldırma
+## <a name="uninstall-azure-powershell-msi"></a>Azure PowerShell MSI'yi kaldırma
 
 Azure PowerShell'i MSI paketini kullanarak yüklediyseniz kaldırma işlemini PowerShell yerine Windows sisteminden gerçekleştirmeniz gerekir.
 
@@ -29,7 +29,7 @@ Azure PowerShell'i MSI paketini kullanarak yüklediyseniz kaldırma işlemini Po
 | Windows 10 | Başlat > Ayarlar > Uygulamalar |
 | Windows 7 </br>Windows 8 | Başlat > Denetim Masası > Programlar > Program kaldır |
 
-Bu ekrandaki program listesinde "Azure PowerShell"i bulabilir ve kaldırabilirsiniz.
+Bu ekrandaki program listesinde __Azure PowerShell__'i görebilmelisiniz. Kaldırılacak olan uygulama budur.
 
 ## <a name="uninstall-from-powershell"></a>PowerShell'den kaldırma
 
