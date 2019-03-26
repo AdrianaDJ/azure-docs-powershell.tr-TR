@@ -1,0 +1,70 @@
+items:
+- name: Azure PowerShell
+  href: overview.md
+  items:
+  - name: Yeni Az modülüne giriş
+    href: new-azureps-module-az.md
+  - name: Yükleme
+    href: install-az-ps.md
+  - name: Kaldırma
+    href: uninstall-az-ps.md
+  - name: başlarken
+    href: get-started-azureps.md
+  - name: Cloud Shell
+    href: https://docs.microsoft.com/azure/cloud-shell/overview
+  - name: Oturum aç
+    href: authenticate-azureps.md
+    items:
+    - name: Hizmet sorumlusu oluşturma
+      href: create-azure-service-principal-azureps.md
+    - name: Kalıcı kimlik bilgileri
+      href: context-persistence.md
+  - name: AzureRM’den geçiş
+    href: migrate-from-azurerm-to-az.md
+  - name: Sorgular
+    href: queries-azureps.md
+  - name: Çıkışı biçimlendirme
+    href: formatting-output.md
+  - name: Abonelikleri yönetme
+    href: manage-subscriptions-azureps.md
+  - name: Dağıtma
+    items:
+    - name: Resource Manager şablonlarını dağıtma
+      href: /azure/azure-resource-manager/resource-group-template-deploy
+    - name: Resource Manager şablonlarını dışarı aktarma
+      href: /azure/azure-resource-manager/resource-manager-export-template-powershell
+    - name: Özel Resource Manager şablonlarını dağıtma
+      href: /azure/azure-resource-manager/resource-manager-powershell-sas-token
+  - name: Kavramlar
+    items:
+    - name: Deneysel modüller
+      href: using-experimental-modules.md
+    - name: PowerShell işleri
+      href: using-psjobs.md
+  - name: Sürüm notları
+    href: release-notes-azureps.md
+    items:
+    - name: Az 1.0.0 için yeni değişiklikler
+      href: migrate-az-1.0.0.md
+- name: Öğreticiler
+  items:
+  - name: Sanal Makineler Oluşturma
+    href: azureps-vm-tutorial.yml
+- name: Örnek Betikler
+  items:
+  - name: Linux Sanal Makineleri
+    href: /azure/virtual-machines/linux/powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json
+  - name: Windows Sanal Makineleri
+    href: /azure/virtual-machines/windows/powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json
+  - name: Web Apps
+    href: /azure/app-service-web/app-service-powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json
+  - name: SQL Veritabanları
+    href: /azure/sql-database/sql-database-powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json
+  - name: Cosmos DB
+    href: /azure/cosmos-db/powershell-samples?toc=%2fpowershell%2fmodules%2ftoc.json
+ms.openlocfilehash: 5954dc3821f68af8bba916fc4832038ca24b5ca5
+ms.sourcegitcommit: 8f59e11e5c991543964154d63648aa1e6ae22512
+ms.translationtype: HT
+ms.contentlocale: tr-TR
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58473934"
