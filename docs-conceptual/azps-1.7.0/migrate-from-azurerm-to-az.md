@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 12/13/2018
 ms.openlocfilehash: 28122ca953d62b405f19effbbc680f2dc6202cca
-ms.sourcegitcommit: 89066b7c4b527357bb2024e1ad708df84c131804
+ms.sourcegitcommit: ae4540a90508db73335a54408dfd6cdf3712a1e9
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59364277"
 ---
 # <a name="migrate-from-azurerm-to-azure-powershell-az"></a>AzureRM'den Azure PowerShell Az'ye geçirme
@@ -68,7 +68,7 @@ Diğer ad modu etkinleştirildikten sonra, hala beklendiği gibi çalıştıklar
 ## <a name="change-module-imports-and-cmdlet-names"></a>Modül içeri aktarmalarını ve cmdlet adlarını değiştirme
 
 Genel olarak, modül adları `AzureRM` ve `Azure` `Az` olacak şekilde değiştirilmiştir ve cmdlet'lerde de aynı durum geçerlidir.
-Örneğin, `AzureRM.Compute` modülü `Az.Compute` olarak yeniden adlandırılmıştır. `New-AzureRMVM` Şimdi `New-AzVM` olmuştur ve `Get-AzureStorageBlob` de `Get-AzStorageBlob` olmuştur.
+Örneğin, `AzureRM.Compute` modülü `Az.Compute` olarak yeniden adlandırılmıştır. Şimdi `New-AzureRMVM` `New-AzVM` ve `Get-AzureStorageBlob` de `Get-AzStorageBlob` olmuştur.
 
 Bu adlandırma değişikliğinin bilmeniz gereken özel durumları vardır. Bazı modüller yeniden adlandırılmış veya mevcut modüllerle birleştirilmiştir, ancak `AzureRM` veya `Azure` adının `Az` olarak değiştirilmesi dışında modül cmdlet’lerinin son eki bundan etkilenmemiştir. Bunun dışında, cmdlet sonekinin tamamı yeni modül adını yansıtacak şekilde değiştirilmiştir.
 

@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 12/13/2018
 ms.openlocfilehash: 8702de48429482748939fb1a43ff911bed15f6c0
-ms.sourcegitcommit: 89066b7c4b527357bb2024e1ad708df84c131804
+ms.sourcegitcommit: ae4540a90508db73335a54408dfd6cdf3712a1e9
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59363841"
 ---
 # <a name="persist-user-credentials-across-powershell-sessions"></a>Kullanıcı kimlik bilgilerini PowerShell oturumlarında kalıcı hale getirme
@@ -92,8 +92,7 @@ Son olarak, bir bağlamı kaldırmak için `Remove-AzContext` cmdlet'ini kullan�
 PS C:\> Remove-AzContext Contoso2
 ```
 
-'Contoso2' adlı bağlamı unutur. Bu bağlamı kullanarak yeniden oluşturabilirsiniz
-`Set-AzContext`
+'Contoso2' adlı bağlamı unutur. Bu bağlamı `Set-AzContext` kullanarak yeniden oluşturabilirsiniz
 
 ## <a name="removing-credentials"></a>Kimlik bilgilerini kaldırma
 

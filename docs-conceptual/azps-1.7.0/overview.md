@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.manager: carmonm
 ms.date: 01/10/2019
 ms.openlocfilehash: 45ab083dd133c8c7b8dbe902484c92564bc216b9
-ms.sourcegitcommit: 89066b7c4b527357bb2024e1ad708df84c131804
+ms.sourcegitcommit: ae4540a90508db73335a54408dfd6cdf3712a1e9
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59364257"
 ---
 # <a name="overview-of-azure-powershell"></a>Azure PowerShell’e Genel Bakış

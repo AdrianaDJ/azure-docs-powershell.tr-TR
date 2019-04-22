@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 12/14/2018
 ms.openlocfilehash: be3e19dc4b689adbc63b933dd9f3454122d5344a
-ms.sourcegitcommit: 89066b7c4b527357bb2024e1ad708df84c131804
+ms.sourcegitcommit: ae4540a90508db73335a54408dfd6cdf3712a1e9
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59364249"
 ---
 # <a name="migration-guide-for-az-100"></a>Az 1.0.0 için Geçiş Kılavuzu
@@ -60,7 +60,7 @@ Get-AzVM
 Get-AzKeyVaultSecret
 ```
 
-Bu yeni cmdlet adlarına geçişi kolaylaştırmak için Az ile birlikte iki yeni cmdlet sunuluyor: ```Enable-AzureRmAlias``` ve ```Disable-AzureRmAlias```.  ```Enable-AzureRmAlias``` AzureRM’deki eski cmdlet adlarından yeni Az cmdlet adlarına diğer adlar oluşturur.  Bu cmdlet, geçerli oturumda ya da tüm oturumlarda kullanıcı veya makine profilinizi değiştirerek diğer ad oluşturmanıza imkan tanır. 
+Bu yeni cmdlet adlarına geçişi kolaylaştırmak için Az ile birlikte iki yeni cmdlet sunuluyor: ```Enable-AzureRmAlias``` ve ```Disable-AzureRmAlias```.  ```Enable-AzureRmAlias```, AzureRM’deki eski cmdlet adlarından yeni Az cmdlet adlarına diğer adlar oluşturur.  Bu cmdlet, geçerli oturumda ya da tüm oturumlarda kullanıcı veya makine profilinizi değiştirerek diğer ad oluşturmanıza imkan tanır. 
 
 Örneğin, şu AzureRM betiği:
 ```powershell
@@ -82,7 +82,7 @@ Get-AzureRmStorageAccount | Get-AzureStorageContainer | Get-AzureStorageBlob
 
 Diğer ad cmdlet’lerinin kullanımıyla ilgili tüm ayrıntıları öğrenmek için powershell isteminden şunu yürütün: ```Get-Help -Online Enable-AzureRmAlias```.
 
-```Disable-AzureRmAlias``` ```Enable-AzureRmAlias``` tarafından oluşturulan AzureRM cmdlet diğer adlarını kaldırır.  Tüm ayrıntıları öğrenmek için powershell isteminden şunu yürütün: ```Get-Help -Online Disable-AzureRmAlias```.
+```Disable-AzureRmAlias```, ```Enable-AzureRmAlias``` tarafından oluşturulan AzureRM cmdlet diğer adlarını kaldırır.  Tüm ayrıntıları öğrenmek için powershell isteminden şunu yürütün: ```Get-Help -Online Disable-AzureRmAlias```.
 
 ### <a name="module-name-changes"></a>Modül Adı Değişiklikleri
 - Aşağıdaki modüller dışında, önceden `AzureRM.*` olan modül adları `Az.*` olarak değiştirildi:
@@ -187,10 +187,10 @@ Bu hizmetlere yönelik araçlar artık etkin bir şekilde desteklenmemektedir.  
 
 ### <a name="azcompute-previously-azurermcompute"></a>Az.Compute (eski adıyla AzureRM.Compute)
 - `PSVirtualMachine` ve `PSVirtualMachineScaleSet` nesnelerinde `Identity` özelliğinden `IdentityIds` kaldırıldı Betikler artık işleme kararları vermek için bu alanın değerini kullanmamalıdır.
-- `PSVirtualMachineScaleSetVM` nesnesinin `InstanceView` özelliğinin `VirtualMachineInstanceView` olan türü olarak değiştirildi `VirtualMachineScaleSetVMInstanceView`
-- `AutoOSUpgradePolicy` `UpgradePolicy` özelliğinden ve `AutomaticOSUpgrade` özelliği kaldırıldı
-- `PSSnapshotUpdate` nesnesindeki `Sku` özelliğinin `DiskSku` olan türü olarak değiştirildi `SnapshotSku`
-- `VmScaleSetVMParameterSet` `Add-AzVMDataDisk` cmdlet’inden kaldırıldı, artık tek bir ScaleSet sanal makinesine veri diski ekleyemezsiniz.
+- `PSVirtualMachineScaleSetVM` nesnesinin `InstanceView` özelliğinin `VirtualMachineInstanceView` olan türü `VirtualMachineScaleSetVMInstanceView` olarak değiştirildi
+- `UpgradePolicy` özelliğinden `AutoOSUpgradePolicy` ve `AutomaticOSUpgrade` özelliği kaldırıldı
+- `PSSnapshotUpdate` nesnesindeki `Sku` özelliğinin `DiskSku` olan türü `SnapshotSku` olarak değiştirildi
+- `Add-AzVMDataDisk` cmdlet’inden `VmScaleSetVMParameterSet` kaldırıldı, artık tek bir ScaleSet sanal makinesine veri diski ekleyemezsiniz.
 
 ### <a name="azdatafactory-previously-azurermdatafactories-and-azurermdatafactoryv2"></a>Az.DataFactory (eski adıyla AzureRM.DataFactories ve AzureRM.DataFactoryV2)
 - `New-AzDataFactoryEncryptValue` cmdlet’inde `GatewayName` parametresi zorunlu hale geldi
@@ -264,7 +264,7 @@ Betikler artık bu alanların değerlerini temel alan işleme kararları almamal
 
 ### <a name="azrecoveryservices-previously-azurermrecoveryservices-azurermrecoveryservicesbackup-and-azurermrecoveryservicessiterecovery"></a>Az.RecoveryServices (eski adıyla AzureRM.RecoveryServices, AzureRM.RecoveryServices.Backup ve AzureRM.RecoveryServices.SiteRecovery)
 - `New/Set-AzRecoveryServicesAsrPolicy` cmdlet’inden `Encryption` parametresi kaldırıldı
-- `TargetStorageAccountName` Artık `Restore-AzRecoveryServicesBackupItem` cmdlet'indeki yönetilen disk geri yükleme işlemleri için parametresi zorunludur
+- Artık `Restore-AzRecoveryServicesBackupItem` cmdlet'indeki yönetilen disk geri yükleme işlemleri için `TargetStorageAccountName` parametresi zorunludur
 - `Restore-AzRecoveryServicesBackupItem` cmdlet’inden `StorageAccountName` ve `StorageAccountResourceGroupName` parametresi kaldırıldı
 - `Get-AzRecoveryServicesBackupContainer` cmdlet’inden `Name` parametresi kaldırıldı
 
@@ -310,7 +310,7 @@ Betikler artık bu alanların değerlerini temel alan işleme kararları almamal
 - `Set-AzSqlDatabaseDataMaskingPolicy` cmdlet’inden kullanım dışı `PrivilegedLogin` parametresi kaldırıldı
 
 ### <a name="azstorage-previously-azurestorage-and-azurermstorage"></a>Az.Storage (eski adıyla Azure.Storage and AzureRM.Storage)
-- Yalnızca depolama hesabı adıyla bir Oauth depolama bağlamı oluşturulmasının desteklenmesi için varsayılan parametre kümesi olarak değiştirildi `OAuthParameterSet`
+- Yalnızca depolama hesabı adıyla bir Oauth depolama bağlamı oluşturulmasının desteklenmesi için varsayılan parametre kümesi `OAuthParameterSet` olarak değiştirildi
   - Örnek: `$ctx = New-AzureStorageContext -StorageAccountName $accountName`
 - `Get-AzStorageUsage` cmdlet’inde `Location` parametresi zorunlu hale geldi
 - Depolama API’si metotları artık zaman uyumlu API çağrıları yerine Görev Tabanlı Zaman Uyumsuz Düzeni (TAP) kullanıyor.

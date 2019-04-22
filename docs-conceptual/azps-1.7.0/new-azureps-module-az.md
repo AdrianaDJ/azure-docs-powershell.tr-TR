@@ -8,10 +8,10 @@ ms.manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.openlocfilehash: 10665a72bc7dcae8ecf36b5ef4e2ab285a0e78b7
-ms.sourcegitcommit: 89066b7c4b527357bb2024e1ad708df84c131804
+ms.sourcegitcommit: ae4540a90508db73335a54408dfd6cdf3712a1e9
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59364218"
 ---
 # <a name="introducing-the-new-azure-powershell-az-module"></a>Yeni Azure PowerShell Az modülüne giriş
@@ -29,7 +29,7 @@ Az yeni bir modül olduğundan, sürüm 1.0.0 olarak sıfırlanmıştır.
 Tüm kullanıcıların yeni Az modülüne yükseltmesi önerilir. Bunu yapmak için:
 
 * __ÖNERİLİR__: [Azure PowerShell AzureRM modülünü kaldırın](/powershell/azure/uninstall-az-ps#uninstall-the-azurerm-module)
-* [Azure PowerShell Az modülünü yükleme](/powershell/azure/install-az-ps)
+* [Azure PowerShell Az modülünü yükleyin](/powershell/azure/install-az-ps)
 * Yeni komut kümesine alışırken `Enable-AzureRMAlias` ile AzureRM cmdlet’lerine yönelik diğer adları eklemek için uyumluluk modunu etkinleştirin. Diğer adları __yalnızca__ AzureRM yüklü değilse etkinleştirin.
 
 ## <a name="migrate-existing-scripts-to-az"></a>Mevcut betikleri için Az modülüne geçirme

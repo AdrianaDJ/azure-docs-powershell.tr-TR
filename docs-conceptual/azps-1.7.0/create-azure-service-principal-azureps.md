@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 02/20/2019
 ms.openlocfilehash: 06116c7eb6ed848c9f369a3dd16f5e901e02afbe
-ms.sourcegitcommit: 1f13aaa89d23130f84b98047e261d26cd4e9cf0c
+ms.sourcegitcommit: ae4540a90508db73335a54408dfd6cdf3712a1e9
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/10/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59430627"
 ---
 # <a name="create-an-azure-service-principal-with-azure-powershell"></a>Azure PowerShell ile bir Azure hizmet sorumlusu oluşturma
@@ -91,8 +91,8 @@ $sp = New-AzADServicePrincipal -DisplayName ServicePrincipalName -KeyCredential 
 
 [Get-AzADServicePrincipal](/powershell/module/az.resources/get-azadserviceprincipal) ile şu anda etkin kiracı için hizmet sorumlularının listesini alabilirsiniz. Varsayılan olarak bu komut, kiracıda yer alan __tüm__ hizmet sorumlularını döndürür. Bu yüzden, büyük kuruluşlar için sonuçların döndürülmesi uzun sürebilir. Bunun yerine, isteğe bağlı sunucu tarafı filtreleme bağımsız değişkenlerinin birini kullanmanız önerilir:
 
-* `-DisplayNameBeginsWith` Sağlanan değer ile eşleşen _ön eke_ sahip hizmet sorumlularını ister. Hizmet sorumlusunun görünen adı, oluşturma sırasında `-DisplayName` ile ayarlanan değerdir.
-* `-DisplayName` Bir hizmet sorumlusu adının _tam eşleşmesini_ ister.
+* `-DisplayNameBeginsWith`, sağlanan değer ile eşleşen _ön eke_ sahip hizmet sorumlularını ister. Hizmet sorumlusunun görünen adı, oluşturma sırasında `-DisplayName` ile ayarlanan değerdir.
+* `-DisplayName`, bir hizmet sorumlusu adının _tam eşleşmesini_ ister.
 
 ## <a name="manage-service-principal-roles"></a>Hizmet sorumlusu rollerini yönetme
 
