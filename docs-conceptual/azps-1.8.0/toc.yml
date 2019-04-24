@@ -1,13 +1,12 @@
 - name: Azure PowerShell
   href: overview.md
   items:
+    - name: Yeni Az modülüne giriş
+      href: new-azureps-module-az.md
     - name: Yükleme
-      href: install-azurerm-ps.md
-      items:
-        - name: macOS ve Linux'a yükleme
-          href: install-azurermps-maclinux.md
-        - name: Diğer yükleme yöntemleri
-          href: other-install.md
+      href: install-az-ps.md
+    - name: Kaldırma
+      href: uninstall-az-ps.md
     - name: başlarken
       href: get-started-azureps.md
     - name: Cloud Shell
@@ -19,6 +18,8 @@
           href: create-azure-service-principal-azureps.md
         - name: Kalıcı kimlik bilgileri
           href: context-persistence.md
+    - name: AzureRM’den geçiş
+      href: migrate-from-azurerm-to-az.md
     - name: Sorgular
       href: queries-azureps.md
     - name: Çıkışı biçimlendirme
@@ -37,11 +38,17 @@
       items:
         - name: Deneysel modüller
           href: using-experimental-modules.md
+        - name: PowerShell işleri
+          href: using-psjobs.md
     - name: Sürüm notları
       href: release-notes-azureps.md
       items:
-        - name: Azure PowerShell 4.x için bozucu değişiklikler
-          href: migration-guide.4.0.0.md
+        - name: Az 1.0.0 için yeni değişiklikler
+          href: migrate-az-1.0.0.md
+- name: Öğreticiler
+  items:
+    - name: Sanal Makineler Oluşturma
+      href: azureps-vm-tutorial.yml
 - name: Örnek Betikler
   items:
     - name: Linux Sanal Makineleri
