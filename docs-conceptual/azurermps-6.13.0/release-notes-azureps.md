@@ -1041,7 +1041,7 @@ Azure PowerShell'in bu sürümünde yapılan değişikliklerin listesi aşağıd
 #### <a name="azurermsql"></a>AzureRM.Sql
 * AuditActions veya AuditActionGroups’un kaldırılmasını sağlamak üzere Denetim cmdlet’leri güncelleştirildi
 * Yeni bir esnek saklama ilkesi ayarlarken komutun ‘Azure kurtarma hizmeti kasası ve ilkesiyle uzun süreli saklama ilkesini yapılandırma artık desteklenmiyor. Lütfen yeni esnek saklama ilkesi ile istek gönderin’ hatasını verdiği Set-AzureRmSqlDatabaseBackupLongTermRetentionPolicy komutuna ilişkin sorun düzeltildi.
-* Ölçek ve katman ilişkili özelliklere yönelik Sku özelliğini destekleyen yeni Veritabanı API’sini kullanmak için tüm Azure Sql Database/ElasticPool Creation/Update cmdlet’lerini güncelleştirin.
+* Ölçek ve katman ilişkili özelliklere yönelik Sku özelliğini destekleyen yeni Veritabanı API’sini kullanmak için tüm Azure SQL Veritabanı/ElasticPool Creation/Update cmdlet’lerini güncelleştirin.
 * Güncelleştirilen cmlet’ler arasında şunlar yer almaktadır: 
     - New-AzureRmSqlDatabase; Set-AzureRmSqlDatabase
     - New-AzureRmSqlElasticPool; Set-AzureRmSqlElasticPool
