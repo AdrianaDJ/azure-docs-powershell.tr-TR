@@ -6,6 +6,12 @@
   href: install-az-ps.md
 - name: Kaldırma
   href: uninstall-az-ps.md
+- name: AzureRM’den geçiş
+  items:
+    - name: Geçiş adımları
+      href: migrate-from-azurerm-to-az.md
+    - name: AzureRM ve Az arasındaki değişiklikler
+      href: migrate-az-1.0.0.md
 - name: başlarken
   href: get-started-azureps.md
 - name: Cloud Shell
@@ -18,8 +24,6 @@
       href: create-azure-service-principal-azureps.md
     - name: Kalıcı kimlik bilgileri
       href: context-persistence.md
-- name: AzureRM’den geçiş
-  href: migrate-from-azurerm-to-az.md
 - name: Sorgular
   href: queries-azureps.md
 - name: Çıkışı biçimlendirme
@@ -58,5 +62,3 @@
       href: /azure/cosmos-db/powershell-samples?toc=%2fpowershell%2fmodules%2ftoc.json
 - name: Sürüm notları
   href: release-notes-azureps.md
-- name: Az 1.0.0 için yeni değişiklikler
-  href: migrate-az-1.0.0.md
