@@ -7,14 +7,16 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/11/2018
-ms.openlocfilehash: 6bd1bea43303e9f5a2b46d63a3ac51b4c4031b9f
-ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
+ms.openlocfilehash: b6f0b01fa38ae4484fe9706e739b12b229b57661
+ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56154109"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65534512"
 ---
 # <a name="query-output-of-azure-powershell-cmdlets"></a>Azure PowerShell cmdlet'lerinin çıkışını sorgulama
+
+[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
 
 PowerShell’de sorgu işlemleri yerleşik cmdlet’ler kullanılarak gerçekleştirilebilir. PowerShell’de cmdlet adları **_Fiil-İsim_** biçiminde olur. **_Get_** fiilini kullanan cmdlet’ler sorgu cmdlet’leridir. Cmdlet isimleri, cmdlet fiilleri tarafından üzerinde eylem gerçekleştirilen Azure kaynağı türleridir.
 

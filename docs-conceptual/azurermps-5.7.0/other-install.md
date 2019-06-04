@@ -7,19 +7,19 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 06/20/2018
-ms.openlocfilehash: 30f7a01b941bb2861b1652fa30ea002d40c80a80
-ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
+ms.openlocfilehash: fe35fccd7994d7c3c3587096263a50af598e8651
+ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56156315"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65535036"
 ---
 # <a name="install-azure-powershell-on-windows-with-msi-or-web-platform-installer"></a>MSI veya Web Platformu Yükleyicisi ile Windows'a Azure PowerShell yükleme
 
+[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
+
 Bu makalede MIS veya Web Platformu Yükleyicisi (WebPI) kullanarak Windows'a Azure PowerShell yükleme işlemi açıklanır.  
 Bu yükleme yöntemlerini ancak sisteminiz için gerekli olduğunda kullanın. Azure PowerShell'i Windows'a yüklemek için PowerShellGet'i kullanmanız önerilir. PowerShellGet kullanarak Azure PowerShell'i yükleme yönergeleri için bkz. [Azure PowerShell'i PowerShellGet ile yükleme](install-azurerm-ps.md).
-
-[!INCLUDE[az-replacing-azurerm.md](../includes/az-replacing-azurerm.md)]
 
 ## <a name="install-or-update-on-windows-using-the-msi-package"></a>MSI Paketini kullanarak Windows'a yükleme veya güncelleştirme
 

@@ -7,14 +7,16 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/09/2018
-ms.openlocfilehash: a07b5fe8cd532f99038d7f0ce10b3b891c896da1
-ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
+ms.openlocfilehash: 1e5c89a43886343bfc0a1affb5133a7cb6af0bcc
+ms.sourcegitcommit: 0fdccb57a356b6e7c35a77b1f76e01fb96ef582b
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56154198"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854159"
 ---
 # <a name="persist-user-credentials-across-powershell-sessions"></a>Kullanıcı kimlik bilgilerini PowerShell oturumlarında kalıcı hale getirme
+
+[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
 
 Azure PowerShell aşağıdaki özellikleri getiren **Azure Context Autosave** adlı bir özellik sunar:
 
@@ -43,7 +45,7 @@ Azure PowerShell aşağıdaki özellikleri getiren **Azure Context Autosave** ad
 Azure PowerShell’in PowerShell oturumu kapatıldıktan sonra bağlamınızı hatırlamasına izin vermek için `Enable-AzureRmContextAutosave` kullanın. Bağlam ve kimlik bilgileri, kullanıcı dizininizdeki (`%AppData%\Roaming\Windows Azure PowerShell`) özel bir gizli klasöre otomatik olarak kaydedilir.
 Her yeni PowerShell oturumu son oturumunuzda kullanılan bağlamı hedefler.
 
-Azure bağlamlarını yönetmenizi sağlayan cmdlet’ler, hassas denetime de olanak tanır. Değişikliklerin yalnızca mevcut PowerShell oturumunda (`Process` kapsamı) veya her PowerShell oturumunda (`CurrentUser` kapsamı) geçerli olmasını istiyorsanız. Bu seçenekler [Bağlam Kapsamlarını Kullanma](#Using-Context-Scopes) bölümünde daha ayrıntılı olarak ele alınmıştır.
+Azure bağlamlarını yönetmenizi sağlayan cmdlet’ler, hassas denetime de olanak tanır. Değişikliklerin yalnızca mevcut PowerShell oturumunda (`Process` kapsamı) veya her PowerShell oturumunda (`CurrentUser` kapsamı) geçerli olmasını istiyorsanız. Bu seçenekler [Bağlam Kapsamlarını Kullanma](#using-context-scopes) bölümünde daha ayrıntılı olarak ele alınmıştır.
 
 ## <a name="running-azure-powershell-cmdlets-as-background-jobs"></a>Azure PowerShell cmdlet'lerini arka plan işleri olarak çalıştırma
 

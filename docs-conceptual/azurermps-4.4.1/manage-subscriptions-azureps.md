@@ -8,14 +8,16 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/30/2017
-ms.openlocfilehash: 12e304f32f585c1af40d20579cd46999e0a12395
-ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
+ms.openlocfilehash: 99a2d9c9c1d233a6468e904e322e8d846d7d78aa
+ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56145338"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65534805"
 ---
 # <a name="manage-multiple-azure-subscriptions"></a>Birden çok Azure aboneliğini yönetme
+
+[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
 
 Azure ile ilk kez tanışıyorsanız, muhtemelen yalnızca bir aboneliğiniz vardır. Bununla birlikte, Azure’u bir süredir kullanıyorsanız birden çok Azure aboneliği oluşturmuş olabilirsiniz. Azure PowerShell’i, komutları belirli bir abonelikte yürütecek şekilde yapılandırabilirsiniz.
 

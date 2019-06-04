@@ -8,14 +8,16 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/15/2017
-ms.openlocfilehash: aa5f96fa57625903b0622f5e3669170d8975d06b
-ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
+ms.openlocfilehash: dd2528cf91495361343ff562b7a602e7c115d13b
+ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56154093"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65534688"
 ---
 # <a name="create-an-azure-service-principal-with-azure-powershell"></a>Azure PowerShell ile bir Azure hizmet sorumlusu oluşturma
+
+[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
 
 Uygulamanızı veya hizmetinizi Azure PowerShell ile yönetmeyi planlıyorsanız, uygulamanızı kendi kimlik bilgileriniz altında değil bir Azure Active Directory (AAD) hizmet sorumlusu altında çalıştırın. Bu konu başlığında, Azure PowerShell ile bir güvenlik sorumlusu oluşturma işlemi adım adım gösterilir.
 

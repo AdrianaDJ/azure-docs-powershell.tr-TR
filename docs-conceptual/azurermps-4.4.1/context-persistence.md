@@ -7,14 +7,16 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 08/31/2017
-ms.openlocfilehash: 85de158cd2a4c3a38f653a530db8e6fae50cb37f
-ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
+ms.openlocfilehash: 442dfed6175f2f5e2f386df3cb2bcea4871bcc01
+ms.sourcegitcommit: 0fdccb57a356b6e7c35a77b1f76e01fb96ef582b
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56145318"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854177"
 ---
 # <a name="persisting-user-credentials-across-powershell-sessions"></a>Kullanıcı kimlik bilgilerini PowerShell oturumlarında kalıcı hale getirme
+
+[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
 
 Azure PowerShell aşağıdaki özellikleri getiren **Azure Context Autosave** adlı bir özellik sunar:
 
@@ -45,7 +47,7 @@ Daha sonra, her yeni PowerShell oturumu son oturumunuzda kullanılan bağlamı h
 
 PowerShell’i bağlam ve kimlik bilgilerinizi unutacak şekilde ayarlamak için `Disable-AzureRmContextAutoSave` seçeneğini kullanın. Açtığınız her PowerShell oturumunda Azure oturumu açmanız gerekecektir.
 
-Azure bağlamlarını yönetmenizi sağlayan cmdlet’ler, hassas denetime de olanak tanır. Değişikliklerin yalnızca mevcut PowerShell oturumunda (`Process` kapsamı) veya her PowerShell oturumunda (`CurrentUser` kapsamı) geçerli olmasını istiyorsanız. Bu seçenekler [Bağlam Kapsamlarını Kullanma](#Using-Context-Scopes) bölümünde daha ayrıntılı olarak ele alınmıştır.
+Azure bağlamlarını yönetmenizi sağlayan cmdlet’ler, hassas denetime de olanak tanır. Değişikliklerin yalnızca mevcut PowerShell oturumunda (`Process` kapsamı) veya her PowerShell oturumunda (`CurrentUser` kapsamı) geçerli olmasını istiyorsanız. Bu seçenekler [Bağlam Kapsamlarını Kullanma](#using-context-scopes) bölümünde daha ayrıntılı olarak ele alınmıştır.
 
 ## <a name="running-azure-powershell-cmdlets-as-background-jobs"></a>Azure PowerShell cmdlet'lerini arka plan işleri olarak çalıştırma
 

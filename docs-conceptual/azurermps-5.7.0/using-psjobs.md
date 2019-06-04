@@ -7,14 +7,16 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 12/11/2017
-ms.openlocfilehash: 827bf06cfafc43e6cabdd504b7cfff5ce353072c
-ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
+ms.openlocfilehash: d2ffd6cc4c5e70c53ab60b1280384faac9b45867
+ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56156324"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65534720"
 ---
 # <a name="running-cmdlets-in-parallel-using-powershell-jobs"></a>PowerShell işlerini kullanarak cmdlet’leri paralel olarak çalıştırma
+
+[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
 
 PowerShell, [PowerShell İşleri](/powershell/module/microsoft.powershell.core/about/about_jobs) ile zaman uyumsuz eylemi destekler.
 Azure PowerShell, Azure’a ağ çağrıları yapma ve bunlar için bekleme açısından yüksek bir bağımlılığa sahiptir. Bir geliştirici olarak sıklıkla bir betikte Azure’a birden çok engellemeyen çağrı yapmak istediğinizi veya REPL’de geçerli oturumu engellemeden Azure kaynakları oluşturmak istediğinizi fark edebilirsiniz. Azure PowerShell, bu gereksinimleri karşılamak için birinci sınıf [PSJob](/powershell/module/microsoft.powershell.core/about/about_jobs) desteği sağlar.

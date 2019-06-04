@@ -7,14 +7,16 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 06/07/2018
-ms.openlocfilehash: e3f603b69aa7fef2de034416b9e352b05bea71b6
-ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
+ms.openlocfilehash: 982073768a04bf31c14f9e89665822014cb72a9e
+ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56156308"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65534739"
 ---
 # <a name="format-azurepowershell-cmdlet-output"></a>Azure PowerShell cmdlet'inin çıkışını biçimlendirme
+
+[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
 
 Varsayılan olarak her Azure PowerShell cmdlet’i, cmdlet’in okunmasını kolaylaştıran önceden tanımlanmış çıktı biçimlendirmesine sahiptir.  PowerShell, çıktıyı ayarlama veya cmdlet çıktısını aşağıdaki cmdlet’ler ile farklı bir biçime dönüştürme esnekliğini de sağlar:
 
