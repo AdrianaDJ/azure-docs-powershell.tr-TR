@@ -7,14 +7,16 @@ ms.author: sttramer
 ms.manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.openlocfilehash: a0afae1ba51fdb34425c91049e08d7388f434d7d
-ms.sourcegitcommit: 0b5b0434fba7a752b0199256e04fa34f06aaf33a
+ms.openlocfilehash: 79c34ea74887113be3683e32ab9a03ed4c7daa7c
+ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/21/2019
-ms.locfileid: "56464987"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65534480"
 ---
 # <a name="uninstall-the-azure-powershell-module"></a>Azure PowerShell modülünü kaldırma
+
+[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
 
 Bu makalede Azure PowerShell'in eski bir sürümünü veya tamamını sisteminizden kaldırmayı öğreneceksiniz. Azure PowerShell'i tamamen kaldırmaya karar verdiyseniz [Send-Feedback](/powershell/module/azurerm.profile/send-feedback) cmdlet'ini kullanarak geri bildirimlerinizi bizimle paylaşın.
 Bir hatayla karşılaştığınızda [bir GitHub sorunu girerek](https://github.com/azure/azure-powershell/issues) bize bildirirseniz seviniriz.
