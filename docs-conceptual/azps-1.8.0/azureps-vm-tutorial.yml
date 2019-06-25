@@ -1,0 +1,376 @@
+### YamlMime:Tutorial
+title: Azure PowerShell ile sanal makine oluşturma
+metadata:
+  title: Azure PowerShell ile sanal makine oluşturma
+  description: Sanal makineler oluşturarak Azure PowerShell ile çalışmaya başlayın.
+  audience: Developer
+  level: Beginner
+  displayType: two-column
+  interactive: azurepowershell
+  ms.date: 12/13/2018
+  ms.author: sttramer
+  author: sptramer
+  manager: carmonm
+  ms.devlang: azure-powershell
+  ms.prod: powershell
+  ms.technology: azure-powershell
+  ms.topic: tutorial
+  clicktale: true
+  ms.openlocfilehash: 98fa4e7428104a4b2e61029e04655b8682743cca
+  ms.sourcegitcommit: 5bdedc77b27b66998387486761ec67ed9326f169
+  ms.translationtype: HT
+  ms.contentlocale: tr-TR
+  ms.lasthandoff: 06/24/2019
+  ms.locfileid: "67346671"
+items:
+- durationInMinutes: 1
+  content: >-
+    Bu öğreticide, Azure PowerShell ile sanal makine ayarlama işleminde yer alan adımların tümünü öğreneceksiniz. Öğreticide aynı zamanda çıktı sorguları, Azure kaynağı yeniden kullanımı ve kaynak temizleme de ele alınmaktadır.
+
+
+    Bu öğreticiyi Azure Cloud Shell üzerinden sunulan etkileşimli deneyimle tamamlayabilir veya [Azure PowerShell’i yerel olarak yükleyebilirsiniz](install-az-ps.md).
+
+
+    Öğretici metnini Azure Cloud Shell’e yapıştırmak için __Ctrl+Shift+V__ (macOS’ta __Cmd+Shift+V__) tuşlarını kullanın.
+- durationInMinutes: 1
+  title: Oturum aç
+  content: >-
+    Azure PowerShell’in yerel bir yüklemesini kullanıyorsanız diğer adımları uygulamadan önce oturum açmanız gerekir.
+
+
+    ```powershell-interactive
+
+    Connect-AzAccount
+
+    ```
+
+
+    Terminalinizde görüntülenen adımları uygulayarak oturum açma işlemini tamamlayın.
+- durationInMinutes: 1
+  title: Kaynak grubu oluşturma
+  content: >-
+    Azure’da tüm kaynaklar bir kaynak yönetimi grubunda ayrılır. Kaynak grupları, kaynaklar için mantıksal gruplamalar sağlar; bu da, kaynaklarla koleksiyon olarak çalışabilmeyi kolaylaştırır.
+
+    Bu öğreticide, oluşturulan kaynakların tümü `TutorialResources` adlı tek bir gruba dahil edilir.
+
+
+    ```powershell-interactive
+
+    New-AzResourceGroup -Name TutorialResources -Location eastus
+
+    ```
+
+
+    ```Output
+
+    ResourceGroupName : TutorialResources
+
+    Location          : eastus
+
+    ProvisioningState : Succeeded
+
+    Tags              :
+
+    ResourceId        : /subscriptions/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/resourceGroups/TutorialResources
+
+    ```
+- durationInMinutes: 1
+  title: VM için yönetici kimlik bilgileri oluşturma
+  content: >-
+    Yeni bir sanal makine oluşturabilmek için Windows VM’nin yönetici hesabının kullanıcı adını ve parolasını içeren bir kimlik bilgisi nesnesi oluşturmanız gerekir.
+
+
+    ```powershell-interactive
+
+    $cred = Get-Credential -Message "Enter a username and password for the virtual machine."
+
+    ```
+
+
+    İstendiğinde kullanıcı adını ve parolayı girin. Sonuçta elde edilen kimlik bilgisi nesnesi, bir sonraki adımda parametre olarak geçirilir.
+
+
+    ```Output
+
+    Windows PowerShell credential request.
+
+    Enter a username and password for the virtual machine.
+
+    User: tutorAdmin
+
+    Password for user tutorAdmin: *********
+
+    ```
+- durationInMinutes: 4
+  title: Sanal makine oluşturma
+  content: >-
+    Azure’daki sanal makinelerin çok sayıda bağımlılığı vardır. Azure PowerShell, belirttiğiniz komut satırı bağımsız değişkenlerine göre bu kaynakları oluşturur. Okunabilirlik açısından, parametreleri Azure PowerShell cmdlet’lerine geçirmek için [PowerShell topluca geçirme](/powershell/module/microsoft.powershell.core/about/about_splatting) yöntemini kullanıyoruz.
+
+
+    Windows çalıştıran yeni bir sanal makine oluşturun.
+
+
+    ```powershell-interactive
+
+    $vmParams = @{
+      ResourceGroupName = 'TutorialResources'
+      Name = 'TutorialVM1'
+      Location = 'eastus'
+      ImageName = 'Win2016Datacenter'
+      PublicIpAddressName = 'tutorialPublicIp'
+      Credential = $cred
+      OpenPorts = 3389
+    }
+
+    $newVM1 = New-AzVM @vmParams
+
+    ```
+
+    VM oluşturulurken kullanılan yerel değerleri ve oluşturulan Azure kaynaklarını görebilirsiniz.
+
+    PowerShell, aşağıda gösterildiği gibi bir ilerleme çubuğu görüntüler.
+
+
+    ```Output
+     Creating Azure resources
+      39% \
+      [ooooooooooooooooooooooooooooooooooo                                                                 ]
+
+      Creating TutorialVM1 virtual machine.
+    ```
+
+
+    VM hazır hale geldikten sonra Azure Portal’da veya \$newVM1 değişkenini inceleyerek sonuçları görüntüleyebilirsiniz.
+
+
+    ```powershell-interactive
+
+    $newVM1
+
+    ```
+
+
+    ```Output
+
+    ResourceGroupName : TutorialResources
+
+    Id                : /subscriptions/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/resourceGroups/TutorialResources/providers/Microsoft.Compute/virtualMachines/TutorialVM1
+
+    VmId              : 12345678-9abc-def0-1234-56789abcedf0
+
+    Name              : TutorialVM1
+
+    Type              : Microsoft.Compute/virtualMachines
+
+    Location          : eastus
+
+    Tags              : {}
+
+    HardwareProfile   : {VmSize}
+
+    NetworkProfile    : {NetworkInterfaces}
+
+    OSProfile         : {ComputerName, AdminUsername, WindowsConfiguration, Secrets}
+
+    ProvisioningState : Succeeded
+
+    StorageProfile    : {ImageReference, OsDisk, DataDisks}
+
+    ```
+
+
+    Köşeli parantez içinde listelenen özellik değerleri, iç içe geçmiş nesnelerdir. Sonraki adımda size bu iç içe geçmiş nesnelerde belirli değerlerin nasıl görüntüleneceğini göstereceğiz.
+- durationInMinutes: 5
+  title: Sorgularla VM bilgilerini alma
+  content: >-
+    Şimdi, yeni oluşturduğumuz VM'den biraz daha ayrıntılı bilgi alalım. Bu örnekte, oluşturduğumuz VM’nin ve yönetici hesabının Adını doğrulayacağız.
+
+
+    ```powershell-interactive
+
+    $newVM1.OSProfile | Select-Object ComputerName,AdminUserName
+
+    ```
+
+
+    ```Output
+
+    ComputerName AdminUsername
+
+    ------------ -------------
+
+    TutorialVM1  tutorialAdmin
+
+    ```
+
+
+    Ağ yapılandırması hakkında belirli bilgiler almak için diğer Azure PowerShell komutlarını kullanabiliriz.
+
+
+    ```powershell-interactive
+
+    $newVM1 | Get-AzNetworkInterface |
+      Select-Object -ExpandProperty IpConfigurations |
+        Select-Object Name,PrivateIpAddress
+    ```
+
+
+    Bu örnekte, \$newVM1 nesnesini `Get-AzNetworkInterface` cmdlet’ine göndermek için PowerShell işlem hattını kullanıyoruz. Sonuçta elde edilen ağ arabirimi nesnesinden, iç içe geçmiş IpConfigurations nesnesini seçiyoruz. IpConfigurations nesnesinden Name ve PrivateIpAddress özelliklerini seçiyoruz.
+
+
+    ```Output
+
+    Name        PrivateIpAddress
+
+    ----        ----------------
+
+    TutorialVM1 192.168.1.4
+
+    ```
+
+
+    VM’nin çalışır durumda olduğunu doğrulamak için Uzak Masaüstü aracılığıyla bağlantı kurmamız gerekiyor. Bunun için Genel IP adresini bilmemiz gerekir.
+
+
+    ```powershell-interactive
+
+    $publicIp = Get-AzPublicIpAddress -Name tutorialPublicIp -ResourceGroupName TutorialResources
+
+
+    $publicIp | Select-Object Name,IpAddress,@{label='FQDN';expression={$_.DnsSettings.Fqdn}}
+
+    ```
+
+
+    Bu örnekte `Get-AzPublicIpAddress` kullanıyoruz ve sonuçları \$publicIp değişkeninde depoluyoruz. Bu değişkenden özellikleri seçiyoruz ve iç içe geçmiş Fqdn özelliğini almak için bir ifadeyi kullanıyoruz.
+
+
+    ```Output
+
+    Name             IpAddress           FQDN
+
+    ----             ---------           ----
+
+    tutorialPublicIp <PUBLIC_IP_ADDRESS> tutorialvm1-8a0999.eastus.cloudapp.azure.com
+
+    ```
+
+
+    VM’ye Uzak Masaüstü aracılığıyla bağlanmak için yerel makinenizden aşağıdaki komutu çalıştırabilirsiniz.
+
+
+    ```powershell-interactive
+
+    mstsc.exe /v <PUBLIC_IP_ADDRESS>
+
+    ```
+
+
+    Nesne özelliklerini sorgulama hakkında daha fazla bilgi için bkz. [Azure kaynakları için sorgulama](./queries-azureps.md).
+- durationInMinutes: 4
+  title: Mevcut alt ağda yeni bir VM oluşturma
+  content: >-
+    İkinci VM mevcut alt ağı kullanır.
+
+
+    ```powershell-interactive
+
+    $vm2Params = @{
+      ResourceGroupName = 'TutorialResources'
+      Name = 'TutorialVM2'
+      ImageName = 'Win2016Datacenter'
+      VirtualNetworkName = 'TutorialVM1'
+      SubnetName = 'TutorialVM1'
+      PublicIpAddressName = 'tutorialPublicIp2'
+      Credential = $cred
+      OpenPorts = 3389
+    }
+
+    $newVM2 = New-AzVM @vm2Params
+
+
+    $newVM2
+
+    ```
+
+
+    ```Output
+
+    ResourceGroupName        : TutorialResources
+
+    Id                       : /subscriptions/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/resourceGroups/TutorialResources/providers/Microsoft.Compute/virtualMachines/TutorialVM2
+
+    VmId                     : 12345678-9abc-def0-1234-56789abcedf1
+
+    Name                     : TutorialVM2
+
+    Type                     : Microsoft.Compute/virtualMachines
+
+    Location                 : eastus
+
+    Tags                     : {}
+
+    HardwareProfile          : {VmSize}
+
+    NetworkProfile           : {NetworkInterfaces}
+
+    OSProfile                : {ComputerName, AdminUsername, WindowsConfiguration, Secrets}
+
+    ProvisioningState        : Succeeded
+
+    StorageProfile           : {ImageReference, OsDisk, DataDisks}
+
+    FullyQualifiedDomainName : tutorialvm2-dfa5af.eastus.cloudapp.azure.com
+
+    ```
+
+
+    Genel IP adresi \$newVM2 nesnesinin FullyQualifiedDomainName özelliğinde döndürüldüğünden, yeni VM’nin genel IP adresini almaya yönelik birkaç adımı atlayabilirsiniz. Uzak Masaüstü kullanarak bağlantı kurmak için aşağıdaki komutu kullanın.
+
+
+    ```powershell-interactive
+
+    mstsc.exe /v $newVM2.FullyQualifiedDomainName
+
+    ```
+- durationInMinutes: 4
+  title: Temizleme
+  content: >-
+    Öğretici tamamlandığına göre oluşturulan kaynakları temizlemenin zamanı geldi. `Remove-AzResource` komutuyla kaynakları tek tek silebilirsiniz ancak bir kaynak grubundaki tüm kaynakları kaldırmanın en güvenli yolu `Remove-AzResourceGroup` komutunu kullanarak grubu silmektir.
+
+
+    ```powershell-interactive
+
+    $job = Remove-AzResourceGroup -Name TutorialResources -Force -AsJob
+
+
+    $job
+
+    ```
+
+
+    ```Output
+
+    Id     Name            PSJobTypeName   State         HasMoreData     Location             Command
+
+    --     ----            -------------   -----         -----------     --------             -------
+
+    1      Long Running... AzureLongRun... Running       True            localhost            Remove-AzResource...
+
+    ```
+
+
+    Bu komut, öğretici sırasında oluşturulan kaynakları siler ve bunların doğru sırada serbest bırakılmasını sağlar. Silme işlemi gerçekleşirken `-AsJob` parametresi, PowerShell’in engellenmesini önler. Silme işlemi tamamlanana kadar bekleyin ve aşağıdaki komutu kullanın:
+
+
+    ```powershell-interactive
+
+    Wait-Job -Id $job.Id
+
+    ```
+
+
+    Temizleme tamamlandığında öğretici sona erer. Öğrendiklerinizin özeti üzerinden geçmek ve sonraki adımlar konusunda size yardımcı olacak kaynakların bağlantılarını görüntülemek için devam edin.
+- durationInMinutes: 1
+  title: Özet
+  content: "\nTebrikler! Yeni veya mevcut kaynaklarla VM oluşturmayı öğrendiniz, kabuk değişkenlerinde depolanacak verileri yakalamak için ifadeleri ve diğer Azure PowerShell komutlarını kullandınız, Azure VM’leri için oluşturulan bazı kaynaklara göz attınız.\n\nBu noktadan itibaren izleyeceğiniz rota Azure PowerShell’i nasıl kullanmayı planladığınıza bağlıdır. Bu öğreticide ele alınan özelliklerin daha kapsamlı olarak incelendiği çok sayıda kaynak mevcuttur.\n\n### <a name=\"in-depth-azure-powershell-documentation\"></a>Ayrıntılı Azure PowerShell belgeleri\n\nBiraz zaman ayırıp [Azure PowerShell belgelerinin](overview.md) tamamını isteyebilirsiniz.\n\nBu öğreticide kullanılan komutlar hakkında daha fazla bilgi için aşağıdaki makalelere bakın.\n\n- [New-AzResourceGroup](/powershell/module/Az.resources/new-Azresourcegroup)\n- [Get-Credential](/powershell/module/microsoft.powershell.security/get-credential)\n- [New-AzVM](/powershell/module/Az.compute/new-Azvm)\n- [Select-Object](/powershell/module/microsoft.powershell.utility/select-object)\n- [Get-AzPublicIpAddress](/powershell/module/Az.network/get-AzPublicIpAddress)\n- [Remove-AzResourceGroup](/powershell/module/Az.resources/Remove-AzResourceGroup)\n- [Wait-Job](/powershell/module/microsoft.powershell.core/wait-job)\n\nÖğreticide gösterilen özelliklerin ayrıntılarının incelendiği makaleler de mevcuttur.\n\n- [PowerShell topluca geçirme](/powershell/module/microsoft.powershell.core/about/about_splatting)\n- [Sorgular](queries-azureps.md)\n- [Biçimlendirme](formatting-output.md)\n- [PowerShell işlerini kullanma](using-psjobs.md)\n\n### <a name=\"sample-scripts\"></a>Örnek komut dosyaları\n\nBelirli görevlerle hızlı bir başlangıç yapmak istiyorsanız bazı örnek betiklere göz atın.\n\n- [Linux Sanal Makineleri](/azure/virtual-machines/linux/powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json)\n- [Windows Sanal Makineleri](/azure/virtual-machines/windows/powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json)\n- [Web Apps](/azure/app-service-web/app-service-powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json)\n- [SQL Veritabanları](/azure/sql-database/sql-database-powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json)\n- [Cosmos DB](/azure/cosmos-db/powershell-samples?toc=%2fpowershell%2fmodules%2ftoc.json)\n\n### <a name=\"feedback\"></a>Geri Bildirim\n\nGeri bildirim vermek, öneride bulunmak veya soru sormak istiyorsanız çeşitli şekillerde iletişime geçebilirsiniz.\n\n* `Send-Feedback`, Azure PowerShell için takıma serbest biçimli geri bildirim sağlamanıza olanak tanıyan yerleşik bir komuttur.\n* [Azure PowerShell deposuna](https://github.com/Azure/azure-powershell/issues) bir özellik isteği veya hata raporu kaydedin.\n* [Azure PowerShell belge deposuna](https://github.com/MicrosoftDocs/azure-docs-powershell/issues) bir sorun kaydederek soru sorun veya açıklama alın.\n\nAzure PowerShell’i keyifle kullandığınızı umuyoruz!"

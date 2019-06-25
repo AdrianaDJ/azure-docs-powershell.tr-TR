@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: 10d8d50131b3c55ae19c5142c42cb47f37c68c92
-ms.sourcegitcommit: 6171bab74aec6785938cad54d584f425ddbb850e
+ms.sourcegitcommit: 5bdedc77b27b66998387486761ec67ed9326f169
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65971912"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67345225"
 ---
 ## <a name="180---april-2019"></a>1.8.0 - Nisan 2019
 ### <a name="highlights-since-the-last-major-release"></a>Son ana sürümden bu yana öne çıkanlar
@@ -631,7 +631,7 @@ Application Gateway’de RewriteRuleSets parametresini yapılandırma desteği e
 
 ### <a name="azresources"></a>Az.Resources
 
-* [https://github.com/Azure/azure-powershell/issues/7402](https://github.com/Azure/azure-powershell/issues/7679) düzeltmesi
+* [https://github.com/Azure/azure-powershell/issues/7402](https://github.com/Azure/azure-powershell/issues/7679 ) düzeltmesi
     - Get-AzureRmRoleAssignment, klasik yöneticiler istenirken sağlanmışsa abonelik kapsamını kullanacak şekilde güncelleştirildi.
 
 ### <a name="azsql"></a>Az.Sql
@@ -768,7 +768,7 @@ Application Gateway’de RewriteRuleSets parametresini yapılandırma desteği e
 * İlke düzeltme cmdlet'leri eklendi
 
 #### <a name="azresources"></a>Az.Resources
-* [https://github.com/Azure/azure-powershell/issues/7402](https://github.com/Azure/azure-powershell/issues/7402) düzeltmesi
+* [https://github.com/Azure/azure-powershell/issues/7402](https://github.com/Azure/azure-powershell/issues/7402 ) düzeltmesi
     - 'Get-AzResource' için '-ResourceId' parametresi kullanılarak kaynakların listelenmesine olanak tanındı
 
 #### <a name="azservicebus"></a>Az.ServiceBus
