@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: get-started-article
 ms.date: 01/14/2019
-ms.openlocfilehash: 0c3b749cb2ac7f11dacafca76b65944f523f727d
-ms.sourcegitcommit: 0356a4694f77eda40eec8c3759b9bb7f28979eb6
+ms.openlocfilehash: c60036ba8be6282007aa34a0bb9c0d9e33197072
+ms.sourcegitcommit: fd62a6376eef9b6ca76df766de1edcd7938c7a30
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67193218"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67388931"
 ---
 # <a name="get-started-with-azure-powershell"></a>Azure PowerShell’i kullanmaya başlama
 
@@ -52,7 +52,7 @@ Oturum açtıktan sonra, Azure PowerShell cmdlet'lerini kullanarak aboneliğiniz
 
 ## <a name="find-commands"></a>Komutları bulma
 
-Azure PowerShell cmdlet'lerinde PowerShell için standart `VERB-NOUN` adlandırma kuralına uyulur. Burada VERB (fiil) eylemi (örneğin `Create`, `Get`, `Set`, `Delete`) ve NOUN (ad) da kaynak türünü (örneğin`AzVM`, `AzKeyVaultCertificate`, `AzFirewall`, `AzVirtualNetworkGateway`) belirtir. Azure PowerShell'de adlar her zaman `Az` ön ekiyle başlar. Standart fiillerin tam listesi için bkz. [PowerShell Komutları için onaylanmış fiiller](/powershell/developer/cmdlet/approved-verbs-for-windows-powershell-commands).
+Azure PowerShell cmdlet'lerinde PowerShell için standart `VERB-NOUN` adlandırma kuralına uyulur. Burada VERB (fiil) eylemi (örneğin `New`, `Get`, `Set`, `Remove`) ve NOUN (ad) da kaynak türünü (örneğin`AzVM`, `AzKeyVaultCertificate`, `AzFirewall`, `AzVirtualNetworkGateway`) belirtir. Azure PowerShell'de adlar her zaman `Az` ön ekiyle başlar. Standart fiillerin tam listesi için bkz. [PowerShell Komutları için onaylanmış fiiller](/powershell/developer/cmdlet/approved-verbs-for-windows-powershell-commands).
 
 Kullanılabilir adları, fiilleri ve Azure PowerShell modüllerini bilmek, [Get-Command](/powershell/module/microsoft.powershell.core/get-command) cmdlet'iyle komutları bulmanıza yardımcı olur. Örneğin, `Get` fiilinin kullanıldığı VM ile ilgili tüm komutları bulmak için:
 
