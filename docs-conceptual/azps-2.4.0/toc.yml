@@ -74,7 +74,7 @@
       displayName: 'database, nosql, mongodb, couchdb'
 - name: Sürüm notları
   items:
-    - name: Az 2.1.0 sürüm notları
+    - name: Sürüm notları
       href: release-notes-azureps.md
     - name: Az 2.0.0 sürümündeki yeni değişiklikler
       href: migrate-az-2.0.0.md
