@@ -8,12 +8,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.manager: carmonm
 ms.date: 12/20/2018
-ms.openlocfilehash: eaa4e3ccd2b53304aeaf9cb184814b83f4f88608
-ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
+ms.openlocfilehash: bdb63ce4bb614920582460ae707d8594977e8f71
+ms.sourcegitcommit: 0b644bfecf4224b2ea83520d1a6a956734d9fba4
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56153974"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67863577"
 ---
 # <a name="overview-of-azure-powershell"></a>Azure PowerShell’e Genel Bakış
 
@@ -38,8 +38,6 @@ PowerShell'i tanımıyorsanız, PowerShell'e giriş bilgileri size yardımcı ol
 * [PowerShell ile betik oluşturma](/powershell/scripting/powershell-scripting)
 
 Ayrıca şu videoyu izleyebilirsiniz: [PowerShell Temel Bilgileri: (Bölüm 1) PowerShell'i Kullanmaya Başlama](https://channel9.msdn.com/Blogs/Taste-of-Premier/PowerShellBasicsPart1).
-
-Dilerseniz Microsoft Sanal Akademi’nin [PowerShell Jumpstart’ı Kullanmaya Başlama](https://mva.microsoft.com/liveevents/powershell-jumpstart) etkinliğine de katılabilirsiniz.
 
 ## <a name="build-your-skills-with-microsoft-learn"></a>Microsoft Learn ile becerilerinizi geliştirin
 
