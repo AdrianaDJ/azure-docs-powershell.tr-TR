@@ -1,18 +1,18 @@
 ---
 title: Azure PowerShell'i kaldırma
 description: Azure PowerShell'i tamamen kaldırmayı öğrenin
-ms.date: 05/10/2019
+ms.date: 06/10/2019
 author: sptramer
 ms.author: sttramer
 ms.manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.openlocfilehash: b32547e9c3df0df7495d1631a43be6934e1f62dc
-ms.sourcegitcommit: febbbd3f75c8dd1a296281d265289f015b6cb537
+ms.openlocfilehash: e71b4d0d662b29a32610fecb36351532040428e4
+ms.sourcegitcommit: a261efc84dedfd829c0613cf62f8fcf3aa62adb8
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67037757"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68807446"
 ---
 # <a name="uninstall-the-azure-powershell-module"></a>Azure PowerShell modülünü kaldırma
 
@@ -106,7 +106,8 @@ Uninstalling Az.AnalysisServices version 0.7.0
 ```
 
 > [!NOTE]
-> Bu betik, kaldırmak için bağımlı bir modül sürümüyle tam olarak eşleşemezse, o modülün _hiçbir_ sürümünü kaldırmaz. Bunun sebebi, sisteminizde bu modülleri kullanan diğer `Az` sürümlerinin bulunması olabilir. Bu durumda, eğer herhangi biri yüklüyse modülün bulunamayan sürümleri listelenir. `Uninstall-Module` ile herhangi bir eski sürümü kaldırabilirsiniz.
+> Bu betik, kaldırmak için bağımlılığın aynı sürümüyle tam olarak eşleşemezse, o bağımlılığın _hiçbir_ sürümünü kaldırmaz. Bunun sebebi, sisteminizde hedef bağımlılıkları kullanan diğer hedef modülü sürümlerinin bulunması olabilir. Bu durumda, bağımlılığın kullanılabilir sürümleri listelenir.
+> `Uninstall-Module` ile herhangi bir eski sürümü kaldırabilirsiniz.
 
 Bu komutu kaldırmak istediğiniz her Azure PowerShell sürümü için çalıştırın. Kolaylık sağlamak için, aşağıdaki betik Az'nin en son sürümü __dışındaki__ tüm sürümlerini kaldırır.
 
