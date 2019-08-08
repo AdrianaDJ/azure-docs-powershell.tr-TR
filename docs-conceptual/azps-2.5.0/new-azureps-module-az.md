@@ -7,16 +7,16 @@ ms.author: sttramer
 ms.manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.openlocfilehash: da1d7ec9a196068db237d871834b92f8b077b42c
-ms.sourcegitcommit: 6c0d296bfec7c1c35a1d15074ca5eacda6684ea4
+ms.openlocfilehash: 8dc5a7d3b47870455213aa01aebc1d215ad640a7
+ms.sourcegitcommit: a261efc84dedfd829c0613cf62f8fcf3aa62adb8
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657612"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68807447"
 ---
 # <a name="introducing-the-new-azure-powershell-az-module"></a>Yeni Azure PowerShell Az modülüne giriş
 
-Azure PowerShell Az modülü, Aralık 2018’de genel yayın aşamasına ulaşmıştır ve artık Azure ile etkileşim kurmak için kullanılması hedeflenen PowerShell modülüdür. Az tarafından daha kısa komutlar, gelişmiş kararlılık ve platformlar arası destek sunulur. Ayrıca Az, AzureRM ile özellik eşliği ve AzureRM'den kolay geçiş yolu da sunar.
+Azure PowerShell Az modülü, Aralık 2018’de genel yayın aşamasına ulaşmıştır ve artık Azure ile etkileşim kurmak için kullanılması hedeflenen PowerShell modülüdür. Az tarafından daha kısa komutlar, gelişmiş kararlılık ve platformlar arası destek sunulur. Az ayrıca, AzureRM ile özellik eşliği sayesinde size geçiş için kolay bir yol sunar.
 
 Az modülüyle birlikte, Azure PowerShell artık Windows üzerinde PowerShell 5.1 ile ve Windows, macOS ve Linux gibi desteklenen tüm platformlarda PowerShell Core 6.x veya sonraki sürümleriyle uyumludur.
 
@@ -67,6 +67,4 @@ Yeni söz dizimine güncelleştirirken mevcut betikleri de kullanmanıza yardım
 
 ## <a name="continued-support-for-azurerm"></a>Devam eden AzureRM desteği
 
-Mevcut AzureRM modülü için artık yeni cmdlet’ler veya özellikler sağlanmayacaktır. Bununla birlikte, AzureRM hala resmi olarak bakım kapsamındadır ve en azından Aralık 2020'ye kadar hata düzeltmeleri sağlanacaktır.
-
-Az modülünün tam özellikli, test edilmiş veya üretime hazır olup olmadığı konusunda kaygılarınız varsa: AzureRM'ye yönelik mühendislik çalışmalarının tümü artık Az modülüne odaklanmıştır. Buna mevcut modüllerden mümkün olduğunca çok kodun yeniden kullanılması ve yeni modüllerde özellik uyumluluğu için kapsamlı testler de dahildir. Az modülüne geçme süreci yalnızca kuruluşunuzun zamanlamasından etkilenecektir çünkü belirli özelliklerin sağlanmasına beklemeye gerek yoktur.
+AzureRM için artık yeni cmdlet’ler veya özellikler sağlanmayacaktır. Bununla birlikte, AzureRM modülü hala resmi olarak bakım kapsamındadır ve Aralık 2020’ye kadar hata düzeltmeleri sağlanacaktır.

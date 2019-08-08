@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 12/13/2018
-ms.openlocfilehash: d99265c7f156622d876d700106e2b06dd729e8b8
-ms.sourcegitcommit: 020c69430358b13cbd99fedd5d56607c9b10047b
+ms.openlocfilehash: 8e63e3efb2671eef435498063010d5704c793060
+ms.sourcegitcommit: a261efc84dedfd829c0613cf62f8fcf3aa62adb8
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66365740"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68807511"
 ---
 # <a name="install-the-azure-powershell-module"></a>Azure PowerShell modülünü yükleme
 
@@ -37,23 +37,19 @@ PowerShell Core kullanıldığında, Azure PowerShell için ek gereksinimler yok
 
 ## <a name="install-the-azure-powershell-module"></a>Azure PowerShell modülünü yükleme
 
-> [!IMPORTANT]
->
-> AzureRM ve Az modülü aynı anda yüklü olabilir. İki modül de yüklüyse __diğer adları etkinleştirmeyin__.
-> Diğer adların etkinleştirilmesi, AzureRM cmdlet’leri ile Az komut diğer adları arasında çakışmalara neden olur ve bu da beklenmeyen davranışlara yol açabilir.
-> Az modülünü yüklemeden önce AzureRM modülünü kaldırmanız önerilir. Dilediğiniz zaman AzureRM modülünü kaldırabilir veya diğer adları etkinleştirebilirsiniz. AzureRM komut diğer adları hakkında bilgi edinmek için bkz. [AzureRM’den Az’ye geçiş](migrate-from-azurerm-to-az.md).
-> Kaldırma yönergeleri için bkz. [AzureRM modülünü kaldırma](uninstall-az-ps.md#uninstall-the-azurerm-module). 
+> [!WARNING]
+> Windows için PowerShell 5.1'de aynı anda hem AzureRM hem de Az modülünü __yükleyemezsiniz__. Sisteminizde AzureRM'yi kullanılabilir durumda tutmanız gerekiyorsa, PowerShell Core 6.x veya sonraki sürümleri için Az modülünü yükleyin. Bunu yapmak için [PowerShell Core 6.x veya sonraki sürümünü yükleyin](https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-core-on-windows) ve ardından PowerShell Core terminalinde bu yönergeleri izleyin.
 
-Modülleri genel kapsamda yüklemek için, PowerShell Galerisi'ndeki modülleri yüklemek üzere yükseltilmiş ayrıcalıklara ihtiyacınız vardır. Azure PowerShell'i yüklemek için, aşağıdaki komutu yükseltilmiş oturumda çalıştırın (Windows'da "Yönetici Olarak Çalıştır" ile ya da macOS veya Linux'ta süper kullanıcı ayrıcalıklarıyla):
-
-```powershell-interactive
-Install-Module -Name Az -AllowClobber
-```
-
-Yönetici ayrıcalıklarına erişiminiz yoksa, `-Scope` bağımsız değişkenini ekleyerek geçerli kullanıcı için yükleyebilirsiniz.
+Önerilen yükleme yöntemi, yalnızca etkin kullanıcı için yükleme gerçekleştirilmesine yöneliktir:
 
 ```powershell-interactive
 Install-Module -Name Az -AllowClobber -Scope CurrentUser
+```
+
+Sistemdeki tüm kullanıcılar için yüklemek istiyorsanız yönetici ayrıcalıkları gerekir. Yükseltilmiş bir PowerShell oturumundan, yönetici olarak veya MacOS ya da Linux’taki `sudo` komutuyla çalıştırın:
+
+```powershell-interactive
+Install-Module -Name Az -AllowClobber -Scope AllUsers
 ```
 
 PowerShell galerisi varsayılan olarak PowerShellGet için güvenilir depo olarak yapılandırılmamıştır. PSGallery'yi ilk kez kullandığınızda şu istemle karşılaşırsınız:
@@ -71,6 +67,28 @@ Are you sure you want to install the modules from 'PSGallery'?
 Yükleme işlemine devam etmek için `Yes` veya `Yes to All` yanıtını verin.
 
 Az modülü, Azure PowerShell cmdlet’leri için toplu bir modüldür. Bu modülü yüklediğinizde kullanılabilir durumdaki tüm Azure Resource Manager modülleri indirilir ve cmdlet'leri kullanıma sunulur.
+
+## <a name="troubleshooting"></a>Sorun giderme
+
+Azure PowerShell modülünü yüklerken karşılaşılan yaygın sorunlardan bazıları burada verilmiştir. Burada listelenmeyen bir sorunla karşılaşırsanız, [github’da bir sorun oluşturun](https://github.com/azure/azure-powershell/issues).
+
+### <a name="proxy-blocks-connection"></a>Ara sunucu blokları bağlantısı
+
+`Install-Module` cmdlet'inden PowerShell Galerisi'ne ulaşılamadığını belirten hatalar alıyorsanız, bir ara sunucunun arkasında olabilirsiniz. Sistem genelinde ara sunucu yapılandırma konusunda farklı işletim sistemlerinin farklı gereksinimleri olacaktır ve burada bunlar ayrıntılı olarak ele alınmamıştır. Ara sunucu ayarlarınız ve işletim sisteminiz için bunları nasıl yapılandıracağınız konusunda sistem yöneticinize danışın.
+
+PowerShell'in kendisi otomatik olarak bu ara sunucuyu kullanacak şekilde yapılandırılamaz. PowerShell 5.1 ve sonraki sürümleriyle, aşağıdaki komutu kullanarak PowerShell oturumunda kullanılacak ara sunucuyu yapılandırın:
+
+```powershell
+(New-Object System.Net.WebClient).Proxy.Credentials = `
+  [System.Net.CredentialCache]::DefaultNetworkCredentials
+```
+
+İşletim sistemi kimlik bilgileriniz doğru yapılandırıldıysa, bu işlem PowerShell isteklerini ara sunucu üzerinden yönlendirir.
+Bu ayarın oturumlar arasında kalıcı olmasını sağlamak için, komutu [PowerShell profiline](/powershell/module/microsoft.powershell.core/about/about_profiles) ekleyin.
+
+Paketi yüklemek için ara sunucunuzun şu adrese yönelik HTTPS bağlantılarına izin vermesi gerekir:
+
+* `https://www.powershellgallery.com`
 
 ## <a name="sign-in"></a>Oturum aç
 
