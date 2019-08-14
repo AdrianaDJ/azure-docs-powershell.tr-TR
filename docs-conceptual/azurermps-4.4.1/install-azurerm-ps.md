@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/27/2018
-ms.openlocfilehash: 39bf3c879135989bdd9a7382eb003a8f69e5bdbb
-ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
+ms.openlocfilehash: dc11af0fff84899ca1b3ad3abf8760dd8c59e6f6
+ms.sourcegitcommit: b02cbcd00748a4a9a4790a5fba229ce53c3bf973
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65534846"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68863264"
 ---
 # <a name="install-azure-powershell-on-windows-with-powershellget"></a>PowerShellGet ile Windows'da Azure PowerShell yükleme
 
@@ -25,7 +25,7 @@ Azure klasik dağıtım modeli, Azure PowerShell'in bu sürümü tarafından des
 > [!IMPORTANT]
 > AzureRM modülü macOS veya Linux için desteklenmiyor. Azure PowerShell cmdlet'lerini bu platformlarda kullanmak için [Az modülünü yükleyin](/powershell/azure/install-az-ps).
 
-## <a name="step-1-install-powershellget"></a>1. Adım: PowerShellGet yükleme
+## <a name="step-1-install-powershellget"></a>1\. Adım: PowerShellGet yükleme
 
 PowerShell Galerisi’nden yükleme yapabilmek için PowerShellGet modülü gerekir. Uygun PowerShellGet sürümüne ve diğer sistem gereksinimlerine sahip olduğunuzdan emin olun. PowerShellGet’in sisteminizde yüklü olup olmadığını görmek için aşağıdaki komutu çalıştırın.
 
@@ -59,7 +59,7 @@ PowerShellGet yüklü değilse bu makalenin [PowerShellGet edinme](#how-to-get-p
 > [!IMPORTANT]
 > Bu belgede açıklanan AzureRM modülü .NET Framework kullanır. Bu da, .NET Core kullanan PowerShell 6.0 ile uyumsuz olmasına neden olur. PowerShell 6.0 kullanıyorsanız, [macOS ve Linux için yükleme yönergelerini](install-azurermps-maclinux.md) izleyin.
 
-## <a name="step-2-install-azure-powershell"></a>2. Adım: Azure PowerShell'i yükleme
+## <a name="step-2-install-azure-powershell"></a>2\. Adım: Azure PowerShell'i yükleme
 
 Azure PowerShell’in PowerShell Galerisi’nden yüklenebilmesi için yükseltilmiş ayrıcalıklar gerekir. Yükseltilmiş bir PowerShell oturumunda aşağıdaki komutu çalıştırın:
 
@@ -89,7 +89,7 @@ AzureRM modülü, Azure Resource Manager cmdlet’leri için toplu bir modüldü
 
 Azure PowerShell'in önceki sürümlerinden biri sisteminizde yüklüyse hata iletisiyle karşılaşabilirsiniz. Bu sorunu çözmek için bu makalenin [Azure PowerShell'in yeni bir sürümüne güncelleştirme](#update-azps) bölümünü inceleyin.
 
-## <a name="step-3-load-the-azurerm-module"></a>3. Adım: AzureRM modülünü yükleme
+## <a name="step-3-load-the-azurerm-module"></a>3\. Adım: AzureRM modülünü yükleme
 
 Modül yüklendikten sonra modülü PowerShell oturumunuza yüklemeniz gerekir. Bunu normal (yükseltilmiş olmayan) bir PowerShell oturumunda yapmanız gerekir. Modüller `Import-Module` cmdlet’i kullanılarak aşağıdaki gibi yüklenir:
 
@@ -114,7 +114,7 @@ Araçla ilgili bir hatayla karşılaşırsanız, GitHub deposunun [Sorunlar](htt
 |İşletim Sistemi Sürümü|Yükleme yönergeleri|
 |---|---|
 |Bilgisayarımda Windows 10 veya Windows Server 2016 yüklü|İşletim sisteminde bulunan Windows Management Framework (WMF) 5.0’da yerleşiktir|
-|PowerShell 5'e yükseltme yapmak istiyorum|[WMF’nin en son sürümünü yükleyin](https://www.microsoft.com/en-us/download/details.aspx?id=54616)|
+|PowerShell 5'e yükseltme yapmak istiyorum|[WMF’nin en son sürümünü yükleyin](https://www.microsoft.com/download/details.aspx?id=54616)|
 |Windows’un PowerShell 3 veya PowerShell 4 içeren bir sürümünü çalıştırıyorum|[PackageManagement modüllerini alın](http://go.microsoft.com/fwlink/?LinkID=746217)|
 
 ### <a name="div-idhelpmechoosechecking-the-version-of-azure-powershell"></a><div id="helpmechoose"/>Azure PowerShell sürümünü denetleme

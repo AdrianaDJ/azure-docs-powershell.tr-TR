@@ -8,12 +8,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.workload: ''
 ms.date: 2/20/2018
-ms.openlocfilehash: ee9fb7e777d06f50514c6b4ba39805936b867045
-ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
+ms.openlocfilehash: 61ab0f91c3d6fffdbffd336fa0d6ed9b0ab8f6ec
+ms.sourcegitcommit: b02cbcd00748a4a9a4790a5fba229ce53c3bf973
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65535061"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68863287"
 ---
 # <a name="release-notes"></a>Sürüm notları
 
@@ -623,7 +623,7 @@ Son sürümden sonraki değişiklikler: https://github.com/Azure/azure-powershel
   - Bir kaynak grubu olmayan hesap işlemlerinin kaynak grubunu otomatik olarak algılayamadığı bir hata düzeltildi
 * İşlem
   - Get-AzureRmComputeResourceSku, bölge bilgilerini gösterir.
-  - [https://github.com/Azure/azure-powershell/issues/5038](https://github.com/Azure/azure-powershell/issues/5038) sorununu düzeltmek için Disable-AzureRmVmssDiskEncryption öğesini güncelleştirin
+  - [https://github.com/Azure/azure-powershell/issues/5038](https://github.com/Azure/azure-powershell/issues/5038 ) sorununu düzeltmek için Disable-AzureRmVmssDiskEncryption öğesini güncelleştirin
   - Uzun süre çalışan İşlem cmdlet’leri için -AsJob desteği eklendi. Seçilen cmdlet’lerin arka planda çalışmasını ve ilerlemeyi izleyip denetlemek için bir iş döndürmesini sağlar.
     - Etkilenen cmdlet’ler şunlardır: Sanal Makineler ve Sanal Makine Ölçek Kümeleri için New-, Update-, Set-, Remove-, Start-, Restart-, Stop- cmdlet’leri
     - New-AzureRmVM cmdlet’ine akıllı varsayılanları kullanarak bir Sanal Makine ve tüm gerekli kaynakları oluşturan basitleştirilmiş parametre kümesi eklendi
@@ -668,8 +668,8 @@ Son sürümden sonraki değişiklikler: https://github.com/Azure/azure-powershel
   - Yeni Cmdlet Test-AzureRmPowerBIEmbeddedCapacity - Bir PowerBI Embedded Kapasitesi örneğinin varlığını test eder
   - Yeni Cmdlet Update-AzureRmPowerBIEmbeddedCapacity - Bir PowerBI Embedded Kapasitesi örneğini değiştirir
 * Profil
-  - [https://login.microsoftonline.us](https://login.microsoftonline.us/) için USGovernmentActiveDirectoryEndpoint güncelleştirildi
-    - Azure Kamu uç nokta eşlemeleri hakkında daha fazla bilgi için bkz. https://docs.microsoft.com/en-us/azure/azure-government/documentation-government-developer-guide#endpoint-mapping
+  - [https://login.microsoftonline.us](https://login.microsoftonline.us/ ) için USGovernmentActiveDirectoryEndpoint güncelleştirildi
+    - Azure Kamu uç nokta eşlemeleri hakkında daha fazla bilgi için bkz. https://docs.microsoft.com/azure/azure-government/documentation-government-developer-guide#endpoint-mapping
     - Cmdlet’ler için -AsJob desteği eklenerek seçilen cmdlet’lerin arka planda yürütülmesi ve ilerlemeyi izleyip denetlemek için bir iş döndürmesine olanak sağlandı
     - Get-AzureRmSubscription cmdlet’ine -AsJob parametresi eklendi
 * RecoveryServices.Backup
@@ -692,9 +692,9 @@ Son sürümden sonraki değişiklikler: https://github.com/Azure/azure-powershel
     - Cmdlet’lerinizi AzureRM’den geçirme hakkında daha fazla bilgi için yakında sunulacak olan büyük değişikliklere ilişkin kılavuza bakın.
 * Sql
   - Set-AzureRmSqlDatabase kullanarak veritabanını yeniden adlandırma özelliği eklendi
-  - [https://github.com/Azure/azure-powershell/issues/4974](https://github.com/Azure/azure-powershell/issues/4974) sorunu düzeltildi
+  - [https://github.com/Azure/azure-powershell/issues/4974](https://github.com/Azure/azure-powershell/issues/4974 ) sorunu düzeltildi
     - Denetim cmdlet’leri için geçersiz AUDIT_CHANGED_GROUP değeri sağlamak artık hata oluşturmuyor ve gelecek bir sürümde kaldırılacak.
-  - [https://github.com/Azure/azure-powershell/issues/5046](https://github.com/Azure/azure-powershell/issues/5046) sorunu düzeltildi
+  - [https://github.com/Azure/azure-powershell/issues/5046](https://github.com/Azure/azure-powershell/issues/5046 ) sorunu düzeltildi
     - Denetim cmdlet’lerinde AuditAction parametresi artık yok sayılmıyor
   - Denetim cmdlet’lerinde 'Secondary' StorageKeyType sağlandığında oluşan bir hata düzeltildi
     - Blob denetimi ayarlanırken, StorageKeyType parametresi için 'Secondary' değeri sağlandığında ikincil anahtar yerine birincil depolama hesabı anahtarı kullanılıyordu.
@@ -723,14 +723,14 @@ Son sürümden sonraki değişiklikler: https://github.com/Azure/azure-powershel
   - AzureRM.StreamAnalytics
 
 ## <a name="2017118---version-500"></a>2017.11.8 - Sürüm 5.0.0
-* NOT: Bu bir hataya neden olan değişiklik yayınıdır. Sunulan önemli değişikliklerin tam listesi için lütfen geçiş kılavuzuna (https://aka.ms/azps-migration-guide)) bakın.
+* NOT: Bu bir hataya neden olan değişiklik yayınıdır. Sunulan önemli değişikliklerin tam listesi için lütfen geçiş kılavuzuna (https://aka.ms/azps-migration-guide) ) bakın.
 * AzureRM’deki tüm cmdlet'ler artık çevrimiçi yardımı destekler
   - Çevrimiçi yardımı varsayılan İnternet tarayıcınızda açmak için Get-Help komutunu -Online parametresiyle birlikte çalıştırın
 * AnalysisServices
   * Synchronize-AzureAsInstance komutu düzeltildi ve eşitleme için yeni AsAzure REST API’si ile çalışması sağlandı
 * ApiManagement
   * Bu yayında ApiManagement’ta yapılan önemli değişiklikler için lütfen geçiş kılavuzuna bakın
-  * [https://github.com/Azure/azure-powershell/issues/4510](https://github.com/Azure/azure-powershell/issues/4510) sorununu düzeltmek için Get-AzureRmApiManagementUser Cmdlet’i güncelleştirildi
+  * [https://github.com/Azure/azure-powershell/issues/4510](https://github.com/Azure/azure-powershell/issues/4510 ) sorununu düzeltmek için Get-AzureRmApiManagementUser Cmdlet’i güncelleştirildi
   * Boş https://github.com/Azure/azure-powershell/issues/4069 Yolu ile API oluşturmak için New-AzureRmApiManagementApi Cmdlet’i güncelleştirildi
 * ApplicationInsights
   * Application Insights kaynağını alma/oluşturma/kaldırma komutları eklendi
@@ -838,7 +838,7 @@ Son sürümden sonraki değişiklikler: https://github.com/Azure/azure-powershel
     - Disable-AzureRmRecoveryServicesBackupRPMountScript
   * RecoveryServices.Backup SDK’sı en son sürüme güncelleştirildi
   * Azure VM iş yüküne yönelik testler, test çalıştırmaları için gereken tüm ayarlar testler tarafından yapılacak şekilde güncelleştirildi.
-  * [https://github.com/Azure/azure-powershell/issues/3164](https://github.com/Azure/azure-powershell/issues/3164) sorununu düzeltir
+  * [https://github.com/Azure/azure-powershell/issues/3164](https://github.com/Azure/azure-powershell/issues/3164 ) sorununu düzeltir
 * RecoveryServices.SiteRecovery
   * ASR VMware için Azure Site Recovery’de yapılan değişiklikler (cmdlet’ler şu anda Enterprise-Enterprise, Enterprise-Azure, HyperV-Azure arasındaki işlemleri desteklemektedir)
     - New-AzureRmRecoveryServicesAsrPolicy

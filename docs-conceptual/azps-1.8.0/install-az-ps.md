@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 12/13/2018
-ms.openlocfilehash: 8e63e3efb2671eef435498063010d5704c793060
-ms.sourcegitcommit: a261efc84dedfd829c0613cf62f8fcf3aa62adb8
+ms.openlocfilehash: 21345445efc89ab54bb7483cfe81f439f0a887a3
+ms.sourcegitcommit: b02cbcd00748a4a9a4790a5fba229ce53c3bf973
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68807511"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68861311"
 ---
 # <a name="install-the-azure-powershell-module"></a>Azure PowerShell modülünü yükleme
 
@@ -38,9 +38,9 @@ PowerShell Core kullanıldığında, Azure PowerShell için ek gereksinimler yok
 ## <a name="install-the-azure-powershell-module"></a>Azure PowerShell modülünü yükleme
 
 > [!WARNING]
-> Windows için PowerShell 5.1'de aynı anda hem AzureRM hem de Az modülünü __yükleyemezsiniz__. Sisteminizde AzureRM'yi kullanılabilir durumda tutmanız gerekiyorsa, PowerShell Core 6.x veya sonraki sürümleri için Az modülünü yükleyin. Bunu yapmak için [PowerShell Core 6.x veya sonraki sürümünü yükleyin](https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-core-on-windows) ve ardından PowerShell Core terminalinde bu yönergeleri izleyin.
+> Windows için PowerShell 5.1'de aynı anda hem AzureRM hem de Az modülünü __yükleyemezsiniz__. Sisteminizde AzureRM'yi kullanılabilir durumda tutmanız gerekiyorsa, PowerShell Core 6.x veya sonraki sürümleri için Az modülünü yükleyin. Bunu yapmak için [PowerShell Core 6.x veya sonraki sürümünü yükleyin](https://docs.microsoft.com/powershell/scripting/install/installing-powershell-core-on-windows) ve ardından PowerShell Core terminalinde bu yönergeleri izleyin.
 
-Önerilen yükleme yöntemi, yalnızca etkin kullanıcı için yükleme gerçekleştirilmesine yöneliktir:
+Önerilen yükleme yöntemi, yalnızca etkin kullanıcı için yüklemeye yöneliktir:
 
 ```powershell-interactive
 Install-Module -Name Az -AllowClobber -Scope CurrentUser

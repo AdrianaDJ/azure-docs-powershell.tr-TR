@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 06/15/2018
-ms.openlocfilehash: e05a519fabe41f3c23ffd63a8ceea69a0e58d5e1
-ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
+ms.openlocfilehash: ff50c676d42cad515aea74ea960105ed76f418a6
+ms.sourcegitcommit: b02cbcd00748a4a9a4790a5fba229ce53c3bf973
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65534670"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68863305"
 ---
 # <a name="install-azure-powershell-on-windows-with-powershellget"></a>PowerShellGet ile Windows'da Azure PowerShell yükleme
 
@@ -55,7 +55,7 @@ PowerShellGet yüklü değilse aşağıdaki tablodan sisteminize özgü yönerge
 |Senaryo|Yükleme yönergeleri|
 |---|---|
 |Windows 10<br/>Windows Server 2016|İşletim sisteminde bulunan Windows Management Framework (WMF) 5.0’da yerleşiktir|
-|PowerShell 5'e yükseltme| <ol><li>[WMF’nin en son sürümünü yükleyin](https://www.microsoft.com/en-us/download/details.aspx?id=54616)</li><li>Şu komutu çalıştırın:<br/>```Install-Module PowerShellGet -Force```</li></ol>|
+|PowerShell 5'e yükseltme| <ol><li>[WMF’nin en son sürümünü yükleyin](https://www.microsoft.com/download/details.aspx?id=54616)</li><li>Şu komutu çalıştırın:<br/>```Install-Module PowerShellGet -Force```</li></ol>|
 |PowerShell 3 veya PowerShell 4 yüklü Windows|<ol><il>[PackageManagement modüllerini alın](http://go.microsoft.com/fwlink/?LinkID=746217)</il><li>Şu komutu çalıştırın:<br/>```Install-Module PowerShellGet -Force```</li></ol>|
 
 > [!NOTE]

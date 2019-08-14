@@ -7,18 +7,18 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/06/2017
-ms.openlocfilehash: b7283e4a54cd423282141c07750630050799d59c
-ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
+ms.openlocfilehash: 1f859dcbaca88e28ebc0814513b7f4ee35610dc2
+ms.sourcegitcommit: b02cbcd00748a4a9a4790a5fba229ce53c3bf973
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56154133"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68863226"
 ---
 # <a name="installing-the-azure-powershell-service-management-module"></a>Azure PowerShell Service Management modülünü yükleme
 
 Azure PowerShell’in [PowerShell Galerisi](https://www.powershellgallery.com/)’nden yüklenmesi, tercih edilen yükleme yöntemidir.
 
-## <a name="step-1-install-powershellget"></a>1. Adım: PowerShellGet yükleme
+## <a name="step-1-install-powershellget"></a>1\. Adım: PowerShellGet yükleme
 
 PowerShell Galerisi’nden yükleme yapabilmek için PowerShellGet modülü gerekir. Uygun PowerShellGet sürümüne ve diğer sistem gereksinimlerine sahip olduğunuzdan emin olun. PowerShellGet’in sisteminizde yüklü olup olmadığını görmek için aşağıdaki komutu çalıştırın.
 
@@ -36,7 +36,7 @@ PowerShellGet 1.0.0.1 C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1
 
 PowerShellGet yüklü değilse bkz. [PowerShellGet’i edinme](#how-to-get-powershellget).
 
-## <a name="step-2-install-azure-powershell"></a>2. Adım: Azure PowerShell'i yükleme
+## <a name="step-2-install-azure-powershell"></a>2\. Adım: Azure PowerShell'i yükleme
 
 Yönetici olarak çalıştırılan Windows PowerShell konsolundan aşağıdaki komutu çalıştırın:
 
@@ -81,7 +81,7 @@ Windows PowerShell’i yükleme, öğrenme, kullanma ve özelleştirme hakkında
 |İşletim Sistemi Sürümü|Yükleme yönergeleri|
 |---|---|
 |Bilgisayarımda Windows 10 veya Windows Server 2016 yüklü|İşletim sisteminde bulunan Windows Management Framework (WMF) 5.0’da yerleşiktir|
-|PowerShell 5'e yükseltme yapmak istiyorum|[WMF’nin en son sürümünü yükleyin](https://www.microsoft.com/en-us/download/details.aspx?id=54616)|
+|PowerShell 5'e yükseltme yapmak istiyorum|[WMF’nin en son sürümünü yükleyin](https://www.microsoft.com/download/details.aspx?id=54616)|
 |Windows’un PowerShell 3 veya PowerShell 4 içeren bir sürümünü çalıştırıyorum|[PackageManagement modüllerini alın](http://go.microsoft.com/fwlink/?LinkID=746217)|
 
 <div id="helpmechoose"/>

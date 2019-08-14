@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/09/2018
-ms.openlocfilehash: d6545f18115e4162bb716def79f6b4cae8953a9c
-ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
+ms.openlocfilehash: 464d7efa640f1d1ffd1c34bfbe6cf13cbe5202b6
+ms.sourcegitcommit: b02cbcd00748a4a9a4790a5fba229ce53c3bf973
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65534705"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68863231"
 ---
 # <a name="sign-in-with-azure-powershell"></a>Azure PowerShell ile oturum açma
 
@@ -54,7 +54,7 @@ Azure kaynaklarına ilişkin yönetilen kimlikler hakkında daha fazla bilgi iç
 
 ## <a name="sign-in-as-a-cloud-solution-provider-csp"></a>Bulut Çözümü Sağlayıcısı (CSP) olarak oturum açma
 
-[Bulut Çözümü Sağlayıcısı (CSP)](https://azure.microsoft.com/en-us/offers/ms-azr-0145p/) olarak oturum açmak için `-TenantId` kullanılması gerekir. Normalde bu parametre kiracı kimliği veya etki alanı adı olarak sağlanabilir. Ancak CSP olarak oturum açmak için **kiracı kimliği** sağlanmalıdır.
+[Bulut Çözümü Sağlayıcısı (CSP)](https://azure.microsoft.com/offers/ms-azr-0145p/) olarak oturum açmak için `-TenantId` kullanılması gerekir. Normalde bu parametre kiracı kimliği veya etki alanı adı olarak sağlanabilir. Ancak CSP olarak oturum açmak için **kiracı kimliği** sağlanmalıdır.
 
 ```azurepowershell-interactive
 Connect-AzureRmAccount -TenantId 'xxxx-xxxx-xxxx-xxxx'

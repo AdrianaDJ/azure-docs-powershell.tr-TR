@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: e72aae940b48543d6a99801032186112748ea48b
-ms.sourcegitcommit: 6c0d296bfec7c1c35a1d15074ca5eacda6684ea4
+ms.openlocfilehash: 77cb28e47d8dddcf3936edff23f794de3b78442b
+ms.sourcegitcommit: b02cbcd00748a4a9a4790a5fba229ce53c3bf973
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657969"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68861184"
 ---
 ## <a name="250---july-2019"></a>2.5.0 - Temmuz 2019
 #### <a name="azaccounts"></a>Az.Accounts
@@ -536,7 +536,7 @@ ms.locfileid: "68657969"
     - Set-AzScheduledQueryRule
     - Update-AzScheduledQueryRule
     - Remove-AzScheduledQueryRule
-    - SQR API hakkında [daha fazla](https://docs.microsoft.com/en-us/rest/api/monitor/scheduledqueryrules) bilgi
+    - SQR API hakkında [daha fazla](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules) bilgi
     - Az.Monitor.md, GenV2 (klasik olmayan) ölçüm tabanlı uyarı kuralı için cmdlet'leri içerecek şekilde güncelleştirildi
 
 #### <a name="aznetwork"></a>Az.Network
@@ -589,7 +589,7 @@ ms.locfileid: "68657969"
 ### <a name="highlights-since-the-last-major-release"></a>Son ana sürümden bu yana öne çıkanlar
 * `Az` modülünü genel kullanıma sunuldu
 * `Az` modülü hakkında daha fazla bilgi için şu bağlantıyı ziyaret edin: https://aka.ms/azps-announce
-* Location, ResourceGroup ve ResourceName tamamlayıcıları eklendi: https://azure.microsoft.com/en-us/blog/completers-in-azure-powershell/
+* Location, ResourceGroup ve ResourceName tamamlayıcıları eklendi: https://azure.microsoft.com/blog/completers-in-azure-powershell/
 * Az.Compute ve Az.Network için Get cmdlet'lerine joker karakter desteği eklendi
 * Yalnızca Windows PowerShell 5.1 için etkileşim ve kullanıcı adı/parola kimlik doğrulaması eklendi
 * Az.Automation'da Python 2 runbook'ları için destek eklendi
@@ -693,7 +693,7 @@ ms.locfileid: "68657969"
 ### <a name="highlights-since-the-last-major-release"></a>Son ana sürümden bu yana öne çıkanlar
 * `Az` modülünü genel kullanıma sunuldu
 * `Az` modülü hakkında daha fazla bilgi için şu bağlantıyı ziyaret edin: https://aka.ms/azps-announce
-* Location, ResourceGroup ve ResourceName tamamlayıcıları eklendi: https://azure.microsoft.com/en-us/blog/completers-in-azure-powershell/
+* Location, ResourceGroup ve ResourceName tamamlayıcıları eklendi: https://azure.microsoft.com/blog/completers-in-azure-powershell/
 * Az.Compute ve Az.Network için Get cmdlet'lerine joker karakter desteği eklendi
 * Yalnızca Windows PowerShell 5.1 için etkileşim ve kullanıcı adı/parola kimlik doğrulaması eklendi
 * Az.Automation'da Python 2 runbook'ları için destek eklendi
@@ -750,7 +750,7 @@ ms.locfileid: "68657969"
 ### <a name="highlights-since-the-last-major-release"></a>Son ana sürümden bu yana öne çıkanlar
 * `Az` modülünü genel kullanıma sunuldu
 * `Az` modülü hakkında daha fazla bilgi için şu bağlantıyı ziyaret edin: https://aka.ms/azps-announce
-* Location, ResourceGroup ve ResourceName tamamlayıcıları eklendi: https://azure.microsoft.com/en-us/blog/completers-in-azure-powershell/
+* Location, ResourceGroup ve ResourceName tamamlayıcıları eklendi: https://azure.microsoft.com/blog/completers-in-azure-powershell/
 * Az.Compute ve Az.Network için Get cmdlet'lerine joker karakter desteği eklendi
 * Yalnızca Windows PowerShell 5.1 için etkileşim ve kullanıcı adı/parola kimlik doğrulaması eklendi
 * Az.Automation'da Python 2 runbook'ları için destek eklendi

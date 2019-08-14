@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 02/20/2019
-ms.openlocfilehash: 1e25d4650cc20d7b6613e0efb12ec60d424608c4
-ms.sourcegitcommit: 6c0d296bfec7c1c35a1d15074ca5eacda6684ea4
+ms.openlocfilehash: 0b7a6fa4278d95a69b21f570ac6fb22b70f073f6
+ms.sourcegitcommit: b02cbcd00748a4a9a4790a5fba229ce53c3bf973
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68658105"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68861318"
 ---
 # <a name="sign-in-with-azure-powershell"></a>Azure PowerShell ile oturum açma
 
@@ -110,7 +110,7 @@ Azure kaynaklarına ilişkin yönetilen kimlikler hakkında daha fazla bilgi edi
 
 Hesabınız birden fazla kiracıyla ilişkilendirildiyse, bağlantı kurarken oturum açmak için `-TenantId` parametresinin kullanılması gerekir. Bu parametre, diğer tüm oturum açma yöntemiyle çalışır. Oturum açılırken, bu parametre değeri kiracının Azure nesne kimliği (Kiracı Kimliği) veya kiracının tam etki alanı adı olabilir.
 
-[Bulut Çözümü Sağlayıcısıysanız (CSP)](https://azure.microsoft.com/en-us/offers/ms-azr-0145p/), `-TenantId` değerin kiracı kimliği olması **gerekir**.
+[Bulut Çözümü Sağlayıcısıysanız (CSP)](https://azure.microsoft.com/offers/ms-azr-0145p/), `-TenantId` değerin kiracı kimliği olması **gerekir**.
 
 ```azurepowershell-interactive
 Connect-AzAccount -TenantId 'xxxx-xxxx-xxxx-xxxx'

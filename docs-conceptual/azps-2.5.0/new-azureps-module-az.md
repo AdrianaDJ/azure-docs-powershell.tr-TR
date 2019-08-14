@@ -7,12 +7,12 @@ ms.author: sttramer
 ms.manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.openlocfilehash: 8dc5a7d3b47870455213aa01aebc1d215ad640a7
-ms.sourcegitcommit: a261efc84dedfd829c0613cf62f8fcf3aa62adb8
+ms.openlocfilehash: 21d41b6e14d1b39a78e40daee74b80de3a80c2a0
+ms.sourcegitcommit: b02cbcd00748a4a9a4790a5fba229ce53c3bf973
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68807447"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68861259"
 ---
 # <a name="introducing-the-new-azure-powershell-az-module"></a>Yeni Azure PowerShell Az modülüne giriş
 
@@ -39,7 +39,7 @@ Yeni bir Azure PowerShell modülü oluşturmayı gerektiren bu önemli değişik
 
 PowerShell'de en son Azure özelliklerini izlemek için mümkün olan en kısa zamanda Az modülüne geçmelisiniz. AzureRM yerine Az modülünü yüklemeye hazır değilseniz, Az modülünü denemek için çeşitli seçenekleriniz vardır:
 
-* [Azure Cloud Shell](https://docs.microsoft.com/en-us/azure/cloud-shell/overview) ile bir `PowerShell` ortamı kullanın.
+* [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview) ile bir `PowerShell` ortamı kullanın.
   Azure Cloud Shell, Az modülü yüklenmiş ve `Enable-AzureRM` uyumluluk diğer adları etkinleştirilmiş olarak gelen tarayıcı tabanlı bir kabuk ortamıdır.
 * Windows için PowerShell 5.1 ile AzureRM modülünü yüklü bırakın ama PowerShell Core 6.x veya sonraki sürümleri için Az modülünü yükleyin. Windows için PowerShell 5.1 ile PowerShell Core ayrı modül koleksiyonları kullanır. Yönergeleri izleyerek [PowerShell Core'u yükleyin](/powershell/scripting/install/installing-powershell-core-on-windows) ve ardından PowerShell Core terminalinden [Az modülünü yükleyin](install-az-ps.md).
 
