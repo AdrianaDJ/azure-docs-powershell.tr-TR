@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: get-started-article
 ms.date: 01/14/2019
-ms.openlocfilehash: c60036ba8be6282007aa34a0bb9c0d9e33197072
-ms.sourcegitcommit: abca342d8687ca638679c049792d0cef6045837d
+ms.openlocfilehash: a4c8792f2ff27e1b6d3cee97144c26455356b7fd
+ms.sourcegitcommit: e5b029312d17e12257b2b5351b808fdab0b4634c
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70052932"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70386735"
 ---
 # <a name="get-started-with-azure-powershell"></a>Azure PowerShell’i kullanmaya başlama
 
@@ -43,7 +43,8 @@ ABD dışındaki bir bölgedeyseniz, oturum açarken `-Environment` parametresin
 Connect-AzAccount -Environment AzureChinaCloud
 ```
 
-Kullanmak için bir belirteç elde edecekleriniz https://microsoft.com/devicelogin. Tarayıcınızda bu sayfayı açıp belirteci girin, ardından Azure hesabı kimlik bilgilerinizle oturum açın ve Azure PowerShell’i yetkilendirin. 
+PowerShell 5.1 ortamlarında Azure hesabınızın kullanıcı adını ve parolasını sağlamak için bir oturum açma iletişim kutusu alırsınız. PowerShell’in her sürümünde [https://microsoft.com/devicelogin ] üzerinde kullanmak üzere bir belirteç alırsınız.
+Tarayıcınızda bu sayfayı açıp belirteci girin, ardından Azure hesabı kimlik bilgilerinizle oturum açın ve Azure PowerShell’i yetkilendirin.
 
 Oturum açtıktan sonra, hangi Azure aboneliğinizin etkin olduğunu gösteren bilgiler göreceksiniz. Hesabınızda birden fazla Azure aboneliği bulunuyorsa ve farklı bir abonelik seçmek istiyorsanız, [Get-AzSubscription](/powershell/module/az.accounts/get-azsubscription) ile kullanılabilir aboneliklerinizi alabilir ve abonelik kimliğiniz ile [Set-AzContext](/powershell/module/az.accounts/set-azcontext) cmdlet’ini kullanabilirsiniz.
 Azure PowerShell’de Azure aboneliklerinizi yönetme hakkında daha fazla bilgi almak için bkz. [Birden fazla Azure aboneliği kullanma](manage-subscriptions-azureps.md).

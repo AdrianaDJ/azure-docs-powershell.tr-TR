@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 12/13/2018
-ms.openlocfilehash: 21345445efc89ab54bb7483cfe81f439f0a887a3
-ms.sourcegitcommit: abca342d8687ca638679c049792d0cef6045837d
+ms.openlocfilehash: e302e49d95b6bc15750366c9eb960a6fec80c1a4
+ms.sourcegitcommit: e5b029312d17e12257b2b5351b808fdab0b4634c
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70052898"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70386840"
 ---
 # <a name="install-the-azure-powershell-module"></a>Azure PowerShell modülünü yükleme
 
@@ -101,13 +101,14 @@ Connect-AzAccount
 
 > [!NOTE]
 >
-> Modül otomatik yüklemesini devre dışı bıraktıysanız, `Import-Module Az` kullanarak modülü el ile içeri aktarmanız gerekir. Modülü yapısından dolayı, bu işlem birkaç saniye sürebilir.
+> Modül otomatik yüklemesini devre dışı bıraktıysanız, `Import-Module Az` kullanarak modülü el ile içeri aktarın. Modülü yapısından dolayı, bu işlem birkaç saniye sürebilir.
 
 Başlattığınız her yeni PowerShell oturumu için bu adımları tekrarlamanız gerekir. Azure oturum açma bilgilerinizin PowerShell oturumları arasında geçiş yaparken silinmemesi için bkz. [Kullanıcı kimlik bilgilerini PowerShell oturumlarında kalıcı hale getirme](context-persistence.md).
 
 ## <a name="update-the-azure-powershell-module"></a>Azure PowerShell modülünü güncelleştirme
 
-Az modülünün paketlenme şeklinden dolayı, [Update-Module](/powershell/module/powershellget/update-module) komutu yüklemenizi doğru güncelleştirmeyecektir. Az modülü teknik olarak, Azure hizmetleriyle etkileşime yönelik cmdlet'lerin yer aldığı tüm alt modülleri kapsayan bir meta modülüdür. Başka bir deyişle, Azure PowerShell modülünü güncelleştirmek için yalnızca __güncelleştirmek__ yerine __yeniden yüklemeniz__ gerekir. Bu işlem yüklemeyle aynı şekilde yapılır ama `-Force` bağımsız değişkenini eklemeniz gerekebilir:
+Az modülünün paketlenme şeklinden dolayı, [Update-Module](/powershell/module/powershellget/update-module) komutu yüklemenizi doğru güncelleştirmeyecektir. Az modülünü yüklediğinizde aslında her hizmet için cmdlet’leri sağlayan tüm bağımlı alt modüllerini toplar ve yükler.
+Başka bir deyişle, Azure PowerShell modülünü güncelleştirmek için yalnızca __güncelleştirmek__ yerine __yeniden yüklemeniz__ gerekir. Bu işlem yüklemeyle aynı şekilde yapılır ama `-Force` bağımsız değişkenini eklemeniz gerekebilir:
 
 ```powershell
 Install-Module -Name Az -AllowClobber -Force

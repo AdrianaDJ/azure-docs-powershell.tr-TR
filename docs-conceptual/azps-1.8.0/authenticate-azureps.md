@@ -6,13 +6,13 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 02/20/2019
-ms.openlocfilehash: 0b7a6fa4278d95a69b21f570ac6fb22b70f073f6
-ms.sourcegitcommit: b02cbcd00748a4a9a4790a5fba229ce53c3bf973
+ms.date: 09/04/2019
+ms.openlocfilehash: 21d87bd35da74f09b70976e7b395e7b987fbd3f5
+ms.sourcegitcommit: e5b029312d17e12257b2b5351b808fdab0b4634c
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68861232"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70386808"
 ---
 # <a name="sign-in-with-azure-powershell"></a>Azure PowerShell ile oturum açma
 
@@ -54,7 +54,7 @@ Hizmet sorumlusunun kimlik bilgilerini uygun bir nesne olarak almak için [Get-C
 
 ```azurepowershell-interactive
 $pscredential = Get-Credential
-Connect-AzAccount -ServicePrincipal -Credential $pscredential -TenantId $tenantId
+Connect-AzAccount -ServicePrincipal -Credential $pscredential -Tenant $tenantId
 ```
 
 Otomasyon senaryoları için, bir kullanıcı adı ve güvenli dizeden kimlik bilgileri oluşturmanız gerekir:
@@ -62,7 +62,7 @@ Otomasyon senaryoları için, bir kullanıcı adı ve güvenli dizeden kimlik bi
 ```azurepowershell-interactive
 $passwd = ConvertTo-SecureString <use a secure password here> -AsPlainText -Force
 $pscredential = New-Object System.Management.Automation.PSCredential('service principal name/id', $passwd)
-Connect-AzAccount -ServicePrincipal -Credential $pscredential -TenantId $tenantId
+Connect-AzAccount -ServicePrincipal -Credential $pscredential -Tenant $tenantId
 ```
 
 Hizmet sorumlusu bağlantılarını otomatikleştirirken, iyi parola depolama yöntemlerini kullandığınızdan emin olun.
@@ -71,7 +71,13 @@ Hizmet sorumlusu bağlantılarını otomatikleştirirken, iyi parola depolama y�
 
 Sertifika tabanlı kimlik doğrulaması, Azure PowerShell’in sertifika parmak izini temel alarak bir yerel sertifika deposundan bilgi alabilir olmasını gerektirir.
 ```azurepowershell-interactive
-Connect-AzAccount -ServicePrincipal -TenantId $tenantId -CertificateThumbprint <thumbprint>
+Connect-AzAccount -ApplicationId $appId -Tenant $tenantId -CertificateThumbprint <thumbprint>
+```
+
+Kayıtlı uygulama yerine hizmet sorumlusu kullanırken `-ServicePrincipal` bağımsız değişkenini ekleyin ve `-ApplicationId` parametresinin değeri olarak hizmet sorumlusunun kimliğini sağlayın.
+
+```azurepowershell-interactive
+Connect-AzAccount -ServicePrincipal -ApplicationId $servicePrincipalId -Tenant $tenantId -CertificateThumbprint <thumbprint>
 ```
 
 PowerShell 5.1'de, sertifika deposu [PKI](/powershell/module/pkiclient) modülü ile yönetilebilir ve denetlenebilir. PowerShell Core 6.x ve sonraki sürümleri için işlem daha karmaşıktır. Aşağıdaki betikler, mevcut sertifikayı PowerShell tarafından erişilebilir sertifika deposuna nasıl aktarabileceğinizi gösterir.
@@ -100,7 +106,7 @@ $store.Add($Certificate)
 $store.Close()
 ```
 
-## <a name="sign-in-using-a-managed-identity"></a>Yönetilen kimlik kullanarak oturum açma 
+## <a name="sign-in-using-a-managed-identity"></a>Yönetilen kimlik kullanarak oturum açma
 
 Yönetilen kimlikler Azure Active Directory’nin bir özelliğidir. Yönetilen kimlikler, Azure'da çalıştırılan kaynaklara atanmış hizmet sorumlularıdır. Oturum açmak için bir yönetilen kimlik hizmet sorumlusu kullanabilir ve diğer kaynaklara erişmek için yalnızca uygulamaya yönelik bir erişim belirteci alabilirsiniz. Yönetilen kimlikler yalnızca Azure bulutunda çalıştırılan kaynaklarda kullanılabilir.
 
@@ -108,19 +114,19 @@ Azure kaynaklarına ilişkin yönetilen kimlikler hakkında daha fazla bilgi edi
 
 ## <a name="sign-in-with-a-non-default-tenant-or-as-a-cloud-solution-provider-csp"></a>Varsayılan olmayan bir kiracıyla veya Bulut Çözümü Sağlayıcısı (CSP) olarak oturum açma
 
-Hesabınız birden fazla kiracıyla ilişkilendirildiyse, bağlantı kurarken oturum açmak için `-TenantId` parametresinin kullanılması gerekir. Bu parametre, diğer tüm oturum açma yöntemiyle çalışır. Oturum açılırken, bu parametre değeri kiracının Azure nesne kimliği (Kiracı Kimliği) veya kiracının tam etki alanı adı olabilir.
+Hesabınız birden fazla kiracıyla ilişkilendirildiyse, bağlantı kurarken oturum açmak için `-Tenant` parametresinin kullanılması gerekir. Bu parametre tüm oturum açma yöntemleriyle çalışır. Oturum açılırken, bu parametre değeri kiracının Azure nesne kimliği (Kiracı Kimliği) veya kiracının tam etki alanı adı olabilir.
 
-[Bulut Çözümü Sağlayıcısıysanız (CSP)](https://azure.microsoft.com/offers/ms-azr-0145p/), `-TenantId` değerin kiracı kimliği olması **gerekir**.
+[Bulut Çözümü Sağlayıcısıysanız (CSP)](https://azure.microsoft.com/offers/ms-azr-0145p/), `-Tenant` değerin kiracı kimliği olması **gerekir**.
 
 ```azurepowershell-interactive
-Connect-AzAccount -TenantId 'xxxx-xxxx-xxxx-xxxx'
+Connect-AzAccount -Tenant 'xxxx-xxxx-xxxx-xxxx'
 ```
 
 ## <a name="sign-in-to-another-cloud"></a>Başka bir bulut oturumu açma
 
 Azure bulut hizmetleri, bölgesel veri işlemeyle ilgili yasalara uygun ortamlar sunar.
 Bölgesel buluttaki hesaplar için, oturum açarken `-Environment` bağımsız değişkeniyle ortamı ayarlayın.
-Örneğin, hesabınız Çin bulutundaysa:
+Bu parametre tüm oturum açma yöntemleriyle çalışır. Örneğin, hesabınız Çin bulutundaysa:
 
 ```azurepowershell-interactive
 Connect-AzAccount -Environment AzureChinaCloud
