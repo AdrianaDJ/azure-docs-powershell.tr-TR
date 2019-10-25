@@ -4,7 +4,11 @@
   href: new-azureps-module-az.md
   displayName: 'intro, introduction, azurerm'
 - name: Yükleme
-  href: install-az-ps.md
+  items:
+    - name: PowerShell Get ile yükleme
+      href: install-az-ps.md
+    - name: MSI ile yükleme
+      href: install-az-ps-msi.md
 - name: Kaldırma
   href: uninstall-az-ps.md
 - name: AzureRM’den geçiş
