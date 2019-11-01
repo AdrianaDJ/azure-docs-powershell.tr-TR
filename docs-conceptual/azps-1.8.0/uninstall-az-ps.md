@@ -1,25 +1,36 @@
 ---
 title: Azure PowerShell'i kaldırma
 description: Azure PowerShell'i tamamen kaldırmayı öğrenin
-ms.date: 06/10/2019
+ms.date: 10/22/2019
 author: sptramer
 ms.author: sttramer
 ms.manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.openlocfilehash: e71b4d0d662b29a32610fecb36351532040428e4
-ms.sourcegitcommit: a261efc84dedfd829c0613cf62f8fcf3aa62adb8
+ms.openlocfilehash: 772667032d421e32c6cd63abbcb686b4eab308e2
+ms.sourcegitcommit: ad7677d703a8512d371d3123dc7e541156b95cb8
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68807446"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72814350"
 ---
 # <a name="uninstall-the-azure-powershell-module"></a>Azure PowerShell modülünü kaldırma
 
 Bu makalede Azure PowerShell'in eski bir sürümünü veya tamamını sisteminizden kaldırmayı öğreneceksiniz. Azure PowerShell'i tamamen kaldırmaya karar verdiyseniz [Send-Feedback](/powershell/module/az.accounts/send-feedback) cmdlet'ini kullanarak geri bildirimlerinizi bizimle paylaşın.
 Bir hatayla karşılaştıysanız, bunun düzeltilebilmesi için [bir GitHub sorunu kaydederek](https://github.com/azure/azure-powershell/issues) bize bildirirseniz seviniriz.
 
-## <a name="uninstall-the-az-module"></a>Az modülünü kaldırma
+## <a name="uninstall-azure-powershell-from-msi"></a>Azure PowerShell'i MSI'den kaldırma
+
+Azure PowerShell'i MSI paketini kullanarak yüklediyseniz kaldırma işlemini PowerShell yerine Windows sisteminden gerçekleştirmeniz gerekir.
+
+| Platform | Yönergeler |
+|----------|--------------|
+| Windows 10 | Başlat > Ayarlar > Uygulamalar |
+| Windows 7 </br>Windows 8 | Başlat > Denetim Masası > Programlar > Program kaldır |
+
+Bu ekrandaki program listesinde __Azure PowerShell__'i görebilmelisiniz. Kaldırılacak olan uygulama budur. Listede bu programı görmüyorsanız, PowerShellGet aracılığıyla yüklemiş olmalısınız ve sonraki yönergeleri izlemelisiniz.
+
+## <a name="uninstall-azure-powershell-from-powershell-get"></a>Azure PowerShell'i PowerShell Get'ten kaldırma
 
 Az modüllerini kaldırmak için [Uninstall-Module](/powershell/module/powershellget/uninstall-module) cmdlet’ini kullanın. Ancak `Uninstall-Module` yalnızca bir modülü kaldırır. Azure PowerShell'i tamamen kaldırmak için her modülü ayrıca kaldırmanız gerekir. Birden çok Azure PowerShell sürümü yüklediyseniz kaldırma işlemi karmaşık hale gelebilir.
 

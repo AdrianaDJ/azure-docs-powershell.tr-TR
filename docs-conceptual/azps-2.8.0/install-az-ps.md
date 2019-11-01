@@ -6,13 +6,13 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 12/13/2018
-ms.openlocfilehash: e302e49d95b6bc15750366c9eb960a6fec80c1a4
-ms.sourcegitcommit: 0b94b9566124331d0b15eb7f5a811305c254172e
+ms.date: 10/22/2019
+ms.openlocfilehash: 7f22a420068db87fa2c3c007bd36f515384162fb
+ms.sourcegitcommit: ad7677d703a8512d371d3123dc7e541156b95cb8
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72370335"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72814232"
 ---
 # <a name="install-the-azure-powershell-module"></a>Azure PowerShell modülünü yükleme
 
@@ -67,6 +67,18 @@ Are you sure you want to install the modules from 'PSGallery'?
 Yükleme işlemine devam etmek için `Yes` veya `Yes to All` yanıtını verin.
 
 Az modülü, Azure PowerShell cmdlet’leri için toplu bir modüldür. Bu modülü yüklediğinizde kullanılabilir durumdaki tüm Azure Resource Manager modülleri indirilir ve cmdlet'leri kullanıma sunulur.
+
+## <a name="install-offline"></a>Çevrimdışı yükleme
+
+Bazı ortamlarda PowerShell Galerisi'ne bağlanmak mümkün olmaz. Bu durumlarda yine de aşağıdaki yöntemlerden birini kullanarak çevrimdışı yükleyebilirsiniz:
+
+* Modülleri başka bir konuma indirin ve bu konumu ağınızda yükleme kaynağı olarak kullanın. Bu karmaşık bir işlem olabilir ama PowerShell modüllerini PowerShellGet ile bağlantısız sistemlere dağıtmak üzere tek sunucu veya dosya paylaşımında önbelleğe almanızı sağlar. Yerel depoyu ayarlamayı ve bağlantısız sistemlerde yüklemeyi öğrenmek için [Yerel PowerShellGet depolarıyla çalışma](/powershell/scripting/gallery/how-to/working-with-local-psrepositories) konusundan yararlanın.
+* Ağa bağlı bir makineye [Azure PowerShell MSI'yi indirin](install-az-ps-msi.md) ve sonra PowerShell Galerisi'ne erişimi olmayan sistemlere yükleyiciyi kopyalayın. MSI yükleyicisinin yalnızca Windows üzerinde PowerShell 5.1 için kullanılabildiğini unutmayın.
+* Modülü [Save-Module](/powershell/module/PowershellGet/Save-Module) ile bir dosya paylaşımına kaydedin veya başka bir konuma kaydedin ve sonra el ile diğer makinelere kopyalayın:
+  
+  ```powershell-interactive
+  Save-Module -Name Az -Path '\\someshare\PowerShell\modules' -Force
+  ```
 
 ## <a name="troubleshooting"></a>Sorun giderme
 
