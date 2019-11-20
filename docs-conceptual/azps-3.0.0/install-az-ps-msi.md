@@ -1,0 +1,60 @@
+---
+title: MSI ile Azure PowerShell'i yükleme
+description: Azure PowerShell'i PowerShellGet olmadan MSI kullanarak yükleme
+author: sptramer
+ms.author: sttramer
+manager: carmonm
+ms.devlang: powershell
+ms.topic: conceptual
+ms.date: 10/22/2019
+ms.openlocfilehash: d16aea3fa2059cd32f584134e2da43e01e3def31
+ms.sourcegitcommit: 05431341858d10eb9c345213275c3ccc24c83c9b
+ms.translationtype: HT
+ms.contentlocale: tr-TR
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74062403"
+---
+# <a name="install-azure-powershell-on-windows-with-msi"></a>MSI ile Windows'a Azure PowerShell yükleme
+
+Bu makalede MSI yükleyicisi kullanarak Azure PowerShell'i Windows'a yükleme adımları açıklanmaktadır. MSI yükleyicisi, PowerShell Galerisi'nin güvenlik duvarı tarafından engelleniyor olabileceği veya çevrimdışı bir yükleyicinin gerektiği ortamlar için sağlanmıştır. Azure PowerShell'i yüklemek için önerilen yöntem PowerShellGet'in kullanılmasıdır. PowerShellGet kullanarak Azure PowerShell'i yükleme yönergeleri için bkz. [Azure PowerShell'i PowerShellGet ile yükleme](install-az-ps.md).
+
+## <a name="requirements"></a>Gereksinimler
+
+Azure PowerShell için MSI yükleyicisi __yalnızca__ Windows üzerinde PowerShell 5.1 için kullanılabilir. Windows olmayan platformlarda yüklemek veya PowerShell'in sonraki sürümlerini yüklemek için [PowerShellGet ile yükleme](install-az-ps.md) yöntemini kullanın.
+PowerShell sürümünüzü denetlemek için şu komutu çalıştırın:
+
+```powershell-interactive
+$PSVersionTable.PSVersion
+```
+
+PowerShell 5.1'de Azure PowerShell'i kullanmak için şunları yapmalısınız:
+
+1. Gerekirse [Windows PowerShell 5.1](/powershell/scripting/install/installing-windows-powershell#upgrading-existing-windows-powershell)'e güncelleştirin. Windows 10 kullanıyorsanız, zaten PowerShell 5.1 yüklüdür.
+2. [.NET Framework 4.7.2 veya sonraki sürümünü](/dotnet/framework/install) yükleyin.
+
+## <a name="install-or-update-on-windows-using-the-msi-package"></a>MSI Paketini kullanarak Windows'a yükleme veya güncelleştirme
+
+Windows için Azure PowerShell, [GitHub](https://github.com/Azure/azure-powershell/releases/tag/v2.8.0-October2019)’dan indirilebilen MSI dosyası kullanılarak yüklenir. Azure modüllerinin önceki sürümlerini MSI olarak yüklediyseniz, bunlar yükleyici tarafından otomatik olarak kaldırılır. MSI paketi, modülleri `${env:ProgramFiles}\WindowsPowerShell\Modules` içine yükler.
+
+Azure PowerShell ile çalışmaya başlamak için, Azure kimlik bilgilerinizle oturum açın.
+
+```powershell-interactive
+# Connect to Azure with an interactive dialog for sign-in
+Connect-AzAccount
+```
+
+> [!NOTE]
+>
+> Modül otomatik yüklemesini devre dışı bıraktıysanız, `Import-Module Az` kullanarak modülü el ile içeri aktarmanız gerekir. Modülü yapısından dolayı, bu işlem bir dakika kadar sürebilir.
+
+Başlattığınız her yeni PowerShell oturumu için bu adımı tekrarlamanız gerekir. Azure oturum açma bilgilerinizin PowerShell oturumları arasında geçiş yaparken silinmemesi için bkz. [Kullanıcı kimlik bilgilerini PowerShell oturumlarında kalıcı hale getirme](context-persistence.md).
+
+## <a name="provide-feedback"></a>Geri bildirimde bulunma
+
+Azure Powershell’de bir hata bulursanız [GitHub'da sorun bildirin](https://github.com/Azure/azure-powershell/issues).
+Komut satırından geri bildirim sağlamak için [Send-Feedback](/powershell/module/az.accounts/send-feedback) cmdlet'ini kullanın.
+
+## <a name="next-steps"></a>Sonraki Adımlar
+
+Azure PowerShell modülleri ve bunların özellikleri hakkında daha fazla bilgi edinmek için bkz. [Azure PowerShell’i Kullanmaya Başlama](get-started-azureps.md).
+Azure PowerShell’i zaten biliyorsanız ve AzureRM’den geçiş yapmanız gerekiyorsa bkz. [AzureRM’den Az’ye geçiş](migrate-from-azurerm-to-az.md).
