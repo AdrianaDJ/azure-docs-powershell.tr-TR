@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 10/15/2019
-ms.openlocfilehash: 83e6039153bcc2b8ccb7ceddfa91609f0d6c7b3f
-ms.sourcegitcommit: b4ee3fbaaa2a329ea28308bd1902ae83a34db698
+ms.openlocfilehash: 8c1369cdedf8848f3c62ca6b6bc4eb3d2d78be95
+ms.sourcegitcommit: f9445d1525eac8c165637e1a80fbc92b1ab005c2
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72380194"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74656827"
 ---
 ## <a name="280---october-2019"></a>2.8.0 - Ekim 2019
 ### <a name="general"></a>Genel
@@ -56,7 +56,7 @@ ms.locfileid: "72380194"
 * Küçük hata düzeltmesi: Get-AzIothub SubscriptionId öğesini döndürmüyor 
 
 #### <a name="azmonitor"></a>Az.Monitor
-* Eylem grupları -ItsmReceiver -VoiceReceiver -ArmRoleReceiver -AzureFunctionReceiver -LogicAppReceiver -AutomationRunbookReceiver -AzureAppPushReceiver için yeni eylem grubu alıcıları eklendi
+* New-AzActionGroupReceiver için yeni eylem grubu alıcıları eklendi:   -ItsmReceiver   -VoiceReceiver   -ArmRoleReceiver   -AzureFunctionReceiver   -LogicAppReceiver   -AutomationRunbookReceiver   -AzureAppPushReceiver
 * Alıcılar için etkinleştirilen ortak uyarı şemasını kullanın. Bunlar SMS, Azure Uygulaması iletimi, ITSM ve ses alıcıları için geçerli değildir
 * Web kancaları artık Azure Active Directory kimlik doğrulamasını destekliyor.
 
@@ -64,8 +64,8 @@ ms.locfileid: "72380194"
 * Hizmet Uç Noktası İlkeleri için kullanılabilen diğer adları almak için çağrılabilen Get-AzAvailableServiceAlias cmdlet’i eklendi.
 * Sanal Ağ Geçidi Bağlantılarına trafik seçicileri eklemeye yönelik destek eklendi
     - Yeni cmdlet'ler eklendi:
-        - New-AzureRmTrafficSelectorPolicy
-    - Cmdlet’ler, şu isteğe bağlı parametreler ile güncelleştirildi: -TrafficSelectorPolicies -New-AzureRmVirtualNetworkGatewayConnection -Set-AzureRmVirtualNetworkGatewayConnection
+        - New-AzIpsecTrafficSelectorPolicy
+    - Cmdlet’ler isteğe bağlı parametre ile güncelleştirildi -TrafficSelectorPolicies   -New-AzVirtualNetworkGatewayConnection   -Set-AzVirtualNetworkGatewayConnection
 * Ağ güvenlik kuralı yapılandırmalarında ESP ve AH protokollerine yönelik destek eklendi
     - Cmdlet'ler güncelleştirildi:
         - Add-AzNetworkSecurityRuleConfig
@@ -220,7 +220,7 @@ ms.locfileid: "72380194"
     -  Remove-AzRmStorageShare
 
 #### <a name="azwebsites"></a>Az.Websites
-* Uygulamanın yeni ASP’ye geçirilmesi sırasında webapp Etiketlerinin silinmesine neden olan bir sorun düzeltiliyor
+* Uygulama yeni ASP’ye geçirilirken webapp etiketlerinin silinmesine neden olan sorun düzeltiliyor
 * Publish-AzureWebapp cmdlet’i Linux ve Windows üzerinde çalışacak şekilde düzeltiliyor
 * 'Get-AzWebAppPublishingProfile' başvuru belgesindeki örnek güncelleştirildi
 
