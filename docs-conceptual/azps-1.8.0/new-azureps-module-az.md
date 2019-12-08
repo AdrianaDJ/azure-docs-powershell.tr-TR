@@ -24,14 +24,14 @@ Az yeni bir modül olduğundan, sürüm 1.0.0 olarak sıfırlanmıştır.
 
 ## <a name="why-a-new-module"></a>Neden yeni bir modül?
 
-Büyük güncelleştirmeler kullanışsız olabilir, bu nedenle PowerShell'den Azure'la etkileşim kurmak için yeni cmdlet'lerle yeni bir modül kümesi hazırlama kararımızın nedenlerini size anlatmamız önemlidir.
+Büyük güncelleştirmelerle çalışmak zor olabilir. Bu nedenle PowerShell'den Azure'la etkileşim kurmak için yeni cmdlet'ler içeren yeni bir modül kümesi hazırlama kararımızın nedenlerini size açıklamak istiyoruz.
 
-En büyük ve en önemli değişiklik PowerShell'in .NET Standard temelinde [PowerShell Core 6.x](/powershell/scripting/overview)'in kullanıma sunulmasından bu yana platformlar arası bir ürün olmasıdır.
+En büyük ve en önemli değişiklik PowerShell'in .NET Standard kitaplığını temel alan [PowerShell Core 6.x](/powershell/scripting/overview)'in kullanıma sunulmasından bu yana platformlar arası bir ürün olmasıdır.
 Tüm platformlara Azure desteği getirmeye kararlı olduğumuzdan, Azure PowerShell modüllerinin .NET Standard kullanacak şekilde güncelleştirilmesi ve PowerShell Core ile uyumlu olması gerekiyordu. Mevcut AzureRM modülünü alıp bu desteği eklemek üzere karmaşık değişiklikler yapmak yerine Az modülü oluşturuldu.
 
 Yeni modül oluşturmak mühendislerimize cmdlet'lerin ve modüllerin tasarımını ve adlandırmasını tutarlı hale getirme fırsatı da verdi. Artık tüm modüller `Az.` ön ekiyle başlıyor ve cmdlet'lerin tümünde _Fiil_-`Az`_İsim_ biçimi kullanılıyor. Daha önce cmdlet adları hem daha uzundu hem de cmdlet adları arasında tutarsızlıklar vardı.
 
-Modül sayısı da azaltıldı: Aynı hizmetlerle çalışan bazı modüller birlikte dağıtılıyordu; yönetim düzlemiyle veri düzlemi cmdlet'lerinin tümü artık hizmetleri için tek tek modüllerin içinde yer alıyor. Bağımlılıkları ve içeri aktarmaları el ile yönetenleriniz için, bu durum işleri çok daha kolaylaştırıyor.
+Modül sayısı da azaltıldı: Aynı hizmetlerle çalışan bazı modüller birlikte dağıtılıyordu; artık belirli bir hizmete yönelik yönetim düzlemi ve veri düzlemi cmdlet'lerinin tümü tek bir modülün içinde yer alıyor. Bağımlılıkları ve içeri aktarmaları el ile yönetenleriniz için, bu durum işleri çok daha kolaylaştırıyor.
 
 Yeni bir Azure PowerShell modülü oluşturmayı gerektiren bu önemli değişiklikleri yaparak, takım Azure'ın PowerShell cmdlet'leriyle kullanılmasını daha önce mümkün olandan çok daha fazla platformda ve hiç olmadığı kadar kolaylaştırmaya yönelik kararlılığını gösterdi.
 

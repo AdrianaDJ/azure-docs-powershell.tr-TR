@@ -949,7 +949,7 @@ ms.locfileid: "74537116"
 * Cmdlet'ler API sürümü 2019-04-15’i temel alan rulesEngine özelliğini destekleyecek şekilde güncelleştirildi.
 
 #### <a name="azcompute"></a>Az.Compute
-* İşlemi başlatan ve işlem tamamlanmadan önce hemen döndürülen `NoWait` parametresi eklendi.
+* İşlemi başlatan ve işlem tamamlanmadan hemen geri dönen `NoWait` parametresi eklendi.
     - Cmdlet'ler güncelleştirildi:   Export-AzLogAnalyticRequestRateByInterval   Export-AzLogAnalyticThrottledRequest   Remove-AzVM   Remove-AzVMAccessExtension   Remove-AzVMAEMExtension   Remove-AzVMChefExtension   Remove-AzVMCustomScriptExtension   Remove-AzVMDiagnosticsExtension   Remove-AzVMDiskEncryptionExtension   Remove-AzVMDscExtension   Remove-AzVMSqlServerExtension   Restart-AzVM   Set-AzVM   Set-AzVMAccessExtension   Set-AzVMADDomainExtension   Set-AzVMAEMExtension   Set-AzVMBginfoExtension   Set-AzVMChefExtension   Set-AzVMCustomScriptExtension   Set-AzVMDiagnosticsExtension   Set-AzVMDscExtension   Set-AzVMExtension   Start-AzVM   Stop-AzVM   Update-AzVM
 
 #### <a name="azeventhub"></a>Az.EventHub
@@ -961,7 +961,7 @@ ms.locfileid: "74537116"
     - ResourceId ve InputObject için diğer ad eklendi
 
 #### <a name="azpolicyinsights"></a>Az.PolicyInsights
-* Get-AzPolicyEvent’de Boş referans sorunu düzeltildi
+* Get-AzPolicyEvent’te Null referans sorunu düzeltildi
 
 #### <a name="azrecoveryservices"></a>Az.RecoveryServices
 * IaaSVM ilkesinin gün cinsinden en kısa saklama süresi 1'den 7'ye değiştirildi
@@ -980,7 +980,7 @@ ms.locfileid: "74537116"
 * New-AzSqlInstance - StorageSizeInGB ve -LicenseType parametreleri artık isteğe bağlı.
 
 #### <a name="azwebsites"></a>Az.Websites
-* Set-AzWebApp ve Set-AzWebAppSlot, WebApp özelliğiyle kullanıldığında etiketlerin kaldırılmasına neden olan sorun giderildi
+* Set-AzWebApp ve Set-AzWebAppSlot, -WebApp özelliğiyle kullanıldığında etiketlerin kaldırılmasına neden olan sorun giderildi
 
 ## <a name="210---may-2019"></a>2.1.0 - Mayıs 2019
 #### <a name="azapimanagement"></a>Az.ApiManagement
