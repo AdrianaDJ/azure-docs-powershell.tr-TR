@@ -7,13 +7,358 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 10/15/2019
-ms.openlocfilehash: 98a24c805fbf43dd899119d43301b4261c1f60dc
-ms.sourcegitcommit: f9445d1525eac8c165637e1a80fbc92b1ab005c2
+ms.openlocfilehash: f77d901169b0d98b2425a2e50d33a1789150b770
+ms.sourcegitcommit: e598dc45a26ff5a71112383252b350d750144a47
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 12/16/2019
-ms.locfileid: "75035770"
+ms.lasthandoff: 12/17/2019
+ms.locfileid: "75182562"
 ---
+## <a name="320---december-2019"></a>3.2.0 - Aralık 2019
+
+### <a name="general"></a>Genel
+* .psd1 içindeki başvurular, tüm modüller için göreli yol kullanılacak şekilde güncelleştirildi
+
+#### <a name="azaccounts"></a>Az.Accounts
+* Az 4.0 önizlemesine yönelik istemci tarafı telemetri için doğru UserAgent ayarlandı
+* Az 4.0 önizlemesinde bağlam null olduğunda kolay hata iletisi görüntüleniyor
+
+#### <a name="azbatch"></a>Az.Batch
+* **New-AzBatchPool** cmdlet’inin 'VirtualMachineConfiguration. ContainerConfiguration' veya 'VirtualMachineConfiguration.DataDisks' öğelerini sunucuya doğru bir şekilde göndermediği [10602](https://github.com/Azure/azure-powershell/issues/10602) numaralı sorun düzeltildi.
+
+#### <a name="azdatafactory"></a>Az.DataFactory
+* ADF .Net SDK sürümü 4.5.0’a güncelleştirildi
+
+#### <a name="azfrontdoor"></a>Az.FrontDoor
+* WAF tarafından yönetilen kuralları dışlama desteği eklendi
+* Otomatik tamamlamaya SocketAddr eklendi
+
+#### <a name="azhealthcareapis"></a>Az.HealthcareApis
+* Özel Durum İşleme
+
+#### <a name="azkeyvault"></a>Az.KeyVault
+* Ayarlanmamış olabilecek değere erişirken gerçekleşen hata düzeltildi
+* Eliptik Eğri Şifrelemesi Sertifika Yönetimi
+    - Sertifika İlkeleri için Eğri belirtme desteği eklendi
+
+#### <a name="azmonitor"></a>Az.Monitor
+* Tanılama Ayarları Ekle komutuna isteğe bağlı bağımsız değişken eklendi. Mevcut olduğunda, Log Analytics’e aktarmanın sabit bir şemaya (ayrılmış veri türü olarak da bilinir) yönelik olması gerektiğini belirten bir anahtar bağımsız değişkeni
+
+#### <a name="aznetwork"></a>Az.Network
+* AzureFirewall Uygulama, NAT ve Ağ Kuralları içinde IpGroups desteği.
+
+#### <a name="azresources"></a>Az.Resources
+* Şablon parametresi adının yerleşik bir parametre adıyla çakışması durumunda şablon dağıtımının, şablon parametresini okuyamamasına neden olan sorun düzeltildi.
+* İlke cmdlet’leri, ilke kümesi tanımları içinde gruplandırma desteği sunan yeni API sürümü 2019-09-01’i kullanacak şekilde güncelleştirildi.
+
+#### <a name="azsql"></a>Az.Sql
+* Güvenlik Açığı Değerlendirmesi otomatik etkinleştirmesi, depolamayı StorageV2'de oluşturacak şekilde yükseltildi
+
+#### <a name="azstorage"></a>Az.Storage
+* OAuth kimlik doğrulaması tabanlı Depolama Bağlamı ile Blob/Kapsayıcı Kimliği tabanlı SAS belirteci oluşturma desteği
+    - New-AzStorageContainerSASToken
+    - New-AzStorageBlobSASToken
+* Tüm Kimlik SAS belirteçleri iptal edilecek şekilde Depolama Hesabı Kullanıcı Temsilcisi Anahtarlarını iptal etme desteği
+    - Revoke-AzStorageAccountUserDelegationKeys
+* Microsoft.Azure.Management.Storage, yeni API sürümü 2019-06-01 desteklenecek şekilde 14.2.0 sürümüne güncelleştirildi.
+* Yönetim düzlemi Dosya paylaşımı cmdlet’lerinde 5120’den yüksek Paylaşım QuotaGiB değeri desteği ve 'QuotaGiB' parametresine 'Quota' parametre diğer adı eklendi 
+    - New-AzRmStorageShare
+    - Update-AzRmStorageShare
+* 'Quota' parametresine 'QuotaGiB' parametre diğer adı eklendi
+    - Set-AzStorageShareQuota
+* Set-AzStorageContainerAcl’nin depolanan Erişim İlkesini temizlemesine neden olan sorun düzeltildi
+    - Set-AzStorageContainerAcl
+
+## <a name="310---november-2019"></a>3.1.0 - Kasım 2019
+### <a name="highlights-since-the-last-major-release"></a>Son ana sürümden bu yana öne çıkanlar
+* Az.DataBoxEdge 1.0.0 yayımlandı
+* Az.SqlVirtualMachine 1.0.0 yayımlandı
+
+#### <a name="azcompute"></a>Az.Compute
+* VM Reapply özelliği
+    - Set-AzVM cmdlet’ine Reapply parametresi ekleme
+* VM Ölçek Kümesi AutomaticRepairs özelliği:
+    - EnableAutomaticRepair, AutomaticRepairGracePeriod ve AutomaticRepairMaxInstanceRepairsPercent parametreleri şu cmdlet’lere eklendi:   New-AzVmssConfig   Update-AzVmss
+* New-AzVM için kiracılar arası galeri görüntüsü desteği
+* New-AzVM, New-AzVMConfig ve New-AzVmss cmdlet’lerindeki Priority parametresinin bağımsız değişken tamamlayıcısına ‘Spot’ eklendi.
+* Add-AzVmssDataDisk cmdlet’ine DiskIOPSReadWrite ve DiskMBpsReadWrite parametreleri eklendi
+* New-AzGalleryImageVersion cmdlet’inin SourceImageId parametresi isteğe bağlı olacak şekilde değiştirildi
+* New-AzGalleryImageVersion cmdlet’ine OSDiskImage ve DataDiskImage parametreleri eklendi
+* New-AzGalleryImageDefinition cmdlet’ine HyperVGeneration parametresi eklendi
+* New-AzVmss, New-AzVmssConfig ve Update-AzVmss cmdlet’lerine SkipExtensionsOnOverprovisionedVMs parametreleri eklendi
+
+#### <a name="azdataboxedge"></a>Az.DataBoxEdge
+* `Get-AzDataBoxEdgeOrder` cmdlet’i eklendi
+    - Sırayı Al
+* `New-AzDataBoxEdgeOrder` cmdlet’i eklendi
+    - Yeni Sıra oluştur
+* `Remove-AzDataBoxEdgeOrder` cmdlet’i eklendi
+    - Sırayı kaldır
+* `New-AzDataBoxEdgeShare` cmdlet’inde değiştir
+    - Yerel Paylaşım’ı oluşturur
+* `Set-AzDataBoxEdgeRole` cmdlet’i eklendi
+    - IotRole artık Paylaş ile eşlenebilir
+* `Invoke-AzDataBoxEdgeDevice` cmdlet’i eklendi
+    - Tarama güncelleştirmesi çağırın, güncelleştirmeyi indirin ve bunları cihaza yükleyin
+* `Get-AzDataBoxEdgeTrigger` cmdlet’i eklendi
+    - Tetikleyicilere ilişkin bilgileri alır
+* `New-AzDataBoxEdgeTrigger` cmdlet’i eklendi
+    - Yeni Tetikleyiciler oluştur
+* `Remove-AzDataBoxEdgeTrigger` cmdlet’i eklendi
+    - Tetikleyicileri kaldır
+
+#### <a name="azdatafactory"></a>Az.DataFactory
+* ADF .Net SDK sürümü 4.4.0’a güncelleştirildi
+* Özel kurulum betiği olmadan kurulum yapılandırmalarını ve 3. taraf bileşenleri etkinleştirmek üzere ‘Set-AzureRmDataFactoryV2IntegrationRuntime’ komutu için ‘ExpressCustomSetup’ parametresi eklendi.
+
+#### <a name="azdatalakestore"></a>Az.DataLakeStore
+* Get-AzDataLakeStoreDeletedItem ve Restore-AzDataLakeStoreDeletedItem parametrelerinin belgeleri güncelleştirildi
+
+#### <a name="azeventhub"></a>Az.EventHub
+* #10301 numaralı şu sorun düzeltildi: SAS Belirtecinin tarih biçimi düzeltildi
+
+#### <a name="azfrontdoor"></a>Az.FrontDoor
+* Enable-AzFrontDoorCustomDomainHttps ve New-AzFrontDoorFrontendEndpointObject öğelerine MinimumTlsVersion parametresi eklendi
+* New-AzFrontDoorHealthProbeSettingObject öğesine HealthProbeMethod ve EnabledState parametreleri eklendi
+* BackendPoolsSettings öğesinin Front Door oluşturmasına/güncelleştirmesine geçmesi için BackendPoolsSettings nesnesi oluşturmaya yönelik yeni cmdlet eklendi
+    - New-AzFrontDoorBackendPoolsSettingObject
+
+#### <a name="aznetwork"></a>Az.Network
+* ‘Start-AzVirtualNetworkGatewayConnectionPacketCapture.md’ ve 'Start-AzVirtualnetworkGatewayPacketCapture.md' FilterData seçeneği örnekleri değiştirildi.
+
+#### <a name="azprivatedns"></a>Az.PrivateDns
+* PrivateDns .Net SDK’sı sürüm 1.0.0’a güncelleştirildi
+
+#### <a name="azrecoveryservices"></a>Az.RecoveryServices
+* Koruma etkinleştirilirken disk türünü seçmeye yönelik Azure Site Recovery desteği.
+* Kurtarma planı eylemi düzenlemesine yönelik Azure Site Recovery hata düzeltmesi.
+* Dosya akışı Veritabanlarını kabul etmek için Azure Backup SQL Geri yükleme desteği.
+
+#### <a name="azrediscache"></a>Az.RedisCache
+* ‘New-AzRedisCache’ ve ‘Set-AzRedisCache’ cmdletlerine ‘MinimumTlsVersion’ parametresi eklendi. ‘Get-AzRedisCache’ cmdlet’inin çıkışına ‘MinimumTlsVersion’ eklendi.
+* ‘Set-AzRedisCache’ ve ‘New-AzRedisCache’ cmdletlerine yönelik ‘-Size’ parametresine doğrulama eklendi.
+
+#### <a name="azresources"></a>Az.Resources
+- İlke cmdletleri, ilke atamasında EnforcementMode özelliğine sahip yeni 2019-06-01 api sürümünü kullanacak şekilde güncelleştirildi.
+- İlke tanımı oluştur yardım örneği güncelleştirildi
+- Remove-AZADServicePrincipal -ServicePrincipalName’in boş referans adı bulunamadığında boş referans sunması hatası düzeltildi.
+- Kiracının aboneliği olmadığında New-AZADServicePrincipal’ın boş referans sunmasına ilişkin hata düzeltildi.
+- Kimlik bilgilerini yalnızca ilişkili uygulamaya eklemek için New-AzAdServicePrincipal değiştirildi.
+
+#### <a name="azsql"></a>Az.Sql
+* ReadReplicaCount veritabanı için destek eklendi.
+* Alan yedekliliği ayarlı olmadığında Set-AzSqlDatabase düzeltildi
+
+## <a name="300---november-2019"></a>3.0.0 - Kasım 2019
+### <a name="general"></a>Genel
+* Az.PrivateDns 1.0.0 yayınlandı
+
+#### <a name="azaccounts"></a>Az.Accounts
+* 'Resolve-Error' diğer adı için bir kullanımdan kaldırma iletisi ekleyin.
+
+#### <a name="azadvisor"></a>Az.Advisor
+* Get-AzAdvisorRecommendation cmdlet'ine yeni 'Operational Excellence' (Operasyonel Mükemmellik) kategorisi eklendi.
+
+#### <a name="azbatch"></a>Az.Batch
+* `BatchAccountContext` içinde `CoreQuota`, `DedicatedCoreQuota` olarak yeniden adlandırıldı. Ayrıca yeni bir `LowPriorityCoreQuota` var.
+  - Bu **Get-AzBatchAccount** cmdlet'ini etkiliyor.
+* **New-AzBatchTask** `-ResourceFile` parametresi şimdi yeni **New-AzBatchResourceFile** cmdlet'i kullanılarak oluşturulabilen bir `PSResourceFile` koleksiyonu alıyor.
+* `PSResourceFile` nesnelerini oluşturmaya yardımcı olmak için yeni **New-AzBatchResourceFile** cmdlet'i. Bunlar `-ResourceFile` parametresinde **New-AzBatchTask** cmdlet'ine sağlanabilir.
+  - Mevcut `HttpUrl` yolunun yanı sıra iki tür yeni kaynak dosyasını destekliyor:
+    - `AutoStorageContainerName` tabanlı kaynak dosyaları bir otomatik depolama kapsayıcısının tamamını Batch düğümüne indiriyor.
+    - `StorageContainerUrl` tabanlı kaynak dosyaları URL'de belirtilen kapsayıcıyı Batch düğümüne indiriyor.
+* **Get-AzBatchApplication** tarafından döndürülen `PSApplication` öğesinin `ApplicationPackages` özelliği kaldırıldı.
+  - Uygulamanın içindeki belirli paketler artık **Get-AzBatchApplicationPackage** kullanılarak alınabilir. Örneğin: `Get-AzBatchApplication -AccountName myaccount -ResourceGroupName myresourcegroup -ApplicationId myapplication`.
+* **Get-AzBatchApplicationPackage**, **New-AzBatchApplicationPackage**, **Remove-AzBatchApplicationPackage**, **Get-AzBatchApplication**, **New-AzBatchApplication**, **Remove-AzBatchApplication**, ve **Set-AzBatchApplication** cmdlet'lerinde `ApplicationId` parametresi `ApplicationName` olarak yeniden adlandırıldı.
+  - `ApplicationId` artık `ApplicationName` parametresinin diğer adıdır.
+* `PSUserAccount` öğesine yeni `PSWindowsUserConfiguration` özelliği eklendi.
+* `PSApplicationPackage` içinde `Version` öğesi `Name` olarak yeniden adlandırıldı.
+* `PSResourceFile` içinde `BlobSource` öğesi `HttpUrl` olarak yeniden adlandırıldı.
+* `PSVirtualMachineConfiguration` içinden `OSDisk` özelliği kaldırıldı.
+* **Set-AzBatchPoolOSVersion** kaldırıldı. Bu işlem artık desteklenmiyor.
+* `PSCloudServiceConfiguration` içinden `TargetOSVersion` kaldırıldı.
+* `PSCloudServiceConfiguration` içinde `CurrentOSVersion` öğesi `OSVersion` olarak yeniden adlandırıldı.
+* `PSPoolUsageMetrics` içinden `DataEgressGiB` ve `DataIngressGiB` kaldırıldı.
+* **Get-AzBatchNodeAgentSku** kaldırıldı ve bunun yerini **Get-AzBatchSupportedImage** aldı. 
+  - **Get-AzBatchSupportedImage**, **Get-AzBatchNodeAgentSku** ile aynı verileri ama daha kullanımı kolay bir biçimde döndürüyor.
+  - Artık yeni doğrulanmamış resimler de döndürülüyor. Her resim için `Capabilities` ve `BatchSupportEndOfLife` hakkında ek bilgiler de ekleniyor.
+* **New-AzBatchPool** cmdlet'inin `MountConfiguration` parametresiyle havuzun her düğümünde uzak dosya sistemlerini bağlama özelliği eklendi.
+* Artık trafiğin kaynak bağlantı noktası temelinde havuza ağ erişimini engelleyen ağ güvenlik kuralları destekleniyor. Bu destek `PSNetworkSecurityGroupRule` öğesinin `SourcePortRanges` özelliğiyle sağlanıyor.
+* Kapsayıcıyı çalıştırırken, şimdi Batch görevin kapsayıcı çalışma dizininde veya Batch görevi çalışma dizininde yürütülmesini destekliyor. Bu, `PSTaskContainerSettings` öğesinin `WorkingDirectory` özelliğiyle denetleniyor.
+* Yeni `PublicIPs` özelliği aracılığıyla `PSNetworkConfiguration` parametresinde bir genel IP koleksiyonu belirtme olanağı eklendi. Bu sayede Havuzdaki düğümlerin kullanıcı tarafından sağlanan IP listesinden bir IP alması garanti ediliyor.
+* Belirtilmediğinde, `PSSTartTask` üzerindeki `WaitForSuccess` öğesinin varsayılan değeri artık `$True` (daha önce `$False` değeriydi).
+* Belirtilmediğinde, `PSAutoUserSpecification` üzerindeki `Scope` öğesinin varsayılan değeri artık `Pool` (daha önce Windows'da `Task` ve Linux'ta `Pool` değeriydi).
+
+#### <a name="azcdn"></a>Az.Cdn
+* RulesEngine'e UrlRewriteAction ve CacheKeyQueryStringAction eklendi.
+* New-AzDeliveryRuleCondition cmdlet'inde eksik 'Selector' Girişi gibi çeşitli hatalar düzeltildi.
+
+#### <a name="azcompute"></a>Az.Compute
+* Disk Şifreleme Kümesi özelliği
+    - Yeni cmdlet’ler:   New-AzDiskEncryptionSetConfig   New-AzDiskEncryptionSet   Get-AzDiskEncryptionSet   Remove-AzDiskEncryptionSet
+    - Aşağıdaki cmdlet'lere DiskEncryptionSetId parametresi eklendi: Set-AzImageOSDisk Set-AzVMOSDisk Set-AzVmssStorageProfile        
+        Add-AzImageDataDisk New-AzVMDataDisk Set-AzVMDataDisk Add-AzVMDataDisk Add-AzVmssDataDisk Add-AzVmssVMDataDisk
+    - Aşağıdaki cmdlet'lere DiskEncryptionSetId ve EncryptionType parametreleri eklendi:   New-AzDiskConfig   New-AzSnapshotConfig
+* New-AzVmssIPConfig cmdlet'ine PublicIPAddressVersion parametresi eklendi
+* Özel betik uzantısının FileUris öğesi genel ayardan korumalı ayara taşındı
+* New-AzVmss, New-AzVmssConfig ve Update-AzVmss cmdlet'lerine ScaleInPolicy eklendi
+* Yeni değişiklikler
+    - CreateOption değeri Upload olduğunda New-AzDiskConfig cmdlet'i için DiskSizeGB yerine UploadSizeInBytes parametresi kullanılıyor
+    - GalleryImageVersion nesnesinde PublishingProfile.Source.ManagedImage.Id yerini StorageProfile.Source.Id'ye bıraktı
+
+#### <a name="azdatafactory"></a>Az.DataFactory
+* ADF .Net SDK sürümü 4.3.0’a güncelleştirildi
+
+#### <a name="azdatalakestore"></a>Az.DataLakeStore
+* ADLS SDK sürümünün güncelleştirilmesi (https://github.com/Azure/azure-data-lake-store-net/blob/preview-alpha/CHANGELOG.md#version-123-alpha) aşağıdaki düzeltmeleri sağlıyor
+* Geri dönüşüm kutusu veya dizin girdisinin creationtime öğesi seri durumdan çıkarılamadığında özel durum oluşturulmasını önleme.
+* adlsclient içinde istek başına zaman aşımı ayarını kullanıma sunma
+* badoffset kurtarması için özgün syncflag değerinin geçirilmesini düzeltme
+* Yanıt denetlendikten sonra devamlılık belirtecini almak için EnumerateDirectory'yi düzeltme
+* Birleştirme Hatasını Düzeltme
+
+#### <a name="azfrontdoor"></a>Az.FrontDoor
+* Modüllerde çeşitli yazım hataları düzeltildi
+
+#### <a name="azhdinsight"></a>Az.HDInsight
+* ADLSGen1 depolamasıyla kümeyi almak için Get-AzHDInsightCluster cmdlet'ini kullandığında müşterinin 'Geçerli bir Base-64 dizesi değil' hatası almasına yol açan hata düzeltildi.
+* Müşterinin Azure Data Lake'e erişirken hizmet sorumlusu uygulama kimliğini sağlayabilmesi için üç cmdlet'e (Add-AzHDInsightClusterIdentity, New-AzHDInsightClusterConfig ve New-AzHDInsightCluster) 'ApplicationId' parametresi eklendi.
+* Microsoft.Azure.Management.HDInsight 2.1.0'dan 5.1.0'a geçirildi
+* Beş cmdlet kaldırıldı:
+    - Get-AzHDInsightOMS
+    - Enable-AzHDInsightOMS
+    - Disable-AzHDInsightOMS
+    - Grant-AzHDInsightRdpServicesAccess
+    - Revoke-AzHDInsightRdpServicesAccess
+* Üç cmdlet eklendi:
+    - Get-AzHDInsightMonitoring (Get-AzHDInsightOMS yerine).
+    - Enable-AzHDInsightMonitoring (Enable-AzHDInsightOMS yerine).
+    - Disable-AzHDInsightMonitoring (Disable-AzHDInsightOMS yerine).
+* Belirli bir konumdan özellik bilgilerinin alınmasını desteklemek için Get-AzHDInsightProperties cmdlet'i düzeltildi.
+* Add-AzHDInsightConfigValue cmdlet'inden parametre kümeleri ('Spark1', 'Spark2') kaldırıldı.
+* Add-AzHDInsightSecurityProfile cmdlet'inin yardım belgelerine örnekler eklendi.
+* Aşağıdaki cmdlet'lerin çıkış türü değiştirildi:
+*  - Get-AzHDInsightProperties cmdlet'inin CapabilitiesResponse olan çıkış türü AzureHDInsightCapabilities olarak değiştirildi.
+*  - Remove-AzHDInsightCluster cmdlet'inin ClusterGetResponse olan çıkış türü bool olarak değiştirildi.
+*  - Set-AzHDInsightGatewaySettings cmdlet'inin HttpConnectivitySettings olan çıkış türü GatewaySettings olarak değiştirildi.
+* Bazı senaryo test çalışmaları eklendi.
+* Bazı diğer adlar kaldırıldı: 'Add-AzHDInsightConfigValues', 'Get-AzHDInsightProperties'.
+
+#### <a name="aziothub"></a>Az.IotHub
+* Hataya neden olan değişiklikler:
+    - 'Add-AzIotHubEventHubConsumerGroup' cmdlet'i artık 'EventHubEndpointName' parametresini desteklemiyor ve özgün parametre adı için hiçbir diğer ad bulunamadı.
+    - 'Add-AzIotHubEventHubConsumerGroup' cmdlet'inden '__AllParameterSets' parametre kümesi kaldırıldı.
+    - 'Get-AzIotHubEventHubConsumerGroup' cmdlet'i artık 'EventHubEndpointName' parametresini desteklemiyor ve özgün parametre adı için hiçbir diğer ad bulunamadı.
+    - 'Get-AzIotHubEventHubConsumerGroup' cmdlet'inden '__AllParameterSets' parametre kümesi kaldırıldı.
+    - 'Microsoft.Azure.Commands.Management.IotHub.Models.PSIotHubProperties' türündeki 'OperationsMonitoringProperties' özelliği kaldırıldı.
+    - 'Microsoft.Azure.Commands.Management.IotHub.Models.PSIotHubInputProperties' türündeki 'OperationsMonitoringProperties' özelliği kaldırıldı.
+    - 'New-AzIotHubExportDevice' cmdlet'i artık 'New-AzIotHubExportDevices' diğer adını desteklemiyor.
+    - 'New-AzIotHubImportDevice' cmdlet'i artık 'New-AzIotHubImportDevices' diğer adını desteklemiyor.
+    - 'Remove-AzIotHubEventHubConsumerGroup' cmdlet'i artık 'EventHubEndpointName' parametresini desteklemiyor ve özgün parametre adı için hiçbir diğer ad bulunamadı.
+    - 'Remove-AzIotHubEventHubConsumerGroup' cmdlet'inden '__AllParameterSets' parametre kümesi kaldırıldı.
+    - 'Set-AzIotHub' cmdet'i artık 'OperationsMonitoringProperties' parametresini desteklemiyor ve özgün parametre adı için hiçbir diğer ad bulunamadı.
+    - 'Set-AzIotHub' cmdlet'inden 'UpdateOperationsMonitoringProperties' parametre kümesi kaldırıldı.
+
+#### <a name="azrecoveryservices"></a>Az.RecoveryServices
+* NSG, genel IP ve Azure'dan Azure'a iç yük dengeleyiciler gibi ağ kaynaklarını yapılandırmak için Azure Site Recovery desteği.
+* Azure'a vMWare için yönetilen diske yazmaya yönelik Azure Site Recovery Desteği.
+* Azure'a vMWare için NIC azaltmasına yönelik Azure Site Recovery Desteği.
+* Azure'a Azure için hızlandırılmış ağa yönelik Azure Site Recovery Desteği.
+* Azure'a Azure için aracı otomatik güncelleştirmesine yönelik Azure Site Recovery Desteği.
+* Azure'a Azure için Standart SSD'ye yönelik Azure Site Recovery Desteği.
+* Azure'a Azure için Azure Disk Şifrelemesi iki geçişine yönelik Azure Site Recovery Desteği.
+* Azure'a Azure için yeni eklenen diski korumaya yönelik Azure Site Recovery Desteği.
+* VM için SoftDelete özelliği eklendi ve softdelete için de testler eklendi
+
+#### <a name="azresources"></a>Az.Resources
+* Bağımlılık derlemesi Microsoft.Extensions.Caching.Memory 1.1.1'den 2.2'ye güncelleştirildi
+
+#### <a name="aznetwork"></a>Az.Network
+* PrivateEndpointConnection için tüm cmdlet'ler genel hizmet sağlayıcısını destekleyecek şekilde değiştirildi.
+    - Şu cmdlet güncelleştirildi:
+        - Approve-AzPrivateEndpointConnection
+        - Deny-AzPrivateEndpointConnection
+        - Get-AzPrivateEndpointConnection
+        - Remove-AzPrivateEndpointConnection
+        - Set-AzPrivateEndpointConnection
+* PrivateLinkResource için yeni cmdlet eklendi ve bu da genel hizmet sağlayıcısını destekliyor.
+    - Yeni cmdlet:
+        - Get-AzPrivateLinkResource
+* Proxy Protocol V2 özelliği için yeni alanlar ve parametre eklendi.
+    - PrivateLinkService'e EnableProxyProtocol özelliği eklendi
+    - PrivateEndpointConnection'a LinkIdentifier özelliği eklendi
+    - New-AzPrivateLinkService cmdlet'i yeni isteğe bağlı EnableProxyProtocol parametresi eklenerek güncelleştirildi.
+* 'New-AzApplicationGatewaySku' başvuru belgelerindeki yanlış parametre açıklaması düzeltildi
+* Azure güvenlik duvarı ilkesini desteklemek için yeni cmdlet'ler eklendi
+* VirtualHub'ın RouteTables alt kaynağı için destek eklendi
+    - Yeni cmdlet'ler eklendi:
+        - Add-AzVirtualHubRoute
+        - Add-AzVirtualHubRouteTable
+        - Get-AzVirtualHubRouteTable
+        - Remove-AzVirtualHubRouteTable
+        - Set-AzVirtualHub
+* VirtualWan'ın yeni VirtualHub ve VirtualWANType özellikleri Sku'su için destek eklendi
+    - Cmdlet'ler isteğe bağlı parametrelerle güncelleştirildi:
+        - New-AzVirtualHub : Sku parametresi eklendi
+        - Update-AzVirtualHub : Sku parametresi eklendi
+        - New-AzVirtualWan : VirtualWANType parametresi eklendi
+        - Update-AzVirtualWan : VirtualWANType parametresi eklendi
+* HubVnetConnection, VpnConnection ve ExpressRouteConnection için EnableInternetSecurity özelliği desteği eklendi
+    - Yeni cmdlet'ler eklendi:
+        - Update-AzureRmVirtualHubVnetConnection
+    - Cmdlet'ler isteğe bağlı parametrelerle güncelleştirildi:
+        - New-AzureRmVirtualHubVnetConnection : EnableInternetSecurity parametresi eklendi
+        - New-AzureRmVpnConnection : EnableInternetSecurity parametresi eklendi
+        - Update-AzureRmVpnConnection : EnableInternetSecurity parametresi eklendi
+        - New-AzureRmExpressRouteConnection : EnableInternetSecurity parametresi eklendi
+        - Set-AzureRmExpressRouteConnection : EnableInternetSecurity parametresi eklendi
+* TopLevel WebApplicationFirewall İlkesini Yapılandırma desteği eklendi
+    - Yeni cmdlet'ler eklendi:
+        - New-AzApplicationGatewayFirewallPolicySetting
+        - New-AzApplicationGatewayFirewallPolicyExclusion
+        - New-AzApplicationGatewayFirewallPolicyManagedRuleGroupOverride
+        - New-AzApplicationGatewayFirewallPolicyManagedRuleOverride
+        - New-AzApplicationGatewayFirewallPolicyManagedRule
+        - New-AzApplicationGatewayFirewallPolicyManagedRuleSet
+    - Cmdlet'ler isteğe bağlı parametrelerle güncelleştirildi:
+        - New-AzApplicationGatewayFirewallPolicy : PolicySetting, ManagedRule parametreleri eklendi
+* CustomRule'da Geo-Match işleci için destek eklendi
+    - FirewallCondition'da işlece GeoMatch eklendi
+* perListener ve perSite Güvenlik duvarı ilkesi için destek eklendi
+    - Cmdlet'ler isteğe bağlı parametrelerle güncelleştirildi:
+        - New-AzApplicationGatewayHttpListener : FirewallPolicy, FirewallPolicyId parametreleri eklendi
+        - New-AzApplicationGatewayPathRuleConfig : FirewallPolicy, FirewallPolicyId parametreleri eklendi
+* 'PSBastion' içinde AzureBastionSubnet adlı gerekli alt ağın büyük/küçük harfe duyarlı olması düzeltildi
+* Azure Güvenlik Duvarı için Ağ Kurallarında Hedef FQDN'lere ve NAT Kurallarında Çevrilmiş FQDN'ye yönelik destek
+* IpGroup'un RouteTables üst düzey kaynağı için destek eklendi
+    - Yeni cmdlet'ler eklendi:
+        - New-AzIpGroup
+        - Remove-AzIpGroup
+        - Get-AzIpGroup
+        - Set-AzIpGroup
+
+#### <a name="azservicefabric"></a>Az.ServiceFabric
+* Bu senaryo artık Add-AzVmssSecret cmdlet'inin kapsamına girdiğinden Add-AzServiceFabricApplicationCertificate cmdlet'i kaldırıldı.
+
+#### <a name="azsql"></a>Az.Sql
+* Yönetilen Örneklerde bırakılan veritabanlarını geri yükleme desteği eklendi.
+* Eski denetim cmdlet'leri kodda kullanım dışı bırakıldı.
+* Kullanım dışı bırakılan diğer adlar kaldırıldı:
+* Get-AzSqlDatabaseIndexRecommendations (bunun yerine Get-AzSqlDatabaseIndexRecommendation kullanın)
+* Get-AzSqlDatabaseRestorePoints (bunun yerine Get-AzSqlDatabaseRestorePoint kullanıldı)
+* Get-AzSqlDatabaseSecureConnectionPolicy cmdlet'i kaldırıldı
+* Kullanım dışı bırakılan Güvenlik Açığı Değerlendirmesi Ayarları cmdlet'lerinin diğer adları kaldırıldı
+* Gelişmiş Tehdit Algılama Ayarları cmdlet'leri kullanım dışı bırakıldı 
+* Veritabanındaki sütunlarda duyarlılık önerilerini devre dışı bırakma ve etkinleştirme cmdlet'leri eklendi.
+
+#### <a name="azstorage"></a>Az.Storage
+* Depolama hesabı oluşturulur veya güncelleştirilirken Büyük dosya paylaşımını etkinleştirme desteği
+    -  New-AzStorageAccount
+    -  Set-AzStorageAccount
+* Dosya işleyicisi kapatılırken/alınırken, DeletePending durumundaki nesnesinde hata olmasını önlemek için giriş yolunun Dosya dizini mi yoksa Dosya mı olduğunu denetlemeyi atlayın
+    -  Get-AzStorageFileHandle
+    -  Close-AzStorageFileHandle
+    
 ## <a name="280---october-2019"></a>2.8.0 - Ekim 2019
 ### <a name="general"></a>Genel
 * Az.HealthcareApis 1.0.0 sürümü
@@ -56,7 +401,7 @@ ms.locfileid: "75035770"
 * Küçük hata düzeltmesi: Get-AzIothub SubscriptionId öğesini döndürmüyor 
 
 #### <a name="azmonitor"></a>Az.Monitor
-* New-AzActionGroupReceiver için yeni eylem grubu alıcıları eklendi:   -ItsmReceiver   -VoiceReceiver   -ArmRoleReceiver   -AzureFunctionReceiver   -LogicAppReceiver   -AutomationRunbookReceiver   -AzureAppPushReceiver
+* Eylem grupları -ItsmReceiver -VoiceReceiver -ArmRoleReceiver -AzureFunctionReceiver -LogicAppReceiver -AutomationRunbookReceiver -AzureAppPushReceiver için yeni eylem grubu alıcıları eklendi
 * Alıcılar için etkinleştirilen ortak uyarı şemasını kullanın. Bunlar SMS, Azure Uygulaması iletimi, ITSM ve ses alıcıları için geçerli değildir
 * Web kancaları artık Azure Active Directory kimlik doğrulamasını destekliyor.
 
@@ -64,10 +409,8 @@ ms.locfileid: "75035770"
 * Hizmet Uç Noktası İlkeleri için kullanılabilen diğer adları almak için çağrılabilen Get-AzAvailableServiceAlias cmdlet’i eklendi.
 * Sanal Ağ Geçidi Bağlantılarına trafik seçicileri eklemeye yönelik destek eklendi
     - Yeni cmdlet'ler eklendi:
-        - New-AzIpsecTrafficSelectorPolicy
-    - Cmdlet’ler isteğe bağlı -TrafficSelectorPolicies parametresi ile güncelleştirildi
-        - New-AzVirtualNetworkGatewayConnection
-        - Set-AzVirtualNetworkGatewayConnection
+        - New-AzureRmTrafficSelectorPolicy
+    - Cmdlet’ler, şu isteğe bağlı parametreler ile güncelleştirildi: -TrafficSelectorPolicies -New-AzureRmVirtualNetworkGatewayConnection -Set-AzureRmVirtualNetworkGatewayConnection
 * Ağ güvenlik kuralı yapılandırmalarında ESP ve AH protokollerine yönelik destek eklendi
     - Cmdlet'ler güncelleştirildi:
         - Add-AzNetworkSecurityRuleConfig
@@ -222,7 +565,7 @@ ms.locfileid: "75035770"
     -  Remove-AzRmStorageShare
 
 #### <a name="azwebsites"></a>Az.Websites
-* Uygulama yeni ASP’ye geçirilirken webapp etiketlerinin silinmesine neden olan sorun düzeltiliyor
+* Uygulamanın yeni ASP’ye geçirilmesi sırasında webapp Etiketlerinin silinmesine neden olan bir sorun düzeltiliyor
 * Publish-AzureWebapp cmdlet’i Linux ve Windows üzerinde çalışacak şekilde düzeltiliyor
 * 'Get-AzWebAppPublishingProfile' başvuru belgesindeki örnek güncelleştirildi
 
