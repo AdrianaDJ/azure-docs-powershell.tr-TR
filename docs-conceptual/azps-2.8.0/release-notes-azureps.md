@@ -23,7 +23,7 @@ ms.locfileid: "75035770"
 
 #### <a name="azapimanagement"></a>Az.ApiManagement
 * **Set-AzApiManagementApi** - ApiVersionSet’e Güncelleştirme API’si desteği eklendi
-    - https://github.com/Azure/azure-powershell/issues/10068 sorunu düzeltildi
+    - [https://github.com/Azure/azure-powershell/issues/10068](https://github.com/Azure/azure-powershell/issues/10068 ) sorunu düzeltildi
 
 #### <a name="azautomation"></a>Az.Automation
 * Linux yeniden başlatma ayarı parametresi için New-AzureAutomationSoftwareUpdateConfiguration cmdlet’i düzeltildi. 
@@ -238,7 +238,7 @@ ms.locfileid: "75035770"
     * Burada daha fazla bilgi bulunabilir: https://github.com/Azure/azure-powershell/issues/9847
 
 #### <a name="azapimanagement"></a>Az.ApiManagement
-* https://github.com/Azure/azure-powershell/issues/9351 sorunu düzeltildi
+* [https://github.com/Azure/azure-powershell/issues/9351](https://github.com/Azure/azure-powershell/issues/9351 ) sorunu düzeltildi
     - ProductID, APIID, GroupID ve UserID için kısıtlamaları zorunlu kılmayan .NET NuGet sürümü güncelleştirildi
 * **Get-AzApiManagementProduct** - Ürünleri API kullanarak sorgulama desteği eklendi.
   https://github.com/Azure/azure-powershell/issues/9482
@@ -452,11 +452,11 @@ ms.locfileid: "75035770"
 * Bu modül, artık toplama `Az` modülünün bir parçası olarak sunulur
 
 #### <a name="azapimanagement"></a>Az.ApiManagement
-* https://github.com/Azure/azure-powershell/issues/8671 sorunu düzeltildi
+* [https://github.com/Azure/azure-powershell/issues/8671](https://github.com/Azure/azure-powershell/issues/8671 ) sorunu düzeltildi
     - **Get-AzApiManagementSubscription**
         - Abonelikleri Kullanıcı ve Ürüne göre sorgulama desteği eklendi
         - Kapsam kullanarak sorgulama desteği eklendi ('/', '/apis', '/apis/echo-api')
-* https://github.com/Azure/azure-powershell/issues/9307 ve https://github.com/Azure/azure-powershell/issues/8432 sorunları için düzeltme
+* [https://github.com/Azure/azure-powershell/issues/9307](https://github.com/Azure/azure-powershell/issues/9307 ) ve https://github.com/Azure/azure-powershell/issues/8432 sorunları için düzeltme
     - **Import-AzApiManagementApi**
         - API’leri içeri aktarırken ‘ApiVersion’ ve ‘ApiVersionSetId’ belirtmek için destek eklendi
 
@@ -773,10 +773,10 @@ ms.locfileid: "75035770"
 
 #### <a name="azautomation"></a>Az.Automation
 * Get-AzAutomationJobOutputRecord, JSON ve Text kayıt değerlerini işleyecek şekilde güncelleştirildi.
-    - https://github.com/Azure/azure-powershell/issues/7977 sorunu düzeltildi
-    - https://github.com/Azure/azure-powershell/issues/8600 sorunu düzeltildi
+    - [https://github.com/Azure/azure-powershell/issues/7977](https://github.com/Azure/azure-powershell/issues/7977 ) sorunu düzeltildi
+    - [https://github.com/Azure/azure-powershell/issues/8600](https://github.com/Azure/azure-powershell/issues/8600 ) sorunu düzeltildi
 * Start-AzAutomationDscCompilationJob cmdlet'inin davranışı tamamlanmasını beklemek yerine yalnızca işi başlatacak şekilde değiştirildi.
-    * https://github.com/Azure/azure-powershell/issues/8347 sorunu düzeltildi
+    * [https://github.com/Azure/azure-powershell/issues/8347](https://github.com/Azure/azure-powershell/issues/8347 ) sorunu düzeltildi
 * Get-AzAutomationDscNode için -Name kullanıldığında tüm düğümlerin döndürülmesi sorunu düzeltildi. Artık yalnızca eşleşen düğüm döndürülüyor.
 
 #### <a name="azcompute"></a>Az.Compute
@@ -1221,9 +1221,9 @@ ms.locfileid: "75035770"
     - Belirli Application-Insights kaynak parametrelerine (abonelik kimliği, resourceGroupName ve ad) göre veri kaynağı oluşturmak için New-AzOperationalInsightsApplicationInsightsDataSource cmdlet’i eklendi. 
 
 #### <a name="azresources"></a>Az.Resources
-* https://github.com/Azure/azure-powershell/issues/8166 sorunu düzeltildi
-* https://github.com/Azure/azure-powershell/issues/8235 sorunu düzeltildi
-* https://github.com/Azure/azure-powershell/issues/6219 sorunu düzeltildi
+* [https://github.com/Azure/azure-powershell/issues/8166](https://github.com/Azure/azure-powershell/issues/8166 ) sorunu düzeltildi
+* [https://github.com/Azure/azure-powershell/issues/8235](https://github.com/Azure/azure-powershell/issues/8235 ) sorunu düzeltildi
+* [https://github.com/Azure/azure-powershell/issues/6219](https://github.com/Azure/azure-powershell/issues/6219 ) sorunu düzeltildi
 * KeyCredentials’ın tekrar oluşturmasını engelleyen hata düzeltildi
 
 #### <a name="azsql"></a>Az.Sql
