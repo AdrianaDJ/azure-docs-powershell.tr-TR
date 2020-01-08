@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 06/15/2018
-ms.openlocfilehash: ff50c676d42cad515aea74ea960105ed76f418a6
-ms.sourcegitcommit: b02cbcd00748a4a9a4790a5fba229ce53c3bf973
+ms.openlocfilehash: 5a4ccd67433fe3716df42075a4e2fd035a12af2b
+ms.sourcegitcommit: 2d0c3ffaa5246f680784fa7e15b0d2536c27ff80
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68863305"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75722450"
 ---
 # <a name="install-azure-powershell-on-windows-with-powershellget"></a>PowerShellGet ile Windows'da Azure PowerShell yükleme
 
@@ -56,7 +56,7 @@ PowerShellGet yüklü değilse aşağıdaki tablodan sisteminize özgü yönerge
 |---|---|
 |Windows 10<br/>Windows Server 2016|İşletim sisteminde bulunan Windows Management Framework (WMF) 5.0’da yerleşiktir|
 |PowerShell 5'e yükseltme| <ol><li>[WMF’nin en son sürümünü yükleyin](https://www.microsoft.com/download/details.aspx?id=54616)</li><li>Şu komutu çalıştırın:<br/>```Install-Module PowerShellGet -Force```</li></ol>|
-|PowerShell 3 veya PowerShell 4 yüklü Windows|<ol><il>[PackageManagement modüllerini alın](http://go.microsoft.com/fwlink/?LinkID=746217)</il><li>Şu komutu çalıştırın:<br/>```Install-Module PowerShellGet -Force```</li></ol>|
+|PowerShell 3 veya PowerShell 4 yüklü Windows|<ol><il>[PackageManagement modüllerini alın](https://go.microsoft.com/fwlink/?LinkID=746217)</il><li>Şu komutu çalıştırın:<br/>```Install-Module PowerShellGet -Force```</li></ol>|
 
 > [!NOTE]
 > PowerShellGet kullanımı, betikleri çalıştırmanıza olanak tanıyan bir Yürütme İlkesi gerektirir. PowerShell'in Yürütme İlkesi hakkında daha fazla bilgi için bkz. [Yürütme İlkeleri Hakkında](/powershell/module/microsoft.powershell.core/about/about_execution_policies).

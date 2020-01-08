@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/06/2017
-ms.openlocfilehash: 1f859dcbaca88e28ebc0814513b7f4ee35610dc2
-ms.sourcegitcommit: b02cbcd00748a4a9a4790a5fba229ce53c3bf973
+ms.openlocfilehash: a4911e72f687c07b31805c07fd23263a6b7f33b4
+ms.sourcegitcommit: 2d0c3ffaa5246f680784fa7e15b0d2536c27ff80
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68863226"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75718806"
 ---
 # <a name="installing-the-azure-powershell-service-management-module"></a>Azure PowerShell Service Management modülünü yükleme
 
@@ -74,7 +74,7 @@ Azure PowerShell modülleri sık sık güncelleştirilir. Çevrimiçi cmdlet yar
 
 Azure’daki bazı genel görevleri otomatikleştirmenize yardımcı olabilecek örnek betikler için bkz. [Windows Azure Betik Merkezi](http://www.windowsazure.com/documentation/scripts/).
 
-Windows PowerShell’i yükleme, öğrenme, kullanma ve özelleştirme hakkında genel bilgiler için bkz. [Windows PowerShell ile Betik Oluşturma](http://go.microsoft.com/fwlink/p/?linkid=320210).
+Windows PowerShell’i yükleme, öğrenme, kullanma ve özelleştirme hakkında genel bilgiler için bkz. [Windows PowerShell ile Betik Oluşturma](https://go.microsoft.com/fwlink/p/?linkid=320210).
 
 ### <a name="how-to-get-powershellget"></a>PowerShellGet edinme
 
@@ -82,7 +82,7 @@ Windows PowerShell’i yükleme, öğrenme, kullanma ve özelleştirme hakkında
 |---|---|
 |Bilgisayarımda Windows 10 veya Windows Server 2016 yüklü|İşletim sisteminde bulunan Windows Management Framework (WMF) 5.0’da yerleşiktir|
 |PowerShell 5'e yükseltme yapmak istiyorum|[WMF’nin en son sürümünü yükleyin](https://www.microsoft.com/download/details.aspx?id=54616)|
-|Windows’un PowerShell 3 veya PowerShell 4 içeren bir sürümünü çalıştırıyorum|[PackageManagement modüllerini alın](http://go.microsoft.com/fwlink/?LinkID=746217)|
+|Windows’un PowerShell 3 veya PowerShell 4 içeren bir sürümünü çalıştırıyorum|[PackageManagement modüllerini alın](https://go.microsoft.com/fwlink/?LinkID=746217)|
 
 <div id="helpmechoose"/>
 

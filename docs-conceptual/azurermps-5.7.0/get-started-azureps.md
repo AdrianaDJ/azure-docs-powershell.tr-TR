@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 11/15/2017
-ms.openlocfilehash: e2962245b332939da9d65468b57ced28be31d20a
-ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
+ms.openlocfilehash: fde36bd3b4e2d5780f74f7bc74267ff611116400
+ms.sourcegitcommit: 2d0c3ffaa5246f680784fa7e15b0d2536c27ff80
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65534826"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75722484"
 ---
 # <a name="get-started-with-azure-powershell"></a>Azure PowerShell’i kullanmaya başlama
 
@@ -373,5 +373,5 @@ Azure PowerShell’i kullanmanın yolları hakkında daha fazla bilgi edinmek i�
 * [Azure PowerShell’i kullanarak Azure’da hizmet sorumluları oluşturma](create-azure-service-principal-azureps.md)
 * Eski bir sürümden geçiş ile ilgili olarak Sürüm notlarını okuyun: [https://github.com/Azure/azure-powershell/tree/dev/documentation/release-notes](https://github.com/Azure/azure-powershell/tree/dev/documentation/release-notes).
 * Topluluktan yardım alın:
-  * [MSDN'deki Azure forumu](http://go.microsoft.com/fwlink/p/?LinkId=320212)
-  * [stackoverflow](http://go.microsoft.com/fwlink/?LinkId=320213)
+  * [MSDN'deki Azure forumu](https://go.microsoft.com/fwlink/p/?LinkId=320212)
+  * [stackoverflow](https://go.microsoft.com/fwlink/?LinkId=320213)
