@@ -6,13 +6,13 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 10/15/2019
-ms.openlocfilehash: fb934ed0f8bef5e2aff715debe5d406d54abf24f
-ms.sourcegitcommit: 2d0c3ffaa5246f680784fa7e15b0d2536c27ff80
+ms.date: 01/09/2020
+ms.openlocfilehash: 3806a1c609a71c53c0bddc5bafd51d845c0c296e
+ms.sourcegitcommit: 16904e0a72c55fb81248e0252769defb86c50f36
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75718993"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75831653"
 ---
 # <a name="azure-powershell-release-notes"></a>Azure PowerShell sürüm notları
 
@@ -21,7 +21,7 @@ ms.locfileid: "75718993"
 * Add-AzEnvironment ve Set-AzEnvironment, AzureAttestationServiceEndpointResourceId ve AzureAttestationServiceEndpointSuffix parametrelerini kabul edecek şekilde güncelleştirildi
 
 #### <a name="azcdn"></a>Az.Cdn
-* New-AzCdnEndpoint cmdlet’inde yanıt ayrıntısını görüntüleme hatası
+* New-AzCdnEndpoint cmdlet’inde hata yanıtı ayrıntılarını görüntüleme
 
 #### <a name="azcompute"></a>Az.Compute
 * İşletim sistemi profili bulunmayan, yönetilen OD diskine sahip bir VM için Set-AzVMCustomScriptExtension cmdlet’i düzeltildi.
@@ -41,7 +41,7 @@ ms.locfileid: "75718993"
 * 'Get-AzDataBoxEdgeStorageAccount' cmdlet’i eklendi
   - Edge Depolama Hesabını edinme
 * 'New-AzDataBoxEdgeStorageAccount' cmdlet’i eklendi
-  - Yeni Edge Depolama Hesabı oluşturma
+  - Yeni Edge Depolama Hesabını oluşturma
 * 'Remove-AzDataBoxEdgeStorageAccount' cmdlet’i eklendi
   - Edge Depolama Hesabını kaldırma
 * 'Invoke-AzDataBoxEdgeShare' cmdlet’ini çağırma
@@ -74,7 +74,7 @@ ms.locfileid: "75718993"
   - Update-AzMlOpClusterSystemService
 
 #### <a name="aznetwork"></a>Az.Network
-* 1\.36-önizleme olan Microsoft.Azure.Management.Sql bağımlılığı 1.37-önizleme’ye yükseltildi
+* 1\.36-preview olan Microsoft.Azure.Management.Sql bağımlılığı 1.37-preview’a yükseltildi
 
 #### <a name="azrecoveryservices"></a>Az.RecoveryServices
 * Azure’dan Azure’a sağlayıcı için müşteri tarafından yönetilen anahtarlar ile bekleyen durumda şifrelenen yönetilen disk VM’lerine yönelik Azure Site Recovery değişim desteği.
