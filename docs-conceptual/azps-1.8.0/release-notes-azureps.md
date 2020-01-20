@@ -639,7 +639,7 @@ Application Gateway’de RewriteRuleSets parametresini yapılandırma desteği e
 
 ### <a name="azresources"></a>Az.Resources
 
-* [https://github.com/Azure/azure-powershell/issues/7402](https://github.com/Azure/azure-powershell/issues/7679 ) düzeltmesi
+* https://github.com/Azure/azure-powershell/issues/7679 düzeltmesi
     - Get-AzureRmRoleAssignment, klasik yöneticiler istenirken sağlanmışsa abonelik kapsamını kullanacak şekilde güncelleştirildi.
 
 ### <a name="azsql"></a>Az.Sql
@@ -776,7 +776,7 @@ Application Gateway’de RewriteRuleSets parametresini yapılandırma desteği e
 * İlke düzeltme cmdlet'leri eklendi
 
 #### <a name="azresources"></a>Az.Resources
-* [https://github.com/Azure/azure-powershell/issues/7402](https://github.com/Azure/azure-powershell/issues/7402 ) düzeltmesi
+* https://github.com/Azure/azure-powershell/issues/7402 düzeltmesi
     - 'Get-AzResource' için '-ResourceId' parametresi kullanılarak kaynakların listelenmesine olanak tanındı
 
 #### <a name="azservicebus"></a>Az.ServiceBus
