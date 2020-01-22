@@ -6,13 +6,13 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: get-started-article
-ms.date: 01/14/2019
-ms.openlocfilehash: c515fcbbe4dcb0b6578a56da137a77e3f843a2e6
-ms.sourcegitcommit: 2d0c3ffaa5246f680784fa7e15b0d2536c27ff80
+ms.date: 01/17/2020
+ms.openlocfilehash: 718f0dc0f1ef9b0c2aa3d0630ca099fa5cec7ec0
+ms.sourcegitcommit: 30eeeec0985f8623b1bc03f461124446b04297c2
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75720549"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76256864"
 ---
 # <a name="get-started-with-azure-powershell"></a>Azure PowerShell’i kullanmaya başlama
 
@@ -53,7 +53,7 @@ Oturum açtıktan sonra, Azure PowerShell cmdlet'lerini kullanarak aboneliğiniz
 
 ## <a name="find-commands"></a>Komutları bulma
 
-Azure PowerShell cmdlet'lerinde PowerShell için standart `VERB-NOUN` adlandırma kuralına uyulur. Burada VERB (fiil) eylemi (örneğin `New`, `Get`, `Set`, `Remove`) ve NOUN (ad) da kaynak türünü (örneğin`AzVM`, `AzKeyVaultCertificate`, `AzFirewall`, `AzVirtualNetworkGateway`) belirtir. Azure PowerShell'de adlar her zaman `Az` ön ekiyle başlar. Standart fiillerin tam listesi için bkz. [PowerShell Komutları için onaylanmış fiiller](/powershell/developer/cmdlet/approved-verbs-for-windows-powershell-commands).
+Azure PowerShell cmdlet'lerinde PowerShell için standart `VERB-NOUN` adlandırma kuralına uyulur. Burada VERB (fiil) eylemi (örneğin `New`, `Get`, `Set`, `Remove`) ve NOUN (ad) da kaynak türünü (örneğin`AzVM`, `AzKeyVaultCertificate`, `AzFirewall`, `AzVirtualNetworkGateway`) belirtir. Azure PowerShell'de adlar her zaman `Az` ön ekiyle başlar. Standart fiillerin tam listesi için bkz. [PowerShell Komutları için onaylanmış fiiller](/powershell/scripting/developer/cmdlet/approved-verbs-for-windows-powershell-commands).
 
 Kullanılabilir adları, fiilleri ve Azure PowerShell modüllerini bilmek, [Get-Command](/powershell/module/microsoft.powershell.core/get-command) cmdlet'iyle komutları bulmanıza yardımcı olur. Örneğin, `Get` fiilinin kullanıldığı VM ile ilgili tüm komutları bulmak için:
 
