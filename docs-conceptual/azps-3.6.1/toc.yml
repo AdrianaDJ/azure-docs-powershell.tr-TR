@@ -1,0 +1,86 @@
+- name: Azure PowerShell
+  href: index.yml
+- name: Yeni Az modülüne giriş
+  href: new-azureps-module-az.md
+  displayName: 'intro, introduction, azurerm'
+- name: Yükleme
+  items:
+    - name: PowerShell Get ile yükleme
+      href: install-az-ps.md
+    - name: MSI ile yükleme
+      href: install-az-ps-msi.md
+- name: Kaldırma
+  href: uninstall-az-ps.md
+- name: AzureRM’den geçiş
+  items:
+    - name: Geçiş adımları
+      href: migrate-from-azurerm-to-az.md
+      displayName: 'migrate, azurerm, az'
+    - name: AzureRM ve Az arasındaki değişiklikler
+      href: migrate-az-1.0.0.md
+      displayName: 'breaking, cmdlet, module, names'
+- name: başlarken
+  href: get-started-azureps.md
+  displayName: 'sign in, signin, log in, login, find, feedback, intro, introduction'
+- name: Cloud Shell
+  href: 'https://docs.microsoft.com/azure/cloud-shell/overview'
+- name: Oturum aç
+  items:
+    - name: Kimlik doğrulama yöntemleri
+      href: authenticate-azureps.md
+      displayName: 'sign in, signin, log in, login, credentials, msi, managed identity, tenant, subscription, region, certificate, service principal, authenticate'
+    - name: Hizmet sorumlusu oluşturma
+      href: create-azure-service-principal-azureps.md
+      displayName: 'automation, application, web app, script, certificate, sign in, signin, log in, login, devops, dev ops, itpro, it pro, role, aad, authentication, authenticate'
+    - name: Kimlik bilgisi bağlamları
+      href: context-persistence.md
+      displayName: 'sign in, signin, log in, login, process, session, context, persist, jobs, background, automation, scripting, task'
+- name: Sorgular
+  href: queries-azureps.md
+  displayName: 'filter, search, format, output, variable, scripting, array, dictionary, map, object'
+- name: Çıkışı biçimlendirme
+  href: formatting-output.md
+  displayName: 'object, table, yaml, json, xml, csv, html, list'
+- name: Abonelikleri yönetme
+  href: manage-subscriptions-azureps.md
+  displayName: 'tenant, user, sign in, signin, log in, login, authenticate, authentication, accounts'
+- name: Dağıtma
+  items:
+    - name: Resource Manager şablonlarını dağıtma
+      href: /azure/azure-resource-manager/resource-group-template-deploy
+    - name: Resource Manager şablonlarını dışarı aktarma
+      href: /azure/azure-resource-manager/resource-manager-export-template-powershell
+    - name: Özel Resource Manager şablonlarını dağıtma
+      href: /azure/azure-resource-manager/resource-manager-powershell-sas-token
+- name: Kavramlar
+  items:
+    - name: PowerShell işleri
+      href: using-psjobs.md
+      displayName: 'background, task, scripting, automation, context, process'
+- name: Öğreticiler
+  items:
+    - name: Sanal Makineler Oluşturma
+      href: azureps-vm-tutorial.yml
+- name: Örnek Betikler
+  items:
+    - name: Linux Sanal Makineleri
+      href: /azure/virtual-machines/linux/powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json
+      displayName: vms
+    - name: Windows Sanal Makineleri
+      href: /azure/virtual-machines/windows/powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json
+      displayName: vms
+    - name: Web Apps
+      href: /azure/app-service-web/app-service-powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json
+    - name: SQL Veritabanları
+      href: /azure/sql-database/sql-database-powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json
+    - name: Cosmos DB
+      href: /azure/cosmos-db/powershell-samples?toc=%2fpowershell%2fmodules%2ftoc.json
+      displayName: 'database, nosql, mongodb, couchdb'
+- name: Sürüm notları
+  items:
+    - name: Sürüm notları
+      href: release-notes-azureps.md
+    - name: Az 2.0.0 sürümündeki yeni değişiklikler
+      href: migrate-az-2.0.0.md
+    - name: Az 3.0.0 sürümündeki yeni değişiklikler
+      href: migrate-az-3.0.0.md
