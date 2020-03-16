@@ -5,7 +5,7 @@
   displayName: 'intro, introduction, azurerm'
 - name: Yükleme
   items:
-    - name: PowerShell Get ile yükleme
+    - name: PowerShellGet ile yükleme
       href: install-az-ps.md
     - name: MSI ile yükleme
       href: install-az-ps-msi.md
@@ -24,6 +24,8 @@
   displayName: 'sign in, signin, log in, login, find, feedback, intro, introduction'
 - name: Cloud Shell
   href: 'https://docs.microsoft.com/azure/cloud-shell/overview'
+- name: Docker’da Azure PowerShell
+  href: azureps-in-docker.md
 - name: Oturum aç
   items:
     - name: Kimlik doğrulama yöntemleri
