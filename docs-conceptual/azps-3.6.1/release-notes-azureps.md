@@ -1,18 +1,15 @@
 ---
 title: Azure PowerShell sürüm notları
 description: Azure PowerShell modüllerine yönelik en son güncelleştirmeler hakkında bilgi edinin.
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 01/09/2020
-ms.openlocfilehash: 4c7ea19a225d63307ecf4a6fe5ebfa14ccd78d7e
+ms.date: 03/10/2020
+ms.openlocfilehash: f24e5ef66f9c49976c550c9847903bd0608c5123
 ms.sourcegitcommit: f6fa6543be1e0f6330b1598f01528b2928cc426c
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/10/2020
-ms.locfileid: "79036170"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79111034"
 ---
 # <a name="azure-powershell-release-notes"></a>Azure PowerShell sürüm notları
 
@@ -72,14 +69,14 @@ ms.locfileid: "79036170"
     - Remove-AzTag -ResourceId
 * Yeni Tag cmdlet’i eklendi
     - Update-AzTag -ResourceId
-* SDK 3.3.0 sürümünden ScopedDeployment getirildi 
+* SDK 3.3.0 sürümünden ScopedDeployment getirildi
 
 #### <a name="azsql"></a>Az.Sql
 * 'New-AzSqlServer' ve 'Set-AzSqlServer' için PublicNetworkAccess eklendi
 * Yönetilen Veritabanları için Uzun Süreli Saklamalı yedekleme yapılandırması desteği eklendi
-    - Yönetilen bir veritabanında LTR ilkesini alma/ayarlama 
-    - Yönetilen veritabanı, yönetilen örnek veya konuma göre LTR yedeklemelerini alma 
-    - Bir LTR yedeklemesini kaldırma 
+    - Yönetilen bir veritabanında LTR ilkesini alma/ayarlama
+    - Yönetilen veritabanı, yönetilen örnek veya konuma göre LTR yedeklemelerini alma
+    - Bir LTR yedeklemesini kaldırma
     - Yeni yönetilen veritabanı oluşturmak için LTR yedeklemesini geri yükleme
 * New-AzSqlServer ve Set-AzSqlServer için MinimalTlsVersion eklendi
 * New-AzSqlInstance ve Set-AzSqlInstance için MinimalTlsVersion eklendi
@@ -323,7 +320,7 @@ DatabaseName’in yerine PartnerDatabaseName’in olup olmadığını denetlemey
 #### <a name="azstorage"></a>Az.Storage
 * Sonraki bir sürümde gerçekleşecek DefaultAction değerinin değişikliğine yönelik hataya neden olan değişiklik uyarısı eklendi
     - Update-AzStorageAccountNetworkRuleSet
-* Get-AzureRMStorageAccount cmdlet’i -IncludeGeoReplicationStats parametresiyle çalıştırarak Depolama hesabının en son eşitleme zamanını almaya yönelik destek 
+* Get-AzureRMStorageAccount cmdlet’i -IncludeGeoReplicationStats parametresiyle çalıştırarak Depolama hesabının en son eşitleme zamanını almaya yönelik destek
     - Get-AzureRMStorageAccount
 
 ## <a name="320---december-2019"></a>3.2.0 - Aralık 2019
@@ -373,7 +370,7 @@ DatabaseName’in yerine PartnerDatabaseName’in olup olmadığını denetlemey
 * Tüm Kimlik SAS belirteçleri iptal edilecek şekilde Depolama Hesabı Kullanıcı Temsilcisi Anahtarlarını iptal etme desteği
     - Revoke-AzStorageAccountUserDelegationKeys
 * Microsoft.Azure.Management.Storage, yeni API sürümü 2019-06-01 desteklenecek şekilde 14.2.0 sürümüne güncelleştirildi.
-* Dosya Paylaşımı cmdlet’lerinin Yönetim düzlemindeki 5120’den daha büyük değerler için QuotaGiB (Gibibayt temelinde Paylaşım Kotası) desteği sunuldu ve 'QuotaGiB' parametresine yönelik diğer ad olarak 'Quota' parametresi eklendi. 
+* Dosya Paylaşımı cmdlet’lerinin Yönetim düzlemindeki 5120’den daha büyük değerler için QuotaGiB (Gibibayt temelinde Paylaşım Kotası) desteği sunuldu ve 'QuotaGiB' parametresine yönelik diğer ad olarak 'Quota' parametresi eklendi.
     - New-AzRmStorageShare
     - Update-AzRmStorageShare
 * 'Quota' parametresine 'QuotaGiB' parametre diğer adı eklendi
@@ -491,7 +488,7 @@ DatabaseName’in yerine PartnerDatabaseName’in olup olmadığını denetlemey
 * `PSCloudServiceConfiguration` içinden `TargetOSVersion` kaldırıldı.
 * `PSCloudServiceConfiguration` içinde `CurrentOSVersion` öğesi `OSVersion` olarak yeniden adlandırıldı.
 * `PSPoolUsageMetrics` içinden `DataEgressGiB` ve `DataIngressGiB` kaldırıldı.
-* **Get-AzBatchNodeAgentSku** kaldırıldı ve bunun yerini **Get-AzBatchSupportedImage** aldı. 
+* **Get-AzBatchNodeAgentSku** kaldırıldı ve bunun yerini **Get-AzBatchSupportedImage** aldı.
   - **Get-AzBatchSupportedImage**, **Get-AzBatchNodeAgentSku** ile aynı verileri ama daha kullanımı kolay bir biçimde döndürüyor.
   - Artık yeni doğrulanmamış resimler de döndürülüyor. Her resim için `Capabilities` ve `BatchSupportEndOfLife` hakkında ek bilgiler de ekleniyor.
 * **New-AzBatchPool** cmdlet'inin `MountConfiguration` parametresiyle havuzun her düğümünde uzak dosya sistemlerini bağlama özelliği eklendi.
@@ -508,8 +505,7 @@ DatabaseName’in yerine PartnerDatabaseName’in olup olmadığını denetlemey
 #### <a name="azcompute"></a>Az.Compute
 * Disk Şifreleme Kümesi özelliği
     - Yeni cmdlet’ler:   New-AzDiskEncryptionSetConfig   New-AzDiskEncryptionSet   Get-AzDiskEncryptionSet   Remove-AzDiskEncryptionSet
-    - Aşağıdaki cmdlet'lere DiskEncryptionSetId parametresi eklendi: Set-AzImageOSDisk Set-AzVMOSDisk Set-AzVmssStorageProfile        
-        Add-AzImageDataDisk New-AzVMDataDisk Set-AzVMDataDisk Add-AzVMDataDisk Add-AzVmssDataDisk Add-AzVmssVMDataDisk
+    - Aşağıdaki cmdlet'lere DiskEncryptionSetId parametresi eklendi:   Set-AzImageOSDisk   Set-AzVMOSDisk   Set-AzVmssStorageProfile   Add-AzImageDataDisk   New-AzVMDataDisk   Set-AzVMDataDisk   Add-AzVMDataDisk   Add-AzVmssDataDisk   Add-AzVmssVMDataDisk
     - Aşağıdaki cmdlet'lere DiskEncryptionSetId ve EncryptionType parametreleri eklendi:   New-AzDiskConfig   New-AzSnapshotConfig
 * New-AzVmssIPConfig cmdlet'ine PublicIPAddressVersion parametresi eklendi
 * Özel betik uzantısının FileUris öğesi genel ayardan korumalı ayara taşındı
@@ -660,7 +656,7 @@ DatabaseName’in yerine PartnerDatabaseName’in olup olmadığını denetlemey
 * Get-AzSqlDatabaseRestorePoints (bunun yerine Get-AzSqlDatabaseRestorePoint kullanıldı)
 * Get-AzSqlDatabaseSecureConnectionPolicy cmdlet'i kaldırıldı
 * Kullanım dışı bırakılan Güvenlik Açığı Değerlendirmesi Ayarları cmdlet'lerinin diğer adları kaldırıldı
-* Gelişmiş Tehdit Algılama Ayarları cmdlet'leri kullanım dışı bırakıldı 
+* Gelişmiş Tehdit Algılama Ayarları cmdlet'leri kullanım dışı bırakıldı
 * Veritabanındaki sütunlarda duyarlılık önerilerini devre dışı bırakma ve etkinleştirme cmdlet'leri eklendi.
 
 #### <a name="azstorage"></a>Az.Storage
@@ -670,7 +666,7 @@ DatabaseName’in yerine PartnerDatabaseName’in olup olmadığını denetlemey
 * Dosya işleyicisi kapatılırken/alınırken, DeletePending durumundaki nesnesinde hata olmasını önlemek için giriş yolunun Dosya dizini mi yoksa Dosya mı olduğunu denetlemeyi atlayın
     -  Get-AzStorageFileHandle
     -  Close-AzStorageFileHandle
-    
+
 ## <a name="280---october-2019"></a>2.8.0 - Ekim 2019
 ### <a name="general"></a>Genel
 * Az.HealthcareApis 1.0.0 sürümü
@@ -683,7 +679,7 @@ DatabaseName’in yerine PartnerDatabaseName’in olup olmadığını denetlemey
     - [https://github.com/Azure/azure-powershell/issues/10068](https://github.com/Azure/azure-powershell/issues/10068 ) sorunu düzeltildi
 
 #### <a name="azautomation"></a>Az.Automation
-* Linux yeniden başlatma ayarı parametresi için New-AzureAutomationSoftwareUpdateConfiguration cmdlet’i düzeltildi. 
+* Linux yeniden başlatma ayarı parametresi için New-AzureAutomationSoftwareUpdateConfiguration cmdlet’i düzeltildi.
 
 #### <a name="azbatch"></a>Az.Batch
 * Kullanımdan kaldırılan **Get-AzBatchNodeAgentSku** yerine 2.0.0 sürümünde **Get-AzBatchSupportImage** kullanıma sunulacak.
@@ -691,7 +687,7 @@ DatabaseName’in yerine PartnerDatabaseName’in olup olmadığını denetlemey
 #### <a name="azcompute"></a>Az.Compute
 * New-AzVM ve New-AzVmss cmdlet’lerine Priority, EvictionPolicy ve MaxPrice parametreleri eklendi
 * Add-AzVMAdditionalUnattendContent ve Add-AzVMSshPublicKey cmdlet’leri için uyarı iletisi ve yardım belgesi düzeltildi
-* Set-AzVMDiskEncryptionExtension için yönetilen diskleri olan Linux VM’lere yönelik -skipVmBackup özel durumu düzeltildi. 
+* Set-AzVMDiskEncryptionExtension için yönetilen diskleri olan Linux VM’lere yönelik -skipVmBackup özel durumu düzeltildi.
 * Set-AzVMDiskEncryptionExtension’daki iki geçişli senaryoda güncelleştirme şifreleme ayarlarındaki hata düzeltildi.
 
 #### <a name="azdatafactory"></a>Az.DataFactory
@@ -710,7 +706,7 @@ DatabaseName’in yerine PartnerDatabaseName’in olup olmadığını denetlemey
 
 #### <a name="aziothub"></a>Az.IotHub
 * Yeni yönlendirme kaynağı eklendi: DigitalTwinChangeEvents
-* Küçük hata düzeltmesi: Get-AzIothub SubscriptionId öğesini döndürmüyor 
+* Küçük hata düzeltmesi: Get-AzIothub SubscriptionId öğesini döndürmüyor
 
 #### <a name="azmonitor"></a>Az.Monitor
 * Eylem grupları -ItsmReceiver -VoiceReceiver -ArmRoleReceiver -AzureFunctionReceiver -LogicAppReceiver -AutomationRunbookReceiver -AzureAppPushReceiver için yeni eylem grubu alıcıları eklendi
@@ -806,7 +802,7 @@ DatabaseName’in yerine PartnerDatabaseName’in olup olmadığını denetlemey
 * 'Set-AzActionRule' için kapsam türünü belirlemeyle ilgili bir hata düzeltildi
 
 #### <a name="aznetwork"></a>Az.Network
-* 'New-AzApplicationGateway' başvuru belgesindeki yanlış örnek düzeltildi 
+* 'New-AzApplicationGateway' başvuru belgesindeki yanlış örnek düzeltildi
 * 'Get-AzNetworkWatcherPacketCapture' başvuru belgesine paket yakalama için tüm özellikleri almayla ilgili not eklendi
 * 'Test-AzNetworkWatcherIPFlow' başvuru belgesindeki örnek, NIC’lerin doğru olarak numaralandırılacağı şekilde düzeltildi
 * Bulut özel durum ayrıştırması, mevcut olması durumunda daha fazla ayrıntı gösterecek şekilde iyileştirildi
@@ -942,7 +938,7 @@ DatabaseName’in yerine PartnerDatabaseName’in olup olmadığını denetlemey
     - Sunucu tarafında hiç kullanılmadığı için ‘PublicIpAddress’ parametresi kullanım dışı bırakıldı.
     - Mevcut IP yapılandırmasının birincil yapılandırma olup olmadığını belirten bir isteğe bağlı bir parametre (‘Primary’) eklendi.
 * SDK’daki istek hatası özel durumunun işlenmesi geliştirildi. Bu, daha önceden SDK özel durumlarının düzgün şekilde işlenenmemesiyle oluşan ve önemli hata ayrıntılarının görüntülenmemesine neden olan sorunu düzeltir
-* Doğru IPv6 ön ek uzunluğunu denetlemek amacıyla Ipv6 IP Ön eki için doğrulama mantığı ayarlandı. 
+* Doğru IPv6 ön ek uzunluğunu denetlemek amacıyla Ipv6 IP Ön eki için doğrulama mantığı ayarlandı.
 * Get-AzVirtualNetworkSubnetConfig güncelleştirildi: Alt ağ kaynak kimliği ile almak için parametre kümesi eklendi.
 * AzNetworkServiceTag için Konum parametresinin açıklaması güncelleştirildi
 
@@ -965,7 +961,7 @@ DatabaseName’in yerine PartnerDatabaseName’in olup olmadığını denetlemey
 #### <a name="azservicebus"></a>Az.ServiceBus
 * #9658 numaralı şu sorun düzeltildi: Set-AzServiceBusNetworkRuleSet öğesinde bulunan VirtualNetworkRule parametresindeki yazım hatası
 * #9786 numaralı şu sorun düzeltildi: Yalnızca dinleme haklarıyla bir kural oluşturulamaması
-* Sıra ve konu için ad kullanılabilirliğini denetlemeye yönelik yeni komut ('Test-AzServiceBusNameAvailability') eklendi 
+* Sıra ve konu için ad kullanılabilirliğini denetlemeye yönelik yeni komut ('Test-AzServiceBusNameAvailability') eklendi
 
 #### <a name="azservicefabric"></a>Az.ServiceFabric
 * Düğüm ekleme türü cmdlet hataları düzeltildi:
@@ -992,10 +988,10 @@ DatabaseName’in yerine PartnerDatabaseName’in olup olmadığını denetlemey
 * ClientRuntime’ın en son sürümünü kullanacak şekilde ortak kod güncelleştirildi
 
 #### <a name="azapplicationinsights"></a>Az.ApplicationInsights
-* 'Remove-AzApplicationInsightsApiKey' belgesindeki örnek yazım hatası düzeltildi 
+* 'Remove-AzApplicationInsightsApiKey' belgesindeki örnek yazım hatası düzeltildi
 
 #### <a name="azautomation"></a>Az.Automation
-* Kaynak dizesindeki yazım hatası düzeltildi 
+* Kaynak dizesindeki yazım hatası düzeltildi
 
 #### <a name="azcognitiveservices"></a>Az.CognitiveServices
 * NetworkRuleSet desteği eklendi.
@@ -1056,7 +1052,7 @@ DatabaseName’in yerine PartnerDatabaseName’in olup olmadığını denetlemey
     - New-AzApplicationGatewayProbeConfig güncelleştirildi: Arka uç sunucusunu yoklamak için kullanılan isteğe bağlı parametre Bağlantı Noktası eklendi. Bu parametre Standard_V2 ve WAF_V2 SKU için geçerlidir.
 
 #### <a name="azoperationalinsights"></a>Az.OperationalInsights
-* Kayıtlı aramaların varsayılan sürümü 1 olacak şekilde güncelleştirildi. 
+* Kayıtlı aramaların varsayılan sürümü 1 olacak şekilde güncelleştirildi.
 * Özel günlük null normal ifade işleme düzeltildi
 
 #### <a name="azrecoveryservices"></a>Az.RecoveryServices
@@ -1210,7 +1206,7 @@ DatabaseName’in yerine PartnerDatabaseName’in olup olmadığını denetlemey
     - New-AzureRmEventGridDomainTopic:
         - Yeni bir Azure Event Grid Etki Alanı Konu Başlığı oluşturur.
     - Get-AzureRmEventGridDomainTopic
-        - Bir Event Grid Etki Alanının ayrıntılarını veya mevcut Azure aboneliğindeki belirli Event Grid Etki Alanlarının altında bulunan tüm Event Grid Etki Alanı Konu Başlıklarının listesini alır 
+        - Bir Event Grid Etki Alanının ayrıntılarını veya mevcut Azure aboneliğindeki belirli Event Grid Etki Alanlarının altında bulunan tüm Event Grid Etki Alanı Konu Başlıklarının listesini alır
     - Remove-AzureRmEventGridDomainTopic:
         - Mevcut bir Azure Event Grid Etki Alanı Konu Başlığını kaldırır.
 * Cmdlet'ler güncelleştirildi:
@@ -1222,7 +1218,7 @@ DatabaseName’in yerine PartnerDatabaseName’in olup olmadığını denetlemey
             - Olay aboneliği bitiş tarihi,
             - Gelişmiş filtreleme parametreleri.
         - Hedef olarak servicebusqueue için yeni sabit listesi ekler.
-        - -IncludedEventType seçeneğinde ‘All’ kullanılmasını engeller ve bunu şununla değiştirir 
+        - -IncludedEventType seçeneğinde ‘All’ kullanılmasını engeller ve bunu şununla değiştirir
     - Get-AzEventGridTopic, Get-AzEventGridDomain, Get-AzEventGridDomainTopic, Get-AzEventGridSubscription:
         - Sayfalandırma ve filtreleme sonuçlarını desteklemek için yeni isteğe bağlı parametreler (Top, ODataQuery and NextLink) ekler.
     - Remove-AzureRmEventGridSubscription
@@ -1240,11 +1236,11 @@ DatabaseName’in yerine PartnerDatabaseName’in olup olmadığını denetlemey
     - Yeni cmdlet’ler
         - Get-AzVirtualNetworkGatewayVpnClientConnectionHealth
 * AvailablePrivateEndpointType ekler
-    - Yeni cmdlet’ler 
+    - Yeni cmdlet’ler
         - Get-AzAvailablePrivateEndpointType
 * PrivatePrivateLinkService ekler
-    - Yeni cmdlet’ler 
-        - Get-AzPrivateLinkService 
+    - Yeni cmdlet’ler
+        - Get-AzPrivateLinkService
         - New-AzPrivateLinkService
         - Remove-AzPrivateLinkService
         - New-AzPrivateLinkServiceIpConfig
@@ -1273,8 +1269,8 @@ DatabaseName’in yerine PartnerDatabaseName’in olup olmadığını denetlemey
         - Bir veya daha fazla Genel IP Adresi nesnesi kabul eden -PublicIpAddress parametresi eklendi
         - Bir Sanal Ağ nesnesini kabul eden -VirtualNetwork parametresi eklendi
         - Güvenlik duvarı nesnesine AddPublicIpAddress ve RemovePublicIpAddress yöntemleri eklendi - bunlar giriş olarak Genel IP Adresi nesnesini kabul eder
-        - Kullanım dışı parametreler - PublicIpName ve -VirtualNetworkName 
-* Özellik için aşağıdaki komutlar güncelleştirildi: Sanal ağ geçidi kaynağına VpnClient AAD kimlik doğrulaması seçenekleri ayarlandı. 
+        - Kullanım dışı parametreler - PublicIpName ve -VirtualNetworkName
+* Özellik için aşağıdaki komutlar güncelleştirildi: Sanal ağ geçidi kaynağına VpnClient AAD kimlik doğrulaması seçenekleri ayarlandı.
     - New-AzVirtualNetworkGateway güncelleştirildi: Ağ Geçidinde VpnClient AAD kimlik doğrulamasını ayarlamak için isteğe bağlı AadTenantUri, AadAudienceId, AadIssuerUri parametreleri eklendi.
     - Set-AzVirtualNetworkGateway güncelleştirildi: Ağ Geçidinde VpnClient AAD kimlik doğrulamasını ayarlamak için isteğe bağlı AadTenantUri, AadAudienceId, AadIssuerUri parametresi eklendi.
     - Set-AzVirtualNetworkGateway güncelleştirildi: VpnClient AAD kimlik doğrulaması seçeneklerini Ağ Geçidinden kaldırmak için isteğe bağlı RemoveAadAuthentication anahtar parametresi eklendi.
@@ -1369,17 +1365,17 @@ DatabaseName’in yerine PartnerDatabaseName’in olup olmadığını denetlemey
     - **Get-AzApiManagementSchema** - API'de yapılandırılan şemaları alır
     - **Remove-AzApiManagementSchema** - API'de yapılandırılan şemaları kaldırır
     - **Set-AzApiManagementSchema** - API'de yapılandırılan şemayı güncelleştirir
-* Kullanıcı Belirteci oluşturmak için yeni Cmdlet oluşturuldu. 
+* Kullanıcı Belirteci oluşturmak için yeni Cmdlet oluşturuldu.
     - **New-AzApiManagementUserToken** - Varsayılan olarak 8 saat geçerli kalan yeni bir Kullanıcı Belirteci oluşturur. 'GIT' kullanıcısı için bu cmdlet kullanılarak Belirteç oluşturulabilir./
 * Ağ Durumunu almak için yeni cmdlet oluşturuldu
     - **Get-AzApiManagementNetworkStatus** - API Management hizmetinin bağımlı olduğu kaynakların bağlantısında ağ durumunu alır. ApiManagement hizmeti Sanal Ağa dağıtılırken ve bağımlılıklardan herhangi birinin bozulup bozulmadığı denetlenirken bu cmdlet yararlı olur.
-* **New-AzApiManagement** cmdlet'i ApiManagement hizmetini yönetecek şekilde güncelleştirildi 
+* **New-AzApiManagement** cmdlet'i ApiManagement hizmetini yönetecek şekilde güncelleştirildi
     - Yeni 'Consumption' SKU'su için destek eklendi
     - 'Consumption' SKU'sunda 'EnableClientCertificate' bayrağını etkinleştirmek için destek eklendi
     - Yeni **New-AzApiManagementSslSetting** cmdlet'i 'Backend' ve 'Frontend'de 'TLS/SSL' ayarını yapılandırmaya olanak tanır. Bu cmdlet ApiManagement hizmetinin 'Frontend'inde '3DES' gibi 'Ciphers' yapılandırması ve 'Http2' gibi 'ServerProtocols' yapılandırması için de kullanılabilir.
     - ApiManagement hizmetinde 'DeveloperPortal' ana bilgisayar adının yapılandırması için destek eklendi.
 * **Get-AzApiManagementSsoToken** cmdlet'leri giriş olarak 'PsApiManagement' nesnesini alacak şekilde güncelleştirildi
-* Cmdlet satır içinde Hata İletileri görüntüleyecek şekilde güncelleştirildi 
+* Cmdlet satır içinde Hata İletileri görüntüleyecek şekilde güncelleştirildi
      > PS D:\github\azure-powershell> Set-AzApiManagementPolicy -Context  -PolicyFilePath C:\wrongpolicy.xml -ApiId httpbin Set-AzApiManagementPolicy : Hata Kodu: ValidationError Hata İletisi: Bir veya birden çok alan yanlış değerler içeriyor: Hata Ayrıntıları:    [Code=ValidationError, Message=Error in element 'log-to-eventhub' on line 3, column 10: Logger not found, Target=log-to-eventhub]
 * **Export-AzApiManagementApi** cmdlet'i API'leri 'OpenApi 3.0' biçiminde dışarı aktaracak şekilde güncelleştirildi
 * **Import-AzApiManagementApi** cmdlet'i güncelleştirildi
@@ -1388,15 +1384,15 @@ DatabaseName’in yerine PartnerDatabaseName’in olup olmadığını denetlemey
     - Herhangi bir belgede belirtilen 'ServiceUrl' özelliğini geçersiz kılmak için.
 * **Get-AzApiManagementPolicy** cmdlet'i ilkeyi 'rawxml' kullanarak Non-Xml kaçışlı 'format' olarak döndürecek şekilde güncelleştirildi
 * **Set-AzApiManagementPolicy** cmdlet'i ilkeyi 'rawxml' kullanarak Non-Xml kaçışlı 'format' olarak ve 'xml' kullanarak Xml kaçışlı kabul edecek şekilde güncelleştirildi
-* **New-AzApiManagementApi** cmdlet'i güncelleştirildi 
+* **New-AzApiManagementApi** cmdlet'i güncelleştirildi
     - API'yi 'OpenId' yetkilendirme sunucusuyla yapılandırmak için.
     - 'ApiVersionSet' içinde API oluşturmak için
     - 'SourceApiId' ve 'SourceApiRevision' kullanıp API'yi kopyalamak için.
-    - Api kapsamında 'SubscriptionRequired' yapılandırabilme özelliği. 
+    - Api kapsamında 'SubscriptionRequired' yapılandırabilme özelliği.
 * **Set-AzApiManagementApi** cmdlet'i güncelleştirildi
     - API'yi 'OpenId' yetkilendirme sunucusuyla yapılandırmak için.
-    - API'yi 'ApiVersionSet' olarak güncelleştirmek için    
-    - Api kapsamında 'SubscriptionRequired' yapılandırabilme özelliği. 
+    - API'yi 'ApiVersionSet' olarak güncelleştirmek için
+    - Api kapsamında 'SubscriptionRequired' yapılandırabilme özelliği.
 * **New-AzApiManagementRevision** cmdlet'i güncelleştirildi
     - 'SourceApiRevision' kullanarak mevcut düzeltmeyi kopyalamak (etiketleri, ürünleri, işlemleri ve ilkeleri kopyalamak) için. Yeni Düzeltme üst öğenin 'ApiId' değerini varsayılan olarak alır.
     - 'ApiRevisionDescription' sağlamak için
@@ -1422,7 +1418,7 @@ DatabaseName’in yerine PartnerDatabaseName’in olup olmadığını denetlemey
     - 'Get-AzApiManagementAuthorizationServer'
     - 'Get-AzApiManagementBackend'
         > Get-AzApiManagementBackend -ResourceId /subscriptions/subid/resourceGroups/rgName/providers/Microsoft.ApiManagement/service/contoso/backends/servicefabric
-    - 'Get-AzApiManagementCertificate' 
+    - 'Get-AzApiManagementCertificate'
     - 'Remove-AzApiManagementApiVersionSet'
     - 'Remove-AzApiManagementSubscription'
 
@@ -1470,7 +1466,7 @@ DatabaseName’in yerine PartnerDatabaseName’in olup olmadığını denetlemey
     - Yeni ProximityPlacementGroupId parametresi aşağıdaki cmdlet'lere eklendi:   New-AzAvailabilitySet   New-AzVMConfig   New-AzVmssConfig
 * StorageAccountType parametresi New-AzGalleryImageVersion öğesine eklendi.
 * New-AzGalleryImageVersion komutunun TargetRegion parametresi StorageAccountType içerebilir.
-* SkipShutdown anahtar parametresi Stop-AzVM ve Stop-AzVmss öğelerine eklendi       
+* SkipShutdown anahtar parametresi Stop-AzVM ve Stop-AzVmss öğelerine eklendi
 * Yeni değişiklikler
     - Set-AzVMBootDiagnostics, Set-AzVMBootDiagnostic olarak değiştirildi.
     - Export-AzLogAnalyticThrottledRequests, Export-AzLogAnalyticThrottledRequests olarak değiştirildi.
@@ -1505,7 +1501,7 @@ DatabaseName’in yerine PartnerDatabaseName’in olup olmadığını denetlemey
     - hdinsight işleç rolüne sahip kullanıcılar bu durumdan etkilenmez.
 
 #### <a name="azmonitor"></a>Az.Monitor
-* SQR API (Zamanlanmış Sorgu Kuralı) için yeni cmdlet'ler  
+* SQR API (Zamanlanmış Sorgu Kuralı) için yeni cmdlet'ler
     - New-AzScheduledQueryRuleAlertingAction
     - New-AzScheduledQueryRuleAznsActionGroup
     - New-AzScheduledQueryRuleLogMetricTrigger
@@ -1603,7 +1599,7 @@ DatabaseName’in yerine PartnerDatabaseName’in olup olmadığını denetlemey
 * Oluşturma/güncelleştirme etkinliği için abonelik cmdlet’lerini kullanmadan önce kaynakların oluşturulmasının gerektiğini belirten yardım metni güncelleştirildi.
 
 #### <a name="azeventhub"></a>Az.EventHub
-* Ad alanının NetworkRuleSet’i için yeni cmdlet’ler eklendi 
+* Ad alanının NetworkRuleSet’i için yeni cmdlet’ler eklendi
 
 #### <a name="azhdinsight"></a>Az.HDInsight
 * Çoğul isimli cmdlet’ler tekil isimli olarak güncelleştirildi ve çoğul isimler kullanım dışı bırakıldı.
@@ -1693,7 +1689,7 @@ DatabaseName’in yerine PartnerDatabaseName’in olup olmadığını denetlemey
 
 #### <a name="azcompute"></a>Az.Compute
 * New-AzDiskConfig ve New-AzSnapshotConfig’e HyperVGeneration parametresi eklendi
-* Diğer kiracıların karakter görüntüleriyle VM oluşturmaya izin verildi. 
+* Diğer kiracıların karakter görüntüleriyle VM oluşturmaya izin verildi.
 
 #### <a name="azcontainerinstance"></a>Az.ContainerInstance
 * New-AzContainerGroup’un -command parametresinde bağımsız boş değişken ekleyen sorun düzeltildi
@@ -1775,7 +1771,7 @@ DatabaseName’in yerine PartnerDatabaseName’in olup olmadığını denetlemey
     - New-AzStorageAccountManagementPolicyRule
 
 #### <a name="azwebsites"></a>Az.Websites
-* 'New-AzWebApp -IncludeSourceWebAppSlots' kullanarak tüm yuvaların kopyalanmasını kesintiye uğratan ARM şablon hatası düzeltildi 
+* 'New-AzWebApp -IncludeSourceWebAppSlots' kullanarak tüm yuvaların kopyalanmasını kesintiye uğratan ARM şablon hatası düzeltildi
 
 ## <a name="150---march-2019"></a>1.5.0 - Mart 2019
 #### <a name="azaccounts"></a>Az.Accounts
@@ -1844,7 +1840,7 @@ DatabaseName’in yerine PartnerDatabaseName’in olup olmadığını denetlemey
 * ADL silinmiş öğe listeleme ve geri yükleme cmdlet’leri eklendi
 
 #### <a name="azeventhub"></a>Az.EventHub
-* EventHub’ın CaptureDescription sınıfında Boş Arşivleri Atlamak için SkipEmptyArchives adlı yeni Boole özelliği eklendi 
+* EventHub’ın CaptureDescription sınıfında Boş Arşivleri Atlamak için SkipEmptyArchives adlı yeni Boole özelliği eklendi
 
 #### <a name="azkeyvault"></a>Az.KeyVault
 * Set-AzKeyVaultSecret’daki etiketleme düzeltildi
@@ -1872,8 +1868,8 @@ DatabaseName’in yerine PartnerDatabaseName’in olup olmadığını denetlemey
 
 #### <a name="azoperationalinsights"></a>Az.OperationalInsights
 * New ve Get ApplicationInsights veri kaynağı için ek destek sunuldu.
-    - Belirli bir çalışma alanı için belirli ve tüm Get ApplicationInsights veri kaynaklarını desteklemek için yeni ‘ApplicationInsights’ türü eklendi. 
-    - Belirli Application-Insights kaynak parametrelerine (abonelik kimliği, resourceGroupName ve ad) göre veri kaynağı oluşturmak için New-AzOperationalInsightsApplicationInsightsDataSource cmdlet’i eklendi. 
+    - Belirli bir çalışma alanı için belirli ve tüm Get ApplicationInsights veri kaynaklarını desteklemek için yeni ‘ApplicationInsights’ türü eklendi.
+    - Belirli Application-Insights kaynak parametrelerine (abonelik kimliği, resourceGroupName ve ad) göre veri kaynağı oluşturmak için New-AzOperationalInsightsApplicationInsightsDataSource cmdlet’i eklendi.
 
 #### <a name="azresources"></a>Az.Resources
 * [https://github.com/Azure/azure-powershell/issues/8166](https://github.com/Azure/azure-powershell/issues/8166 ) sorunu düzeltildi
@@ -1904,9 +1900,9 @@ Az.AnalysisServices modülü için genel kullanılabilirlik.
 Az.RecoveryServices modülü için genel kullanılabilirlik.
 
 #### <a name="azresources"></a>Az.Resources
-* Kaynak grupları için etiketleme düzeltildi 
+* Kaynak grupları için etiketleme düzeltildi
     - Burada daha fazla bilgi bulunabilir: https://github.com/Azure/azure-powershell/issues/8166
-* `Get-AzureRmRoleAssignment` komutunun -ErrorAction'a uymama sorunu düzeltildi 
+* `Get-AzureRmRoleAssignment` komutunun -ErrorAction'a uymama sorunu düzeltildi
     - Burada daha fazla bilgi bulunabilir: https://github.com/Azure/azure-powershell/issues/8235
 
 #### <a name="azsql"></a>Az.Sql
@@ -2211,7 +2207,7 @@ Application Gateway’de RewriteRuleSets parametresini yapılandırma desteği e
 
 ### <a name="azwebsites"></a>Az.Websites
 
-* Set-AzureRmWebApp ve Set-AzureRmWebAppSlot 
+* Set-AzureRmWebApp ve Set-AzureRmWebAppSlot
     - Windows ve Linux kapsayıcı uygulamalarında bağlanacak Azure Depolama yollarının belirtilmesi için yeni parametre (-AzureStoragePath) eklendi. Azure Depolama yollarını ayarlamak için yeni New-AzureRmWebAppAzureStoragePath cmdlet’inin çıktısını bir parametre olarak kullanın.
 
 ## <a name="061---november-2018"></a>0.6.1 - Kasım 2018
@@ -2239,7 +2235,7 @@ Application Gateway’de RewriteRuleSets parametresini yapılandırma desteği e
 ### <a name="aznetwork"></a>Az.Network
 * New-AzureRmApplicationGatewayCustomError, Add-AzureRmApplicationGatewayCustomError, Get-AzureRmApplicationGatewayCustomError, Set-AzureRmApplicationGatewayCustomError, Remove-AzureRmApplicationGatewayCustomError, Add-AzureRmApplicationGatewayHttpListenerCustomError, Get-AzureRmApplicationGatewayHttpListenerCustomError, Set-AzureRmApplicationGatewayHttpListenerCustomError, Remove-AzureRmApplicationGatewayHttpListenerCustomError cmdlet'leri eklendi
 * Desteklenen AzureFirewall Ağ Protokollerine yeniden ICMP eklendi
-* Test-AzureRmNetworkWatcherConnectivity cmdlet'i güncelleştirildi; hedef kimlik, adres ve bağlantı noktasında doğrulama eklendi. 
+* Test-AzureRmNetworkWatcherConnectivity cmdlet'i güncelleştirildi; hedef kimlik, adres ve bağlantı noktasında doğrulama eklendi.
 * VirtualNetwork eşlemesinde bellek kullanımıyla ilgili sorunlar düzeltildi
 
 ### <a name="azrecoveryservicesbackup"></a>Az.RecoveryServices.Backup
@@ -2371,7 +2367,7 @@ Application Gateway’de RewriteRuleSets parametresini yapılandırma desteği e
     - Start-AzureStorageFileCopy
 * Belirli bir konumunun Depolama kaynağı kullanımını alma desteği ve genel Depolama kayrağı kullanımını almak için uyarı iletisi ekleme kullanımdan kalktı.
     - Get-AzStorageUsage
-    
+
 #### <a name="azcognitiveservices"></a>Az.CognitiveServices
 * Mevcut hesap olmadan Get-AzCognitiveServicesAccountSkus desteği.
 
