@@ -3,13 +3,13 @@ title: Docker’da Azure PowerShell kullanma
 description: Bir Docker görüntüsündeki önceden yüklenmiş Azure PowerShell’i kullanma.
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 03/10/2020
-ms.openlocfilehash: a5746b71cfc41f7c6283b0e95b0940ca4b594ec7
-ms.sourcegitcommit: fb95591c45bb5f12b98e0690938d18f2ec611897
+ms.date: 03/20/2020
+ms.openlocfilehash: b5ad201abcabbdc1a88db241b028d88f05054a14
+ms.sourcegitcommit: 104c90600e0c5eeb841b5a596ba7ebe60cc7f4fa
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79402689"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "79990527"
 ---
 # <a name="using-azure-powershell-in-docker"></a>Docker’da Azure PowerShell kullanma
 
@@ -19,13 +19,13 @@ Azure PowerShell’in önceden yüklenmiş olduğu Docker görüntülerini yayı
 
 Yayınlanan görüntüler Docker 17.05 veya üstünü gerektirir. Docker’ı `sudo` veya yerel yönetici hakları olmadan çalıştırabilecek durumda olmanız beklenir. `docker` yüklemesini doğru bir şekilde gerçekleştirmek için Docker’ın resmi [yönergelerini][install] izleyin.
 
-Yayınlanan kapsayıcılar resmi PowerShell kapsayıcılarından oluşturulur ve Az modülü bunlara katman olarak eklenir.
+En son kapsayıcı görüntüsü, Az modülüyle desteklenen PowerShell ve Azure PowerShell modüllerinin en son sürümünü içerir.
 
-En son kararlı görüntü şunları içerir:
+Az modülünün her yeni sürümü için şu işletim sistemlerine yönelik bir görüntüyü kullanıma sunuyoruz:
 
-- Ubuntu 18.04
-- PowerShell 6.2.4 sürümü
-- Azure PowerShell en güncel Az modülü
+- Ubuntu 18.04 (varsayılan)
+- Debian 9
+- CentOs 7
 
 Sunulan görüntülerin tam listesine [Docker görüntüsü][az image] sayfamızdan erişebilirsiniz.
 
@@ -44,6 +44,8 @@ Aşağıdaki komutlar, görüntüyü indirip etkileşimli bir PowerShell oturumu
    ```console
    docker run -it mcr.microsoft.com/azure-powershell pwsh
    ```
+
+Windows üzerindeki yerel sürücülerin Linux kapsayıcılarıyla paylaşılmasını sağlamak için Windows Docker konaklarında Docker File Sharing’i etkinleştirmeniz gerekir. Daha fazla bilgi için bkz. [Docker for Windows’u kullanmaya başlayın][file-sharing].
 
 ### <a name="run-the-azure-powershell-container-interactively-using-host-authentication"></a>Ana bilgisayar kimlik doğrulaması kullanarak azure-powershell kapsayıcısını etkileşimli olarak çalıştırın
 
@@ -71,3 +73,4 @@ Azure PowerShell modülleri ve bunların özellikleri hakkında daha fazla bilgi
 [install]: https://docs.docker.com/engine/installation/
 [powershell image]: https://hub.docker.com/_/microsoft-powershell
 [az image]: https://hub.docker.com/_/microsoft-azure-powershell
+[file-sharing]: https://docs.docker.com/docker-for-windows/#file-sharing
