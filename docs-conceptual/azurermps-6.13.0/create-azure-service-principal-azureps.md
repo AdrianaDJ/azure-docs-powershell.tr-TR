@@ -9,10 +9,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/09/2018
 ms.openlocfilehash: 38bb4345a9e4d2d9e450e74f99fb2c320c3ca4d8
-ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/11/2019
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "65534910"
 ---
 # <a name="create-an-azure-service-principal-with-azure-powershell"></a>Azure PowerShell ile bir Azure hizmet sorumlusu oluşturma
@@ -121,7 +121,7 @@ Azure PowerShell, rol atamalarını yönetmek için aşağıdaki cmdlet’leri s
 * [Remove-AzureRmRoleAssignment](/powershell/module/azurerm.resources/remove-azurermroleassignment)
 
 Bir hizmet sorumlusunun varsayılan rolü **Katkıda Bulunan**’dır. Geniş izinleri göz önünde bulundurulduğunda, uygulamanızın Azure hizmetleriyle gerçekleştirdiği etkileşimlerin kapsamına bağlı olarak, doğru bir seçim olmayabilir.
-**Okuyucu** rolü daha kısıtlayıcıdır ve salt okunur uygulamalar için iyi bir seçim olabilir. Azure portalı aracılığıyla role özel izinlerin ayrıntılarını görüntüleyebilir veya özel roller oluşturabilirsiniz.
+**Okuyucu** rolü daha kısıtlayıcıdır ve salt okunur uygulamalar için iyi bir seçim olabilir. Azure Portal aracılığıyla role özel izinlerin ayrıntılarını görüntüleyebilir veya özel roller oluşturabilirsiniz.
 
 Bu örnekte, bir önceki örneğimize **Okuyucu** rolünü ekleyip **Katkıda Bulunan** rolünü siliyoruz:
 

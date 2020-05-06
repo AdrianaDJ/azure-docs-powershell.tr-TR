@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/15/2019
 ms.openlocfilehash: e5121d61b0f5f68ff3e1f33d774e3533adfeb64f
-ms.sourcegitcommit: 4c61442a2df1cee633ce93cad9f6bc793803baa2
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "81445552"
 ---
 # <a name="breaking-changes-for-az-100"></a>Az 1.0.0 için yeni değişiklikler
@@ -58,7 +58,7 @@ Bu bölümde, Az modülünün yeniden tasarımının bir parçası olan, hataya 
 
 ### <a name="cmdlet-noun-prefix-changes"></a>Cmdlet İsim Öneki Değişiklikleri
 
-AzureRM modülünde cmdlet’ler isim ön eki olarak `AzureRM` veya `Azure` kullanılır.  Az ile birlikte cmdlet adları basitleştirilip normalleştirilerek tüm cmdlet’lerin isim ön eki olarak 'Az' kullanılacak. Örneğin:
+AzureRM modülünde cmdlet’ler isim ön eki olarak `AzureRM` veya `Azure` kullanılır.  Az ile birlikte cmdlet adları basitleştirilip normalleştirilerek tüm cmdlet’lerin isim ön eki olarak 'Az' kullanılacak. Örnek:
 
 ```azurepowershell-interactive
 Get-AzureRMVM
@@ -72,7 +72,7 @@ Get-AzVM
 Get-AzKeyVaultSecret
 ```
 
-Bu yeni cmdlet adlarına geçişi kolaylaştırmak için Az ile birlikte iki yeni cmdlet sunuluyor: [Enable-AzureRmAlias](/powershell/module/az.accounts/enable-azurermalias) ve [Disable-AzureRmAlias](/powershell/module/az.accounts/disable-azurermalias).  `Enable-AzureRmAlias`, AzureRM’deki eski cmdlet adları için yeni Az cmdlet adlarına eşlenen diğer adlar oluşturur. `Enable-AzureRmAlias` ile `-Scope` bağımsız değişkenini kullanarak diğer adları nerede etkinleştireceğinizi seçebilirsiniz.
+Bu yeni cmdlet adlarına geçişi kolaylaştırmak için Az ile birlikte iki yeni cmdlet sunuluyor: [Enable-AzureRmAlias](/powershell/module/az.accounts/enable-azurermalias) ve [Disable-AzureRmAlias](/powershell/module/az.accounts/disable-azurermalias).  `Enable-AzureRmAlias`, AzureRM’deki eski cmdlet adları için yeni Az cmdlet adlarına eşlenen diğer adlar oluşturur. `-Scope` ile `Enable-AzureRmAlias` bağımsız değişkenini kullanarak diğer adları nerede etkinleştireceğinizi seçebilirsiniz.
 
 Örneğin, şu AzureRM betiği:
 
@@ -125,7 +125,7 @@ Modül adlarındaki değişiklikler nedeniyle, belirli modülleri yüklemek içi
 
 #### <a name="migrating-requires-and-import-module-statements"></a>#Requires ve Import-Module Deyimlerini Geçirme
 
-AzureRM modüllerine bağımlılığı bildirmek için `#Requires` veya `Import-Module` deyimini kullanan betikler yeni modül adlarını kullanacak şekilde güncelleştirilmelidir. Örneğin:
+AzureRM modüllerine bağımlılığı bildirmek için `#Requires` veya `Import-Module` deyimini kullanan betikler yeni modül adlarını kullanacak şekilde güncelleştirilmelidir. Örnek:
 
 ```azurepowershell-interactive
 #Requires -Module AzureRM.Compute
@@ -212,31 +212,31 @@ Bu bölümde, belirli modüller ve cmdlet’lerde hataya neden olan değişiklik
   - Import-AzureRmApiManagementHostnameCertificate
   - Bu özellikleri ayarlamak için bunun yerine **Set-AzApiManagement** cmdlet’ini kullanın
 - Aşağıdaki özellikler kaldırıldı:
-  - `PsApiManagementContext` öğesinden `PsApiManagementHostnameConfiguration` türündeki `PortalHostnameConfiguration`, `ProxyHostnameConfiguration`, `ManagementHostnameConfiguration` ve `ScmHostnameConfiguration` özelliği kaldırıldı. Bunun yerine `PsApiManagementCustomHostNameConfiguration` türündeki `PortalCustomHostnameConfiguration`, `ProxyCustomHostnameConfiguration`, `ManagementCustomHostnameConfiguration` ve `ScmCustomHostnameConfiguration` özelliğini kullanın.
+  - `PortalHostnameConfiguration` öğesinden `ProxyHostnameConfiguration` türündeki `ManagementHostnameConfiguration`, `ScmHostnameConfiguration`, `PsApiManagementHostnameConfiguration` ve `PsApiManagementContext` özelliği kaldırıldı. Bunun yerine `PortalCustomHostnameConfiguration` türündeki `ProxyCustomHostnameConfiguration`, `ManagementCustomHostnameConfiguration`, `ScmCustomHostnameConfiguration` ve `PsApiManagementCustomHostNameConfiguration` özelliğini kullanın.
   - PsApiManagementContext öğesinden `StaticIPs` özelliği kaldırıldı. Özellik `PublicIPAddresses` ve `PrivateIPAddresses` olarak bölündü.
   - New-AzureApiManagementVirtualNetwork cmdlet’inden gerekli olan `Location` özelliği kaldırıldı.
 
 ### <a name="azbilling-previously-azurermbilling-azurermconsumption-and-azurermusageaggregates"></a>Az.Billing (eski adıyla AzureRM.Billing, AzureRM.Consumption ve AzureRM.UsageAggregates)
 
-- `Get-AzConsumptionUsageDetail` cmdlet’inden `InvoiceName` parametresi kaldırıldı.  Fatura için betiklerin diğer kimlik parametrelerini kullanması gerekir.
+- `InvoiceName` cmdlet’inden `Get-AzConsumptionUsageDetail` parametresi kaldırıldı.  Fatura için betiklerin diğer kimlik parametrelerini kullanması gerekir.
 
 ### <a name="azcognitiveservices-previously-azurermcognitiveservices"></a>Az.CognitiveServices (eski adıyla AzureRM.CognitiveServices)
 
-- `Get-AzCognitiveServicesAccountSkus` cmdlet’inden `GetSkusWithAccountParamSetName` parametre kümesi kaldırıldı.  ResourceGroupName ve Hesap Adı parametrelerini kullanmak yerine Sku’ları Hesap Türüne ve Konuma göre almalısınız.
+- `GetSkusWithAccountParamSetName` cmdlet’inden `Get-AzCognitiveServicesAccountSkus` parametre kümesi kaldırıldı.  ResourceGroupName ve Hesap Adı parametrelerini kullanmak yerine Sku’ları Hesap Türüne ve Konuma göre almalısınız.
 
 ### <a name="azcompute-previously-azurermcompute"></a>Az.Compute (eski adıyla AzureRM.Compute)
 
-- `PSVirtualMachine` ve `PSVirtualMachineScaleSet` nesnelerinde `Identity` özelliğinden `IdentityIds` kaldırıldı Betikler artık işleme kararları vermek için bu alanın değerini kullanmamalıdır.
-- `PSVirtualMachineScaleSetVM` nesnesinin `InstanceView` özelliğinin `VirtualMachineInstanceView` olan türü `VirtualMachineScaleSetVMInstanceView` olarak değiştirildi
-- `UpgradePolicy` özelliğinden `AutoOSUpgradePolicy` ve `AutomaticOSUpgrade` özelliği kaldırıldı
-- `PSSnapshotUpdate` nesnesindeki `Sku` özelliğinin `DiskSku` olan türü `SnapshotSku` olarak değiştirildi
+- `IdentityIds` ve `Identity` nesnelerinde `PSVirtualMachine` özelliğinden `PSVirtualMachineScaleSet` kaldırıldı Betikler artık işleme kararları vermek için bu alanın değerini kullanmamalıdır.
+- `InstanceView` nesnesinin `PSVirtualMachineScaleSetVM` özelliğinin `VirtualMachineInstanceView` olan türü `VirtualMachineScaleSetVMInstanceView` olarak değiştirildi
+- `AutoOSUpgradePolicy` özelliğinden `AutomaticOSUpgrade` ve `UpgradePolicy` özelliği kaldırıldı
+- `Sku` nesnesindeki `PSSnapshotUpdate` özelliğinin `DiskSku` olan türü `SnapshotSku` olarak değiştirildi
 - `VmScaleSetVMParameterSet`, `Add-AzVMDataDisk` cmdlet’inden kaldırıldığından artık bir veri diskini ScaleSet VM’sine tek başına ekleyemezsiniz.
 
 ### <a name="azdatafactory-previously-azurermdatafactories-and-azurermdatafactoryv2"></a>Az.DataFactory (eski adıyla AzureRM.DataFactories ve AzureRM.DataFactoryV2)
 
-- `New-AzDataFactoryEncryptValue` cmdlet’inde `GatewayName` parametresi zorunlu hale geldi
+- `GatewayName` cmdlet’inde `New-AzDataFactoryEncryptValue` parametresi zorunlu hale geldi
 - `New-AzDataFactoryGatewayKey` cmdlet'i kaldırıldı
-- `Get-AzDataFactoryV2ActivityRun` cmdlet’inden `LinkedServiceName` parametresi kaldırıldı Betikler artık işleme kararları vermek için bu alanın değerini kullanmamalıdır.
+- `LinkedServiceName` cmdlet’inden `Get-AzDataFactoryV2ActivityRun` parametresi kaldırıldı Betikler artık işleme kararları vermek için bu alanın değerini kullanmamalıdır.
 
 ### <a name="azdatalakeanalytics-previously-azurermdatalakeanalytics"></a>Az.DataLakeAnalytics (eski adıyla AzureRM.DataLakeAnalytics)
 
@@ -248,7 +248,7 @@ Bu bölümde, belirli modüller ve cmdlet’lerde hataya neden olan değişiklik
   - New-AzureRmDataLakeStoreItem
   - Add-AzureRmDataLakeStoreItemContent
   - Get-AzureRmDataLakeStoreItemContent
-- `New-AzDataLakeStoreAccount` ve `Set-AzDataLakeStoreAccount` cmdlet’inden kullanım dışı `Tags` özellik diğer adı kaldırıldı
+- `Tags` ve `New-AzDataLakeStoreAccount` cmdlet’inden kullanım dışı `Set-AzDataLakeStoreAccount` özellik diğer adı kaldırıldı
 
   Şunları kullanan betikler:
   ```azurepowershell-interactive
@@ -260,15 +260,15 @@ Bu bölümde, belirli modüller ve cmdlet’lerde hataya neden olan değişiklik
   New-AzDataLakeStoreAccount -Tag @{TagName="TagValue"}
   ```
 
-- `PSDataLakeStoreAccountBasic` nesnesinden kullanım dışı `Identity`, `EncryptionState`, `EncryptionProvisioningState`, `EncryptionConfig`, `FirewallState`, `FirewallRules`, `VirtualNetworkRules`, `TrustedIdProviderState`, `TrustedIdProviders`, `DefaultGroup`, `NewTier`, `CurrentTier`, `FirewallAllowAzureIps` özelliği kaldırıldı.  `Get-AzDataLakeStoreAccount` cmdlet’inden döndürülen `PSDatalakeStoreAccount` özelliğini kullanan hiçbir betik bu özelliklere başvurmamalıdır.
+- `Identity` nesnesinden kullanım dışı `EncryptionState`, `EncryptionProvisioningState`, `EncryptionConfig`, `FirewallState`, `FirewallRules`, `VirtualNetworkRules`, `TrustedIdProviderState`, `TrustedIdProviders`, `DefaultGroup`, `NewTier`, `CurrentTier`, `FirewallAllowAzureIps`, `PSDataLakeStoreAccountBasic` özelliği kaldırıldı.  `PSDatalakeStoreAccount` cmdlet’inden döndürülen `Get-AzDataLakeStoreAccount` özelliğini kullanan hiçbir betik bu özelliklere başvurmamalıdır.
 
 ### <a name="azkeyvault-previously-azurermkeyvault"></a>Az.KeyVault (eski adıyla AzureRM.KeyVault)
 
-- `PSKeyVaultKeyAttributes`, `PSKeyVaultKeyIdentityItem` ve `PSKeyVaultSecretAttributes` nesnesinden `PurgeDisabled` özelliği kaldırıldı Betikler artık işleme kararları vermek için ```PurgeDisabled``` özelliğine başvurmamalıdır.
+- `PurgeDisabled`, `PSKeyVaultKeyAttributes` ve `PSKeyVaultKeyIdentityItem` nesnesinden `PSKeyVaultSecretAttributes` özelliği kaldırıldı Betikler artık işleme kararları vermek için ```PurgeDisabled``` özelliğine başvurmamalıdır.
 
 ### <a name="azmedia-previously-azurermmedia"></a>Az.Media (eski adıyla AzureRM.Media)
 
-- `New-AzMediaService` cmdlet’inden kullanım dışı `Tags` özelliği diğer adı kaldırıldı Şunları kullanan betikler:
+- `Tags` cmdlet’inden kullanım dışı `New-AzMediaService` özelliği diğer adı kaldırıldı Şunları kullanan betikler:
   ```azurepowershell-interactive
   New-AzureRMMediaService -Tags @{TagName="TagValue"}
   ```
@@ -280,7 +280,7 @@ Bu bölümde, belirli modüller ve cmdlet’lerde hataya neden olan değişiklik
 
 ### <a name="azmonitor-previously-azurerminsights"></a>Az.Monitor (eski adıyla AzureRM.Insights)
 
-- `Set-AzDiagnosticSetting` cmdlet’inden alınan tekil parametre adları tercih edilerek çoğul ad `Categories` ve `Timegrains` parametresi kaldırıldı Şunları kullanan betikler:
+- `Categories` cmdlet’inden alınan tekil parametre adları tercih edilerek çoğul ad `Timegrains` ve `Set-AzDiagnosticSetting` parametresi kaldırıldı Şunları kullanan betikler:
   ```azurepowershell-interactive
   Set-AzureRmDiagnosticSetting -Timegrains PT1M -Categories Category1, Category2
   ```
@@ -292,8 +292,8 @@ Bu bölümde, belirli modüller ve cmdlet’lerde hataya neden olan değişiklik
 
 ### <a name="aznetwork-previously-azurermnetwork"></a>Az.Network (eski adıyla AzureRM.Network)
 
-- `Get-AzServiceEndpointPolicyDefinition` cmdlet’inden kullanım dışı `ResourceId` parametresi kaldırıldı
-- `PSVirtualNetwork` nesnesinden kullanım dışı `EnableVmProtection` özelliği kaldırıldı
+- `ResourceId` cmdlet’inden kullanım dışı `Get-AzServiceEndpointPolicyDefinition` parametresi kaldırıldı
+- `EnableVmProtection` nesnesinden kullanım dışı `PSVirtualNetwork` özelliği kaldırıldı
 - Kullanım dışı `Set-AzVirtualNetworkGatewayVpnClientConfig` cmdlet’i kaldırıldı
 
 Betikler artık bu alanların değerlerini temel alan işleme kararları almamalıdır.
@@ -314,15 +314,15 @@ Betikler artık bu alanların değerlerini temel alan işleme kararları almamal
 
 ### <a name="azrecoveryservices-previously-azurermrecoveryservices-azurermrecoveryservicesbackup-and-azurermrecoveryservicessiterecovery"></a>Az.RecoveryServices (eski adıyla AzureRM.RecoveryServices, AzureRM.RecoveryServices.Backup ve AzureRM.RecoveryServices.SiteRecovery)
 
-- `New/Set-AzRecoveryServicesAsrPolicy` cmdlet’inden `Encryption` parametresi kaldırıldı
-- Artık `Restore-AzRecoveryServicesBackupItem` cmdlet'indeki yönetilen disk geri yükleme işlemleri için `TargetStorageAccountName` parametresi zorunludur
-- `Restore-AzRecoveryServicesBackupItem` cmdlet’inden `StorageAccountName` ve `StorageAccountResourceGroupName` parametresi kaldırıldı
-- `Get-AzRecoveryServicesBackupContainer` cmdlet’inden `Name` parametresi kaldırıldı
+- `Encryption` cmdlet’inden `New/Set-AzRecoveryServicesAsrPolicy` parametresi kaldırıldı
+- Artık `TargetStorageAccountName` cmdlet'indeki yönetilen disk geri yükleme işlemleri için `Restore-AzRecoveryServicesBackupItem` parametresi zorunludur
+- `StorageAccountName` cmdlet’inden `StorageAccountResourceGroupName` ve `Restore-AzRecoveryServicesBackupItem` parametresi kaldırıldı
+- `Name` cmdlet’inden `Get-AzRecoveryServicesBackupContainer` parametresi kaldırıldı
 
 ### <a name="azresources-previously-azurermresources"></a>Az.Resources (eski adıyla AzureRM.Resources)
 
-- `New/Set-AzPolicyAssignment` cmdlet’inden `Sku` parametresi kaldırıldı
-- `New-AzADServicePrincipal` ve `New-AzADSpCredential` cmdlet’inden `Password` parametresi kaldırıldı Parolalar otomatik olarak oluşturulduğundan, daha önce parolayı sağlayan betikler:
+- `Sku` cmdlet’inden `New/Set-AzPolicyAssignment` parametresi kaldırıldı
+- `Password` ve `New-AzADServicePrincipal` cmdlet’inden `New-AzADSpCredential` parametresi kaldırıldı Parolalar otomatik olarak oluşturulduğundan, daha önce parolayı sağlayan betikler:
 
   ```azurepowershell-interactive
   New-AzAdSpCredential -ObjectId 1f99cf81-0146-4f4e-beae-2007d0668476 -Password $secPassword
@@ -338,9 +338,9 @@ Betikler artık bu alanların değerlerini temel alan işleme kararları almamal
 ### <a name="azservicefabric-previously-azurermservicefabric"></a>Az.ServiceFabric (eski adıyla AzureRM.ServiceFabric)
 
 - Aşağıdaki cmdlet dönüş türleri değişmiştir:
-  - `ApplicationHealthPolicy` türündeki `ServiceTypeHealthPolicies` özelliği kaldırıldı.
-  - `ClusterUpgradeDeltaHealthPolicy` türündeki `ApplicationHealthPolicies` özelliği kaldırıldı.
-  - `ClusterUpgradePolicy` türündeki `OverrideUserUpgradePolicy` özelliği kaldırıldı.
+  - `ServiceTypeHealthPolicies` türündeki `ApplicationHealthPolicy` özelliği kaldırıldı.
+  - `ApplicationHealthPolicies` türündeki `ClusterUpgradeDeltaHealthPolicy` özelliği kaldırıldı.
+  - `OverrideUserUpgradePolicy` türündeki `ClusterUpgradePolicy` özelliği kaldırıldı.
   - Bu değişikliklerden aşağıdaki cmdlet’ler etkilenir:
     - Add-AzServiceFabricClientCertificate
     - Add-AzServiceFabricClusterCertificate
@@ -359,17 +359,17 @@ Betikler artık bu alanların değerlerini temel alan işleme kararları almamal
 
 ### <a name="azsql-previously-azurermsql"></a>Az.Sql (eski adıyla AzureRM.Sql)
 
-- `Set-AzSqlDatabaseBackupLongTermRetentionPolicy` cmdlet’inden `State` ve `ResourceId` parametresi kaldırıldı
+- `State` cmdlet’inden `ResourceId` ve `Set-AzSqlDatabaseBackupLongTermRetentionPolicy` parametresi kaldırıldı
 - Kullanım dışı cmdlet’ler kaldırıldı: `Get/Set-AzSqlServerBackupLongTermRetentionVault`, `Get/Start/Stop-AzSqlServerUpgrade`, `Get/Set-AzSqlDatabaseAuditingPolicy`, `Get/Set-AzSqlServerAuditingPolicy`, `Remove-AzSqlDatabaseAuditing`, `Remove-AzSqlServerAuditing`
-- `Get-AzSqlDatabaseBackupLongTermRetentionPolicy` cmdlet’inden kullanım dışı `Current` parametresi kaldırıldı
-- `Get-AzSqlServerServiceObjective` cmdlet’inden kullanım dışı `DatabaseName` parametresi kaldırıldı
-- `Set-AzSqlDatabaseDataMaskingPolicy` cmdlet’inden kullanım dışı `PrivilegedLogin` parametresi kaldırıldı
+- `Current` cmdlet’inden kullanım dışı `Get-AzSqlDatabaseBackupLongTermRetentionPolicy` parametresi kaldırıldı
+- `DatabaseName` cmdlet’inden kullanım dışı `Get-AzSqlServerServiceObjective` parametresi kaldırıldı
+- `PrivilegedLogin` cmdlet’inden kullanım dışı `Set-AzSqlDatabaseDataMaskingPolicy` parametresi kaldırıldı
 
 ### <a name="azstorage-previously-azurestorage-and-azurermstorage"></a>Az.Storage (eski adıyla Azure.Storage and AzureRM.Storage)
 
 - Yalnızca depolama hesabı adıyla bir Oauth depolama bağlamı oluşturulmasının desteklenmesi için varsayılan parametre kümesi `OAuthParameterSet` olarak değiştirildi
   - Örnek: `$ctx = New-AzureStorageContext -StorageAccountName $accountName`
-- `Get-AzStorageUsage` cmdlet’inde `Location` parametresi zorunlu hale geldi
+- `Location` cmdlet’inde `Get-AzStorageUsage` parametresi zorunlu hale geldi
 - Depolama API’si metotları artık zaman uyumlu API çağrıları yerine Görev Tabanlı Zaman Uyumsuz Düzeni (TAP) kullanıyor. Aşağıdaki örneklerde yeni zaman uyumsuz komutlar gösterilir:
 
 #### <a name="blob-snapshot"></a>Blob Anlık Görüntüsü

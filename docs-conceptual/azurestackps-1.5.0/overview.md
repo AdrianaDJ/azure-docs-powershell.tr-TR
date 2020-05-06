@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.manager: knithinc
 ms.date: 09/21/2018
 ms.openlocfilehash: afa83a6258e57e961576b328e67fad634704dddf
-ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56154226"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "63053367"
 ---
 # <a name="azure-stack-module-150"></a>Azure Stack Modülü 1.5.0
 
@@ -127,7 +127,7 @@ Azure Stack Aboneliği yönetici modülünün önizleme sürümü.  Bu modül y�
 Azure Stack Aboneliği modülünün önizleme sürümü.  Bu modül kullanıcıların şunları yapmasını sağlayan işlevler sunar:
 - Abonelikleri Oluşturma, Silme ve Güncelleştirme
 
-### <a name="update"></a>Güncelleştirme
+### <a name="update"></a>Güncelleştir
 Azure Stack Güncelleştirme yönetici modülünün önizleme sürümü.  Bu modülde yöneticiler şunları yapabilir:
 - Kullanılabilir güncelleştirmeleri listeleme ve yükleme
 - Kesintiye uğrayan güncelleştirmeleri sürdürme

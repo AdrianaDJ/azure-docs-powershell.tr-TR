@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/10/2019
 ms.openlocfilehash: 02b39653ebb4aa0f74d2340a7be7b35e08d5e44d
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "81740108"
 ---
 # <a name="migrate-azure-powershell-from-azurerm-to-az"></a>Azure PowerShell'i AzureRM'den Az modülüne geçirme
@@ -62,10 +62,10 @@ Enable-AzureRmAlias -Scope CurrentUser
 ```
 
 Diğer adlar, Az modülü yüklendiğinde eski cmdlet adlarının kullanılabilmesine olanak tanır. Bu diğer adlar, seçili kapsam için profile yazılır. Profil yoksa, bir profil oluşturulur.
-`CurrentUser` kapsamından daha geniş bir `-Scope` kullanırken, ilgili profil dosyasını oluşturmak veya güncelleştirmek için uygun izinler gerekir.
+`-Scope` kapsamından daha geniş bir `CurrentUser` kullanırken, ilgili profil dosyasını oluşturmak veya güncelleştirmek için uygun izinler gerekir.
 
 > [!IMPORTANT]
-> __Yalnızca__ cmdlet adlarının diğer adları vardır; modül adlarının yoktur! `.psd1` içinde `#Requires`, `Import-Module` bağımlılık listelerini veya tam cmdlet adlarını kullanıyorsanız, bu noktada modül adlarıyla ilgili [hataya neden olan değişiklikler listesinde](migrate-az-1.0.0.md) belirtilen süreci izleyerek bunların geçişini yaptığınızdan emin olun.
+> __Yalnızca__ cmdlet adlarının diğer adları vardır; modül adlarının yoktur! `#Requires` içinde `Import-Module`, `.psd1` bağımlılık listelerini veya tam cmdlet adlarını kullanıyorsanız, bu noktada modül adlarıyla ilgili [hataya neden olan değişiklikler listesinde](migrate-az-1.0.0.md) belirtilen süreci izleyerek bunların geçişini yaptığınızdan emin olun.
 
 > [!WARNING]
 >
@@ -87,4 +87,4 @@ Bu noktaya kadar betiklerinizde yalnızca küçük, basit değişiklikler yapmı
 Geçişinizi tamamladıktan ve diğer ad davranışlarına güvenerek çalışmayı bıraktıktan sonra, diğer adları devre dışı bırakmanız önerilir. Bu işlem [Disable-AzureRmAlias](/powershell/module/az.accounts/disable-azurermalias) cmdlet'iyle yapılır.
 
 > [!IMPORTANT]
-> Bu cmdlet'i çalıştırırken, `Enable-AzureRmAlias` cmdlet'inin çağrıldığı her `-Scope` için çağırdığınızdan __emin olun__; aksi takdirde sisteminizde diğer ad davranışına bağımlı betikler kalabilir.
+> Bu cmdlet'i çalıştırırken, __cmdlet'inin çağrıldığı her__ için çağırdığınızdan `-Scope`emin olun`Enable-AzureRmAlias`; aksi takdirde sisteminizde diğer ad davranışına bağımlı betikler kalabilir.

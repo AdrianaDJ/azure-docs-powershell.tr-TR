@@ -5,10 +5,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 02/26/2020
 ms.openlocfilehash: 7a25270566f5e856ee44c4c191a47a3e7334508b
-ms.sourcegitcommit: 4c61442a2df1cee633ce93cad9f6bc793803baa2
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "81445705"
 ---
 # <a name="install-azure-powershell"></a>Azure PowerShell'i yükleme
@@ -146,7 +146,7 @@ Azure PowerShell'in bir sürümünü kaldırmak için bkz. [Azure PowerShell mod
 
 Modülün birden çok sürümünü yüklediyseniz, modül otomatik yükleme ve `Import-Module` tarafından varsayılan olarak en son sürüm yüklenir.
 
-`-RequiredVersion` parametresini kullanarak `Az` modülünün belirli bir sürümünü yükleyebilirsiniz:
+`Az` parametresini kullanarak `-RequiredVersion` modülünün belirli bir sürümünü yükleyebilirsiniz:
 
 ```powershell-interactive
 # Install Az version 3.6.1

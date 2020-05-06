@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 10/22/2019
 ms.openlocfilehash: 7f22a420068db87fa2c3c007bd36f515384162fb
-ms.sourcegitcommit: ad7677d703a8512d371d3123dc7e541156b95cb8
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 10/23/2019
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "72814232"
 ---
 # <a name="install-the-azure-powershell-module"></a>Azure PowerShell modülünü yükleme
@@ -139,7 +139,7 @@ Get-InstalledModule -Name Az -AllVersions | select Name,Version
 
 Azure PowerShell'in bir sürümünü kaldırmak için bkz. [Azure PowerShell modülünü kaldırma](uninstall-az-ps.md).
 
-`-RequiredVersion` bağımsız değişkenini kullanarak `Az` modülünün belirli bir sürümünü yükleyebilirsiniz:
+`Az` bağımsız değişkenini kullanarak `-RequiredVersion` modülünün belirli bir sürümünü yükleyebilirsiniz:
 
 ```powershell-interactive
 # Install Az version 0.7.0
