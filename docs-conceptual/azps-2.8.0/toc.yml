@@ -19,7 +19,7 @@
     - name: AzureRM ve Az arasındaki değişiklikler
       href: migrate-az-1.0.0.md
       displayName: 'breaking, cmdlet, module, names'
-- name: Başlarken
+- name: başlarken
   href: get-started-azureps.md
   displayName: 'sign in, signin, log in, login, find, feedback, intro, introduction'
 - name: Cloud Shell
