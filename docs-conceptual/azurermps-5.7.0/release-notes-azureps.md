@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.workload: ''
 ms.date: 2/20/2018
 ms.openlocfilehash: 61ab0f91c3d6fffdbffd336fa0d6ed9b0ab8f6ec
-ms.sourcegitcommit: b02cbcd00748a4a9a4790a5fba229ce53c3bf973
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 08/09/2019
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "68863287"
 ---
 # <a name="release-notes"></a>Sürüm notları
@@ -149,7 +149,7 @@ Son sürümden sonraki değişiklikler: https://github.com/Azure/azure-powershel
     - Update-AzureRmRecoveryServicesAsrProtectionDirection
 
 #### <a name="azurermstorage"></a>AzureRM.Storage
-* Yeni ve ayarlanan Depolama Hesabı cmdlet’lerindeki EnableEncryptionService ve DisableEncryptionService parametreleri, Bekleyen Şifreleme varsayılan olarak etkinleştirildiğinden ve devre dışı bırakılamadığından artık kullanılmıyor.
+* New ve Set StorageAccount cmdlet’lerindeki EnableEncryptionService ve DisableEncryptionService parametreleri, Bekleyen Şifreleme varsayılan olarak etkinleştirildiğinden ve devre dışı bırakılamadığından artık kullanılmıyor.
     - New-AzureRmStorageAccount
     - Set-AzureRmStorageAccount
 
@@ -184,9 +184,9 @@ Son sürümden sonraki değişiklikler: https://github.com/Azure/azure-powershel
 * 'New-AzureRmVMSS', bağlantı dizelerini ayrıntılı modda yazdırır.
 * 'New-AzureRmVmss', genel IP adresini, yük dengeleme kurallarını, gelen NAT kurallarını destekler.
 * WriteAccelerator özelliği
-    - Aşağıdaki cmdlet’lere WriteAccelerator anahtar parametresi eklendi: Set-AzureRmVMOSDisk Set-AzureRmVMDataDisk Add-AzureRmVMDataDisk Add-AzureRmVmssDataDisk
-    - Aşağıdaki cmdlet’lere OsDiskWriteAccelerator anahtar parametresi eklendi:     Set-AzureRmVmssStorageProfile.
-    - Aşağıdaki cmdlet’lere OsDiskWriteAccelerator Boole parametresi eklendi:     Update-AzureRmVM     Update-AzureRmVmss
+    - Şu cmdlet’lere WriteAccelerator anahtar parametresi eklendi: Set-AzureRmVMOSDisk Set-AzureRmVMDataDisk Add-AzureRmVMDataDisk Add-AzureRmVmssDataDisk
+    - Şu cmdlet’e OsDiskWriteAccelerator anahtar parametresi eklendi:     Set-AzureRmVmssStorageProfile.
+    - Şu cmdlet’lere OsDiskWriteAccelerator Boole parametresi eklendi:     Update-AzureRmVM     Update-AzureRmVmss
 
 #### <a name="azurermdatafactories"></a>AzureRM.DataFactories
 * Bazı şifreleme işlemleri için anlamlı bir hataya yol açmayan kimlik bilgileri şifreleme sorunu düzeltildi
@@ -282,11 +282,11 @@ Son sürümden sonraki değişiklikler: https://github.com/Azure/azure-powershel
 * RouteTable ve effectiveRoute’a DisableBgpRoutePropagation özelliği eklendi.
 
 #### <a name="azurermresources"></a>AzureRM.Resources
-* Register-AzureRmProviderFeature: Eksik örnek belgelere eklendi
-* Register-AzureRmResourceProvider: Eksik örnek belgelere eklendi
+* Register-AzureRmProviderFeature: Belgelerdeki eksik örnekler eklendi
+* Register-AzureRmResourceProvider: Belgelerdeki eksik örnekler eklendi
 
 #### <a name="azurermstorage"></a>AzureRM.Storage
-* Yeni ve ayarlanan Depolama Hesabı cmdlet’lerindeki EnableEncryptionService ve DisableEncryptionService parametreleri, Bekleyen Şifreleme varsayılan olarak etkinleştirildiğinden ve devre dışı bırakılamadığından artık kullanılmıyor.
+* New ve Set StorageAccount cmdlet’lerindeki EnableEncryptionService ve DisableEncryptionService parametreleri, Bekleyen Şifreleme varsayılan olarak etkinleştirildiğinden ve devre dışı bırakılamadığından artık kullanılmıyor.
     - New-AzureRmStorageAccount
     - Set-AzureRmStorageAccount
 
@@ -294,9 +294,9 @@ Son sürümden sonraki değişiklikler: https://github.com/Azure/azure-powershel
 ## <a name="530---february-2018"></a>5.3.0 - Şubat 2018
 ### <a name="azurermprofile"></a>AzureRM.Profile
 * PowerShell 3 ve 4 için kullanımdan kaldırılma uyarısı eklendi
-* `Add-AzureRmAccount` `Connect-AzureRmAccount` olarak yeniden adlandırıldı; eski cmdlet adına bir diğer ad eklendi ve başka diğer adlar (`Login-AzAccount` ve `Login-AzureRmAccount`) yeni cmdlet adına yeniden yönlendirildi.
-* `Remove-AzureRmAccount` `Disconnect-AzureRmAccount` olarak yeniden adlandırıldı; eski cmdlet adına bir diğer ad eklendi ve başka diğer adlar (`Logout-AzAccount` ve `Logout-AzureRmAccount`) yeni cmdlet adına yeniden yönlendirildi.
-* Kaynak Dizeler `Login-AzureRmAccount` yerine `Connect-AzureRmAccount` kullanmak için düzeltildi
+* `Add-AzureRmAccount``Connect-AzureRmAccount` olarak yeniden adlandırıldı; eski cmdlet adına bir diğer ad eklendi ve başka diğer adlar (`Login-AzAccount` ve `Login-AzureRmAccount`) yeni cmdlet adına yeniden yönlendirildi.
+* `Remove-AzureRmAccount``Disconnect-AzureRmAccount` olarak yeniden adlandırıldı; eski cmdlet adına bir diğer ad eklendi ve başka diğer adlar (`Logout-AzAccount` ve `Logout-AzureRmAccount`) yeni cmdlet adına yeniden yönlendirildi.
+* Kaynak Dizeler `Connect-AzureRmAccount` yerine `Login-AzureRmAccount` kullanmak için düzeltildi
 * `Add-AzureRmEnvironment` ve `Set-AzureRmEnvironment`
   - OperationalInsights veri düzlemi RP ile parametre olarak kullanılmak üzere `-AzureOperationalInsightsEndpoint` ve `-AzureOperationalInsightsEndpointResourceId` eklendi.
 
@@ -307,16 +307,16 @@ Son sürümden sonraki değişiklikler: https://github.com/Azure/azure-powershel
 * `-AvailabilitySetName` parametresi `New-AzureRmVM` basitleştirilmiş parametre kümesine eklendi.
 * `Login-AzureRmAccount` kullanımı `Connect-AzureRmAccount` olarak düzeltildi
 * VM ve VM ölçek kümesi için kullanıcıya atanan kimlik desteği
-    - `New-AzureRmVMConfig`, `New-AzureRmVmssConfig`, `Update-AzureRmVM` ve `Update-AzureRmVmss` için `-IdentityType` ve `-IdentityId` parametreleri eklendi
-* `Add-AzureRmVmssNetworkInterfaceConfig` özelliğine `-EnableIPForwarding` parametresi eklendi
-* `New-AzureRmVmssConfig` özelliğine `-Priority` parametresi eklendi
+    - `-IdentityType`, `-IdentityId`, `New-AzureRmVMConfig` ve `New-AzureRmVmssConfig` için `Update-AzureRmVM` ve `Update-AzureRmVmss` parametreleri eklendi
+* `-EnableIPForwarding` özelliğine `Add-AzureRmVmssNetworkInterfaceConfig` parametresi eklendi
+* `-Priority` özelliğine `New-AzureRmVmssConfig` parametresi eklendi
 
 ### <a name="azurermdatalakeanalytics"></a>AzureRM.DataLakeAnalytics
 * `Login-AzureRmAccount` kullanımı `Connect-AzureRmAccount` olarak düzeltildi
 
 ### <a name="azurermdatalakestore"></a>AzureRM.DataLakeStore
 * `Login-AzureRmAccount` kullanımı `Connect-AzureRmAccount` olarak düzeltildi
-* `Login-AzureRmAccount` ile oturum açmadan bu cmdlet çalıştırıldığında oluşan `Test-AzureRmDataLakeStoreAccount` hata iletisi düzeltildi
+* `Test-AzureRmDataLakeStoreAccount` ile oturum açmadan bu cmdlet çalıştırıldığında oluşan `Login-AzureRmAccount` hata iletisi düzeltildi
 
 ### <a name="azurermeventgrid"></a>AzureRM.EventGrid
 * 2018-01-01 API sürümünü kullanmak için güncelleştirildi.
@@ -625,7 +625,7 @@ Son sürümden sonraki değişiklikler: https://github.com/Azure/azure-powershel
   - Get-AzureRmComputeResourceSku, bölge bilgilerini gösterir.
   - [https://github.com/Azure/azure-powershell/issues/5038](https://github.com/Azure/azure-powershell/issues/5038 ) sorununu düzeltmek için Disable-AzureRmVmssDiskEncryption öğesini güncelleştirin
   - Uzun süre çalışan İşlem cmdlet’leri için -AsJob desteği eklendi. Seçilen cmdlet’lerin arka planda çalışmasını ve ilerlemeyi izleyip denetlemek için bir iş döndürmesini sağlar.
-    - Etkilenen cmdlet’ler şunlardır: Sanal Makineler ve Sanal Makine Ölçek Kümeleri için New-, Update-, Set-, Remove-, Start-, Restart-, Stop- cmdlet’leri
+    - Etkilenen cmdlet’ler şunları içerir: Sanal Makineler ve Sanal Makine Ölçek Kümeleri için New-, Update-, Set-, Remove-, Start-, Restart-, Stop- cmdlet’leri
     - New-AzureRmVM cmdlet’ine akıllı varsayılanları kullanarak bir Sanal Makine ve tüm gerekli kaynakları oluşturan basitleştirilmiş parametre kümesi eklendi
 * ContainerInstance
   - Azure Container Instance SDK’sı uygulama 2017-10-01
@@ -692,7 +692,7 @@ Son sürümden sonraki değişiklikler: https://github.com/Azure/azure-powershel
     - Cmdlet’lerinizi AzureRM’den geçirme hakkında daha fazla bilgi için yakında sunulacak olan büyük değişikliklere ilişkin kılavuza bakın.
 * Sql
   - Set-AzureRmSqlDatabase kullanarak veritabanını yeniden adlandırma özelliği eklendi
-  - [https://github.com/Azure/azure-powershell/issues/4974](https://github.com/Azure/azure-powershell/issues/4974 ) sorunu düzeltildi
+  - [https://github.com/Azure/azure-powershell/issues/5046](https://github.com/Azure/azure-powershell/issues/4974 ) sorunu düzeltildi
     - Denetim cmdlet’leri için geçersiz AUDIT_CHANGED_GROUP değeri sağlamak artık hata oluşturmuyor ve gelecek bir sürümde kaldırılacak.
   - [https://github.com/Azure/azure-powershell/issues/5046](https://github.com/Azure/azure-powershell/issues/5046 ) sorunu düzeltildi
     - Denetim cmdlet’lerinde AuditAction parametresi artık yok sayılmıyor
@@ -723,7 +723,7 @@ Son sürümden sonraki değişiklikler: https://github.com/Azure/azure-powershel
   - AzureRM.StreamAnalytics
 
 ## <a name="2017118---version-500"></a>2017.11.8 - Sürüm 5.0.0
-* NOT: Bu bir hataya neden olan değişiklik yayınıdır. Sunulan önemli değişikliklerin tam listesi için lütfen geçiş kılavuzuna (https://aka.ms/azps-migration-guide) ) bakın.
+* Not: Bu bir önemli değişiklik yayınıdır. Sunulan önemli değişikliklerin tam listesi için lütfen geçiş kılavuzuna (https://aka.ms/azps-migration-guide) ) bakın.
 * AzureRM’deki tüm cmdlet'ler artık çevrimiçi yardımı destekler
   - Çevrimiçi yardımı varsayılan İnternet tarayıcınızda açmak için Get-Help komutunu -Online parametresiyle birlikte çalıştırın
 * AnalysisServices
@@ -756,7 +756,7 @@ Son sürümden sonraki değişiklikler: https://github.com/Azure/azure-powershel
     - `KeyVaultId`: Batch hesabıyla ilişkili Azure anahtar kasasının kaynak kimliği.
     - `KeyVaultUrl`: Batch hesabıyla ilişkili Azure anahtar kasasının URL’si.
   * Parametreler `New-AzureBatchTask` olarak güncelleştirildi.
-    - `RunElevated` anahtarı kaldırıldı. `RunElevated` parametresi kaldırılıp bunun yerine `UserIdentity` parametresi eklendi. Eşdeğer bir davranış aşağıda gösterildiği gibi bir `PSUserIdentity` oluşturularak elde edilebilir:
+    - `RunElevated` anahtarı kaldırıldı. `UserIdentity` parametresi kaldırılıp bunun yerine `RunElevated` parametresi eklendi. Eşdeğer bir davranış aşağıda gösterildiği gibi bir `PSUserIdentity` oluşturularak elde edilebilir:
       - $autoUser = New-Object Microsoft.Azure.Commands.Batch.Models.PSAutoUserSpecification -ArgumentList @("Görev", "Yönetici")
       - $userIdentity = New-Object Microsoft.Azure.Commands.Batch.Models.PSUserIdentity $autoUser
     - `AuthenticationTokenSettings` parametresi eklendi. Bu parametre Batch hizmetinden çalıştığında, göreve bir kimlik doğrulama belirteci sağlamasını istemenize olanak tanır ve Batch hizmetine istek göndermek için göreve Batch hesap anahtarlarını geçirme gereksinimini ortadan kaldırır.
@@ -768,7 +768,7 @@ Son sürümden sonraki değişiklikler: https://github.com/Azure/azure-powershel
     - `UserAccounts` parametresi eklendi.
       - Bu parametre, havuzdaki her düğümde oluşturulan kullanıcı hesaplarını tanımlar.
     - `TargetLowPriorityComputeNodes` eklendi ve `TargetDedicated` olan ad, `TargetDedicatedComputeNodes` olarak değiştirildi.
-      - `TargetDedicatedComputeNodes` parametresi için bir `TargetDedicated` diğer adı oluşturuldu.
+      - `TargetDedicated` parametresi için bir `TargetDedicatedComputeNodes` diğer adı oluşturuldu.
     - `NetworkConfiguration` parametresi eklendi.
       - Bu parametre, havuz ağ ayarlarını yapılandırmanıza olanak sağlar.
   * Parametreler `New-AzureBatchCertificate` olarak güncelleştirildi.
@@ -777,13 +777,13 @@ Son sürümden sonraki değişiklikler: https://github.com/Azure/azure-powershel
     - `Password` parametresi, `SecureString` olacak şekilde değiştirildi.
   * Parametreler `Set-AzureBatchComputeNodeUser` olarak güncelleştirildi.
     - `Password` parametresi, `SecureString` olacak şekilde değiştirildi.
-  * `Name` parametresi `Get-AzureBatchNodeFile`, `Get-AzureBatchNodeFileContent` ve `Remove-AzureBatchNodeFile` üzerinde `Path` olarak yeniden adlandırıldı.
-    - `Path` parametresi için bir `Name` diğer adı oluşturuldu.
+  * `Name` parametresi `Path`, `Get-AzureBatchNodeFile` ve `Get-AzureBatchNodeFileContent` üzerinde `Remove-AzureBatchNodeFile` olarak yeniden adlandırıldı.
+    - `Name` parametresi için bir `Path` diğer adı oluşturuldu.
   * Nesnelerde yapılan değişiklikler
     - Lütfen tam liste için Batch değişiklik günlüğüne bakın
   * Azure Active Directory tabanlı kimlik doğrulaması için destek eklendi.
-    - Azure Active Directory kimlik doğrulamasını kullanmak için `Get-AzureRmBatchAccount` cmdlet'ini kullanarak bir `BatchAccountContext` nesnesi alın ve bu `BatchAccountContext` değerini bir Batch hizmeti cmdlet’inin `-BatchContext` parametresine ekleyin. Azure Active Directory kimlik doğrulaması, `PoolAllocationMode = UserSubscription` özelliğine sahip hesaplar için zorunludur.
-    - Mevcut hesaplar veya `PoolAllocationMode = BatchService` ile oluşturulan yeni hesaplar için, `Get-AzureRmBatchAccoutKeys` cmdlet'i ile bir `BatchAccountContext` nesnesi alarak paylaşılan anahtar kimlik doğrulamasını kullanmaya devam edebilirsiniz.
+    - Azure Active Directory kimlik doğrulamasını kullanmak için `BatchAccountContext` cmdlet'ini kullanarak bir `Get-AzureRmBatchAccount` nesnesi alın ve bu `BatchAccountContext` değerini bir Batch hizmeti cmdlet’inin `-BatchContext` parametresine ekleyin. Azure Active Directory kimlik doğrulaması, `PoolAllocationMode = UserSubscription` özelliğine sahip hesaplar için zorunludur.
+    - Mevcut hesaplar veya `PoolAllocationMode = BatchService` ile oluşturulan yeni hesaplar için, `BatchAccountContext` cmdlet'i ile bir `Get-AzureRmBatchAccoutKeys` nesnesi alarak paylaşılan anahtar kimlik doğrulamasını kullanmaya devam edebilirsiniz.
 * İşlem
   * Azure Disk Şifrelemesi Uzantı Komutları
     - Yeni 'Set-AzureRmVmDiskEncryptionExtension' Parametresi olan '-EncryptFormatAll' biçim veri disklerini şifreler
@@ -838,7 +838,7 @@ Son sürümden sonraki değişiklikler: https://github.com/Azure/azure-powershel
     - Disable-AzureRmRecoveryServicesBackupRPMountScript
   * RecoveryServices.Backup SDK’sı en son sürüme güncelleştirildi
   * Azure VM iş yüküne yönelik testler, test çalıştırmaları için gereken tüm ayarlar testler tarafından yapılacak şekilde güncelleştirildi.
-  * [https://github.com/Azure/azure-powershell/issues/3164](https://github.com/Azure/azure-powershell/issues/3164 ) sorununu düzeltir
+  * https://github.com/Azure/azure-powershell/issues/3164 sorununu düzeltir
 * RecoveryServices.SiteRecovery
   * ASR VMware için Azure Site Recovery’de yapılan değişiklikler (cmdlet’ler şu anda Enterprise-Enterprise, Enterprise-Azure, HyperV-Azure arasındaki işlemleri desteklemektedir)
     - New-AzureRmRecoveryServicesAsrPolicy

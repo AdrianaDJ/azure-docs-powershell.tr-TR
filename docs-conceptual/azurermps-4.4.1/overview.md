@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.manager: carmonm
 ms.date: 08/31/2017
 ms.openlocfilehash: 0541975e55620a8792c0d51213c4ed02ea29988f
-ms.sourcegitcommit: 0b644bfecf4224b2ea83520d1a6a956734d9fba4
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/12/2019
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "67863419"
 ---
 # <a name="overview-of-azure-powershell"></a>Azure PowerShell’e Genel Bakış
@@ -37,7 +37,7 @@ PowerShell'i tanımıyorsanız, PowerShell'e giriş makalesi size yardımcı ola
 * [PowerShell’i yükleme](/powershell/scripting/installing-windows-powershell)
 * [PowerShell ile betik oluşturma](/powershell/scripting/scripting-with-windows-powershell)
 
-Ayrıca şu videoyu izleyebilirsiniz: [PowerShell Temel Bilgileri: (Bölüm 1) PowerShell'i Kullanmaya Başlama](https://channel9.msdn.com/Blogs/Taste-of-Premier/PowerShellBasicsPart1).
+Şu videoyu da izleyebilirsiniz: [Temel PowerShell Bilgileri: (1. Bölüm) PowerShell’i Kullanmaya Başlama](https://channel9.msdn.com/Blogs/Taste-of-Premier/PowerShellBasicsPart1).
 
 ## <a name="other-azure-powershell-modules"></a>Diğer Azure PowerShell modülleri
 

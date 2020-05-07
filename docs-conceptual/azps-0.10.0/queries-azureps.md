@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 01/10/2019
 ms.openlocfilehash: 9141f5640467722608cb7748f425ce3942668fb8
-ms.sourcegitcommit: 4c61442a2df1cee633ce93cad9f6bc793803baa2
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "81445467"
 ---
 # <a name="query-output-of-azure-powershell"></a>Azure PowerShell'in çıkışını sorgulama 
@@ -73,7 +73,7 @@ TestVM 711d8ed1-b888-4c52-8ab9-66f07b87eb6b Succeeded
 
 ## <a name="select-nested-properties"></a>İç içe özellikleri seçme
 
-Azure PowerShell cmdlet'inin çıkışındaki bazı özellikler (`Get-AzVM` çıkışının `StorageProfile` özelliği gibi) iç içe nesneler kullanır. İç içe özellikten bir değer almak için, `Select-Object` cmdlet'inde dictionary bağımsız değişkeninin parçası olarak incelemek istediğiniz değerin görünen adını ve tam yolunu sağlayın:
+Azure PowerShell cmdlet'inin çıkışındaki bazı özellikler (`StorageProfile` çıkışının `Get-AzVM` özelliği gibi) iç içe nesneler kullanır. İç içe özellikten bir değer almak için, `Select-Object` cmdlet'inde dictionary bağımsız değişkeninin parçası olarak incelemek istediğiniz değerin görünen adını ve tam yolunu sağlayın:
 
 ```azurepowershell-interactive
 Get-AzVM -ResourceGroupName TestGroup | `

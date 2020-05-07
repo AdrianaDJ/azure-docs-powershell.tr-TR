@@ -8,10 +8,10 @@ ms.manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.openlocfilehash: 772667032d421e32c6cd63abbcb686b4eab308e2
-ms.sourcegitcommit: ad7677d703a8512d371d3123dc7e541156b95cb8
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 10/23/2019
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "72814235"
 ---
 # <a name="uninstall-the-azure-powershell-module"></a>Azure PowerShell modülünü kaldırma
@@ -145,7 +145,7 @@ Bu ekrandaki program listesinde __Azure PowerShell__'i görebilmelisiniz. Kaldı
 
 ### <a name="uninstall-from-powershell"></a>PowerShell'den kaldırma
 
-AzureRM'yi PowerShellGet ile yüklediyseniz modülleri `Az.Accounts` modülünün bir parçası olan [Uninstall-AzureRM](/powershell/module/az.accounts/uninstall-azurerm) komutuyla kaldırabilirsiniz. Bu işlem _tüm_ AzureRM modüllerini makinenizden kaldırır, ancak yönetici ayrıcalıkları gerektirir.
+AzureRM'yi PowerShellGet ile yüklediyseniz modülleri [ modülünün bir parçası olan ](/powershell/module/az.accounts/uninstall-azurerm)Uninstall-AzureRM`Az.Accounts` komutuyla kaldırabilirsiniz. Bu işlem _tüm_ AzureRM modüllerini makinenizden kaldırır, ancak yönetici ayrıcalıkları gerektirir.
 
 ```powershell-interactive
 Uninstall-AzureRm

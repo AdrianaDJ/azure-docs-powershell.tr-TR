@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 10/15/2019
 ms.openlocfilehash: 98a24c805fbf43dd899119d43301b4261c1f60dc
-ms.sourcegitcommit: f9445d1525eac8c165637e1a80fbc92b1ab005c2
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 12/16/2019
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "75035770"
 ---
 ## <a name="280---october-2019"></a>2.8.0 - Ekim 2019
@@ -1314,7 +1314,7 @@ Az.RecoveryServices modülü için genel kullanılabilirlik.
 * 'New-AzADAppCredential' ve 'New-AzADSpCredential' başvuru belgelerindeki hatalı örnekler düzeltildi
 * Kaynak grubu dağıtım cmdlet'lerini yürütmeden önce '-TemplateFile' parametresi yolunun çözülmemesi sorunu düzeltildi
 * Az.Resources: Belgede New-AzureRmPolicyDefinition -Mode varsayılan değeri düzeltildi
-* Az.Resources: https://github.com/Azure/azure-powershell/issues/7522 sorunu düzeltildi
+* Az.Resources: [https://github.com/Azure/azure-powershell/issues/9351](https://github.com/Azure/azure-powershell/issues/7522 ) sorunu düzeltildi
 * Az.Resources: https://github.com/Azure/azure-powershell/issues/5747 sorunu düzeltildi
 * 'PSResourceGroupDeployment' nesnesinin biçimlendirme sorunu düzeltildi
     - Burada daha fazla bilgi bulunabilir: https://github.com/Azure/azure-powershell/issues/2123
@@ -1536,7 +1536,7 @@ Application Gateway’de RewriteRuleSets parametresini yapılandırma desteği e
 
 ### <a name="azresources"></a>Az.Resources
 
-* [https://github.com/Azure/azure-powershell/issues/7402](https://github.com/Azure/azure-powershell/issues/7679 ) düzeltmesi
+* https://github.com/Azure/azure-powershell/issues/7679 düzeltmesi
     - Get-AzureRmRoleAssignment, klasik yöneticiler istenirken sağlanmışsa abonelik kapsamını kullanacak şekilde güncelleştirildi.
 
 ### <a name="azsql"></a>Az.Sql
@@ -1673,7 +1673,7 @@ Application Gateway’de RewriteRuleSets parametresini yapılandırma desteği e
 * İlke düzeltme cmdlet'leri eklendi
 
 #### <a name="azresources"></a>Az.Resources
-* [https://github.com/Azure/azure-powershell/issues/7402](https://github.com/Azure/azure-powershell/issues/7402 ) düzeltmesi
+* https://github.com/Azure/azure-powershell/issues/7402 düzeltmesi
     - 'Get-AzResource' için '-ResourceId' parametresi kullanılarak kaynakların listelenmesine olanak tanındı
 
 #### <a name="azservicebus"></a>Az.ServiceBus

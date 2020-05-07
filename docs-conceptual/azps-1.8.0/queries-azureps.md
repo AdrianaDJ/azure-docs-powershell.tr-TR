@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 01/10/2019
-ms.openlocfilehash: 9141f5640467722608cb7748f425ce3942668fb8
-ms.sourcegitcommit: 5bdedc77b27b66998387486761ec67ed9326f169
+ms.openlocfilehash: 4f74df6acaa05babc712b7b35737ce3001170b87
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/24/2019
-ms.locfileid: "67346586"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82588001"
 ---
 # <a name="query-output-of-azure-powershell"></a>Azure PowerShell'in çıkışını sorgulama 
 
@@ -73,10 +73,10 @@ TestVM 711d8ed1-b888-4c52-8ab9-66f07b87eb6b Succeeded
 
 ## <a name="select-nested-properties"></a>İç içe özellikleri seçme
 
-Azure PowerShell cmdlet'inin çıkışındaki bazı özellikler (`Get-AzVM` çıkışının `StorageProfile` özelliği gibi) iç içe nesneler kullanır. İç içe özellikten bir değer almak için, `Select-Object` cmdlet'inde dictionary bağımsız değişkeninin parçası olarak incelemek istediğiniz değerin görünen adını ve tam yolunu sağlayın:
+Azure PowerShell cmdlet'inin çıkışındaki bazı özellikler (`StorageProfile` çıkışının `Get-AzVM` özelliği gibi) iç içe nesneler kullanır. İç içe özellikten bir değer almak için, `Select-Object` cmdlet'inde dictionary bağımsız değişkeninin parçası olarak incelemek istediğiniz değerin görünen adını ve tam yolunu sağlayın:
 
 ```azurepowershell-interactive
-Get-AzVM -ResourceGroupName TestGroup | `
+Get-AzVM -ResourceGroupName TestGroup |
     Select-Object Name,@{Name="OSType"; Expression={$_.StorageProfile.OSDisk.OSType}}
 ```
 
@@ -95,7 +95,7 @@ Her dictionary bağımsız değişkeni nesneden bir özellik seçer. Ayıklanaca
 `Where-Object` cmdlet’i, sonucu iç içe özellikler de dahil olmak üzere herhangi bir özellik değerine göre filtrelemenize imkan tanır. Sonraki örnekte, kaynak grubunda Linux VM'lerini bulmak için `Where-Object` öğesinin nasıl kullanıldığı gösterilir.
 
 ```azurepowershell-interactive
-Get-AzVM -ResourceGroupName TestGroup | `
+Get-AzVM -ResourceGroupName TestGroup |
     Where-Object {$_.StorageProfile.OSDisk.OSType -eq "Linux"}
 ```
 
@@ -109,8 +109,8 @@ TestGroup         TestVM2  westus2 Standard_D2s_v3  Linux testvm2669         Suc
 `Select-Object` ile `Where-Object` işlemlerinin sonuçlarını birbirine yönlendirebilirsiniz. Performans açısından, her zaman `Where-Object` işleminin `Select-Object` işleminden önce kullanılması önerilir:
 
 ```azurepowershell-interactive
-Get-AzVM -ResourceGroupName TestGroup | `
-    Where-Object {$_.StorageProfile.OsDisk.OsType -eq "Linux"} | `
+Get-AzVM -ResourceGroupName TestGroup |
+    Where-Object {$_.StorageProfile.OsDisk.OsType -eq "Linux"} |
     Select-Object Name,VmID,ProvisioningState
 ```
 

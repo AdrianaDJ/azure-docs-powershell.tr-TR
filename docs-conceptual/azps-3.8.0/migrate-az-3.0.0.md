@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.openlocfilehash: e88752e0c997efc4f49161e358072803cb63450a
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "81740142"
 ---
 # <a name="migration-guide-for-az-300"></a>Az 3.0.0 için Geçiş Kılavuzu
@@ -113,7 +113,7 @@ Get-AzBatchSupportedImage -BatchContext $Context
 ## <a name="compute"></a>İşlem
 
 ### `New-AzDiskConfig`
-CreateOption değeri Upload olduğunda `New-AzDiskConfig` için `DiskSizeGB` yerine `UploadSizeInBytes` parametresi kullanılıyor
+CreateOption değeri Upload olduğunda `UploadSizeInBytes` için `DiskSizeGB` yerine `New-AzDiskConfig` parametresi kullanılıyor
 
 #### <a name="before"></a>Önce
 ```powershell
@@ -224,7 +224,7 @@ Get-AzHDInsightProperty -Location "East US 2"
 `Grant-AzHDInsightRdpServicesAccess` ve `Revoke-AzHDInsightRdpServicesAccess` cmdlet'leri kaldırıldı. Windows işletim sistemi türünü kullanan kümeler desteklenmediğinden bunlar artık gerekli değildir. Lütfen Linux işletim sistemi türünü kullanarak bir küme oluşturun.
 
 ### `Remove-AzHDInsightCluster`
-`Microsoft.Azure.Management.HDInsight.Models.ClusterGetResponse` olan `Remove-AzHDInsightCluster` çıkış türü `bool` olarak değiştirildi.
+`Remove-AzHDInsightCluster` olan `Microsoft.Azure.Management.HDInsight.Models.ClusterGetResponse` çıkış türü `bool` olarak değiştirildi.
 
 #### <a name="before"></a>Önce
 ```powershell
@@ -241,7 +241,7 @@ True
 Cmdlet kullanım dışı bırakıldı. Bunun için bir değişiklik yoktur.
 
 ### `Set-AzHDInsightGatewayCredential`
-`HttpConnectivitySettings` olan `Set-AzHDInsightGatewayCredential` çıkış türü `AzureHDInsightGatewaySettings` olarak değiştirildi.
+`Set-AzHDInsightGatewayCredential` olan `HttpConnectivitySettings` çıkış türü `AzureHDInsightGatewaySettings` olarak değiştirildi.
 
 
 
@@ -348,7 +348,7 @@ $job = New-AzRecoveryServicesAsrReplicationProtectedItem -VMwareToAzure -Account
 ## <a name="servicefabric"></a>ServiceFabric
 
 ### `Add-ServiceFabricApplicationCertificate`
-Bu senaryo `Add-AzVmssSecret` kapsamında olduğu için `Add-ServiceFabricApplicationCertificate` kaldırıldı.
+Bu senaryo `Add-ServiceFabricApplicationCertificate` kapsamında olduğu için `Add-AzVmssSecret` kaldırıldı.
 
 #### <a name="before"></a>Önce
 ```powershell

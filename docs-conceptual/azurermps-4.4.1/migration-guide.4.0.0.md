@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/01/2018
 ms.openlocfilehash: 2f61e41b701dfc263df18064f6ac2cc4c6e4021e
-ms.sourcegitcommit: 0b644bfecf4224b2ea83520d1a6a956734d9fba4
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/12/2019
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "67863549"
 ---
 # <a name="breaking-changes-for-microsoft-azure-powershell-400"></a>Microsoft Azure PowerShell 4.0.0 için bozucu değişiklikler
@@ -35,7 +35,7 @@ Bu belge, Microsoft Azure PowerShell cmdlet’lerini kullananlar için hem bozuc
 Bu sürümden aşağıdaki çıktı türleri etkilenmiştir:
 
 ### <a name="psvirtualmachine"></a>PSVirtualMachine
-- `PSVirtualMachine` nesnesinin `DataDiskNames` ve `NetworkInterfaceIDs` üst düzey özellikleri çıktı türünden kaldırıldı. Bu özelliklere zaten `PSVirtualMachine` nesnesinin `StorageProfile` ve `NetworkProfile` özelliklerinden erişilebiliyordu ve bundan sonra bu şekilde erişilmesi gerekecek.
+- `DataDiskNames` nesnesinin `NetworkInterfaceIDs` ve `PSVirtualMachine` üst düzey özellikleri çıktı türünden kaldırıldı. Bu özelliklere zaten `StorageProfile` nesnesinin `NetworkProfile` ve `PSVirtualMachine` özelliklerinden erişilebiliyordu ve bundan sonra bu şekilde erişilmesi gerekecek.
 - Bu değişiklik, aşağıdaki cmdlet etkiler:
     - `Add-AzureRmVMDataDisk`
     - `Add-AzureRmVMNetworkInterface`
@@ -56,7 +56,7 @@ $vm.NetworkProfile.NetworkInterfaces | Select -Property Id
 
 ## <a name="breaking-changes-to-eventhub-cmdlets"></a>EventHub cmdlet’lerinde bozucu değişiklikler
 
-Bu sürümden aşağıdaki cmdlet’ler etkilenmiştir:
+Bu sürümden aşağıdaki cmdlet’ler etkilenir:
 
 ### <a name="get-azurermeventhubnamespace"></a>Get-AzureRmEventHubNamespace
 - `ResourceGroupName` özelliği `NamespaceAttributes` çıktı türünden kaldırıldı
@@ -66,7 +66,7 @@ Bu sürümden aşağıdaki cmdlet’ler etkilenmiştir:
 
 ## <a name="breaking-changes-to-insights-cmdlets"></a>Insights cmdlet’lerinde bozucu değişiklikler
 
-Bu sürümden aşağıdaki cmdlet’ler etkilenmiştir:
+Bu sürümden aşağıdaki cmdlet’ler etkilenir:
     
 ### <a name="get-azurermusage"></a>Get-AzureRmUsage
 - Bu cmdlet kullanım dışı bırakıldı.
@@ -192,7 +192,7 @@ Update-AzureRmDiagnosticSettings
 
 ## <a name="breaking-changes-to-network-cmdlets"></a>Ağ cmdlet’lerinde bozucu değişiklikler
 
-Bu sürümden aşağıdaki cmdlet’ler etkilenmiştir:
+Bu sürümden aşağıdaki cmdlet’ler etkilenir:
 
 ### <a name="new-azurermvirtualnetworkgatewayconnection"></a>New-AzureRmVirtualNetworkGatewayConnection
 - `EnableBgp`parametresi, `boolean` yerine `string` alacak şekilde değiştirildi
@@ -207,7 +207,7 @@ New-AzureRmVirtualNetworkGatewayConnection -ResourceGroupName "RG" -name "conn1"
 
 ## <a name="breaking-changes-to-servicebus-cmdlets"></a>ServiceBus cmdlet’lerinde bozucu değişiklikler
 
-Bu sürümden aşağıdaki cmdlet’ler etkilenmiştir:
+Bu sürümden aşağıdaki cmdlet’ler etkilenir:
 
 ### <a name="get-azurermservicebusnamespace"></a>Get-AzureRmServiceBusNamespace
 - `ResourceGroupName` özelliği `NamespaceAttributes` çıktı türünden kaldırıldı
@@ -218,7 +218,7 @@ Bu sürümden aşağıdaki cmdlet’ler etkilenmiştir:
 
 ## <a name="breaking-changes-to-sql-cmdlets"></a>Sql cmdlet’lerinde bozucu değişiklikler
 
-Bu sürümden aşağıdaki cmdlet’ler etkilenmiştir:
+Bu sürümden aşağıdaki cmdlet’ler etkilenir:
 
 ### <a name="new-azurermsqldatabasefailovergroup"></a>New-AzureRmSqlDatabaseFailoverGroup
 - `Tag` parametresi kaldırıldı
@@ -279,10 +279,10 @@ Remove-AzureRmSqlDatabaseFailoverGroup -ResourceGroupName rg -ServerName server1
 ```
 
 ### <a name="set-azurermsqldatabasethreatdetectionpolicy"></a>Set-AzureRmSqlDatabaseThreatDetectionPolicy
-- `ExcludedDetectionType` parametresi için `Usage_Anomaly` değeri artık geçerli değil
+- `Usage_Anomaly` parametresi için `ExcludedDetectionType` değeri artık geçerli değil
 
 ### <a name="set-azurermsqlserverthreatdetectionpolicy"></a>Set-AzureRmSqlServerThreatDetectionPolicy
-- `ExcludedDetectionType` parametresi için `Usage_Anomaly` değeri artık geçerli değil
+- `Usage_Anomaly` parametresi için `ExcludedDetectionType` değeri artık geçerli değil
 
 ## <a name="breaking-changes-to-storage-cmdlets"></a>Depolama cmdlet’lerinde bozucu değişiklikler
 
@@ -391,7 +391,7 @@ Save-AzureRmContext -Path c:\mydir\myprofile.json
 ```
 ### <a name="breaking-changes-to-output-psazurecontext-type"></a>Çıktı PSAzureContext Türünde Bozucu Değişiklikler
 
-- ```TokenCache``` özelliği, bir ```byte[]``` yerine ```IAzureTokenCache``` uygulayan bir tür olarak değiştirildi
+- ```TokenCache``` özelliği, bir ```IAzureTokenCache``` yerine ```byte[]``` uygulayan bir tür olarak değiştirildi
 
 ```powershell-interactive
 # Old

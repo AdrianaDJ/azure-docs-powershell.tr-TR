@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 04/30/2019
 ms.openlocfilehash: 8a9a399f72ed9e3e9a3cbc09c8a4abaa91339c24
-ms.sourcegitcommit: f0f09eee03ef9dd7fe07432252a3dc8ca93e3a7b
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "71319302"
 ---
 ## <a name="180---april-2019"></a>1.8.0 - Nisan 2019
@@ -324,9 +324,9 @@ ms.locfileid: "71319302"
     - Belirli Application-Insights kaynak parametrelerine (abonelik kimliği, resourceGroupName ve ad) göre veri kaynağı oluşturmak için New-AzOperationalInsightsApplicationInsightsDataSource cmdlet’i eklendi. 
 
 #### <a name="azresources"></a>Az.Resources
-* https://github.com/Azure/azure-powershell/issues/8166 sorunu düzeltildi
-* https://github.com/Azure/azure-powershell/issues/8235 sorunu düzeltildi
-* https://github.com/Azure/azure-powershell/issues/6219 sorunu düzeltildi
+* [https://github.com/Azure/azure-powershell/issues/8166](https://github.com/Azure/azure-powershell/issues/8166 ) sorunu düzeltildi
+* [https://github.com/Azure/azure-powershell/issues/8235](https://github.com/Azure/azure-powershell/issues/8235 ) sorunu düzeltildi
+* [https://github.com/Azure/azure-powershell/issues/6219](https://github.com/Azure/azure-powershell/issues/6219 ) sorunu düzeltildi
 * KeyCredentials’ın tekrar oluşturmasını engelleyen hata düzeltildi
 
 #### <a name="azsql"></a>Az.Sql
@@ -417,7 +417,7 @@ Az.RecoveryServices modülü için genel kullanılabilirlik.
 * 'New-AzADAppCredential' ve 'New-AzADSpCredential' başvuru belgelerindeki hatalı örnekler düzeltildi
 * Kaynak grubu dağıtım cmdlet'lerini yürütmeden önce '-TemplateFile' parametresi yolunun çözülmemesi sorunu düzeltildi
 * Az.Resources: Belgede New-AzureRmPolicyDefinition -Mode varsayılan değeri düzeltildi
-* Az.Resources: https://github.com/Azure/azure-powershell/issues/7522 sorunu düzeltildi
+* Az.Resources: [https://github.com/Azure/azure-powershell/issues/9351](https://github.com/Azure/azure-powershell/issues/7522 ) sorunu düzeltildi
 * Az.Resources: https://github.com/Azure/azure-powershell/issues/5747 sorunu düzeltildi
 * 'PSResourceGroupDeployment' nesnesinin biçimlendirme sorunu düzeltildi
     - Burada daha fazla bilgi bulunabilir: https://github.com/Azure/azure-powershell/issues/2123

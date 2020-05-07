@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 12/11/2017
 ms.openlocfilehash: d2ffd6cc4c5e70c53ab60b1280384faac9b45867
-ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/11/2019
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "65534720"
 ---
 # <a name="running-cmdlets-in-parallel-using-powershell-jobs"></a>PowerShell işlerini kullanarak cmdlet’leri paralel olarak çalıştırma
@@ -69,7 +69,7 @@ Daha sonra, iş tamamlandığında `Receive-Job` ile işin sonucunu edinebilirsi
 
 > [!NOTE]
 > `Receive-Job`, `-AsJob` bayrağı yokmuş gibi cmdlet’ten sonucu döndürür.
-> Örneğin, `Do-Action -AsJob` cmdlet’inin `Receive-Job` sonucu `Do-Action` sonucuyla aynı türdedir.
+> Örneğin, `Receive-Job` cmdlet’inin `Do-Action -AsJob` sonucu `Do-Action` sonucuyla aynı türdedir.
 
 ```azurepowershell-interactive
 $vm = Receive-Job $job

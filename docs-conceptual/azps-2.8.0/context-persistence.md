@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 10/21/2019
 ms.openlocfilehash: 72d1b07bb2c66f80ea6f5d37ef7012d0d0a5bbbc
-ms.sourcegitcommit: 1cdff856d1d559b978aac6bc034dd2f99ac04afe
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 10/23/2019
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "72791461"
 ---
 # <a name="azure-powershell-context-objects"></a>Azure PowerShell bağlam nesneleri
@@ -24,7 +24,7 @@ Bu makalede aboneliklerin veya hesapların yönetimi değil Azure bağlamların�
 
 Azure bağlamları, üzerinde komutların çalıştırılacağı etkin aboneliğinizi ve Azure bulutuna bağlanmak için gereken kimlik doğrulama bilgilerini temsil eden PowerShell nesneleridir. Azure bağlamlarıyla, Azure PowerShell'in her abonelik değiştirdiğinizde kimliğinizi yeniden doğrulaması gerekmez. Azure bağlamı şunlardan oluşur:
 
-* [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount) ile Azure'da oturum açarken kullanılmış olan _hesap_. Azure bağlamları, hesap açısından kullanıcıları, uygulama kimliklerini ve hizmet sorumlularını aynı şekilde değerlendirir.
+* _Connect-AzAccount_ ile Azure'da oturum açarken kullanılmış olan [hesap](/powershell/module/az.accounts/connect-azaccount). Azure bağlamları, hesap açısından kullanıcıları, uygulama kimliklerini ve hizmet sorumlularını aynı şekilde değerlendirir.
 * _Kiracı_ ile ilişkilendirilmiş Azure kaynaklarını oluşturmak ve çalıştırmak için Microsoft'la yapılan bir hizmet sözleşmesi olan etkin _abonelik_. Belgelerde ve Active Directory ile çalışırken kiracılardan genellikle _kuruluşlar_ olarak söz edilir.
 * Azure bulutuna erişmek için depolanan kimlik doğrulama belirteci olan _belirteç önbelleği_ başvurusu. Bu belirtecin nerede depolandığı ve ne kadar süreyle kalıcı olacağı [bağlam otomatik kaydetme ayarları](#save-azure-contexts-across-powershell-sessions) tarafından belirlenir.
 
@@ -98,14 +98,14 @@ Azure PowerShell cmdlet'lerinde bağlamların diğer önemli kullanım şekli ar
 
 Azure bağlamları varsayılan olarak PowerShell oturumları arasında kullanılmak üzere kaydedilir. Bu davranışı aşağıdaki yollarla değiştirebilirsiniz:
 
-* `Connect-AzAccount` cmdlet'iyle `-Scope Process` kullanarak oturum açın.
+* `-Scope Process` cmdlet'iyle `Connect-AzAccount` kullanarak oturum açın.
 
   ```azurepowershell
   Connect-AzAccount -Scope Process
   ```
 
   Bu oturum açma işleminin bir parçası olarak döndürülen Azure bağlamı _yalnızca_ güncel oturumda geçerlidir ve Azure PowerShell bağlam otomatik kaydetme ayarı ne olursa olsun otomatik olarak kaydedilmez.
-* Azure Powershell'in bağlam otomatik kaydetme ayarını [Disable-AzContextAutosave](/powershell/module/az.accounts/disable-azcontextautosave) cmdlet'iyle devre dışı bırakın.
+* Azure PowerShell'in bağlam otomatik kaydetme ayarını [Disable-AzContextAutosave](/powershell/module/az.accounts/disable-azcontextautosave) cmdlet'iyle devre dışı bırakın.
   Bağlam otomatik kaydetme ayarı devre dışı bırakıldığında depolanmış olan belirteçler __temizlenmez__. Depolanan Azure bağlam bilgilerini temizlemeyi öğrenmek için bkz. [Azure bağlamlarını ve kimlik bilgilerini kaldırma](#remove-azure-contexts-and-stored-credentials).
 * Azure bağlamı otomatik kaydetme ayarını [Enable-AzContextAutosave](/powershell/module/az.accounts/enable-azcontextautosave) cmdlet'iyle açıkça etkinleştirin. Otomatik kaydetme etkinleştirildiğinde kullanıcının tüm bağlamları sonraki PowerShell oturumları için yerel olarak depolanır.
 * Bağlamları gelecekteki PowerShell oturumlarında kullanılmak üzere [Save-AzContext](/powershell/module/az.accounts/save-azcontext) cmdlet'iyle el ile kaydedin. Bunlar sonraki oturumlarda [Import-AzContext](/powershell/module/az.accounts/import-azcontext) cmdlet'iyle yüklenebilir:
@@ -119,7 +119,7 @@ Azure bağlamları varsayılan olarak PowerShell oturumları arasında kullanıl
 > [!WARNING]
 > Bağlam otomatik kaydetme ayarı devre dışı bırakıldığında, daha önce kaydedilmiş olan depolanan bağlam bilgileri __temizlenmez__. Depolanan bilgileri kaldırmak için [Clear-AzContext](/powershell/module/az.accounts/Clear-AzContext) cmdlet'ini kullanın. Kaydedilmiş bağlamları kaldırma hakkında daha fazla bilgi için bkz. [Bağlamları ve kimlik bilgilerini kaldırma](#remove-azure-contexts-and-stored-credentials).
 
-Bu komutların her biri, yalnızca çalışan işleme uygulamak üzere `Process` değerini alabilen `-Scope` parametresini destekler. Örneğin, yeni oluşturulan bağlamların PowerShell oturumundan çıkarken kaydedilmemesini sağlamak için:
+Bu komutların her biri, yalnızca çalışan işleme uygulamak üzere `-Scope` değerini alabilen `Process` parametresini destekler. Örneğin, yeni oluşturulan bağlamların PowerShell oturumundan çıkarken kaydedilmemesini sağlamak için:
 
 ```azurepowershell-interactive
 Disable-AzContextAutosave -Scope Process

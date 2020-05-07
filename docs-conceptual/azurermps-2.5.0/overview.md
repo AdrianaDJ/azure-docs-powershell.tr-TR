@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.manager: knithinc
 ms.date: 09/21/2018
 ms.openlocfilehash: 55f19ac5e6767df1312e0b531184e8621b60a011
-ms.sourcegitcommit: febbbd3f75c8dd1a296281d265289f015b6cb537
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/12/2019
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "67038202"
 ---
 # <a name="azurerm-module-250"></a>AzureRM 2.5.0 Modulü
@@ -20,7 +20,7 @@ ms.locfileid: "67038202"
 ## <a name="requirements"></a>Gereksinimler:
 Desteklenen en düşük Azure Stack sürümü 1904'dir.
 
-Not: Daha önceki bir sürümü kullanıyorsanız 1.2.11 sürümünü yükleyin
+Not: Daha önceki bir sürümü kullanıyorsanız sürüm 1.2.11’i yükleyin
 
 
 ## <a name="install"></a>Yükleme
@@ -123,7 +123,7 @@ Azure Stack Aboneliği yönetici modülünün önizleme sürümü.  Bu modül y�
 Azure Stack Aboneliği modülünün önizleme sürümü.  Bu modül kullanıcıların şunları yapmasını sağlayan işlevler sunar:
 - Abonelikleri Oluşturma, Silme ve Güncelleştirme
 
-### <a name="update"></a>Güncelleştirme
+### <a name="update"></a>Güncelleştir
 Azure Stack Güncelleştirme yönetici modülünün önizleme sürümü.  Bu modülde yöneticiler şunları yapabilir:
 - Kullanılabilir güncelleştirmeleri listeleme ve yükleme
 - Kesintiye uğrayan güncelleştirmeleri sürdürme
