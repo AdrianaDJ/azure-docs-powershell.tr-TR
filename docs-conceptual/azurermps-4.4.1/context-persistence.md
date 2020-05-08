@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 08/31/2017
 ms.openlocfilehash: 442dfed6175f2f5e2f386df3cb2bcea4871bcc01
-ms.sourcegitcommit: 0fdccb57a356b6e7c35a77b1f76e01fb96ef582b
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/17/2019
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "65854177"
 ---
 # <a name="persisting-user-credentials-across-powershell-sessions"></a>Kullanıcı kimlik bilgilerini PowerShell oturumlarında kalıcı hale getirme
@@ -83,7 +83,7 @@ PS C:\> Set-AzureRMContext -Subscription "Contoso Subscription 1" -Name "Contoso
 
 Önceki örnekte, mevcut kimlik bilgileriniz kullanılarak 'Contoso Aboneliği 1'’i hedefleyen yeni bir bağlam eklenmiştir. Yeni bağlam 'Contoso1' olarak adlandırılır. Bağlam için bir ad belirtmezseniz, hesap kimliği ve abonelik kimliğinin kullanıldığı varsayılan bir ad kullanılır.
 
-Var olan bir bağlamı yeniden adlandırmak için `Rename-AzureRmContext` cmdlet'ini kullanın. Örnek:
+Var olan bir bağlamı yeniden adlandırmak için `Rename-AzureRmContext` cmdlet'ini kullanın. Örneğin:
 
 ```azurepowershell-interactive
 PS C:\> Rename-AzureRmContext '[user1@contoso.org; 123456-7890-1234-564321]` 'Contoso2'
@@ -91,7 +91,7 @@ PS C:\> Rename-AzureRmContext '[user1@contoso.org; 123456-7890-1234-564321]` 'Co
 
 Bu örnekte, otomatik adı `[user1@contoso.org; 123456-7890-1234-564321]` olan bağlam 'Contoso2' basit adıyla yeniden adlandırılmaktadır. Bağlamları yöneten cmdlet’ler aynı zamanda sekme tamamlamayı kullanarak bağlamı hızlıca seçmenize olanak tanır.
 
-Son olarak, bir bağlamı kaldırmak için `Remove-AzureRmContext` cmdlet'ini kullanın.  Örnek:
+Son olarak, bir bağlamı kaldırmak için `Remove-AzureRmContext` cmdlet'ini kullanın.  Örneğin:
 
 ```azurepowershell-interactive
 PS C:\> Remove-AzureRmContext Contoso2
@@ -131,20 +131,20 @@ Bağlam 'true' olarak ayarlanırsa otomatik olarak kaydedilir. Bağlam 'false' o
 
 Bağlam yönetmeye yönelik yeni cmdlet'ler
 
-- [Enable-AzureRmContextAutosave][enable] - Powershell oturumları arasında bağlamı kaydetmeye olanak tanır.
+- [Enable-AzureRmContextAutosave][enable]: PowerShell oturumları arasında bağlamı kaydetmeye olanak tanır.
   Her türlü değişiklik, genel bağlamı değiştirir.
-- [Disable-AzureRmContextAutosave][disable] - Bağlamı otomatik kaydetmeyi kapatır. Her yeni PowerShell oturumunda yeniden oturum açmak gerekir.
-- [Select-AzureRmContext][select] - Bir bağlamı varsayılan bağlam olarak seçer. Sonraki tüm cmdlet'ler kimlik doğrulaması için bu bağlamdaki kimlik bilgilerini kullanır.
-- [Remove-AzureRmAccount][remove-cred] - Bir hesapla ilişkili tüm kimlik bilgilerini ve bağlamları kaldırır.
-- [Remove-AzureRmContext][remove-context] - Adlandırılmış bir bağlamı kaldırır.
-- [Rename-AzureRmContext][rename] - Mevcut bir bağlamı yeniden adlandırır.
+- [Disable-AzureRmContextAutosave][disable]: Bağlamı otomatik kaydetmeyi kapatır. Her yeni PowerShell oturumunda yeniden oturum açmak gerekir.
+- [Select-AzureRmContext][select]: Bir bağlamı varsayılan bağlam olarak seçer. Sonraki tüm cmdlet'ler kimlik doğrulaması için bu bağlamdaki kimlik bilgilerini kullanır.
+- [Remove-AzureRmAccount][remove-cred]: Bir hesapla ilişkili tüm kimlik bilgilerini ve bağlamları kaldırır.
+- [Remove-AzureRmContext][remove-context]: Adlandırılmış bir bağlamı kaldırır.
+- [Rename-AzureRmContext][rename]: Mevcut bir bağlamı yeniden adlandırır.
 
 Mevcut profil cmdlet'lerinde yapılan değişiklikler
 
-- [Add-AzureRmAccount][login] - İşlem veya mevcut kullanıcı için oturum açma kapsamının ayarlanmasına izin verir.
+- [Add-AzureRmAccount][login]: Oturum açma kapsamının işlem veya mevcut kullanıcı olarak ayarlanmasına izin verir.
   Kimlik doğrulamasından sonra varsayılan bağlamı adlandırmaya olanak tanır.
-- [Import-AzureRmContext][import] - İşlem veya mevcut kullanıcı için oturum açma kapsamının ayarlanmasına izin verir.
-- [Set-AzureRmContext][set-context] - Mevcut adlandırılmış bağlamların ve işlem ya da mevcut kullanıcıdaki kapsam değişikliklerinin seçilmesine olanak tanır.
+- [Import-AzureRmContext][import]: Oturum açma kapsamının işlem veya mevcut kullanıcı olarak ayarlanmasına izin verir.
+- [Set-AzureRmContext][set-context]: Mevcut adlandırılmış bağlamların seçilmesine ve kapsamın işlem ya da mevcut kullanıcı olarak değiştirilmesine olanak tanır.
 
 <!-- Hyperlinks -->
 [enable]: /powershell/module/azurerm.profile/Enable-AzureRmContextAutosave

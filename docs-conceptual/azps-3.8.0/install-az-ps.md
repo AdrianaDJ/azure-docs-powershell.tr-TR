@@ -4,16 +4,16 @@ description: Azure PowerShell PowerShellGet ile nasıl yüklenir
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 02/26/2020
-ms.openlocfilehash: 7a25270566f5e856ee44c4c191a47a3e7334508b
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: af088f428ce383faa7df6be2cc7d48350893be5b
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81740261"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82587978"
 ---
 # <a name="install-azure-powershell"></a>Azure PowerShell'i yükleme
 
-Bu makalede, PowerShellGet kullanarak Azure PowerShell modüllerinin nasıl yüklendiği ele alınır. Bu yönergeler Windows, macOS ve Linux platformlarında kullanılabilir.
+Bu makalede, [PowerShellGet](/powershell/scripting/gallery/installing-psget) kullanarak Azure PowerShell modüllerinin nasıl yüklendiği ele alınır. Bu yönergeler Windows, macOS ve Linux platformlarında kullanılabilir.
 
 Azure PowerShell, Azure [Cloud Shell](/azure/cloud-shell/overview)’de de sunulur ve şimdi, [Docker görüntülerine](azureps-in-docker.md) önceden yüklenir.
 
@@ -31,7 +31,7 @@ Azure PowerShell’i Windows üzerinde PowerShell 5.1’de kullanmak için:
 
 1. Gerekirse [Windows PowerShell 5.1](/powershell/scripting/install/installing-windows-powershell#upgrading-existing-windows-powershell)'e güncelleştirin. Windows 10 kullanıyorsanız, zaten PowerShell 5.1 yüklüdür.
 2. [.NET Framework 4.7.2 veya sonraki sürümünü](/dotnet/framework/install) yükleyin.
-3. En son PowerShellGet sürümünü kullandığınızdan emin olun. `Update-Module PowerShellGet -Force` öğesini çalıştırın.
+3. En son PowerShellGet sürümünü kullandığınızdan emin olun. `Install-Module -Name PowerShellGet -Force` öğesini çalıştırın.
 
 ## <a name="install-the-azure-powershell-module"></a>Azure PowerShell modülünü yükleme
 
