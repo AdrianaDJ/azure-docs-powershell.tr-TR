@@ -73,7 +73,7 @@ TestVM 711d8ed1-b888-4c52-8ab9-66f07b87eb6b Succeeded
 
 ## <a name="select-nested-properties"></a>İç içe özellikleri seçme
 
-Azure PowerShell cmdlet'inin çıkışındaki bazı özellikler (`StorageProfile` çıkışının `Get-AzVM` özelliği gibi) iç içe nesneler kullanır. İç içe özellikten bir değer almak için, `Select-Object` cmdlet'inde dictionary bağımsız değişkeninin parçası olarak incelemek istediğiniz değerin görünen adını ve tam yolunu sağlayın:
+Azure PowerShell cmdlet'inin çıkışındaki bazı özellikler (`Get-AzVM` çıkışının `StorageProfile` özelliği gibi) iç içe nesneler kullanır. İç içe özellikten bir değer almak için, `Select-Object` cmdlet'inde dictionary bağımsız değişkeninin parçası olarak incelemek istediğiniz değerin görünen adını ve tam yolunu sağlayın:
 
 ```azurepowershell-interactive
 Get-AzVM -ResourceGroupName TestGroup |

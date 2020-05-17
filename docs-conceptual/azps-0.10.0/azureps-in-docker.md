@@ -17,7 +17,7 @@ Azure PowerShell’in önceden yüklenmiş olduğu Docker görüntülerini yayı
 
 ## <a name="finding-available-images"></a>Kullanılabilir görüntüleri bulma
 
-Yayınlanan görüntüler Docker 17.05 veya üstünü gerektirir. Docker’ı `sudo` veya yerel yönetici hakları olmadan çalıştırabilecek durumda olmanız beklenir. [ yüklemesini doğru bir şekilde gerçekleştirmek için Docker’ın resmi ][install]yönergelerini`docker` izleyin.
+Yayınlanan görüntüler Docker 17.05 veya üstünü gerektirir. Docker’ı `sudo` veya yerel yönetici hakları olmadan çalıştırabilecek durumda olmanız beklenir. `docker` yüklemesini doğru bir şekilde gerçekleştirmek için Docker’ın resmi [yönergelerini][install] izleyin.
 
 En son kapsayıcı görüntüsü, Az modülüyle desteklenen PowerShell ve Azure PowerShell modüllerinin en son sürümünü içerir.
 

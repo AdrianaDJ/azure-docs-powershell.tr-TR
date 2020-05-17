@@ -146,7 +146,7 @@ Azure PowerShell'in bir sürümünü kaldırmak için bkz. [Azure PowerShell mod
 
 Modülün birden çok sürümünü yüklediyseniz, modül otomatik yükleme ve `Import-Module` tarafından varsayılan olarak en son sürüm yüklenir.
 
-`Az` parametresini kullanarak `-RequiredVersion` modülünün belirli bir sürümünü yükleyebilirsiniz:
+`-RequiredVersion` parametresini kullanarak `Az` modülünün belirli bir sürümünü yükleyebilirsiniz:
 
 ```powershell-interactive
 # Install Az version 3.6.1

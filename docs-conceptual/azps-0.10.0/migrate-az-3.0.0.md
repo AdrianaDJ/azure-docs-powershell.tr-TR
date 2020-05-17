@@ -113,7 +113,7 @@ Get-AzBatchSupportedImage -BatchContext $Context
 ## <a name="compute"></a>İşlem
 
 ### `New-AzDiskConfig`
-CreateOption değeri Upload olduğunda `UploadSizeInBytes` için `DiskSizeGB` yerine `New-AzDiskConfig` parametresi kullanılıyor
+CreateOption değeri Upload olduğunda `New-AzDiskConfig` için `DiskSizeGB` yerine `UploadSizeInBytes` parametresi kullanılıyor
 
 #### <a name="before"></a>Önce
 ```powershell
@@ -224,7 +224,7 @@ Get-AzHDInsightProperty -Location "East US 2"
 `Grant-AzHDInsightRdpServicesAccess` ve `Revoke-AzHDInsightRdpServicesAccess` cmdlet'leri kaldırıldı. Windows işletim sistemi türünü kullanan kümeler desteklenmediğinden bunlar artık gerekli değildir. Lütfen Linux işletim sistemi türünü kullanarak bir küme oluşturun.
 
 ### `Remove-AzHDInsightCluster`
-`Remove-AzHDInsightCluster` olan `Microsoft.Azure.Management.HDInsight.Models.ClusterGetResponse` çıkış türü `bool` olarak değiştirildi.
+`Microsoft.Azure.Management.HDInsight.Models.ClusterGetResponse` olan `Remove-AzHDInsightCluster` çıkış türü `bool` olarak değiştirildi.
 
 #### <a name="before"></a>Önce
 ```powershell
@@ -241,7 +241,7 @@ True
 Cmdlet kullanım dışı bırakıldı. Bunun için bir değişiklik yoktur.
 
 ### `Set-AzHDInsightGatewayCredential`
-`Set-AzHDInsightGatewayCredential` olan `HttpConnectivitySettings` çıkış türü `AzureHDInsightGatewaySettings` olarak değiştirildi.
+`HttpConnectivitySettings` olan `Set-AzHDInsightGatewayCredential` çıkış türü `AzureHDInsightGatewaySettings` olarak değiştirildi.
 
 
 
@@ -348,7 +348,7 @@ $job = New-AzRecoveryServicesAsrReplicationProtectedItem -VMwareToAzure -Account
 ## <a name="servicefabric"></a>ServiceFabric
 
 ### `Add-ServiceFabricApplicationCertificate`
-Bu senaryo `Add-ServiceFabricApplicationCertificate` kapsamında olduğu için `Add-AzVmssSecret` kaldırıldı.
+Bu senaryo `Add-AzVmssSecret` kapsamında olduğu için `Add-ServiceFabricApplicationCertificate` kaldırıldı.
 
 #### <a name="before"></a>Önce
 ```powershell
