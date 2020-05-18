@@ -69,7 +69,7 @@ MyVm                 MyVm   eastus Standard_DS1_v2 Windows    MyVm          Crea
 
 > [!NOTE]
 > `Receive-Job`, `-AsJob` bayrağı yokmuş gibi cmdlet’ten sonucu döndürür.
-> Örneğin, `Receive-Job` cmdlet’inin `Do-Action -AsJob` sonucu `Do-Action` sonucuyla aynı türdedir.
+> Örneğin, `Do-Action -AsJob` cmdlet’inin `Receive-Job` sonucu `Do-Action` sonucuyla aynı türdedir.
 
 ```azurepowershell-interactive
 $vm = Receive-Job $job

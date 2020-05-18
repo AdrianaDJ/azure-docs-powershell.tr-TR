@@ -30,7 +30,7 @@ WebPI’dan en son Azure PowerShell’i yükleme işlemi, önceki sürümlerde o
 >
 > PowerShell Galerisi modülleri `$env:ProgramFiles\WindowsPowerShell\Modules` konumuna yüklenir. Buna karşılık, WebPI yükleyicisi Azure modüllerini `$env:ProgramFiles(x86)\Microsoft SDKs\Azure\PowerShell\` konumuna yükler.
 >
-> Yükleme sırasında bir hata oluşursa, \* klasörünüzdeki Azure`$env:ProgramFiles\WindowsPowerShell\Modules` klasörlerini el ile kaldırabilir ve yüklemeyi yeniden deneyebilirsiniz.
+> Yükleme sırasında bir hata oluşursa, `$env:ProgramFiles\WindowsPowerShell\Modules` klasörünüzdeki Azure\* klasörlerini el ile kaldırabilir ve yüklemeyi yeniden deneyebilirsiniz.
 
 Yükleme tamamlandığında, `$env:PSModulePath` ayarınız Azure PowerShell cmdlet’lerini içeren dizinleri içermelidir. Azure PowerShell’in düzgün yüklendiğini doğrulamak için aşağıdaki komut kullanılabilir.
 

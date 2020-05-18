@@ -139,7 +139,7 @@ Get-InstalledModule -Name Az -AllVersions | select Name,Version
 
 Azure PowerShell'in bir sürümünü kaldırmak için bkz. [Azure PowerShell modülünü kaldırma](uninstall-az-ps.md).
 
-`Az` bağımsız değişkenini kullanarak `-RequiredVersion` modülünün belirli bir sürümünü yükleyebilirsiniz:
+`-RequiredVersion` bağımsız değişkenini kullanarak `Az` modülünün belirli bir sürümünü yükleyebilirsiniz:
 
 ```powershell-interactive
 # Install Az version 0.7.0

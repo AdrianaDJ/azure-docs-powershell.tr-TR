@@ -35,7 +35,7 @@ Bu belge, Microsoft Azure PowerShell cmdlet’lerini kullananlar için hem bozuc
 Bu sürümden aşağıdaki çıktı türleri etkilenmiştir:
 
 ### <a name="psvirtualmachine"></a>PSVirtualMachine
-- `DataDiskNames` nesnesinin `NetworkInterfaceIDs` ve `PSVirtualMachine` üst düzey özellikleri çıktı türünden kaldırıldı. Bu özelliklere zaten `StorageProfile` nesnesinin `NetworkProfile` ve `PSVirtualMachine` özelliklerinden erişilebiliyordu ve bundan sonra bu şekilde erişilmesi gerekecek.
+- `PSVirtualMachine` nesnesinin `DataDiskNames` ve `NetworkInterfaceIDs` üst düzey özellikleri çıktı türünden kaldırıldı. Bu özelliklere zaten `PSVirtualMachine` nesnesinin `StorageProfile` ve `NetworkProfile` özelliklerinden erişilebiliyordu ve bundan sonra bu şekilde erişilmesi gerekecek.
 - Bu değişiklik, aşağıdaki cmdlet etkiler:
     - `Add-AzureRmVMDataDisk`
     - `Add-AzureRmVMNetworkInterface`
@@ -279,10 +279,10 @@ Remove-AzureRmSqlDatabaseFailoverGroup -ResourceGroupName rg -ServerName server1
 ```
 
 ### <a name="set-azurermsqldatabasethreatdetectionpolicy"></a>Set-AzureRmSqlDatabaseThreatDetectionPolicy
-- `Usage_Anomaly` parametresi için `ExcludedDetectionType` değeri artık geçerli değil
+- `ExcludedDetectionType` parametresi için `Usage_Anomaly` değeri artık geçerli değil
 
 ### <a name="set-azurermsqlserverthreatdetectionpolicy"></a>Set-AzureRmSqlServerThreatDetectionPolicy
-- `Usage_Anomaly` parametresi için `ExcludedDetectionType` değeri artık geçerli değil
+- `ExcludedDetectionType` parametresi için `Usage_Anomaly` değeri artık geçerli değil
 
 ## <a name="breaking-changes-to-storage-cmdlets"></a>Depolama cmdlet’lerinde bozucu değişiklikler
 
@@ -391,7 +391,7 @@ Save-AzureRmContext -Path c:\mydir\myprofile.json
 ```
 ### <a name="breaking-changes-to-output-psazurecontext-type"></a>Çıktı PSAzureContext Türünde Bozucu Değişiklikler
 
-- ```TokenCache``` özelliği, bir ```IAzureTokenCache``` yerine ```byte[]``` uygulayan bir tür olarak değiştirildi
+- ```TokenCache``` özelliği, bir ```byte[]``` yerine ```IAzureTokenCache``` uygulayan bir tür olarak değiştirildi
 
 ```powershell-interactive
 # Old

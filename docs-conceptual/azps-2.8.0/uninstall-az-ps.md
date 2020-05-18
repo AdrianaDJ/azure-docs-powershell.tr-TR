@@ -145,7 +145,7 @@ Bu ekrandaki program listesinde __Azure PowerShell__'i görebilmelisiniz. Kaldı
 
 ### <a name="uninstall-from-powershell"></a>PowerShell'den kaldırma
 
-AzureRM'yi PowerShellGet ile yüklediyseniz modülleri [ modülünün bir parçası olan ](/powershell/module/az.accounts/uninstall-azurerm)Uninstall-AzureRM`Az.Accounts` komutuyla kaldırabilirsiniz. Bu işlem _tüm_ AzureRM modüllerini makinenizden kaldırır, ancak yönetici ayrıcalıkları gerektirir.
+AzureRM'yi PowerShellGet ile yüklediyseniz modülleri `Az.Accounts` modülünün bir parçası olan [Uninstall-AzureRM](/powershell/module/az.accounts/uninstall-azurerm) komutuyla kaldırabilirsiniz. Bu işlem _tüm_ AzureRM modüllerini makinenizden kaldırır, ancak yönetici ayrıcalıkları gerektirir.
 
 ```powershell-interactive
 Uninstall-AzureRm

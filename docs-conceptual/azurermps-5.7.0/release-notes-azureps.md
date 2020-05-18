@@ -296,7 +296,7 @@ Son sürümden sonraki değişiklikler: https://github.com/Azure/azure-powershel
 * PowerShell 3 ve 4 için kullanımdan kaldırılma uyarısı eklendi
 * `Add-AzureRmAccount``Connect-AzureRmAccount` olarak yeniden adlandırıldı; eski cmdlet adına bir diğer ad eklendi ve başka diğer adlar (`Login-AzAccount` ve `Login-AzureRmAccount`) yeni cmdlet adına yeniden yönlendirildi.
 * `Remove-AzureRmAccount``Disconnect-AzureRmAccount` olarak yeniden adlandırıldı; eski cmdlet adına bir diğer ad eklendi ve başka diğer adlar (`Logout-AzAccount` ve `Logout-AzureRmAccount`) yeni cmdlet adına yeniden yönlendirildi.
-* Kaynak Dizeler `Connect-AzureRmAccount` yerine `Login-AzureRmAccount` kullanmak için düzeltildi
+* Kaynak Dizeler `Login-AzureRmAccount` yerine `Connect-AzureRmAccount` kullanmak için düzeltildi
 * `Add-AzureRmEnvironment` ve `Set-AzureRmEnvironment`
   - OperationalInsights veri düzlemi RP ile parametre olarak kullanılmak üzere `-AzureOperationalInsightsEndpoint` ve `-AzureOperationalInsightsEndpointResourceId` eklendi.
 
@@ -307,16 +307,16 @@ Son sürümden sonraki değişiklikler: https://github.com/Azure/azure-powershel
 * `-AvailabilitySetName` parametresi `New-AzureRmVM` basitleştirilmiş parametre kümesine eklendi.
 * `Login-AzureRmAccount` kullanımı `Connect-AzureRmAccount` olarak düzeltildi
 * VM ve VM ölçek kümesi için kullanıcıya atanan kimlik desteği
-    - `-IdentityType`, `-IdentityId`, `New-AzureRmVMConfig` ve `New-AzureRmVmssConfig` için `Update-AzureRmVM` ve `Update-AzureRmVmss` parametreleri eklendi
-* `-EnableIPForwarding` özelliğine `Add-AzureRmVmssNetworkInterfaceConfig` parametresi eklendi
-* `-Priority` özelliğine `New-AzureRmVmssConfig` parametresi eklendi
+    - `New-AzureRmVMConfig`, `New-AzureRmVmssConfig`, `Update-AzureRmVM` ve `Update-AzureRmVmss` için `-IdentityType` ve `-IdentityId` parametreleri eklendi
+* `Add-AzureRmVmssNetworkInterfaceConfig` özelliğine `-EnableIPForwarding` parametresi eklendi
+* `New-AzureRmVmssConfig` özelliğine `-Priority` parametresi eklendi
 
 ### <a name="azurermdatalakeanalytics"></a>AzureRM.DataLakeAnalytics
 * `Login-AzureRmAccount` kullanımı `Connect-AzureRmAccount` olarak düzeltildi
 
 ### <a name="azurermdatalakestore"></a>AzureRM.DataLakeStore
 * `Login-AzureRmAccount` kullanımı `Connect-AzureRmAccount` olarak düzeltildi
-* `Test-AzureRmDataLakeStoreAccount` ile oturum açmadan bu cmdlet çalıştırıldığında oluşan `Login-AzureRmAccount` hata iletisi düzeltildi
+* `Login-AzureRmAccount` ile oturum açmadan bu cmdlet çalıştırıldığında oluşan `Test-AzureRmDataLakeStoreAccount` hata iletisi düzeltildi
 
 ### <a name="azurermeventgrid"></a>AzureRM.EventGrid
 * 2018-01-01 API sürümünü kullanmak için güncelleştirildi.
@@ -756,7 +756,7 @@ Son sürümden sonraki değişiklikler: https://github.com/Azure/azure-powershel
     - `KeyVaultId`: Batch hesabıyla ilişkili Azure anahtar kasasının kaynak kimliği.
     - `KeyVaultUrl`: Batch hesabıyla ilişkili Azure anahtar kasasının URL’si.
   * Parametreler `New-AzureBatchTask` olarak güncelleştirildi.
-    - `RunElevated` anahtarı kaldırıldı. `UserIdentity` parametresi kaldırılıp bunun yerine `RunElevated` parametresi eklendi. Eşdeğer bir davranış aşağıda gösterildiği gibi bir `PSUserIdentity` oluşturularak elde edilebilir:
+    - `RunElevated` anahtarı kaldırıldı. `RunElevated` parametresi kaldırılıp bunun yerine `UserIdentity` parametresi eklendi. Eşdeğer bir davranış aşağıda gösterildiği gibi bir `PSUserIdentity` oluşturularak elde edilebilir:
       - $autoUser = New-Object Microsoft.Azure.Commands.Batch.Models.PSAutoUserSpecification -ArgumentList @("Görev", "Yönetici")
       - $userIdentity = New-Object Microsoft.Azure.Commands.Batch.Models.PSUserIdentity $autoUser
     - `AuthenticationTokenSettings` parametresi eklendi. Bu parametre Batch hizmetinden çalıştığında, göreve bir kimlik doğrulama belirteci sağlamasını istemenize olanak tanır ve Batch hizmetine istek göndermek için göreve Batch hesap anahtarlarını geçirme gereksinimini ortadan kaldırır.
@@ -768,7 +768,7 @@ Son sürümden sonraki değişiklikler: https://github.com/Azure/azure-powershel
     - `UserAccounts` parametresi eklendi.
       - Bu parametre, havuzdaki her düğümde oluşturulan kullanıcı hesaplarını tanımlar.
     - `TargetLowPriorityComputeNodes` eklendi ve `TargetDedicated` olan ad, `TargetDedicatedComputeNodes` olarak değiştirildi.
-      - `TargetDedicated` parametresi için bir `TargetDedicatedComputeNodes` diğer adı oluşturuldu.
+      - `TargetDedicatedComputeNodes` parametresi için bir `TargetDedicated` diğer adı oluşturuldu.
     - `NetworkConfiguration` parametresi eklendi.
       - Bu parametre, havuz ağ ayarlarını yapılandırmanıza olanak sağlar.
   * Parametreler `New-AzureBatchCertificate` olarak güncelleştirildi.
@@ -777,13 +777,13 @@ Son sürümden sonraki değişiklikler: https://github.com/Azure/azure-powershel
     - `Password` parametresi, `SecureString` olacak şekilde değiştirildi.
   * Parametreler `Set-AzureBatchComputeNodeUser` olarak güncelleştirildi.
     - `Password` parametresi, `SecureString` olacak şekilde değiştirildi.
-  * `Name` parametresi `Path`, `Get-AzureBatchNodeFile` ve `Get-AzureBatchNodeFileContent` üzerinde `Remove-AzureBatchNodeFile` olarak yeniden adlandırıldı.
-    - `Name` parametresi için bir `Path` diğer adı oluşturuldu.
+  * `Name` parametresi `Get-AzureBatchNodeFile`, `Get-AzureBatchNodeFileContent` ve `Remove-AzureBatchNodeFile` üzerinde `Path` olarak yeniden adlandırıldı.
+    - `Path` parametresi için bir `Name` diğer adı oluşturuldu.
   * Nesnelerde yapılan değişiklikler
     - Lütfen tam liste için Batch değişiklik günlüğüne bakın
   * Azure Active Directory tabanlı kimlik doğrulaması için destek eklendi.
-    - Azure Active Directory kimlik doğrulamasını kullanmak için `BatchAccountContext` cmdlet'ini kullanarak bir `Get-AzureRmBatchAccount` nesnesi alın ve bu `BatchAccountContext` değerini bir Batch hizmeti cmdlet’inin `-BatchContext` parametresine ekleyin. Azure Active Directory kimlik doğrulaması, `PoolAllocationMode = UserSubscription` özelliğine sahip hesaplar için zorunludur.
-    - Mevcut hesaplar veya `PoolAllocationMode = BatchService` ile oluşturulan yeni hesaplar için, `BatchAccountContext` cmdlet'i ile bir `Get-AzureRmBatchAccoutKeys` nesnesi alarak paylaşılan anahtar kimlik doğrulamasını kullanmaya devam edebilirsiniz.
+    - Azure Active Directory kimlik doğrulamasını kullanmak için `Get-AzureRmBatchAccount` cmdlet'ini kullanarak bir `BatchAccountContext` nesnesi alın ve bu `BatchAccountContext` değerini bir Batch hizmeti cmdlet’inin `-BatchContext` parametresine ekleyin. Azure Active Directory kimlik doğrulaması, `PoolAllocationMode = UserSubscription` özelliğine sahip hesaplar için zorunludur.
+    - Mevcut hesaplar veya `PoolAllocationMode = BatchService` ile oluşturulan yeni hesaplar için, `Get-AzureRmBatchAccoutKeys` cmdlet'i ile bir `BatchAccountContext` nesnesi alarak paylaşılan anahtar kimlik doğrulamasını kullanmaya devam edebilirsiniz.
 * İşlem
   * Azure Disk Şifrelemesi Uzantı Komutları
     - Yeni 'Set-AzureRmVmDiskEncryptionExtension' Parametresi olan '-EncryptFormatAll' biçim veri disklerini şifreler
