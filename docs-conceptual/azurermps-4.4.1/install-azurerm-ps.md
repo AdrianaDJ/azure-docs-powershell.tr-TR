@@ -1,18 +1,15 @@
 ---
 title: Azure PowerShell'i yükleme ve yapılandırma | Microsoft Docs
 description: Azure PowerShell’i ilk kez kullanmak üzere yükleme ve yapılandırma.
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/27/2018
-ms.openlocfilehash: 7b099fead7cb985fc8f7e6fed55b8c1107caa0d9
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: 6f894546364e6a5ae06e1915a166edb258ccc698
+ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "75720387"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83386757"
 ---
 # <a name="install-azure-powershell-on-windows-with-powershellget"></a>PowerShellGet ile Windows'da Azure PowerShell yükleme
 

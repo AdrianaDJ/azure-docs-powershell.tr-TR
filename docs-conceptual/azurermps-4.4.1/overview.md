@@ -1,19 +1,15 @@
 ---
 title: Azure PowerShell’e Genel Bakış | Microsoft Docs
 description: Yükleme ve yapılandırma bağlantılarıyla birlikte Azure PowerShell’e genel bakış.
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.manager: carmonm
 ms.date: 08/31/2017
-ms.openlocfilehash: 0541975e55620a8792c0d51213c4ed02ea29988f
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: fbf4676189c6acd9982a10a8aa4acbab67b72730
+ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "67863419"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83386689"
 ---
 # <a name="overview-of-azure-powershell"></a>Azure PowerShell’e Genel Bakış
 
@@ -37,7 +33,7 @@ PowerShell'i tanımıyorsanız, PowerShell'e giriş makalesi size yardımcı ola
 * [PowerShell’i yükleme](/powershell/scripting/installing-windows-powershell)
 * [PowerShell ile betik oluşturma](/powershell/scripting/scripting-with-windows-powershell)
 
-Şu videoyu da izleyebilirsiniz: [Temel PowerShell Bilgileri: (1. Bölüm) PowerShell’i Kullanmaya Başlama](https://channel9.msdn.com/Blogs/Taste-of-Premier/PowerShellBasicsPart1).
+Ayrıca şu videoyu izleyebilirsiniz: [PowerShell Temel Bilgileri: (Bölüm 1) PowerShell'i Kullanmaya Başlama](https://channel9.msdn.com/Blogs/Taste-of-Premier/PowerShellBasicsPart1).
 
 ## <a name="other-azure-powershell-modules"></a>Diğer Azure PowerShell modülleri
 

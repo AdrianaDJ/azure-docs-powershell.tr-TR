@@ -1,18 +1,15 @@
 ---
 title: Azure kaynaklarını sorgulama ve sonuçları biçimlendirme | Microsoft Docs
 description: Azure’daki kaynakları sorgulama ve sonuçları biçimlendirme.
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/30/2017
-ms.openlocfilehash: db161bb0ec1b25b1cb7445724cc5758599dbc674
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: 23cc0d13e9ecb17bef04cedc8a0f395a04e89390
+ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "65534638"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83386485"
 ---
 # <a name="querying-for-azure-resources"></a>Azure kaynaklarını sorgulama
 
@@ -20,7 +17,7 @@ ms.locfileid: "65534638"
 
 PowerShell’de sorgu işlemleri yerleşik cmdlet’ler kullanılarak gerçekleştirilebilir. PowerShell’de cmdlet adları **_Fiil-İsim_** biçiminde olur. **_Get_** fiilini kullanan cmdlet’ler sorgu cmdlet’leridir. Cmdlet isimleri, cmdlet fiilleri tarafından üzerinde eylem gerçekleştirilen Azure kaynağı türleridir.
 
-## <a name="selecting-simple-properties"></a>Basit özellikleri seçme
+## <a name="selecting-simple-properties"></a>Basit özellikleri seçerek
 
 Azure PowerShell’de her cmdlet için tanımlı bir varsayılan biçimlendirme vardır. Her kaynak türünün en yaygın özellikleri, otomatik olarak bir tablo ya da liste biçiminde görüntülenir. Çıktı biçimlendirme hakkında daha fazla bilgi edinmek için bkz. [Sorgu sonuçlarını biçimlendirme](formatting-output.md).
 

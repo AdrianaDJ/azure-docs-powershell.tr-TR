@@ -1,19 +1,16 @@
 ---
 title: Azure PowerShell Değişiklik Günlüğü | Microsoft Docs
 description: Azure PowerShell'in en son sürümünde yapılan değişikliklerin geçmişi aşağıda verilmiştir.
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.workload: ''
 ms.date: 08/28/2018
-ms.openlocfilehash: eecd66ddf433cc2543ceeaef1519d69179f2f099
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: 8aa0462af97877e0d20fe898ddd927a6d2850dea
+ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "65534450"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83387335"
 ---
 # <a name="release-notes"></a>Sürüm notları
 
@@ -141,7 +138,7 @@ Azure PowerShell'in bu sürümünde yapılan değişikliklerin listesi aşağıd
 * Kurtarma hizmetlerinde Azure dosya paylaşımları için destek eklendi.
 
 #### <a name="azurermresources"></a>AzureRM.Resources
-* https://github.com/Azure/azure-powershell/issues/7402 düzeltmesi
+* [https://github.com/Azure/azure-powershell/issues/7402](https://github.com/Azure/azure-powershell/issues/7402 ) düzeltmesi
     - 'Get-AzureRmResource' için '-ResourceId' parametresi kullanılarak kaynakların listelenmesine olanak tanındı
 
 #### <a name="azurermservicebus"></a>AzureRM.ServiceBus
@@ -170,8 +167,8 @@ Azure PowerShell'in bu sürümünde yapılan değişikliklerin listesi aşağıd
 * Sanal Ağ Kuralları desteği ekleme
     - Get-AzureRmDataLakeStoreVirtualNetworkRule: Azure Data Lake Store sanal ağ kuralını alır veya listeler.
     - Add-AzureRmDataLakeStoreVirtualNetworkRule: Belirtilen Data Lake Store hesabına sanal ağ kuralı ekler.
-    - Set-AzureRmDataLakeStoreVirtualNetworkRule: Belirtilen Data Lake Store hesabında belirtilen sanal ağ kuralını değiştirir.
-    - Remove-AzureRmDataLakeStoreVirtualNetworkRule: Azure Data Lake Store sanal ağ kuralını siler.
+    - Set-AzureRmDataLakeStoreVirtualNetworkRule: Belirtilen Data Lake Store hesabındaki belirtilen sanal ağ kuralını değiştirir.
+    - Remove-AzureRmDataLakeStoreVirtualNetworkRule: Bir Azure Data Lake Store sanal ağ kuralını siler.
 
 #### <a name="azurermnetwork"></a>AzureRM.Network
 * Test-AzureRmNetworkWatcherConnectivity cmdlet'i güncelleştirildi, arka uca protokol değerini geçiriyor.
@@ -273,7 +270,7 @@ Azure PowerShell'in bu sürümünde yapılan değişikliklerin listesi aşağıd
   - Set-AzureRmLoadBalancerOutboundRuleConfig
   - Remove-AzureRmLoadBalancerOutboundRuleConfig
 * PSNetworkInterface için yeni HostedWorkloads özelliği eklendi
-* ARM aracılığıyla Azure Güvenlik Duvarı özelliği için yeni cmdlet'ler eklendi
+* Özellik için yeni cmdlet'ler eklendi: ARM aracılığıyla Azure Güvenlik Duvarı
   - Get-AzureRmFirewall eklendi
   - Set-AzureRmFirewall eklendi
   - New-AzureRmFirewall eklendi
@@ -377,13 +374,13 @@ Azure PowerShell'in bu sürümünde yapılan değişikliklerin listesi aşağıd
 
 #### <a name="azurermapimanagement"></a>AzureRM.ApiManagement
 * Varsayılan kaynak gruplarının ayarlanmamasına neden olan sorun düzeltildi.
-* [https://github.com/Azure/azure-powershell/issues/5046](https://github.com/Azure/azure-powershell/issues/6603 ) sorunu düzeltildi
+* [https://github.com/Azure/azure-powershell/issues/6603](https://github.com/Azure/azure-powershell/issues/6603 ) sorunu düzeltildi
     - Import-AzureRmApiManagementApi ve *-AzureRmApiManagementCertificate cmdlet’leri artık göreli yolları işleyebiliyor
-* [https://github.com/Azure/azure-powershell/issues/5046](https://github.com/Azure/azure-powershell/issues/6879 ) sorunu düzeltildi
+* [https://github.com/Azure/azure-powershell/issues/6879](https://github.com/Azure/azure-powershell/issues/6879 ) sorunu düzeltildi
     - CertificateInformation, Set-AzureRmApiManagement cmdlet’inin düzgün çalışmasını sağlayan, ayarlanabilir bir özelliktir. 4\.0.4-preview nuget’e yükselterek düzeltildi
-* [https://github.com/Azure/azure-powershell/issues/5046](https://github.com/Azure/azure-powershell/issues/6853 ) sorunu düzeltildi
+* [https://github.com/Azure/azure-powershell/issues/6853](https://github.com/Azure/azure-powershell/issues/6853 ) sorunu düzeltildi
     - Odata filtresi Ürün üzerinde Ada Göre Arama için düzeltildi
-* [https://github.com/Azure/azure-powershell/issues/5046](https://github.com/Azure/azure-powershell/issues/6814 ) sorunu düzeltildi
+* [https://github.com/Azure/azure-powershell/issues/6814](https://github.com/Azure/azure-powershell/issues/6814 ) sorunu düzeltildi
     - Odata filtresi API üzerinde Ada Göre Arama için düzeltildi
 * Azure İzleyici günlükçüsüne yönelik destek eklendi
 
@@ -672,11 +669,11 @@ Azure PowerShell'in bu sürümünde yapılan değişikliklerin listesi aşağıd
 * Cmdlet'lerin çıkış türü özelliklerine Ps1XmlAttribute eklendi.
 
 #### <a name="azurermapimanagement"></a>AzureRM.ApiManagement
-* [https://github.com/Azure/azure-powershell/issues/5046](https://github.com/Azure/azure-powershell/issues/6370 ) sorunu düzeltildi
+* [https://github.com/Azure/azure-powershell/issues/6370](https://github.com/Azure/azure-powershell/issues/6370 ) sorunu düzeltildi
     - PsApiManagementApi'yi ApiContract'e çevirmek için Automapper hatası düzeltildi
-* [https://github.com/Azure/azure-powershell/issues/5046](https://github.com/Azure/azure-powershell/issues/6515 ) sorunu düzeltildi
+* [https://github.com/Azure/azure-powershell/issues/6515](https://github.com/Azure/azure-powershell/issues/6515 ) sorunu düzeltildi
     - Kodlama Türü ile aşırı yüklemeyi önlemek için File.Save hatası düzeltildi
-* [https://github.com/Azure/azure-powershell/issues/5046](https://github.com/Azure/azure-powershell/issues/6560 ) sorunu düzeltildi
+* [https://github.com/Azure/azure-powershell/issues/6560](https://github.com/Azure/azure-powershell/issues/6560 ) sorunu düzeltildi
     - apiId üzerindeki desen özel durumunu düzelten 4.0.3 Nuget sürümüne yükseltildi
 
 #### <a name="azurermcompute"></a>AzureRM.Compute
@@ -778,9 +775,9 @@ Azure PowerShell'in bu sürümünde yapılan değişikliklerin listesi aşağıd
 #### <a name="azurermnetwork"></a>AzureRM.Network
 * Set/Add-AzureRmVirtualNetworkPeering için birden çok Kiracıdaki Sanal Makineler arasında eşleme etkinleştirildi
 * Aşağıdaki cmdlet’ler Application Gateway için güncelleştirildi
-    - New-AzureRmApplicationGateway : EnableFIPS bayrağı ve Zones desteği eklendi
-    - New-AzureRmApplicationGatewaySku : Yeni Standard_v2 ve WAF_v2 sku'ları eklendi
-    - Set-AzureRmApplicationGatewaySku : Yeni Standard_v2 ve WAF_v2 sku'ları eklendi
+    - New-AzureRmApplicationGateway: EnableFIPS bayrağı ve Bölgeler desteği eklendi
+    - New-AzureRmApplicationGatewaySku: Yeni Standard_v2 ve WAF_v2 sku'ları eklendi
+    - Set-AzureRmApplicationGatewaySku: Yeni Standard_v2 ve WAF_v2 sku'ları eklendi
 * RouteTable cmdlet’leri en son oluşturucu sürümüyle yeniden oluşturuldu
 
 #### <a name="azurermrelay"></a>AzureRM.Relay
@@ -854,7 +851,7 @@ Azure PowerShell'in bu sürümünde yapılan değişikliklerin listesi aşağıd
 
 #### <a name="azurermnetwork"></a>AzureRM.Network
 * Zone-Redundant VirtualNetworkGateways için yeni SKU'lar kullanıma sunuldu
-* ARM aracılığıyla ExpressRoute Partner API'leri özelliği için yeni komutlar eklendi
+* Özellik için yeni komutlar eklendi: ARM aracılığıyla ExpressRoute İş Ortağı API’leri
     - Get-AzureRmExpressRouteCrossConnection eklendi
     - Set-AzureRmExpressRouteCrossConnection eklendi
     - Add-AzureRmExpressRouteCrossConnectionPeering eklendi
@@ -876,7 +873,7 @@ Azure PowerShell'in bu sürümünde yapılan değişikliklerin listesi aşağıd
     - Belirli bir yönetim grubuna işlem uygulamayı sağlayan için -ManagementGroupName parametresi eklendi
     - Belirli bir aboneliğe işlem uygulamayı sağlayan Add -SubscriptionId parametresi eklendi
 * Get/New/Remove/Set-AzureRmPolicySetDefinition cmdlet'leri güncelleştirildi
-    - Belirli bir yönetim grubuna işlem uygulamayı sağlayan için -ManagementGroupName parametresi eklendi
+    - Belirli bir yönetim grubuna işlem uygulamayı sağlayan -ManagementGroupName parametresi eklendi
     - Belirli bir aboneliğe işlem uygulamayı sağlayan Add -SubscriptionId parametresi eklendi
 * 'New-AzureRmResourceGroupDeployment' içinde 'TemplateParameterObject' kullanırken parametrelerde KeyVault gizli dizi başvurusu desteği eklendi
 * 'New-AzureRmADAppCredential' için '-EndDate' parametresinin yoksayılmasına neden olan sorun düzeltildi
@@ -1008,7 +1005,7 @@ Azure PowerShell'in bu sürümünde yapılan değişikliklerin listesi aşağıd
 * Özel CA tarafından Kök veya CA olarak yayınlanan Sertifikaları yükleme desteği eklendi
 * Özel SSL sertifikalarını KeyVault ve Çoklu ara sunucu ana bilgisayar adlarıyla kabul etme desteği eklendi
 * MSI kimliği desteği eklendi
-* İlkeleri Url ile kabul etme desteği eklendi NOT: Aşağıdaki cmdlet’ler gelecekteki sürümlerde kullanım dışı kalacaktır
+* Url aracılığıyla İlkeleri kabul etmek için destek eklendi NOT: Aşağıdaki cmdlet’ler gelecek sürümde kullanım dışı bırakılacaktır
    - Import-AzureRmApiManagementHostnameCertificate
    - New-AzureRmApiManagementHostnameConfiguration
    - Set-AzureRmApiManagementHostnames
