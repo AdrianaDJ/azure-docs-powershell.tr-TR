@@ -1,15 +1,18 @@
 ---
 title: AzureRM'den Azure PowerShell Az 1.0.0’a tüm değişiklikler
 description: Bu geçiş kılavuzu, Azure PowerShell Az sürüm 1 yayınında yapılan yeni değişikliklerin listesini içerir.
+author: sptramer
+ms.author: sttramer
+manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/15/2019
-ms.openlocfilehash: 6c2d681144fe561e734a247c44046e3dadb78083
-ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
+ms.openlocfilehash: e5121d61b0f5f68ff3e1f33d774e3533adfeb64f
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83387726"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "81445552"
 ---
 # <a name="breaking-changes-for-az-100"></a>Az 1.0.0 için yeni değişiklikler
 

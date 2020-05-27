@@ -1,15 +1,18 @@
 ---
 title: Azure PowerShell betiklerini AzureRM'den Az'ye geçirme
 description: Betikleri AzureRM modülünden yeni Az modülüne geçirmeye yönelik adımları ve araçları öğrenin.
+author: sptramer
+ms.author: sttramer
+manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/10/2019
-ms.openlocfilehash: 0b0b951d540ed91e15472853bba46e4f302921bc
-ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
+ms.openlocfilehash: 02b39653ebb4aa0f74d2340a7be7b35e08d5e44d
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83387658"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "81446045"
 ---
 # <a name="migrate-azure-powershell-from-azurerm-to-az"></a>Azure PowerShell'i AzureRM'den Az modülüne geçirme
 

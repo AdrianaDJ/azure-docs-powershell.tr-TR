@@ -1,15 +1,18 @@
 ---
 title: Microsoft Azure PowerShell 4.0.0 için bozucu değişiklikler
 description: Bu geçiş kılavuzu, Azure PowerShell sürüm 4 yayınında yapılan ve hataya neden olan değişikliklerin listesini içerir.
+author: sptramer
+ms.author: sttramer
+manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/01/2018
-ms.openlocfilehash: 47d7ab67a6b1d092bb07405e7dc925d844cac5ab
-ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
+ms.openlocfilehash: 2f61e41b701dfc263df18064f6ac2cc4c6e4021e
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83386723"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "67863549"
 ---
 # <a name="breaking-changes-for-microsoft-azure-powershell-400"></a>Microsoft Azure PowerShell 4.0.0 için bozucu değişiklikler
 
