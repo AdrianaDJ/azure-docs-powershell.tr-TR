@@ -1,18 +1,15 @@
 ---
 title: PowerShell İşlerinde Azure PowerShell cmdlet'lerini çalıştırma
 description: -AsJob ve Start-Job kullanarak Azure PowerShell cmdlet'lerini paralel veya arka plan görevi olarak çalıştırmayı öğrenin.
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 10/21/2019
-ms.openlocfilehash: d74d3681794398534fe2c75a0c8fc314767ffa85
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: 36fcfc42fed91c5a0c8eff200c662e1e31cacfb9
+ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "72791489"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83387743"
 ---
 # <a name="run-azure-powershell-cmdlets-in-powershell-jobs"></a>PowerShell İşlerinde Azure PowerShell cmdlet'lerini çalıştırma
 

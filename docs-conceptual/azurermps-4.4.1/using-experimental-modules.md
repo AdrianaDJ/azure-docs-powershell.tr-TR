@@ -1,18 +1,15 @@
 ---
 title: Deneysel Azure PowerShell modüllerini kullanma
 description: Deneysel Azure PowerShell modüllerinin felsefesi ve kullanımı hakkında bilgi edinin.
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/05/2017
-ms.openlocfilehash: 7867adeac41444c81c31b7ee44b910ab40d873f8
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: 35e704b21e0034dffc2c9edc23977d8d6ef44661
+ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "65534754"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83387386"
 ---
 # <a name="using-experimental-azure-powershell-modules"></a>Deneysel Azure PowerShell modüllerini kullanma
 
@@ -69,7 +66,7 @@ Temel iyileştirmeler, "sağduyu" olarak kabul edilir ve bu güncelleştirmeleri
 
 - Daha Kısa Adları - Cmdlet'lerin adlarını (örneğin, `New-AzureRmVM` => `New-AzVm`) ve parametrelerin adlarını (örneğin, `-ResourceGroupName` => `-Rg`) içerir. "Eski" cmdlet’lerle uyumluluk için diğer adları kullanın. _Geriye doğru uyumlu_ parametre kümeleri sağlayın.
 
-- Akıllı Varsayılanlar - "Gerekli" bilgileri doldurmak için akıllı varsayılanlar oluşturun. Örnek:
+- Akıllı Varsayılanlar - "Gerekli" bilgileri doldurmak için akıllı varsayılanlar oluşturun. Örneğin:
   - Kaynak Grubu
   - Konum
   - Bağımlı kaynaklar
