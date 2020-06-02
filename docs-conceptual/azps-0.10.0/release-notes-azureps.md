@@ -4,12 +4,12 @@ description: Azure PowerShell modüllerine yönelik en son güncelleştirmeler h
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/10/2020
-ms.openlocfilehash: c02cfaa7f7f39393f21cec31c5115f009381b19c
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: 9dd733865ba8235eed6dcef4637a63ad93999338
+ms.sourcegitcommit: 9f5c7d231b069ad501729bf015a829f3fe89bc6a
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81446062"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84121925"
 ---
 # <a name="azure-powershell-release-notes"></a>Azure PowerShell sürüm notları
 ## <a name="0100-preview---april-2020"></a>0.10.0-preview - Nisan 2020
@@ -29,7 +29,7 @@ ms.locfileid: "81446062"
   - Az.Websites
 * Az için Azure Stack Hub ile çalışan üç yeni PowerShell modülü (Az.Databox, Az.IotHub ve Az.EventHub) kullanıma sunuldu
 * Komutlar, AzureRM’nin Az olarak değiştirilmesi gibi küçük değişiklikler ile görece aynı kalır
-* Azure Stack Hub için PowerShell belgelerine güncelleştirilmiş bağlantı [burada](aka.ms/InstallASHPowerShell) bulunabilir
+* Azure Stack Hub için PowerShell belgelerine güncelleştirilmiş bağlantı [burada](https://aka.ms/InstallASHPowerShell) bulunabilir
 
 #### <a name="azaccounts"></a>Az.Accounts
 * ADAL’den MSAL’ye yükseltme
@@ -40,7 +40,7 @@ ms.locfileid: "81446062"
 * Oturum açılmadığında ‘Get-AzTenant’/’Get-AzDefault’/’Set-AzDefault’ cmdlet’lerinin NullReferenceException hatası oluşturması düzeltildi [#10292]
 
 #### <a name="azcompute"></a>Az.Compute
-* ‘New-AzDiskConfig’ cmdlet’ine şu parametreler eklendi: 
+* ‘New-AzDiskConfig’ cmdlet’ine şu parametreler eklendi:
     - DiskIOPSReadOnly, DiskMBpsReadOnly, MaxSharesCount, GalleryImageReference
 * Şifreleme özelliğinin ‘New-AzGalleryImageVersion’ cmdlet’inin parametrelerini hedeflemesine izin verildi.
 * ‘Set-AzVmss’ -Reimage ve ‘Invoke-AzVMReimage’ cmdlet’lerine yönelik tempDisk sorunu düzeltildi. [#11354]

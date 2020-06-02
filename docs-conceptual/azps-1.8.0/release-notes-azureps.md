@@ -4,13 +4,14 @@ description: Azure PowerShell modüllerine yönelik en son güncelleştirmeler h
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 04/30/2019
-ms.openlocfilehash: 287e9e1f066d0768e7f572ca7f5f2ee2b78931d9
-ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
+ms.openlocfilehash: 34b21292ccc47bb53b6609cd637ef18338a45cd3
+ms.sourcegitcommit: 9f5c7d231b069ad501729bf015a829f3fe89bc6a
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83386978"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84121467"
 ---
+# <a name="azure-powershell-release-notes"></a>Azure PowerShell sürüm notları
 ## <a name="180---april-2019"></a>1.8.0 - Nisan 2019
 ### <a name="highlights-since-the-last-major-release"></a>Son ana sürümden bu yana öne çıkanlar
 * `Az` modülünü genel kullanıma sunuldu
@@ -48,7 +49,7 @@ ms.locfileid: "83386978"
 * Oluşturma/güncelleştirme etkinliği için abonelik cmdlet’lerini kullanmadan önce kaynakların oluşturulmasının gerektiğini belirten yardım metni güncelleştirildi.
 
 #### <a name="azeventhub"></a>Az.EventHub
-* Ad alanının NetworkRuleSet’i için yeni cmdlet’ler eklendi 
+* Ad alanının NetworkRuleSet’i için yeni cmdlet’ler eklendi
 
 #### <a name="azhdinsight"></a>Az.HDInsight
 * Çoğul isimli cmdlet’ler tekil isimli olarak güncelleştirildi ve çoğul isimler kullanım dışı bırakıldı.
@@ -138,7 +139,7 @@ ms.locfileid: "83386978"
 
 #### <a name="azcompute"></a>Az.Compute
 * New-AzDiskConfig ve New-AzSnapshotConfig’e HyperVGeneration parametresi eklendi
-* Diğer kiracıların karakter görüntüleriyle VM oluşturmaya izin verildi. 
+* Diğer kiracıların karakter görüntüleriyle VM oluşturmaya izin verildi.
 
 #### <a name="azcontainerinstance"></a>Az.ContainerInstance
 * New-AzContainerGroup’un -command parametresinde bağımsız boş değişken ekleyen sorun düzeltildi
@@ -220,7 +221,7 @@ ms.locfileid: "83386978"
     - New-AzStorageAccountManagementPolicyRule
 
 #### <a name="azwebsites"></a>Az.Websites
-* 'New-AzWebApp -IncludeSourceWebAppSlots' kullanarak tüm yuvaların kopyalanmasını kesintiye uğratan ARM şablon hatası düzeltildi 
+* 'New-AzWebApp -IncludeSourceWebAppSlots' kullanarak tüm yuvaların kopyalanmasını kesintiye uğratan ARM şablon hatası düzeltildi
 
 ## <a name="150---march-2019"></a>1.5.0 - Mart 2019
 #### <a name="azaccounts"></a>Az.Accounts
@@ -289,7 +290,7 @@ ms.locfileid: "83386978"
 * ADL silinmiş öğe listeleme ve geri yükleme cmdlet’leri eklendi
 
 #### <a name="azeventhub"></a>Az.EventHub
-* EventHub’ın CaptureDescription sınıfında Boş Arşivleri Atlamak için SkipEmptyArchives adlı yeni Boole özelliği eklendi 
+* EventHub’ın CaptureDescription sınıfında Boş Arşivleri Atlamak için SkipEmptyArchives adlı yeni Boole özelliği eklendi
 
 #### <a name="azkeyvault"></a>Az.KeyVault
 * Set-AzKeyVaultSecret’daki etiketleme düzeltildi
@@ -317,8 +318,8 @@ ms.locfileid: "83386978"
 
 #### <a name="azoperationalinsights"></a>Az.OperationalInsights
 * New ve Get ApplicationInsights veri kaynağı için ek destek sunuldu.
-    - Belirli bir çalışma alanı için belirli ve tüm Get ApplicationInsights veri kaynaklarını desteklemek için yeni ‘ApplicationInsights’ türü eklendi. 
-    - Belirli Application-Insights kaynak parametrelerine (abonelik kimliği, resourceGroupName ve ad) göre veri kaynağı oluşturmak için New-AzOperationalInsightsApplicationInsightsDataSource cmdlet’i eklendi. 
+    - Belirli bir çalışma alanı için belirli ve tüm Get ApplicationInsights veri kaynaklarını desteklemek için yeni ‘ApplicationInsights’ türü eklendi.
+    - Belirli Application-Insights kaynak parametrelerine (abonelik kimliği, resourceGroupName ve ad) göre veri kaynağı oluşturmak için New-AzOperationalInsightsApplicationInsightsDataSource cmdlet’i eklendi.
 
 #### <a name="azresources"></a>Az.Resources
 * [https://github.com/Azure/azure-powershell/issues/8166](https://github.com/Azure/azure-powershell/issues/8166 ) sorunu düzeltildi
@@ -349,9 +350,9 @@ Az.AnalysisServices modülü için genel kullanılabilirlik.
 Az.RecoveryServices modülü için genel kullanılabilirlik.
 
 #### <a name="azresources"></a>Az.Resources
-* Kaynak grupları için etiketleme düzeltildi 
+* Kaynak grupları için etiketleme düzeltildi
     - Burada daha fazla bilgi bulunabilir: https://github.com/Azure/azure-powershell/issues/8166
-* `Get-AzureRmRoleAssignment` komutunun -ErrorAction'a uymama sorunu düzeltildi 
+* `Get-AzureRmRoleAssignment` komutunun -ErrorAction'a uymama sorunu düzeltildi
     - Burada daha fazla bilgi bulunabilir: https://github.com/Azure/azure-powershell/issues/8235
 
 #### <a name="azsql"></a>Az.Sql
@@ -656,7 +657,7 @@ Application Gateway’de RewriteRuleSets parametresini yapılandırma desteği e
 
 ### <a name="azwebsites"></a>Az.Websites
 
-* Set-AzureRmWebApp ve Set-AzureRmWebAppSlot 
+* Set-AzureRmWebApp ve Set-AzureRmWebAppSlot
     - Windows ve Linux kapsayıcı uygulamalarında bağlanacak Azure Depolama yollarının belirtilmesi için yeni parametre (-AzureStoragePath) eklendi. Azure Depolama yollarını ayarlamak için yeni New-AzureRmWebAppAzureStoragePath cmdlet’inin çıktısını bir parametre olarak kullanın.
 
 ## <a name="061---november-2018"></a>0.6.1 - Kasım 2018
@@ -684,7 +685,7 @@ Application Gateway’de RewriteRuleSets parametresini yapılandırma desteği e
 ### <a name="aznetwork"></a>Az.Network
 * New-AzureRmApplicationGatewayCustomError, Add-AzureRmApplicationGatewayCustomError, Get-AzureRmApplicationGatewayCustomError, Set-AzureRmApplicationGatewayCustomError, Remove-AzureRmApplicationGatewayCustomError, Add-AzureRmApplicationGatewayHttpListenerCustomError, Get-AzureRmApplicationGatewayHttpListenerCustomError, Set-AzureRmApplicationGatewayHttpListenerCustomError, Remove-AzureRmApplicationGatewayHttpListenerCustomError cmdlet'leri eklendi
 * Desteklenen AzureFirewall Ağ Protokollerine yeniden ICMP eklendi
-* Test-AzureRmNetworkWatcherConnectivity cmdlet'i güncelleştirildi; hedef kimlik, adres ve bağlantı noktasında doğrulama eklendi. 
+* Test-AzureRmNetworkWatcherConnectivity cmdlet'i güncelleştirildi; hedef kimlik, adres ve bağlantı noktasında doğrulama eklendi.
 * VirtualNetwork eşlemesinde bellek kullanımıyla ilgili sorunlar düzeltildi
 
 ### <a name="azrecoveryservicesbackup"></a>Az.RecoveryServices.Backup
@@ -816,7 +817,7 @@ Application Gateway’de RewriteRuleSets parametresini yapılandırma desteği e
     - Start-AzureStorageFileCopy
 * Belirli bir konumunun Depolama kaynağı kullanımını alma desteği ve genel Depolama kayrağı kullanımını almak için uyarı iletisi ekleme kullanımdan kalktı.
     - Get-AzStorageUsage
-    
+
 #### <a name="azcognitiveservices"></a>Az.CognitiveServices
 * Mevcut hesap olmadan Get-AzCognitiveServicesAccountSkus desteği.
 
