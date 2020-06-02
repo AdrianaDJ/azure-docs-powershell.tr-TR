@@ -4,1587 +4,1587 @@ description: Azure PowerShell modüllerine yönelik en son güncelleştirmeler h
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/10/2020
-ms.openlocfilehash: c02cfaa7f7f39393f21cec31c5115f009381b19c
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: 9dd733865ba8235eed6dcef4637a63ad93999338
+ms.sourcegitcommit: 9f5c7d231b069ad501729bf015a829f3fe89bc6a
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81446062"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84121925"
 ---
-# <a name="azure-powershell-release-notes"></a><span data-ttu-id="de109-103">Azure PowerShell sürüm notları</span><span class="sxs-lookup"><span data-stu-id="de109-103">Azure PowerShell release notes</span></span>
-## <a name="0100-preview---april-2020"></a><span data-ttu-id="de109-104">0.10.0-preview - Nisan 2020</span><span class="sxs-lookup"><span data-stu-id="de109-104">0.10.0-preview - April 2020</span></span>
-### <a name="general"></a><span data-ttu-id="de109-105">Genel</span><span class="sxs-lookup"><span data-stu-id="de109-105">General</span></span>
-* <span data-ttu-id="de109-106">Az modülleri artık Azure Stack Hub’da önizlemede kullanılabilir.</span><span class="sxs-lookup"><span data-stu-id="de109-106">Az modules is now available in preview on Azure Stack Hub.</span></span> <span data-ttu-id="de109-107">Bu, Linux ve macOs ile platformlar arası uyumluluk sağlar.</span><span class="sxs-lookup"><span data-stu-id="de109-107">This allows for cross-platform compatibility with Linux and macOs.</span></span> <span data-ttu-id="de109-108">Azure Stack Hub artık Az modülleriyle PowerShell Core’u destekliyor, daha fazla bilgiyi [burada](https://aka.ms/az4AzureStack) bulabilirsiniz</span><span class="sxs-lookup"><span data-stu-id="de109-108">Azure Stack Hub now supports PowerShell core with the Az modules, more information [here](https://aka.ms/az4AzureStack)</span></span>
-* <span data-ttu-id="de109-109">Az modülleri profil 2019-03-01-hybrid’i destekliyor:</span><span class="sxs-lookup"><span data-stu-id="de109-109">Az modules support profile 2019-03-01-hybrid:</span></span>
-  - <span data-ttu-id="de109-110">Az.Billing</span><span class="sxs-lookup"><span data-stu-id="de109-110">Az.Billing</span></span>
-  - <span data-ttu-id="de109-111">Az.Compute</span><span class="sxs-lookup"><span data-stu-id="de109-111">Az.Compute</span></span>
-  - <span data-ttu-id="de109-112">Az.DataBoxEdge</span><span class="sxs-lookup"><span data-stu-id="de109-112">Az.DataBoxEdge</span></span>
-  - <span data-ttu-id="de109-113">Az.EventHub</span><span class="sxs-lookup"><span data-stu-id="de109-113">Az.EventHub</span></span>
-  - <span data-ttu-id="de109-114">Az.IotHub</span><span class="sxs-lookup"><span data-stu-id="de109-114">Az.IotHub</span></span>
-  - <span data-ttu-id="de109-115">Az.KeyVault</span><span class="sxs-lookup"><span data-stu-id="de109-115">Az.KeyVault</span></span>
-  - <span data-ttu-id="de109-116">Az.Monitor</span><span class="sxs-lookup"><span data-stu-id="de109-116">Az.Monitor</span></span>
-  - <span data-ttu-id="de109-117">Az.Network</span><span class="sxs-lookup"><span data-stu-id="de109-117">Az.Network</span></span>
-  - <span data-ttu-id="de109-118">Az.Resources</span><span class="sxs-lookup"><span data-stu-id="de109-118">Az.Resources</span></span>
-  - <span data-ttu-id="de109-119">Az.Storage</span><span class="sxs-lookup"><span data-stu-id="de109-119">Az.Storage</span></span>
-  - <span data-ttu-id="de109-120">Az.Websites</span><span class="sxs-lookup"><span data-stu-id="de109-120">Az.Websites</span></span>
-* <span data-ttu-id="de109-121">Az için Azure Stack Hub ile çalışan üç yeni PowerShell modülü (Az.Databox, Az.IotHub ve Az.EventHub) kullanıma sunuldu</span><span class="sxs-lookup"><span data-stu-id="de109-121">Three new PowerShell modules for az have been introduced that work with Azure Stack Hub, which are Az.Databox, Az.IotHub, and Az.EventHub</span></span>
-* <span data-ttu-id="de109-122">Komutlar, AzureRM’nin Az olarak değiştirilmesi gibi küçük değişiklikler ile görece aynı kalır</span><span class="sxs-lookup"><span data-stu-id="de109-122">Commands remain relatively the same, with minor changes such as changing AzureRM to Az</span></span>
-* <span data-ttu-id="de109-123">Azure Stack Hub için PowerShell belgelerine güncelleştirilmiş bağlantı [burada](aka.ms/InstallASHPowerShell) bulunabilir</span><span class="sxs-lookup"><span data-stu-id="de109-123">Updated link to PowerShell documentation for Azure Stack Hub can be found [here](aka.ms/InstallASHPowerShell)</span></span>
-
-#### <a name="azaccounts"></a><span data-ttu-id="de109-124">Az.Accounts</span><span class="sxs-lookup"><span data-stu-id="de109-124">Az.Accounts</span></span>
-* <span data-ttu-id="de109-125">ADAL’den MSAL’ye yükseltme</span><span class="sxs-lookup"><span data-stu-id="de109-125">Upgrade from ADAL to MSAL</span></span>
-
-
-## <a name="370---march-2020"></a><span data-ttu-id="de109-126">3.7.0 - Mart 2020</span><span class="sxs-lookup"><span data-stu-id="de109-126">3.7.0 - March 2020</span></span>
-#### <a name="azaccounts"></a><span data-ttu-id="de109-127">Az.Accounts</span><span class="sxs-lookup"><span data-stu-id="de109-127">Az.Accounts</span></span>
-* <span data-ttu-id="de109-128">Oturum açılmadığında ‘Get-AzTenant’/’Get-AzDefault’/’Set-AzDefault’ cmdlet’lerinin NullReferenceException hatası oluşturması düzeltildi [#10292]</span><span class="sxs-lookup"><span data-stu-id="de109-128">Fixed 'Get-AzTenant'/'Get-AzDefault'/'Set-AzDefault' throw NullReferenceException when not login [#10292]</span></span>
-
-#### <a name="azcompute"></a><span data-ttu-id="de109-129">Az.Compute</span><span class="sxs-lookup"><span data-stu-id="de109-129">Az.Compute</span></span>
-* <span data-ttu-id="de109-130">‘New-AzDiskConfig’ cmdlet’ine şu parametreler eklendi:</span><span class="sxs-lookup"><span data-stu-id="de109-130">Added the following parameters to 'New-AzDiskConfig' cmdlet:</span></span> 
-    - <span data-ttu-id="de109-131">DiskIOPSReadOnly, DiskMBpsReadOnly, MaxSharesCount, GalleryImageReference</span><span class="sxs-lookup"><span data-stu-id="de109-131">DiskIOPSReadOnly, DiskMBpsReadOnly, MaxSharesCount, GalleryImageReference</span></span>
-* <span data-ttu-id="de109-132">Şifreleme özelliğinin ‘New-AzGalleryImageVersion’ cmdlet’inin parametrelerini hedeflemesine izin verildi.</span><span class="sxs-lookup"><span data-stu-id="de109-132">Allowed Encryption property to Target parameter of 'New-AzGalleryImageVersion' cmdlet.</span></span>
-* <span data-ttu-id="de109-133">‘Set-AzVmss’ -Reimage ve ‘Invoke-AzVMReimage’ cmdlet’lerine yönelik tempDisk sorunu düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="de109-133">Fixed tempDisk issue for 'Set-AzVmss' -Reimage and 'Invoke-AzVMReimage' cmdlets.</span></span> <span data-ttu-id="de109-134">[#11354]</span><span class="sxs-lookup"><span data-stu-id="de109-134">[#11354]</span></span>
-* <span data-ttu-id="de109-135">Aşağıdaki cmdlet’lere yeni SAP uzantısına yönelik destek eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-135">Added support to below cmdlets for new SAP Extension</span></span>
-    - <span data-ttu-id="de109-136">‘Set-AzVMAEMExtension’</span><span class="sxs-lookup"><span data-stu-id="de109-136">'Set-AzVMAEMExtension'</span></span>
-    - <span data-ttu-id="de109-137">‘Get-AzVMAEMExtension’</span><span class="sxs-lookup"><span data-stu-id="de109-137">'Get-AzVMAEMExtension'</span></span>
-    - <span data-ttu-id="de109-138">‘Remove-AzVMAEMExtension’</span><span class="sxs-lookup"><span data-stu-id="de109-138">'Remove-AzVMAEMExtension'</span></span>
-    - <span data-ttu-id="de109-139">‘Update-AzVMAEMExtension’</span><span class="sxs-lookup"><span data-stu-id="de109-139">'Update-AzVMAEMExtension'</span></span>
-* <span data-ttu-id="de109-140">Yardım belgelerinde bulunan örneklerdeki hatalar düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-140">Fixed errors in examples of help document</span></span>
-* <span data-ttu-id="de109-141">VM PowerState için tam dize değeri tablo biçiminde gösterildi.</span><span class="sxs-lookup"><span data-stu-id="de109-141">Showed the exact string value for VM PowerState in the table format.</span></span>
-* <span data-ttu-id="de109-142">‘New-AzVmssConfig’: SinglePlacementGroup devre dışı bırakıldığında AutomaticRepairs özelliğinin serileştirilmesi sorunu düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-142">'New-AzVmssConfig': fixed serialization of AutomaticRepairs property when SinglePlacementGroup is disabled.</span></span> <span data-ttu-id="de109-143">[#11257]</span><span class="sxs-lookup"><span data-stu-id="de109-143">[#11257]</span></span>
-
-#### <a name="azdatafactory"></a><span data-ttu-id="de109-144">Az.DataFactory</span><span class="sxs-lookup"><span data-stu-id="de109-144">Az.DataFactory</span></span>
-* <span data-ttu-id="de109-145">ADF .NET SDK’sı 4.8.0 sürümüne güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-145">Updated ADF .Net SDK version to 4.8.0</span></span>
-* <span data-ttu-id="de109-146">Yeniden çalıştırmayı desteklemek için ‘Invoke-AzDataFactoryV2Pipeline’ komutuna isteğe bağlı parametreler eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-146">Added optional parameters to 'Invoke-AzDataFactoryV2Pipeline' command to support rerun</span></span>
-
-#### <a name="azdatalakestore"></a><span data-ttu-id="de109-147">Az.DataLakeStore</span><span class="sxs-lookup"><span data-stu-id="de109-147">Az.DataLakeStore</span></span>
-* <span data-ttu-id="de109-148">‘Export-AzDataLakeStoreItem’ ve ‘Import-AzDataLakeStoreItem’ için hataya neden olan değişiklik açıklaması eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-148">Added breaking change description for 'Export-AzDataLakeStoreItem' and 'Import-AzDataLakeStoreItem'</span></span>
-* <span data-ttu-id="de109-149">‘New-AzDataLakeStoreItem’, ‘Add-AzDAtaLakeStoreItemContent’ ve ‘Get-AzDAtaLakeStoreItemContent’ için Bayt kodlaması seçeneği eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-149">Added option of Byte encoding for 'New-AzDataLakeStoreItem', 'Add-AzDAtaLakeStoreItemContent', and 'Get-AzDAtaLakeStoreItemContent'</span></span>
-
-#### <a name="azhdinsight"></a><span data-ttu-id="de109-150">Az.HDInsight</span><span class="sxs-lookup"><span data-stu-id="de109-150">Az.HDInsight</span></span>
-* <span data-ttu-id="de109-151">Küme oluştururken TLS sürümünün desteklenen en düşük sürümünün belirtilmesine yönelik destek eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-151">Supported specifying minimal supported TLS version when creating cluster.</span></span>
-
-#### <a name="aziothub"></a><span data-ttu-id="de109-152">Az.IotHub</span><span class="sxs-lookup"><span data-stu-id="de109-152">Az.IotHub</span></span>
-* <span data-ttu-id="de109-153">Cihaz başına dağıtılmış ayarları yönetmeye yönelik destek eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-153">Added support to manage distributed settings per-device.</span></span> <span data-ttu-id="de109-154">Yeni Cmdlet’ler şunlardır:</span><span class="sxs-lookup"><span data-stu-id="de109-154">New Cmdlets are:</span></span>
-    - <span data-ttu-id="de109-155">‘Get-AzIotHubDistributedTracing’</span><span class="sxs-lookup"><span data-stu-id="de109-155">'Get-AzIotHubDistributedTracing'</span></span>
-    - <span data-ttu-id="de109-156">‘Set-AzIotHubDistributedTracing’</span><span class="sxs-lookup"><span data-stu-id="de109-156">'Set-AzIotHubDistributedTracing'</span></span>
-
-#### <a name="azkeyvault"></a><span data-ttu-id="de109-157">Az.KeyVault</span><span class="sxs-lookup"><span data-stu-id="de109-157">Az.KeyVault</span></span>
-* <span data-ttu-id="de109-158">‘New-AzKeyVault’ cmdlet’ine hataya neden olan değişiklik öznitelikleri eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-158">Added breaking change attributes to 'New-AzKeyVault'</span></span>
-
-#### <a name="azmonitor"></a><span data-ttu-id="de109-159">Az.Monitor</span><span class="sxs-lookup"><span data-stu-id="de109-159">Az.Monitor</span></span>
-* <span data-ttu-id="de109-160">‘New-AzScheduledQueryRuleLogMetricTrigger’ cmdlet’ine yönelik belgeler güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-160">Updated documentation for 'New-AzScheduledQueryRuleLogMetricTrigger'</span></span>
-
-#### <a name="aznetwork"></a><span data-ttu-id="de109-161">Az.Network</span><span class="sxs-lookup"><span data-stu-id="de109-161">Az.Network</span></span>
-* <span data-ttu-id="de109-162">Kiracılar arası VirtualHubVnetConnections kurulmasına olanak tanımak için cmdlet’ler güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-162">Updated cmdlets to allow cross-tenant VirtualHubVnetConnections</span></span>
-    - <span data-ttu-id="de109-163">‘New-AzVirtualHubVnetConnection’</span><span class="sxs-lookup"><span data-stu-id="de109-163">'New-AzVirtualHubVnetConnection'</span></span>
-    - <span data-ttu-id="de109-164">‘Update-AzVirtualHubVnetConnection’</span><span class="sxs-lookup"><span data-stu-id="de109-164">'Update-AzVirtualHubVnetConnection'</span></span>
-    - <span data-ttu-id="de109-165">‘New-AzVirtualHub’</span><span class="sxs-lookup"><span data-stu-id="de109-165">'New-AzVirtualHub'</span></span>
-    - <span data-ttu-id="de109-166">‘Update-AzVirtualHub’</span><span class="sxs-lookup"><span data-stu-id="de109-166">'Update-AzVirtualHub'</span></span>
-* <span data-ttu-id="de109-167">SQL Yönetim SDK’sı bağımlılığı kaldırıldı</span><span class="sxs-lookup"><span data-stu-id="de109-167">Removed Sql Management SDK dependency</span></span>
-
-#### <a name="azpolicyinsights"></a><span data-ttu-id="de109-168">Az.PolicyInsights</span><span class="sxs-lookup"><span data-stu-id="de109-168">Az.PolicyInsights</span></span>
-* <span data-ttu-id="de109-169">Hata iletileri iyileştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-169">Improved error messages</span></span>
-
-#### <a name="azrecoveryservices"></a><span data-ttu-id="de109-170">Az.RecoveryServices</span><span class="sxs-lookup"><span data-stu-id="de109-170">Az.RecoveryServices</span></span>
-* <span data-ttu-id="de109-171">Azure Site Recovery’de, Azure disk tarafından şifrelenmiş Sanal Makinelere yönelik VM özellikleri güncelleştirildi ve yeniden koruma gerçekleştirmeye yönelik destek eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-171">Azure Site Recovery added support for doing reprotect and updated vm properties for Azure disk encrypted Virtual Machines.</span></span>
-* <span data-ttu-id="de109-172">Azure Site Recovery VmwareToAzure DR izleme özelliği eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-172">Added Azure Site Recovery VmwareToAzure properties DR monitoring</span></span>
-* <span data-ttu-id="de109-173">Başarısız öğeler için ilke güncelleştirmesini yeniden deneme özelliğine yönelik destek Azure Backup’a eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-173">Azure Backup added support for retrying policy update for failed items.</span></span>
-* <span data-ttu-id="de109-174">Yedekleme ve geri yükleme işlemleri sırasında disk dışlaması ayarını kullanmaya yönelik destek Azure Backup’a eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-174">Azure Backup Added support for disk exclusion settings during backup and restore.</span></span>
-* <span data-ttu-id="de109-175">AzureFileShare’den birden fazla dosyayı/klasörü geri yüklemeye yönelik destek Azure Backup’a eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-175">Azure Backup Added Support for Restoring Multiple files/folders in AzureFileShare</span></span>
-* <span data-ttu-id="de109-176">IaasVM İlkesini güncelleştirilirken kullanıcı tarafından belirtilen Resourcegroup desteğine yönelik destek Azure Backup’a eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-176">Azure Backup Added support for User-specified Resourcegroup support while updating IaasVM Policy</span></span>
-
-#### <a name="azresources"></a><span data-ttu-id="de109-177">Az.Resources</span><span class="sxs-lookup"><span data-stu-id="de109-177">Az.Resources</span></span>
-* <span data-ttu-id="de109-178">‘Get-AzResource -ResourceGroupName -Name -ExpandProperties -ResourceType’ komutlarındaki bir hata düzeltildi ve bunların varsayılan apiVersion yerine kaynakların asıl apiVersion’unu kullanması sağlandı [#11267]</span><span class="sxs-lookup"><span data-stu-id="de109-178">Fixed 'Get-AzResource -ResourceGroupName -Name -ExpandProperties -ResourceType' to use actual apiVersion of resources instead of default apiVersion [#11267]</span></span>
-* <span data-ttu-id="de109-179">Hata senaryoları için correlationId’yi günlüğe kaydetme özelliği eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-179">Added correlationId logging for error scenarios</span></span>
-* <span data-ttu-id="de109-180">‘Get-AzResourceLock’ cmdlet’inde küçük bir belge değişikliği yapıldı.</span><span class="sxs-lookup"><span data-stu-id="de109-180">Small documentation change to 'Get-AzResourceLock'.</span></span> <span data-ttu-id="de109-181">Örnek eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-181">Added example.</span></span>
-* <span data-ttu-id="de109-182">‘Get-AzADUser’ cmdlet’inin parametre değerinde tek tırnak işaretinin atlanması [#11317]</span><span class="sxs-lookup"><span data-stu-id="de109-182">Escaped single quote in parameter value of 'Get-AzADUser' [#11317]</span></span>
-* <span data-ttu-id="de109-183">Dağıtım Betikleri için yeni cmdlet’ler eklendi (‘Get-AzDeploymentScript’, ‘Get-AzDeploymentScriptLog’, ‘Save-AzDeploymentScriptLog’ ve ‘Remove-AzDeploymentScript’)</span><span class="sxs-lookup"><span data-stu-id="de109-183">Added new cmdlets for Deployment Scripts ('Get-AzDeploymentScript', 'Get-AzDeploymentScriptLog', 'Save-AzDeploymentScriptLog', 'Remove-AzDeploymentScript')</span></span>
-
-#### <a name="azsql"></a><span data-ttu-id="de109-184">Az.Sql</span><span class="sxs-lookup"><span data-stu-id="de109-184">Az.Sql</span></span>
-* <span data-ttu-id="de109-185">‘Invoke-AzSqlDatabaseFailover’ cmdlet’ine okunabilir ikincil parametre eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-185">Added readable secondary parameter to 'Invoke-AzSqlDatabaseFailover'</span></span>
-* <span data-ttu-id="de109-186">‘Disable-AzSqlServerActiveDirectoryOnlyAuthentication’ cmdlet’i eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-186">Added cmdlet 'Disable-AzSqlServerActiveDirectoryOnlyAuthentication'</span></span>
-* <span data-ttu-id="de109-187">Veritabanındaki sütunlar sınıflandırılırken duyarlılık derecesi kaydedildi.</span><span class="sxs-lookup"><span data-stu-id="de109-187">Saved sensitivity rank when classifying columns in the database.</span></span>
-
-#### <a name="azsupport"></a><span data-ttu-id="de109-188">Az.Support</span><span class="sxs-lookup"><span data-stu-id="de109-188">Az.Support</span></span>
-* <span data-ttu-id="de109-189">‘Az.Support’ modülü genel kullanıma sunuldu</span><span class="sxs-lookup"><span data-stu-id="de109-189">General availability of 'Az.Support' module</span></span>
-
-#### <a name="azwebsites"></a><span data-ttu-id="de109-190">Az.Websites</span><span class="sxs-lookup"><span data-stu-id="de109-190">Az.Websites</span></span>
-* <span data-ttu-id="de109-191">Aşağıdaki yeni cmdlet’leri kullanarak Trafik Yönlendirme Kurallarıyla çalışmaya yönelik destek eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-191">Added support for working with webapp Traffic Routing Rules via below new cmdlets</span></span>
-    - <span data-ttu-id="de109-192">‘Get-AzWebAppTrafficRouting’</span><span class="sxs-lookup"><span data-stu-id="de109-192">'Get-AzWebAppTrafficRouting'</span></span>
-    - <span data-ttu-id="de109-193">‘Update-AzWebAppTrafficRouting’</span><span class="sxs-lookup"><span data-stu-id="de109-193">'Update-AzWebAppTrafficRouting'</span></span>
-    - <span data-ttu-id="de109-194">‘Add-AzWebAppTrafficRouting’</span><span class="sxs-lookup"><span data-stu-id="de109-194">'Add-AzWebAppTrafficRouting'</span></span>
-    - <span data-ttu-id="de109-195">‘Remove-AzWebAppTrafficRouting’</span><span class="sxs-lookup"><span data-stu-id="de109-195">'Remove-AzWebAppTrafficRouting'</span></span>
-
-## <a name="361---march-2020"></a><span data-ttu-id="de109-196">3.6.1 - Mart 2020</span><span class="sxs-lookup"><span data-stu-id="de109-196">3.6.1 - March 2020</span></span>
-#### <a name="azaccounts"></a><span data-ttu-id="de109-197">Az.Accounts</span><span class="sxs-lookup"><span data-stu-id="de109-197">Az.Accounts</span></span>
-* <span data-ttu-id="de109-198">'Send-Feedback' içinde Azure PowerShell anket sayfasını açma [#11020]</span><span class="sxs-lookup"><span data-stu-id="de109-198">Open Azure PowerShell survey page in 'Send-Feedback' [#11020]</span></span>
-* <span data-ttu-id="de109-199">'Resolve-Error' içinde Azure PowerShell anket URL’sini görüntüleme [#11021]</span><span class="sxs-lookup"><span data-stu-id="de109-199">Display Azure PowerShell survey URL in 'Resolve-Error' [#11021]</span></span>
-* <span data-ttu-id="de109-200">UserAgent’ta Az sürümü eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-200">Added Az version in UserAgent</span></span>
-
-#### <a name="azapimanagement"></a><span data-ttu-id="de109-201">Az.ApiManagement</span><span class="sxs-lookup"><span data-stu-id="de109-201">Az.ApiManagement</span></span>
-* <span data-ttu-id="de109-202">DeveloperPortal Uç Noktasında Özel Etki Alanını alma ve yapılandırma desteği eklendi [#11007]</span><span class="sxs-lookup"><span data-stu-id="de109-202">Added support for retrieving and configuring Custom Domain on the DeveloperPortal Endpoint [#11007]</span></span>
-* <span data-ttu-id="de109-203">'Export-AzApiManagementApi' içinde Api Tanımını Json biçiminde indirme desteği eklendi [#9987]</span><span class="sxs-lookup"><span data-stu-id="de109-203">'Export-AzApiManagementApi' Added support for downloading Api Definition in Json format [#9987]</span></span>
-* <span data-ttu-id="de109-204">'Import-AzApiManagementApi' içinde OpenApi 3.0 tanımını Json belgesinden içeri aktarma desteği eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-204">'Import-AzApiManagementApi' Added support for importing OpenApi 3.0 definition from Json document</span></span>
-* <span data-ttu-id="de109-205">'New-AzApiManagementIdentityProvider' ve 'Set-AzApiManagementIdentityProvider' içinde AAD B2C Sağlayıcısı için 'Oturum Açan Kiracı' yapılandırma desteği eklendi [#9784]</span><span class="sxs-lookup"><span data-stu-id="de109-205">'New-AzApiManagementIdentityProvider' and 'Set-AzApiManagementIdentityProvider' Added support for configuring 'Signin Tenant' for AAD B2C Provider [#9784]</span></span>
-
-#### <a name="azdatalakestore"></a><span data-ttu-id="de109-206">Az.DataLakeStore</span><span class="sxs-lookup"><span data-stu-id="de109-206">Az.DataLakeStore</span></span>
-* <span data-ttu-id="de109-207">csproj ve psd1 içinde System.Buffers öğesine açık başvuru eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-207">Added reference to System.Buffers explicitly in csproj and psd1.</span></span>
-
-#### <a name="aziothub"></a><span data-ttu-id="de109-208">Az.IotHub</span><span class="sxs-lookup"><span data-stu-id="de109-208">Az.IotHub</span></span>
-* <span data-ttu-id="de109-209">Iot Hub’daki cihazları yönetmek için destek eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-209">Added support to manage devices in an Iot Hub.</span></span> <span data-ttu-id="de109-210">Yeni Cmdlet’ler şunlardır:</span><span class="sxs-lookup"><span data-stu-id="de109-210">New Cmdlets are:</span></span>
-    - <span data-ttu-id="de109-211">'Add-AzIotHubDevice'</span><span class="sxs-lookup"><span data-stu-id="de109-211">'Add-AzIotHubDevice'</span></span>
-    - <span data-ttu-id="de109-212">'Get-AzIotHubDevice'</span><span class="sxs-lookup"><span data-stu-id="de109-212">'Get-AzIotHubDevice'</span></span>
-    - <span data-ttu-id="de109-213">'Remove-AzIotHubDevice'</span><span class="sxs-lookup"><span data-stu-id="de109-213">'Remove-AzIotHubDevice'</span></span>
-    - <span data-ttu-id="de109-214">'Set-AzIotHubDevice'</span><span class="sxs-lookup"><span data-stu-id="de109-214">'Set-AzIotHubDevice'</span></span>
-* <span data-ttu-id="de109-215">IoT hub’ındaki hedef IoT cihazında modülleri yönetmek için destek eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-215">Added support to manage modules on a target Iot device in an Iot Hub.</span></span> <span data-ttu-id="de109-216">Yeni Cmdlet’ler şunlardır:</span><span class="sxs-lookup"><span data-stu-id="de109-216">New Cmdlets are:</span></span>
-    - <span data-ttu-id="de109-217">'Add-AzIotHubModule'</span><span class="sxs-lookup"><span data-stu-id="de109-217">'Add-AzIotHubModule'</span></span>
-    - <span data-ttu-id="de109-218">'Get-AzIotHubModule'</span><span class="sxs-lookup"><span data-stu-id="de109-218">'Get-AzIotHubModule'</span></span>
-    - <span data-ttu-id="de109-219">'Remove-AzIotHubModule'</span><span class="sxs-lookup"><span data-stu-id="de109-219">'Remove-AzIotHubModule'</span></span>
-    - <span data-ttu-id="de109-220">'Set-AzIotHubModule'</span><span class="sxs-lookup"><span data-stu-id="de109-220">'Set-AzIotHubModule'</span></span>
-* <span data-ttu-id="de109-221">Bir IoT hub’ında hedef IoT cihazının bağlantı dizesini almak için cmdlet eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-221">Added cmdlet to get the connection string of a target IoT device in an Iot Hub.</span></span>
-* <span data-ttu-id="de109-222">Bir IoT hub’ında hedef IoT cihazındaki modülün bağlantı dizesini almak için cmdlet eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-222">Added cmdlet to get the connection string of a module on a target IoT device in an Iot Hub.</span></span>
-* <span data-ttu-id="de109-223">IoT cihazının üst cihazını almak/ayarlamak için destek eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-223">Added support to get/set parent device of an IoT device.</span></span> <span data-ttu-id="de109-224">Yeni Cmdlet’ler şunlardır:</span><span class="sxs-lookup"><span data-stu-id="de109-224">New Cmdlets are:</span></span>
-    - <span data-ttu-id="de109-225">'Get-AzIotHubDeviceParent'</span><span class="sxs-lookup"><span data-stu-id="de109-225">'Get-AzIotHubDeviceParent'</span></span>
-    - <span data-ttu-id="de109-226">'Set-AzIotHubDeviceParent'</span><span class="sxs-lookup"><span data-stu-id="de109-226">'Set-AzIotHubDeviceParent'</span></span>
-* <span data-ttu-id="de109-227">Cihaz üst-alt ilişkisinin yönetilmesi için destek eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-227">Added support to manage device parent-child relationship.</span></span>
-
-#### <a name="azmonitor"></a><span data-ttu-id="de109-228">Az.Monitor</span><span class="sxs-lookup"><span data-stu-id="de109-228">Az.Monitor</span></span>
-* <span data-ttu-id="de109-229">'Get-AzMetricDefinition' için çıkış değeri düzeltildi [#9714]</span><span class="sxs-lookup"><span data-stu-id="de109-229">Fixed output value for 'Get-AzMetricDefinition' [#9714]</span></span>
-
-#### <a name="aznetwork"></a><span data-ttu-id="de109-230">Az.Network</span><span class="sxs-lookup"><span data-stu-id="de109-230">Az.Network</span></span>
-* <span data-ttu-id="de109-231">SQL Yönetim SDK’sı güncelleştirildi.</span><span class="sxs-lookup"><span data-stu-id="de109-231">Updated Sql Management SDK.</span></span>
-* <span data-ttu-id="de109-232">PrivateLinkServiceConnectionState sınıfındaki bir adlandırma farkı sorunu düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="de109-232">Fixed a naming-difference issue in PrivateLinkServiceConnectionState class.</span></span>
-    - <span data-ttu-id="de109-233">ActionsRequired alanı ActionRequired alanına eşleniyor.</span><span class="sxs-lookup"><span data-stu-id="de109-233">Mapping the field ActionsRequired to ActionRequired.</span></span>
-* <span data-ttu-id="de109-234">'New-AzSqlServer' ve 'Set-AzSqlServer' için PublicNetworkAccess eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-234">Added PublicNetworkAccess to 'New-AzSqlServer' and 'Set-AzSqlServer'</span></span>
-
-#### <a name="azresources"></a><span data-ttu-id="de109-235">Az.Resources</span><span class="sxs-lookup"><span data-stu-id="de109-235">Az.Resources</span></span>
-* <span data-ttu-id="de109-236">'Get-AzRoleAssignment' içindeki null başvuru hatası düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-236">Fixed for null reference bug in 'Get-AzRoleAssignment'</span></span>
-* <span data-ttu-id="de109-237">'-Force' ve '-PassThru' anahtarı 'Remove-AzADGroup' içinde isteğe bağlı olarak işaretlendi [#10849]</span><span class="sxs-lookup"><span data-stu-id="de109-237">Marked switch '-Force' and '-PassThru' optional in 'Remove-AzADGroup' [#10849]</span></span>
-* <span data-ttu-id="de109-238">'MailNickname' öğesinin 'Remove-AzADGroup' içinde döndürülmemesi sorunu düzeltildi [#11167]</span><span class="sxs-lookup"><span data-stu-id="de109-238">Fixed issue that 'MailNickname' doesn't return in 'Remove-AzADGroup' [#11167]</span></span>
-* <span data-ttu-id="de109-239">'Remove-AzADGroup' kanal oluşturma işleminin çalışmaması sorunu düzeltildi [#11171]</span><span class="sxs-lookup"><span data-stu-id="de109-239">Fixed issue that 'Remove-AzADGroup' pipe operation doesn't work [#11171]</span></span>
-* <span data-ttu-id="de109-240">GetAzureRoleAssignmentCommand içinde null başvuru hatası düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-240">Fixed for null reference bug in GetAzureRoleAssignmentCommand</span></span>
-* <span data-ttu-id="de109-241">İlke cmdlet’lerinde yaklaşan değişiklikler için hataya neden olan değişiklik öznitelikleri eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-241">Added breaking change attributes for upcoming changes to policy cmdlets</span></span>
-* <span data-ttu-id="de109-242">'Get-AzResourceGroup' sunucu tarafında kaynak grubu etiket filtreleme gerçekleştirmek için güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-242">Updated 'Get-AzResourceGroup' to perform resource group tag filtering on server-side</span></span>
-* <span data-ttu-id="de109-243">Tag cmdlet’leri -ResourceId öğesini kabul edecek şekilde genişletildi</span><span class="sxs-lookup"><span data-stu-id="de109-243">Extended Tag cmdlets to accept -ResourceId</span></span>
-    - <span data-ttu-id="de109-244">Get-AzTag -ResourceId</span><span class="sxs-lookup"><span data-stu-id="de109-244">Get-AzTag -ResourceId</span></span>
-    - <span data-ttu-id="de109-245">New-AzTag -ResourceId</span><span class="sxs-lookup"><span data-stu-id="de109-245">New-AzTag -ResourceId</span></span>
-    - <span data-ttu-id="de109-246">Remove-AzTag -ResourceId</span><span class="sxs-lookup"><span data-stu-id="de109-246">Remove-AzTag -ResourceId</span></span>
-* <span data-ttu-id="de109-247">Yeni Tag cmdlet’i eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-247">Added new Tag cmdlet</span></span>
-    - <span data-ttu-id="de109-248">Update-AzTag -ResourceId</span><span class="sxs-lookup"><span data-stu-id="de109-248">Update-AzTag -ResourceId</span></span>
-* <span data-ttu-id="de109-249">SDK 3.3.0 sürümünden ScopedDeployment getirildi</span><span class="sxs-lookup"><span data-stu-id="de109-249">Brought ScopedDeployment from SDK 3.3.0</span></span>
-
-#### <a name="azsql"></a><span data-ttu-id="de109-250">Az.Sql</span><span class="sxs-lookup"><span data-stu-id="de109-250">Az.Sql</span></span>
-* <span data-ttu-id="de109-251">'New-AzSqlServer' ve 'Set-AzSqlServer' için PublicNetworkAccess eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-251">Added PublicNetworkAccess to 'New-AzSqlServer' and 'Set-AzSqlServer'</span></span>
-* <span data-ttu-id="de109-252">Yönetilen Veritabanları için Uzun Süreli Saklamalı yedekleme yapılandırması desteği eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-252">Added support for Long Term Retention backup configuration for Managed Databases</span></span>
-    - <span data-ttu-id="de109-253">Yönetilen bir veritabanında LTR ilkesini alma/ayarlama</span><span class="sxs-lookup"><span data-stu-id="de109-253">Get/Set LTR policy on a managed database</span></span>
-    - <span data-ttu-id="de109-254">Yönetilen veritabanı, yönetilen örnek veya konuma göre LTR yedeklemelerini alma</span><span class="sxs-lookup"><span data-stu-id="de109-254">Get LTR backup(s) by managed database, managed instance, or by location</span></span>
-    - <span data-ttu-id="de109-255">Bir LTR yedeklemesini kaldırma</span><span class="sxs-lookup"><span data-stu-id="de109-255">Remove an LTR backup</span></span>
-    - <span data-ttu-id="de109-256">Yeni yönetilen veritabanı oluşturmak için LTR yedeklemesini geri yükleme</span><span class="sxs-lookup"><span data-stu-id="de109-256">Restore an LTR backup to create a new managed database</span></span>
-* <span data-ttu-id="de109-257">New-AzSqlServer ve Set-AzSqlServer için MinimalTlsVersion eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-257">Added MinimalTlsVersion to New-AzSqlServer and Set-AzSqlServer</span></span>
-* <span data-ttu-id="de109-258">New-AzSqlInstance ve Set-AzSqlInstance için MinimalTlsVersion eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-258">Added MinimalTlsVersion to New-AzSqlInstance and Set-AzSqlInstance</span></span>
-* <span data-ttu-id="de109-259">Az.Network için SQL SDK sürümü artırıldı</span><span class="sxs-lookup"><span data-stu-id="de109-259">Bumped SQL SDK version for Az.Network</span></span>
-
-#### <a name="azstorage"></a><span data-ttu-id="de109-260">Az.Storage</span><span class="sxs-lookup"><span data-stu-id="de109-260">Az.Storage</span></span>
-* <span data-ttu-id="de109-261">ImmutabilityPolicy içinde AllowProtectedAppendWrite desteği eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-261">Supported AllowProtectedAppendWrite in ImmutabilityPolicy</span></span>
-    - <span data-ttu-id="de109-262">'Set-AzRmStorageContainerImmutabilityPolicy'</span><span class="sxs-lookup"><span data-stu-id="de109-262">'Set-AzRmStorageContainerImmutabilityPolicy'</span></span>
-* <span data-ttu-id="de109-263">Gelecekteki bir yayın için AzureStorageTable tür değişikliğine yönelik hataya neden olan değişiklik uyarı iletisi eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-263">Added breaking change warning message for AzureStorageTable type change in a future release</span></span>
-    - <span data-ttu-id="de109-264">'New-AzStorageTable'</span><span class="sxs-lookup"><span data-stu-id="de109-264">'New-AzStorageTable'</span></span>
-    - <span data-ttu-id="de109-265">'Get-AzStorageTable'</span><span class="sxs-lookup"><span data-stu-id="de109-265">'Get-AzStorageTable'</span></span>
-
-#### <a name="azwebsites"></a><span data-ttu-id="de109-266">Az.Websites</span><span class="sxs-lookup"><span data-stu-id="de109-266">Az.Websites</span></span>
-* <span data-ttu-id="de109-267">'New-AzAppServicePlan' ve 'Set-AzAppServicePlan' için Etiket parametresi eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-267">Added Tag parameter for 'New-AzAppServicePlan' and 'Set-AzAppServicePlan'</span></span>
-* <span data-ttu-id="de109-268">Özel etki alanı bir web sitesine eklenirken özel durum oluşturulursa cmdlet’i yürütmeyi durdur</span><span class="sxs-lookup"><span data-stu-id="de109-268">Stop cmdlet execution if an exception is thrown when adding a custom domain to a website</span></span>
-* <span data-ttu-id="de109-269">App Service Planıyla aynı kaynak grubunda bulunmayan Uygulama Hizmetleri için işlem gerçekleştirme desteği eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-269">Added support to perform operations for App Services not in the same resource group as the App Service Plan</span></span>
-* <span data-ttu-id="de109-270">Farklı kaynak gruplarındaki WebApp/İşlev öğesine erişim kısıtlaması uygulandı</span><span class="sxs-lookup"><span data-stu-id="de109-270">Applied access restriction to WebApp/Function in different resource groups</span></span>
-* <span data-ttu-id="de109-271">WebAppSlots için özel ana bilgisayar adları ayarlama sorunu düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-271">Fixed issue to set custom hostnames for WebAppSlots</span></span>
-
-## <a name="350---february-2020"></a><span data-ttu-id="de109-272">3.5.0 - Şubat 2020</span><span class="sxs-lookup"><span data-stu-id="de109-272">3.5.0 - February 2020</span></span>
-### <a name="highlights-since-the-last-major-release"></a><span data-ttu-id="de109-273">Son ana sürümden bu yana öne çıkanlar</span><span class="sxs-lookup"><span data-stu-id="de109-273">Highlights since the last major release</span></span>
-* <span data-ttu-id="de109-274">İstemci tarafı telemetri güncelleştirildi.</span><span class="sxs-lookup"><span data-stu-id="de109-274">Updated client side telemetry.</span></span>
-* <span data-ttu-id="de109-275">Cihaz yönetimini desteklemek için Az.IotHub cmdlet’leri eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-275">Az.IotHub added cmdlets to support to manage devices.</span></span>
-* <span data-ttu-id="de109-276">Kullanılabilirlik Grubu Dinleyicisi için Az.SqlVirtualMachine cmdlet’leri eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-276">Az.SqlVirtualMachine added cmdlets for Availability Group Listener.</span></span>
-
-#### <a name="azaccounts"></a><span data-ttu-id="de109-277">Az.Accounts</span><span class="sxs-lookup"><span data-stu-id="de109-277">Az.Accounts</span></span>
-* <span data-ttu-id="de109-278">İstemci tarafı telemetri verilerine SubscriptionId, TenantId ve yürütme zamanı eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-278">Added SubscriptionId, TenantId, and execution time into data of client side telemetry</span></span>
-
-#### <a name="azautomation"></a><span data-ttu-id="de109-279">Az.Automation</span><span class="sxs-lookup"><span data-stu-id="de109-279">Az.Automation</span></span>
-* <span data-ttu-id="de109-280">'New-AzAutomationSoftwareUpdateConfiguration' için başvuru belgelerinde Örnek 1’deki yazım hatası düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-280">Fixed typo in Example 1 in reference documentation for 'New-AzAutomationSoftwareUpdateConfiguration'</span></span>
-
-#### <a name="azcognitiveservices"></a><span data-ttu-id="de109-281">Az.CognitiveServices</span><span class="sxs-lookup"><span data-stu-id="de109-281">Az.CognitiveServices</span></span>
-* <span data-ttu-id="de109-282">SDK 7.0 olarak güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-282">Updated SDK to 7.0</span></span>
-* <span data-ttu-id="de109-283">Sunucu yanıtları boş gövde olduğunda alınan hata iletisi geliştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-283">Improved error message when server responses empty body</span></span>
-
-#### <a name="azcompute"></a><span data-ttu-id="de109-284">Az.Compute</span><span class="sxs-lookup"><span data-stu-id="de109-284">Az.Compute</span></span>
-* <span data-ttu-id="de109-285">Güncelleştirme sırasında ProximityPlacementGroupId için boş değere izin verildi</span><span class="sxs-lookup"><span data-stu-id="de109-285">Allowed empty value for ProximityPlacementGroupId during update</span></span>
-
-#### <a name="azfrontdoor"></a><span data-ttu-id="de109-286">Az.FrontDoor</span><span class="sxs-lookup"><span data-stu-id="de109-286">Az.FrontDoor</span></span>
-* <span data-ttu-id="de109-287">WAF’de kullanılabilen yönetilen kural tanımlarını almak için cmdlet eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-287">Added cmdlet to get managed rule definitions that can be used in WAF</span></span>
-
-#### <a name="aziothub"></a><span data-ttu-id="de109-288">Az.IotHub</span><span class="sxs-lookup"><span data-stu-id="de109-288">Az.IotHub</span></span>
-* <span data-ttu-id="de109-289">Iot Hub’daki cihazları yönetmek için destek eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-289">Added support to manage devices in an Iot Hub.</span></span> <span data-ttu-id="de109-290">Yeni Cmdlet’ler şunlardır:</span><span class="sxs-lookup"><span data-stu-id="de109-290">New Cmdlets are:</span></span>
-    - <span data-ttu-id="de109-291">'Add-AzIotHubDevice'</span><span class="sxs-lookup"><span data-stu-id="de109-291">'Add-AzIotHubDevice'</span></span>
-    - <span data-ttu-id="de109-292">'Get-AzIotHubDevice'</span><span class="sxs-lookup"><span data-stu-id="de109-292">'Get-AzIotHubDevice'</span></span>
-    - <span data-ttu-id="de109-293">'Remove-AzIotHubDevice'</span><span class="sxs-lookup"><span data-stu-id="de109-293">'Remove-AzIotHubDevice'</span></span>
-    - <span data-ttu-id="de109-294">'Set-AzIotHubDevice'</span><span class="sxs-lookup"><span data-stu-id="de109-294">'Set-AzIotHubDevice'</span></span>
-
-#### <a name="azkeyvault"></a><span data-ttu-id="de109-295">Az.KeyVault</span><span class="sxs-lookup"><span data-stu-id="de109-295">Az.KeyVault</span></span>
-* <span data-ttu-id="de109-296">Add-AzKeyVaultKey.md için yinelenen metin düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-296">Fixed duplicated text for Add-AzKeyVaultKey.md</span></span>
-
-#### <a name="azmonitor"></a><span data-ttu-id="de109-297">Az.Monitor</span><span class="sxs-lookup"><span data-stu-id="de109-297">Az.Monitor</span></span>
-* <span data-ttu-id="de109-298">Get-AzLog cmdlet’inin açıklaması düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="de109-298">Fixed description of the Get-AzLog cmdlet.</span></span>
-* <span data-ttu-id="de109-299">'New-AzMetricAlertRuleV2' komutuna ActionGroupId adlı yeni bir parametre eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-299">A new parameter called ActionGroupId was added to 'New-AzMetricAlertRuleV2' command.</span></span>
-    - <span data-ttu-id="de109-300">Kullanıcı ActionGroupId(string) veya ActionGroup(ActivityLogAlertActionGroup) sağlayabilir.</span><span class="sxs-lookup"><span data-stu-id="de109-300">The user can provide either ActionGroupId(string) or ActionGorup(ActivityLogAlertActionGroup).</span></span>
-
-#### <a name="aznetwork"></a><span data-ttu-id="de109-301">Az.Network</span><span class="sxs-lookup"><span data-stu-id="de109-301">Az.Network</span></span>
-* <span data-ttu-id="de109-302">'New-AzPrivateLinkService' cmdlet’inin '-EnableProxyProtocol' parametresi için ek bir parametre notu eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-302">Added one extra parameter note for parameter '-EnableProxyProtocol' for 'New-AzPrivateLinkService' cmdlet.</span></span>
-* <span data-ttu-id="de109-303">Start-AzVirtualNetworkGatewayConnectionPacketCapture.md ve Start-AzVirtualnetworkGatewayPacketCapture.md içindeki FilterData örneği düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="de109-303">Fixed FilterData example in Start-AzVirtualNetworkGatewayConnectionPacketCapture.md and Start-AzVirtualnetworkGatewayPacketCapture.md.</span></span>
-* <span data-ttu-id="de109-304">Start-AzVirtualNetworkGatewayConnectionPacketCapture.md ve Start-AzVirtualnetworkGatewayPacketCapture.md içinde tüm iç ve dış paketleri yakalamak için Paket Yakalama örneği eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-304">Added Packet Capture example for capture all inner and outer packets in Start-AzVirtualNetworkGatewayConnectionPacketCapture.md and Start-AzVirtualnetworkGatewayPacketCapture.md.</span></span>
-* <span data-ttu-id="de109-305">Sanal Ağ Güvenlik Duvarları üzerinde Azure Güvenlik Duvarı desteği sağlandı</span><span class="sxs-lookup"><span data-stu-id="de109-305">Supported Azure Firewall Policy on VNet Firewalls</span></span>
-    - <span data-ttu-id="de109-306">Yeni cmdlet eklenmedi.</span><span class="sxs-lookup"><span data-stu-id="de109-306">No new cmdlets are added.</span></span> <span data-ttu-id="de109-307">Sanal ağ güvenlik duvarları üzerinde güvenlik duvarı ilkesi için kısıtlama gevşetiliyor</span><span class="sxs-lookup"><span data-stu-id="de109-307">Relaxing the restriction for firewall policy on VNet firewalls</span></span>
-
-#### <a name="azrecoveryservices"></a><span data-ttu-id="de109-308">Az.RecoveryServices</span><span class="sxs-lookup"><span data-stu-id="de109-308">Az.RecoveryServices</span></span>
-* <span data-ttu-id="de109-309">SQL Veritabanları için Dosya olarak geri yükleme desteği eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-309">Added Support for Restore-as-files for SQL Databases.</span></span>
-
-#### <a name="azresources"></a><span data-ttu-id="de109-310">Az.Resources</span><span class="sxs-lookup"><span data-stu-id="de109-310">Az.Resources</span></span>
-* <span data-ttu-id="de109-311">Şablon dağıtım cmdlet’leri yeniden düzenlendi</span><span class="sxs-lookup"><span data-stu-id="de109-311">Refactored template deployment cmdlets</span></span>
-    - <span data-ttu-id="de109-312">Yönetim grubunda dağıtımları yönetmek için yeni cmdlet’ler eklendi: \*-AzManagementGroupDeployment</span><span class="sxs-lookup"><span data-stu-id="de109-312">Added new cmdlets for managing deployments at management group: \*-AzManagementGroupDeployment</span></span>
-    - <span data-ttu-id="de109-313">Kiracı kapsamında dağıtımları yönetmek için yeni cmdlet’ler eklendi: \*-AzTenantDeployment</span><span class="sxs-lookup"><span data-stu-id="de109-313">Added new cmdlets for managing deployments at tenant scope: \*-AzTenantDeployment</span></span>
-    - <span data-ttu-id="de109-314">\*-AzDeployment cmdlet’leri özel olarak abonelik kapsamında çalışmak için yeniden düzenlendi</span><span class="sxs-lookup"><span data-stu-id="de109-314">Refactored \*-AzDeployment cmdlets to work specifically at subscription scope</span></span>
-    - <span data-ttu-id="de109-315">\*-AzDeployment cmdlet’leri için \*-AzSubscriptionDeployment diğer adları oluşturuldu</span><span class="sxs-lookup"><span data-stu-id="de109-315">Created aliases \*-AzSubscriptionDeployment for \*-AzDeployment cmdlets</span></span>
-* <span data-ttu-id="de109-316">'AvailableToOtherTenants' parametresi ayarlanmadığında 'Update-AzADApplication' düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-316">Fixed 'Update-AzADApplication' when parameter 'AvailableToOtherTenants' is not set</span></span>
-* <span data-ttu-id="de109-317">AmbiguousParameterSetException özel durumundan kaçınmak için ApplicationObjectWithoutCredentialParameterSet kaldırıldı.</span><span class="sxs-lookup"><span data-stu-id="de109-317">Removed ApplicationObjectWithoutCredentialParameterSet to avoid AmbiguousParameterSetException.</span></span>
-* <span data-ttu-id="de109-318">Yardım dosyaları yeniden oluşturuldu</span><span class="sxs-lookup"><span data-stu-id="de109-318">Regenerated help files</span></span>
-
-#### <a name="azsql"></a><span data-ttu-id="de109-319">Az.Sql</span><span class="sxs-lookup"><span data-stu-id="de109-319">Az.Sql</span></span>
-* <span data-ttu-id="de109-320">Yönetilen Örneklerde abonelikler arasında zaman noktası geri yüklemesi için destek eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-320">Added support for cross subscription point in time restore on Managed Instances.</span></span>
-* <span data-ttu-id="de109-321">Mevcut SQL Yönetilen Örnek donanım neslini değiştirme desteği eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-321">Added support for changing existing Sql Managed Instance hardware generation</span></span>
-* <span data-ttu-id="de109-322">'Update-AzSqlServerVulnerabilityAssessmentSetting' yardım örnekleri düzeltildi: parameter/property output - EmailAdmins</span><span class="sxs-lookup"><span data-stu-id="de109-322">Fixed 'Update-AzSqlServerVulnerabilityAssessmentSetting' help examples: parameter/property output - EmailAdmins</span></span>
-
-#### <a name="azsqlvirtualmachine"></a><span data-ttu-id="de109-323">Az.SqlVirtualMachine</span><span class="sxs-lookup"><span data-stu-id="de109-323">Az.SqlVirtualMachine</span></span>
-* <span data-ttu-id="de109-324">Kullanılabilirlik Grubu Dinleyicisi için cmdlet’ler eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-324">Added cmdlets for Availability Group Listener</span></span>
-
-#### <a name="azstoragesync"></a><span data-ttu-id="de109-325">Az.StorageSync</span><span class="sxs-lookup"><span data-stu-id="de109-325">Az.StorageSync</span></span>
-* <span data-ttu-id="de109-326">'Invoke-AzStorageSyncCompatibilityCheck' içinde desteklenen karakter kümeleri güncelleştirildi.</span><span class="sxs-lookup"><span data-stu-id="de109-326">Updated supported character sets in 'Invoke-AzStorageSyncCompatibilityCheck'.</span></span>
-
-## <a name="340---february-2020"></a><span data-ttu-id="de109-327">3.4.0 - Şubat 2020</span><span class="sxs-lookup"><span data-stu-id="de109-327">3.4.0 - February 2020</span></span>
-### <a name="highlights-since-the-last-major-release"></a><span data-ttu-id="de109-328">Son ana sürümden bu yana öne çıkanlar</span><span class="sxs-lookup"><span data-stu-id="de109-328">Highlights since the last major release</span></span>
-* <span data-ttu-id="de109-329">Az.CosmosDB ilk sürüm 0.1.0 yayınlandı</span><span class="sxs-lookup"><span data-stu-id="de109-329">Az.CosmosDB initial version 0.1.0 released</span></span>
-* <span data-ttu-id="de109-330">Az.Network ConnectionMonitor V2 desteği eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-330">Az.Network ConnectionMonitor V2 support added</span></span>
-
-#### <a name="azaccounts"></a><span data-ttu-id="de109-331">Az.Accounts</span><span class="sxs-lookup"><span data-stu-id="de109-331">Az.Accounts</span></span>
-* <span data-ttu-id="de109-332">AzureRmContext.json kullanılamadığında bağlamı otomatik olarak kaydetmeyi devre dışı bırakma</span><span class="sxs-lookup"><span data-stu-id="de109-332">Disable context auto saving when AzureRmContext.json not available</span></span>
-* <span data-ttu-id="de109-333">Azure PowerShell Common’ın başvurusu 1.3.5-önizleme olarak güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-333">Update the reference to Azure Powershell Common to 1.3.5-preview</span></span>
-
-#### <a name="azapimanagement"></a><span data-ttu-id="de109-334">Az.ApiManagement</span><span class="sxs-lookup"><span data-stu-id="de109-334">Az.ApiManagement</span></span>
-* <span data-ttu-id="de109-335">**Get-AzApiManagementApiSchema** Bir API ile ilişkili Open-Api Şemasını alma düzeltildi https://github.com/Azure/azure-powershell/issues/10626</span><span class="sxs-lookup"><span data-stu-id="de109-335">**Get-AzApiManagementApiSchema** Fixed getting Open-Api Schema associated with an API   https://github.com/Azure/azure-powershell/issues/10626</span></span>
-* <span data-ttu-id="de109-336">**New-AzApiManagementProduct**\* ve **Set-AzApiManagementProduct**</span><span class="sxs-lookup"><span data-stu-id="de109-336">**New-AzApiManagementProduct**\* and **Set-AzApiManagementProduct**</span></span>
-  - <span data-ttu-id="de109-337">https://github.com/Azure/azure-powershell/issues/10472 öğesine ilişkin belgeler düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-337">Fix documentation for https://github.com/Azure/azure-powershell/issues/10472</span></span>
-* <span data-ttu-id="de109-338">**Set-AzApiManagementApi** ServiceUrl’nin cmdlet kullanılarak nasıl güncelleştirildiğini göstermek için örnek eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-338">**Set-AzApiManagementApi** Added example to show how to update the ServiceUrl using the cmdlet</span></span>
-
-#### <a name="azcompute"></a><span data-ttu-id="de109-339">Az.Compute</span><span class="sxs-lookup"><span data-stu-id="de109-339">Az.Compute</span></span>
-* <span data-ttu-id="de109-340">Get-AzVM -Status VM adı olmadan gerçekleştirildiğinde ağ kapasitesinin azaltılmasını engellemek için VM durumu sayısını 100 ile sınırlandırın.</span><span class="sxs-lookup"><span data-stu-id="de109-340">Limit the number of VM status to 100 to avoid throttling when Get-AzVM -Status is performed without VM name.</span></span>
-* <span data-ttu-id="de109-341">Update-AzDiskEncryptionSet cmdlet’i eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-341">Add Update-AzDiskEncryptionSet cmdlet</span></span>
-* <span data-ttu-id="de109-342">Aşağıdaki cmdlet’lere EncryptionType ve DiskEncryptionSetId parametreleri eklendi:</span><span class="sxs-lookup"><span data-stu-id="de109-342">Add EncryptionType and DiskEncryptionSetId parameters to the following cmdlets:</span></span>
-    - <span data-ttu-id="de109-343">New-AzDiskUpdateConfig, New-AzSnapshotUpdateConfig</span><span class="sxs-lookup"><span data-stu-id="de109-343">New-AzDiskUpdateConfig, New-AzSnapshotUpdateConfig</span></span>
-* <span data-ttu-id="de109-344">Get-AzProximityPlacementGroup cmdlet’ine ColocationStatus parametresi eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-344">Add ColocationStatus parameter to Get-AzProximityPlacementGroup cmdlet.</span></span>
-
-#### <a name="azdatafactory"></a><span data-ttu-id="de109-345">Az.DataFactory</span><span class="sxs-lookup"><span data-stu-id="de109-345">Az.DataFactory</span></span>
-* <span data-ttu-id="de109-346">ADF .Net SDK sürümü 4.7.0’a güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-346">Update ADF .Net SDK version to 4.7.0</span></span>
-
-#### <a name="azdeploymentmanager"></a><span data-ttu-id="de109-347">Az.DeploymentManager</span><span class="sxs-lookup"><span data-stu-id="de109-347">Az.DeploymentManager</span></span>
-* <span data-ttu-id="de109-348">Kaynaklara yönelik LIST işlemlerini ekler</span><span class="sxs-lookup"><span data-stu-id="de109-348">Adds LIST operations for resources</span></span>
-* <span data-ttu-id="de109-349">Durum Denetimi adımlarında işlem gerçekleştirmeye yönelik özellik ekler</span><span class="sxs-lookup"><span data-stu-id="de109-349">Adds capability for performing operations on Health Check steps</span></span>
-
-#### <a name="azhdinsight"></a><span data-ttu-id="de109-350">Az.HDInsight</span><span class="sxs-lookup"><span data-stu-id="de109-350">Az.HDInsight</span></span>
-* <span data-ttu-id="de109-351">New-AzHDInsightCluster’ın belge hatası düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="de109-351">Fix document error of New-AzHDInsightCluster.</span></span>
-
-#### <a name="azkeyvault"></a><span data-ttu-id="de109-352">Az.KeyVault</span><span class="sxs-lookup"><span data-stu-id="de109-352">Az.KeyVault</span></span>
-* <span data-ttu-id="de109-353">Remove-AzureKeyVault’un New-AzureKeyVault ile tutarlı olmasını sağlamak için VaultName özniteliğine Name diğer adı eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-353">Add Name alias to VaultName attribute to make Remove-AzureKeyVault consistent with New-AzureKeyVault.</span></span>
-
-#### <a name="aznetwork"></a><span data-ttu-id="de109-354">Az.Network</span><span class="sxs-lookup"><span data-stu-id="de109-354">Az.Network</span></span>
-* <span data-ttu-id="de109-355">Trafik Analizi’nin devre dışı bırakıldığı bir senaryoyu göstermek için Set-AzNetworkWatcherConfigFlowLog.md dosyasına yeni örnek eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-355">New example added to Set-AzNetworkWatcherConfigFlowLog.md to demonstrate Traffic Analytics disable scenario.</span></span>
-* <span data-ttu-id="de109-356">Azure Güvenlik Duvarı’na yönetim IP yapılandırması atamaya yönelik destek eklendi. Güvenlik duvarı, yönetim trafiği için ayrılmış alt ağı ve Genel IP’yi kullanacak</span><span class="sxs-lookup"><span data-stu-id="de109-356">Add support for assigning management IP configuration to Azure Firewall - a dedicated subnet and Public IP that the firewall will use for its management traffic</span></span>
-    - <span data-ttu-id="de109-357">New-AzFirewall cmdlet'i güncelleştirildi:</span><span class="sxs-lookup"><span data-stu-id="de109-357">Updated New-AzFirewall cmdlet:</span></span>
-        - <span data-ttu-id="de109-358">Genel IP Adresi nesnesi kabul eden -ManagementPublicIpAdress (zorunlu değil) parametresi eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-358">Added parameter -ManagementPublicIpAddress (not mandatory) which accepts a Public IP Address object</span></span>
-        - <span data-ttu-id="de109-359">Güvenlik duvarı nesnesine SetManagementIpConfiguration yöntemi eklendi. Giriş olarak bir alt ağ ve Genel IP adresi gerektirir. Alt ağ adının ‘AzureFirewallManagementSubnet’ olması gerekir</span><span class="sxs-lookup"><span data-stu-id="de109-359">Added method SetManagementIpConfiguration on firewall object - requires a subnet and a Public IP address as input - subnet name must be 'AzureFirewallManagementSubnet'</span></span>
-* <span data-ttu-id="de109-360">Get-AzNetworkSecurityGroup örnekleri, ağ arabirimlerinin yerine NSG’lere yönelik örnekleri gösterecek şekilde düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="de109-360">Corrected Get-AzNetworkSecurityGroup examples to show examples for NSG's instead of network interfaces.</span></span>
-* <span data-ttu-id="de109-361">Kaynak kimliği tamamlayıcısının bir parametreyi tamamlamasını engelleyen New-AzVpnSite komutundaki yazım hatası düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="de109-361">Fixed typo in New-AzVpnSite command that was preventing resource id completer from completing a parameter.</span></span>
-* <span data-ttu-id="de109-362">Application Gateway’de Yeniden Yazma Kuralları Eylem Kümesinde Url Yapılandırması için destek eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-362">Added support for Url Confiugration in Rewrite Rules Action Set in the Application Gateway</span></span>
-    - <span data-ttu-id="de109-363">Yeni cmdlet'ler eklendi:</span><span class="sxs-lookup"><span data-stu-id="de109-363">New cmdlets added:</span></span>
-        - <span data-ttu-id="de109-364">New-AzApplicationGatewayRewriteRuleUrlConfiguration</span><span class="sxs-lookup"><span data-stu-id="de109-364">New-AzApplicationGatewayRewriteRuleUrlConfiguration</span></span>
-    - <span data-ttu-id="de109-365">Cmdlet’ler isteğe bağlı -UrlConfiguration parametresiyle güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-365">Cmdlets updated with optional parameter - UrlConfiguration</span></span>
-        - <span data-ttu-id="de109-366">New-AzApplicationGatewayRewriteRuleActionSet</span><span class="sxs-lookup"><span data-stu-id="de109-366">New-AzApplicationGatewayRewriteRuleActionSet</span></span>
-* <span data-ttu-id="de109-367">NetworkWatcher ConnectionMonitor sürüm 2 kaynakları için destek eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-367">Add suppport for NetworkWatcher ConnectionMonitor version 2 resources</span></span>
-
-#### <a name="azpolicyinsights"></a><span data-ttu-id="de109-368">Az.PolicyInsights</span><span class="sxs-lookup"><span data-stu-id="de109-368">Az.PolicyInsights</span></span>
-* <span data-ttu-id="de109-369">Hangi kaynağın düzeltileceği belirlenmeden önce destek değerlendirmesi uyumluluğu</span><span class="sxs-lookup"><span data-stu-id="de109-369">Support evaluating compliance prior to determining what resource to remediate</span></span>
-    - <span data-ttu-id="de109-370">Start-AzPolicyRemediation cmdlet’ine ‘-ResourceDiscoverMode’ parametresi eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-370">Add '-ResourceDiscoverMode' parameter to Start-AzPolicyRemediation</span></span>
-* <span data-ttu-id="de109-371">İlke meta verilerine ilişkin kaynakları almak için Get-AzPolicyMetadata cmdlet’i eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-371">Add Get-AzPolicyMetadata cmdlet for getting policy metadata resources</span></span>
-* <span data-ttu-id="de109-372">API sürümü 2019-10-01 için Get-AzPolicyState ve Get-AzPolicyStateSummary güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-372">Updated Get-AzPolicyState and Get-AzPolicyStateSummary for API version 2019-10-01</span></span>
-
-#### <a name="azrecoveryservices"></a><span data-ttu-id="de109-373">Az.RecoveryServices</span><span class="sxs-lookup"><span data-stu-id="de109-373">Az.RecoveryServices</span></span>
-* <span data-ttu-id="de109-374">Çoğaltılan bir diski kaldırılmasına yönelik Azure Site Recovery desteği.</span><span class="sxs-lookup"><span data-stu-id="de109-374">Azure Site Recovery support for removing a replicated disk.</span></span>
-* <span data-ttu-id="de109-375">Azure Backup, Kurtarma Hizmetleri Kasası oluştururken etiket eklemeye yönelik destek ekledi.</span><span class="sxs-lookup"><span data-stu-id="de109-375">Azure Backup added support for adding tags while creating a Recovery Services Vault.</span></span>
-
-#### <a name="azresources"></a><span data-ttu-id="de109-376">Az.Resources</span><span class="sxs-lookup"><span data-stu-id="de109-376">Az.Resources</span></span>
-* <span data-ttu-id="de109-377">Varsayılanı bağlam aboneliği olan \*-AzPolicyAssignment cmdlet’lerinde -Scope isteğe bağlı yapıldı</span><span class="sxs-lookup"><span data-stu-id="de109-377">Make -Scope optional in \*-AzPolicyAssignment cmdlets with default to context subscription</span></span>
-* <span data-ttu-id="de109-378">Parola ve anahtar kimlik bilgileriyle ADServicePrincipal oluşturma örnekleri eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-378">Add examples of creating ADServicePrincipal with password and key credential</span></span>
-
-#### <a name="azsql"></a><span data-ttu-id="de109-379">Az.Sql</span><span class="sxs-lookup"><span data-stu-id="de109-379">Az.Sql</span></span>
-<span data-ttu-id="de109-380">DatabaseName’in yerine PartnerDatabaseName’in olup olmadığını denetlemeye yarayan New-AzSqlDatabaseSecondary cmdlet’i düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="de109-380">Fix New-AzSqlDatabaseSecondary cmdlet to check for PartnerDatabaseName existence instead of DatabaseName existence.</span></span>
-
-#### <a name="azstorage"></a><span data-ttu-id="de109-381">Az.Storage</span><span class="sxs-lookup"><span data-stu-id="de109-381">Az.Storage</span></span>
-* <span data-ttu-id="de109-382">Depolama Hesabı Oluştur’da Tablo/Sıra Şifreleme Anahtarı’nın ayarlanmasına yönelik destek</span><span class="sxs-lookup"><span data-stu-id="de109-382">Support set Table/Queue Encryption Keytype in Create Storage Account</span></span>
-    - <span data-ttu-id="de109-383">New-AzStorageAccount</span><span class="sxs-lookup"><span data-stu-id="de109-383">New-AzStorageAccount</span></span>
-* <span data-ttu-id="de109-384">StorageException’da ExtendedErrorInformation olmadığında RequestId’nin gösterilmesi</span><span class="sxs-lookup"><span data-stu-id="de109-384">Show RequestId when StorageException don't have ExtendedErrorInformation</span></span>
-* <span data-ttu-id="de109-385">Start-AzStorageBlobCopy cmdlet’ine ait olan Örnek 6 düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-385">Fix the Example 6 of cmdlet Start-AzStorageBlobCopy</span></span>
-
-#### <a name="azwebsites"></a><span data-ttu-id="de109-386">Az.Websites</span><span class="sxs-lookup"><span data-stu-id="de109-386">Az.Websites</span></span>
-* <span data-ttu-id="de109-387">Set-AzWebapp ve Set-AzWebappSlot, şu özellikleri destekler: AlwaysOn, MinTls ve FtpsState</span><span class="sxs-lookup"><span data-stu-id="de109-387">Set-AzWebapp and Set-AzWebappSlot supports AlwaysOn, MinTls and FtpsState properties</span></span>
-* <span data-ttu-id="de109-388">Tek Set-AzWebApp Komutunu kullanarak HttpsOnly ayarlanırken aynı anda AppservicePlan değiştirildiğinde HttpsOnly’nin varsayılan değere sıfırlanması sorunu düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-388">Fixing issue where setting HttpsOnly along with changing AppservicePlan at the same time using the single Set-AzWebApp Command, was resetting HttpsOnly to default value</span></span>
-
-## <a name="330---january-2020"></a><span data-ttu-id="de109-389">3.3.0 - Ocak 2020</span><span class="sxs-lookup"><span data-stu-id="de109-389">3.3.0 - January 2020</span></span>
-#### <a name="azaccounts"></a><span data-ttu-id="de109-390">Az.Accounts</span><span class="sxs-lookup"><span data-stu-id="de109-390">Az.Accounts</span></span>
-* <span data-ttu-id="de109-391">Add-AzEnvironment ve Set-AzEnvironment, AzureAttestationServiceEndpointResourceId ve AzureAttestationServiceEndpointSuffix parametrelerini kabul edecek şekilde güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-391">Updated Add-AzEnvironment and Set-AzEnvironment to accept parameters AzureAttestationServiceEndpointResourceId and AzureAttestationServiceEndpointSuffix</span></span>
-
-#### <a name="azcdn"></a><span data-ttu-id="de109-392">Az.Cdn</span><span class="sxs-lookup"><span data-stu-id="de109-392">Az.Cdn</span></span>
-* <span data-ttu-id="de109-393">New-AzCdnEndpoint cmdlet’inde hata yanıtı ayrıntılarını görüntüleme</span><span class="sxs-lookup"><span data-stu-id="de109-393">Display error response detail in New-AzCdnEndpoint cmdlet</span></span>
-
-#### <a name="azcompute"></a><span data-ttu-id="de109-394">Az.Compute</span><span class="sxs-lookup"><span data-stu-id="de109-394">Az.Compute</span></span>
-* <span data-ttu-id="de109-395">İşletim sistemi profili bulunmayan, yönetilen OD diskine sahip bir VM için Set-AzVMCustomScriptExtension cmdlet’i düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="de109-395">Fix Set-AzVMCustomScriptExtension cmdlet for a VM with managed OD disk which does not have OS profile.</span></span>
-
-#### <a name="azcontainerinstance"></a><span data-ttu-id="de109-396">Az.ContainerInstance</span><span class="sxs-lookup"><span data-stu-id="de109-396">Az.ContainerInstance</span></span>
-* <span data-ttu-id="de109-397">New-AzContainerGroup örneği tarafından kullanılan parametre adları düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-397">Fixed parameter names used by example of New-AzContainerGroup</span></span>
-
-#### <a name="azdataboxedge"></a><span data-ttu-id="de109-398">Az.DataBoxEdge</span><span class="sxs-lookup"><span data-stu-id="de109-398">Az.DataBoxEdge</span></span>
-* <span data-ttu-id="de109-399">'Get-AzDataBoxEdgeStorageContainer' cmdlet’i eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-399">Added cmdlet 'Get-AzDataBoxEdgeStorageContainer'</span></span>
-  - <span data-ttu-id="de109-400">Edge Depolama Kapsayıcısını edinme</span><span class="sxs-lookup"><span data-stu-id="de109-400">Get the Edge Storage Container</span></span>
-* <span data-ttu-id="de109-401">'New-AzDataBoxEdgeStorageContainer' cmdlet’i eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-401">Added cmdlet 'New-AzDataBoxEdgeStorageContainer'</span></span>
-  - <span data-ttu-id="de109-402">Yeni Edge Depolama Kapsayıcısı oluşturma</span><span class="sxs-lookup"><span data-stu-id="de109-402">Create new Edge Strorage Container</span></span>
-* <span data-ttu-id="de109-403">'Remove-AzDataBoxEdgeStorageContainer' cmdlet’i eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-403">Added cmdlet 'Remove-AzDataBoxEdgeStorageContainer'</span></span>
-  - <span data-ttu-id="de109-404">Edge Depolama Kapsayıcısını kaldırma</span><span class="sxs-lookup"><span data-stu-id="de109-404">Remove the Edge Storage Container</span></span>
-* <span data-ttu-id="de109-405">'Invoke-AzDataBoxEdgeStorageContainer' cmdlet’i eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-405">Added cmdlet 'Invoke-AzDataBoxEdgeStorageContainer'</span></span>
-  - <span data-ttu-id="de109-406">Edge Depolama Kapsayıcısındaki verileri yenilemek için eylem çağırma</span><span class="sxs-lookup"><span data-stu-id="de109-406">Invoke action to refresh data on Edge Storage Container</span></span>
-* <span data-ttu-id="de109-407">'Get-AzDataBoxEdgeStorageAccount' cmdlet’i eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-407">Added cmdlet 'Get-AzDataBoxEdgeStorageAccount'</span></span>
-  - <span data-ttu-id="de109-408">Edge Depolama Hesabını edinme</span><span class="sxs-lookup"><span data-stu-id="de109-408">Get the Edge Storage Account</span></span>
-* <span data-ttu-id="de109-409">'New-AzDataBoxEdgeStorageAccount' cmdlet’i eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-409">Added cmdlet 'New-AzDataBoxEdgeStorageAccount'</span></span>
-  - <span data-ttu-id="de109-410">Yeni Edge Depolama Hesabını oluşturma</span><span class="sxs-lookup"><span data-stu-id="de109-410">Create new Edge Storage Account</span></span>
-* <span data-ttu-id="de109-411">'Remove-AzDataBoxEdgeStorageAccount' cmdlet’i eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-411">Added cmdlet 'Remove-AzDataBoxEdgeStorageAccount'</span></span>
-  - <span data-ttu-id="de109-412">Edge Depolama Hesabını kaldırma</span><span class="sxs-lookup"><span data-stu-id="de109-412">Remove the Edge Storage Account</span></span>
-* <span data-ttu-id="de109-413">'Invoke-AzDataBoxEdgeShare' cmdlet’ini çağırma</span><span class="sxs-lookup"><span data-stu-id="de109-413">Invoke cmdlet 'Invoke-AzDataBoxEdgeShare'</span></span>
-  - <span data-ttu-id="de109-414">Paylaşımdaki verileri yenilemek için eylem çağırma</span><span class="sxs-lookup"><span data-stu-id="de109-414">Invoke action to refresh data on share</span></span>
-* <span data-ttu-id="de109-415">'Set-AzDataBoxEdgeStorageAccountCredential' cmdlet’i eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-415">Added cmdlet 'Set-AzDataBoxEdgeStorageAccountCredential'</span></span>
-  - <span data-ttu-id="de109-416">Az databoxedge depolama hesabı kimlik bilgilerini ayarlama</span><span class="sxs-lookup"><span data-stu-id="de109-416">Set the az databoxedge storage account credential</span></span>
-
-#### <a name="azdatafactory"></a><span data-ttu-id="de109-417">Az.DataFactory</span><span class="sxs-lookup"><span data-stu-id="de109-417">Az.DataFactory</span></span>
-* <span data-ttu-id="de109-418">Get-AzDataFactoryV2IntegrationRuntime cmdlet’i için AutoUpdateETA, LatestVersion, PushedVersion, TaskQueueId ve VersionStatus özellikleri eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-418">Add AutoUpdateETA, LatestVersion, PushedVersion, TaskQueueId and VersionStatus properties for Get-AzDataFactoryV2IntegrationRuntime cmd</span></span>
-* <span data-ttu-id="de109-419">ADF .Net SDK sürümü 4.6.0’a güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-419">Update ADF .Net SDK version to 4.6.0</span></span>
-* <span data-ttu-id="de109-420">Statik genel IP adreslerine sahip Azure-SSIS IR’nin oluşturulmasına olanak tanımak için ‘Set-AzureRmDataFactoryV2IntegrationRuntime’ cmdlet’ine yönelik ‘PublicIPs’ parametresi eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-420">Add parameter 'PublicIPs' for 'Set-AzureRmDataFactoryV2IntegrationRuntime' cmd to enable create Azure-SSIS IR with static public IP addresses.</span></span>
-
-#### <a name="azdevtestlabs"></a><span data-ttu-id="de109-421">Az.DevTestLabs</span><span class="sxs-lookup"><span data-stu-id="de109-421">Az.DevTestLabs</span></span>
-* <span data-ttu-id="de109-422">Get-AzDtlAllowedVMSizesPolicy.md’deki bozuk bağlantı kaldırıldı</span><span class="sxs-lookup"><span data-stu-id="de109-422">Remove the broken link in Get-AzDtlAllowedVMSizesPolicy.md</span></span>
-
-#### <a name="azeventhub"></a><span data-ttu-id="de109-423">Az.EventHub</span><span class="sxs-lookup"><span data-stu-id="de109-423">Az.EventHub</span></span>
-* <span data-ttu-id="de109-424">Sorun 10634’e yönelik düzeltme: Eventhubnamespace’i kaldırmaya yönelik null Nesne başvurusu düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-424">Fix for issue 10634 : Fix the null Object reference for remove eventhubnamespace</span></span>
-
-#### <a name="azhdinsight"></a><span data-ttu-id="de109-425">Az.HDInsight</span><span class="sxs-lookup"><span data-stu-id="de109-425">Az.HDInsight</span></span>
-* <span data-ttu-id="de109-426">Invoke-AzHDInsightHiveJob.md hatası düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="de109-426">Fix Invoke-AzHDInsightHiveJob.md error.</span></span>
-
-#### <a name="azmachinelearning"></a><span data-ttu-id="de109-427">Az.MachineLearning</span><span class="sxs-lookup"><span data-stu-id="de109-427">Az.MachineLearning</span></span>
-* <span data-ttu-id="de109-428">MachineLearningCompute artık kullanılamadığından, aşağıdaki cmdlet’ler kaldırıldı</span><span class="sxs-lookup"><span data-stu-id="de109-428">Removed below cmdlets because MachineLearningCompute is not available any longer</span></span>
-  - <span data-ttu-id="de109-429">Get-AzMlOpCluster</span><span class="sxs-lookup"><span data-stu-id="de109-429">Get-AzMlOpCluster</span></span>
-  - <span data-ttu-id="de109-430">Get-AzMlOpClusterKey</span><span class="sxs-lookup"><span data-stu-id="de109-430">Get-AzMlOpClusterKey</span></span>
-  - <span data-ttu-id="de109-431">New-AzMlOpCluster</span><span class="sxs-lookup"><span data-stu-id="de109-431">New-AzMlOpCluster</span></span>
-  - <span data-ttu-id="de109-432">Remove-AzMlOpCluster</span><span class="sxs-lookup"><span data-stu-id="de109-432">Remove-AzMlOpCluster</span></span>
-  - <span data-ttu-id="de109-433">Set-AzMlOpCluster</span><span class="sxs-lookup"><span data-stu-id="de109-433">Set-AzMlOpCluster</span></span>
-  - <span data-ttu-id="de109-434">Test-AzMlOpClusterSystemServicesUpdateAvailability</span><span class="sxs-lookup"><span data-stu-id="de109-434">Test-AzMlOpClusterSystemServicesUpdateAvailability</span></span>
-  - <span data-ttu-id="de109-435">Update-AzMlOpClusterSystemService</span><span class="sxs-lookup"><span data-stu-id="de109-435">Update-AzMlOpClusterSystemService</span></span>
-
-#### <a name="aznetwork"></a><span data-ttu-id="de109-436">Az.Network</span><span class="sxs-lookup"><span data-stu-id="de109-436">Az.Network</span></span>
-* <span data-ttu-id="de109-437">1\.36-preview olan Microsoft.Azure.Management.Sql bağımlılığı 1.37-preview’a yükseltildi</span><span class="sxs-lookup"><span data-stu-id="de109-437">Upgrade dependency of Microsoft.Azure.Management.Sql from 1.36-preview to 1.37-preview</span></span>
-
-#### <a name="azrecoveryservices"></a><span data-ttu-id="de109-438">Az.RecoveryServices</span><span class="sxs-lookup"><span data-stu-id="de109-438">Az.RecoveryServices</span></span>
-* <span data-ttu-id="de109-439">Azure’dan Azure’a sağlayıcı için müşteri tarafından yönetilen anahtarlar ile bekleyen durumda şifrelenen yönetilen disk VM’lerine yönelik Azure Site Recovery değişim desteği.</span><span class="sxs-lookup"><span data-stu-id="de109-439">Azure Site Recovery change support for managed disk vms encrypted at rest with customer managed keys for Azure to Azure provider.</span></span>
-* <span data-ttu-id="de109-440">Disk şifreleme Kümesi Kimliklerini VMware’den Azure’a aktarımlara yönelik koruma sağlayan isteğe bağlı giriş olarak girmek için Azure Site Recovery desteği.</span><span class="sxs-lookup"><span data-stu-id="de109-440">Azure Site Recovery support to input disk encryption Set Id as optional input at enabling protection for Vmware to Azure.</span></span>
-* <span data-ttu-id="de109-441">Disk şifreleme Kümesi Kimliklerini VMware’den Azure’a aktarımlara yönelik koruma sağlayan disk düzeyinde isteğe bağlı giriş olarak girmek için Azure Site Recovery desteği.</span><span class="sxs-lookup"><span data-stu-id="de109-441">Azure Site Recovery support to input disk encryption Set Id as optional input at disk level to enable protection for Vmware to Azure.</span></span>
-* <span data-ttu-id="de109-442">HyperV’den Azure’a disk şifrelemesi ayarlama eşlemesi ile çoğaltma korumalı öğeyi güncelleştirmeye yönelik Azure Site Recovery desteği.</span><span class="sxs-lookup"><span data-stu-id="de109-442">Azure Site Recovery support to update replication protected item with disk encryption set Map for HyperV to Azure.</span></span>
-
-#### <a name="azresources"></a><span data-ttu-id="de109-443">Az.Resources</span><span class="sxs-lookup"><span data-stu-id="de109-443">Az.Resources</span></span>
-* <span data-ttu-id="de109-444">'Remove-AzTag' yardım belgesindeki bir hata düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="de109-444">Fix an error in help document of 'Remove-AzTag'.</span></span>
-
-#### <a name="azsql"></a><span data-ttu-id="de109-445">Az.Sql</span><span class="sxs-lookup"><span data-stu-id="de109-445">Az.Sql</span></span>
-* <span data-ttu-id="de109-446">Güvenlik açığı değerlendirmesi tarafından ayarlanan temel cmdlet işlevi, Azure veritabanına yönelik ana veritabanında çalışacak ve yönetilen örnek sistem veritabanlarında sınırlandırılacak şekilde düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="de109-446">Fix vulnerability assessment set baseline cmdlets functionality to work on master db for azure database and limit it on managed instance system databases.</span></span>
-* <span data-ttu-id="de109-447">SQL örneği yük devretme grubu oluşturulurken karşılaşılan bir hata düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-447">Fix an error when creating SQL instance failover group</span></span>
-
-#### <a name="azsqlvirtualmachine"></a><span data-ttu-id="de109-448">Az.SqlVirtualMachine</span><span class="sxs-lookup"><span data-stu-id="de109-448">Az.SqlVirtualMachine</span></span>
-* <span data-ttu-id="de109-449">Yeni geçerli Lisans türü olarak DR eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-449">Add DR as a new valid License type</span></span>
-
-#### <a name="azstorage"></a><span data-ttu-id="de109-450">Az.Storage</span><span class="sxs-lookup"><span data-stu-id="de109-450">Az.Storage</span></span>
-* <span data-ttu-id="de109-451">Sonraki bir sürümde gerçekleşecek DefaultAction değerinin değişikliğine yönelik hataya neden olan değişiklik uyarısı eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-451">Add breaking change warning message for DefaultAction Value change in a future release</span></span>
-    - <span data-ttu-id="de109-452">Update-AzStorageAccountNetworkRuleSet</span><span class="sxs-lookup"><span data-stu-id="de109-452">Update-AzStorageAccountNetworkRuleSet</span></span>
-* <span data-ttu-id="de109-453">Get-AzureRMStorageAccount cmdlet’i -IncludeGeoReplicationStats parametresiyle çalıştırarak Depolama hesabının en son eşitleme zamanını almaya yönelik destek</span><span class="sxs-lookup"><span data-stu-id="de109-453">Support Get last sync time of Storage account by run get-AzureRMStorageAccount with parameter -IncludeGeoReplicationStats</span></span>
-    - <span data-ttu-id="de109-454">Get-AzureRMStorageAccount</span><span class="sxs-lookup"><span data-stu-id="de109-454">Get-AzureRMStorageAccount</span></span>
-
-## <a name="320---december-2019"></a><span data-ttu-id="de109-455">3.2.0 - Aralık 2019</span><span class="sxs-lookup"><span data-stu-id="de109-455">3.2.0 - December 2019</span></span>
-
-### <a name="general"></a><span data-ttu-id="de109-456">Genel</span><span class="sxs-lookup"><span data-stu-id="de109-456">General</span></span>
-* <span data-ttu-id="de109-457">.psd1 içindeki başvurular, tüm modüller için göreli yol kullanılacak şekilde güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-457">Update references in .psd1 to use relative path for all modules</span></span>
-
-#### <a name="azaccounts"></a><span data-ttu-id="de109-458">Az.Accounts</span><span class="sxs-lookup"><span data-stu-id="de109-458">Az.Accounts</span></span>
-* <span data-ttu-id="de109-459">Az 4.0 önizlemesine yönelik istemci tarafı telemetri için doğru UserAgent ayarlandı</span><span class="sxs-lookup"><span data-stu-id="de109-459">Set correct UserAgent for client-side telemetry for Az 4.0 preview</span></span>
-* <span data-ttu-id="de109-460">Az 4.0 önizlemesinde bağlam null olduğunda kolay hata iletisi görüntüleniyor</span><span class="sxs-lookup"><span data-stu-id="de109-460">Display user friendly error message when context is null in Az 4.0 preview</span></span>
-
-#### <a name="azbatch"></a><span data-ttu-id="de109-461">Az.Batch</span><span class="sxs-lookup"><span data-stu-id="de109-461">Az.Batch</span></span>
-* <span data-ttu-id="de109-462">**New-AzBatchPool** cmdlet’inin 'VirtualMachineConfiguration. ContainerConfiguration' veya 'VirtualMachineConfiguration.DataDisks' öğelerini sunucuya doğru bir şekilde göndermediği [10602](https://github.com/Azure/azure-powershell/issues/10602) numaralı sorun düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="de109-462">Fix issue [#10602](https://github.com/Azure/azure-powershell/issues/10602), where **New-AzBatchPool** did not properly send 'VirtualMachineConfiguration.ContainerConfiguration' or 'VirtualMachineConfiguration.DataDisks' to the server.</span></span>
-
-#### <a name="azdatafactory"></a><span data-ttu-id="de109-463">Az.DataFactory</span><span class="sxs-lookup"><span data-stu-id="de109-463">Az.DataFactory</span></span>
-* <span data-ttu-id="de109-464">ADF .Net SDK sürümü 4.5.0’a güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-464">Update ADF .Net SDK version to 4.5.0</span></span>
-
-#### <a name="azfrontdoor"></a><span data-ttu-id="de109-465">Az.FrontDoor</span><span class="sxs-lookup"><span data-stu-id="de109-465">Az.FrontDoor</span></span>
-* <span data-ttu-id="de109-466">WAF tarafından yönetilen kuralları dışlama desteği eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-466">Added WAF managed rules exclusion support</span></span>
-* <span data-ttu-id="de109-467">Otomatik tamamlamaya SocketAddr eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-467">Add SocketAddr to auto-complete</span></span>
-
-#### <a name="azhealthcareapis"></a><span data-ttu-id="de109-468">Az.HealthcareApis</span><span class="sxs-lookup"><span data-stu-id="de109-468">Az.HealthcareApis</span></span>
-* <span data-ttu-id="de109-469">Özel Durum İşleme</span><span class="sxs-lookup"><span data-stu-id="de109-469">Exception Handling</span></span>
-
-#### <a name="azkeyvault"></a><span data-ttu-id="de109-470">Az.KeyVault</span><span class="sxs-lookup"><span data-stu-id="de109-470">Az.KeyVault</span></span>
-* <span data-ttu-id="de109-471">Ayarlanmamış olabilecek değere erişirken gerçekleşen hata düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-471">Fixed error accessing value that is potentially not set</span></span>
-* <span data-ttu-id="de109-472">Eliptik Eğri Şifrelemesi Sertifika Yönetimi</span><span class="sxs-lookup"><span data-stu-id="de109-472">Elliptic Curve Cryptography Certificate Managment</span></span>
-    - <span data-ttu-id="de109-473">Sertifika İlkeleri için Eğri belirtme desteği eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-473">Added support to specify the Curve for Certificate Policies</span></span>
-
-#### <a name="azmonitor"></a><span data-ttu-id="de109-474">Az.Monitor</span><span class="sxs-lookup"><span data-stu-id="de109-474">Az.Monitor</span></span>
-* <span data-ttu-id="de109-475">Tanılama Ayarları Ekle komutuna isteğe bağlı bağımsız değişken eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-475">Adding optional argument to the Add Diagnostic Settings command.</span></span> <span data-ttu-id="de109-476">Mevcut olduğunda, Log Analytics’e aktarmanın sabit bir şemaya (ayrılmış</span><span class="sxs-lookup"><span data-stu-id="de109-476">A switch argument that if present indicates that the export to Log Analytics must be to a fixed schema (a.k.a.</span></span> <span data-ttu-id="de109-477">veri türü olarak da bilinir) yönelik olması gerektiğini belirten bir anahtar bağımsız değişkeni</span><span class="sxs-lookup"><span data-stu-id="de109-477">dedicated, data type)</span></span>
-
-#### <a name="aznetwork"></a><span data-ttu-id="de109-478">Az.Network</span><span class="sxs-lookup"><span data-stu-id="de109-478">Az.Network</span></span>
-* <span data-ttu-id="de109-479">AzureFirewall Uygulama, NAT ve Ağ Kuralları içinde IpGroups desteği.</span><span class="sxs-lookup"><span data-stu-id="de109-479">Support for IpGroups in AzureFirewall Application,Nat & Network Rules.</span></span>
-
-#### <a name="azresources"></a><span data-ttu-id="de109-480">Az.Resources</span><span class="sxs-lookup"><span data-stu-id="de109-480">Az.Resources</span></span>
-* <span data-ttu-id="de109-481">Şablon parametresi adının yerleşik bir parametre adıyla çakışması durumunda şablon dağıtımının, şablon parametresini okuyamamasına neden olan sorun düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="de109-481">Fix an issue where template deployment fails to read a template parameter if its name conflicts with some built-in parameter name.</span></span>
-* <span data-ttu-id="de109-482">İlke cmdlet’leri, ilke kümesi tanımları içinde gruplandırma desteği sunan yeni API sürümü 2019-09-01’i kullanacak şekilde güncelleştirildi.</span><span class="sxs-lookup"><span data-stu-id="de109-482">Updated policy cmdlets to use new api version 2019-09-01 that introduces grouping support within policy set definitions.</span></span>
-
-#### <a name="azsql"></a><span data-ttu-id="de109-483">Az.Sql</span><span class="sxs-lookup"><span data-stu-id="de109-483">Az.Sql</span></span>
-* <span data-ttu-id="de109-484">Güvenlik Açığı Değerlendirmesi otomatik etkinleştirmesi, depolamayı StorageV2'de oluşturacak şekilde yükseltildi</span><span class="sxs-lookup"><span data-stu-id="de109-484">Upgraded storage creation in Vulnerability Assessment auto enablement to StorageV2</span></span>
-
-#### <a name="azstorage"></a><span data-ttu-id="de109-485">Az.Storage</span><span class="sxs-lookup"><span data-stu-id="de109-485">Az.Storage</span></span>
-* <span data-ttu-id="de109-486">OAuth kimlik doğrulaması tabanlı Depolama Bağlamı ile Blob/Kapsayıcı Kimliği tabanlı SAS belirteci oluşturma desteği</span><span class="sxs-lookup"><span data-stu-id="de109-486">Support generate Blob/Constainer Idenity based SAS token with Storage Context based on Oauth authentication</span></span>
-    - <span data-ttu-id="de109-487">New-AzStorageContainerSASToken</span><span class="sxs-lookup"><span data-stu-id="de109-487">New-AzStorageContainerSASToken</span></span>
-    - <span data-ttu-id="de109-488">New-AzStorageBlobSASToken</span><span class="sxs-lookup"><span data-stu-id="de109-488">New-AzStorageBlobSASToken</span></span>
-* <span data-ttu-id="de109-489">Tüm Kimlik SAS belirteçleri iptal edilecek şekilde Depolama Hesabı Kullanıcı Temsilcisi Anahtarlarını iptal etme desteği</span><span class="sxs-lookup"><span data-stu-id="de109-489">Support revoke Storage Account User Delegation Keys, so all Idenity SAS tokens are revoked</span></span>
-    - <span data-ttu-id="de109-490">Revoke-AzStorageAccountUserDelegationKeys</span><span class="sxs-lookup"><span data-stu-id="de109-490">Revoke-AzStorageAccountUserDelegationKeys</span></span>
-* <span data-ttu-id="de109-491">Microsoft.Azure.Management.Storage, yeni API sürümü 2019-06-01 desteklenecek şekilde 14.2.0 sürümüne güncelleştirildi.</span><span class="sxs-lookup"><span data-stu-id="de109-491">Upgrade to Microsoft.Azure.Management.Storage 14.2.0, to support new API version 2019-06-01.</span></span>
-* <span data-ttu-id="de109-492">Dosya Paylaşımı cmdlet’lerinin Yönetim düzlemindeki 5120’den daha büyük değerler için QuotaGiB (Gibibayt temelinde Paylaşım Kotası) desteği sunuldu ve 'QuotaGiB' parametresine yönelik diğer ad olarak 'Quota' parametresi eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-492">Support of QuotaGiB (Share Quota in Gibibye) for values of more than 5120 in the Management plane of File Share cmdlets and added the 'Quota' parameter alias to the 'QuotaGiB' parameter.</span></span>
-    - <span data-ttu-id="de109-493">New-AzRmStorageShare</span><span class="sxs-lookup"><span data-stu-id="de109-493">New-AzRmStorageShare</span></span>
-    - <span data-ttu-id="de109-494">Update-AzRmStorageShare</span><span class="sxs-lookup"><span data-stu-id="de109-494">Update-AzRmStorageShare</span></span>
-* <span data-ttu-id="de109-495">'Quota' parametresine 'QuotaGiB' parametre diğer adı eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-495">Add parameter alias 'QuotaGiB' to parameter 'Quota'</span></span>
-    - <span data-ttu-id="de109-496">Set-AzStorageShareQuota</span><span class="sxs-lookup"><span data-stu-id="de109-496">Set-AzStorageShareQuota</span></span>
-* <span data-ttu-id="de109-497">Set-AzStorageContainerAcl’nin depolanan Erişim İlkesini temizlemesine neden olan sorun düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-497">Fix the issue that Set-AzStorageContainerAcl can clean up the stored Access Policy</span></span>
-    - <span data-ttu-id="de109-498">Set-AzStorageContainerAcl</span><span class="sxs-lookup"><span data-stu-id="de109-498">Set-AzStorageContainerAcl</span></span>
-
-## <a name="310---november-2019"></a><span data-ttu-id="de109-499">3.1.0 - Kasım 2019</span><span class="sxs-lookup"><span data-stu-id="de109-499">3.1.0 - November 2019</span></span>
-### <a name="highlights-since-the-last-major-release"></a><span data-ttu-id="de109-500">Son ana sürümden bu yana öne çıkanlar</span><span class="sxs-lookup"><span data-stu-id="de109-500">Highlights since the last major release</span></span>
-* <span data-ttu-id="de109-501">Az.DataBoxEdge 1.0.0 yayımlandı</span><span class="sxs-lookup"><span data-stu-id="de109-501">Az.DataBoxEdge 1.0.0 released</span></span>
-* <span data-ttu-id="de109-502">Az.SqlVirtualMachine 1.0.0 yayımlandı</span><span class="sxs-lookup"><span data-stu-id="de109-502">Az.SqlVirtualMachine 1.0.0 released</span></span>
-
-#### <a name="azcompute"></a><span data-ttu-id="de109-503">Az.Compute</span><span class="sxs-lookup"><span data-stu-id="de109-503">Az.Compute</span></span>
-* <span data-ttu-id="de109-504">VM Reapply özelliği</span><span class="sxs-lookup"><span data-stu-id="de109-504">VM Reapply feature</span></span>
-    - <span data-ttu-id="de109-505">Set-AzVM cmdlet’ine Reapply parametresi ekleme</span><span class="sxs-lookup"><span data-stu-id="de109-505">Add Reapply parameter to Set-AzVM cmdlet</span></span>
-* <span data-ttu-id="de109-506">VM Ölçek Kümesi AutomaticRepairs özelliği:</span><span class="sxs-lookup"><span data-stu-id="de109-506">VM Scale Set AutomaticRepairs feature:</span></span>
-    - <span data-ttu-id="de109-507">EnableAutomaticRepair, AutomaticRepairGracePeriod ve AutomaticRepairMaxInstanceRepairsPercent parametreleri şu cmdlet’lere eklendi:   New-AzVmssConfig   Update-AzVmss</span><span class="sxs-lookup"><span data-stu-id="de109-507">Add EnableAutomaticRepair, AutomaticRepairGracePeriod, and AutomaticRepairMaxInstanceRepairsPercent parameters to the following cmdlets:   New-AzVmssConfig   Update-AzVmss</span></span>
-* <span data-ttu-id="de109-508">New-AzVM için kiracılar arası galeri görüntüsü desteği</span><span class="sxs-lookup"><span data-stu-id="de109-508">Cross tenant gallery image support for New-AzVM</span></span>
-* <span data-ttu-id="de109-509">New-AzVM, New-AzVMConfig ve New-AzVmss cmdlet’lerindeki Priority parametresinin bağımsız değişken tamamlayıcısına ‘Spot’ eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-509">Add 'Spot' to the argument completer of Priority parameter in New-AzVM, New-AzVMConfig and New-AzVmss cmdlets</span></span>
-* <span data-ttu-id="de109-510">Add-AzVmssDataDisk cmdlet’ine DiskIOPSReadWrite ve DiskMBpsReadWrite parametreleri eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-510">Add DiskIOPSReadWrite and DiskMBpsReadWrite parameters to Add-AzVmssDataDisk cmdlet</span></span>
-* <span data-ttu-id="de109-511">New-AzGalleryImageVersion cmdlet’inin SourceImageId parametresi isteğe bağlı olacak şekilde değiştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-511">Change SourceImageId parameter of New-AzGalleryImageVersion cmdlet to optional</span></span>
-* <span data-ttu-id="de109-512">New-AzGalleryImageVersion cmdlet’ine OSDiskImage ve DataDiskImage parametreleri eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-512">Add OSDiskImage and DataDiskImage parameters to New-AzGalleryImageVersion cmdlet</span></span>
-* <span data-ttu-id="de109-513">New-AzGalleryImageDefinition cmdlet’ine HyperVGeneration parametresi eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-513">Add HyperVGeneration parameter to New-AzGalleryImageDefinition cmdlet</span></span>
-* <span data-ttu-id="de109-514">New-AzVmss, New-AzVmssConfig ve Update-AzVmss cmdlet’lerine SkipExtensionsOnOverprovisionedVMs parametreleri eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-514">Add SkipExtensionsOnOverprovisionedVMs parameters to New-AzVmss, New-AzVmssConfig and Update-AzVmss cmdlets</span></span>
-
-#### <a name="azdataboxedge"></a><span data-ttu-id="de109-515">Az.DataBoxEdge</span><span class="sxs-lookup"><span data-stu-id="de109-515">Az.DataBoxEdge</span></span>
-* <span data-ttu-id="de109-516">`Get-AzDataBoxEdgeOrder` cmdlet’i eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-516">Added cmdlet `Get-AzDataBoxEdgeOrder`</span></span>
-    - <span data-ttu-id="de109-517">Sırayı Al</span><span class="sxs-lookup"><span data-stu-id="de109-517">Get the Order</span></span>
-* <span data-ttu-id="de109-518">`New-AzDataBoxEdgeOrder` cmdlet’i eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-518">Added cmdlet `New-AzDataBoxEdgeOrder`</span></span>
-    - <span data-ttu-id="de109-519">Yeni Sıra oluştur</span><span class="sxs-lookup"><span data-stu-id="de109-519">Create new Order</span></span>
-* <span data-ttu-id="de109-520">`Remove-AzDataBoxEdgeOrder` cmdlet’i eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-520">Added cmdlet `Remove-AzDataBoxEdgeOrder`</span></span>
-    - <span data-ttu-id="de109-521">Sırayı kaldır</span><span class="sxs-lookup"><span data-stu-id="de109-521">Remove the Order</span></span>
-* <span data-ttu-id="de109-522">`New-AzDataBoxEdgeShare` cmdlet’inde değiştir</span><span class="sxs-lookup"><span data-stu-id="de109-522">Change in cmdlet `New-AzDataBoxEdgeShare`</span></span>
-    - <span data-ttu-id="de109-523">Yerel Paylaşım’ı oluşturur</span><span class="sxs-lookup"><span data-stu-id="de109-523">Now creates Local Share</span></span>
-* <span data-ttu-id="de109-524">`Set-AzDataBoxEdgeRole` cmdlet’i eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-524">Added cmdlet `Set-AzDataBoxEdgeRole`</span></span>
-    - <span data-ttu-id="de109-525">IotRole artık Paylaş ile eşlenebilir</span><span class="sxs-lookup"><span data-stu-id="de109-525">Now IotRole can be mapped to Share</span></span>
-* <span data-ttu-id="de109-526">`Invoke-AzDataBoxEdgeDevice` cmdlet’i eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-526">Added cmdlet `Invoke-AzDataBoxEdgeDevice`</span></span>
-    - <span data-ttu-id="de109-527">Tarama güncelleştirmesi çağırın, güncelleştirmeyi indirin ve bunları cihaza yükleyin</span><span class="sxs-lookup"><span data-stu-id="de109-527">Invoke scan update, download update, install updates on the device</span></span>
-* <span data-ttu-id="de109-528">`Get-AzDataBoxEdgeTrigger` cmdlet’i eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-528">Added cmdlet `Get-AzDataBoxEdgeTrigger`</span></span>
-    - <span data-ttu-id="de109-529">Tetikleyicilere ilişkin bilgileri alır</span><span class="sxs-lookup"><span data-stu-id="de109-529">Gets the information about Triggers</span></span>
-* <span data-ttu-id="de109-530">`New-AzDataBoxEdgeTrigger` cmdlet’i eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-530">Added cmdlet `New-AzDataBoxEdgeTrigger`</span></span>
-    - <span data-ttu-id="de109-531">Yeni Tetikleyiciler oluştur</span><span class="sxs-lookup"><span data-stu-id="de109-531">Create new Triggers</span></span>
-* <span data-ttu-id="de109-532">`Remove-AzDataBoxEdgeTrigger` cmdlet’i eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-532">Added cmdlet `Remove-AzDataBoxEdgeTrigger`</span></span>
-    - <span data-ttu-id="de109-533">Tetikleyicileri kaldır</span><span class="sxs-lookup"><span data-stu-id="de109-533">Remove the Triggers</span></span>
-
-#### <a name="azdatafactory"></a><span data-ttu-id="de109-534">Az.DataFactory</span><span class="sxs-lookup"><span data-stu-id="de109-534">Az.DataFactory</span></span>
-* <span data-ttu-id="de109-535">ADF .Net SDK sürümü 4.4.0’a güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-535">Update ADF .Net SDK version to 4.4.0</span></span>
-* <span data-ttu-id="de109-536">Özel kurulum betiği olmadan kurulum yapılandırmalarını ve 3. taraf bileşenleri etkinleştirmek üzere ‘Set-AzureRmDataFactoryV2IntegrationRuntime’ komutu için ‘ExpressCustomSetup’ parametresi eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-536">Add parameter 'ExpressCustomSetup' for 'Set-AzureRmDataFactoryV2IntegrationRuntime' cmd to enable setup configurations and 3rd party components without custom setup script.</span></span>
-
-#### <a name="azdatalakestore"></a><span data-ttu-id="de109-537">Az.DataLakeStore</span><span class="sxs-lookup"><span data-stu-id="de109-537">Az.DataLakeStore</span></span>
-* <span data-ttu-id="de109-538">Get-AzDataLakeStoreDeletedItem ve Restore-AzDataLakeStoreDeletedItem parametrelerinin belgeleri güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-538">Update documentation of Get-AzDataLakeStoreDeletedItem and Restore-AzDataLakeStoreDeletedItem</span></span>
-
-#### <a name="azeventhub"></a><span data-ttu-id="de109-539">Az.EventHub</span><span class="sxs-lookup"><span data-stu-id="de109-539">Az.EventHub</span></span>
-* <span data-ttu-id="de109-540">#10301 numaralı şu sorun düzeltildi: SAS Belirtecinin tarih biçimi düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-540">Fix for issue 10301 : Fix the SAS Token date format</span></span>
-
-#### <a name="azfrontdoor"></a><span data-ttu-id="de109-541">Az.FrontDoor</span><span class="sxs-lookup"><span data-stu-id="de109-541">Az.FrontDoor</span></span>
-* <span data-ttu-id="de109-542">Enable-AzFrontDoorCustomDomainHttps ve New-AzFrontDoorFrontendEndpointObject öğelerine MinimumTlsVersion parametresi eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-542">Add MinimumTlsVersion parameter to Enable-AzFrontDoorCustomDomainHttps and New-AzFrontDoorFrontendEndpointObject</span></span>
-* <span data-ttu-id="de109-543">New-AzFrontDoorHealthProbeSettingObject öğesine HealthProbeMethod ve EnabledState parametreleri eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-543">Add HealthProbeMethod and EnabledState parameters to New-AzFrontDoorHealthProbeSettingObject</span></span>
-* <span data-ttu-id="de109-544">BackendPoolsSettings öğesinin Front Door oluşturmasına/güncelleştirmesine geçmesi için BackendPoolsSettings nesnesi oluşturmaya yönelik yeni cmdlet eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-544">Add new cmdlet to create BackendPoolsSettings objec to pass into creation/update of Front Door</span></span>
-    - <span data-ttu-id="de109-545">New-AzFrontDoorBackendPoolsSettingObject</span><span class="sxs-lookup"><span data-stu-id="de109-545">New-AzFrontDoorBackendPoolsSettingObject</span></span>
-
-#### <a name="aznetwork"></a><span data-ttu-id="de109-546">Az.Network</span><span class="sxs-lookup"><span data-stu-id="de109-546">Az.Network</span></span>
-* <span data-ttu-id="de109-547">‘Start-AzVirtualNetworkGatewayConnectionPacketCapture.md’ ve 'Start-AzVirtualnetworkGatewayPacketCapture.md' FilterData seçeneği örnekleri değiştirildi.</span><span class="sxs-lookup"><span data-stu-id="de109-547">Change 'Start-AzVirtualNetworkGatewayConnectionPacketCapture.md' and 'Start-AzVirtualnetworkGatewayPacketCapture.md' FilterData option examples.</span></span>
-
-#### <a name="azprivatedns"></a><span data-ttu-id="de109-548">Az.PrivateDns</span><span class="sxs-lookup"><span data-stu-id="de109-548">Az.PrivateDns</span></span>
-* <span data-ttu-id="de109-549">PrivateDns .Net SDK’sı sürüm 1.0.0’a güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-549">Updated PrivateDns .net sdk to version 1.0.0</span></span>
-
-#### <a name="azrecoveryservices"></a><span data-ttu-id="de109-550">Az.RecoveryServices</span><span class="sxs-lookup"><span data-stu-id="de109-550">Az.RecoveryServices</span></span>
-* <span data-ttu-id="de109-551">Koruma etkinleştirilirken disk türünü seçmeye yönelik Azure Site Recovery desteği.</span><span class="sxs-lookup"><span data-stu-id="de109-551">Azure Site Recovery support to select disk type at enabling protection.</span></span>
-* <span data-ttu-id="de109-552">Kurtarma planı eylemi düzenlemesine yönelik Azure Site Recovery hata düzeltmesi.</span><span class="sxs-lookup"><span data-stu-id="de109-552">Azure Site Recovery bug fix for recovery plan action edit.</span></span>
-* <span data-ttu-id="de109-553">Dosya akışı Veritabanlarını kabul etmek için Azure Backup SQL Geri yükleme desteği.</span><span class="sxs-lookup"><span data-stu-id="de109-553">Azure Backup SQL Restore support to accept filestream DBs.</span></span>
-
-#### <a name="azrediscache"></a><span data-ttu-id="de109-554">Az.RedisCache</span><span class="sxs-lookup"><span data-stu-id="de109-554">Az.RedisCache</span></span>
-* <span data-ttu-id="de109-555">‘New-AzRedisCache’ ve ‘Set-AzRedisCache’ cmdletlerine ‘MinimumTlsVersion’ parametresi eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-555">Added 'MinimumTlsVersion' parameter in 'New-AzRedisCache' and 'Set-AzRedisCache' cmdlets.</span></span> <span data-ttu-id="de109-556">‘Get-AzRedisCache’ cmdlet’inin çıkışına ‘MinimumTlsVersion’ eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-556">Also, added 'MinimumTlsVersion' in the output of 'Get-AzRedisCache' cmdlet.</span></span>
-* <span data-ttu-id="de109-557">‘Set-AzRedisCache’ ve ‘New-AzRedisCache’ cmdletlerine yönelik ‘-Size’ parametresine doğrulama eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-557">Added validation on '-Size' parameter for 'Set-AzRedisCache' and 'New-AzRedisCache' cmdlets</span></span>
-
-#### <a name="azresources"></a><span data-ttu-id="de109-558">Az.Resources</span><span class="sxs-lookup"><span data-stu-id="de109-558">Az.Resources</span></span>
-- <span data-ttu-id="de109-559">İlke cmdletleri, ilke atamasında EnforcementMode özelliğine sahip yeni 2019-06-01 api sürümünü kullanacak şekilde güncelleştirildi.</span><span class="sxs-lookup"><span data-stu-id="de109-559">Updated policy cmdlets to use new api version 2019-06-01 that has new EnforcementMode property in policy assignment.</span></span>
-- <span data-ttu-id="de109-560">İlke tanımı oluştur yardım örneği güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-560">Updated create policy definition help example</span></span>
-- <span data-ttu-id="de109-561">Remove-AZADServicePrincipal -ServicePrincipalName’in boş referans adı bulunamadığında boş referans sunması hatası düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="de109-561">Fix bug Remove-AZADServicePrincipal -ServicePrincipalName, throw null reference when service principal name not found.</span></span>
-- <span data-ttu-id="de109-562">Kiracının aboneliği olmadığında New-AZADServicePrincipal’ın boş referans sunmasına ilişkin hata düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="de109-562">Fix bug New-AZADServicePrincipal, throw null reference when tenant doesn't have any subscription.</span></span>
-- <span data-ttu-id="de109-563">Kimlik bilgilerini yalnızca ilişkili uygulamaya eklemek için New-AzAdServicePrincipal değiştirildi.</span><span class="sxs-lookup"><span data-stu-id="de109-563">Change New-AzAdServicePrincipal to add credentials only to associated application.</span></span>
-
-#### <a name="azsql"></a><span data-ttu-id="de109-564">Az.Sql</span><span class="sxs-lookup"><span data-stu-id="de109-564">Az.Sql</span></span>
-* <span data-ttu-id="de109-565">ReadReplicaCount veritabanı için destek eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-565">Added support for database ReadReplicaCount.</span></span>
-* <span data-ttu-id="de109-566">Alan yedekliliği ayarlı olmadığında Set-AzSqlDatabase düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-566">Fixed Set-AzSqlDatabase when zone redundancy not set</span></span>
-
-## <a name="300---november-2019"></a><span data-ttu-id="de109-567">3.0.0 - Kasım 2019</span><span class="sxs-lookup"><span data-stu-id="de109-567">3.0.0 - November 2019</span></span>
-### <a name="general"></a><span data-ttu-id="de109-568">Genel</span><span class="sxs-lookup"><span data-stu-id="de109-568">General</span></span>
-* <span data-ttu-id="de109-569">Az.PrivateDns 1.0.0 yayınlandı</span><span class="sxs-lookup"><span data-stu-id="de109-569">Az.PrivateDns 1.0.0 released</span></span>
-
-#### <a name="azaccounts"></a><span data-ttu-id="de109-570">Az.Accounts</span><span class="sxs-lookup"><span data-stu-id="de109-570">Az.Accounts</span></span>
-* <span data-ttu-id="de109-571">'Resolve-Error' diğer adı için bir kullanımdan kaldırma iletisi ekleyin.</span><span class="sxs-lookup"><span data-stu-id="de109-571">Add a deprecation message for 'Resolve-Error' alias.</span></span>
-
-#### <a name="azadvisor"></a><span data-ttu-id="de109-572">Az.Advisor</span><span class="sxs-lookup"><span data-stu-id="de109-572">Az.Advisor</span></span>
-* <span data-ttu-id="de109-573">Get-AzAdvisorRecommendation cmdlet'ine yeni 'Operational Excellence' (Operasyonel Mükemmellik) kategorisi eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-573">Added new category 'Operational Excellence' to Get-AzAdvisorRecommendation cmdlet.</span></span>
-
-#### <a name="azbatch"></a><span data-ttu-id="de109-574">Az.Batch</span><span class="sxs-lookup"><span data-stu-id="de109-574">Az.Batch</span></span>
-* <span data-ttu-id="de109-575">`BatchAccountContext` içinde `CoreQuota`, `DedicatedCoreQuota` olarak yeniden adlandırıldı.</span><span class="sxs-lookup"><span data-stu-id="de109-575">Renamed `CoreQuota` on `BatchAccountContext` to `DedicatedCoreQuota`.</span></span> <span data-ttu-id="de109-576">Ayrıca yeni bir `LowPriorityCoreQuota` var.</span><span class="sxs-lookup"><span data-stu-id="de109-576">There is also a new `LowPriorityCoreQuota`.</span></span>
-  - <span data-ttu-id="de109-577">Bu **Get-AzBatchAccount** cmdlet'ini etkiliyor.</span><span class="sxs-lookup"><span data-stu-id="de109-577">This impacts **Get-AzBatchAccount**.</span></span>
-* <span data-ttu-id="de109-578">**New-AzBatchTask**`-ResourceFile` parametresi şimdi yeni **New-AzBatchResourceFile** cmdlet’i kullanılarak oluşturulabilen bir `PSResourceFile` koleksiyonu alıyor.</span><span class="sxs-lookup"><span data-stu-id="de109-578">**New-AzBatchTask** `-ResourceFile` parameter now takes a collection of `PSResourceFile` objects, which can be constructed using the new **New-AzBatchResourceFile** cmdlet.</span></span>
-* <span data-ttu-id="de109-579">`PSResourceFile` nesnelerini oluşturmaya yardımcı olmak için yeni **New-AzBatchResourceFile** cmdlet'i.</span><span class="sxs-lookup"><span data-stu-id="de109-579">New **New-AzBatchResourceFile** cmdlet to help create `PSResourceFile` objects.</span></span> <span data-ttu-id="de109-580">Bunlar `-ResourceFile` parametresinde **New-AzBatchTask** cmdlet'ine sağlanabilir.</span><span class="sxs-lookup"><span data-stu-id="de109-580">These can be supplied to **New-AzBatchTask** on the `-ResourceFile` parameter.</span></span>
-  - <span data-ttu-id="de109-581">Mevcut `HttpUrl` yolunun yanı sıra iki tür yeni kaynak dosyasını destekliyor:</span><span class="sxs-lookup"><span data-stu-id="de109-581">This supports two new kinds of resource file in addition to the existing `HttpUrl` way:</span></span>
-    - <span data-ttu-id="de109-582">`AutoStorageContainerName` tabanlı kaynak dosyaları bir otomatik depolama kapsayıcısının tamamını Batch düğümüne indiriyor.</span><span class="sxs-lookup"><span data-stu-id="de109-582">`AutoStorageContainerName` based resource files download an entire auto-storage container to the Batch node.</span></span>
-    - <span data-ttu-id="de109-583">`StorageContainerUrl` tabanlı kaynak dosyaları URL'de belirtilen kapsayıcıyı Batch düğümüne indiriyor.</span><span class="sxs-lookup"><span data-stu-id="de109-583">`StorageContainerUrl` based resource files download the container specified in the URL to the Batch node.</span></span>
-* <span data-ttu-id="de109-584">**Get-AzBatchApplication** tarafından döndürülen `PSApplication` öğesinin `ApplicationPackages` özelliği kaldırıldı.</span><span class="sxs-lookup"><span data-stu-id="de109-584">Removed `ApplicationPackages` property of `PSApplication` returned by **Get-AzBatchApplication**.</span></span>
-  - <span data-ttu-id="de109-585">Uygulamanın içindeki belirli paketler artık **Get-AzBatchApplicationPackage** kullanılarak alınabilir.</span><span class="sxs-lookup"><span data-stu-id="de109-585">The specific packages inside of an application now can be retrieved using **Get-AzBatchApplicationPackage**.</span></span> <span data-ttu-id="de109-586">Örneğin: `Get-AzBatchApplication -AccountName myaccount -ResourceGroupName myresourcegroup -ApplicationId myapplication`.</span><span class="sxs-lookup"><span data-stu-id="de109-586">For example: `Get-AzBatchApplication -AccountName myaccount -ResourceGroupName myresourcegroup -ApplicationId myapplication`.</span></span>
-* <span data-ttu-id="de109-587">**Get-AzBatchApplicationPackage**, **New-AzBatchApplicationPackage**, **Remove-AzBatchApplicationPackage**, **Get-AzBatchApplication**, **New-AzBatchApplication**, **Remove-AzBatchApplication**, ve **Set-AzBatchApplication** cmdlet'lerinde `ApplicationId` parametresi `ApplicationName` olarak yeniden adlandırıldı.</span><span class="sxs-lookup"><span data-stu-id="de109-587">Renamed `ApplicationId` to `ApplicationName` on **Get-AzBatchApplicationPackage**, **New-AzBatchApplicationPackage**, **Remove-AzBatchApplicationPackage**, **Get-AzBatchApplication**, **New-AzBatchApplication**, **Remove-AzBatchApplication**, and **Set-AzBatchApplication**.</span></span>
-  - <span data-ttu-id="de109-588">`ApplicationId` artık `ApplicationName` parametresinin diğer adıdır.</span><span class="sxs-lookup"><span data-stu-id="de109-588">`ApplicationId` now is an alias of `ApplicationName`.</span></span>
-* <span data-ttu-id="de109-589">`PSUserAccount` öğesine yeni `PSWindowsUserConfiguration` özelliği eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-589">Added new `PSWindowsUserConfiguration` property to `PSUserAccount`.</span></span>
-* <span data-ttu-id="de109-590">`PSApplicationPackage` içinde `Version` öğesi `Name` olarak yeniden adlandırıldı.</span><span class="sxs-lookup"><span data-stu-id="de109-590">Renamed `Version` to `Name` on `PSApplicationPackage`.</span></span>
-* <span data-ttu-id="de109-591">`PSResourceFile` içinde `BlobSource` öğesi `HttpUrl` olarak yeniden adlandırıldı.</span><span class="sxs-lookup"><span data-stu-id="de109-591">Renamed `BlobSource` to `HttpUrl` on `PSResourceFile`.</span></span>
-* <span data-ttu-id="de109-592">`PSVirtualMachineConfiguration` içinden `OSDisk` özelliği kaldırıldı.</span><span class="sxs-lookup"><span data-stu-id="de109-592">Removed `OSDisk` property from `PSVirtualMachineConfiguration`.</span></span>
-* <span data-ttu-id="de109-593">**Set-AzBatchPoolOSVersion** kaldırıldı.</span><span class="sxs-lookup"><span data-stu-id="de109-593">Removed **Set-AzBatchPoolOSVersion**.</span></span> <span data-ttu-id="de109-594">Bu işlem artık desteklenmiyor.</span><span class="sxs-lookup"><span data-stu-id="de109-594">This operation is no longer supported.</span></span>
-* <span data-ttu-id="de109-595">`PSCloudServiceConfiguration` içinden `TargetOSVersion` kaldırıldı.</span><span class="sxs-lookup"><span data-stu-id="de109-595">Removed `TargetOSVersion` from `PSCloudServiceConfiguration`.</span></span>
-* <span data-ttu-id="de109-596">`PSCloudServiceConfiguration` içinde `CurrentOSVersion` öğesi `OSVersion` olarak yeniden adlandırıldı.</span><span class="sxs-lookup"><span data-stu-id="de109-596">Renamed `CurrentOSVersion` to `OSVersion` on `PSCloudServiceConfiguration`.</span></span>
-* <span data-ttu-id="de109-597">`PSPoolUsageMetrics` içinden `DataEgressGiB` ve `DataIngressGiB` kaldırıldı.</span><span class="sxs-lookup"><span data-stu-id="de109-597">Removed `DataEgressGiB` and `DataIngressGiB` from `PSPoolUsageMetrics`.</span></span>
-* <span data-ttu-id="de109-598">**Get-AzBatchNodeAgentSku** kaldırıldı ve bunun yerini **Get-AzBatchSupportedImage** aldı.</span><span class="sxs-lookup"><span data-stu-id="de109-598">Removed **Get-AzBatchNodeAgentSku** and replaced it with  **Get-AzBatchSupportedImage**.</span></span>
-  - <span data-ttu-id="de109-599">**Get-AzBatchSupportedImage**, **Get-AzBatchNodeAgentSku** ile aynı verileri ama daha kullanımı kolay bir biçimde döndürüyor.</span><span class="sxs-lookup"><span data-stu-id="de109-599">**Get-AzBatchSupportedImage** returns the same data as **Get-AzBatchNodeAgentSku** but in a more friendly format.</span></span>
-  - <span data-ttu-id="de109-600">Artık yeni doğrulanmamış resimler de döndürülüyor.</span><span class="sxs-lookup"><span data-stu-id="de109-600">New non-verified images are also now returned.</span></span> <span data-ttu-id="de109-601">Her resim için `Capabilities` ve `BatchSupportEndOfLife` hakkında ek bilgiler de ekleniyor.</span><span class="sxs-lookup"><span data-stu-id="de109-601">Additional information about `Capabilities` and `BatchSupportEndOfLife` for each image is also included.</span></span>
-* <span data-ttu-id="de109-602">**New-AzBatchPool** cmdlet'inin `MountConfiguration` parametresiyle havuzun her düğümünde uzak dosya sistemlerini bağlama özelliği eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-602">Added ability to mount remote file-systems on each node of a pool via the new `MountConfiguration` parameter of **New-AzBatchPool**.</span></span>
-* <span data-ttu-id="de109-603">Artık trafiğin kaynak bağlantı noktası temelinde havuza ağ erişimini engelleyen ağ güvenlik kuralları destekleniyor.</span><span class="sxs-lookup"><span data-stu-id="de109-603">Now support network security rules blocking network access to a pool based on the source port of the traffic.</span></span> <span data-ttu-id="de109-604">Bu destek `PSNetworkSecurityGroupRule` öğesinin `SourcePortRanges` özelliğiyle sağlanıyor.</span><span class="sxs-lookup"><span data-stu-id="de109-604">This is done via the `SourcePortRanges` property on `PSNetworkSecurityGroupRule`.</span></span>
-* <span data-ttu-id="de109-605">Kapsayıcıyı çalıştırırken, şimdi Batch görevin kapsayıcı çalışma dizininde veya Batch görevi çalışma dizininde yürütülmesini destekliyor.</span><span class="sxs-lookup"><span data-stu-id="de109-605">When running a container, Batch now supports executing the task in the container working directory or in the Batch task working directory.</span></span> <span data-ttu-id="de109-606">Bu, `PSTaskContainerSettings` öğesinin `WorkingDirectory` özelliğiyle denetleniyor.</span><span class="sxs-lookup"><span data-stu-id="de109-606">This is controlled by the `WorkingDirectory` property on `PSTaskContainerSettings`.</span></span>
-* <span data-ttu-id="de109-607">Yeni `PublicIPs` özelliği aracılığıyla `PSNetworkConfiguration` parametresinde bir genel IP koleksiyonu belirtme olanağı eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-607">Added ability to specify a collection of public IPs on `PSNetworkConfiguration` via the new `PublicIPs` property.</span></span> <span data-ttu-id="de109-608">Bu sayede Havuzdaki düğümlerin kullanıcı tarafından sağlanan IP listesinden bir IP alması garanti ediliyor.</span><span class="sxs-lookup"><span data-stu-id="de109-608">This guarantees nodes in the Pool will have an IP from the list user provided IPs.</span></span>
-* <span data-ttu-id="de109-609">Belirtilmediğinde, `PSSTartTask` üzerindeki `WaitForSuccess` öğesinin varsayılan değeri artık `$True` (daha önce `$False` değeriydi).</span><span class="sxs-lookup"><span data-stu-id="de109-609">When not specified, the default value of `WaitForSuccess` on `PSSTartTask` is now `$True` (was `$False`).</span></span>
-* <span data-ttu-id="de109-610">Belirtilmediğinde, `PSAutoUserSpecification` üzerindeki `Scope` öğesinin varsayılan değeri artık `Pool` (daha önce Windows'da `Task` ve Linux'ta `Pool` değeriydi).</span><span class="sxs-lookup"><span data-stu-id="de109-610">When not specified, the default value of `Scope` on `PSAutoUserSpecification` is now `Pool` (was `Task` on Windows and `Pool` on Linux).</span></span>
-
-#### <a name="azcdn"></a><span data-ttu-id="de109-611">Az.Cdn</span><span class="sxs-lookup"><span data-stu-id="de109-611">Az.Cdn</span></span>
-* <span data-ttu-id="de109-612">RulesEngine'e UrlRewriteAction ve CacheKeyQueryStringAction eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-612">Introduced UrlRewriteAction and CacheKeyQueryStringAction to RulesEngine.</span></span>
-* <span data-ttu-id="de109-613">New-AzDeliveryRuleCondition cmdlet'inde eksik 'Selector' Girişi gibi çeşitli hatalar düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="de109-613">Fixed several bugs like missing 'Selector' Input in New-AzDeliveryRuleCondition cmdlet.</span></span>
-
-#### <a name="azcompute"></a><span data-ttu-id="de109-614">Az.Compute</span><span class="sxs-lookup"><span data-stu-id="de109-614">Az.Compute</span></span>
-* <span data-ttu-id="de109-615">Disk Şifreleme Kümesi özelliği</span><span class="sxs-lookup"><span data-stu-id="de109-615">Disk Encryption Set feature</span></span>
-    - <span data-ttu-id="de109-616">Yeni cmdlet’ler:   New-AzDiskEncryptionSetConfig   New-AzDiskEncryptionSet   Get-AzDiskEncryptionSet   Remove-AzDiskEncryptionSet</span><span class="sxs-lookup"><span data-stu-id="de109-616">New cmdlets:   New-AzDiskEncryptionSetConfig   New-AzDiskEncryptionSet   Get-AzDiskEncryptionSet   Remove-AzDiskEncryptionSet</span></span>
-    - <span data-ttu-id="de109-617">Aşağıdaki cmdlet'lere DiskEncryptionSetId parametresi eklendi:   Set-AzImageOSDisk   Set-AzVMOSDisk   Set-AzVmssStorageProfile   Add-AzImageDataDisk   New-AzVMDataDisk   Set-AzVMDataDisk   Add-AzVMDataDisk   Add-AzVmssDataDisk   Add-AzVmssVMDataDisk</span><span class="sxs-lookup"><span data-stu-id="de109-617">DiskEncryptionSetId parameter is added to the following cmdlets:   Set-AzImageOSDisk   Set-AzVMOSDisk   Set-AzVmssStorageProfile   Add-AzImageDataDisk   New-AzVMDataDisk   Set-AzVMDataDisk   Add-AzVMDataDisk   Add-AzVmssDataDisk   Add-AzVmssVMDataDisk</span></span>
-    - <span data-ttu-id="de109-618">Aşağıdaki cmdlet'lere DiskEncryptionSetId ve EncryptionType parametreleri eklendi:   New-AzDiskConfig   New-AzSnapshotConfig</span><span class="sxs-lookup"><span data-stu-id="de109-618">DiskEncryptionSetId and EncryptionType parameters are added to the following cmdlets:   New-AzDiskConfig   New-AzSnapshotConfig</span></span>
-* <span data-ttu-id="de109-619">New-AzVmssIPConfig cmdlet'ine PublicIPAddressVersion parametresi eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-619">Add PublicIPAddressVersion parameter to New-AzVmssIPConfig</span></span>
-* <span data-ttu-id="de109-620">Özel betik uzantısının FileUris öğesi genel ayardan korumalı ayara taşındı</span><span class="sxs-lookup"><span data-stu-id="de109-620">Move FileUris of custom script extension from public setting to protected setting</span></span>
-* <span data-ttu-id="de109-621">New-AzVmss, New-AzVmssConfig ve Update-AzVmss cmdlet'lerine ScaleInPolicy eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-621">Add ScaleInPolicy to New-AzVmss, New-AzVmssConfig and Update-AzVmss cmdlets</span></span>
-* <span data-ttu-id="de109-622">Yeni değişiklikler</span><span class="sxs-lookup"><span data-stu-id="de109-622">Breaking changes</span></span>
-    - <span data-ttu-id="de109-623">CreateOption değeri Upload olduğunda New-AzDiskConfig cmdlet'i için DiskSizeGB yerine UploadSizeInBytes parametresi kullanılıyor</span><span class="sxs-lookup"><span data-stu-id="de109-623">UploadSizeInBytes parameter is used instead of DiskSizeGB for New-AzDiskConfig when CreateOption is Upload</span></span>
-    - <span data-ttu-id="de109-624">GalleryImageVersion nesnesinde PublishingProfile.Source.ManagedImage.Id yerini StorageProfile.Source.Id'ye bıraktı</span><span class="sxs-lookup"><span data-stu-id="de109-624">PublishingProfile.Source.ManagedImage.Id is replaced with StorageProfile.Source.Id in GalleryImageVersion object</span></span>
-
-#### <a name="azdatafactory"></a><span data-ttu-id="de109-625">Az.DataFactory</span><span class="sxs-lookup"><span data-stu-id="de109-625">Az.DataFactory</span></span>
-* <span data-ttu-id="de109-626">ADF .Net SDK sürümü 4.3.0’a güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-626">Update ADF .Net SDK version to 4.3.0</span></span>
-
-#### <a name="azdatalakestore"></a><span data-ttu-id="de109-627">Az.DataLakeStore</span><span class="sxs-lookup"><span data-stu-id="de109-627">Az.DataLakeStore</span></span>
-* <span data-ttu-id="de109-628">ADLS SDK sürümünün güncelleştirilmesi (https://github.com/Azure/azure-data-lake-store-net/blob/preview-alpha/CHANGELOG.md#version-123-alpha) aşağıdaki düzeltmeleri sağlıyor</span><span class="sxs-lookup"><span data-stu-id="de109-628">Update ADLS SDK version (https://github.com/Azure/azure-data-lake-store-net/blob/preview-alpha/CHANGELOG.md#version-123-alpha), brings following fixes</span></span>
-* <span data-ttu-id="de109-629">Geri dönüşüm kutusu veya dizin girdisinin creationtime öğesi seri durumdan çıkarılamadığında özel durum oluşturulmasını önleme.</span><span class="sxs-lookup"><span data-stu-id="de109-629">Avoid throwing exception while unable to deserialize the creationtime of the trash or directory entry.</span></span>
-* <span data-ttu-id="de109-630">adlsclient içinde istek başına zaman aşımı ayarını kullanıma sunma</span><span class="sxs-lookup"><span data-stu-id="de109-630">Expose setting per request timeout in adlsclient</span></span>
-* <span data-ttu-id="de109-631">badoffset kurtarması için özgün syncflag değerinin geçirilmesini düzeltme</span><span class="sxs-lookup"><span data-stu-id="de109-631">Fix passing the original syncflag for badoffset recovery</span></span>
-* <span data-ttu-id="de109-632">Yanıt denetlendikten sonra devamlılık belirtecini almak için EnumerateDirectory'yi düzeltme</span><span class="sxs-lookup"><span data-stu-id="de109-632">Fix EnumerateDirectory to retrieve continuation token once response is checked</span></span>
-* <span data-ttu-id="de109-633">Birleştirme Hatasını Düzeltme</span><span class="sxs-lookup"><span data-stu-id="de109-633">Fix Concat Bug</span></span>
-
-#### <a name="azfrontdoor"></a><span data-ttu-id="de109-634">Az.FrontDoor</span><span class="sxs-lookup"><span data-stu-id="de109-634">Az.FrontDoor</span></span>
-* <span data-ttu-id="de109-635">Modüllerde çeşitli yazım hataları düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-635">Fixed miscellaneous typos across module</span></span>
-
-#### <a name="azhdinsight"></a><span data-ttu-id="de109-636">Az.HDInsight</span><span class="sxs-lookup"><span data-stu-id="de109-636">Az.HDInsight</span></span>
-* <span data-ttu-id="de109-637">ADLSGen1 depolamasıyla kümeyi almak için Get-AzHDInsightCluster cmdlet'ini kullandığında müşterinin 'Geçerli bir Base-64 dizesi değil' hatası almasına yol açan hata düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="de109-637">Fixed the bug that customer will get 'Not a valid Base-64 string' error when using Get-AzHDInsightCluster to get the cluster with ADLSGen1 storage.</span></span>
-* <span data-ttu-id="de109-638">Müşterinin Azure Data Lake'e erişirken hizmet sorumlusu uygulama kimliğini sağlayabilmesi için üç cmdlet'e (Add-AzHDInsightClusterIdentity, New-AzHDInsightClusterConfig ve New-AzHDInsightCluster) 'ApplicationId' parametresi eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-638">Add a parameter named 'ApplicationId' to three cmdlets Add-AzHDInsightClusterIdentity, New-AzHDInsightClusterConfig and New-AzHDInsightCluster so that customer can provide the service principal application id for accessing Azure Data Lake.</span></span>
-* <span data-ttu-id="de109-639">Microsoft.Azure.Management.HDInsight 2.1.0'dan 5.1.0'a geçirildi</span><span class="sxs-lookup"><span data-stu-id="de109-639">Changed Microsoft.Azure.Management.HDInsight from 2.1.0 to 5.1.0</span></span>
-* <span data-ttu-id="de109-640">Beş cmdlet kaldırıldı:</span><span class="sxs-lookup"><span data-stu-id="de109-640">Removed five cmdlets:</span></span>
-    - <span data-ttu-id="de109-641">Get-AzHDInsightOMS</span><span class="sxs-lookup"><span data-stu-id="de109-641">Get-AzHDInsightOMS</span></span>
-    - <span data-ttu-id="de109-642">Enable-AzHDInsightOMS</span><span class="sxs-lookup"><span data-stu-id="de109-642">Enable-AzHDInsightOMS</span></span>
-    - <span data-ttu-id="de109-643">Disable-AzHDInsightOMS</span><span class="sxs-lookup"><span data-stu-id="de109-643">Disable-AzHDInsightOMS</span></span>
-    - <span data-ttu-id="de109-644">Grant-AzHDInsightRdpServicesAccess</span><span class="sxs-lookup"><span data-stu-id="de109-644">Grant-AzHDInsightRdpServicesAccess</span></span>
-    - <span data-ttu-id="de109-645">Revoke-AzHDInsightRdpServicesAccess</span><span class="sxs-lookup"><span data-stu-id="de109-645">Revoke-AzHDInsightRdpServicesAccess</span></span>
-* <span data-ttu-id="de109-646">Üç cmdlet eklendi:</span><span class="sxs-lookup"><span data-stu-id="de109-646">Added three cmdlets:</span></span>
-    - <span data-ttu-id="de109-647">Get-AzHDInsightMonitoring (Get-AzHDInsightOMS yerine).</span><span class="sxs-lookup"><span data-stu-id="de109-647">Get-AzHDInsightMonitoring to replace Get-AzHDInsightOMS.</span></span>
-    - <span data-ttu-id="de109-648">Enable-AzHDInsightMonitoring (Enable-AzHDInsightOMS yerine).</span><span class="sxs-lookup"><span data-stu-id="de109-648">Enable-AzHDInsightMonitoring to replace Enable-AzHDInsightOMS.</span></span>
-    - <span data-ttu-id="de109-649">Disable-AzHDInsightMonitoring (Disable-AzHDInsightOMS yerine).</span><span class="sxs-lookup"><span data-stu-id="de109-649">Disable-AzHDInsightMonitoring to replace Disable-AzHDInsightOMS.</span></span>
-* <span data-ttu-id="de109-650">Belirli bir konumdan özellik bilgilerinin alınmasını desteklemek için Get-AzHDInsightProperties cmdlet'i düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="de109-650">Fixed cmdlet Get-AzHDInsightProperties to support get capabilities information from a specific location.</span></span>
-* <span data-ttu-id="de109-651">Add-AzHDInsightConfigValue cmdlet'inden parametre kümeleri ('Spark1', 'Spark2') kaldırıldı.</span><span class="sxs-lookup"><span data-stu-id="de109-651">Removed parameter sets('Spark1', 'Spark2') from Add-AzHDInsightConfigValue.</span></span>
-* <span data-ttu-id="de109-652">Add-AzHDInsightSecurityProfile cmdlet'inin yardım belgelerine örnekler eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-652">Add examples to the help documents of cmdlet Add-AzHDInsightSecurityProfile.</span></span>
-* <span data-ttu-id="de109-653">Aşağıdaki cmdlet'lerin çıkış türü değiştirildi:</span><span class="sxs-lookup"><span data-stu-id="de109-653">Changed output type of the following cmdlets:</span></span>
-*  - <span data-ttu-id="de109-654">Get-AzHDInsightProperties cmdlet'inin CapabilitiesResponse olan çıkış türü AzureHDInsightCapabilities olarak değiştirildi.</span><span class="sxs-lookup"><span data-stu-id="de109-654">Changed the output type of Get-AzHDInsightProperties from  CapabilitiesResponse to AzureHDInsightCapabilities.</span></span>
-*  - <span data-ttu-id="de109-655">Remove-AzHDInsightCluster cmdlet'inin ClusterGetResponse olan çıkış türü bool olarak değiştirildi.</span><span class="sxs-lookup"><span data-stu-id="de109-655">Changed the output type of Remove-AzHDInsightCluster from ClusterGetResponse to bool.</span></span>
-*  - <span data-ttu-id="de109-656">Set-AzHDInsightGatewaySettings cmdlet'inin HttpConnectivitySettings olan çıkış türü GatewaySettings olarak değiştirildi.</span><span class="sxs-lookup"><span data-stu-id="de109-656">Changed the output type of Set-AzHDInsightGatewaySettings HttpConnectivitySettings to GatewaySettings.</span></span>
-* <span data-ttu-id="de109-657">Bazı senaryo test çalışmaları eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-657">Added some scenario test cases.</span></span>
-* <span data-ttu-id="de109-658">Bazı diğer adlar kaldırıldı: 'Add-AzHDInsightConfigValues', 'Get-AzHDInsightProperties'.</span><span class="sxs-lookup"><span data-stu-id="de109-658">Remove some alias: 'Add-AzHDInsightConfigValues', 'Get-AzHDInsightProperties'.</span></span>
-
-#### <a name="aziothub"></a><span data-ttu-id="de109-659">Az.IotHub</span><span class="sxs-lookup"><span data-stu-id="de109-659">Az.IotHub</span></span>
-* <span data-ttu-id="de109-660">Hataya neden olan değişiklikler:</span><span class="sxs-lookup"><span data-stu-id="de109-660">Breaking changes:</span></span>
-    - <span data-ttu-id="de109-661">'Add-AzIotHubEventHubConsumerGroup' cmdlet'i artık 'EventHubEndpointName' parametresini desteklemiyor ve özgün parametre adı için hiçbir diğer ad bulunamadı.</span><span class="sxs-lookup"><span data-stu-id="de109-661">The cmdlet 'Add-AzIotHubEventHubConsumerGroup' no longer supports the parameter 'EventHubEndpointName' and no alias was found for the original parameter name.</span></span>
-    - <span data-ttu-id="de109-662">'Add-AzIotHubEventHubConsumerGroup' cmdlet'inden '__AllParameterSets' parametre kümesi kaldırıldı.</span><span class="sxs-lookup"><span data-stu-id="de109-662">The parameter set '__AllParameterSets' for cmdlet 'Add-AzIotHubEventHubConsumerGroup' has been removed.</span></span>
-    - <span data-ttu-id="de109-663">'Get-AzIotHubEventHubConsumerGroup' cmdlet'i artık 'EventHubEndpointName' parametresini desteklemiyor ve özgün parametre adı için hiçbir diğer ad bulunamadı.</span><span class="sxs-lookup"><span data-stu-id="de109-663">The cmdlet 'Get-AzIotHubEventHubConsumerGroup' no longer supports the parameter 'EventHubEndpointName' and no alias was found for the original parameter name.</span></span>
-    - <span data-ttu-id="de109-664">'Get-AzIotHubEventHubConsumerGroup' cmdlet'inden '__AllParameterSets' parametre kümesi kaldırıldı.</span><span class="sxs-lookup"><span data-stu-id="de109-664">The parameter set '__AllParameterSets' for cmdlet 'Get-AzIotHubEventHubConsumerGroup' has been removed.</span></span>
-    - <span data-ttu-id="de109-665">'Microsoft.Azure.Commands.Management.IotHub.Models.PSIotHubProperties' türündeki 'OperationsMonitoringProperties' özelliği kaldırıldı.</span><span class="sxs-lookup"><span data-stu-id="de109-665">The property 'OperationsMonitoringProperties' of type 'Microsoft.Azure.Commands.Management.IotHub.Models.PSIotHubProperties' has been removed.</span></span>
-    - <span data-ttu-id="de109-666">'Microsoft.Azure.Commands.Management.IotHub.Models.PSIotHubInputProperties' türündeki 'OperationsMonitoringProperties' özelliği kaldırıldı.</span><span class="sxs-lookup"><span data-stu-id="de109-666">The property 'OperationsMonitoringProperties' of type 'Microsoft.Azure.Commands.Management.IotHub.Models.PSIotHubInputProperties' has been removed.</span></span>
-    - <span data-ttu-id="de109-667">'New-AzIotHubExportDevice' cmdlet'i artık 'New-AzIotHubExportDevices' diğer adını desteklemiyor.</span><span class="sxs-lookup"><span data-stu-id="de109-667">The cmdlet 'New-AzIotHubExportDevice' no longer supports the alias 'New-AzIotHubExportDevices'.</span></span>
-    - <span data-ttu-id="de109-668">'New-AzIotHubImportDevice' cmdlet'i artık 'New-AzIotHubImportDevices' diğer adını desteklemiyor.</span><span class="sxs-lookup"><span data-stu-id="de109-668">The cmdlet 'New-AzIotHubImportDevice' no longer supports the alias 'New-AzIotHubImportDevices'.</span></span>
-    - <span data-ttu-id="de109-669">'Remove-AzIotHubEventHubConsumerGroup' cmdlet'i artık 'EventHubEndpointName' parametresini desteklemiyor ve özgün parametre adı için hiçbir diğer ad bulunamadı.</span><span class="sxs-lookup"><span data-stu-id="de109-669">The cmdlet 'Remove-AzIotHubEventHubConsumerGroup' no longer supports the parameter 'EventHubEndpointName' and no alias was found for the original parameter name.</span></span>
-    - <span data-ttu-id="de109-670">'Remove-AzIotHubEventHubConsumerGroup' cmdlet'inden '__AllParameterSets' parametre kümesi kaldırıldı.</span><span class="sxs-lookup"><span data-stu-id="de109-670">The parameter set '__AllParameterSets' for cmdlet 'Remove-AzIotHubEventHubConsumerGroup' has been removed.</span></span>
-    - <span data-ttu-id="de109-671">'Set-AzIotHub' cmdet'i artık 'OperationsMonitoringProperties' parametresini desteklemiyor ve özgün parametre adı için hiçbir diğer ad bulunamadı.</span><span class="sxs-lookup"><span data-stu-id="de109-671">The cmdlet 'Set-AzIotHub' no longer supports the parameter 'OperationsMonitoringProperties' and no alias was found for the original parameter name.</span></span>
-    - <span data-ttu-id="de109-672">'Set-AzIotHub' cmdlet'inden 'UpdateOperationsMonitoringProperties' parametre kümesi kaldırıldı.</span><span class="sxs-lookup"><span data-stu-id="de109-672">The parameter set 'UpdateOperationsMonitoringProperties' for cmdlet 'Set-AzIotHub' has been removed.</span></span>
-
-#### <a name="azrecoveryservices"></a><span data-ttu-id="de109-673">Az.RecoveryServices</span><span class="sxs-lookup"><span data-stu-id="de109-673">Az.RecoveryServices</span></span>
-* <span data-ttu-id="de109-674">NSG, genel IP ve Azure'dan Azure'a iç yük dengeleyiciler gibi ağ kaynaklarını yapılandırmak için Azure Site Recovery desteği.</span><span class="sxs-lookup"><span data-stu-id="de109-674">Azure Site Recovery support to configure networking resources like NSG, public IP and internal load balancers for Azure to Azure.</span></span>
-* <span data-ttu-id="de109-675">Azure'a vMWare için yönetilen diske yazmaya yönelik Azure Site Recovery Desteği.</span><span class="sxs-lookup"><span data-stu-id="de109-675">Azure Site Recovery Support to write to managed disk for vMWare to Azure.</span></span>
-* <span data-ttu-id="de109-676">Azure'a vMWare için NIC azaltmasına yönelik Azure Site Recovery Desteği.</span><span class="sxs-lookup"><span data-stu-id="de109-676">Azure Site Recovery Support to NIC reduction for vMWare to Azure.</span></span>
-* <span data-ttu-id="de109-677">Azure'a Azure için hızlandırılmış ağa yönelik Azure Site Recovery Desteği.</span><span class="sxs-lookup"><span data-stu-id="de109-677">Azure Site Recovery Support to accelerated networking for Azure to Azure.</span></span>
-* <span data-ttu-id="de109-678">Azure'a Azure için aracı otomatik güncelleştirmesine yönelik Azure Site Recovery Desteği.</span><span class="sxs-lookup"><span data-stu-id="de109-678">Azure Site Recovery Support to agent auto update for Azure to Azure.</span></span>
-* <span data-ttu-id="de109-679">Azure'a Azure için Standart SSD'ye yönelik Azure Site Recovery Desteği.</span><span class="sxs-lookup"><span data-stu-id="de109-679">Azure Site Recovery Support to Standard SSD for Azure to Azure.</span></span>
-* <span data-ttu-id="de109-680">Azure'a Azure için Azure Disk Şifrelemesi iki geçişine yönelik Azure Site Recovery Desteği.</span><span class="sxs-lookup"><span data-stu-id="de109-680">Azure Site Recovery Support to Azure Disk Encryption two pass for Azure to Azure.</span></span>
-* <span data-ttu-id="de109-681">Azure'a Azure için yeni eklenen diski korumaya yönelik Azure Site Recovery Desteği.</span><span class="sxs-lookup"><span data-stu-id="de109-681">Azure Site Recovery Support to protect newly added disk for Azure to Azure.</span></span>
-* <span data-ttu-id="de109-682">VM için SoftDelete özelliği eklendi ve softdelete için de testler eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-682">Added SoftDelete feature for VM and added tests for softdelete</span></span>
-
-#### <a name="azresources"></a><span data-ttu-id="de109-683">Az.Resources</span><span class="sxs-lookup"><span data-stu-id="de109-683">Az.Resources</span></span>
-* <span data-ttu-id="de109-684">Bağımlılık derlemesi Microsoft.Extensions.Caching.Memory 1.1.1'den 2.2'ye güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-684">Update dependency assembly Microsoft.Extensions.Caching.Memory from 1.1.1 to 2.2</span></span>
-
-#### <a name="aznetwork"></a><span data-ttu-id="de109-685">Az.Network</span><span class="sxs-lookup"><span data-stu-id="de109-685">Az.Network</span></span>
-* <span data-ttu-id="de109-686">PrivateEndpointConnection için tüm cmdlet'ler genel hizmet sağlayıcısını destekleyecek şekilde değiştirildi.</span><span class="sxs-lookup"><span data-stu-id="de109-686">Change all cmdlets for PrivateEndpointConnection to support generic service provider.</span></span>
-    - <span data-ttu-id="de109-687">Şu cmdlet güncelleştirildi:</span><span class="sxs-lookup"><span data-stu-id="de109-687">Updated cmdlet:</span></span>
-        - <span data-ttu-id="de109-688">Approve-AzPrivateEndpointConnection</span><span class="sxs-lookup"><span data-stu-id="de109-688">Approve-AzPrivateEndpointConnection</span></span>
-        - <span data-ttu-id="de109-689">Deny-AzPrivateEndpointConnection</span><span class="sxs-lookup"><span data-stu-id="de109-689">Deny-AzPrivateEndpointConnection</span></span>
-        - <span data-ttu-id="de109-690">Get-AzPrivateEndpointConnection</span><span class="sxs-lookup"><span data-stu-id="de109-690">Get-AzPrivateEndpointConnection</span></span>
-        - <span data-ttu-id="de109-691">Remove-AzPrivateEndpointConnection</span><span class="sxs-lookup"><span data-stu-id="de109-691">Remove-AzPrivateEndpointConnection</span></span>
-        - <span data-ttu-id="de109-692">Set-AzPrivateEndpointConnection</span><span class="sxs-lookup"><span data-stu-id="de109-692">Set-AzPrivateEndpointConnection</span></span>
-* <span data-ttu-id="de109-693">PrivateLinkResource için yeni cmdlet eklendi ve bu da genel hizmet sağlayıcısını destekliyor.</span><span class="sxs-lookup"><span data-stu-id="de109-693">Add new cmdlet for PrivateLinkResource and it also support generic service provider.</span></span>
-    - <span data-ttu-id="de109-694">Yeni cmdlet:</span><span class="sxs-lookup"><span data-stu-id="de109-694">New cmdlet:</span></span>
-        - <span data-ttu-id="de109-695">Get-AzPrivateLinkResource</span><span class="sxs-lookup"><span data-stu-id="de109-695">Get-AzPrivateLinkResource</span></span>
-* <span data-ttu-id="de109-696">Proxy Protocol V2 özelliği için yeni alanlar ve parametre eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-696">Add new fields and parameter for the feature Proxy Protocol V2.</span></span>
-    - <span data-ttu-id="de109-697">PrivateLinkService'e EnableProxyProtocol özelliği eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-697">Add property EnableProxyProtocol in PrivateLinkService</span></span>
-    - <span data-ttu-id="de109-698">PrivateEndpointConnection'a LinkIdentifier özelliği eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-698">Add property LinkIdentifier in PrivateEndpointConnection</span></span>
-    - <span data-ttu-id="de109-699">New-AzPrivateLinkService cmdlet'i yeni isteğe bağlı EnableProxyProtocol parametresi eklenerek güncelleştirildi.</span><span class="sxs-lookup"><span data-stu-id="de109-699">Updated New-AzPrivateLinkService to add a new optional parameter EnableProxyProtocol.</span></span>
-* <span data-ttu-id="de109-700">'New-AzApplicationGatewaySku' başvuru belgelerindeki yanlış parametre açıklaması düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-700">Fix incorrect parameter description in 'New-AzApplicationGatewaySku' reference documentation</span></span>
-* <span data-ttu-id="de109-701">Azure güvenlik duvarı ilkesini desteklemek için yeni cmdlet'ler eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-701">New cmdlets to support the azure firewall policy</span></span>
-* <span data-ttu-id="de109-702">VirtualHub'ın RouteTables alt kaynağı için destek eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-702">Add support for child resource RouteTables of VirtualHub</span></span>
-    - <span data-ttu-id="de109-703">Yeni cmdlet'ler eklendi:</span><span class="sxs-lookup"><span data-stu-id="de109-703">New cmdlets added:</span></span>
-        - <span data-ttu-id="de109-704">Add-AzVirtualHubRoute</span><span class="sxs-lookup"><span data-stu-id="de109-704">Add-AzVirtualHubRoute</span></span>
-        - <span data-ttu-id="de109-705">Add-AzVirtualHubRouteTable</span><span class="sxs-lookup"><span data-stu-id="de109-705">Add-AzVirtualHubRouteTable</span></span>
-        - <span data-ttu-id="de109-706">Get-AzVirtualHubRouteTable</span><span class="sxs-lookup"><span data-stu-id="de109-706">Get-AzVirtualHubRouteTable</span></span>
-        - <span data-ttu-id="de109-707">Remove-AzVirtualHubRouteTable</span><span class="sxs-lookup"><span data-stu-id="de109-707">Remove-AzVirtualHubRouteTable</span></span>
-        - <span data-ttu-id="de109-708">Set-AzVirtualHub</span><span class="sxs-lookup"><span data-stu-id="de109-708">Set-AzVirtualHub</span></span>
-* <span data-ttu-id="de109-709">VirtualWan'ın yeni VirtualHub ve VirtualWANType özellikleri Sku'su için destek eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-709">Add support for new properties Sku of VirtualHub and VirtualWANType of VirtualWan</span></span>
-    - <span data-ttu-id="de109-710">Cmdlet'ler isteğe bağlı parametrelerle güncelleştirildi:</span><span class="sxs-lookup"><span data-stu-id="de109-710">Cmdlets updated with optional parameters:</span></span>
-        - <span data-ttu-id="de109-711">New-AzVirtualHub : Sku parametresi eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-711">New-AzVirtualHub : added parameter Sku</span></span>
-        - <span data-ttu-id="de109-712">Update-AzVirtualHub : Sku parametresi eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-712">Update-AzVirtualHub : added parameter Sku</span></span>
-        - <span data-ttu-id="de109-713">New-AzVirtualWan : VirtualWANType parametresi eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-713">New-AzVirtualWan : added parameter VirtualWANType</span></span>
-        - <span data-ttu-id="de109-714">Update-AzVirtualWan : VirtualWANType parametresi eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-714">Update-AzVirtualWan : added parameter VirtualWANType</span></span>
-* <span data-ttu-id="de109-715">HubVnetConnection, VpnConnection ve ExpressRouteConnection için EnableInternetSecurity özelliği desteği eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-715">Add support for EnableInternetSecurity property for HubVnetConnection, VpnConnection and ExpressRouteConnection</span></span>
-    - <span data-ttu-id="de109-716">Yeni cmdlet'ler eklendi:</span><span class="sxs-lookup"><span data-stu-id="de109-716">New cmdlets added:</span></span>
-        - <span data-ttu-id="de109-717">Update-AzureRmVirtualHubVnetConnection</span><span class="sxs-lookup"><span data-stu-id="de109-717">Update-AzureRmVirtualHubVnetConnection</span></span>
-    - <span data-ttu-id="de109-718">Cmdlet'ler isteğe bağlı parametrelerle güncelleştirildi:</span><span class="sxs-lookup"><span data-stu-id="de109-718">Cmdlets updated with optional parameters:</span></span>
-        - <span data-ttu-id="de109-719">New-AzureRmVirtualHubVnetConnection : EnableInternetSecurity parametresi eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-719">New-AzureRmVirtualHubVnetConnection : added parameter EnableInternetSecurity</span></span>
-        - <span data-ttu-id="de109-720">New-AzureRmVpnConnection : EnableInternetSecurity parametresi eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-720">New-AzureRmVpnConnection : added parameter EnableInternetSecurity</span></span>
-        - <span data-ttu-id="de109-721">Update-AzureRmVpnConnection : EnableInternetSecurity parametresi eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-721">Update-AzureRmVpnConnection : added parameter EnableInternetSecurity</span></span>
-        - <span data-ttu-id="de109-722">New-AzureRmExpressRouteConnection : EnableInternetSecurity parametresi eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-722">New-AzureRmExpressRouteConnection : added parameter EnableInternetSecurity</span></span>
-        - <span data-ttu-id="de109-723">Set-AzureRmExpressRouteConnection : EnableInternetSecurity parametresi eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-723">Set-AzureRmExpressRouteConnection : added parameter EnableInternetSecurity</span></span>
-* <span data-ttu-id="de109-724">TopLevel WebApplicationFirewall İlkesini Yapılandırma desteği eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-724">Add support for Configuring TopLevel WebApplicationFirewall Policy</span></span>
-    - <span data-ttu-id="de109-725">Yeni cmdlet'ler eklendi:</span><span class="sxs-lookup"><span data-stu-id="de109-725">New cmdlets added:</span></span>
-        - <span data-ttu-id="de109-726">New-AzApplicationGatewayFirewallPolicySetting</span><span class="sxs-lookup"><span data-stu-id="de109-726">New-AzApplicationGatewayFirewallPolicySetting</span></span>
-        - <span data-ttu-id="de109-727">New-AzApplicationGatewayFirewallPolicyExclusion</span><span class="sxs-lookup"><span data-stu-id="de109-727">New-AzApplicationGatewayFirewallPolicyExclusion</span></span>
-        - <span data-ttu-id="de109-728">New-AzApplicationGatewayFirewallPolicyManagedRuleGroupOverride</span><span class="sxs-lookup"><span data-stu-id="de109-728">New-AzApplicationGatewayFirewallPolicyManagedRuleGroupOverride</span></span>
-        - <span data-ttu-id="de109-729">New-AzApplicationGatewayFirewallPolicyManagedRuleOverride</span><span class="sxs-lookup"><span data-stu-id="de109-729">New-AzApplicationGatewayFirewallPolicyManagedRuleOverride</span></span>
-        - <span data-ttu-id="de109-730">New-AzApplicationGatewayFirewallPolicyManagedRule</span><span class="sxs-lookup"><span data-stu-id="de109-730">New-AzApplicationGatewayFirewallPolicyManagedRule</span></span>
-        - <span data-ttu-id="de109-731">New-AzApplicationGatewayFirewallPolicyManagedRuleSet</span><span class="sxs-lookup"><span data-stu-id="de109-731">New-AzApplicationGatewayFirewallPolicyManagedRuleSet</span></span>
-    - <span data-ttu-id="de109-732">Cmdlet'ler isteğe bağlı parametrelerle güncelleştirildi:</span><span class="sxs-lookup"><span data-stu-id="de109-732">Cmdlets updated with optional parameters:</span></span>
-        - <span data-ttu-id="de109-733">New-AzApplicationGatewayFirewallPolicy : PolicySetting, ManagedRule parametreleri eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-733">New-AzApplicationGatewayFirewallPolicy : added parameter PolicySetting, ManagedRule</span></span>
-* <span data-ttu-id="de109-734">CustomRule'da Geo-Match işleci için destek eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-734">Added support for Geo-Match operator on CustomRule</span></span>
-    - <span data-ttu-id="de109-735">FirewallCondition'da işlece GeoMatch eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-735">Added GeoMatch to the operator on the FirewallCondition</span></span>
-* <span data-ttu-id="de109-736">perListener ve perSite Güvenlik duvarı ilkesi için destek eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-736">Added support for perListener and perSite Firewall policy</span></span>
-    - <span data-ttu-id="de109-737">Cmdlet'ler isteğe bağlı parametrelerle güncelleştirildi:</span><span class="sxs-lookup"><span data-stu-id="de109-737">Cmdlets updated with optional parameters:</span></span>
-        - <span data-ttu-id="de109-738">New-AzApplicationGatewayHttpListener : FirewallPolicy, FirewallPolicyId parametreleri eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-738">New-AzApplicationGatewayHttpListener : added parameter FirewallPolicy, FirewallPolicyId</span></span>
-        - <span data-ttu-id="de109-739">New-AzApplicationGatewayPathRuleConfig : FirewallPolicy, FirewallPolicyId parametreleri eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-739">New-AzApplicationGatewayPathRuleConfig : added parameter FirewallPolicy, FirewallPolicyId</span></span>
-* <span data-ttu-id="de109-740">'PSBastion' içinde AzureBastionSubnet adlı gerekli alt ağın büyük/küçük harfe duyarlı olması düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-740">Fix required subnet with name AzureBastionSubnet in 'PSBastion' can be case insensitive</span></span>
-* <span data-ttu-id="de109-741">Azure Güvenlik Duvarı için Ağ Kurallarında Hedef FQDN'lere ve NAT Kurallarında Çevrilmiş FQDN'ye yönelik destek</span><span class="sxs-lookup"><span data-stu-id="de109-741">Support for Destination FQDNs in Network Rules and Translated FQDN in NAT Rules for Azure Firewall</span></span>
-* <span data-ttu-id="de109-742">IpGroup'un RouteTables üst düzey kaynağı için destek eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-742">Add support for top level resource RouteTables of IpGroup</span></span>
-    - <span data-ttu-id="de109-743">Yeni cmdlet'ler eklendi:</span><span class="sxs-lookup"><span data-stu-id="de109-743">New cmdlets added:</span></span>
-        - <span data-ttu-id="de109-744">New-AzIpGroup</span><span class="sxs-lookup"><span data-stu-id="de109-744">New-AzIpGroup</span></span>
-        - <span data-ttu-id="de109-745">Remove-AzIpGroup</span><span class="sxs-lookup"><span data-stu-id="de109-745">Remove-AzIpGroup</span></span>
-        - <span data-ttu-id="de109-746">Get-AzIpGroup</span><span class="sxs-lookup"><span data-stu-id="de109-746">Get-AzIpGroup</span></span>
-        - <span data-ttu-id="de109-747">Set-AzIpGroup</span><span class="sxs-lookup"><span data-stu-id="de109-747">Set-AzIpGroup</span></span>
-
-#### <a name="azservicefabric"></a><span data-ttu-id="de109-748">Az.ServiceFabric</span><span class="sxs-lookup"><span data-stu-id="de109-748">Az.ServiceFabric</span></span>
-* <span data-ttu-id="de109-749">Bu senaryo artık Add-AzVmssSecret cmdlet'inin kapsamına girdiğinden Add-AzServiceFabricApplicationCertificate cmdlet'i kaldırıldı.</span><span class="sxs-lookup"><span data-stu-id="de109-749">Remove Add-AzServiceFabricApplicationCertificate cmdlet as this scenario is covered by Add-AzVmssSecret.</span></span>
-
-#### <a name="azsql"></a><span data-ttu-id="de109-750">Az.Sql</span><span class="sxs-lookup"><span data-stu-id="de109-750">Az.Sql</span></span>
-* <span data-ttu-id="de109-751">Yönetilen Örneklerde bırakılan veritabanlarını geri yükleme desteği eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-751">Added support for restore of dropped databases on Managed Instances.</span></span>
-* <span data-ttu-id="de109-752">Eski denetim cmdlet'leri kodda kullanım dışı bırakıldı.</span><span class="sxs-lookup"><span data-stu-id="de109-752">Deprecated from code old auditing cmdlets.</span></span>
-* <span data-ttu-id="de109-753">Kullanım dışı bırakılan diğer adlar kaldırıldı:</span><span class="sxs-lookup"><span data-stu-id="de109-753">Removed deprecated aliases:</span></span>
-* <span data-ttu-id="de109-754">Get-AzSqlDatabaseIndexRecommendations (bunun yerine Get-AzSqlDatabaseIndexRecommendation kullanın)</span><span class="sxs-lookup"><span data-stu-id="de109-754">Get-AzSqlDatabaseIndexRecommendations (use Get-AzSqlDatabaseIndexRecommendation instead)</span></span>
-* <span data-ttu-id="de109-755">Get-AzSqlDatabaseRestorePoints (bunun yerine Get-AzSqlDatabaseRestorePoint kullanıldı)</span><span class="sxs-lookup"><span data-stu-id="de109-755">Get-AzSqlDatabaseRestorePoints (use Get-AzSqlDatabaseRestorePoint instead)</span></span>
-* <span data-ttu-id="de109-756">Get-AzSqlDatabaseSecureConnectionPolicy cmdlet'i kaldırıldı</span><span class="sxs-lookup"><span data-stu-id="de109-756">Remove Get-AzSqlDatabaseSecureConnectionPolicy cmdlet</span></span>
-* <span data-ttu-id="de109-757">Kullanım dışı bırakılan Güvenlik Açığı Değerlendirmesi Ayarları cmdlet'lerinin diğer adları kaldırıldı</span><span class="sxs-lookup"><span data-stu-id="de109-757">Remove aliases for deprecated Vulnerability Assessment Settings cmdlets</span></span>
-* <span data-ttu-id="de109-758">Gelişmiş Tehdit Algılama Ayarları cmdlet'leri kullanım dışı bırakıldı</span><span class="sxs-lookup"><span data-stu-id="de109-758">Deprecate Advanced Threat Detection Settings cmdlets</span></span>
-* <span data-ttu-id="de109-759">Veritabanındaki sütunlarda duyarlılık önerilerini devre dışı bırakma ve etkinleştirme cmdlet'leri eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-759">Adding cmdlets to Disable and enable sensitivity recommendations on columns in a database.</span></span>
-
-#### <a name="azstorage"></a><span data-ttu-id="de109-760">Az.Storage</span><span class="sxs-lookup"><span data-stu-id="de109-760">Az.Storage</span></span>
-* <span data-ttu-id="de109-761">Depolama hesabı oluşturulur veya güncelleştirilirken Büyük dosya paylaşımını etkinleştirme desteği</span><span class="sxs-lookup"><span data-stu-id="de109-761">Support enable Large File share when create or update Storage account</span></span>
-    -  <span data-ttu-id="de109-762">New-AzStorageAccount</span><span class="sxs-lookup"><span data-stu-id="de109-762">New-AzStorageAccount</span></span>
-    -  <span data-ttu-id="de109-763">Set-AzStorageAccount</span><span class="sxs-lookup"><span data-stu-id="de109-763">Set-AzStorageAccount</span></span>
-* <span data-ttu-id="de109-764">Dosya işleyicisi kapatılırken/alınırken, DeletePending durumundaki nesnesinde hata olmasını önlemek için giriş yolunun Dosya dizini mi yoksa Dosya mı olduğunu denetlemeyi atlayın</span><span class="sxs-lookup"><span data-stu-id="de109-764">When close/get File handle, skip check the input path is File directory or File, to avoid failure with object in DeletePending status</span></span>
-    -  <span data-ttu-id="de109-765">Get-AzStorageFileHandle</span><span class="sxs-lookup"><span data-stu-id="de109-765">Get-AzStorageFileHandle</span></span>
-    -  <span data-ttu-id="de109-766">Close-AzStorageFileHandle</span><span class="sxs-lookup"><span data-stu-id="de109-766">Close-AzStorageFileHandle</span></span>
-
-## <a name="280---october-2019"></a><span data-ttu-id="de109-767">2.8.0 - Ekim 2019</span><span class="sxs-lookup"><span data-stu-id="de109-767">2.8.0 - October 2019</span></span>
-### <a name="general"></a><span data-ttu-id="de109-768">Genel</span><span class="sxs-lookup"><span data-stu-id="de109-768">General</span></span>
-* <span data-ttu-id="de109-769">Az.HealthcareApis 1.0.0 sürümü</span><span class="sxs-lookup"><span data-stu-id="de109-769">Az.HealthcareApis 1.0.0 release</span></span>
-
-#### <a name="azaccounts"></a><span data-ttu-id="de109-770">Az.Accounts</span><span class="sxs-lookup"><span data-stu-id="de109-770">Az.Accounts</span></span>
-* <span data-ttu-id="de109-771">Oluşturulan modüller için telemetri ve URL’yi yeniden yazma özelliği güncelleştirildi, Windows birim testleri düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="de109-771">Update telemetry and url rewriting for generated modules, fix windows unit tests.</span></span>
-
-#### <a name="azapimanagement"></a><span data-ttu-id="de109-772">Az.ApiManagement</span><span class="sxs-lookup"><span data-stu-id="de109-772">Az.ApiManagement</span></span>
-* <span data-ttu-id="de109-773">**Set-AzApiManagementApi** - ApiVersionSet’e Güncelleştirme API’si desteği eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-773">**Set-AzApiManagementApi** - Added support for Updating Api into ApiVersionSet</span></span>
-    - <span data-ttu-id="de109-774">[https://github.com/Azure/azure-powershell/issues/10068](https://github.com/Azure/azure-powershell/issues/10068 ) sorunu düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-774">Fix for issue https://github.com/Azure/azure-powershell/issues/10068</span></span>
-
-#### <a name="azautomation"></a><span data-ttu-id="de109-775">Az.Automation</span><span class="sxs-lookup"><span data-stu-id="de109-775">Az.Automation</span></span>
-* <span data-ttu-id="de109-776">Linux yeniden başlatma ayarı parametresi için New-AzureAutomationSoftwareUpdateConfiguration cmdlet’i düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="de109-776">Fixed New-AzureAutomationSoftwareUpdateConfiguration cmdlet for Linux reboot setting parameter.</span></span>
-
-#### <a name="azbatch"></a><span data-ttu-id="de109-777">Az.Batch</span><span class="sxs-lookup"><span data-stu-id="de109-777">Az.Batch</span></span>
-* <span data-ttu-id="de109-778">Kullanımdan kaldırılan **Get-AzBatchNodeAgentSku** yerine 2.0.0 sürümünde **Get-AzBatchSupportImage** kullanıma sunulacak.</span><span class="sxs-lookup"><span data-stu-id="de109-778">**Get-AzBatchNodeAgentSku** is deprecated and will be replaced by **Get-AzBatchSupportImage** in version 2.0.0.</span></span>
-
-#### <a name="azcompute"></a><span data-ttu-id="de109-779">Az.Compute</span><span class="sxs-lookup"><span data-stu-id="de109-779">Az.Compute</span></span>
-* <span data-ttu-id="de109-780">New-AzVM ve New-AzVmss cmdlet’lerine Priority, EvictionPolicy ve MaxPrice parametreleri eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-780">Add Priority, EvictionPolicy, and MaxPrice parameters to New-AzVM and New-AzVmss cmdlets</span></span>
-* <span data-ttu-id="de109-781">Add-AzVMAdditionalUnattendContent ve Add-AzVMSshPublicKey cmdlet’leri için uyarı iletisi ve yardım belgesi düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-781">Fix warning message and help document for Add-AzVMAdditionalUnattendContent and Add-AzVMSshPublicKey cmdlets</span></span>
-* <span data-ttu-id="de109-782">Set-AzVMDiskEncryptionExtension için yönetilen diskleri olan Linux VM’lere yönelik -skipVmBackup özel durumu düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="de109-782">Fix -skipVmBackup exception for Linux VMs with managed disks for Set-AzVMDiskEncryptionExtension.</span></span>
-* <span data-ttu-id="de109-783">Set-AzVMDiskEncryptionExtension’daki iki geçişli senaryoda güncelleştirme şifreleme ayarlarındaki hata düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="de109-783">Fix bug in update encryption settings in Set-AzVMDiskEncryptionExtension, two pass scenario.</span></span>
-
-#### <a name="azdatafactory"></a><span data-ttu-id="de109-784">Az.DataFactory</span><span class="sxs-lookup"><span data-stu-id="de109-784">Az.DataFactory</span></span>
-* <span data-ttu-id="de109-785">ADF V2 veri akışı için CRUD komutları eklendi: Set-AzDataFactoryV2DataFlow, Remove-AzDataFactoryV2DataFlow, ve Get-AzDataFactoryV2DataFlow.</span><span class="sxs-lookup"><span data-stu-id="de109-785">Adding CRUD commands for ADF V2 data flow: Set-AzDataFactoryV2DataFlow, Remove-AzDataFactoryV2DataFlow, and Get-AzDataFactoryV2DataFlow.</span></span>
-* <span data-ttu-id="de109-786">ADF V2 veri akışı hata ayıklama oturumu için eylem komutları eklendi: Start-AzDataFactoryV2DataFlowDebugSession, Get-AzDataFactoryV2DataFlowDebugSession, Add-AzDataFactoryV2DataFlowDebugSessionPackage, Invoke-AzDataFactoryV2DataFlowDebugSessionCommand ve Stop-AzDataFactoryV2DataFlowDebugSession.</span><span class="sxs-lookup"><span data-stu-id="de109-786">Adding action commands for ADF V2 data flow debug Session: Start-AzDataFactoryV2DataFlowDebugSession, Get-AzDataFactoryV2DataFlowDebugSession, Add-AzDataFactoryV2DataFlowDebugSessionPackage, Invoke-AzDataFactoryV2DataFlowDebugSessionCommand and Stop-AzDataFactoryV2DataFlowDebugSession.</span></span>
-* <span data-ttu-id="de109-787">ADF .Net SDK sürümü 4.2.0’a güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-787">Update ADF .Net SDK version to 4.2.0</span></span>
-
-#### <a name="azdatalakestore"></a><span data-ttu-id="de109-788">Az.DataLakeStore</span><span class="sxs-lookup"><span data-stu-id="de109-788">Az.DataLakeStore</span></span>
-* <span data-ttu-id="de109-789">‘-’ içeren hesapların etki alanı olmadan geçirilebilmesi için hesap doğrulama düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-789">Fix account validation so that accounts with '-' can be passed without domain</span></span>
-
-#### <a name="azhealthcareapis"></a><span data-ttu-id="de109-790">Az.HealthcareApis</span><span class="sxs-lookup"><span data-stu-id="de109-790">Az.HealthcareApis</span></span>
-* <span data-ttu-id="de109-791">PowerShell sürümü 1.0.0 olarak güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-791">Updated the powershell version to 1.0.0</span></span>
-* <span data-ttu-id="de109-792">SDK sürümü 1.0.2 olarak güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-792">Updated the SDK version to 1.0.2</span></span>
-* <span data-ttu-id="de109-793">Yeni SDK sürümüne başvurmaları için testler güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-793">Update in tests to refer to new SDK version</span></span>
-* <span data-ttu-id="de109-794">İç içe geçmiş çıkış yapısı, düzleştirilmiş olarak güncelleştirildi.</span><span class="sxs-lookup"><span data-stu-id="de109-794">Updated the output structure from nested to flattened.</span></span>
-
-#### <a name="aziothub"></a><span data-ttu-id="de109-795">Az.IotHub</span><span class="sxs-lookup"><span data-stu-id="de109-795">Az.IotHub</span></span>
-* <span data-ttu-id="de109-796">Yeni yönlendirme kaynağı eklendi: DigitalTwinChangeEvents</span><span class="sxs-lookup"><span data-stu-id="de109-796">Add new routing source: DigitalTwinChangeEvents</span></span>
-* <span data-ttu-id="de109-797">Küçük hata düzeltmesi: Get-AzIothub SubscriptionId öğesini döndürmüyor</span><span class="sxs-lookup"><span data-stu-id="de109-797">Minor bug fix: Get-AzIothub not returning subscriptionId</span></span>
-
-#### <a name="azmonitor"></a><span data-ttu-id="de109-798">Az.Monitor</span><span class="sxs-lookup"><span data-stu-id="de109-798">Az.Monitor</span></span>
-* <span data-ttu-id="de109-799">Eylem grupları -ItsmReceiver -VoiceReceiver -ArmRoleReceiver -AzureFunctionReceiver -LogicAppReceiver -AutomationRunbookReceiver -AzureAppPushReceiver için yeni eylem grubu alıcıları eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-799">New action group receivers added for action group   -ItsmReceiver   -VoiceReceiver   -ArmRoleReceiver   -AzureFunctionReceiver   -LogicAppReceiver   -AutomationRunbookReceiver   -AzureAppPushReceiver</span></span>
-* <span data-ttu-id="de109-800">Alıcılar için etkinleştirilen ortak uyarı şemasını kullanın.</span><span class="sxs-lookup"><span data-stu-id="de109-800">Use common alert schema enabled for the receivers.</span></span> <span data-ttu-id="de109-801">Bunlar SMS, Azure Uygulaması iletimi, ITSM ve ses alıcıları için geçerli değildir</span><span class="sxs-lookup"><span data-stu-id="de109-801">This is not applicable for SMS, Azure App push , ITSM and Voice recievers</span></span>
-* <span data-ttu-id="de109-802">Web kancaları artık Azure Active Directory kimlik doğrulamasını destekliyor.</span><span class="sxs-lookup"><span data-stu-id="de109-802">Webhooks now supports Azure active directory authentication .</span></span>
-
-#### <a name="aznetwork"></a><span data-ttu-id="de109-803">Az.Network</span><span class="sxs-lookup"><span data-stu-id="de109-803">Az.Network</span></span>
-* <span data-ttu-id="de109-804">Hizmet Uç Noktası İlkeleri için kullanılabilen diğer adları almak için çağrılabilen Get-AzAvailableServiceAlias cmdlet’i eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-804">Add new cmdlet Get-AzAvailableServiceAlias which can be called to get the aliases that can be used for Service Endpoint Policies.</span></span>
-* <span data-ttu-id="de109-805">Sanal Ağ Geçidi Bağlantılarına trafik seçicileri eklemeye yönelik destek eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-805">Added support for the adding traffic selectors to Virtual Network Gateway Connections</span></span>
-    - <span data-ttu-id="de109-806">Yeni cmdlet'ler eklendi:</span><span class="sxs-lookup"><span data-stu-id="de109-806">New cmdlets added:</span></span>
-        - <span data-ttu-id="de109-807">New-AzureRmTrafficSelectorPolicy</span><span class="sxs-lookup"><span data-stu-id="de109-807">New-AzureRmTrafficSelectorPolicy</span></span>
-    - <span data-ttu-id="de109-808">Cmdlet’ler, şu isteğe bağlı parametreler ile güncelleştirildi: -TrafficSelectorPolicies -New-AzureRmVirtualNetworkGatewayConnection -Set-AzureRmVirtualNetworkGatewayConnection</span><span class="sxs-lookup"><span data-stu-id="de109-808">Cmdlets updated with optional parameter -TrafficSelectorPolicies   -New-AzureRmVirtualNetworkGatewayConnection   -Set-AzureRmVirtualNetworkGatewayConnection</span></span>
-* <span data-ttu-id="de109-809">Ağ güvenlik kuralı yapılandırmalarında ESP ve AH protokollerine yönelik destek eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-809">Add support for ESP and AH protocols in network security rule configurations</span></span>
-    - <span data-ttu-id="de109-810">Cmdlet'ler güncelleştirildi:</span><span class="sxs-lookup"><span data-stu-id="de109-810">Updated cmdlets:</span></span>
-        - <span data-ttu-id="de109-811">Add-AzNetworkSecurityRuleConfig</span><span class="sxs-lookup"><span data-stu-id="de109-811">Add-AzNetworkSecurityRuleConfig</span></span>
-        - <span data-ttu-id="de109-812">New-AzNetworkSecurityRuleConfig</span><span class="sxs-lookup"><span data-stu-id="de109-812">New-AzNetworkSecurityRuleConfig</span></span>
-        - <span data-ttu-id="de109-813">Set-AzNetworkSecurityRuleConfig</span><span class="sxs-lookup"><span data-stu-id="de109-813">Set-AzNetworkSecurityRuleConfig</span></span>
-* <span data-ttu-id="de109-814">Cortex cmdlet’lerinde özel durumların işlenmesi geliştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-814">Improve handling of exceptions in Cortex cmdlets</span></span>
-* <span data-ttu-id="de109-815">VirtualNetworkGateways için yeni Nesiller ve SKU’lar</span><span class="sxs-lookup"><span data-stu-id="de109-815">New Generations and SKUs for VirtualNetworkGateways</span></span>
-  - <span data-ttu-id="de109-816">VirtualNetworkGateways için yeni Nesiller sunuldu.</span><span class="sxs-lookup"><span data-stu-id="de109-816">Introduce new Generations for VirtualNetworkGateways.</span></span>
-  - <span data-ttu-id="de109-817">VirtualNetworkGateways için yüksek verimliliğe sahip yeni SKU’lar sunuldu.</span><span class="sxs-lookup"><span data-stu-id="de109-817">Introduce new high throughput SKUs for VirtualNetworkGateways.</span></span>
-
-#### <a name="azrediscache"></a><span data-ttu-id="de109-818">Az.RedisCache</span><span class="sxs-lookup"><span data-stu-id="de109-818">Az.RedisCache</span></span>
-* <span data-ttu-id="de109-819">‘-Size’ parametresine yönelik eksik değerleri eklemek için ‘Set-AzRedisCache’ başvuru belgesi güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-819">Updated 'Set-AzRedisCache' reference documentation to include missing values for '-Size' parameter</span></span>
-
-#### <a name="azsql"></a><span data-ttu-id="de109-820">Az.Sql</span><span class="sxs-lookup"><span data-stu-id="de109-820">Az.Sql</span></span>
-* <span data-ttu-id="de109-821">Yönetilen örnekte Active Directory yöneticisini ayarlama desteği eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-821">Add support for setting Active Directory Administrator on Managed Instance</span></span>
-
-#### <a name="azstorage"></a><span data-ttu-id="de109-822">Az.Storage</span><span class="sxs-lookup"><span data-stu-id="de109-822">Az.Storage</span></span>
-* <span data-ttu-id="de109-823">Depolama İstemcisi Kitaplığı 11.1.0 sürümüne yükseltildi</span><span class="sxs-lookup"><span data-stu-id="de109-823">Upgrade Storage Client Library to 11.1.0</span></span>
-* <span data-ttu-id="de109-824">Yönetim düzlemi API’si olan liste kapsayıcıları NextPageLink ile listelenecek</span><span class="sxs-lookup"><span data-stu-id="de109-824">List containers with Management plane API, will list with NextPageLink</span></span>
-    -  <span data-ttu-id="de109-825">Get-AzRmStorageContainer</span><span class="sxs-lookup"><span data-stu-id="de109-825">Get-AzRmStorageContainer</span></span>
-* <span data-ttu-id="de109-826">Abonelikteki Liste Depolama hesapları NextPageLink ile listelenecek</span><span class="sxs-lookup"><span data-stu-id="de109-826">List Storage accounts from subscription, will list with NextPageLink</span></span>
-    -  <span data-ttu-id="de109-827">Get-AzStorageAccount</span><span class="sxs-lookup"><span data-stu-id="de109-827">Get-AzStorageAccount</span></span>
-
-#### <a name="azstoragesync"></a><span data-ttu-id="de109-828">Az.StorageSync</span><span class="sxs-lookup"><span data-stu-id="de109-828">Az.StorageSync</span></span>
-* <span data-ttu-id="de109-829">Reset-AzStorageSyncServerCertificate öğesinde Sorun 9810 düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="de109-829">Fix Issue 9810 in Reset-AzStorageSyncServerCertificate.</span></span>
-
-#### <a name="azwebsites"></a><span data-ttu-id="de109-830">Az.Websites</span><span class="sxs-lookup"><span data-stu-id="de109-830">Az.Websites</span></span>
-* <span data-ttu-id="de109-831">Bir uygulamanın ASP’sini güncelleştiren Set-AzWebApp başarısız oluyor</span><span class="sxs-lookup"><span data-stu-id="de109-831">Set-AzWebApp updating ASP of an app was failing</span></span>
-
-## <a name="270---september-2019"></a><span data-ttu-id="de109-832">2.7.0 - Eylül 2019</span><span class="sxs-lookup"><span data-stu-id="de109-832">2.7.0 - September 2019</span></span>
-#### <a name="azapimanagement"></a><span data-ttu-id="de109-833">Az.ApiManagement</span><span class="sxs-lookup"><span data-stu-id="de109-833">Az.ApiManagement</span></span>
-* <span data-ttu-id="de109-834">'Set-AzApiManagementPolicy' başvuru belgesindeki '-Format' parametresinin açıklaması güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-834">Update '-Format' parameter description in 'Set-AzApiManagementPolicy' reference documentation</span></span>
-* <span data-ttu-id="de109-835">Kullanım dışı bırakılan 'Update-AzApiManagementDeployment' cmdlet’ine başvurular, başvuru belgesinden kaldırıldı.</span><span class="sxs-lookup"><span data-stu-id="de109-835">Removed references of deprecated cmdlet 'Update-AzApiManagementDeployment' from reference documentation.</span></span> <span data-ttu-id="de109-836">Bunun yerine 'Set-AzApiManagement' kullanın.</span><span class="sxs-lookup"><span data-stu-id="de109-836">Use 'Set-AzApiManagement' instead.</span></span>
-
-#### <a name="azautomation"></a><span data-ttu-id="de109-837">Az.Automation</span><span class="sxs-lookup"><span data-stu-id="de109-837">Az.Automation</span></span>
-* <span data-ttu-id="de109-838">'Register-AzAutomationDscNode' için başvuru belgesindeki örnek yazım yanlışı düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-838">Fixed example typo in reference documentation for 'Register-AzAutomationDscNode'</span></span>
-* <span data-ttu-id="de109-839">Register-AzAutomationDSCNode için işletim sistemi kısıtlamasına açıklama eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-839">Added clarification on OS restriction to Register-AzAutomationDSCNode</span></span>
-* <span data-ttu-id="de109-840">-Wait seçeneği için Start-AzAutomationRunbook cmdlet’i Null başvuru özel durumu düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="de109-840">Fixed Start-AzAutomationRunbook cmdlet Null reference exception for -Wait option.</span></span>
-
-#### <a name="azcompute"></a><span data-ttu-id="de109-841">Az.Compute</span><span class="sxs-lookup"><span data-stu-id="de109-841">Az.Compute</span></span>
-* <span data-ttu-id="de109-842">New-AzDiskConfig cmdlet’ine UploadSizeInBytes parametresi eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-842">Add UploadSizeInBytes parameter tp New-AzDiskConfig</span></span>
-* <span data-ttu-id="de109-843">New-AzSnapshotConfig cmdlet’ine Incremental parametresi eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-843">Add Incremental parameter to New-AzSnapshotConfig</span></span>
-* <span data-ttu-id="de109-844">Düşük öncelikli sanal makine özelliği eklendi:</span><span class="sxs-lookup"><span data-stu-id="de109-844">Add a low priority virtual machine feature:</span></span>
-    - <span data-ttu-id="de109-845">New-AzVMConfig cmdlet’ine MaxPrice, EvictionPolicy ve Priority parametreleri eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-845">MaxPrice, EvictionPolicy and Priority parameters are added to New-AzVMConfig.</span></span>
-    - <span data-ttu-id="de109-846">New-AzVmssConfig, Update-AzVM ve Update-AzVmss cmdlet’lerine MaxPrice parametresi eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-846">MaxPrice parameter is added to New-AzVmssConfig, Update-AzVM and Update-AzVmss cmdlets.</span></span>
-* <span data-ttu-id="de109-847">Get-AzAvailabilitySet cmdlet’i abonelikteki tüm kullanılabilirlik kümelerini listelediğinde oluşan VM başvuru sorunu düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="de109-847">Fix VM reference issue for Get-AzAvailabilitySet cmdlet when it lists all availability sets in the subscription.</span></span>
-* <span data-ttu-id="de109-848">Get-AzRemoteDesktopFile için null özel durumu düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="de109-848">Fix the null exception for Get-AzRemoteDesktopFile.</span></span>
-* <span data-ttu-id="de109-849">Sona göre konum için VHD Seek yöntemi düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="de109-849">Fix VHD Seek method for end-relative position.</span></span>
-* <span data-ttu-id="de109-850">New-AzVM ve Update-AzVM için UltraSSD sorunu düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="de109-850">Fix UltraSSD issue for New-AzVM and Update-AzVM.</span></span>
-
-#### <a name="azdatafactory"></a><span data-ttu-id="de109-851">Az.DataFactory</span><span class="sxs-lookup"><span data-stu-id="de109-851">Az.DataFactory</span></span>
-* <span data-ttu-id="de109-852">ADF V2’ye 3 yeni komut eklendi - Add-AzDataFactoryV2TriggerSubscription, Remove-AzDataFactoryV2TriggerSubscription ve Get-AzDataFactoryV2TriggerSubscriptionStatus</span><span class="sxs-lookup"><span data-stu-id="de109-852">Adding 3 new commands for ADF V2 - Add-AzDataFactoryV2TriggerSubscription, Remove-AzDataFactoryV2TriggerSubscription, and Get-AzDataFactoryV2TriggerSubscriptionStatus</span></span>
-* <span data-ttu-id="de109-853">ADF .Net SDK sürümü 4.1.3’e güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-853">Updated ADF .Net SDK version to 4.1.3</span></span>
-
-#### <a name="azhdinsight"></a><span data-ttu-id="de109-854">Az.HDInsight</span><span class="sxs-lookup"><span data-stu-id="de109-854">Az.HDInsight</span></span>
-* <span data-ttu-id="de109-855">Son değişiklikler duyurusu</span><span class="sxs-lookup"><span data-stu-id="de109-855">Call out breaking changes</span></span>
-
-#### <a name="aziothub"></a><span data-ttu-id="de109-856">Az.IotHub</span><span class="sxs-lookup"><span data-stu-id="de109-856">Az.IotHub</span></span>
-* <span data-ttu-id="de109-857">Coğrafi olarak eşleştirilmiş olağanüstü durum kurtarma bölgesine bir IotHub için yük devretme çağırmaya yönelik destek eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-857">Add support to invoke failover for an IotHub to the geo-paired disaster recovery region.</span></span>
-* <span data-ttu-id="de109-858">IotHub için ileti zenginleştirmelerini yönetmeye yönelik destek eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-858">Add support to manage message enrichment for an IotHub.</span></span> <span data-ttu-id="de109-859">Yeni cmdlet’ler şunlardır:</span><span class="sxs-lookup"><span data-stu-id="de109-859">New cmdlets are:</span></span>
-    - <span data-ttu-id="de109-860">Add-AzIotHubMessageEnrichment</span><span class="sxs-lookup"><span data-stu-id="de109-860">Add-AzIotHubMessageEnrichment</span></span>
-    - <span data-ttu-id="de109-861">Get-AzIotHubMessageEnrichment</span><span class="sxs-lookup"><span data-stu-id="de109-861">Get-AzIotHubMessageEnrichment</span></span>
-    - <span data-ttu-id="de109-862">Remove-AzIotHubMessageEnrichment</span><span class="sxs-lookup"><span data-stu-id="de109-862">Remove-AzIotHubMessageEnrichment</span></span>
-    - <span data-ttu-id="de109-863">Set-AzIotHubMessageEnrichment</span><span class="sxs-lookup"><span data-stu-id="de109-863">Set-AzIotHubMessageEnrichment</span></span>
-
-#### <a name="azmonitor"></a><span data-ttu-id="de109-864">Az.Monitor</span><span class="sxs-lookup"><span data-stu-id="de109-864">Az.Monitor</span></span>
-* <span data-ttu-id="de109-865">En son İzleme SDK’sını, yani 0.24.1-preview sürümünü işaret eder</span><span class="sxs-lookup"><span data-stu-id="de109-865">Pointing to the most recent Monitor SDK, i.e. 0.24.1-preview</span></span>
-   - <span data-ttu-id="de109-866">Ölçüm cmdlet’lerine hataya neden olmayan değişiklikler ekler, yani Birim sabit listesi birçok yeni değeri destekler.</span><span class="sxs-lookup"><span data-stu-id="de109-866">Adds non-braking changes to the Metrics cmdlets, i.e. the Unit enumeration supports several new values.</span></span> <span data-ttu-id="de109-867">Bunlar salt okunur cmdlet’ler olduğundan girişlerinde değişiklik olmaz.</span><span class="sxs-lookup"><span data-stu-id="de109-867">These are read-only cmdlets, so there would be no change in the input of the cmdlets.</span></span>
-   - <span data-ttu-id="de109-868">**ActionGroups** istekleri için api-version şimdi **2019-06-01** değerine sahiptir. Önceden **2018-03-01** sürümü kullanılıyordu.</span><span class="sxs-lookup"><span data-stu-id="de109-868">The api-version of the **ActionGroups** requests is now **2019-06-01**, before it was **2018-03-01**.</span></span> <span data-ttu-id="de109-869">Senaryo testleri bu değişikliğe uyum sağlayacak şekilde güncelleştirildi.</span><span class="sxs-lookup"><span data-stu-id="de109-869">The scenario tests have been updated to accommodate for this change.</span></span>
-   - <span data-ttu-id="de109-870">**EmailReceiver** ve **WebhookReceiver** sınıfları için oluşturuculara yeni bir zorunlu bağımsız değişken (**useCommonAlertSchema** adlı bir Boole değeri) eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-870">The constructors for the classes **EmailReceiver** and **WebhookReceiver** added one new mandatory argument, i.e. a Boolean value called **useCommonAlertSchema**.</span></span> <span data-ttu-id="de109-871">Şu anda, hataya neden olan bu değişikliği cmdlet’lerden gizlemek için değer **false** olarak ayarlandı.</span><span class="sxs-lookup"><span data-stu-id="de109-871">Currently, the value is fixed to **false** to hide this breaking change from the cmdlets.</span></span> <span data-ttu-id="de109-872">**NOT**: Bu, Uyarılar ekibi tarafından doğrulanması gereken geçici bir değişikliktir.</span><span class="sxs-lookup"><span data-stu-id="de109-872">**NOTE**: this is a temporary change that must be validated by the Alerts team.</span></span>
-   - <span data-ttu-id="de109-873">**Kaynak** (**ScheduledQueryRuleSource** sınıfı ile ilişkili) sınıfının oluşturucusu için bağımsız değişkenlerin sırası önceki SDK’dan değiştirildi.</span><span class="sxs-lookup"><span data-stu-id="de109-873">The order of the arguments for the constructor of the class **Source** (related to the **ScheduledQueryRuleSource** class) changed from the previous SDK.</span></span> <span data-ttu-id="de109-874">Bu değişiklik iki birim testinin düzeltilmesini gerektirdi: Bunlar derlenebiliyor ancak testleri geçemiyordu.</span><span class="sxs-lookup"><span data-stu-id="de109-874">This change required two unit tests to the be fixed: they compiled, but failed to pass the tests.</span></span>
-   - <span data-ttu-id="de109-875">**AlertingAction** (**ScheduledQueryRuleSource** sınıfı ile ilişkili) sınıfının oluşturucusu için bağımsız değişkenlerin sırası önceki SDK’dan değiştirildi.</span><span class="sxs-lookup"><span data-stu-id="de109-875">The order of the arguments for the constructor of the class **AlertingAction** (related to the **ScheduledQueryRuleSource** class) changed from the previous SDK.</span></span> <span data-ttu-id="de109-876">Bu değişiklik iki birim testinin düzeltilmesini gerektirdi: Bunlar derlenebiliyor ancak testleri geçemiyordu.</span><span class="sxs-lookup"><span data-stu-id="de109-876">This change required two unit tests to the be fixed: they compiled, but failed to pass the tests.</span></span>
-* <span data-ttu-id="de109-877">Ölçüm uyarısı V2 için Dinamik Eşik ölçütlerine yönelik destek eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-877">Support Dynamic Threshold criteria for metric alert V2</span></span>
-    - <span data-ttu-id="de109-878">New-AzMetricAlertRuleV2Criteria: Şimdi dinamik eşik ölçütleri de oluşturur</span><span class="sxs-lookup"><span data-stu-id="de109-878">New-AzMetricAlertRuleV2Criteria: now creats dynamic threshold criteria also</span></span>
-    - <span data-ttu-id="de109-879">Add-AzMetricAlertRuleV2: Şimdi dinamik eşik ölçütlerini de kabul eder</span><span class="sxs-lookup"><span data-stu-id="de109-879">Add-AzMetricAlertRuleV2: now accept dynamic threshold criteria also</span></span>
-* <span data-ttu-id="de109-880">Zamanlanmış Sorgu Kuralı cmdlet’lerinde (SQR) geliştirmeler</span><span class="sxs-lookup"><span data-stu-id="de109-880">Improvements in Scheduled Query Rule cmdlets (SQR)</span></span>
- - <span data-ttu-id="de109-881">Cmdlet’ler 'Location' parametresini hem konum (ör. eastus) hem de konumun görünen adı (ör. Doğu ABD) biçiminde kabul eder</span><span class="sxs-lookup"><span data-stu-id="de109-881">Cmdlets will accept 'Location' paramater in both formats, either the location (e.g. eastus) or the location display name (e.g. East US)</span></span>
- - <span data-ttu-id="de109-882">'Enabled' parametresi yardım dosyalarında düzgün şekilde açıklandı</span><span class="sxs-lookup"><span data-stu-id="de109-882">Illustrated 'Enabled' parameter in help files properly</span></span>
- - <span data-ttu-id="de109-883">İsteğe bağlı 'ActionGroup' parametresi için örnekler eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-883">Added examples for 'ActionGroup' optional parameter</span></span>
- - <span data-ttu-id="de109-884">Yardım dosyaları genel olarak geliştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-884">Overall improved help files</span></span>
-* <span data-ttu-id="de109-885">'Set-AzActionRule' için kapsam türünü belirlemeyle ilgili bir hata düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-885">Fix bug in determining scope type for 'Set-AzActionRule'</span></span>
-
-#### <a name="aznetwork"></a><span data-ttu-id="de109-886">Az.Network</span><span class="sxs-lookup"><span data-stu-id="de109-886">Az.Network</span></span>
-* <span data-ttu-id="de109-887">'New-AzApplicationGateway' başvuru belgesindeki yanlış örnek düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-887">Fix incorrect example in 'New-AzApplicationGateway' reference documentation</span></span>
-* <span data-ttu-id="de109-888">'Get-AzNetworkWatcherPacketCapture' başvuru belgesine paket yakalama için tüm özellikleri almayla ilgili not eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-888">Add note in 'Get-AzNetworkWatcherPacketCapture' reference documentation about retrieving all properties for a packet capture</span></span>
-* <span data-ttu-id="de109-889">'Test-AzNetworkWatcherIPFlow' başvuru belgesindeki örnek, NIC’lerin doğru olarak numaralandırılacağı şekilde düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-889">Fixed example in 'Test-AzNetworkWatcherIPFlow' reference documentation to correctly enumerate NICs</span></span>
-* <span data-ttu-id="de109-890">Bulut özel durum ayrıştırması, mevcut olması durumunda daha fazla ayrıntı gösterecek şekilde iyileştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-890">Improved cloud exception parsing to display additional details if they are present</span></span>
-* <span data-ttu-id="de109-891">Bulut özel durum ayrıştırması, ek SDK özel durum türünü işleyecek şekilde geliştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-891">Improved cloud exception parsing to handle additional type of SDK exception</span></span>
-* <span data-ttu-id="de109-892">Güvenlik Kuralı modellerinin yanlış eşlenmesi düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-892">Fixed incorrect mapping of Security Rule models</span></span>
-* <span data-ttu-id="de109-893">Özel IP özelliği için ağ arabirimine özellikler eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-893">Added properties to network interface for private ip feature</span></span>
-    - <span data-ttu-id="de109-894">'PrivateEndpoint' özelliği PSResourceId türü olarak PSNetworkInterface öğesine eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-894">Added property 'PrivateEndpoint' as type of PSResourceId to PSNetworkInterface</span></span>
-    - <span data-ttu-id="de109-895">'PrivateLinkConnectionProperties' özelliği PSIpConfigurationConnectivityInformation türü olarak PSNetworkInterfaceIPConfiguration öğesine eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-895">Added property 'PrivateLinkConnectionProperties' as type of PSIpConfigurationConnectivityInformation to PSNetworkInterfaceIPConfiguration</span></span>
-    - <span data-ttu-id="de109-896">Yeni PSIpConfigurationConnectivityInformation model sınıfı eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-896">Added new model class PSIpConfigurationConnectivityInformation</span></span>
-* <span data-ttu-id="de109-897">Azure Güvenlik Duvarı kaynağı için 'mssql' adlı yeni ApplicationRuleProtocolType eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-897">Added new ApplicationRuleProtocolType 'mssql' for Azure Firewall resource</span></span>
-* <span data-ttu-id="de109-898">Sanal WAN’da çoklu bağlantı desteği</span><span class="sxs-lookup"><span data-stu-id="de109-898">MultiLink support in Virtual WAN</span></span>
-    - <span data-ttu-id="de109-899">Yeni cmdlet’ler</span><span class="sxs-lookup"><span data-stu-id="de109-899">New cmdlets</span></span>
-        - <span data-ttu-id="de109-900">New-AzVpnSiteLink</span><span class="sxs-lookup"><span data-stu-id="de109-900">New-AzVpnSiteLink</span></span>
-        - <span data-ttu-id="de109-901">New-AzVpnSiteLinkConnection</span><span class="sxs-lookup"><span data-stu-id="de109-901">New-AzVpnSiteLinkConnection</span></span>
-    - <span data-ttu-id="de109-902">Şu cmdlet güncelleştirildi:</span><span class="sxs-lookup"><span data-stu-id="de109-902">Updated cmdlet:</span></span>
-        - <span data-ttu-id="de109-903">New-VpnSite</span><span class="sxs-lookup"><span data-stu-id="de109-903">New-VpnSite</span></span>
-        - <span data-ttu-id="de109-904">Update-VpnSite</span><span class="sxs-lookup"><span data-stu-id="de109-904">Update-VpnSite</span></span>
-        - <span data-ttu-id="de109-905">New-VpnConnection</span><span class="sxs-lookup"><span data-stu-id="de109-905">New-VpnConnection</span></span>
-        - <span data-ttu-id="de109-906">Update-VpnConnection</span><span class="sxs-lookup"><span data-stu-id="de109-906">Update-VpnConnection</span></span>
-* <span data-ttu-id="de109-907">Belgeler, bazı PowerShell örneklerinde AzureRM cmdlet’leri yerine Az cmdlet’leri kullanılacak şekilde düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-907">Fixed documents for some PowerShell examples to use Az cmdlets instead of AzureRM cmdlets</span></span>
-
-#### <a name="azrecoveryservices"></a><span data-ttu-id="de109-908">Az.RecoveryServices</span><span class="sxs-lookup"><span data-stu-id="de109-908">Az.RecoveryServices</span></span>
-* <span data-ttu-id="de109-909">AzureVMpolicy Nesnesi, ProtectedItemsCount Özniteliği ile güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-909">Update AzureVMpolicy Object with ProtectedItemsCount Attribute</span></span>
-* <span data-ttu-id="de109-910">VM ilkesi ve Özgün Depolama Hesabı Geri Yükleme için Testler eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-910">Added Tests for VM policy and Original Storage Account Restore</span></span>
-
-#### <a name="azresources"></a><span data-ttu-id="de109-911">Az.Resources</span><span class="sxs-lookup"><span data-stu-id="de109-911">Az.Resources</span></span>
-* <span data-ttu-id="de109-912">New-AzRoleAssignment cmdlet’inin Scope parametresi olmadan çağrılamamasına neden olan bir hata düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="de109-912">Fix bug where New-AzRoleAssignment could not be called without parameter Scope.</span></span>
-
-#### <a name="azservicefabric"></a><span data-ttu-id="de109-913">Az.ServiceFabric</span><span class="sxs-lookup"><span data-stu-id="de109-913">Az.ServiceFabric</span></span>
-* <span data-ttu-id="de109-914">'Update-AzServiceFabricReliability' başvuru belgesindeki örnekteki yazım yanlışı düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-914">Fixed typo in example for 'Update-AzServiceFabricReliability' reference documentation</span></span>
-* <span data-ttu-id="de109-915">Uygulamaları ve hizmetleri yönetmek için yeni cmdlet’ler ekleniyor:</span><span class="sxs-lookup"><span data-stu-id="de109-915">Adding new cmdlets to manage appliaction and services:</span></span>
-    - <span data-ttu-id="de109-916">New-AzServiceFabricApplication</span><span class="sxs-lookup"><span data-stu-id="de109-916">New-AzServiceFabricApplication</span></span>
-    - <span data-ttu-id="de109-917">New-AzServiceFabricApplicationType</span><span class="sxs-lookup"><span data-stu-id="de109-917">New-AzServiceFabricApplicationType</span></span>
-    - <span data-ttu-id="de109-918">New-AzServiceFabricApplicationTypeVersion</span><span class="sxs-lookup"><span data-stu-id="de109-918">New-AzServiceFabricApplicationTypeVersion</span></span>
-    - <span data-ttu-id="de109-919">New-AzServiceFabricService</span><span class="sxs-lookup"><span data-stu-id="de109-919">New-AzServiceFabricService</span></span>
-    - <span data-ttu-id="de109-920">Update-AzServiceFabricApplication</span><span class="sxs-lookup"><span data-stu-id="de109-920">Update-AzServiceFabricApplication</span></span>
-    - <span data-ttu-id="de109-921">Get-AzServiceFabricApplication</span><span class="sxs-lookup"><span data-stu-id="de109-921">Get-AzServiceFabricApplication</span></span>
-    - <span data-ttu-id="de109-922">Get-AzServiceFabricApplicationType</span><span class="sxs-lookup"><span data-stu-id="de109-922">Get-AzServiceFabricApplicationType</span></span>
-    - <span data-ttu-id="de109-923">Get-AzServiceFabricApplicationTypeVersion</span><span class="sxs-lookup"><span data-stu-id="de109-923">Get-AzServiceFabricApplicationTypeVersion</span></span>
-    - <span data-ttu-id="de109-924">Get-AzServiceFabricService</span><span class="sxs-lookup"><span data-stu-id="de109-924">Get-AzServiceFabricService</span></span>
-    - <span data-ttu-id="de109-925">Remove-AzServiceFabricApplication</span><span class="sxs-lookup"><span data-stu-id="de109-925">Remove-AzServiceFabricApplication</span></span>
-    - <span data-ttu-id="de109-926">Remove-AzServiceFabricApplicationType</span><span class="sxs-lookup"><span data-stu-id="de109-926">Remove-AzServiceFabricApplicationType</span></span>
-    - <span data-ttu-id="de109-927">Remove-AzServiceFabricApplicationTypeVersion</span><span class="sxs-lookup"><span data-stu-id="de109-927">Remove-AzServiceFabricApplicationTypeVersion</span></span>
-    - <span data-ttu-id="de109-928">Remove-AzServiceFabricServic</span><span class="sxs-lookup"><span data-stu-id="de109-928">Remove-AzServiceFabricServic</span></span>
-* <span data-ttu-id="de109-929">Service Fabric SDK’sı, Service Fabric kaynak sağlayıcısı api-version 2019-03-01 kullanan 1.2.0 sürümüne yükseltildi.</span><span class="sxs-lookup"><span data-stu-id="de109-929">Upgraded Service Fabric SDK to version 1.2.0 which uses service fabric resource provider api-version 2019-03-01.</span></span>
-
-#### <a name="azsignalr"></a><span data-ttu-id="de109-930">Az.SignalR</span><span class="sxs-lookup"><span data-stu-id="de109-930">Az.SignalR</span></span>
-* <span data-ttu-id="de109-931">Update, Restart, CheckNameAvailability, GetUsage Cmdlet’leri eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-931">Add Update, Restart, CheckNameAvailability, GetUsage Cmdlets</span></span>
-
-#### <a name="azsql"></a><span data-ttu-id="de109-932">Az.Sql</span><span class="sxs-lookup"><span data-stu-id="de109-932">Az.Sql</span></span>
-* <span data-ttu-id="de109-933">'Get-AzSqlElasticPool' için başvuru belgesindeki örnek güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-933">Update example in reference documentation for 'Get-AzSqlElasticPool'</span></span>
-* <span data-ttu-id="de109-934">Elastik havuz oluşturmak (New-AzSqlElasticPool) için sanal çekirdek örneği eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-934">Added vCore example to creating an elastic pool (New-AzSqlElasticPool).</span></span>
-* <span data-ttu-id="de109-935">Set-AzSqlServerAdvancedThreatProtectionPolicy ve Set-AzSqlDatabaseAdvancedThreatProtectionPolicy içinde EmailAddresses’in doğrulanması ve EmailAddresses’in boş olması durumunda EmailAdmins’in false olmamasına yönelik denetim kaldırıldı</span><span class="sxs-lookup"><span data-stu-id="de109-935">Remove the validation of EmailAddresses and the check that EmailAdmins is not false in case EmailAddresses is empty in Set-AzSqlServerAdvancedThreatProtectionPolicy and Set-AzSqlDatabaseAdvancedThreatProtectionPolicy</span></span>
-* <span data-ttu-id="de109-936">Denetim kategorisini etkinleştiren birden çok tanılama ayarı olduğunda sunucu/veritabanı denetim ayarlarının kaldırılması etkinleştirildi.</span><span class="sxs-lookup"><span data-stu-id="de109-936">Enabled removal of server/database auditing settings when multiple diagnostic settings that enable audit category exist.</span></span>
-* <span data-ttu-id="de109-937">Birden çok Sql Güvenlik Açığı Değerlendirmesi cmdlet’inde (Update-AzSqlDatabaseVulnerabilityAssessmentSetting, Update-AzSqlServerVulnerabilityAssessmentSetting, Update-AzSqlInstanceDatabaseVulnerabilityAssessmentSetting ve Update-AzSqlInstanceVulnerabilityAssessmentSetting) e-posta adresleri doğrulaması düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="de109-937">Fix email addresses validation in multiple Sql Vulnerability Assessment cmdlets (Update-AzSqlDatabaseVulnerabilityAssessmentSetting, Update-AzSqlServerVulnerabilityAssessmentSetting, Update-AzSqlInstanceDatabaseVulnerabilityAssessmentSetting and Update-AzSqlInstanceVulnerabilityAssessmentSetting).</span></span>
-
-#### <a name="azstorage"></a><span data-ttu-id="de109-938">Az.Storage</span><span class="sxs-lookup"><span data-stu-id="de109-938">Az.Storage</span></span>
-* <span data-ttu-id="de109-939">'Get-AzStorageAccountKey' için başvuru belgesindeki örnek güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-939">Updated example in reference documentation for 'Get-AzStorageAccountKey'</span></span>
-* <span data-ttu-id="de109-940">Azure Dosyasını karşıya yüklerken/indirirken, hedef dosyada, dosya SMB özelliklerinin (Dosya Öznitelikleri, Dosya Oluşturma Zamanı, Dosya Son Yazma Zamanı) korunmasına yönelik destek eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-940">In upload/Downalod Azure File,support perserve the source File SMB properties (File Attributtes, File Creation Time, File Last Write Time) in the destination file</span></span>
-    -  <span data-ttu-id="de109-941">Set-AzStorageFileContent</span><span class="sxs-lookup"><span data-stu-id="de109-941">Set-AzStorageFileContent</span></span>
-    -  <span data-ttu-id="de109-942">Get-AzStorageFileContent</span><span class="sxs-lookup"><span data-stu-id="de109-942">Get-AzStorageFileContent</span></span>
-* <span data-ttu-id="de109-943">Kapsayıcı tarafından etkinleştirilmiş ImmutabilityPolicy üzerinde özellikler/meta tarih hatası içeren Karşıya yükleme blok blobu düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="de109-943">Fix Upload block blob with properties/metadate fail on container enabled ImmutabilityPolicy.</span></span>
-    -  <span data-ttu-id="de109-944">Set-AzStorageBlobContent</span><span class="sxs-lookup"><span data-stu-id="de109-944">Set-AzStorageBlobContent</span></span>
-* <span data-ttu-id="de109-945">Yönetim düzlemi API’si ile Azure Dosya paylaşımlarını yönetmeye yönelik destek eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-945">Support manage Azure File shares with Management plane API</span></span>
-    -  <span data-ttu-id="de109-946">New-AzRmStorageShare</span><span class="sxs-lookup"><span data-stu-id="de109-946">New-AzRmStorageShare</span></span>
-    -  <span data-ttu-id="de109-947">Get-AzRmStorageShare</span><span class="sxs-lookup"><span data-stu-id="de109-947">Get-AzRmStorageShare</span></span>
-    -  <span data-ttu-id="de109-948">Update-AzRmStorageShare</span><span class="sxs-lookup"><span data-stu-id="de109-948">Update-AzRmStorageShare</span></span>
-    -  <span data-ttu-id="de109-949">Remove-AzRmStorageShare</span><span class="sxs-lookup"><span data-stu-id="de109-949">Remove-AzRmStorageShare</span></span>
-
-#### <a name="azwebsites"></a><span data-ttu-id="de109-950">Az.Websites</span><span class="sxs-lookup"><span data-stu-id="de109-950">Az.Websites</span></span>
-* <span data-ttu-id="de109-951">Uygulamanın yeni ASP’ye geçirilmesi sırasında webapp Etiketlerinin silinmesine neden olan bir sorun düzeltiliyor</span><span class="sxs-lookup"><span data-stu-id="de109-951">Fixing issue where webapp Tags were getting deleted when migrating App to new ASPwhere webapp Tags were getting deleted when migrating App to new ASP</span></span>
-* <span data-ttu-id="de109-952">Publish-AzureWebapp cmdlet’i Linux ve Windows üzerinde çalışacak şekilde düzeltiliyor</span><span class="sxs-lookup"><span data-stu-id="de109-952">Fixing the Publish-AzureWebapp to work across Linux and windows</span></span>
-* <span data-ttu-id="de109-953">'Get-AzWebAppPublishingProfile' başvuru belgesindeki örnek güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-953">Update example in 'Get-AzWebAppPublishingProfile' reference documentation</span></span>
-
-## <a name="260---august-2019"></a><span data-ttu-id="de109-954">2.6.0 - Ağustos 2019</span><span class="sxs-lookup"><span data-stu-id="de109-954">2.6.0 - August 2019</span></span>
-#### <a name="general"></a><span data-ttu-id="de109-955">Genel</span><span class="sxs-lookup"><span data-stu-id="de109-955">General</span></span>
-* <span data-ttu-id="de109-956">Çok sayıda modülde çeşitli yazım hataları düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-956">Fixed miscellaneous typos across numerous modules</span></span>
-
-#### <a name="azaccounts"></a><span data-ttu-id="de109-957">Az.Accounts</span><span class="sxs-lookup"><span data-stu-id="de109-957">Az.Accounts</span></span>
-* <span data-ttu-id="de109-958">Azure İşlevleri Kimlik Doğrulaması’nda kullanıcı tarafından atanan MSI desteği (#9479)</span><span class="sxs-lookup"><span data-stu-id="de109-958">Support user-assigned MSI in Azure Functiosn Authentication (#9479)</span></span>
-
-#### <a name="azaks"></a><span data-ttu-id="de109-959">Az.Aks</span><span class="sxs-lookup"><span data-stu-id="de109-959">Az.Aks</span></span>
-* <span data-ttu-id="de109-960">‘Get-AzAks’ için çıkışla ilgili bir sorun düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-960">Fix issue with output for 'Get-AzAks'</span></span>
-    * <span data-ttu-id="de109-961">Burada daha fazla bilgi bulunabilir: https://github.com/Azure/azure-powershell/issues/9847</span><span class="sxs-lookup"><span data-stu-id="de109-961">More information here: https://github.com/Azure/azure-powershell/issues/9847</span></span>
-
-#### <a name="azapimanagement"></a><span data-ttu-id="de109-962">Az.ApiManagement</span><span class="sxs-lookup"><span data-stu-id="de109-962">Az.ApiManagement</span></span>
-* <span data-ttu-id="de109-963">[https://github.com/Azure/azure-powershell/issues/9351](https://github.com/Azure/azure-powershell/issues/9351 ) sorunu düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-963">Fix for issue https://github.com/Azure/azure-powershell/issues/9351</span></span>
-    - <span data-ttu-id="de109-964">ProductID, APIID, GroupID ve UserID için kısıtlamaları zorunlu kılmayan .NET NuGet sürümü güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-964">Update .net nuget version, which does not enforce restrictions on productId, apiId, groupId and userId</span></span>
-* <span data-ttu-id="de109-965">**Get-AzApiManagementProduct** - Ürünleri API kullanarak sorgulama desteği eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-965">**Get-AzApiManagementProduct** - Added support for querying products using Api.</span></span>
+# <a name="azure-powershell-release-notes"></a><span data-ttu-id="b23a2-103">Azure PowerShell sürüm notları</span><span class="sxs-lookup"><span data-stu-id="b23a2-103">Azure PowerShell release notes</span></span>
+## <a name="0100-preview---april-2020"></a><span data-ttu-id="b23a2-104">0.10.0-preview - Nisan 2020</span><span class="sxs-lookup"><span data-stu-id="b23a2-104">0.10.0-preview - April 2020</span></span>
+### <a name="general"></a><span data-ttu-id="b23a2-105">Genel</span><span class="sxs-lookup"><span data-stu-id="b23a2-105">General</span></span>
+* <span data-ttu-id="b23a2-106">Az modülleri artık Azure Stack Hub’da önizlemede kullanılabilir.</span><span class="sxs-lookup"><span data-stu-id="b23a2-106">Az modules is now available in preview on Azure Stack Hub.</span></span> <span data-ttu-id="b23a2-107">Bu, Linux ve macOs ile platformlar arası uyumluluk sağlar.</span><span class="sxs-lookup"><span data-stu-id="b23a2-107">This allows for cross-platform compatibility with Linux and macOs.</span></span> <span data-ttu-id="b23a2-108">Azure Stack Hub artık Az modülleriyle PowerShell Core’u destekliyor, daha fazla bilgiyi [burada](https://aka.ms/az4AzureStack) bulabilirsiniz</span><span class="sxs-lookup"><span data-stu-id="b23a2-108">Azure Stack Hub now supports PowerShell core with the Az modules, more information [here](https://aka.ms/az4AzureStack)</span></span>
+* <span data-ttu-id="b23a2-109">Az modülleri profil 2019-03-01-hybrid’i destekliyor:</span><span class="sxs-lookup"><span data-stu-id="b23a2-109">Az modules support profile 2019-03-01-hybrid:</span></span>
+  - <span data-ttu-id="b23a2-110">Az.Billing</span><span class="sxs-lookup"><span data-stu-id="b23a2-110">Az.Billing</span></span>
+  - <span data-ttu-id="b23a2-111">Az.Compute</span><span class="sxs-lookup"><span data-stu-id="b23a2-111">Az.Compute</span></span>
+  - <span data-ttu-id="b23a2-112">Az.DataBoxEdge</span><span class="sxs-lookup"><span data-stu-id="b23a2-112">Az.DataBoxEdge</span></span>
+  - <span data-ttu-id="b23a2-113">Az.EventHub</span><span class="sxs-lookup"><span data-stu-id="b23a2-113">Az.EventHub</span></span>
+  - <span data-ttu-id="b23a2-114">Az.IotHub</span><span class="sxs-lookup"><span data-stu-id="b23a2-114">Az.IotHub</span></span>
+  - <span data-ttu-id="b23a2-115">Az.KeyVault</span><span class="sxs-lookup"><span data-stu-id="b23a2-115">Az.KeyVault</span></span>
+  - <span data-ttu-id="b23a2-116">Az.Monitor</span><span class="sxs-lookup"><span data-stu-id="b23a2-116">Az.Monitor</span></span>
+  - <span data-ttu-id="b23a2-117">Az.Network</span><span class="sxs-lookup"><span data-stu-id="b23a2-117">Az.Network</span></span>
+  - <span data-ttu-id="b23a2-118">Az.Resources</span><span class="sxs-lookup"><span data-stu-id="b23a2-118">Az.Resources</span></span>
+  - <span data-ttu-id="b23a2-119">Az.Storage</span><span class="sxs-lookup"><span data-stu-id="b23a2-119">Az.Storage</span></span>
+  - <span data-ttu-id="b23a2-120">Az.Websites</span><span class="sxs-lookup"><span data-stu-id="b23a2-120">Az.Websites</span></span>
+* <span data-ttu-id="b23a2-121">Az için Azure Stack Hub ile çalışan üç yeni PowerShell modülü (Az.Databox, Az.IotHub ve Az.EventHub) kullanıma sunuldu</span><span class="sxs-lookup"><span data-stu-id="b23a2-121">Three new PowerShell modules for az have been introduced that work with Azure Stack Hub, which are Az.Databox, Az.IotHub, and Az.EventHub</span></span>
+* <span data-ttu-id="b23a2-122">Komutlar, AzureRM’nin Az olarak değiştirilmesi gibi küçük değişiklikler ile görece aynı kalır</span><span class="sxs-lookup"><span data-stu-id="b23a2-122">Commands remain relatively the same, with minor changes such as changing AzureRM to Az</span></span>
+* <span data-ttu-id="b23a2-123">Azure Stack Hub için PowerShell belgelerine güncelleştirilmiş bağlantı [burada](https://aka.ms/InstallASHPowerShell) bulunabilir</span><span class="sxs-lookup"><span data-stu-id="b23a2-123">Updated link to PowerShell documentation for Azure Stack Hub can be found [here](https://aka.ms/InstallASHPowerShell)</span></span>
+
+#### <a name="azaccounts"></a><span data-ttu-id="b23a2-124">Az.Accounts</span><span class="sxs-lookup"><span data-stu-id="b23a2-124">Az.Accounts</span></span>
+* <span data-ttu-id="b23a2-125">ADAL’den MSAL’ye yükseltme</span><span class="sxs-lookup"><span data-stu-id="b23a2-125">Upgrade from ADAL to MSAL</span></span>
+
+
+## <a name="370---march-2020"></a><span data-ttu-id="b23a2-126">3.7.0 - Mart 2020</span><span class="sxs-lookup"><span data-stu-id="b23a2-126">3.7.0 - March 2020</span></span>
+#### <a name="azaccounts"></a><span data-ttu-id="b23a2-127">Az.Accounts</span><span class="sxs-lookup"><span data-stu-id="b23a2-127">Az.Accounts</span></span>
+* <span data-ttu-id="b23a2-128">Oturum açılmadığında ‘Get-AzTenant’/’Get-AzDefault’/’Set-AzDefault’ cmdlet’lerinin NullReferenceException hatası oluşturması düzeltildi [#10292]</span><span class="sxs-lookup"><span data-stu-id="b23a2-128">Fixed 'Get-AzTenant'/'Get-AzDefault'/'Set-AzDefault' throw NullReferenceException when not login [#10292]</span></span>
+
+#### <a name="azcompute"></a><span data-ttu-id="b23a2-129">Az.Compute</span><span class="sxs-lookup"><span data-stu-id="b23a2-129">Az.Compute</span></span>
+* <span data-ttu-id="b23a2-130">‘New-AzDiskConfig’ cmdlet’ine şu parametreler eklendi:</span><span class="sxs-lookup"><span data-stu-id="b23a2-130">Added the following parameters to 'New-AzDiskConfig' cmdlet:</span></span>
+    - <span data-ttu-id="b23a2-131">DiskIOPSReadOnly, DiskMBpsReadOnly, MaxSharesCount, GalleryImageReference</span><span class="sxs-lookup"><span data-stu-id="b23a2-131">DiskIOPSReadOnly, DiskMBpsReadOnly, MaxSharesCount, GalleryImageReference</span></span>
+* <span data-ttu-id="b23a2-132">Şifreleme özelliğinin ‘New-AzGalleryImageVersion’ cmdlet’inin parametrelerini hedeflemesine izin verildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-132">Allowed Encryption property to Target parameter of 'New-AzGalleryImageVersion' cmdlet.</span></span>
+* <span data-ttu-id="b23a2-133">‘Set-AzVmss’ -Reimage ve ‘Invoke-AzVMReimage’ cmdlet’lerine yönelik tempDisk sorunu düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-133">Fixed tempDisk issue for 'Set-AzVmss' -Reimage and 'Invoke-AzVMReimage' cmdlets.</span></span> <span data-ttu-id="b23a2-134">[#11354]</span><span class="sxs-lookup"><span data-stu-id="b23a2-134">[#11354]</span></span>
+* <span data-ttu-id="b23a2-135">Aşağıdaki cmdlet’lere yeni SAP uzantısına yönelik destek eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-135">Added support to below cmdlets for new SAP Extension</span></span>
+    - <span data-ttu-id="b23a2-136">‘Set-AzVMAEMExtension’</span><span class="sxs-lookup"><span data-stu-id="b23a2-136">'Set-AzVMAEMExtension'</span></span>
+    - <span data-ttu-id="b23a2-137">‘Get-AzVMAEMExtension’</span><span class="sxs-lookup"><span data-stu-id="b23a2-137">'Get-AzVMAEMExtension'</span></span>
+    - <span data-ttu-id="b23a2-138">‘Remove-AzVMAEMExtension’</span><span class="sxs-lookup"><span data-stu-id="b23a2-138">'Remove-AzVMAEMExtension'</span></span>
+    - <span data-ttu-id="b23a2-139">‘Update-AzVMAEMExtension’</span><span class="sxs-lookup"><span data-stu-id="b23a2-139">'Update-AzVMAEMExtension'</span></span>
+* <span data-ttu-id="b23a2-140">Yardım belgelerinde bulunan örneklerdeki hatalar düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-140">Fixed errors in examples of help document</span></span>
+* <span data-ttu-id="b23a2-141">VM PowerState için tam dize değeri tablo biçiminde gösterildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-141">Showed the exact string value for VM PowerState in the table format.</span></span>
+* <span data-ttu-id="b23a2-142">‘New-AzVmssConfig’: SinglePlacementGroup devre dışı bırakıldığında AutomaticRepairs özelliğinin serileştirilmesi sorunu düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-142">'New-AzVmssConfig': fixed serialization of AutomaticRepairs property when SinglePlacementGroup is disabled.</span></span> <span data-ttu-id="b23a2-143">[#11257]</span><span class="sxs-lookup"><span data-stu-id="b23a2-143">[#11257]</span></span>
+
+#### <a name="azdatafactory"></a><span data-ttu-id="b23a2-144">Az.DataFactory</span><span class="sxs-lookup"><span data-stu-id="b23a2-144">Az.DataFactory</span></span>
+* <span data-ttu-id="b23a2-145">ADF .NET SDK’sı 4.8.0 sürümüne güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-145">Updated ADF .Net SDK version to 4.8.0</span></span>
+* <span data-ttu-id="b23a2-146">Yeniden çalıştırmayı desteklemek için ‘Invoke-AzDataFactoryV2Pipeline’ komutuna isteğe bağlı parametreler eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-146">Added optional parameters to 'Invoke-AzDataFactoryV2Pipeline' command to support rerun</span></span>
+
+#### <a name="azdatalakestore"></a><span data-ttu-id="b23a2-147">Az.DataLakeStore</span><span class="sxs-lookup"><span data-stu-id="b23a2-147">Az.DataLakeStore</span></span>
+* <span data-ttu-id="b23a2-148">‘Export-AzDataLakeStoreItem’ ve ‘Import-AzDataLakeStoreItem’ için hataya neden olan değişiklik açıklaması eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-148">Added breaking change description for 'Export-AzDataLakeStoreItem' and 'Import-AzDataLakeStoreItem'</span></span>
+* <span data-ttu-id="b23a2-149">‘New-AzDataLakeStoreItem’, ‘Add-AzDAtaLakeStoreItemContent’ ve ‘Get-AzDAtaLakeStoreItemContent’ için Bayt kodlaması seçeneği eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-149">Added option of Byte encoding for 'New-AzDataLakeStoreItem', 'Add-AzDAtaLakeStoreItemContent', and 'Get-AzDAtaLakeStoreItemContent'</span></span>
+
+#### <a name="azhdinsight"></a><span data-ttu-id="b23a2-150">Az.HDInsight</span><span class="sxs-lookup"><span data-stu-id="b23a2-150">Az.HDInsight</span></span>
+* <span data-ttu-id="b23a2-151">Küme oluştururken TLS sürümünün desteklenen en düşük sürümünün belirtilmesine yönelik destek eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-151">Supported specifying minimal supported TLS version when creating cluster.</span></span>
+
+#### <a name="aziothub"></a><span data-ttu-id="b23a2-152">Az.IotHub</span><span class="sxs-lookup"><span data-stu-id="b23a2-152">Az.IotHub</span></span>
+* <span data-ttu-id="b23a2-153">Cihaz başına dağıtılmış ayarları yönetmeye yönelik destek eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-153">Added support to manage distributed settings per-device.</span></span> <span data-ttu-id="b23a2-154">Yeni Cmdlet’ler şunlardır:</span><span class="sxs-lookup"><span data-stu-id="b23a2-154">New Cmdlets are:</span></span>
+    - <span data-ttu-id="b23a2-155">‘Get-AzIotHubDistributedTracing’</span><span class="sxs-lookup"><span data-stu-id="b23a2-155">'Get-AzIotHubDistributedTracing'</span></span>
+    - <span data-ttu-id="b23a2-156">‘Set-AzIotHubDistributedTracing’</span><span class="sxs-lookup"><span data-stu-id="b23a2-156">'Set-AzIotHubDistributedTracing'</span></span>
+
+#### <a name="azkeyvault"></a><span data-ttu-id="b23a2-157">Az.KeyVault</span><span class="sxs-lookup"><span data-stu-id="b23a2-157">Az.KeyVault</span></span>
+* <span data-ttu-id="b23a2-158">‘New-AzKeyVault’ cmdlet’ine hataya neden olan değişiklik öznitelikleri eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-158">Added breaking change attributes to 'New-AzKeyVault'</span></span>
+
+#### <a name="azmonitor"></a><span data-ttu-id="b23a2-159">Az.Monitor</span><span class="sxs-lookup"><span data-stu-id="b23a2-159">Az.Monitor</span></span>
+* <span data-ttu-id="b23a2-160">‘New-AzScheduledQueryRuleLogMetricTrigger’ cmdlet’ine yönelik belgeler güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-160">Updated documentation for 'New-AzScheduledQueryRuleLogMetricTrigger'</span></span>
+
+#### <a name="aznetwork"></a><span data-ttu-id="b23a2-161">Az.Network</span><span class="sxs-lookup"><span data-stu-id="b23a2-161">Az.Network</span></span>
+* <span data-ttu-id="b23a2-162">Kiracılar arası VirtualHubVnetConnections kurulmasına olanak tanımak için cmdlet’ler güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-162">Updated cmdlets to allow cross-tenant VirtualHubVnetConnections</span></span>
+    - <span data-ttu-id="b23a2-163">‘New-AzVirtualHubVnetConnection’</span><span class="sxs-lookup"><span data-stu-id="b23a2-163">'New-AzVirtualHubVnetConnection'</span></span>
+    - <span data-ttu-id="b23a2-164">‘Update-AzVirtualHubVnetConnection’</span><span class="sxs-lookup"><span data-stu-id="b23a2-164">'Update-AzVirtualHubVnetConnection'</span></span>
+    - <span data-ttu-id="b23a2-165">‘New-AzVirtualHub’</span><span class="sxs-lookup"><span data-stu-id="b23a2-165">'New-AzVirtualHub'</span></span>
+    - <span data-ttu-id="b23a2-166">‘Update-AzVirtualHub’</span><span class="sxs-lookup"><span data-stu-id="b23a2-166">'Update-AzVirtualHub'</span></span>
+* <span data-ttu-id="b23a2-167">SQL Yönetim SDK’sı bağımlılığı kaldırıldı</span><span class="sxs-lookup"><span data-stu-id="b23a2-167">Removed Sql Management SDK dependency</span></span>
+
+#### <a name="azpolicyinsights"></a><span data-ttu-id="b23a2-168">Az.PolicyInsights</span><span class="sxs-lookup"><span data-stu-id="b23a2-168">Az.PolicyInsights</span></span>
+* <span data-ttu-id="b23a2-169">Hata iletileri iyileştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-169">Improved error messages</span></span>
+
+#### <a name="azrecoveryservices"></a><span data-ttu-id="b23a2-170">Az.RecoveryServices</span><span class="sxs-lookup"><span data-stu-id="b23a2-170">Az.RecoveryServices</span></span>
+* <span data-ttu-id="b23a2-171">Azure Site Recovery’de, Azure disk tarafından şifrelenmiş Sanal Makinelere yönelik VM özellikleri güncelleştirildi ve yeniden koruma gerçekleştirmeye yönelik destek eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-171">Azure Site Recovery added support for doing reprotect and updated vm properties for Azure disk encrypted Virtual Machines.</span></span>
+* <span data-ttu-id="b23a2-172">Azure Site Recovery VmwareToAzure DR izleme özelliği eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-172">Added Azure Site Recovery VmwareToAzure properties DR monitoring</span></span>
+* <span data-ttu-id="b23a2-173">Başarısız öğeler için ilke güncelleştirmesini yeniden deneme özelliğine yönelik destek Azure Backup’a eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-173">Azure Backup added support for retrying policy update for failed items.</span></span>
+* <span data-ttu-id="b23a2-174">Yedekleme ve geri yükleme işlemleri sırasında disk dışlaması ayarını kullanmaya yönelik destek Azure Backup’a eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-174">Azure Backup Added support for disk exclusion settings during backup and restore.</span></span>
+* <span data-ttu-id="b23a2-175">AzureFileShare’den birden fazla dosyayı/klasörü geri yüklemeye yönelik destek Azure Backup’a eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-175">Azure Backup Added Support for Restoring Multiple files/folders in AzureFileShare</span></span>
+* <span data-ttu-id="b23a2-176">IaasVM İlkesini güncelleştirilirken kullanıcı tarafından belirtilen Resourcegroup desteğine yönelik destek Azure Backup’a eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-176">Azure Backup Added support for User-specified Resourcegroup support while updating IaasVM Policy</span></span>
+
+#### <a name="azresources"></a><span data-ttu-id="b23a2-177">Az.Resources</span><span class="sxs-lookup"><span data-stu-id="b23a2-177">Az.Resources</span></span>
+* <span data-ttu-id="b23a2-178">‘Get-AzResource -ResourceGroupName -Name -ExpandProperties -ResourceType’ komutlarındaki bir hata düzeltildi ve bunların varsayılan apiVersion yerine kaynakların asıl apiVersion’unu kullanması sağlandı [#11267]</span><span class="sxs-lookup"><span data-stu-id="b23a2-178">Fixed 'Get-AzResource -ResourceGroupName -Name -ExpandProperties -ResourceType' to use actual apiVersion of resources instead of default apiVersion [#11267]</span></span>
+* <span data-ttu-id="b23a2-179">Hata senaryoları için correlationId’yi günlüğe kaydetme özelliği eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-179">Added correlationId logging for error scenarios</span></span>
+* <span data-ttu-id="b23a2-180">‘Get-AzResourceLock’ cmdlet’inde küçük bir belge değişikliği yapıldı.</span><span class="sxs-lookup"><span data-stu-id="b23a2-180">Small documentation change to 'Get-AzResourceLock'.</span></span> <span data-ttu-id="b23a2-181">Örnek eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-181">Added example.</span></span>
+* <span data-ttu-id="b23a2-182">‘Get-AzADUser’ cmdlet’inin parametre değerinde tek tırnak işaretinin atlanması [#11317]</span><span class="sxs-lookup"><span data-stu-id="b23a2-182">Escaped single quote in parameter value of 'Get-AzADUser' [#11317]</span></span>
+* <span data-ttu-id="b23a2-183">Dağıtım Betikleri için yeni cmdlet’ler eklendi (‘Get-AzDeploymentScript’, ‘Get-AzDeploymentScriptLog’, ‘Save-AzDeploymentScriptLog’ ve ‘Remove-AzDeploymentScript’)</span><span class="sxs-lookup"><span data-stu-id="b23a2-183">Added new cmdlets for Deployment Scripts ('Get-AzDeploymentScript', 'Get-AzDeploymentScriptLog', 'Save-AzDeploymentScriptLog', 'Remove-AzDeploymentScript')</span></span>
+
+#### <a name="azsql"></a><span data-ttu-id="b23a2-184">Az.Sql</span><span class="sxs-lookup"><span data-stu-id="b23a2-184">Az.Sql</span></span>
+* <span data-ttu-id="b23a2-185">‘Invoke-AzSqlDatabaseFailover’ cmdlet’ine okunabilir ikincil parametre eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-185">Added readable secondary parameter to 'Invoke-AzSqlDatabaseFailover'</span></span>
+* <span data-ttu-id="b23a2-186">‘Disable-AzSqlServerActiveDirectoryOnlyAuthentication’ cmdlet’i eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-186">Added cmdlet 'Disable-AzSqlServerActiveDirectoryOnlyAuthentication'</span></span>
+* <span data-ttu-id="b23a2-187">Veritabanındaki sütunlar sınıflandırılırken duyarlılık derecesi kaydedildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-187">Saved sensitivity rank when classifying columns in the database.</span></span>
+
+#### <a name="azsupport"></a><span data-ttu-id="b23a2-188">Az.Support</span><span class="sxs-lookup"><span data-stu-id="b23a2-188">Az.Support</span></span>
+* <span data-ttu-id="b23a2-189">‘Az.Support’ modülü genel kullanıma sunuldu</span><span class="sxs-lookup"><span data-stu-id="b23a2-189">General availability of 'Az.Support' module</span></span>
+
+#### <a name="azwebsites"></a><span data-ttu-id="b23a2-190">Az.Websites</span><span class="sxs-lookup"><span data-stu-id="b23a2-190">Az.Websites</span></span>
+* <span data-ttu-id="b23a2-191">Aşağıdaki yeni cmdlet’leri kullanarak Trafik Yönlendirme Kurallarıyla çalışmaya yönelik destek eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-191">Added support for working with webapp Traffic Routing Rules via below new cmdlets</span></span>
+    - <span data-ttu-id="b23a2-192">‘Get-AzWebAppTrafficRouting’</span><span class="sxs-lookup"><span data-stu-id="b23a2-192">'Get-AzWebAppTrafficRouting'</span></span>
+    - <span data-ttu-id="b23a2-193">‘Update-AzWebAppTrafficRouting’</span><span class="sxs-lookup"><span data-stu-id="b23a2-193">'Update-AzWebAppTrafficRouting'</span></span>
+    - <span data-ttu-id="b23a2-194">‘Add-AzWebAppTrafficRouting’</span><span class="sxs-lookup"><span data-stu-id="b23a2-194">'Add-AzWebAppTrafficRouting'</span></span>
+    - <span data-ttu-id="b23a2-195">‘Remove-AzWebAppTrafficRouting’</span><span class="sxs-lookup"><span data-stu-id="b23a2-195">'Remove-AzWebAppTrafficRouting'</span></span>
+
+## <a name="361---march-2020"></a><span data-ttu-id="b23a2-196">3.6.1 - Mart 2020</span><span class="sxs-lookup"><span data-stu-id="b23a2-196">3.6.1 - March 2020</span></span>
+#### <a name="azaccounts"></a><span data-ttu-id="b23a2-197">Az.Accounts</span><span class="sxs-lookup"><span data-stu-id="b23a2-197">Az.Accounts</span></span>
+* <span data-ttu-id="b23a2-198">'Send-Feedback' içinde Azure PowerShell anket sayfasını açma [#11020]</span><span class="sxs-lookup"><span data-stu-id="b23a2-198">Open Azure PowerShell survey page in 'Send-Feedback' [#11020]</span></span>
+* <span data-ttu-id="b23a2-199">'Resolve-Error' içinde Azure PowerShell anket URL’sini görüntüleme [#11021]</span><span class="sxs-lookup"><span data-stu-id="b23a2-199">Display Azure PowerShell survey URL in 'Resolve-Error' [#11021]</span></span>
+* <span data-ttu-id="b23a2-200">UserAgent’ta Az sürümü eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-200">Added Az version in UserAgent</span></span>
+
+#### <a name="azapimanagement"></a><span data-ttu-id="b23a2-201">Az.ApiManagement</span><span class="sxs-lookup"><span data-stu-id="b23a2-201">Az.ApiManagement</span></span>
+* <span data-ttu-id="b23a2-202">DeveloperPortal Uç Noktasında Özel Etki Alanını alma ve yapılandırma desteği eklendi [#11007]</span><span class="sxs-lookup"><span data-stu-id="b23a2-202">Added support for retrieving and configuring Custom Domain on the DeveloperPortal Endpoint [#11007]</span></span>
+* <span data-ttu-id="b23a2-203">'Export-AzApiManagementApi' içinde Api Tanımını Json biçiminde indirme desteği eklendi [#9987]</span><span class="sxs-lookup"><span data-stu-id="b23a2-203">'Export-AzApiManagementApi' Added support for downloading Api Definition in Json format [#9987]</span></span>
+* <span data-ttu-id="b23a2-204">'Import-AzApiManagementApi' içinde OpenApi 3.0 tanımını Json belgesinden içeri aktarma desteği eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-204">'Import-AzApiManagementApi' Added support for importing OpenApi 3.0 definition from Json document</span></span>
+* <span data-ttu-id="b23a2-205">'New-AzApiManagementIdentityProvider' ve 'Set-AzApiManagementIdentityProvider' içinde AAD B2C Sağlayıcısı için 'Oturum Açan Kiracı' yapılandırma desteği eklendi [#9784]</span><span class="sxs-lookup"><span data-stu-id="b23a2-205">'New-AzApiManagementIdentityProvider' and 'Set-AzApiManagementIdentityProvider' Added support for configuring 'Signin Tenant' for AAD B2C Provider [#9784]</span></span>
+
+#### <a name="azdatalakestore"></a><span data-ttu-id="b23a2-206">Az.DataLakeStore</span><span class="sxs-lookup"><span data-stu-id="b23a2-206">Az.DataLakeStore</span></span>
+* <span data-ttu-id="b23a2-207">csproj ve psd1 içinde System.Buffers öğesine açık başvuru eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-207">Added reference to System.Buffers explicitly in csproj and psd1.</span></span>
+
+#### <a name="aziothub"></a><span data-ttu-id="b23a2-208">Az.IotHub</span><span class="sxs-lookup"><span data-stu-id="b23a2-208">Az.IotHub</span></span>
+* <span data-ttu-id="b23a2-209">Iot Hub’daki cihazları yönetmek için destek eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-209">Added support to manage devices in an Iot Hub.</span></span> <span data-ttu-id="b23a2-210">Yeni Cmdlet’ler şunlardır:</span><span class="sxs-lookup"><span data-stu-id="b23a2-210">New Cmdlets are:</span></span>
+    - <span data-ttu-id="b23a2-211">'Add-AzIotHubDevice'</span><span class="sxs-lookup"><span data-stu-id="b23a2-211">'Add-AzIotHubDevice'</span></span>
+    - <span data-ttu-id="b23a2-212">'Get-AzIotHubDevice'</span><span class="sxs-lookup"><span data-stu-id="b23a2-212">'Get-AzIotHubDevice'</span></span>
+    - <span data-ttu-id="b23a2-213">'Remove-AzIotHubDevice'</span><span class="sxs-lookup"><span data-stu-id="b23a2-213">'Remove-AzIotHubDevice'</span></span>
+    - <span data-ttu-id="b23a2-214">'Set-AzIotHubDevice'</span><span class="sxs-lookup"><span data-stu-id="b23a2-214">'Set-AzIotHubDevice'</span></span>
+* <span data-ttu-id="b23a2-215">IoT hub’ındaki hedef IoT cihazında modülleri yönetmek için destek eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-215">Added support to manage modules on a target Iot device in an Iot Hub.</span></span> <span data-ttu-id="b23a2-216">Yeni Cmdlet’ler şunlardır:</span><span class="sxs-lookup"><span data-stu-id="b23a2-216">New Cmdlets are:</span></span>
+    - <span data-ttu-id="b23a2-217">'Add-AzIotHubModule'</span><span class="sxs-lookup"><span data-stu-id="b23a2-217">'Add-AzIotHubModule'</span></span>
+    - <span data-ttu-id="b23a2-218">'Get-AzIotHubModule'</span><span class="sxs-lookup"><span data-stu-id="b23a2-218">'Get-AzIotHubModule'</span></span>
+    - <span data-ttu-id="b23a2-219">'Remove-AzIotHubModule'</span><span class="sxs-lookup"><span data-stu-id="b23a2-219">'Remove-AzIotHubModule'</span></span>
+    - <span data-ttu-id="b23a2-220">'Set-AzIotHubModule'</span><span class="sxs-lookup"><span data-stu-id="b23a2-220">'Set-AzIotHubModule'</span></span>
+* <span data-ttu-id="b23a2-221">Bir IoT hub’ında hedef IoT cihazının bağlantı dizesini almak için cmdlet eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-221">Added cmdlet to get the connection string of a target IoT device in an Iot Hub.</span></span>
+* <span data-ttu-id="b23a2-222">Bir IoT hub’ında hedef IoT cihazındaki modülün bağlantı dizesini almak için cmdlet eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-222">Added cmdlet to get the connection string of a module on a target IoT device in an Iot Hub.</span></span>
+* <span data-ttu-id="b23a2-223">IoT cihazının üst cihazını almak/ayarlamak için destek eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-223">Added support to get/set parent device of an IoT device.</span></span> <span data-ttu-id="b23a2-224">Yeni Cmdlet’ler şunlardır:</span><span class="sxs-lookup"><span data-stu-id="b23a2-224">New Cmdlets are:</span></span>
+    - <span data-ttu-id="b23a2-225">'Get-AzIotHubDeviceParent'</span><span class="sxs-lookup"><span data-stu-id="b23a2-225">'Get-AzIotHubDeviceParent'</span></span>
+    - <span data-ttu-id="b23a2-226">'Set-AzIotHubDeviceParent'</span><span class="sxs-lookup"><span data-stu-id="b23a2-226">'Set-AzIotHubDeviceParent'</span></span>
+* <span data-ttu-id="b23a2-227">Cihaz üst-alt ilişkisinin yönetilmesi için destek eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-227">Added support to manage device parent-child relationship.</span></span>
+
+#### <a name="azmonitor"></a><span data-ttu-id="b23a2-228">Az.Monitor</span><span class="sxs-lookup"><span data-stu-id="b23a2-228">Az.Monitor</span></span>
+* <span data-ttu-id="b23a2-229">'Get-AzMetricDefinition' için çıkış değeri düzeltildi [#9714]</span><span class="sxs-lookup"><span data-stu-id="b23a2-229">Fixed output value for 'Get-AzMetricDefinition' [#9714]</span></span>
+
+#### <a name="aznetwork"></a><span data-ttu-id="b23a2-230">Az.Network</span><span class="sxs-lookup"><span data-stu-id="b23a2-230">Az.Network</span></span>
+* <span data-ttu-id="b23a2-231">SQL Yönetim SDK’sı güncelleştirildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-231">Updated Sql Management SDK.</span></span>
+* <span data-ttu-id="b23a2-232">PrivateLinkServiceConnectionState sınıfındaki bir adlandırma farkı sorunu düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-232">Fixed a naming-difference issue in PrivateLinkServiceConnectionState class.</span></span>
+    - <span data-ttu-id="b23a2-233">ActionsRequired alanı ActionRequired alanına eşleniyor.</span><span class="sxs-lookup"><span data-stu-id="b23a2-233">Mapping the field ActionsRequired to ActionRequired.</span></span>
+* <span data-ttu-id="b23a2-234">'New-AzSqlServer' ve 'Set-AzSqlServer' için PublicNetworkAccess eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-234">Added PublicNetworkAccess to 'New-AzSqlServer' and 'Set-AzSqlServer'</span></span>
+
+#### <a name="azresources"></a><span data-ttu-id="b23a2-235">Az.Resources</span><span class="sxs-lookup"><span data-stu-id="b23a2-235">Az.Resources</span></span>
+* <span data-ttu-id="b23a2-236">'Get-AzRoleAssignment' içindeki null başvuru hatası düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-236">Fixed for null reference bug in 'Get-AzRoleAssignment'</span></span>
+* <span data-ttu-id="b23a2-237">'-Force' ve '-PassThru' anahtarı 'Remove-AzADGroup' içinde isteğe bağlı olarak işaretlendi [#10849]</span><span class="sxs-lookup"><span data-stu-id="b23a2-237">Marked switch '-Force' and '-PassThru' optional in 'Remove-AzADGroup' [#10849]</span></span>
+* <span data-ttu-id="b23a2-238">'MailNickname' öğesinin 'Remove-AzADGroup' içinde döndürülmemesi sorunu düzeltildi [#11167]</span><span class="sxs-lookup"><span data-stu-id="b23a2-238">Fixed issue that 'MailNickname' doesn't return in 'Remove-AzADGroup' [#11167]</span></span>
+* <span data-ttu-id="b23a2-239">'Remove-AzADGroup' kanal oluşturma işleminin çalışmaması sorunu düzeltildi [#11171]</span><span class="sxs-lookup"><span data-stu-id="b23a2-239">Fixed issue that 'Remove-AzADGroup' pipe operation doesn't work [#11171]</span></span>
+* <span data-ttu-id="b23a2-240">GetAzureRoleAssignmentCommand içinde null başvuru hatası düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-240">Fixed for null reference bug in GetAzureRoleAssignmentCommand</span></span>
+* <span data-ttu-id="b23a2-241">İlke cmdlet’lerinde yaklaşan değişiklikler için hataya neden olan değişiklik öznitelikleri eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-241">Added breaking change attributes for upcoming changes to policy cmdlets</span></span>
+* <span data-ttu-id="b23a2-242">'Get-AzResourceGroup' sunucu tarafında kaynak grubu etiket filtreleme gerçekleştirmek için güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-242">Updated 'Get-AzResourceGroup' to perform resource group tag filtering on server-side</span></span>
+* <span data-ttu-id="b23a2-243">Tag cmdlet’leri -ResourceId öğesini kabul edecek şekilde genişletildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-243">Extended Tag cmdlets to accept -ResourceId</span></span>
+    - <span data-ttu-id="b23a2-244">Get-AzTag -ResourceId</span><span class="sxs-lookup"><span data-stu-id="b23a2-244">Get-AzTag -ResourceId</span></span>
+    - <span data-ttu-id="b23a2-245">New-AzTag -ResourceId</span><span class="sxs-lookup"><span data-stu-id="b23a2-245">New-AzTag -ResourceId</span></span>
+    - <span data-ttu-id="b23a2-246">Remove-AzTag -ResourceId</span><span class="sxs-lookup"><span data-stu-id="b23a2-246">Remove-AzTag -ResourceId</span></span>
+* <span data-ttu-id="b23a2-247">Yeni Tag cmdlet’i eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-247">Added new Tag cmdlet</span></span>
+    - <span data-ttu-id="b23a2-248">Update-AzTag -ResourceId</span><span class="sxs-lookup"><span data-stu-id="b23a2-248">Update-AzTag -ResourceId</span></span>
+* <span data-ttu-id="b23a2-249">SDK 3.3.0 sürümünden ScopedDeployment getirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-249">Brought ScopedDeployment from SDK 3.3.0</span></span>
+
+#### <a name="azsql"></a><span data-ttu-id="b23a2-250">Az.Sql</span><span class="sxs-lookup"><span data-stu-id="b23a2-250">Az.Sql</span></span>
+* <span data-ttu-id="b23a2-251">'New-AzSqlServer' ve 'Set-AzSqlServer' için PublicNetworkAccess eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-251">Added PublicNetworkAccess to 'New-AzSqlServer' and 'Set-AzSqlServer'</span></span>
+* <span data-ttu-id="b23a2-252">Yönetilen Veritabanları için Uzun Süreli Saklamalı yedekleme yapılandırması desteği eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-252">Added support for Long Term Retention backup configuration for Managed Databases</span></span>
+    - <span data-ttu-id="b23a2-253">Yönetilen bir veritabanında LTR ilkesini alma/ayarlama</span><span class="sxs-lookup"><span data-stu-id="b23a2-253">Get/Set LTR policy on a managed database</span></span>
+    - <span data-ttu-id="b23a2-254">Yönetilen veritabanı, yönetilen örnek veya konuma göre LTR yedeklemelerini alma</span><span class="sxs-lookup"><span data-stu-id="b23a2-254">Get LTR backup(s) by managed database, managed instance, or by location</span></span>
+    - <span data-ttu-id="b23a2-255">Bir LTR yedeklemesini kaldırma</span><span class="sxs-lookup"><span data-stu-id="b23a2-255">Remove an LTR backup</span></span>
+    - <span data-ttu-id="b23a2-256">Yeni yönetilen veritabanı oluşturmak için LTR yedeklemesini geri yükleme</span><span class="sxs-lookup"><span data-stu-id="b23a2-256">Restore an LTR backup to create a new managed database</span></span>
+* <span data-ttu-id="b23a2-257">New-AzSqlServer ve Set-AzSqlServer için MinimalTlsVersion eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-257">Added MinimalTlsVersion to New-AzSqlServer and Set-AzSqlServer</span></span>
+* <span data-ttu-id="b23a2-258">New-AzSqlInstance ve Set-AzSqlInstance için MinimalTlsVersion eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-258">Added MinimalTlsVersion to New-AzSqlInstance and Set-AzSqlInstance</span></span>
+* <span data-ttu-id="b23a2-259">Az.Network için SQL SDK sürümü artırıldı</span><span class="sxs-lookup"><span data-stu-id="b23a2-259">Bumped SQL SDK version for Az.Network</span></span>
+
+#### <a name="azstorage"></a><span data-ttu-id="b23a2-260">Az.Storage</span><span class="sxs-lookup"><span data-stu-id="b23a2-260">Az.Storage</span></span>
+* <span data-ttu-id="b23a2-261">ImmutabilityPolicy içinde AllowProtectedAppendWrite desteği eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-261">Supported AllowProtectedAppendWrite in ImmutabilityPolicy</span></span>
+    - <span data-ttu-id="b23a2-262">'Set-AzRmStorageContainerImmutabilityPolicy'</span><span class="sxs-lookup"><span data-stu-id="b23a2-262">'Set-AzRmStorageContainerImmutabilityPolicy'</span></span>
+* <span data-ttu-id="b23a2-263">Gelecekteki bir yayın için AzureStorageTable tür değişikliğine yönelik hataya neden olan değişiklik uyarı iletisi eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-263">Added breaking change warning message for AzureStorageTable type change in a future release</span></span>
+    - <span data-ttu-id="b23a2-264">'New-AzStorageTable'</span><span class="sxs-lookup"><span data-stu-id="b23a2-264">'New-AzStorageTable'</span></span>
+    - <span data-ttu-id="b23a2-265">'Get-AzStorageTable'</span><span class="sxs-lookup"><span data-stu-id="b23a2-265">'Get-AzStorageTable'</span></span>
+
+#### <a name="azwebsites"></a><span data-ttu-id="b23a2-266">Az.Websites</span><span class="sxs-lookup"><span data-stu-id="b23a2-266">Az.Websites</span></span>
+* <span data-ttu-id="b23a2-267">'New-AzAppServicePlan' ve 'Set-AzAppServicePlan' için Etiket parametresi eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-267">Added Tag parameter for 'New-AzAppServicePlan' and 'Set-AzAppServicePlan'</span></span>
+* <span data-ttu-id="b23a2-268">Özel etki alanı bir web sitesine eklenirken özel durum oluşturulursa cmdlet’i yürütmeyi durdur</span><span class="sxs-lookup"><span data-stu-id="b23a2-268">Stop cmdlet execution if an exception is thrown when adding a custom domain to a website</span></span>
+* <span data-ttu-id="b23a2-269">App Service Planıyla aynı kaynak grubunda bulunmayan Uygulama Hizmetleri için işlem gerçekleştirme desteği eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-269">Added support to perform operations for App Services not in the same resource group as the App Service Plan</span></span>
+* <span data-ttu-id="b23a2-270">Farklı kaynak gruplarındaki WebApp/İşlev öğesine erişim kısıtlaması uygulandı</span><span class="sxs-lookup"><span data-stu-id="b23a2-270">Applied access restriction to WebApp/Function in different resource groups</span></span>
+* <span data-ttu-id="b23a2-271">WebAppSlots için özel ana bilgisayar adları ayarlama sorunu düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-271">Fixed issue to set custom hostnames for WebAppSlots</span></span>
+
+## <a name="350---february-2020"></a><span data-ttu-id="b23a2-272">3.5.0 - Şubat 2020</span><span class="sxs-lookup"><span data-stu-id="b23a2-272">3.5.0 - February 2020</span></span>
+### <a name="highlights-since-the-last-major-release"></a><span data-ttu-id="b23a2-273">Son ana sürümden bu yana öne çıkanlar</span><span class="sxs-lookup"><span data-stu-id="b23a2-273">Highlights since the last major release</span></span>
+* <span data-ttu-id="b23a2-274">İstemci tarafı telemetri güncelleştirildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-274">Updated client side telemetry.</span></span>
+* <span data-ttu-id="b23a2-275">Cihaz yönetimini desteklemek için Az.IotHub cmdlet’leri eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-275">Az.IotHub added cmdlets to support to manage devices.</span></span>
+* <span data-ttu-id="b23a2-276">Kullanılabilirlik Grubu Dinleyicisi için Az.SqlVirtualMachine cmdlet’leri eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-276">Az.SqlVirtualMachine added cmdlets for Availability Group Listener.</span></span>
+
+#### <a name="azaccounts"></a><span data-ttu-id="b23a2-277">Az.Accounts</span><span class="sxs-lookup"><span data-stu-id="b23a2-277">Az.Accounts</span></span>
+* <span data-ttu-id="b23a2-278">İstemci tarafı telemetri verilerine SubscriptionId, TenantId ve yürütme zamanı eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-278">Added SubscriptionId, TenantId, and execution time into data of client side telemetry</span></span>
+
+#### <a name="azautomation"></a><span data-ttu-id="b23a2-279">Az.Automation</span><span class="sxs-lookup"><span data-stu-id="b23a2-279">Az.Automation</span></span>
+* <span data-ttu-id="b23a2-280">'New-AzAutomationSoftwareUpdateConfiguration' için başvuru belgelerinde Örnek 1’deki yazım hatası düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-280">Fixed typo in Example 1 in reference documentation for 'New-AzAutomationSoftwareUpdateConfiguration'</span></span>
+
+#### <a name="azcognitiveservices"></a><span data-ttu-id="b23a2-281">Az.CognitiveServices</span><span class="sxs-lookup"><span data-stu-id="b23a2-281">Az.CognitiveServices</span></span>
+* <span data-ttu-id="b23a2-282">SDK 7.0 olarak güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-282">Updated SDK to 7.0</span></span>
+* <span data-ttu-id="b23a2-283">Sunucu yanıtları boş gövde olduğunda alınan hata iletisi geliştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-283">Improved error message when server responses empty body</span></span>
+
+#### <a name="azcompute"></a><span data-ttu-id="b23a2-284">Az.Compute</span><span class="sxs-lookup"><span data-stu-id="b23a2-284">Az.Compute</span></span>
+* <span data-ttu-id="b23a2-285">Güncelleştirme sırasında ProximityPlacementGroupId için boş değere izin verildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-285">Allowed empty value for ProximityPlacementGroupId during update</span></span>
+
+#### <a name="azfrontdoor"></a><span data-ttu-id="b23a2-286">Az.FrontDoor</span><span class="sxs-lookup"><span data-stu-id="b23a2-286">Az.FrontDoor</span></span>
+* <span data-ttu-id="b23a2-287">WAF’de kullanılabilen yönetilen kural tanımlarını almak için cmdlet eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-287">Added cmdlet to get managed rule definitions that can be used in WAF</span></span>
+
+#### <a name="aziothub"></a><span data-ttu-id="b23a2-288">Az.IotHub</span><span class="sxs-lookup"><span data-stu-id="b23a2-288">Az.IotHub</span></span>
+* <span data-ttu-id="b23a2-289">Iot Hub’daki cihazları yönetmek için destek eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-289">Added support to manage devices in an Iot Hub.</span></span> <span data-ttu-id="b23a2-290">Yeni Cmdlet’ler şunlardır:</span><span class="sxs-lookup"><span data-stu-id="b23a2-290">New Cmdlets are:</span></span>
+    - <span data-ttu-id="b23a2-291">'Add-AzIotHubDevice'</span><span class="sxs-lookup"><span data-stu-id="b23a2-291">'Add-AzIotHubDevice'</span></span>
+    - <span data-ttu-id="b23a2-292">'Get-AzIotHubDevice'</span><span class="sxs-lookup"><span data-stu-id="b23a2-292">'Get-AzIotHubDevice'</span></span>
+    - <span data-ttu-id="b23a2-293">'Remove-AzIotHubDevice'</span><span class="sxs-lookup"><span data-stu-id="b23a2-293">'Remove-AzIotHubDevice'</span></span>
+    - <span data-ttu-id="b23a2-294">'Set-AzIotHubDevice'</span><span class="sxs-lookup"><span data-stu-id="b23a2-294">'Set-AzIotHubDevice'</span></span>
+
+#### <a name="azkeyvault"></a><span data-ttu-id="b23a2-295">Az.KeyVault</span><span class="sxs-lookup"><span data-stu-id="b23a2-295">Az.KeyVault</span></span>
+* <span data-ttu-id="b23a2-296">Add-AzKeyVaultKey.md için yinelenen metin düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-296">Fixed duplicated text for Add-AzKeyVaultKey.md</span></span>
+
+#### <a name="azmonitor"></a><span data-ttu-id="b23a2-297">Az.Monitor</span><span class="sxs-lookup"><span data-stu-id="b23a2-297">Az.Monitor</span></span>
+* <span data-ttu-id="b23a2-298">Get-AzLog cmdlet’inin açıklaması düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-298">Fixed description of the Get-AzLog cmdlet.</span></span>
+* <span data-ttu-id="b23a2-299">'New-AzMetricAlertRuleV2' komutuna ActionGroupId adlı yeni bir parametre eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-299">A new parameter called ActionGroupId was added to 'New-AzMetricAlertRuleV2' command.</span></span>
+    - <span data-ttu-id="b23a2-300">Kullanıcı ActionGroupId(string) veya ActionGroup(ActivityLogAlertActionGroup) sağlayabilir.</span><span class="sxs-lookup"><span data-stu-id="b23a2-300">The user can provide either ActionGroupId(string) or ActionGorup(ActivityLogAlertActionGroup).</span></span>
+
+#### <a name="aznetwork"></a><span data-ttu-id="b23a2-301">Az.Network</span><span class="sxs-lookup"><span data-stu-id="b23a2-301">Az.Network</span></span>
+* <span data-ttu-id="b23a2-302">'New-AzPrivateLinkService' cmdlet’inin '-EnableProxyProtocol' parametresi için ek bir parametre notu eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-302">Added one extra parameter note for parameter '-EnableProxyProtocol' for 'New-AzPrivateLinkService' cmdlet.</span></span>
+* <span data-ttu-id="b23a2-303">Start-AzVirtualNetworkGatewayConnectionPacketCapture.md ve Start-AzVirtualnetworkGatewayPacketCapture.md içindeki FilterData örneği düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-303">Fixed FilterData example in Start-AzVirtualNetworkGatewayConnectionPacketCapture.md and Start-AzVirtualnetworkGatewayPacketCapture.md.</span></span>
+* <span data-ttu-id="b23a2-304">Start-AzVirtualNetworkGatewayConnectionPacketCapture.md ve Start-AzVirtualnetworkGatewayPacketCapture.md içinde tüm iç ve dış paketleri yakalamak için Paket Yakalama örneği eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-304">Added Packet Capture example for capture all inner and outer packets in Start-AzVirtualNetworkGatewayConnectionPacketCapture.md and Start-AzVirtualnetworkGatewayPacketCapture.md.</span></span>
+* <span data-ttu-id="b23a2-305">Sanal Ağ Güvenlik Duvarları üzerinde Azure Güvenlik Duvarı desteği sağlandı</span><span class="sxs-lookup"><span data-stu-id="b23a2-305">Supported Azure Firewall Policy on VNet Firewalls</span></span>
+    - <span data-ttu-id="b23a2-306">Yeni cmdlet eklenmedi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-306">No new cmdlets are added.</span></span> <span data-ttu-id="b23a2-307">Sanal ağ güvenlik duvarları üzerinde güvenlik duvarı ilkesi için kısıtlama gevşetiliyor</span><span class="sxs-lookup"><span data-stu-id="b23a2-307">Relaxing the restriction for firewall policy on VNet firewalls</span></span>
+
+#### <a name="azrecoveryservices"></a><span data-ttu-id="b23a2-308">Az.RecoveryServices</span><span class="sxs-lookup"><span data-stu-id="b23a2-308">Az.RecoveryServices</span></span>
+* <span data-ttu-id="b23a2-309">SQL Veritabanları için Dosya olarak geri yükleme desteği eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-309">Added Support for Restore-as-files for SQL Databases.</span></span>
+
+#### <a name="azresources"></a><span data-ttu-id="b23a2-310">Az.Resources</span><span class="sxs-lookup"><span data-stu-id="b23a2-310">Az.Resources</span></span>
+* <span data-ttu-id="b23a2-311">Şablon dağıtım cmdlet’leri yeniden düzenlendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-311">Refactored template deployment cmdlets</span></span>
+    - <span data-ttu-id="b23a2-312">Yönetim grubunda dağıtımları yönetmek için yeni cmdlet’ler eklendi: \*-AzManagementGroupDeployment</span><span class="sxs-lookup"><span data-stu-id="b23a2-312">Added new cmdlets for managing deployments at management group: \*-AzManagementGroupDeployment</span></span>
+    - <span data-ttu-id="b23a2-313">Kiracı kapsamında dağıtımları yönetmek için yeni cmdlet’ler eklendi: \*-AzTenantDeployment</span><span class="sxs-lookup"><span data-stu-id="b23a2-313">Added new cmdlets for managing deployments at tenant scope: \*-AzTenantDeployment</span></span>
+    - <span data-ttu-id="b23a2-314">\*-AzDeployment cmdlet’leri özel olarak abonelik kapsamında çalışmak için yeniden düzenlendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-314">Refactored \*-AzDeployment cmdlets to work specifically at subscription scope</span></span>
+    - <span data-ttu-id="b23a2-315">\*-AzDeployment cmdlet’leri için \*-AzSubscriptionDeployment diğer adları oluşturuldu</span><span class="sxs-lookup"><span data-stu-id="b23a2-315">Created aliases \*-AzSubscriptionDeployment for \*-AzDeployment cmdlets</span></span>
+* <span data-ttu-id="b23a2-316">'AvailableToOtherTenants' parametresi ayarlanmadığında 'Update-AzADApplication' düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-316">Fixed 'Update-AzADApplication' when parameter 'AvailableToOtherTenants' is not set</span></span>
+* <span data-ttu-id="b23a2-317">AmbiguousParameterSetException özel durumundan kaçınmak için ApplicationObjectWithoutCredentialParameterSet kaldırıldı.</span><span class="sxs-lookup"><span data-stu-id="b23a2-317">Removed ApplicationObjectWithoutCredentialParameterSet to avoid AmbiguousParameterSetException.</span></span>
+* <span data-ttu-id="b23a2-318">Yardım dosyaları yeniden oluşturuldu</span><span class="sxs-lookup"><span data-stu-id="b23a2-318">Regenerated help files</span></span>
+
+#### <a name="azsql"></a><span data-ttu-id="b23a2-319">Az.Sql</span><span class="sxs-lookup"><span data-stu-id="b23a2-319">Az.Sql</span></span>
+* <span data-ttu-id="b23a2-320">Yönetilen Örneklerde abonelikler arasında zaman noktası geri yüklemesi için destek eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-320">Added support for cross subscription point in time restore on Managed Instances.</span></span>
+* <span data-ttu-id="b23a2-321">Mevcut SQL Yönetilen Örnek donanım neslini değiştirme desteği eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-321">Added support for changing existing Sql Managed Instance hardware generation</span></span>
+* <span data-ttu-id="b23a2-322">'Update-AzSqlServerVulnerabilityAssessmentSetting' yardım örnekleri düzeltildi: parameter/property output - EmailAdmins</span><span class="sxs-lookup"><span data-stu-id="b23a2-322">Fixed 'Update-AzSqlServerVulnerabilityAssessmentSetting' help examples: parameter/property output - EmailAdmins</span></span>
+
+#### <a name="azsqlvirtualmachine"></a><span data-ttu-id="b23a2-323">Az.SqlVirtualMachine</span><span class="sxs-lookup"><span data-stu-id="b23a2-323">Az.SqlVirtualMachine</span></span>
+* <span data-ttu-id="b23a2-324">Kullanılabilirlik Grubu Dinleyicisi için cmdlet’ler eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-324">Added cmdlets for Availability Group Listener</span></span>
+
+#### <a name="azstoragesync"></a><span data-ttu-id="b23a2-325">Az.StorageSync</span><span class="sxs-lookup"><span data-stu-id="b23a2-325">Az.StorageSync</span></span>
+* <span data-ttu-id="b23a2-326">'Invoke-AzStorageSyncCompatibilityCheck' içinde desteklenen karakter kümeleri güncelleştirildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-326">Updated supported character sets in 'Invoke-AzStorageSyncCompatibilityCheck'.</span></span>
+
+## <a name="340---february-2020"></a><span data-ttu-id="b23a2-327">3.4.0 - Şubat 2020</span><span class="sxs-lookup"><span data-stu-id="b23a2-327">3.4.0 - February 2020</span></span>
+### <a name="highlights-since-the-last-major-release"></a><span data-ttu-id="b23a2-328">Son ana sürümden bu yana öne çıkanlar</span><span class="sxs-lookup"><span data-stu-id="b23a2-328">Highlights since the last major release</span></span>
+* <span data-ttu-id="b23a2-329">Az.CosmosDB ilk sürüm 0.1.0 yayınlandı</span><span class="sxs-lookup"><span data-stu-id="b23a2-329">Az.CosmosDB initial version 0.1.0 released</span></span>
+* <span data-ttu-id="b23a2-330">Az.Network ConnectionMonitor V2 desteği eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-330">Az.Network ConnectionMonitor V2 support added</span></span>
+
+#### <a name="azaccounts"></a><span data-ttu-id="b23a2-331">Az.Accounts</span><span class="sxs-lookup"><span data-stu-id="b23a2-331">Az.Accounts</span></span>
+* <span data-ttu-id="b23a2-332">AzureRmContext.json kullanılamadığında bağlamı otomatik olarak kaydetmeyi devre dışı bırakma</span><span class="sxs-lookup"><span data-stu-id="b23a2-332">Disable context auto saving when AzureRmContext.json not available</span></span>
+* <span data-ttu-id="b23a2-333">Azure PowerShell Common’ın başvurusu 1.3.5-önizleme olarak güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-333">Update the reference to Azure Powershell Common to 1.3.5-preview</span></span>
+
+#### <a name="azapimanagement"></a><span data-ttu-id="b23a2-334">Az.ApiManagement</span><span class="sxs-lookup"><span data-stu-id="b23a2-334">Az.ApiManagement</span></span>
+* <span data-ttu-id="b23a2-335">**Get-AzApiManagementApiSchema** Bir API ile ilişkili Open-Api Şemasını alma düzeltildi https://github.com/Azure/azure-powershell/issues/10626</span><span class="sxs-lookup"><span data-stu-id="b23a2-335">**Get-AzApiManagementApiSchema** Fixed getting Open-Api Schema associated with an API   https://github.com/Azure/azure-powershell/issues/10626</span></span>
+* <span data-ttu-id="b23a2-336">**New-AzApiManagementProduct**\* ve **Set-AzApiManagementProduct**</span><span class="sxs-lookup"><span data-stu-id="b23a2-336">**New-AzApiManagementProduct**\* and **Set-AzApiManagementProduct**</span></span>
+  - <span data-ttu-id="b23a2-337">https://github.com/Azure/azure-powershell/issues/10472 öğesine ilişkin belgeler düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-337">Fix documentation for https://github.com/Azure/azure-powershell/issues/10472</span></span>
+* <span data-ttu-id="b23a2-338">**Set-AzApiManagementApi** ServiceUrl’nin cmdlet kullanılarak nasıl güncelleştirildiğini göstermek için örnek eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-338">**Set-AzApiManagementApi** Added example to show how to update the ServiceUrl using the cmdlet</span></span>
+
+#### <a name="azcompute"></a><span data-ttu-id="b23a2-339">Az.Compute</span><span class="sxs-lookup"><span data-stu-id="b23a2-339">Az.Compute</span></span>
+* <span data-ttu-id="b23a2-340">Get-AzVM -Status VM adı olmadan gerçekleştirildiğinde ağ kapasitesinin azaltılmasını engellemek için VM durumu sayısını 100 ile sınırlandırın.</span><span class="sxs-lookup"><span data-stu-id="b23a2-340">Limit the number of VM status to 100 to avoid throttling when Get-AzVM -Status is performed without VM name.</span></span>
+* <span data-ttu-id="b23a2-341">Update-AzDiskEncryptionSet cmdlet’i eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-341">Add Update-AzDiskEncryptionSet cmdlet</span></span>
+* <span data-ttu-id="b23a2-342">Aşağıdaki cmdlet’lere EncryptionType ve DiskEncryptionSetId parametreleri eklendi:</span><span class="sxs-lookup"><span data-stu-id="b23a2-342">Add EncryptionType and DiskEncryptionSetId parameters to the following cmdlets:</span></span>
+    - <span data-ttu-id="b23a2-343">New-AzDiskUpdateConfig, New-AzSnapshotUpdateConfig</span><span class="sxs-lookup"><span data-stu-id="b23a2-343">New-AzDiskUpdateConfig, New-AzSnapshotUpdateConfig</span></span>
+* <span data-ttu-id="b23a2-344">Get-AzProximityPlacementGroup cmdlet’ine ColocationStatus parametresi eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-344">Add ColocationStatus parameter to Get-AzProximityPlacementGroup cmdlet.</span></span>
+
+#### <a name="azdatafactory"></a><span data-ttu-id="b23a2-345">Az.DataFactory</span><span class="sxs-lookup"><span data-stu-id="b23a2-345">Az.DataFactory</span></span>
+* <span data-ttu-id="b23a2-346">ADF .Net SDK sürümü 4.7.0’a güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-346">Update ADF .Net SDK version to 4.7.0</span></span>
+
+#### <a name="azdeploymentmanager"></a><span data-ttu-id="b23a2-347">Az.DeploymentManager</span><span class="sxs-lookup"><span data-stu-id="b23a2-347">Az.DeploymentManager</span></span>
+* <span data-ttu-id="b23a2-348">Kaynaklara yönelik LIST işlemlerini ekler</span><span class="sxs-lookup"><span data-stu-id="b23a2-348">Adds LIST operations for resources</span></span>
+* <span data-ttu-id="b23a2-349">Durum Denetimi adımlarında işlem gerçekleştirmeye yönelik özellik ekler</span><span class="sxs-lookup"><span data-stu-id="b23a2-349">Adds capability for performing operations on Health Check steps</span></span>
+
+#### <a name="azhdinsight"></a><span data-ttu-id="b23a2-350">Az.HDInsight</span><span class="sxs-lookup"><span data-stu-id="b23a2-350">Az.HDInsight</span></span>
+* <span data-ttu-id="b23a2-351">New-AzHDInsightCluster’ın belge hatası düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-351">Fix document error of New-AzHDInsightCluster.</span></span>
+
+#### <a name="azkeyvault"></a><span data-ttu-id="b23a2-352">Az.KeyVault</span><span class="sxs-lookup"><span data-stu-id="b23a2-352">Az.KeyVault</span></span>
+* <span data-ttu-id="b23a2-353">Remove-AzureKeyVault’un New-AzureKeyVault ile tutarlı olmasını sağlamak için VaultName özniteliğine Name diğer adı eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-353">Add Name alias to VaultName attribute to make Remove-AzureKeyVault consistent with New-AzureKeyVault.</span></span>
+
+#### <a name="aznetwork"></a><span data-ttu-id="b23a2-354">Az.Network</span><span class="sxs-lookup"><span data-stu-id="b23a2-354">Az.Network</span></span>
+* <span data-ttu-id="b23a2-355">Trafik Analizi’nin devre dışı bırakıldığı bir senaryoyu göstermek için Set-AzNetworkWatcherConfigFlowLog.md dosyasına yeni örnek eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-355">New example added to Set-AzNetworkWatcherConfigFlowLog.md to demonstrate Traffic Analytics disable scenario.</span></span>
+* <span data-ttu-id="b23a2-356">Azure Güvenlik Duvarı’na yönetim IP yapılandırması atamaya yönelik destek eklendi. Güvenlik duvarı, yönetim trafiği için ayrılmış alt ağı ve Genel IP’yi kullanacak</span><span class="sxs-lookup"><span data-stu-id="b23a2-356">Add support for assigning management IP configuration to Azure Firewall - a dedicated subnet and Public IP that the firewall will use for its management traffic</span></span>
+    - <span data-ttu-id="b23a2-357">New-AzFirewall cmdlet'i güncelleştirildi:</span><span class="sxs-lookup"><span data-stu-id="b23a2-357">Updated New-AzFirewall cmdlet:</span></span>
+        - <span data-ttu-id="b23a2-358">Genel IP Adresi nesnesi kabul eden -ManagementPublicIpAdress (zorunlu değil) parametresi eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-358">Added parameter -ManagementPublicIpAddress (not mandatory) which accepts a Public IP Address object</span></span>
+        - <span data-ttu-id="b23a2-359">Güvenlik duvarı nesnesine SetManagementIpConfiguration yöntemi eklendi. Giriş olarak bir alt ağ ve Genel IP adresi gerektirir. Alt ağ adının ‘AzureFirewallManagementSubnet’ olması gerekir</span><span class="sxs-lookup"><span data-stu-id="b23a2-359">Added method SetManagementIpConfiguration on firewall object - requires a subnet and a Public IP address as input - subnet name must be 'AzureFirewallManagementSubnet'</span></span>
+* <span data-ttu-id="b23a2-360">Get-AzNetworkSecurityGroup örnekleri, ağ arabirimlerinin yerine NSG’lere yönelik örnekleri gösterecek şekilde düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-360">Corrected Get-AzNetworkSecurityGroup examples to show examples for NSG's instead of network interfaces.</span></span>
+* <span data-ttu-id="b23a2-361">Kaynak kimliği tamamlayıcısının bir parametreyi tamamlamasını engelleyen New-AzVpnSite komutundaki yazım hatası düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-361">Fixed typo in New-AzVpnSite command that was preventing resource id completer from completing a parameter.</span></span>
+* <span data-ttu-id="b23a2-362">Application Gateway’de Yeniden Yazma Kuralları Eylem Kümesinde Url Yapılandırması için destek eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-362">Added support for Url Confiugration in Rewrite Rules Action Set in the Application Gateway</span></span>
+    - <span data-ttu-id="b23a2-363">Yeni cmdlet'ler eklendi:</span><span class="sxs-lookup"><span data-stu-id="b23a2-363">New cmdlets added:</span></span>
+        - <span data-ttu-id="b23a2-364">New-AzApplicationGatewayRewriteRuleUrlConfiguration</span><span class="sxs-lookup"><span data-stu-id="b23a2-364">New-AzApplicationGatewayRewriteRuleUrlConfiguration</span></span>
+    - <span data-ttu-id="b23a2-365">Cmdlet’ler isteğe bağlı -UrlConfiguration parametresiyle güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-365">Cmdlets updated with optional parameter - UrlConfiguration</span></span>
+        - <span data-ttu-id="b23a2-366">New-AzApplicationGatewayRewriteRuleActionSet</span><span class="sxs-lookup"><span data-stu-id="b23a2-366">New-AzApplicationGatewayRewriteRuleActionSet</span></span>
+* <span data-ttu-id="b23a2-367">NetworkWatcher ConnectionMonitor sürüm 2 kaynakları için destek eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-367">Add suppport for NetworkWatcher ConnectionMonitor version 2 resources</span></span>
+
+#### <a name="azpolicyinsights"></a><span data-ttu-id="b23a2-368">Az.PolicyInsights</span><span class="sxs-lookup"><span data-stu-id="b23a2-368">Az.PolicyInsights</span></span>
+* <span data-ttu-id="b23a2-369">Hangi kaynağın düzeltileceği belirlenmeden önce destek değerlendirmesi uyumluluğu</span><span class="sxs-lookup"><span data-stu-id="b23a2-369">Support evaluating compliance prior to determining what resource to remediate</span></span>
+    - <span data-ttu-id="b23a2-370">Start-AzPolicyRemediation cmdlet’ine ‘-ResourceDiscoverMode’ parametresi eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-370">Add '-ResourceDiscoverMode' parameter to Start-AzPolicyRemediation</span></span>
+* <span data-ttu-id="b23a2-371">İlke meta verilerine ilişkin kaynakları almak için Get-AzPolicyMetadata cmdlet’i eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-371">Add Get-AzPolicyMetadata cmdlet for getting policy metadata resources</span></span>
+* <span data-ttu-id="b23a2-372">API sürümü 2019-10-01 için Get-AzPolicyState ve Get-AzPolicyStateSummary güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-372">Updated Get-AzPolicyState and Get-AzPolicyStateSummary for API version 2019-10-01</span></span>
+
+#### <a name="azrecoveryservices"></a><span data-ttu-id="b23a2-373">Az.RecoveryServices</span><span class="sxs-lookup"><span data-stu-id="b23a2-373">Az.RecoveryServices</span></span>
+* <span data-ttu-id="b23a2-374">Çoğaltılan bir diski kaldırılmasına yönelik Azure Site Recovery desteği.</span><span class="sxs-lookup"><span data-stu-id="b23a2-374">Azure Site Recovery support for removing a replicated disk.</span></span>
+* <span data-ttu-id="b23a2-375">Azure Backup, Kurtarma Hizmetleri Kasası oluştururken etiket eklemeye yönelik destek ekledi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-375">Azure Backup added support for adding tags while creating a Recovery Services Vault.</span></span>
+
+#### <a name="azresources"></a><span data-ttu-id="b23a2-376">Az.Resources</span><span class="sxs-lookup"><span data-stu-id="b23a2-376">Az.Resources</span></span>
+* <span data-ttu-id="b23a2-377">Varsayılanı bağlam aboneliği olan \*-AzPolicyAssignment cmdlet’lerinde -Scope isteğe bağlı yapıldı</span><span class="sxs-lookup"><span data-stu-id="b23a2-377">Make -Scope optional in \*-AzPolicyAssignment cmdlets with default to context subscription</span></span>
+* <span data-ttu-id="b23a2-378">Parola ve anahtar kimlik bilgileriyle ADServicePrincipal oluşturma örnekleri eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-378">Add examples of creating ADServicePrincipal with password and key credential</span></span>
+
+#### <a name="azsql"></a><span data-ttu-id="b23a2-379">Az.Sql</span><span class="sxs-lookup"><span data-stu-id="b23a2-379">Az.Sql</span></span>
+<span data-ttu-id="b23a2-380">DatabaseName’in yerine PartnerDatabaseName’in olup olmadığını denetlemeye yarayan New-AzSqlDatabaseSecondary cmdlet’i düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-380">Fix New-AzSqlDatabaseSecondary cmdlet to check for PartnerDatabaseName existence instead of DatabaseName existence.</span></span>
+
+#### <a name="azstorage"></a><span data-ttu-id="b23a2-381">Az.Storage</span><span class="sxs-lookup"><span data-stu-id="b23a2-381">Az.Storage</span></span>
+* <span data-ttu-id="b23a2-382">Depolama Hesabı Oluştur’da Tablo/Sıra Şifreleme Anahtarı’nın ayarlanmasına yönelik destek</span><span class="sxs-lookup"><span data-stu-id="b23a2-382">Support set Table/Queue Encryption Keytype in Create Storage Account</span></span>
+    - <span data-ttu-id="b23a2-383">New-AzStorageAccount</span><span class="sxs-lookup"><span data-stu-id="b23a2-383">New-AzStorageAccount</span></span>
+* <span data-ttu-id="b23a2-384">StorageException’da ExtendedErrorInformation olmadığında RequestId’nin gösterilmesi</span><span class="sxs-lookup"><span data-stu-id="b23a2-384">Show RequestId when StorageException don't have ExtendedErrorInformation</span></span>
+* <span data-ttu-id="b23a2-385">Start-AzStorageBlobCopy cmdlet’ine ait olan Örnek 6 düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-385">Fix the Example 6 of cmdlet Start-AzStorageBlobCopy</span></span>
+
+#### <a name="azwebsites"></a><span data-ttu-id="b23a2-386">Az.Websites</span><span class="sxs-lookup"><span data-stu-id="b23a2-386">Az.Websites</span></span>
+* <span data-ttu-id="b23a2-387">Set-AzWebapp ve Set-AzWebappSlot, şu özellikleri destekler: AlwaysOn, MinTls ve FtpsState</span><span class="sxs-lookup"><span data-stu-id="b23a2-387">Set-AzWebapp and Set-AzWebappSlot supports AlwaysOn, MinTls and FtpsState properties</span></span>
+* <span data-ttu-id="b23a2-388">Tek Set-AzWebApp Komutunu kullanarak HttpsOnly ayarlanırken aynı anda AppservicePlan değiştirildiğinde HttpsOnly’nin varsayılan değere sıfırlanması sorunu düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-388">Fixing issue where setting HttpsOnly along with changing AppservicePlan at the same time using the single Set-AzWebApp Command, was resetting HttpsOnly to default value</span></span>
+
+## <a name="330---january-2020"></a><span data-ttu-id="b23a2-389">3.3.0 - Ocak 2020</span><span class="sxs-lookup"><span data-stu-id="b23a2-389">3.3.0 - January 2020</span></span>
+#### <a name="azaccounts"></a><span data-ttu-id="b23a2-390">Az.Accounts</span><span class="sxs-lookup"><span data-stu-id="b23a2-390">Az.Accounts</span></span>
+* <span data-ttu-id="b23a2-391">Add-AzEnvironment ve Set-AzEnvironment, AzureAttestationServiceEndpointResourceId ve AzureAttestationServiceEndpointSuffix parametrelerini kabul edecek şekilde güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-391">Updated Add-AzEnvironment and Set-AzEnvironment to accept parameters AzureAttestationServiceEndpointResourceId and AzureAttestationServiceEndpointSuffix</span></span>
+
+#### <a name="azcdn"></a><span data-ttu-id="b23a2-392">Az.Cdn</span><span class="sxs-lookup"><span data-stu-id="b23a2-392">Az.Cdn</span></span>
+* <span data-ttu-id="b23a2-393">New-AzCdnEndpoint cmdlet’inde hata yanıtı ayrıntılarını görüntüleme</span><span class="sxs-lookup"><span data-stu-id="b23a2-393">Display error response detail in New-AzCdnEndpoint cmdlet</span></span>
+
+#### <a name="azcompute"></a><span data-ttu-id="b23a2-394">Az.Compute</span><span class="sxs-lookup"><span data-stu-id="b23a2-394">Az.Compute</span></span>
+* <span data-ttu-id="b23a2-395">İşletim sistemi profili bulunmayan, yönetilen OD diskine sahip bir VM için Set-AzVMCustomScriptExtension cmdlet’i düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-395">Fix Set-AzVMCustomScriptExtension cmdlet for a VM with managed OD disk which does not have OS profile.</span></span>
+
+#### <a name="azcontainerinstance"></a><span data-ttu-id="b23a2-396">Az.ContainerInstance</span><span class="sxs-lookup"><span data-stu-id="b23a2-396">Az.ContainerInstance</span></span>
+* <span data-ttu-id="b23a2-397">New-AzContainerGroup örneği tarafından kullanılan parametre adları düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-397">Fixed parameter names used by example of New-AzContainerGroup</span></span>
+
+#### <a name="azdataboxedge"></a><span data-ttu-id="b23a2-398">Az.DataBoxEdge</span><span class="sxs-lookup"><span data-stu-id="b23a2-398">Az.DataBoxEdge</span></span>
+* <span data-ttu-id="b23a2-399">'Get-AzDataBoxEdgeStorageContainer' cmdlet’i eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-399">Added cmdlet 'Get-AzDataBoxEdgeStorageContainer'</span></span>
+  - <span data-ttu-id="b23a2-400">Edge Depolama Kapsayıcısını edinme</span><span class="sxs-lookup"><span data-stu-id="b23a2-400">Get the Edge Storage Container</span></span>
+* <span data-ttu-id="b23a2-401">'New-AzDataBoxEdgeStorageContainer' cmdlet’i eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-401">Added cmdlet 'New-AzDataBoxEdgeStorageContainer'</span></span>
+  - <span data-ttu-id="b23a2-402">Yeni Edge Depolama Kapsayıcısı oluşturma</span><span class="sxs-lookup"><span data-stu-id="b23a2-402">Create new Edge Strorage Container</span></span>
+* <span data-ttu-id="b23a2-403">'Remove-AzDataBoxEdgeStorageContainer' cmdlet’i eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-403">Added cmdlet 'Remove-AzDataBoxEdgeStorageContainer'</span></span>
+  - <span data-ttu-id="b23a2-404">Edge Depolama Kapsayıcısını kaldırma</span><span class="sxs-lookup"><span data-stu-id="b23a2-404">Remove the Edge Storage Container</span></span>
+* <span data-ttu-id="b23a2-405">'Invoke-AzDataBoxEdgeStorageContainer' cmdlet’i eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-405">Added cmdlet 'Invoke-AzDataBoxEdgeStorageContainer'</span></span>
+  - <span data-ttu-id="b23a2-406">Edge Depolama Kapsayıcısındaki verileri yenilemek için eylem çağırma</span><span class="sxs-lookup"><span data-stu-id="b23a2-406">Invoke action to refresh data on Edge Storage Container</span></span>
+* <span data-ttu-id="b23a2-407">'Get-AzDataBoxEdgeStorageAccount' cmdlet’i eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-407">Added cmdlet 'Get-AzDataBoxEdgeStorageAccount'</span></span>
+  - <span data-ttu-id="b23a2-408">Edge Depolama Hesabını edinme</span><span class="sxs-lookup"><span data-stu-id="b23a2-408">Get the Edge Storage Account</span></span>
+* <span data-ttu-id="b23a2-409">'New-AzDataBoxEdgeStorageAccount' cmdlet’i eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-409">Added cmdlet 'New-AzDataBoxEdgeStorageAccount'</span></span>
+  - <span data-ttu-id="b23a2-410">Yeni Edge Depolama Hesabını oluşturma</span><span class="sxs-lookup"><span data-stu-id="b23a2-410">Create new Edge Storage Account</span></span>
+* <span data-ttu-id="b23a2-411">'Remove-AzDataBoxEdgeStorageAccount' cmdlet’i eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-411">Added cmdlet 'Remove-AzDataBoxEdgeStorageAccount'</span></span>
+  - <span data-ttu-id="b23a2-412">Edge Depolama Hesabını kaldırma</span><span class="sxs-lookup"><span data-stu-id="b23a2-412">Remove the Edge Storage Account</span></span>
+* <span data-ttu-id="b23a2-413">'Invoke-AzDataBoxEdgeShare' cmdlet’ini çağırma</span><span class="sxs-lookup"><span data-stu-id="b23a2-413">Invoke cmdlet 'Invoke-AzDataBoxEdgeShare'</span></span>
+  - <span data-ttu-id="b23a2-414">Paylaşımdaki verileri yenilemek için eylem çağırma</span><span class="sxs-lookup"><span data-stu-id="b23a2-414">Invoke action to refresh data on share</span></span>
+* <span data-ttu-id="b23a2-415">'Set-AzDataBoxEdgeStorageAccountCredential' cmdlet’i eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-415">Added cmdlet 'Set-AzDataBoxEdgeStorageAccountCredential'</span></span>
+  - <span data-ttu-id="b23a2-416">Az databoxedge depolama hesabı kimlik bilgilerini ayarlama</span><span class="sxs-lookup"><span data-stu-id="b23a2-416">Set the az databoxedge storage account credential</span></span>
+
+#### <a name="azdatafactory"></a><span data-ttu-id="b23a2-417">Az.DataFactory</span><span class="sxs-lookup"><span data-stu-id="b23a2-417">Az.DataFactory</span></span>
+* <span data-ttu-id="b23a2-418">Get-AzDataFactoryV2IntegrationRuntime cmdlet’i için AutoUpdateETA, LatestVersion, PushedVersion, TaskQueueId ve VersionStatus özellikleri eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-418">Add AutoUpdateETA, LatestVersion, PushedVersion, TaskQueueId and VersionStatus properties for Get-AzDataFactoryV2IntegrationRuntime cmd</span></span>
+* <span data-ttu-id="b23a2-419">ADF .Net SDK sürümü 4.6.0’a güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-419">Update ADF .Net SDK version to 4.6.0</span></span>
+* <span data-ttu-id="b23a2-420">Statik genel IP adreslerine sahip Azure-SSIS IR’nin oluşturulmasına olanak tanımak için ‘Set-AzureRmDataFactoryV2IntegrationRuntime’ cmdlet’ine yönelik ‘PublicIPs’ parametresi eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-420">Add parameter 'PublicIPs' for 'Set-AzureRmDataFactoryV2IntegrationRuntime' cmd to enable create Azure-SSIS IR with static public IP addresses.</span></span>
+
+#### <a name="azdevtestlabs"></a><span data-ttu-id="b23a2-421">Az.DevTestLabs</span><span class="sxs-lookup"><span data-stu-id="b23a2-421">Az.DevTestLabs</span></span>
+* <span data-ttu-id="b23a2-422">Get-AzDtlAllowedVMSizesPolicy.md’deki bozuk bağlantı kaldırıldı</span><span class="sxs-lookup"><span data-stu-id="b23a2-422">Remove the broken link in Get-AzDtlAllowedVMSizesPolicy.md</span></span>
+
+#### <a name="azeventhub"></a><span data-ttu-id="b23a2-423">Az.EventHub</span><span class="sxs-lookup"><span data-stu-id="b23a2-423">Az.EventHub</span></span>
+* <span data-ttu-id="b23a2-424">Sorun 10634’e yönelik düzeltme: Eventhubnamespace’i kaldırmaya yönelik null Nesne başvurusu düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-424">Fix for issue 10634 : Fix the null Object reference for remove eventhubnamespace</span></span>
+
+#### <a name="azhdinsight"></a><span data-ttu-id="b23a2-425">Az.HDInsight</span><span class="sxs-lookup"><span data-stu-id="b23a2-425">Az.HDInsight</span></span>
+* <span data-ttu-id="b23a2-426">Invoke-AzHDInsightHiveJob.md hatası düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-426">Fix Invoke-AzHDInsightHiveJob.md error.</span></span>
+
+#### <a name="azmachinelearning"></a><span data-ttu-id="b23a2-427">Az.MachineLearning</span><span class="sxs-lookup"><span data-stu-id="b23a2-427">Az.MachineLearning</span></span>
+* <span data-ttu-id="b23a2-428">MachineLearningCompute artık kullanılamadığından, aşağıdaki cmdlet’ler kaldırıldı</span><span class="sxs-lookup"><span data-stu-id="b23a2-428">Removed below cmdlets because MachineLearningCompute is not available any longer</span></span>
+  - <span data-ttu-id="b23a2-429">Get-AzMlOpCluster</span><span class="sxs-lookup"><span data-stu-id="b23a2-429">Get-AzMlOpCluster</span></span>
+  - <span data-ttu-id="b23a2-430">Get-AzMlOpClusterKey</span><span class="sxs-lookup"><span data-stu-id="b23a2-430">Get-AzMlOpClusterKey</span></span>
+  - <span data-ttu-id="b23a2-431">New-AzMlOpCluster</span><span class="sxs-lookup"><span data-stu-id="b23a2-431">New-AzMlOpCluster</span></span>
+  - <span data-ttu-id="b23a2-432">Remove-AzMlOpCluster</span><span class="sxs-lookup"><span data-stu-id="b23a2-432">Remove-AzMlOpCluster</span></span>
+  - <span data-ttu-id="b23a2-433">Set-AzMlOpCluster</span><span class="sxs-lookup"><span data-stu-id="b23a2-433">Set-AzMlOpCluster</span></span>
+  - <span data-ttu-id="b23a2-434">Test-AzMlOpClusterSystemServicesUpdateAvailability</span><span class="sxs-lookup"><span data-stu-id="b23a2-434">Test-AzMlOpClusterSystemServicesUpdateAvailability</span></span>
+  - <span data-ttu-id="b23a2-435">Update-AzMlOpClusterSystemService</span><span class="sxs-lookup"><span data-stu-id="b23a2-435">Update-AzMlOpClusterSystemService</span></span>
+
+#### <a name="aznetwork"></a><span data-ttu-id="b23a2-436">Az.Network</span><span class="sxs-lookup"><span data-stu-id="b23a2-436">Az.Network</span></span>
+* <span data-ttu-id="b23a2-437">1\.36-preview olan Microsoft.Azure.Management.Sql bağımlılığı 1.37-preview’a yükseltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-437">Upgrade dependency of Microsoft.Azure.Management.Sql from 1.36-preview to 1.37-preview</span></span>
+
+#### <a name="azrecoveryservices"></a><span data-ttu-id="b23a2-438">Az.RecoveryServices</span><span class="sxs-lookup"><span data-stu-id="b23a2-438">Az.RecoveryServices</span></span>
+* <span data-ttu-id="b23a2-439">Azure’dan Azure’a sağlayıcı için müşteri tarafından yönetilen anahtarlar ile bekleyen durumda şifrelenen yönetilen disk VM’lerine yönelik Azure Site Recovery değişim desteği.</span><span class="sxs-lookup"><span data-stu-id="b23a2-439">Azure Site Recovery change support for managed disk vms encrypted at rest with customer managed keys for Azure to Azure provider.</span></span>
+* <span data-ttu-id="b23a2-440">Disk şifreleme Kümesi Kimliklerini VMware’den Azure’a aktarımlara yönelik koruma sağlayan isteğe bağlı giriş olarak girmek için Azure Site Recovery desteği.</span><span class="sxs-lookup"><span data-stu-id="b23a2-440">Azure Site Recovery support to input disk encryption Set Id as optional input at enabling protection for Vmware to Azure.</span></span>
+* <span data-ttu-id="b23a2-441">Disk şifreleme Kümesi Kimliklerini VMware’den Azure’a aktarımlara yönelik koruma sağlayan disk düzeyinde isteğe bağlı giriş olarak girmek için Azure Site Recovery desteği.</span><span class="sxs-lookup"><span data-stu-id="b23a2-441">Azure Site Recovery support to input disk encryption Set Id as optional input at disk level to enable protection for Vmware to Azure.</span></span>
+* <span data-ttu-id="b23a2-442">HyperV’den Azure’a disk şifrelemesi ayarlama eşlemesi ile çoğaltma korumalı öğeyi güncelleştirmeye yönelik Azure Site Recovery desteği.</span><span class="sxs-lookup"><span data-stu-id="b23a2-442">Azure Site Recovery support to update replication protected item with disk encryption set Map for HyperV to Azure.</span></span>
+
+#### <a name="azresources"></a><span data-ttu-id="b23a2-443">Az.Resources</span><span class="sxs-lookup"><span data-stu-id="b23a2-443">Az.Resources</span></span>
+* <span data-ttu-id="b23a2-444">'Remove-AzTag' yardım belgesindeki bir hata düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-444">Fix an error in help document of 'Remove-AzTag'.</span></span>
+
+#### <a name="azsql"></a><span data-ttu-id="b23a2-445">Az.Sql</span><span class="sxs-lookup"><span data-stu-id="b23a2-445">Az.Sql</span></span>
+* <span data-ttu-id="b23a2-446">Güvenlik açığı değerlendirmesi tarafından ayarlanan temel cmdlet işlevi, Azure veritabanına yönelik ana veritabanında çalışacak ve yönetilen örnek sistem veritabanlarında sınırlandırılacak şekilde düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-446">Fix vulnerability assessment set baseline cmdlets functionality to work on master db for azure database and limit it on managed instance system databases.</span></span>
+* <span data-ttu-id="b23a2-447">SQL örneği yük devretme grubu oluşturulurken karşılaşılan bir hata düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-447">Fix an error when creating SQL instance failover group</span></span>
+
+#### <a name="azsqlvirtualmachine"></a><span data-ttu-id="b23a2-448">Az.SqlVirtualMachine</span><span class="sxs-lookup"><span data-stu-id="b23a2-448">Az.SqlVirtualMachine</span></span>
+* <span data-ttu-id="b23a2-449">Yeni geçerli Lisans türü olarak DR eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-449">Add DR as a new valid License type</span></span>
+
+#### <a name="azstorage"></a><span data-ttu-id="b23a2-450">Az.Storage</span><span class="sxs-lookup"><span data-stu-id="b23a2-450">Az.Storage</span></span>
+* <span data-ttu-id="b23a2-451">Sonraki bir sürümde gerçekleşecek DefaultAction değerinin değişikliğine yönelik hataya neden olan değişiklik uyarısı eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-451">Add breaking change warning message for DefaultAction Value change in a future release</span></span>
+    - <span data-ttu-id="b23a2-452">Update-AzStorageAccountNetworkRuleSet</span><span class="sxs-lookup"><span data-stu-id="b23a2-452">Update-AzStorageAccountNetworkRuleSet</span></span>
+* <span data-ttu-id="b23a2-453">Get-AzureRMStorageAccount cmdlet’i -IncludeGeoReplicationStats parametresiyle çalıştırarak Depolama hesabının en son eşitleme zamanını almaya yönelik destek</span><span class="sxs-lookup"><span data-stu-id="b23a2-453">Support Get last sync time of Storage account by run get-AzureRMStorageAccount with parameter -IncludeGeoReplicationStats</span></span>
+    - <span data-ttu-id="b23a2-454">Get-AzureRMStorageAccount</span><span class="sxs-lookup"><span data-stu-id="b23a2-454">Get-AzureRMStorageAccount</span></span>
+
+## <a name="320---december-2019"></a><span data-ttu-id="b23a2-455">3.2.0 - Aralık 2019</span><span class="sxs-lookup"><span data-stu-id="b23a2-455">3.2.0 - December 2019</span></span>
+
+### <a name="general"></a><span data-ttu-id="b23a2-456">Genel</span><span class="sxs-lookup"><span data-stu-id="b23a2-456">General</span></span>
+* <span data-ttu-id="b23a2-457">.psd1 içindeki başvurular, tüm modüller için göreli yol kullanılacak şekilde güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-457">Update references in .psd1 to use relative path for all modules</span></span>
+
+#### <a name="azaccounts"></a><span data-ttu-id="b23a2-458">Az.Accounts</span><span class="sxs-lookup"><span data-stu-id="b23a2-458">Az.Accounts</span></span>
+* <span data-ttu-id="b23a2-459">Az 4.0 önizlemesine yönelik istemci tarafı telemetri için doğru UserAgent ayarlandı</span><span class="sxs-lookup"><span data-stu-id="b23a2-459">Set correct UserAgent for client-side telemetry for Az 4.0 preview</span></span>
+* <span data-ttu-id="b23a2-460">Az 4.0 önizlemesinde bağlam null olduğunda kolay hata iletisi görüntüleniyor</span><span class="sxs-lookup"><span data-stu-id="b23a2-460">Display user friendly error message when context is null in Az 4.0 preview</span></span>
+
+#### <a name="azbatch"></a><span data-ttu-id="b23a2-461">Az.Batch</span><span class="sxs-lookup"><span data-stu-id="b23a2-461">Az.Batch</span></span>
+* <span data-ttu-id="b23a2-462">**New-AzBatchPool** cmdlet’inin 'VirtualMachineConfiguration. ContainerConfiguration' veya 'VirtualMachineConfiguration.DataDisks' öğelerini sunucuya doğru bir şekilde göndermediği [10602](https://github.com/Azure/azure-powershell/issues/10602) numaralı sorun düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-462">Fix issue [#10602](https://github.com/Azure/azure-powershell/issues/10602), where **New-AzBatchPool** did not properly send 'VirtualMachineConfiguration.ContainerConfiguration' or 'VirtualMachineConfiguration.DataDisks' to the server.</span></span>
+
+#### <a name="azdatafactory"></a><span data-ttu-id="b23a2-463">Az.DataFactory</span><span class="sxs-lookup"><span data-stu-id="b23a2-463">Az.DataFactory</span></span>
+* <span data-ttu-id="b23a2-464">ADF .Net SDK sürümü 4.5.0’a güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-464">Update ADF .Net SDK version to 4.5.0</span></span>
+
+#### <a name="azfrontdoor"></a><span data-ttu-id="b23a2-465">Az.FrontDoor</span><span class="sxs-lookup"><span data-stu-id="b23a2-465">Az.FrontDoor</span></span>
+* <span data-ttu-id="b23a2-466">WAF tarafından yönetilen kuralları dışlama desteği eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-466">Added WAF managed rules exclusion support</span></span>
+* <span data-ttu-id="b23a2-467">Otomatik tamamlamaya SocketAddr eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-467">Add SocketAddr to auto-complete</span></span>
+
+#### <a name="azhealthcareapis"></a><span data-ttu-id="b23a2-468">Az.HealthcareApis</span><span class="sxs-lookup"><span data-stu-id="b23a2-468">Az.HealthcareApis</span></span>
+* <span data-ttu-id="b23a2-469">Özel Durum İşleme</span><span class="sxs-lookup"><span data-stu-id="b23a2-469">Exception Handling</span></span>
+
+#### <a name="azkeyvault"></a><span data-ttu-id="b23a2-470">Az.KeyVault</span><span class="sxs-lookup"><span data-stu-id="b23a2-470">Az.KeyVault</span></span>
+* <span data-ttu-id="b23a2-471">Ayarlanmamış olabilecek değere erişirken gerçekleşen hata düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-471">Fixed error accessing value that is potentially not set</span></span>
+* <span data-ttu-id="b23a2-472">Eliptik Eğri Şifrelemesi Sertifika Yönetimi</span><span class="sxs-lookup"><span data-stu-id="b23a2-472">Elliptic Curve Cryptography Certificate Managment</span></span>
+    - <span data-ttu-id="b23a2-473">Sertifika İlkeleri için Eğri belirtme desteği eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-473">Added support to specify the Curve for Certificate Policies</span></span>
+
+#### <a name="azmonitor"></a><span data-ttu-id="b23a2-474">Az.Monitor</span><span class="sxs-lookup"><span data-stu-id="b23a2-474">Az.Monitor</span></span>
+* <span data-ttu-id="b23a2-475">Tanılama Ayarları Ekle komutuna isteğe bağlı bağımsız değişken eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-475">Adding optional argument to the Add Diagnostic Settings command.</span></span> <span data-ttu-id="b23a2-476">Mevcut olduğunda, Log Analytics’e aktarmanın sabit bir şemaya (ayrılmış</span><span class="sxs-lookup"><span data-stu-id="b23a2-476">A switch argument that if present indicates that the export to Log Analytics must be to a fixed schema (a.k.a.</span></span> <span data-ttu-id="b23a2-477">veri türü olarak da bilinir) yönelik olması gerektiğini belirten bir anahtar bağımsız değişkeni</span><span class="sxs-lookup"><span data-stu-id="b23a2-477">dedicated, data type)</span></span>
+
+#### <a name="aznetwork"></a><span data-ttu-id="b23a2-478">Az.Network</span><span class="sxs-lookup"><span data-stu-id="b23a2-478">Az.Network</span></span>
+* <span data-ttu-id="b23a2-479">AzureFirewall Uygulama, NAT ve Ağ Kuralları içinde IpGroups desteği.</span><span class="sxs-lookup"><span data-stu-id="b23a2-479">Support for IpGroups in AzureFirewall Application,Nat & Network Rules.</span></span>
+
+#### <a name="azresources"></a><span data-ttu-id="b23a2-480">Az.Resources</span><span class="sxs-lookup"><span data-stu-id="b23a2-480">Az.Resources</span></span>
+* <span data-ttu-id="b23a2-481">Şablon parametresi adının yerleşik bir parametre adıyla çakışması durumunda şablon dağıtımının, şablon parametresini okuyamamasına neden olan sorun düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-481">Fix an issue where template deployment fails to read a template parameter if its name conflicts with some built-in parameter name.</span></span>
+* <span data-ttu-id="b23a2-482">İlke cmdlet’leri, ilke kümesi tanımları içinde gruplandırma desteği sunan yeni API sürümü 2019-09-01’i kullanacak şekilde güncelleştirildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-482">Updated policy cmdlets to use new api version 2019-09-01 that introduces grouping support within policy set definitions.</span></span>
+
+#### <a name="azsql"></a><span data-ttu-id="b23a2-483">Az.Sql</span><span class="sxs-lookup"><span data-stu-id="b23a2-483">Az.Sql</span></span>
+* <span data-ttu-id="b23a2-484">Güvenlik Açığı Değerlendirmesi otomatik etkinleştirmesi, depolamayı StorageV2'de oluşturacak şekilde yükseltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-484">Upgraded storage creation in Vulnerability Assessment auto enablement to StorageV2</span></span>
+
+#### <a name="azstorage"></a><span data-ttu-id="b23a2-485">Az.Storage</span><span class="sxs-lookup"><span data-stu-id="b23a2-485">Az.Storage</span></span>
+* <span data-ttu-id="b23a2-486">OAuth kimlik doğrulaması tabanlı Depolama Bağlamı ile Blob/Kapsayıcı Kimliği tabanlı SAS belirteci oluşturma desteği</span><span class="sxs-lookup"><span data-stu-id="b23a2-486">Support generate Blob/Constainer Idenity based SAS token with Storage Context based on Oauth authentication</span></span>
+    - <span data-ttu-id="b23a2-487">New-AzStorageContainerSASToken</span><span class="sxs-lookup"><span data-stu-id="b23a2-487">New-AzStorageContainerSASToken</span></span>
+    - <span data-ttu-id="b23a2-488">New-AzStorageBlobSASToken</span><span class="sxs-lookup"><span data-stu-id="b23a2-488">New-AzStorageBlobSASToken</span></span>
+* <span data-ttu-id="b23a2-489">Tüm Kimlik SAS belirteçleri iptal edilecek şekilde Depolama Hesabı Kullanıcı Temsilcisi Anahtarlarını iptal etme desteği</span><span class="sxs-lookup"><span data-stu-id="b23a2-489">Support revoke Storage Account User Delegation Keys, so all Idenity SAS tokens are revoked</span></span>
+    - <span data-ttu-id="b23a2-490">Revoke-AzStorageAccountUserDelegationKeys</span><span class="sxs-lookup"><span data-stu-id="b23a2-490">Revoke-AzStorageAccountUserDelegationKeys</span></span>
+* <span data-ttu-id="b23a2-491">Microsoft.Azure.Management.Storage, yeni API sürümü 2019-06-01 desteklenecek şekilde 14.2.0 sürümüne güncelleştirildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-491">Upgrade to Microsoft.Azure.Management.Storage 14.2.0, to support new API version 2019-06-01.</span></span>
+* <span data-ttu-id="b23a2-492">Dosya Paylaşımı cmdlet’lerinin Yönetim düzlemindeki 5120’den daha büyük değerler için QuotaGiB (Gibibayt temelinde Paylaşım Kotası) desteği sunuldu ve 'QuotaGiB' parametresine yönelik diğer ad olarak 'Quota' parametresi eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-492">Support of QuotaGiB (Share Quota in Gibibye) for values of more than 5120 in the Management plane of File Share cmdlets and added the 'Quota' parameter alias to the 'QuotaGiB' parameter.</span></span>
+    - <span data-ttu-id="b23a2-493">New-AzRmStorageShare</span><span class="sxs-lookup"><span data-stu-id="b23a2-493">New-AzRmStorageShare</span></span>
+    - <span data-ttu-id="b23a2-494">Update-AzRmStorageShare</span><span class="sxs-lookup"><span data-stu-id="b23a2-494">Update-AzRmStorageShare</span></span>
+* <span data-ttu-id="b23a2-495">'Quota' parametresine 'QuotaGiB' parametre diğer adı eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-495">Add parameter alias 'QuotaGiB' to parameter 'Quota'</span></span>
+    - <span data-ttu-id="b23a2-496">Set-AzStorageShareQuota</span><span class="sxs-lookup"><span data-stu-id="b23a2-496">Set-AzStorageShareQuota</span></span>
+* <span data-ttu-id="b23a2-497">Set-AzStorageContainerAcl’nin depolanan Erişim İlkesini temizlemesine neden olan sorun düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-497">Fix the issue that Set-AzStorageContainerAcl can clean up the stored Access Policy</span></span>
+    - <span data-ttu-id="b23a2-498">Set-AzStorageContainerAcl</span><span class="sxs-lookup"><span data-stu-id="b23a2-498">Set-AzStorageContainerAcl</span></span>
+
+## <a name="310---november-2019"></a><span data-ttu-id="b23a2-499">3.1.0 - Kasım 2019</span><span class="sxs-lookup"><span data-stu-id="b23a2-499">3.1.0 - November 2019</span></span>
+### <a name="highlights-since-the-last-major-release"></a><span data-ttu-id="b23a2-500">Son ana sürümden bu yana öne çıkanlar</span><span class="sxs-lookup"><span data-stu-id="b23a2-500">Highlights since the last major release</span></span>
+* <span data-ttu-id="b23a2-501">Az.DataBoxEdge 1.0.0 yayımlandı</span><span class="sxs-lookup"><span data-stu-id="b23a2-501">Az.DataBoxEdge 1.0.0 released</span></span>
+* <span data-ttu-id="b23a2-502">Az.SqlVirtualMachine 1.0.0 yayımlandı</span><span class="sxs-lookup"><span data-stu-id="b23a2-502">Az.SqlVirtualMachine 1.0.0 released</span></span>
+
+#### <a name="azcompute"></a><span data-ttu-id="b23a2-503">Az.Compute</span><span class="sxs-lookup"><span data-stu-id="b23a2-503">Az.Compute</span></span>
+* <span data-ttu-id="b23a2-504">VM Reapply özelliği</span><span class="sxs-lookup"><span data-stu-id="b23a2-504">VM Reapply feature</span></span>
+    - <span data-ttu-id="b23a2-505">Set-AzVM cmdlet’ine Reapply parametresi ekleme</span><span class="sxs-lookup"><span data-stu-id="b23a2-505">Add Reapply parameter to Set-AzVM cmdlet</span></span>
+* <span data-ttu-id="b23a2-506">VM Ölçek Kümesi AutomaticRepairs özelliği:</span><span class="sxs-lookup"><span data-stu-id="b23a2-506">VM Scale Set AutomaticRepairs feature:</span></span>
+    - <span data-ttu-id="b23a2-507">EnableAutomaticRepair, AutomaticRepairGracePeriod ve AutomaticRepairMaxInstanceRepairsPercent parametreleri şu cmdlet’lere eklendi:   New-AzVmssConfig   Update-AzVmss</span><span class="sxs-lookup"><span data-stu-id="b23a2-507">Add EnableAutomaticRepair, AutomaticRepairGracePeriod, and AutomaticRepairMaxInstanceRepairsPercent parameters to the following cmdlets:   New-AzVmssConfig   Update-AzVmss</span></span>
+* <span data-ttu-id="b23a2-508">New-AzVM için kiracılar arası galeri görüntüsü desteği</span><span class="sxs-lookup"><span data-stu-id="b23a2-508">Cross tenant gallery image support for New-AzVM</span></span>
+* <span data-ttu-id="b23a2-509">New-AzVM, New-AzVMConfig ve New-AzVmss cmdlet’lerindeki Priority parametresinin bağımsız değişken tamamlayıcısına ‘Spot’ eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-509">Add 'Spot' to the argument completer of Priority parameter in New-AzVM, New-AzVMConfig and New-AzVmss cmdlets</span></span>
+* <span data-ttu-id="b23a2-510">Add-AzVmssDataDisk cmdlet’ine DiskIOPSReadWrite ve DiskMBpsReadWrite parametreleri eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-510">Add DiskIOPSReadWrite and DiskMBpsReadWrite parameters to Add-AzVmssDataDisk cmdlet</span></span>
+* <span data-ttu-id="b23a2-511">New-AzGalleryImageVersion cmdlet’inin SourceImageId parametresi isteğe bağlı olacak şekilde değiştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-511">Change SourceImageId parameter of New-AzGalleryImageVersion cmdlet to optional</span></span>
+* <span data-ttu-id="b23a2-512">New-AzGalleryImageVersion cmdlet’ine OSDiskImage ve DataDiskImage parametreleri eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-512">Add OSDiskImage and DataDiskImage parameters to New-AzGalleryImageVersion cmdlet</span></span>
+* <span data-ttu-id="b23a2-513">New-AzGalleryImageDefinition cmdlet’ine HyperVGeneration parametresi eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-513">Add HyperVGeneration parameter to New-AzGalleryImageDefinition cmdlet</span></span>
+* <span data-ttu-id="b23a2-514">New-AzVmss, New-AzVmssConfig ve Update-AzVmss cmdlet’lerine SkipExtensionsOnOverprovisionedVMs parametreleri eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-514">Add SkipExtensionsOnOverprovisionedVMs parameters to New-AzVmss, New-AzVmssConfig and Update-AzVmss cmdlets</span></span>
+
+#### <a name="azdataboxedge"></a><span data-ttu-id="b23a2-515">Az.DataBoxEdge</span><span class="sxs-lookup"><span data-stu-id="b23a2-515">Az.DataBoxEdge</span></span>
+* <span data-ttu-id="b23a2-516">`Get-AzDataBoxEdgeOrder` cmdlet’i eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-516">Added cmdlet `Get-AzDataBoxEdgeOrder`</span></span>
+    - <span data-ttu-id="b23a2-517">Sırayı Al</span><span class="sxs-lookup"><span data-stu-id="b23a2-517">Get the Order</span></span>
+* <span data-ttu-id="b23a2-518">`New-AzDataBoxEdgeOrder` cmdlet’i eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-518">Added cmdlet `New-AzDataBoxEdgeOrder`</span></span>
+    - <span data-ttu-id="b23a2-519">Yeni Sıra oluştur</span><span class="sxs-lookup"><span data-stu-id="b23a2-519">Create new Order</span></span>
+* <span data-ttu-id="b23a2-520">`Remove-AzDataBoxEdgeOrder` cmdlet’i eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-520">Added cmdlet `Remove-AzDataBoxEdgeOrder`</span></span>
+    - <span data-ttu-id="b23a2-521">Sırayı kaldır</span><span class="sxs-lookup"><span data-stu-id="b23a2-521">Remove the Order</span></span>
+* <span data-ttu-id="b23a2-522">`New-AzDataBoxEdgeShare` cmdlet’inde değiştir</span><span class="sxs-lookup"><span data-stu-id="b23a2-522">Change in cmdlet `New-AzDataBoxEdgeShare`</span></span>
+    - <span data-ttu-id="b23a2-523">Yerel Paylaşım’ı oluşturur</span><span class="sxs-lookup"><span data-stu-id="b23a2-523">Now creates Local Share</span></span>
+* <span data-ttu-id="b23a2-524">`Set-AzDataBoxEdgeRole` cmdlet’i eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-524">Added cmdlet `Set-AzDataBoxEdgeRole`</span></span>
+    - <span data-ttu-id="b23a2-525">IotRole artık Paylaş ile eşlenebilir</span><span class="sxs-lookup"><span data-stu-id="b23a2-525">Now IotRole can be mapped to Share</span></span>
+* <span data-ttu-id="b23a2-526">`Invoke-AzDataBoxEdgeDevice` cmdlet’i eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-526">Added cmdlet `Invoke-AzDataBoxEdgeDevice`</span></span>
+    - <span data-ttu-id="b23a2-527">Tarama güncelleştirmesi çağırın, güncelleştirmeyi indirin ve bunları cihaza yükleyin</span><span class="sxs-lookup"><span data-stu-id="b23a2-527">Invoke scan update, download update, install updates on the device</span></span>
+* <span data-ttu-id="b23a2-528">`Get-AzDataBoxEdgeTrigger` cmdlet’i eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-528">Added cmdlet `Get-AzDataBoxEdgeTrigger`</span></span>
+    - <span data-ttu-id="b23a2-529">Tetikleyicilere ilişkin bilgileri alır</span><span class="sxs-lookup"><span data-stu-id="b23a2-529">Gets the information about Triggers</span></span>
+* <span data-ttu-id="b23a2-530">`New-AzDataBoxEdgeTrigger` cmdlet’i eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-530">Added cmdlet `New-AzDataBoxEdgeTrigger`</span></span>
+    - <span data-ttu-id="b23a2-531">Yeni Tetikleyiciler oluştur</span><span class="sxs-lookup"><span data-stu-id="b23a2-531">Create new Triggers</span></span>
+* <span data-ttu-id="b23a2-532">`Remove-AzDataBoxEdgeTrigger` cmdlet’i eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-532">Added cmdlet `Remove-AzDataBoxEdgeTrigger`</span></span>
+    - <span data-ttu-id="b23a2-533">Tetikleyicileri kaldır</span><span class="sxs-lookup"><span data-stu-id="b23a2-533">Remove the Triggers</span></span>
+
+#### <a name="azdatafactory"></a><span data-ttu-id="b23a2-534">Az.DataFactory</span><span class="sxs-lookup"><span data-stu-id="b23a2-534">Az.DataFactory</span></span>
+* <span data-ttu-id="b23a2-535">ADF .Net SDK sürümü 4.4.0’a güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-535">Update ADF .Net SDK version to 4.4.0</span></span>
+* <span data-ttu-id="b23a2-536">Özel kurulum betiği olmadan kurulum yapılandırmalarını ve 3. taraf bileşenleri etkinleştirmek üzere ‘Set-AzureRmDataFactoryV2IntegrationRuntime’ komutu için ‘ExpressCustomSetup’ parametresi eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-536">Add parameter 'ExpressCustomSetup' for 'Set-AzureRmDataFactoryV2IntegrationRuntime' cmd to enable setup configurations and 3rd party components without custom setup script.</span></span>
+
+#### <a name="azdatalakestore"></a><span data-ttu-id="b23a2-537">Az.DataLakeStore</span><span class="sxs-lookup"><span data-stu-id="b23a2-537">Az.DataLakeStore</span></span>
+* <span data-ttu-id="b23a2-538">Get-AzDataLakeStoreDeletedItem ve Restore-AzDataLakeStoreDeletedItem parametrelerinin belgeleri güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-538">Update documentation of Get-AzDataLakeStoreDeletedItem and Restore-AzDataLakeStoreDeletedItem</span></span>
+
+#### <a name="azeventhub"></a><span data-ttu-id="b23a2-539">Az.EventHub</span><span class="sxs-lookup"><span data-stu-id="b23a2-539">Az.EventHub</span></span>
+* <span data-ttu-id="b23a2-540">#10301 numaralı şu sorun düzeltildi: SAS Belirtecinin tarih biçimi düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-540">Fix for issue 10301 : Fix the SAS Token date format</span></span>
+
+#### <a name="azfrontdoor"></a><span data-ttu-id="b23a2-541">Az.FrontDoor</span><span class="sxs-lookup"><span data-stu-id="b23a2-541">Az.FrontDoor</span></span>
+* <span data-ttu-id="b23a2-542">Enable-AzFrontDoorCustomDomainHttps ve New-AzFrontDoorFrontendEndpointObject öğelerine MinimumTlsVersion parametresi eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-542">Add MinimumTlsVersion parameter to Enable-AzFrontDoorCustomDomainHttps and New-AzFrontDoorFrontendEndpointObject</span></span>
+* <span data-ttu-id="b23a2-543">New-AzFrontDoorHealthProbeSettingObject öğesine HealthProbeMethod ve EnabledState parametreleri eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-543">Add HealthProbeMethod and EnabledState parameters to New-AzFrontDoorHealthProbeSettingObject</span></span>
+* <span data-ttu-id="b23a2-544">BackendPoolsSettings öğesinin Front Door oluşturmasına/güncelleştirmesine geçmesi için BackendPoolsSettings nesnesi oluşturmaya yönelik yeni cmdlet eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-544">Add new cmdlet to create BackendPoolsSettings objec to pass into creation/update of Front Door</span></span>
+    - <span data-ttu-id="b23a2-545">New-AzFrontDoorBackendPoolsSettingObject</span><span class="sxs-lookup"><span data-stu-id="b23a2-545">New-AzFrontDoorBackendPoolsSettingObject</span></span>
+
+#### <a name="aznetwork"></a><span data-ttu-id="b23a2-546">Az.Network</span><span class="sxs-lookup"><span data-stu-id="b23a2-546">Az.Network</span></span>
+* <span data-ttu-id="b23a2-547">‘Start-AzVirtualNetworkGatewayConnectionPacketCapture.md’ ve 'Start-AzVirtualnetworkGatewayPacketCapture.md' FilterData seçeneği örnekleri değiştirildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-547">Change 'Start-AzVirtualNetworkGatewayConnectionPacketCapture.md' and 'Start-AzVirtualnetworkGatewayPacketCapture.md' FilterData option examples.</span></span>
+
+#### <a name="azprivatedns"></a><span data-ttu-id="b23a2-548">Az.PrivateDns</span><span class="sxs-lookup"><span data-stu-id="b23a2-548">Az.PrivateDns</span></span>
+* <span data-ttu-id="b23a2-549">PrivateDns .Net SDK’sı sürüm 1.0.0’a güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-549">Updated PrivateDns .net sdk to version 1.0.0</span></span>
+
+#### <a name="azrecoveryservices"></a><span data-ttu-id="b23a2-550">Az.RecoveryServices</span><span class="sxs-lookup"><span data-stu-id="b23a2-550">Az.RecoveryServices</span></span>
+* <span data-ttu-id="b23a2-551">Koruma etkinleştirilirken disk türünü seçmeye yönelik Azure Site Recovery desteği.</span><span class="sxs-lookup"><span data-stu-id="b23a2-551">Azure Site Recovery support to select disk type at enabling protection.</span></span>
+* <span data-ttu-id="b23a2-552">Kurtarma planı eylemi düzenlemesine yönelik Azure Site Recovery hata düzeltmesi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-552">Azure Site Recovery bug fix for recovery plan action edit.</span></span>
+* <span data-ttu-id="b23a2-553">Dosya akışı Veritabanlarını kabul etmek için Azure Backup SQL Geri yükleme desteği.</span><span class="sxs-lookup"><span data-stu-id="b23a2-553">Azure Backup SQL Restore support to accept filestream DBs.</span></span>
+
+#### <a name="azrediscache"></a><span data-ttu-id="b23a2-554">Az.RedisCache</span><span class="sxs-lookup"><span data-stu-id="b23a2-554">Az.RedisCache</span></span>
+* <span data-ttu-id="b23a2-555">‘New-AzRedisCache’ ve ‘Set-AzRedisCache’ cmdletlerine ‘MinimumTlsVersion’ parametresi eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-555">Added 'MinimumTlsVersion' parameter in 'New-AzRedisCache' and 'Set-AzRedisCache' cmdlets.</span></span> <span data-ttu-id="b23a2-556">‘Get-AzRedisCache’ cmdlet’inin çıkışına ‘MinimumTlsVersion’ eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-556">Also, added 'MinimumTlsVersion' in the output of 'Get-AzRedisCache' cmdlet.</span></span>
+* <span data-ttu-id="b23a2-557">‘Set-AzRedisCache’ ve ‘New-AzRedisCache’ cmdletlerine yönelik ‘-Size’ parametresine doğrulama eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-557">Added validation on '-Size' parameter for 'Set-AzRedisCache' and 'New-AzRedisCache' cmdlets</span></span>
+
+#### <a name="azresources"></a><span data-ttu-id="b23a2-558">Az.Resources</span><span class="sxs-lookup"><span data-stu-id="b23a2-558">Az.Resources</span></span>
+- <span data-ttu-id="b23a2-559">İlke cmdletleri, ilke atamasında EnforcementMode özelliğine sahip yeni 2019-06-01 api sürümünü kullanacak şekilde güncelleştirildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-559">Updated policy cmdlets to use new api version 2019-06-01 that has new EnforcementMode property in policy assignment.</span></span>
+- <span data-ttu-id="b23a2-560">İlke tanımı oluştur yardım örneği güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-560">Updated create policy definition help example</span></span>
+- <span data-ttu-id="b23a2-561">Remove-AZADServicePrincipal -ServicePrincipalName’in boş referans adı bulunamadığında boş referans sunması hatası düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-561">Fix bug Remove-AZADServicePrincipal -ServicePrincipalName, throw null reference when service principal name not found.</span></span>
+- <span data-ttu-id="b23a2-562">Kiracının aboneliği olmadığında New-AZADServicePrincipal’ın boş referans sunmasına ilişkin hata düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-562">Fix bug New-AZADServicePrincipal, throw null reference when tenant doesn't have any subscription.</span></span>
+- <span data-ttu-id="b23a2-563">Kimlik bilgilerini yalnızca ilişkili uygulamaya eklemek için New-AzAdServicePrincipal değiştirildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-563">Change New-AzAdServicePrincipal to add credentials only to associated application.</span></span>
+
+#### <a name="azsql"></a><span data-ttu-id="b23a2-564">Az.Sql</span><span class="sxs-lookup"><span data-stu-id="b23a2-564">Az.Sql</span></span>
+* <span data-ttu-id="b23a2-565">ReadReplicaCount veritabanı için destek eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-565">Added support for database ReadReplicaCount.</span></span>
+* <span data-ttu-id="b23a2-566">Alan yedekliliği ayarlı olmadığında Set-AzSqlDatabase düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-566">Fixed Set-AzSqlDatabase when zone redundancy not set</span></span>
+
+## <a name="300---november-2019"></a><span data-ttu-id="b23a2-567">3.0.0 - Kasım 2019</span><span class="sxs-lookup"><span data-stu-id="b23a2-567">3.0.0 - November 2019</span></span>
+### <a name="general"></a><span data-ttu-id="b23a2-568">Genel</span><span class="sxs-lookup"><span data-stu-id="b23a2-568">General</span></span>
+* <span data-ttu-id="b23a2-569">Az.PrivateDns 1.0.0 yayınlandı</span><span class="sxs-lookup"><span data-stu-id="b23a2-569">Az.PrivateDns 1.0.0 released</span></span>
+
+#### <a name="azaccounts"></a><span data-ttu-id="b23a2-570">Az.Accounts</span><span class="sxs-lookup"><span data-stu-id="b23a2-570">Az.Accounts</span></span>
+* <span data-ttu-id="b23a2-571">'Resolve-Error' diğer adı için bir kullanımdan kaldırma iletisi ekleyin.</span><span class="sxs-lookup"><span data-stu-id="b23a2-571">Add a deprecation message for 'Resolve-Error' alias.</span></span>
+
+#### <a name="azadvisor"></a><span data-ttu-id="b23a2-572">Az.Advisor</span><span class="sxs-lookup"><span data-stu-id="b23a2-572">Az.Advisor</span></span>
+* <span data-ttu-id="b23a2-573">Get-AzAdvisorRecommendation cmdlet'ine yeni 'Operational Excellence' (Operasyonel Mükemmellik) kategorisi eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-573">Added new category 'Operational Excellence' to Get-AzAdvisorRecommendation cmdlet.</span></span>
+
+#### <a name="azbatch"></a><span data-ttu-id="b23a2-574">Az.Batch</span><span class="sxs-lookup"><span data-stu-id="b23a2-574">Az.Batch</span></span>
+* <span data-ttu-id="b23a2-575">`BatchAccountContext` içinde `CoreQuota`, `DedicatedCoreQuota` olarak yeniden adlandırıldı.</span><span class="sxs-lookup"><span data-stu-id="b23a2-575">Renamed `CoreQuota` on `BatchAccountContext` to `DedicatedCoreQuota`.</span></span> <span data-ttu-id="b23a2-576">Ayrıca yeni bir `LowPriorityCoreQuota` var.</span><span class="sxs-lookup"><span data-stu-id="b23a2-576">There is also a new `LowPriorityCoreQuota`.</span></span>
+  - <span data-ttu-id="b23a2-577">Bu **Get-AzBatchAccount** cmdlet'ini etkiliyor.</span><span class="sxs-lookup"><span data-stu-id="b23a2-577">This impacts **Get-AzBatchAccount**.</span></span>
+* <span data-ttu-id="b23a2-578">**New-AzBatchTask**`-ResourceFile` parametresi şimdi yeni **New-AzBatchResourceFile** cmdlet’i kullanılarak oluşturulabilen bir `PSResourceFile` koleksiyonu alıyor.</span><span class="sxs-lookup"><span data-stu-id="b23a2-578">**New-AzBatchTask** `-ResourceFile` parameter now takes a collection of `PSResourceFile` objects, which can be constructed using the new **New-AzBatchResourceFile** cmdlet.</span></span>
+* <span data-ttu-id="b23a2-579">`PSResourceFile` nesnelerini oluşturmaya yardımcı olmak için yeni **New-AzBatchResourceFile** cmdlet'i.</span><span class="sxs-lookup"><span data-stu-id="b23a2-579">New **New-AzBatchResourceFile** cmdlet to help create `PSResourceFile` objects.</span></span> <span data-ttu-id="b23a2-580">Bunlar `-ResourceFile` parametresinde **New-AzBatchTask** cmdlet'ine sağlanabilir.</span><span class="sxs-lookup"><span data-stu-id="b23a2-580">These can be supplied to **New-AzBatchTask** on the `-ResourceFile` parameter.</span></span>
+  - <span data-ttu-id="b23a2-581">Mevcut `HttpUrl` yolunun yanı sıra iki tür yeni kaynak dosyasını destekliyor:</span><span class="sxs-lookup"><span data-stu-id="b23a2-581">This supports two new kinds of resource file in addition to the existing `HttpUrl` way:</span></span>
+    - <span data-ttu-id="b23a2-582">`AutoStorageContainerName` tabanlı kaynak dosyaları bir otomatik depolama kapsayıcısının tamamını Batch düğümüne indiriyor.</span><span class="sxs-lookup"><span data-stu-id="b23a2-582">`AutoStorageContainerName` based resource files download an entire auto-storage container to the Batch node.</span></span>
+    - <span data-ttu-id="b23a2-583">`StorageContainerUrl` tabanlı kaynak dosyaları URL'de belirtilen kapsayıcıyı Batch düğümüne indiriyor.</span><span class="sxs-lookup"><span data-stu-id="b23a2-583">`StorageContainerUrl` based resource files download the container specified in the URL to the Batch node.</span></span>
+* <span data-ttu-id="b23a2-584">**Get-AzBatchApplication** tarafından döndürülen `PSApplication` öğesinin `ApplicationPackages` özelliği kaldırıldı.</span><span class="sxs-lookup"><span data-stu-id="b23a2-584">Removed `ApplicationPackages` property of `PSApplication` returned by **Get-AzBatchApplication**.</span></span>
+  - <span data-ttu-id="b23a2-585">Uygulamanın içindeki belirli paketler artık **Get-AzBatchApplicationPackage** kullanılarak alınabilir.</span><span class="sxs-lookup"><span data-stu-id="b23a2-585">The specific packages inside of an application now can be retrieved using **Get-AzBatchApplicationPackage**.</span></span> <span data-ttu-id="b23a2-586">Örneğin: `Get-AzBatchApplication -AccountName myaccount -ResourceGroupName myresourcegroup -ApplicationId myapplication`.</span><span class="sxs-lookup"><span data-stu-id="b23a2-586">For example: `Get-AzBatchApplication -AccountName myaccount -ResourceGroupName myresourcegroup -ApplicationId myapplication`.</span></span>
+* <span data-ttu-id="b23a2-587">**Get-AzBatchApplicationPackage**, **New-AzBatchApplicationPackage**, **Remove-AzBatchApplicationPackage**, **Get-AzBatchApplication**, **New-AzBatchApplication**, **Remove-AzBatchApplication**, ve **Set-AzBatchApplication** cmdlet'lerinde `ApplicationId` parametresi `ApplicationName` olarak yeniden adlandırıldı.</span><span class="sxs-lookup"><span data-stu-id="b23a2-587">Renamed `ApplicationId` to `ApplicationName` on **Get-AzBatchApplicationPackage**, **New-AzBatchApplicationPackage**, **Remove-AzBatchApplicationPackage**, **Get-AzBatchApplication**, **New-AzBatchApplication**, **Remove-AzBatchApplication**, and **Set-AzBatchApplication**.</span></span>
+  - <span data-ttu-id="b23a2-588">`ApplicationId` artık `ApplicationName` parametresinin diğer adıdır.</span><span class="sxs-lookup"><span data-stu-id="b23a2-588">`ApplicationId` now is an alias of `ApplicationName`.</span></span>
+* <span data-ttu-id="b23a2-589">`PSUserAccount` öğesine yeni `PSWindowsUserConfiguration` özelliği eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-589">Added new `PSWindowsUserConfiguration` property to `PSUserAccount`.</span></span>
+* <span data-ttu-id="b23a2-590">`PSApplicationPackage` içinde `Version` öğesi `Name` olarak yeniden adlandırıldı.</span><span class="sxs-lookup"><span data-stu-id="b23a2-590">Renamed `Version` to `Name` on `PSApplicationPackage`.</span></span>
+* <span data-ttu-id="b23a2-591">`PSResourceFile` içinde `BlobSource` öğesi `HttpUrl` olarak yeniden adlandırıldı.</span><span class="sxs-lookup"><span data-stu-id="b23a2-591">Renamed `BlobSource` to `HttpUrl` on `PSResourceFile`.</span></span>
+* <span data-ttu-id="b23a2-592">`PSVirtualMachineConfiguration` içinden `OSDisk` özelliği kaldırıldı.</span><span class="sxs-lookup"><span data-stu-id="b23a2-592">Removed `OSDisk` property from `PSVirtualMachineConfiguration`.</span></span>
+* <span data-ttu-id="b23a2-593">**Set-AzBatchPoolOSVersion** kaldırıldı.</span><span class="sxs-lookup"><span data-stu-id="b23a2-593">Removed **Set-AzBatchPoolOSVersion**.</span></span> <span data-ttu-id="b23a2-594">Bu işlem artık desteklenmiyor.</span><span class="sxs-lookup"><span data-stu-id="b23a2-594">This operation is no longer supported.</span></span>
+* <span data-ttu-id="b23a2-595">`PSCloudServiceConfiguration` içinden `TargetOSVersion` kaldırıldı.</span><span class="sxs-lookup"><span data-stu-id="b23a2-595">Removed `TargetOSVersion` from `PSCloudServiceConfiguration`.</span></span>
+* <span data-ttu-id="b23a2-596">`PSCloudServiceConfiguration` içinde `CurrentOSVersion` öğesi `OSVersion` olarak yeniden adlandırıldı.</span><span class="sxs-lookup"><span data-stu-id="b23a2-596">Renamed `CurrentOSVersion` to `OSVersion` on `PSCloudServiceConfiguration`.</span></span>
+* <span data-ttu-id="b23a2-597">`PSPoolUsageMetrics` içinden `DataEgressGiB` ve `DataIngressGiB` kaldırıldı.</span><span class="sxs-lookup"><span data-stu-id="b23a2-597">Removed `DataEgressGiB` and `DataIngressGiB` from `PSPoolUsageMetrics`.</span></span>
+* <span data-ttu-id="b23a2-598">**Get-AzBatchNodeAgentSku** kaldırıldı ve bunun yerini **Get-AzBatchSupportedImage** aldı.</span><span class="sxs-lookup"><span data-stu-id="b23a2-598">Removed **Get-AzBatchNodeAgentSku** and replaced it with  **Get-AzBatchSupportedImage**.</span></span>
+  - <span data-ttu-id="b23a2-599">**Get-AzBatchSupportedImage**, **Get-AzBatchNodeAgentSku** ile aynı verileri ama daha kullanımı kolay bir biçimde döndürüyor.</span><span class="sxs-lookup"><span data-stu-id="b23a2-599">**Get-AzBatchSupportedImage** returns the same data as **Get-AzBatchNodeAgentSku** but in a more friendly format.</span></span>
+  - <span data-ttu-id="b23a2-600">Artık yeni doğrulanmamış resimler de döndürülüyor.</span><span class="sxs-lookup"><span data-stu-id="b23a2-600">New non-verified images are also now returned.</span></span> <span data-ttu-id="b23a2-601">Her resim için `Capabilities` ve `BatchSupportEndOfLife` hakkında ek bilgiler de ekleniyor.</span><span class="sxs-lookup"><span data-stu-id="b23a2-601">Additional information about `Capabilities` and `BatchSupportEndOfLife` for each image is also included.</span></span>
+* <span data-ttu-id="b23a2-602">**New-AzBatchPool** cmdlet'inin `MountConfiguration` parametresiyle havuzun her düğümünde uzak dosya sistemlerini bağlama özelliği eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-602">Added ability to mount remote file-systems on each node of a pool via the new `MountConfiguration` parameter of **New-AzBatchPool**.</span></span>
+* <span data-ttu-id="b23a2-603">Artık trafiğin kaynak bağlantı noktası temelinde havuza ağ erişimini engelleyen ağ güvenlik kuralları destekleniyor.</span><span class="sxs-lookup"><span data-stu-id="b23a2-603">Now support network security rules blocking network access to a pool based on the source port of the traffic.</span></span> <span data-ttu-id="b23a2-604">Bu destek `PSNetworkSecurityGroupRule` öğesinin `SourcePortRanges` özelliğiyle sağlanıyor.</span><span class="sxs-lookup"><span data-stu-id="b23a2-604">This is done via the `SourcePortRanges` property on `PSNetworkSecurityGroupRule`.</span></span>
+* <span data-ttu-id="b23a2-605">Kapsayıcıyı çalıştırırken, şimdi Batch görevin kapsayıcı çalışma dizininde veya Batch görevi çalışma dizininde yürütülmesini destekliyor.</span><span class="sxs-lookup"><span data-stu-id="b23a2-605">When running a container, Batch now supports executing the task in the container working directory or in the Batch task working directory.</span></span> <span data-ttu-id="b23a2-606">Bu, `PSTaskContainerSettings` öğesinin `WorkingDirectory` özelliğiyle denetleniyor.</span><span class="sxs-lookup"><span data-stu-id="b23a2-606">This is controlled by the `WorkingDirectory` property on `PSTaskContainerSettings`.</span></span>
+* <span data-ttu-id="b23a2-607">Yeni `PublicIPs` özelliği aracılığıyla `PSNetworkConfiguration` parametresinde bir genel IP koleksiyonu belirtme olanağı eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-607">Added ability to specify a collection of public IPs on `PSNetworkConfiguration` via the new `PublicIPs` property.</span></span> <span data-ttu-id="b23a2-608">Bu sayede Havuzdaki düğümlerin kullanıcı tarafından sağlanan IP listesinden bir IP alması garanti ediliyor.</span><span class="sxs-lookup"><span data-stu-id="b23a2-608">This guarantees nodes in the Pool will have an IP from the list user provided IPs.</span></span>
+* <span data-ttu-id="b23a2-609">Belirtilmediğinde, `PSSTartTask` üzerindeki `WaitForSuccess` öğesinin varsayılan değeri artık `$True` (daha önce `$False` değeriydi).</span><span class="sxs-lookup"><span data-stu-id="b23a2-609">When not specified, the default value of `WaitForSuccess` on `PSSTartTask` is now `$True` (was `$False`).</span></span>
+* <span data-ttu-id="b23a2-610">Belirtilmediğinde, `PSAutoUserSpecification` üzerindeki `Scope` öğesinin varsayılan değeri artık `Pool` (daha önce Windows'da `Task` ve Linux'ta `Pool` değeriydi).</span><span class="sxs-lookup"><span data-stu-id="b23a2-610">When not specified, the default value of `Scope` on `PSAutoUserSpecification` is now `Pool` (was `Task` on Windows and `Pool` on Linux).</span></span>
+
+#### <a name="azcdn"></a><span data-ttu-id="b23a2-611">Az.Cdn</span><span class="sxs-lookup"><span data-stu-id="b23a2-611">Az.Cdn</span></span>
+* <span data-ttu-id="b23a2-612">RulesEngine'e UrlRewriteAction ve CacheKeyQueryStringAction eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-612">Introduced UrlRewriteAction and CacheKeyQueryStringAction to RulesEngine.</span></span>
+* <span data-ttu-id="b23a2-613">New-AzDeliveryRuleCondition cmdlet'inde eksik 'Selector' Girişi gibi çeşitli hatalar düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-613">Fixed several bugs like missing 'Selector' Input in New-AzDeliveryRuleCondition cmdlet.</span></span>
+
+#### <a name="azcompute"></a><span data-ttu-id="b23a2-614">Az.Compute</span><span class="sxs-lookup"><span data-stu-id="b23a2-614">Az.Compute</span></span>
+* <span data-ttu-id="b23a2-615">Disk Şifreleme Kümesi özelliği</span><span class="sxs-lookup"><span data-stu-id="b23a2-615">Disk Encryption Set feature</span></span>
+    - <span data-ttu-id="b23a2-616">Yeni cmdlet’ler:   New-AzDiskEncryptionSetConfig   New-AzDiskEncryptionSet   Get-AzDiskEncryptionSet   Remove-AzDiskEncryptionSet</span><span class="sxs-lookup"><span data-stu-id="b23a2-616">New cmdlets:   New-AzDiskEncryptionSetConfig   New-AzDiskEncryptionSet   Get-AzDiskEncryptionSet   Remove-AzDiskEncryptionSet</span></span>
+    - <span data-ttu-id="b23a2-617">Aşağıdaki cmdlet'lere DiskEncryptionSetId parametresi eklendi:   Set-AzImageOSDisk   Set-AzVMOSDisk   Set-AzVmssStorageProfile   Add-AzImageDataDisk   New-AzVMDataDisk   Set-AzVMDataDisk   Add-AzVMDataDisk   Add-AzVmssDataDisk   Add-AzVmssVMDataDisk</span><span class="sxs-lookup"><span data-stu-id="b23a2-617">DiskEncryptionSetId parameter is added to the following cmdlets:   Set-AzImageOSDisk   Set-AzVMOSDisk   Set-AzVmssStorageProfile   Add-AzImageDataDisk   New-AzVMDataDisk   Set-AzVMDataDisk   Add-AzVMDataDisk   Add-AzVmssDataDisk   Add-AzVmssVMDataDisk</span></span>
+    - <span data-ttu-id="b23a2-618">Aşağıdaki cmdlet'lere DiskEncryptionSetId ve EncryptionType parametreleri eklendi:   New-AzDiskConfig   New-AzSnapshotConfig</span><span class="sxs-lookup"><span data-stu-id="b23a2-618">DiskEncryptionSetId and EncryptionType parameters are added to the following cmdlets:   New-AzDiskConfig   New-AzSnapshotConfig</span></span>
+* <span data-ttu-id="b23a2-619">New-AzVmssIPConfig cmdlet'ine PublicIPAddressVersion parametresi eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-619">Add PublicIPAddressVersion parameter to New-AzVmssIPConfig</span></span>
+* <span data-ttu-id="b23a2-620">Özel betik uzantısının FileUris öğesi genel ayardan korumalı ayara taşındı</span><span class="sxs-lookup"><span data-stu-id="b23a2-620">Move FileUris of custom script extension from public setting to protected setting</span></span>
+* <span data-ttu-id="b23a2-621">New-AzVmss, New-AzVmssConfig ve Update-AzVmss cmdlet'lerine ScaleInPolicy eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-621">Add ScaleInPolicy to New-AzVmss, New-AzVmssConfig and Update-AzVmss cmdlets</span></span>
+* <span data-ttu-id="b23a2-622">Yeni değişiklikler</span><span class="sxs-lookup"><span data-stu-id="b23a2-622">Breaking changes</span></span>
+    - <span data-ttu-id="b23a2-623">CreateOption değeri Upload olduğunda New-AzDiskConfig cmdlet'i için DiskSizeGB yerine UploadSizeInBytes parametresi kullanılıyor</span><span class="sxs-lookup"><span data-stu-id="b23a2-623">UploadSizeInBytes parameter is used instead of DiskSizeGB for New-AzDiskConfig when CreateOption is Upload</span></span>
+    - <span data-ttu-id="b23a2-624">GalleryImageVersion nesnesinde PublishingProfile.Source.ManagedImage.Id yerini StorageProfile.Source.Id'ye bıraktı</span><span class="sxs-lookup"><span data-stu-id="b23a2-624">PublishingProfile.Source.ManagedImage.Id is replaced with StorageProfile.Source.Id in GalleryImageVersion object</span></span>
+
+#### <a name="azdatafactory"></a><span data-ttu-id="b23a2-625">Az.DataFactory</span><span class="sxs-lookup"><span data-stu-id="b23a2-625">Az.DataFactory</span></span>
+* <span data-ttu-id="b23a2-626">ADF .Net SDK sürümü 4.3.0’a güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-626">Update ADF .Net SDK version to 4.3.0</span></span>
+
+#### <a name="azdatalakestore"></a><span data-ttu-id="b23a2-627">Az.DataLakeStore</span><span class="sxs-lookup"><span data-stu-id="b23a2-627">Az.DataLakeStore</span></span>
+* <span data-ttu-id="b23a2-628">ADLS SDK sürümünün güncelleştirilmesi (https://github.com/Azure/azure-data-lake-store-net/blob/preview-alpha/CHANGELOG.md#version-123-alpha) aşağıdaki düzeltmeleri sağlıyor</span><span class="sxs-lookup"><span data-stu-id="b23a2-628">Update ADLS SDK version (https://github.com/Azure/azure-data-lake-store-net/blob/preview-alpha/CHANGELOG.md#version-123-alpha), brings following fixes</span></span>
+* <span data-ttu-id="b23a2-629">Geri dönüşüm kutusu veya dizin girdisinin creationtime öğesi seri durumdan çıkarılamadığında özel durum oluşturulmasını önleme.</span><span class="sxs-lookup"><span data-stu-id="b23a2-629">Avoid throwing exception while unable to deserialize the creationtime of the trash or directory entry.</span></span>
+* <span data-ttu-id="b23a2-630">adlsclient içinde istek başına zaman aşımı ayarını kullanıma sunma</span><span class="sxs-lookup"><span data-stu-id="b23a2-630">Expose setting per request timeout in adlsclient</span></span>
+* <span data-ttu-id="b23a2-631">badoffset kurtarması için özgün syncflag değerinin geçirilmesini düzeltme</span><span class="sxs-lookup"><span data-stu-id="b23a2-631">Fix passing the original syncflag for badoffset recovery</span></span>
+* <span data-ttu-id="b23a2-632">Yanıt denetlendikten sonra devamlılık belirtecini almak için EnumerateDirectory'yi düzeltme</span><span class="sxs-lookup"><span data-stu-id="b23a2-632">Fix EnumerateDirectory to retrieve continuation token once response is checked</span></span>
+* <span data-ttu-id="b23a2-633">Birleştirme Hatasını Düzeltme</span><span class="sxs-lookup"><span data-stu-id="b23a2-633">Fix Concat Bug</span></span>
+
+#### <a name="azfrontdoor"></a><span data-ttu-id="b23a2-634">Az.FrontDoor</span><span class="sxs-lookup"><span data-stu-id="b23a2-634">Az.FrontDoor</span></span>
+* <span data-ttu-id="b23a2-635">Modüllerde çeşitli yazım hataları düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-635">Fixed miscellaneous typos across module</span></span>
+
+#### <a name="azhdinsight"></a><span data-ttu-id="b23a2-636">Az.HDInsight</span><span class="sxs-lookup"><span data-stu-id="b23a2-636">Az.HDInsight</span></span>
+* <span data-ttu-id="b23a2-637">ADLSGen1 depolamasıyla kümeyi almak için Get-AzHDInsightCluster cmdlet'ini kullandığında müşterinin 'Geçerli bir Base-64 dizesi değil' hatası almasına yol açan hata düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-637">Fixed the bug that customer will get 'Not a valid Base-64 string' error when using Get-AzHDInsightCluster to get the cluster with ADLSGen1 storage.</span></span>
+* <span data-ttu-id="b23a2-638">Müşterinin Azure Data Lake'e erişirken hizmet sorumlusu uygulama kimliğini sağlayabilmesi için üç cmdlet'e (Add-AzHDInsightClusterIdentity, New-AzHDInsightClusterConfig ve New-AzHDInsightCluster) 'ApplicationId' parametresi eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-638">Add a parameter named 'ApplicationId' to three cmdlets Add-AzHDInsightClusterIdentity, New-AzHDInsightClusterConfig and New-AzHDInsightCluster so that customer can provide the service principal application id for accessing Azure Data Lake.</span></span>
+* <span data-ttu-id="b23a2-639">Microsoft.Azure.Management.HDInsight 2.1.0'dan 5.1.0'a geçirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-639">Changed Microsoft.Azure.Management.HDInsight from 2.1.0 to 5.1.0</span></span>
+* <span data-ttu-id="b23a2-640">Beş cmdlet kaldırıldı:</span><span class="sxs-lookup"><span data-stu-id="b23a2-640">Removed five cmdlets:</span></span>
+    - <span data-ttu-id="b23a2-641">Get-AzHDInsightOMS</span><span class="sxs-lookup"><span data-stu-id="b23a2-641">Get-AzHDInsightOMS</span></span>
+    - <span data-ttu-id="b23a2-642">Enable-AzHDInsightOMS</span><span class="sxs-lookup"><span data-stu-id="b23a2-642">Enable-AzHDInsightOMS</span></span>
+    - <span data-ttu-id="b23a2-643">Disable-AzHDInsightOMS</span><span class="sxs-lookup"><span data-stu-id="b23a2-643">Disable-AzHDInsightOMS</span></span>
+    - <span data-ttu-id="b23a2-644">Grant-AzHDInsightRdpServicesAccess</span><span class="sxs-lookup"><span data-stu-id="b23a2-644">Grant-AzHDInsightRdpServicesAccess</span></span>
+    - <span data-ttu-id="b23a2-645">Revoke-AzHDInsightRdpServicesAccess</span><span class="sxs-lookup"><span data-stu-id="b23a2-645">Revoke-AzHDInsightRdpServicesAccess</span></span>
+* <span data-ttu-id="b23a2-646">Üç cmdlet eklendi:</span><span class="sxs-lookup"><span data-stu-id="b23a2-646">Added three cmdlets:</span></span>
+    - <span data-ttu-id="b23a2-647">Get-AzHDInsightMonitoring (Get-AzHDInsightOMS yerine).</span><span class="sxs-lookup"><span data-stu-id="b23a2-647">Get-AzHDInsightMonitoring to replace Get-AzHDInsightOMS.</span></span>
+    - <span data-ttu-id="b23a2-648">Enable-AzHDInsightMonitoring (Enable-AzHDInsightOMS yerine).</span><span class="sxs-lookup"><span data-stu-id="b23a2-648">Enable-AzHDInsightMonitoring to replace Enable-AzHDInsightOMS.</span></span>
+    - <span data-ttu-id="b23a2-649">Disable-AzHDInsightMonitoring (Disable-AzHDInsightOMS yerine).</span><span class="sxs-lookup"><span data-stu-id="b23a2-649">Disable-AzHDInsightMonitoring to replace Disable-AzHDInsightOMS.</span></span>
+* <span data-ttu-id="b23a2-650">Belirli bir konumdan özellik bilgilerinin alınmasını desteklemek için Get-AzHDInsightProperties cmdlet'i düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-650">Fixed cmdlet Get-AzHDInsightProperties to support get capabilities information from a specific location.</span></span>
+* <span data-ttu-id="b23a2-651">Add-AzHDInsightConfigValue cmdlet'inden parametre kümeleri ('Spark1', 'Spark2') kaldırıldı.</span><span class="sxs-lookup"><span data-stu-id="b23a2-651">Removed parameter sets('Spark1', 'Spark2') from Add-AzHDInsightConfigValue.</span></span>
+* <span data-ttu-id="b23a2-652">Add-AzHDInsightSecurityProfile cmdlet'inin yardım belgelerine örnekler eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-652">Add examples to the help documents of cmdlet Add-AzHDInsightSecurityProfile.</span></span>
+* <span data-ttu-id="b23a2-653">Aşağıdaki cmdlet'lerin çıkış türü değiştirildi:</span><span class="sxs-lookup"><span data-stu-id="b23a2-653">Changed output type of the following cmdlets:</span></span>
+*  - <span data-ttu-id="b23a2-654">Get-AzHDInsightProperties cmdlet'inin CapabilitiesResponse olan çıkış türü AzureHDInsightCapabilities olarak değiştirildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-654">Changed the output type of Get-AzHDInsightProperties from  CapabilitiesResponse to AzureHDInsightCapabilities.</span></span>
+*  - <span data-ttu-id="b23a2-655">Remove-AzHDInsightCluster cmdlet'inin ClusterGetResponse olan çıkış türü bool olarak değiştirildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-655">Changed the output type of Remove-AzHDInsightCluster from ClusterGetResponse to bool.</span></span>
+*  - <span data-ttu-id="b23a2-656">Set-AzHDInsightGatewaySettings cmdlet'inin HttpConnectivitySettings olan çıkış türü GatewaySettings olarak değiştirildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-656">Changed the output type of Set-AzHDInsightGatewaySettings HttpConnectivitySettings to GatewaySettings.</span></span>
+* <span data-ttu-id="b23a2-657">Bazı senaryo test çalışmaları eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-657">Added some scenario test cases.</span></span>
+* <span data-ttu-id="b23a2-658">Bazı diğer adlar kaldırıldı: 'Add-AzHDInsightConfigValues', 'Get-AzHDInsightProperties'.</span><span class="sxs-lookup"><span data-stu-id="b23a2-658">Remove some alias: 'Add-AzHDInsightConfigValues', 'Get-AzHDInsightProperties'.</span></span>
+
+#### <a name="aziothub"></a><span data-ttu-id="b23a2-659">Az.IotHub</span><span class="sxs-lookup"><span data-stu-id="b23a2-659">Az.IotHub</span></span>
+* <span data-ttu-id="b23a2-660">Hataya neden olan değişiklikler:</span><span class="sxs-lookup"><span data-stu-id="b23a2-660">Breaking changes:</span></span>
+    - <span data-ttu-id="b23a2-661">'Add-AzIotHubEventHubConsumerGroup' cmdlet'i artık 'EventHubEndpointName' parametresini desteklemiyor ve özgün parametre adı için hiçbir diğer ad bulunamadı.</span><span class="sxs-lookup"><span data-stu-id="b23a2-661">The cmdlet 'Add-AzIotHubEventHubConsumerGroup' no longer supports the parameter 'EventHubEndpointName' and no alias was found for the original parameter name.</span></span>
+    - <span data-ttu-id="b23a2-662">'Add-AzIotHubEventHubConsumerGroup' cmdlet'inden '__AllParameterSets' parametre kümesi kaldırıldı.</span><span class="sxs-lookup"><span data-stu-id="b23a2-662">The parameter set '__AllParameterSets' for cmdlet 'Add-AzIotHubEventHubConsumerGroup' has been removed.</span></span>
+    - <span data-ttu-id="b23a2-663">'Get-AzIotHubEventHubConsumerGroup' cmdlet'i artık 'EventHubEndpointName' parametresini desteklemiyor ve özgün parametre adı için hiçbir diğer ad bulunamadı.</span><span class="sxs-lookup"><span data-stu-id="b23a2-663">The cmdlet 'Get-AzIotHubEventHubConsumerGroup' no longer supports the parameter 'EventHubEndpointName' and no alias was found for the original parameter name.</span></span>
+    - <span data-ttu-id="b23a2-664">'Get-AzIotHubEventHubConsumerGroup' cmdlet'inden '__AllParameterSets' parametre kümesi kaldırıldı.</span><span class="sxs-lookup"><span data-stu-id="b23a2-664">The parameter set '__AllParameterSets' for cmdlet 'Get-AzIotHubEventHubConsumerGroup' has been removed.</span></span>
+    - <span data-ttu-id="b23a2-665">'Microsoft.Azure.Commands.Management.IotHub.Models.PSIotHubProperties' türündeki 'OperationsMonitoringProperties' özelliği kaldırıldı.</span><span class="sxs-lookup"><span data-stu-id="b23a2-665">The property 'OperationsMonitoringProperties' of type 'Microsoft.Azure.Commands.Management.IotHub.Models.PSIotHubProperties' has been removed.</span></span>
+    - <span data-ttu-id="b23a2-666">'Microsoft.Azure.Commands.Management.IotHub.Models.PSIotHubInputProperties' türündeki 'OperationsMonitoringProperties' özelliği kaldırıldı.</span><span class="sxs-lookup"><span data-stu-id="b23a2-666">The property 'OperationsMonitoringProperties' of type 'Microsoft.Azure.Commands.Management.IotHub.Models.PSIotHubInputProperties' has been removed.</span></span>
+    - <span data-ttu-id="b23a2-667">'New-AzIotHubExportDevice' cmdlet'i artık 'New-AzIotHubExportDevices' diğer adını desteklemiyor.</span><span class="sxs-lookup"><span data-stu-id="b23a2-667">The cmdlet 'New-AzIotHubExportDevice' no longer supports the alias 'New-AzIotHubExportDevices'.</span></span>
+    - <span data-ttu-id="b23a2-668">'New-AzIotHubImportDevice' cmdlet'i artık 'New-AzIotHubImportDevices' diğer adını desteklemiyor.</span><span class="sxs-lookup"><span data-stu-id="b23a2-668">The cmdlet 'New-AzIotHubImportDevice' no longer supports the alias 'New-AzIotHubImportDevices'.</span></span>
+    - <span data-ttu-id="b23a2-669">'Remove-AzIotHubEventHubConsumerGroup' cmdlet'i artık 'EventHubEndpointName' parametresini desteklemiyor ve özgün parametre adı için hiçbir diğer ad bulunamadı.</span><span class="sxs-lookup"><span data-stu-id="b23a2-669">The cmdlet 'Remove-AzIotHubEventHubConsumerGroup' no longer supports the parameter 'EventHubEndpointName' and no alias was found for the original parameter name.</span></span>
+    - <span data-ttu-id="b23a2-670">'Remove-AzIotHubEventHubConsumerGroup' cmdlet'inden '__AllParameterSets' parametre kümesi kaldırıldı.</span><span class="sxs-lookup"><span data-stu-id="b23a2-670">The parameter set '__AllParameterSets' for cmdlet 'Remove-AzIotHubEventHubConsumerGroup' has been removed.</span></span>
+    - <span data-ttu-id="b23a2-671">'Set-AzIotHub' cmdet'i artık 'OperationsMonitoringProperties' parametresini desteklemiyor ve özgün parametre adı için hiçbir diğer ad bulunamadı.</span><span class="sxs-lookup"><span data-stu-id="b23a2-671">The cmdlet 'Set-AzIotHub' no longer supports the parameter 'OperationsMonitoringProperties' and no alias was found for the original parameter name.</span></span>
+    - <span data-ttu-id="b23a2-672">'Set-AzIotHub' cmdlet'inden 'UpdateOperationsMonitoringProperties' parametre kümesi kaldırıldı.</span><span class="sxs-lookup"><span data-stu-id="b23a2-672">The parameter set 'UpdateOperationsMonitoringProperties' for cmdlet 'Set-AzIotHub' has been removed.</span></span>
+
+#### <a name="azrecoveryservices"></a><span data-ttu-id="b23a2-673">Az.RecoveryServices</span><span class="sxs-lookup"><span data-stu-id="b23a2-673">Az.RecoveryServices</span></span>
+* <span data-ttu-id="b23a2-674">NSG, genel IP ve Azure'dan Azure'a iç yük dengeleyiciler gibi ağ kaynaklarını yapılandırmak için Azure Site Recovery desteği.</span><span class="sxs-lookup"><span data-stu-id="b23a2-674">Azure Site Recovery support to configure networking resources like NSG, public IP and internal load balancers for Azure to Azure.</span></span>
+* <span data-ttu-id="b23a2-675">Azure'a vMWare için yönetilen diske yazmaya yönelik Azure Site Recovery Desteği.</span><span class="sxs-lookup"><span data-stu-id="b23a2-675">Azure Site Recovery Support to write to managed disk for vMWare to Azure.</span></span>
+* <span data-ttu-id="b23a2-676">Azure'a vMWare için NIC azaltmasına yönelik Azure Site Recovery Desteği.</span><span class="sxs-lookup"><span data-stu-id="b23a2-676">Azure Site Recovery Support to NIC reduction for vMWare to Azure.</span></span>
+* <span data-ttu-id="b23a2-677">Azure'a Azure için hızlandırılmış ağa yönelik Azure Site Recovery Desteği.</span><span class="sxs-lookup"><span data-stu-id="b23a2-677">Azure Site Recovery Support to accelerated networking for Azure to Azure.</span></span>
+* <span data-ttu-id="b23a2-678">Azure'a Azure için aracı otomatik güncelleştirmesine yönelik Azure Site Recovery Desteği.</span><span class="sxs-lookup"><span data-stu-id="b23a2-678">Azure Site Recovery Support to agent auto update for Azure to Azure.</span></span>
+* <span data-ttu-id="b23a2-679">Azure'a Azure için Standart SSD'ye yönelik Azure Site Recovery Desteği.</span><span class="sxs-lookup"><span data-stu-id="b23a2-679">Azure Site Recovery Support to Standard SSD for Azure to Azure.</span></span>
+* <span data-ttu-id="b23a2-680">Azure'a Azure için Azure Disk Şifrelemesi iki geçişine yönelik Azure Site Recovery Desteği.</span><span class="sxs-lookup"><span data-stu-id="b23a2-680">Azure Site Recovery Support to Azure Disk Encryption two pass for Azure to Azure.</span></span>
+* <span data-ttu-id="b23a2-681">Azure'a Azure için yeni eklenen diski korumaya yönelik Azure Site Recovery Desteği.</span><span class="sxs-lookup"><span data-stu-id="b23a2-681">Azure Site Recovery Support to protect newly added disk for Azure to Azure.</span></span>
+* <span data-ttu-id="b23a2-682">VM için SoftDelete özelliği eklendi ve softdelete için de testler eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-682">Added SoftDelete feature for VM and added tests for softdelete</span></span>
+
+#### <a name="azresources"></a><span data-ttu-id="b23a2-683">Az.Resources</span><span class="sxs-lookup"><span data-stu-id="b23a2-683">Az.Resources</span></span>
+* <span data-ttu-id="b23a2-684">Bağımlılık derlemesi Microsoft.Extensions.Caching.Memory 1.1.1'den 2.2'ye güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-684">Update dependency assembly Microsoft.Extensions.Caching.Memory from 1.1.1 to 2.2</span></span>
+
+#### <a name="aznetwork"></a><span data-ttu-id="b23a2-685">Az.Network</span><span class="sxs-lookup"><span data-stu-id="b23a2-685">Az.Network</span></span>
+* <span data-ttu-id="b23a2-686">PrivateEndpointConnection için tüm cmdlet'ler genel hizmet sağlayıcısını destekleyecek şekilde değiştirildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-686">Change all cmdlets for PrivateEndpointConnection to support generic service provider.</span></span>
+    - <span data-ttu-id="b23a2-687">Şu cmdlet güncelleştirildi:</span><span class="sxs-lookup"><span data-stu-id="b23a2-687">Updated cmdlet:</span></span>
+        - <span data-ttu-id="b23a2-688">Approve-AzPrivateEndpointConnection</span><span class="sxs-lookup"><span data-stu-id="b23a2-688">Approve-AzPrivateEndpointConnection</span></span>
+        - <span data-ttu-id="b23a2-689">Deny-AzPrivateEndpointConnection</span><span class="sxs-lookup"><span data-stu-id="b23a2-689">Deny-AzPrivateEndpointConnection</span></span>
+        - <span data-ttu-id="b23a2-690">Get-AzPrivateEndpointConnection</span><span class="sxs-lookup"><span data-stu-id="b23a2-690">Get-AzPrivateEndpointConnection</span></span>
+        - <span data-ttu-id="b23a2-691">Remove-AzPrivateEndpointConnection</span><span class="sxs-lookup"><span data-stu-id="b23a2-691">Remove-AzPrivateEndpointConnection</span></span>
+        - <span data-ttu-id="b23a2-692">Set-AzPrivateEndpointConnection</span><span class="sxs-lookup"><span data-stu-id="b23a2-692">Set-AzPrivateEndpointConnection</span></span>
+* <span data-ttu-id="b23a2-693">PrivateLinkResource için yeni cmdlet eklendi ve bu da genel hizmet sağlayıcısını destekliyor.</span><span class="sxs-lookup"><span data-stu-id="b23a2-693">Add new cmdlet for PrivateLinkResource and it also support generic service provider.</span></span>
+    - <span data-ttu-id="b23a2-694">Yeni cmdlet:</span><span class="sxs-lookup"><span data-stu-id="b23a2-694">New cmdlet:</span></span>
+        - <span data-ttu-id="b23a2-695">Get-AzPrivateLinkResource</span><span class="sxs-lookup"><span data-stu-id="b23a2-695">Get-AzPrivateLinkResource</span></span>
+* <span data-ttu-id="b23a2-696">Proxy Protocol V2 özelliği için yeni alanlar ve parametre eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-696">Add new fields and parameter for the feature Proxy Protocol V2.</span></span>
+    - <span data-ttu-id="b23a2-697">PrivateLinkService'e EnableProxyProtocol özelliği eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-697">Add property EnableProxyProtocol in PrivateLinkService</span></span>
+    - <span data-ttu-id="b23a2-698">PrivateEndpointConnection'a LinkIdentifier özelliği eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-698">Add property LinkIdentifier in PrivateEndpointConnection</span></span>
+    - <span data-ttu-id="b23a2-699">New-AzPrivateLinkService cmdlet'i yeni isteğe bağlı EnableProxyProtocol parametresi eklenerek güncelleştirildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-699">Updated New-AzPrivateLinkService to add a new optional parameter EnableProxyProtocol.</span></span>
+* <span data-ttu-id="b23a2-700">'New-AzApplicationGatewaySku' başvuru belgelerindeki yanlış parametre açıklaması düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-700">Fix incorrect parameter description in 'New-AzApplicationGatewaySku' reference documentation</span></span>
+* <span data-ttu-id="b23a2-701">Azure güvenlik duvarı ilkesini desteklemek için yeni cmdlet'ler eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-701">New cmdlets to support the azure firewall policy</span></span>
+* <span data-ttu-id="b23a2-702">VirtualHub'ın RouteTables alt kaynağı için destek eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-702">Add support for child resource RouteTables of VirtualHub</span></span>
+    - <span data-ttu-id="b23a2-703">Yeni cmdlet'ler eklendi:</span><span class="sxs-lookup"><span data-stu-id="b23a2-703">New cmdlets added:</span></span>
+        - <span data-ttu-id="b23a2-704">Add-AzVirtualHubRoute</span><span class="sxs-lookup"><span data-stu-id="b23a2-704">Add-AzVirtualHubRoute</span></span>
+        - <span data-ttu-id="b23a2-705">Add-AzVirtualHubRouteTable</span><span class="sxs-lookup"><span data-stu-id="b23a2-705">Add-AzVirtualHubRouteTable</span></span>
+        - <span data-ttu-id="b23a2-706">Get-AzVirtualHubRouteTable</span><span class="sxs-lookup"><span data-stu-id="b23a2-706">Get-AzVirtualHubRouteTable</span></span>
+        - <span data-ttu-id="b23a2-707">Remove-AzVirtualHubRouteTable</span><span class="sxs-lookup"><span data-stu-id="b23a2-707">Remove-AzVirtualHubRouteTable</span></span>
+        - <span data-ttu-id="b23a2-708">Set-AzVirtualHub</span><span class="sxs-lookup"><span data-stu-id="b23a2-708">Set-AzVirtualHub</span></span>
+* <span data-ttu-id="b23a2-709">VirtualWan'ın yeni VirtualHub ve VirtualWANType özellikleri Sku'su için destek eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-709">Add support for new properties Sku of VirtualHub and VirtualWANType of VirtualWan</span></span>
+    - <span data-ttu-id="b23a2-710">Cmdlet'ler isteğe bağlı parametrelerle güncelleştirildi:</span><span class="sxs-lookup"><span data-stu-id="b23a2-710">Cmdlets updated with optional parameters:</span></span>
+        - <span data-ttu-id="b23a2-711">New-AzVirtualHub : Sku parametresi eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-711">New-AzVirtualHub : added parameter Sku</span></span>
+        - <span data-ttu-id="b23a2-712">Update-AzVirtualHub : Sku parametresi eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-712">Update-AzVirtualHub : added parameter Sku</span></span>
+        - <span data-ttu-id="b23a2-713">New-AzVirtualWan : VirtualWANType parametresi eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-713">New-AzVirtualWan : added parameter VirtualWANType</span></span>
+        - <span data-ttu-id="b23a2-714">Update-AzVirtualWan : VirtualWANType parametresi eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-714">Update-AzVirtualWan : added parameter VirtualWANType</span></span>
+* <span data-ttu-id="b23a2-715">HubVnetConnection, VpnConnection ve ExpressRouteConnection için EnableInternetSecurity özelliği desteği eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-715">Add support for EnableInternetSecurity property for HubVnetConnection, VpnConnection and ExpressRouteConnection</span></span>
+    - <span data-ttu-id="b23a2-716">Yeni cmdlet'ler eklendi:</span><span class="sxs-lookup"><span data-stu-id="b23a2-716">New cmdlets added:</span></span>
+        - <span data-ttu-id="b23a2-717">Update-AzureRmVirtualHubVnetConnection</span><span class="sxs-lookup"><span data-stu-id="b23a2-717">Update-AzureRmVirtualHubVnetConnection</span></span>
+    - <span data-ttu-id="b23a2-718">Cmdlet'ler isteğe bağlı parametrelerle güncelleştirildi:</span><span class="sxs-lookup"><span data-stu-id="b23a2-718">Cmdlets updated with optional parameters:</span></span>
+        - <span data-ttu-id="b23a2-719">New-AzureRmVirtualHubVnetConnection : EnableInternetSecurity parametresi eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-719">New-AzureRmVirtualHubVnetConnection : added parameter EnableInternetSecurity</span></span>
+        - <span data-ttu-id="b23a2-720">New-AzureRmVpnConnection : EnableInternetSecurity parametresi eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-720">New-AzureRmVpnConnection : added parameter EnableInternetSecurity</span></span>
+        - <span data-ttu-id="b23a2-721">Update-AzureRmVpnConnection : EnableInternetSecurity parametresi eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-721">Update-AzureRmVpnConnection : added parameter EnableInternetSecurity</span></span>
+        - <span data-ttu-id="b23a2-722">New-AzureRmExpressRouteConnection : EnableInternetSecurity parametresi eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-722">New-AzureRmExpressRouteConnection : added parameter EnableInternetSecurity</span></span>
+        - <span data-ttu-id="b23a2-723">Set-AzureRmExpressRouteConnection : EnableInternetSecurity parametresi eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-723">Set-AzureRmExpressRouteConnection : added parameter EnableInternetSecurity</span></span>
+* <span data-ttu-id="b23a2-724">TopLevel WebApplicationFirewall İlkesini Yapılandırma desteği eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-724">Add support for Configuring TopLevel WebApplicationFirewall Policy</span></span>
+    - <span data-ttu-id="b23a2-725">Yeni cmdlet'ler eklendi:</span><span class="sxs-lookup"><span data-stu-id="b23a2-725">New cmdlets added:</span></span>
+        - <span data-ttu-id="b23a2-726">New-AzApplicationGatewayFirewallPolicySetting</span><span class="sxs-lookup"><span data-stu-id="b23a2-726">New-AzApplicationGatewayFirewallPolicySetting</span></span>
+        - <span data-ttu-id="b23a2-727">New-AzApplicationGatewayFirewallPolicyExclusion</span><span class="sxs-lookup"><span data-stu-id="b23a2-727">New-AzApplicationGatewayFirewallPolicyExclusion</span></span>
+        - <span data-ttu-id="b23a2-728">New-AzApplicationGatewayFirewallPolicyManagedRuleGroupOverride</span><span class="sxs-lookup"><span data-stu-id="b23a2-728">New-AzApplicationGatewayFirewallPolicyManagedRuleGroupOverride</span></span>
+        - <span data-ttu-id="b23a2-729">New-AzApplicationGatewayFirewallPolicyManagedRuleOverride</span><span class="sxs-lookup"><span data-stu-id="b23a2-729">New-AzApplicationGatewayFirewallPolicyManagedRuleOverride</span></span>
+        - <span data-ttu-id="b23a2-730">New-AzApplicationGatewayFirewallPolicyManagedRule</span><span class="sxs-lookup"><span data-stu-id="b23a2-730">New-AzApplicationGatewayFirewallPolicyManagedRule</span></span>
+        - <span data-ttu-id="b23a2-731">New-AzApplicationGatewayFirewallPolicyManagedRuleSet</span><span class="sxs-lookup"><span data-stu-id="b23a2-731">New-AzApplicationGatewayFirewallPolicyManagedRuleSet</span></span>
+    - <span data-ttu-id="b23a2-732">Cmdlet'ler isteğe bağlı parametrelerle güncelleştirildi:</span><span class="sxs-lookup"><span data-stu-id="b23a2-732">Cmdlets updated with optional parameters:</span></span>
+        - <span data-ttu-id="b23a2-733">New-AzApplicationGatewayFirewallPolicy : PolicySetting, ManagedRule parametreleri eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-733">New-AzApplicationGatewayFirewallPolicy : added parameter PolicySetting, ManagedRule</span></span>
+* <span data-ttu-id="b23a2-734">CustomRule'da Geo-Match işleci için destek eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-734">Added support for Geo-Match operator on CustomRule</span></span>
+    - <span data-ttu-id="b23a2-735">FirewallCondition'da işlece GeoMatch eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-735">Added GeoMatch to the operator on the FirewallCondition</span></span>
+* <span data-ttu-id="b23a2-736">perListener ve perSite Güvenlik duvarı ilkesi için destek eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-736">Added support for perListener and perSite Firewall policy</span></span>
+    - <span data-ttu-id="b23a2-737">Cmdlet'ler isteğe bağlı parametrelerle güncelleştirildi:</span><span class="sxs-lookup"><span data-stu-id="b23a2-737">Cmdlets updated with optional parameters:</span></span>
+        - <span data-ttu-id="b23a2-738">New-AzApplicationGatewayHttpListener : FirewallPolicy, FirewallPolicyId parametreleri eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-738">New-AzApplicationGatewayHttpListener : added parameter FirewallPolicy, FirewallPolicyId</span></span>
+        - <span data-ttu-id="b23a2-739">New-AzApplicationGatewayPathRuleConfig : FirewallPolicy, FirewallPolicyId parametreleri eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-739">New-AzApplicationGatewayPathRuleConfig : added parameter FirewallPolicy, FirewallPolicyId</span></span>
+* <span data-ttu-id="b23a2-740">'PSBastion' içinde AzureBastionSubnet adlı gerekli alt ağın büyük/küçük harfe duyarlı olması düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-740">Fix required subnet with name AzureBastionSubnet in 'PSBastion' can be case insensitive</span></span>
+* <span data-ttu-id="b23a2-741">Azure Güvenlik Duvarı için Ağ Kurallarında Hedef FQDN'lere ve NAT Kurallarında Çevrilmiş FQDN'ye yönelik destek</span><span class="sxs-lookup"><span data-stu-id="b23a2-741">Support for Destination FQDNs in Network Rules and Translated FQDN in NAT Rules for Azure Firewall</span></span>
+* <span data-ttu-id="b23a2-742">IpGroup'un RouteTables üst düzey kaynağı için destek eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-742">Add support for top level resource RouteTables of IpGroup</span></span>
+    - <span data-ttu-id="b23a2-743">Yeni cmdlet'ler eklendi:</span><span class="sxs-lookup"><span data-stu-id="b23a2-743">New cmdlets added:</span></span>
+        - <span data-ttu-id="b23a2-744">New-AzIpGroup</span><span class="sxs-lookup"><span data-stu-id="b23a2-744">New-AzIpGroup</span></span>
+        - <span data-ttu-id="b23a2-745">Remove-AzIpGroup</span><span class="sxs-lookup"><span data-stu-id="b23a2-745">Remove-AzIpGroup</span></span>
+        - <span data-ttu-id="b23a2-746">Get-AzIpGroup</span><span class="sxs-lookup"><span data-stu-id="b23a2-746">Get-AzIpGroup</span></span>
+        - <span data-ttu-id="b23a2-747">Set-AzIpGroup</span><span class="sxs-lookup"><span data-stu-id="b23a2-747">Set-AzIpGroup</span></span>
+
+#### <a name="azservicefabric"></a><span data-ttu-id="b23a2-748">Az.ServiceFabric</span><span class="sxs-lookup"><span data-stu-id="b23a2-748">Az.ServiceFabric</span></span>
+* <span data-ttu-id="b23a2-749">Bu senaryo artık Add-AzVmssSecret cmdlet'inin kapsamına girdiğinden Add-AzServiceFabricApplicationCertificate cmdlet'i kaldırıldı.</span><span class="sxs-lookup"><span data-stu-id="b23a2-749">Remove Add-AzServiceFabricApplicationCertificate cmdlet as this scenario is covered by Add-AzVmssSecret.</span></span>
+
+#### <a name="azsql"></a><span data-ttu-id="b23a2-750">Az.Sql</span><span class="sxs-lookup"><span data-stu-id="b23a2-750">Az.Sql</span></span>
+* <span data-ttu-id="b23a2-751">Yönetilen Örneklerde bırakılan veritabanlarını geri yükleme desteği eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-751">Added support for restore of dropped databases on Managed Instances.</span></span>
+* <span data-ttu-id="b23a2-752">Eski denetim cmdlet'leri kodda kullanım dışı bırakıldı.</span><span class="sxs-lookup"><span data-stu-id="b23a2-752">Deprecated from code old auditing cmdlets.</span></span>
+* <span data-ttu-id="b23a2-753">Kullanım dışı bırakılan diğer adlar kaldırıldı:</span><span class="sxs-lookup"><span data-stu-id="b23a2-753">Removed deprecated aliases:</span></span>
+* <span data-ttu-id="b23a2-754">Get-AzSqlDatabaseIndexRecommendations (bunun yerine Get-AzSqlDatabaseIndexRecommendation kullanın)</span><span class="sxs-lookup"><span data-stu-id="b23a2-754">Get-AzSqlDatabaseIndexRecommendations (use Get-AzSqlDatabaseIndexRecommendation instead)</span></span>
+* <span data-ttu-id="b23a2-755">Get-AzSqlDatabaseRestorePoints (bunun yerine Get-AzSqlDatabaseRestorePoint kullanıldı)</span><span class="sxs-lookup"><span data-stu-id="b23a2-755">Get-AzSqlDatabaseRestorePoints (use Get-AzSqlDatabaseRestorePoint instead)</span></span>
+* <span data-ttu-id="b23a2-756">Get-AzSqlDatabaseSecureConnectionPolicy cmdlet'i kaldırıldı</span><span class="sxs-lookup"><span data-stu-id="b23a2-756">Remove Get-AzSqlDatabaseSecureConnectionPolicy cmdlet</span></span>
+* <span data-ttu-id="b23a2-757">Kullanım dışı bırakılan Güvenlik Açığı Değerlendirmesi Ayarları cmdlet'lerinin diğer adları kaldırıldı</span><span class="sxs-lookup"><span data-stu-id="b23a2-757">Remove aliases for deprecated Vulnerability Assessment Settings cmdlets</span></span>
+* <span data-ttu-id="b23a2-758">Gelişmiş Tehdit Algılama Ayarları cmdlet'leri kullanım dışı bırakıldı</span><span class="sxs-lookup"><span data-stu-id="b23a2-758">Deprecate Advanced Threat Detection Settings cmdlets</span></span>
+* <span data-ttu-id="b23a2-759">Veritabanındaki sütunlarda duyarlılık önerilerini devre dışı bırakma ve etkinleştirme cmdlet'leri eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-759">Adding cmdlets to Disable and enable sensitivity recommendations on columns in a database.</span></span>
+
+#### <a name="azstorage"></a><span data-ttu-id="b23a2-760">Az.Storage</span><span class="sxs-lookup"><span data-stu-id="b23a2-760">Az.Storage</span></span>
+* <span data-ttu-id="b23a2-761">Depolama hesabı oluşturulur veya güncelleştirilirken Büyük dosya paylaşımını etkinleştirme desteği</span><span class="sxs-lookup"><span data-stu-id="b23a2-761">Support enable Large File share when create or update Storage account</span></span>
+    -  <span data-ttu-id="b23a2-762">New-AzStorageAccount</span><span class="sxs-lookup"><span data-stu-id="b23a2-762">New-AzStorageAccount</span></span>
+    -  <span data-ttu-id="b23a2-763">Set-AzStorageAccount</span><span class="sxs-lookup"><span data-stu-id="b23a2-763">Set-AzStorageAccount</span></span>
+* <span data-ttu-id="b23a2-764">Dosya işleyicisi kapatılırken/alınırken, DeletePending durumundaki nesnesinde hata olmasını önlemek için giriş yolunun Dosya dizini mi yoksa Dosya mı olduğunu denetlemeyi atlayın</span><span class="sxs-lookup"><span data-stu-id="b23a2-764">When close/get File handle, skip check the input path is File directory or File, to avoid failure with object in DeletePending status</span></span>
+    -  <span data-ttu-id="b23a2-765">Get-AzStorageFileHandle</span><span class="sxs-lookup"><span data-stu-id="b23a2-765">Get-AzStorageFileHandle</span></span>
+    -  <span data-ttu-id="b23a2-766">Close-AzStorageFileHandle</span><span class="sxs-lookup"><span data-stu-id="b23a2-766">Close-AzStorageFileHandle</span></span>
+
+## <a name="280---october-2019"></a><span data-ttu-id="b23a2-767">2.8.0 - Ekim 2019</span><span class="sxs-lookup"><span data-stu-id="b23a2-767">2.8.0 - October 2019</span></span>
+### <a name="general"></a><span data-ttu-id="b23a2-768">Genel</span><span class="sxs-lookup"><span data-stu-id="b23a2-768">General</span></span>
+* <span data-ttu-id="b23a2-769">Az.HealthcareApis 1.0.0 sürümü</span><span class="sxs-lookup"><span data-stu-id="b23a2-769">Az.HealthcareApis 1.0.0 release</span></span>
+
+#### <a name="azaccounts"></a><span data-ttu-id="b23a2-770">Az.Accounts</span><span class="sxs-lookup"><span data-stu-id="b23a2-770">Az.Accounts</span></span>
+* <span data-ttu-id="b23a2-771">Oluşturulan modüller için telemetri ve URL’yi yeniden yazma özelliği güncelleştirildi, Windows birim testleri düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-771">Update telemetry and url rewriting for generated modules, fix windows unit tests.</span></span>
+
+#### <a name="azapimanagement"></a><span data-ttu-id="b23a2-772">Az.ApiManagement</span><span class="sxs-lookup"><span data-stu-id="b23a2-772">Az.ApiManagement</span></span>
+* <span data-ttu-id="b23a2-773">**Set-AzApiManagementApi** - ApiVersionSet’e Güncelleştirme API’si desteği eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-773">**Set-AzApiManagementApi** - Added support for Updating Api into ApiVersionSet</span></span>
+    - <span data-ttu-id="b23a2-774">[https://github.com/Azure/azure-powershell/issues/10068](https://github.com/Azure/azure-powershell/issues/10068 ) sorunu düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-774">Fix for issue https://github.com/Azure/azure-powershell/issues/10068</span></span>
+
+#### <a name="azautomation"></a><span data-ttu-id="b23a2-775">Az.Automation</span><span class="sxs-lookup"><span data-stu-id="b23a2-775">Az.Automation</span></span>
+* <span data-ttu-id="b23a2-776">Linux yeniden başlatma ayarı parametresi için New-AzureAutomationSoftwareUpdateConfiguration cmdlet’i düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-776">Fixed New-AzureAutomationSoftwareUpdateConfiguration cmdlet for Linux reboot setting parameter.</span></span>
+
+#### <a name="azbatch"></a><span data-ttu-id="b23a2-777">Az.Batch</span><span class="sxs-lookup"><span data-stu-id="b23a2-777">Az.Batch</span></span>
+* <span data-ttu-id="b23a2-778">Kullanımdan kaldırılan **Get-AzBatchNodeAgentSku** yerine 2.0.0 sürümünde **Get-AzBatchSupportImage** kullanıma sunulacak.</span><span class="sxs-lookup"><span data-stu-id="b23a2-778">**Get-AzBatchNodeAgentSku** is deprecated and will be replaced by **Get-AzBatchSupportImage** in version 2.0.0.</span></span>
+
+#### <a name="azcompute"></a><span data-ttu-id="b23a2-779">Az.Compute</span><span class="sxs-lookup"><span data-stu-id="b23a2-779">Az.Compute</span></span>
+* <span data-ttu-id="b23a2-780">New-AzVM ve New-AzVmss cmdlet’lerine Priority, EvictionPolicy ve MaxPrice parametreleri eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-780">Add Priority, EvictionPolicy, and MaxPrice parameters to New-AzVM and New-AzVmss cmdlets</span></span>
+* <span data-ttu-id="b23a2-781">Add-AzVMAdditionalUnattendContent ve Add-AzVMSshPublicKey cmdlet’leri için uyarı iletisi ve yardım belgesi düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-781">Fix warning message and help document for Add-AzVMAdditionalUnattendContent and Add-AzVMSshPublicKey cmdlets</span></span>
+* <span data-ttu-id="b23a2-782">Set-AzVMDiskEncryptionExtension için yönetilen diskleri olan Linux VM’lere yönelik -skipVmBackup özel durumu düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-782">Fix -skipVmBackup exception for Linux VMs with managed disks for Set-AzVMDiskEncryptionExtension.</span></span>
+* <span data-ttu-id="b23a2-783">Set-AzVMDiskEncryptionExtension’daki iki geçişli senaryoda güncelleştirme şifreleme ayarlarındaki hata düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-783">Fix bug in update encryption settings in Set-AzVMDiskEncryptionExtension, two pass scenario.</span></span>
+
+#### <a name="azdatafactory"></a><span data-ttu-id="b23a2-784">Az.DataFactory</span><span class="sxs-lookup"><span data-stu-id="b23a2-784">Az.DataFactory</span></span>
+* <span data-ttu-id="b23a2-785">ADF V2 veri akışı için CRUD komutları eklendi: Set-AzDataFactoryV2DataFlow, Remove-AzDataFactoryV2DataFlow, ve Get-AzDataFactoryV2DataFlow.</span><span class="sxs-lookup"><span data-stu-id="b23a2-785">Adding CRUD commands for ADF V2 data flow: Set-AzDataFactoryV2DataFlow, Remove-AzDataFactoryV2DataFlow, and Get-AzDataFactoryV2DataFlow.</span></span>
+* <span data-ttu-id="b23a2-786">ADF V2 veri akışı hata ayıklama oturumu için eylem komutları eklendi: Start-AzDataFactoryV2DataFlowDebugSession, Get-AzDataFactoryV2DataFlowDebugSession, Add-AzDataFactoryV2DataFlowDebugSessionPackage, Invoke-AzDataFactoryV2DataFlowDebugSessionCommand ve Stop-AzDataFactoryV2DataFlowDebugSession.</span><span class="sxs-lookup"><span data-stu-id="b23a2-786">Adding action commands for ADF V2 data flow debug Session: Start-AzDataFactoryV2DataFlowDebugSession, Get-AzDataFactoryV2DataFlowDebugSession, Add-AzDataFactoryV2DataFlowDebugSessionPackage, Invoke-AzDataFactoryV2DataFlowDebugSessionCommand and Stop-AzDataFactoryV2DataFlowDebugSession.</span></span>
+* <span data-ttu-id="b23a2-787">ADF .Net SDK sürümü 4.2.0’a güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-787">Update ADF .Net SDK version to 4.2.0</span></span>
+
+#### <a name="azdatalakestore"></a><span data-ttu-id="b23a2-788">Az.DataLakeStore</span><span class="sxs-lookup"><span data-stu-id="b23a2-788">Az.DataLakeStore</span></span>
+* <span data-ttu-id="b23a2-789">‘-’ içeren hesapların etki alanı olmadan geçirilebilmesi için hesap doğrulama düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-789">Fix account validation so that accounts with '-' can be passed without domain</span></span>
+
+#### <a name="azhealthcareapis"></a><span data-ttu-id="b23a2-790">Az.HealthcareApis</span><span class="sxs-lookup"><span data-stu-id="b23a2-790">Az.HealthcareApis</span></span>
+* <span data-ttu-id="b23a2-791">PowerShell sürümü 1.0.0 olarak güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-791">Updated the powershell version to 1.0.0</span></span>
+* <span data-ttu-id="b23a2-792">SDK sürümü 1.0.2 olarak güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-792">Updated the SDK version to 1.0.2</span></span>
+* <span data-ttu-id="b23a2-793">Yeni SDK sürümüne başvurmaları için testler güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-793">Update in tests to refer to new SDK version</span></span>
+* <span data-ttu-id="b23a2-794">İç içe geçmiş çıkış yapısı, düzleştirilmiş olarak güncelleştirildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-794">Updated the output structure from nested to flattened.</span></span>
+
+#### <a name="aziothub"></a><span data-ttu-id="b23a2-795">Az.IotHub</span><span class="sxs-lookup"><span data-stu-id="b23a2-795">Az.IotHub</span></span>
+* <span data-ttu-id="b23a2-796">Yeni yönlendirme kaynağı eklendi: DigitalTwinChangeEvents</span><span class="sxs-lookup"><span data-stu-id="b23a2-796">Add new routing source: DigitalTwinChangeEvents</span></span>
+* <span data-ttu-id="b23a2-797">Küçük hata düzeltmesi: Get-AzIothub SubscriptionId öğesini döndürmüyor</span><span class="sxs-lookup"><span data-stu-id="b23a2-797">Minor bug fix: Get-AzIothub not returning subscriptionId</span></span>
+
+#### <a name="azmonitor"></a><span data-ttu-id="b23a2-798">Az.Monitor</span><span class="sxs-lookup"><span data-stu-id="b23a2-798">Az.Monitor</span></span>
+* <span data-ttu-id="b23a2-799">Eylem grupları -ItsmReceiver -VoiceReceiver -ArmRoleReceiver -AzureFunctionReceiver -LogicAppReceiver -AutomationRunbookReceiver -AzureAppPushReceiver için yeni eylem grubu alıcıları eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-799">New action group receivers added for action group   -ItsmReceiver   -VoiceReceiver   -ArmRoleReceiver   -AzureFunctionReceiver   -LogicAppReceiver   -AutomationRunbookReceiver   -AzureAppPushReceiver</span></span>
+* <span data-ttu-id="b23a2-800">Alıcılar için etkinleştirilen ortak uyarı şemasını kullanın.</span><span class="sxs-lookup"><span data-stu-id="b23a2-800">Use common alert schema enabled for the receivers.</span></span> <span data-ttu-id="b23a2-801">Bunlar SMS, Azure Uygulaması iletimi, ITSM ve ses alıcıları için geçerli değildir</span><span class="sxs-lookup"><span data-stu-id="b23a2-801">This is not applicable for SMS, Azure App push , ITSM and Voice recievers</span></span>
+* <span data-ttu-id="b23a2-802">Web kancaları artık Azure Active Directory kimlik doğrulamasını destekliyor.</span><span class="sxs-lookup"><span data-stu-id="b23a2-802">Webhooks now supports Azure active directory authentication .</span></span>
+
+#### <a name="aznetwork"></a><span data-ttu-id="b23a2-803">Az.Network</span><span class="sxs-lookup"><span data-stu-id="b23a2-803">Az.Network</span></span>
+* <span data-ttu-id="b23a2-804">Hizmet Uç Noktası İlkeleri için kullanılabilen diğer adları almak için çağrılabilen Get-AzAvailableServiceAlias cmdlet’i eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-804">Add new cmdlet Get-AzAvailableServiceAlias which can be called to get the aliases that can be used for Service Endpoint Policies.</span></span>
+* <span data-ttu-id="b23a2-805">Sanal Ağ Geçidi Bağlantılarına trafik seçicileri eklemeye yönelik destek eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-805">Added support for the adding traffic selectors to Virtual Network Gateway Connections</span></span>
+    - <span data-ttu-id="b23a2-806">Yeni cmdlet'ler eklendi:</span><span class="sxs-lookup"><span data-stu-id="b23a2-806">New cmdlets added:</span></span>
+        - <span data-ttu-id="b23a2-807">New-AzureRmTrafficSelectorPolicy</span><span class="sxs-lookup"><span data-stu-id="b23a2-807">New-AzureRmTrafficSelectorPolicy</span></span>
+    - <span data-ttu-id="b23a2-808">Cmdlet’ler, şu isteğe bağlı parametreler ile güncelleştirildi: -TrafficSelectorPolicies -New-AzureRmVirtualNetworkGatewayConnection -Set-AzureRmVirtualNetworkGatewayConnection</span><span class="sxs-lookup"><span data-stu-id="b23a2-808">Cmdlets updated with optional parameter -TrafficSelectorPolicies   -New-AzureRmVirtualNetworkGatewayConnection   -Set-AzureRmVirtualNetworkGatewayConnection</span></span>
+* <span data-ttu-id="b23a2-809">Ağ güvenlik kuralı yapılandırmalarında ESP ve AH protokollerine yönelik destek eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-809">Add support for ESP and AH protocols in network security rule configurations</span></span>
+    - <span data-ttu-id="b23a2-810">Cmdlet'ler güncelleştirildi:</span><span class="sxs-lookup"><span data-stu-id="b23a2-810">Updated cmdlets:</span></span>
+        - <span data-ttu-id="b23a2-811">Add-AzNetworkSecurityRuleConfig</span><span class="sxs-lookup"><span data-stu-id="b23a2-811">Add-AzNetworkSecurityRuleConfig</span></span>
+        - <span data-ttu-id="b23a2-812">New-AzNetworkSecurityRuleConfig</span><span class="sxs-lookup"><span data-stu-id="b23a2-812">New-AzNetworkSecurityRuleConfig</span></span>
+        - <span data-ttu-id="b23a2-813">Set-AzNetworkSecurityRuleConfig</span><span class="sxs-lookup"><span data-stu-id="b23a2-813">Set-AzNetworkSecurityRuleConfig</span></span>
+* <span data-ttu-id="b23a2-814">Cortex cmdlet’lerinde özel durumların işlenmesi geliştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-814">Improve handling of exceptions in Cortex cmdlets</span></span>
+* <span data-ttu-id="b23a2-815">VirtualNetworkGateways için yeni Nesiller ve SKU’lar</span><span class="sxs-lookup"><span data-stu-id="b23a2-815">New Generations and SKUs for VirtualNetworkGateways</span></span>
+  - <span data-ttu-id="b23a2-816">VirtualNetworkGateways için yeni Nesiller sunuldu.</span><span class="sxs-lookup"><span data-stu-id="b23a2-816">Introduce new Generations for VirtualNetworkGateways.</span></span>
+  - <span data-ttu-id="b23a2-817">VirtualNetworkGateways için yüksek verimliliğe sahip yeni SKU’lar sunuldu.</span><span class="sxs-lookup"><span data-stu-id="b23a2-817">Introduce new high throughput SKUs for VirtualNetworkGateways.</span></span>
+
+#### <a name="azrediscache"></a><span data-ttu-id="b23a2-818">Az.RedisCache</span><span class="sxs-lookup"><span data-stu-id="b23a2-818">Az.RedisCache</span></span>
+* <span data-ttu-id="b23a2-819">‘-Size’ parametresine yönelik eksik değerleri eklemek için ‘Set-AzRedisCache’ başvuru belgesi güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-819">Updated 'Set-AzRedisCache' reference documentation to include missing values for '-Size' parameter</span></span>
+
+#### <a name="azsql"></a><span data-ttu-id="b23a2-820">Az.Sql</span><span class="sxs-lookup"><span data-stu-id="b23a2-820">Az.Sql</span></span>
+* <span data-ttu-id="b23a2-821">Yönetilen örnekte Active Directory yöneticisini ayarlama desteği eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-821">Add support for setting Active Directory Administrator on Managed Instance</span></span>
+
+#### <a name="azstorage"></a><span data-ttu-id="b23a2-822">Az.Storage</span><span class="sxs-lookup"><span data-stu-id="b23a2-822">Az.Storage</span></span>
+* <span data-ttu-id="b23a2-823">Depolama İstemcisi Kitaplığı 11.1.0 sürümüne yükseltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-823">Upgrade Storage Client Library to 11.1.0</span></span>
+* <span data-ttu-id="b23a2-824">Yönetim düzlemi API’si olan liste kapsayıcıları NextPageLink ile listelenecek</span><span class="sxs-lookup"><span data-stu-id="b23a2-824">List containers with Management plane API, will list with NextPageLink</span></span>
+    -  <span data-ttu-id="b23a2-825">Get-AzRmStorageContainer</span><span class="sxs-lookup"><span data-stu-id="b23a2-825">Get-AzRmStorageContainer</span></span>
+* <span data-ttu-id="b23a2-826">Abonelikteki Liste Depolama hesapları NextPageLink ile listelenecek</span><span class="sxs-lookup"><span data-stu-id="b23a2-826">List Storage accounts from subscription, will list with NextPageLink</span></span>
+    -  <span data-ttu-id="b23a2-827">Get-AzStorageAccount</span><span class="sxs-lookup"><span data-stu-id="b23a2-827">Get-AzStorageAccount</span></span>
+
+#### <a name="azstoragesync"></a><span data-ttu-id="b23a2-828">Az.StorageSync</span><span class="sxs-lookup"><span data-stu-id="b23a2-828">Az.StorageSync</span></span>
+* <span data-ttu-id="b23a2-829">Reset-AzStorageSyncServerCertificate öğesinde Sorun 9810 düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-829">Fix Issue 9810 in Reset-AzStorageSyncServerCertificate.</span></span>
+
+#### <a name="azwebsites"></a><span data-ttu-id="b23a2-830">Az.Websites</span><span class="sxs-lookup"><span data-stu-id="b23a2-830">Az.Websites</span></span>
+* <span data-ttu-id="b23a2-831">Bir uygulamanın ASP’sini güncelleştiren Set-AzWebApp başarısız oluyor</span><span class="sxs-lookup"><span data-stu-id="b23a2-831">Set-AzWebApp updating ASP of an app was failing</span></span>
+
+## <a name="270---september-2019"></a><span data-ttu-id="b23a2-832">2.7.0 - Eylül 2019</span><span class="sxs-lookup"><span data-stu-id="b23a2-832">2.7.0 - September 2019</span></span>
+#### <a name="azapimanagement"></a><span data-ttu-id="b23a2-833">Az.ApiManagement</span><span class="sxs-lookup"><span data-stu-id="b23a2-833">Az.ApiManagement</span></span>
+* <span data-ttu-id="b23a2-834">'Set-AzApiManagementPolicy' başvuru belgesindeki '-Format' parametresinin açıklaması güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-834">Update '-Format' parameter description in 'Set-AzApiManagementPolicy' reference documentation</span></span>
+* <span data-ttu-id="b23a2-835">Kullanım dışı bırakılan 'Update-AzApiManagementDeployment' cmdlet’ine başvurular, başvuru belgesinden kaldırıldı.</span><span class="sxs-lookup"><span data-stu-id="b23a2-835">Removed references of deprecated cmdlet 'Update-AzApiManagementDeployment' from reference documentation.</span></span> <span data-ttu-id="b23a2-836">Bunun yerine 'Set-AzApiManagement' kullanın.</span><span class="sxs-lookup"><span data-stu-id="b23a2-836">Use 'Set-AzApiManagement' instead.</span></span>
+
+#### <a name="azautomation"></a><span data-ttu-id="b23a2-837">Az.Automation</span><span class="sxs-lookup"><span data-stu-id="b23a2-837">Az.Automation</span></span>
+* <span data-ttu-id="b23a2-838">'Register-AzAutomationDscNode' için başvuru belgesindeki örnek yazım yanlışı düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-838">Fixed example typo in reference documentation for 'Register-AzAutomationDscNode'</span></span>
+* <span data-ttu-id="b23a2-839">Register-AzAutomationDSCNode için işletim sistemi kısıtlamasına açıklama eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-839">Added clarification on OS restriction to Register-AzAutomationDSCNode</span></span>
+* <span data-ttu-id="b23a2-840">-Wait seçeneği için Start-AzAutomationRunbook cmdlet’i Null başvuru özel durumu düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-840">Fixed Start-AzAutomationRunbook cmdlet Null reference exception for -Wait option.</span></span>
+
+#### <a name="azcompute"></a><span data-ttu-id="b23a2-841">Az.Compute</span><span class="sxs-lookup"><span data-stu-id="b23a2-841">Az.Compute</span></span>
+* <span data-ttu-id="b23a2-842">New-AzDiskConfig cmdlet’ine UploadSizeInBytes parametresi eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-842">Add UploadSizeInBytes parameter tp New-AzDiskConfig</span></span>
+* <span data-ttu-id="b23a2-843">New-AzSnapshotConfig cmdlet’ine Incremental parametresi eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-843">Add Incremental parameter to New-AzSnapshotConfig</span></span>
+* <span data-ttu-id="b23a2-844">Düşük öncelikli sanal makine özelliği eklendi:</span><span class="sxs-lookup"><span data-stu-id="b23a2-844">Add a low priority virtual machine feature:</span></span>
+    - <span data-ttu-id="b23a2-845">New-AzVMConfig cmdlet’ine MaxPrice, EvictionPolicy ve Priority parametreleri eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-845">MaxPrice, EvictionPolicy and Priority parameters are added to New-AzVMConfig.</span></span>
+    - <span data-ttu-id="b23a2-846">New-AzVmssConfig, Update-AzVM ve Update-AzVmss cmdlet’lerine MaxPrice parametresi eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-846">MaxPrice parameter is added to New-AzVmssConfig, Update-AzVM and Update-AzVmss cmdlets.</span></span>
+* <span data-ttu-id="b23a2-847">Get-AzAvailabilitySet cmdlet’i abonelikteki tüm kullanılabilirlik kümelerini listelediğinde oluşan VM başvuru sorunu düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-847">Fix VM reference issue for Get-AzAvailabilitySet cmdlet when it lists all availability sets in the subscription.</span></span>
+* <span data-ttu-id="b23a2-848">Get-AzRemoteDesktopFile için null özel durumu düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-848">Fix the null exception for Get-AzRemoteDesktopFile.</span></span>
+* <span data-ttu-id="b23a2-849">Sona göre konum için VHD Seek yöntemi düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-849">Fix VHD Seek method for end-relative position.</span></span>
+* <span data-ttu-id="b23a2-850">New-AzVM ve Update-AzVM için UltraSSD sorunu düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-850">Fix UltraSSD issue for New-AzVM and Update-AzVM.</span></span>
+
+#### <a name="azdatafactory"></a><span data-ttu-id="b23a2-851">Az.DataFactory</span><span class="sxs-lookup"><span data-stu-id="b23a2-851">Az.DataFactory</span></span>
+* <span data-ttu-id="b23a2-852">ADF V2’ye 3 yeni komut eklendi - Add-AzDataFactoryV2TriggerSubscription, Remove-AzDataFactoryV2TriggerSubscription ve Get-AzDataFactoryV2TriggerSubscriptionStatus</span><span class="sxs-lookup"><span data-stu-id="b23a2-852">Adding 3 new commands for ADF V2 - Add-AzDataFactoryV2TriggerSubscription, Remove-AzDataFactoryV2TriggerSubscription, and Get-AzDataFactoryV2TriggerSubscriptionStatus</span></span>
+* <span data-ttu-id="b23a2-853">ADF .Net SDK sürümü 4.1.3’e güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-853">Updated ADF .Net SDK version to 4.1.3</span></span>
+
+#### <a name="azhdinsight"></a><span data-ttu-id="b23a2-854">Az.HDInsight</span><span class="sxs-lookup"><span data-stu-id="b23a2-854">Az.HDInsight</span></span>
+* <span data-ttu-id="b23a2-855">Son değişiklikler duyurusu</span><span class="sxs-lookup"><span data-stu-id="b23a2-855">Call out breaking changes</span></span>
+
+#### <a name="aziothub"></a><span data-ttu-id="b23a2-856">Az.IotHub</span><span class="sxs-lookup"><span data-stu-id="b23a2-856">Az.IotHub</span></span>
+* <span data-ttu-id="b23a2-857">Coğrafi olarak eşleştirilmiş olağanüstü durum kurtarma bölgesine bir IotHub için yük devretme çağırmaya yönelik destek eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-857">Add support to invoke failover for an IotHub to the geo-paired disaster recovery region.</span></span>
+* <span data-ttu-id="b23a2-858">IotHub için ileti zenginleştirmelerini yönetmeye yönelik destek eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-858">Add support to manage message enrichment for an IotHub.</span></span> <span data-ttu-id="b23a2-859">Yeni cmdlet’ler şunlardır:</span><span class="sxs-lookup"><span data-stu-id="b23a2-859">New cmdlets are:</span></span>
+    - <span data-ttu-id="b23a2-860">Add-AzIotHubMessageEnrichment</span><span class="sxs-lookup"><span data-stu-id="b23a2-860">Add-AzIotHubMessageEnrichment</span></span>
+    - <span data-ttu-id="b23a2-861">Get-AzIotHubMessageEnrichment</span><span class="sxs-lookup"><span data-stu-id="b23a2-861">Get-AzIotHubMessageEnrichment</span></span>
+    - <span data-ttu-id="b23a2-862">Remove-AzIotHubMessageEnrichment</span><span class="sxs-lookup"><span data-stu-id="b23a2-862">Remove-AzIotHubMessageEnrichment</span></span>
+    - <span data-ttu-id="b23a2-863">Set-AzIotHubMessageEnrichment</span><span class="sxs-lookup"><span data-stu-id="b23a2-863">Set-AzIotHubMessageEnrichment</span></span>
+
+#### <a name="azmonitor"></a><span data-ttu-id="b23a2-864">Az.Monitor</span><span class="sxs-lookup"><span data-stu-id="b23a2-864">Az.Monitor</span></span>
+* <span data-ttu-id="b23a2-865">En son İzleme SDK’sını, yani 0.24.1-preview sürümünü işaret eder</span><span class="sxs-lookup"><span data-stu-id="b23a2-865">Pointing to the most recent Monitor SDK, i.e. 0.24.1-preview</span></span>
+   - <span data-ttu-id="b23a2-866">Ölçüm cmdlet’lerine hataya neden olmayan değişiklikler ekler, yani Birim sabit listesi birçok yeni değeri destekler.</span><span class="sxs-lookup"><span data-stu-id="b23a2-866">Adds non-braking changes to the Metrics cmdlets, i.e. the Unit enumeration supports several new values.</span></span> <span data-ttu-id="b23a2-867">Bunlar salt okunur cmdlet’ler olduğundan girişlerinde değişiklik olmaz.</span><span class="sxs-lookup"><span data-stu-id="b23a2-867">These are read-only cmdlets, so there would be no change in the input of the cmdlets.</span></span>
+   - <span data-ttu-id="b23a2-868">**ActionGroups** istekleri için api-version şimdi **2019-06-01** değerine sahiptir. Önceden **2018-03-01** sürümü kullanılıyordu.</span><span class="sxs-lookup"><span data-stu-id="b23a2-868">The api-version of the **ActionGroups** requests is now **2019-06-01**, before it was **2018-03-01**.</span></span> <span data-ttu-id="b23a2-869">Senaryo testleri bu değişikliğe uyum sağlayacak şekilde güncelleştirildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-869">The scenario tests have been updated to accommodate for this change.</span></span>
+   - <span data-ttu-id="b23a2-870">**EmailReceiver** ve **WebhookReceiver** sınıfları için oluşturuculara yeni bir zorunlu bağımsız değişken (**useCommonAlertSchema** adlı bir Boole değeri) eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-870">The constructors for the classes **EmailReceiver** and **WebhookReceiver** added one new mandatory argument, i.e. a Boolean value called **useCommonAlertSchema**.</span></span> <span data-ttu-id="b23a2-871">Şu anda, hataya neden olan bu değişikliği cmdlet’lerden gizlemek için değer **false** olarak ayarlandı.</span><span class="sxs-lookup"><span data-stu-id="b23a2-871">Currently, the value is fixed to **false** to hide this breaking change from the cmdlets.</span></span> <span data-ttu-id="b23a2-872">**NOT**: Bu, Uyarılar ekibi tarafından doğrulanması gereken geçici bir değişikliktir.</span><span class="sxs-lookup"><span data-stu-id="b23a2-872">**NOTE**: this is a temporary change that must be validated by the Alerts team.</span></span>
+   - <span data-ttu-id="b23a2-873">**Kaynak** (**ScheduledQueryRuleSource** sınıfı ile ilişkili) sınıfının oluşturucusu için bağımsız değişkenlerin sırası önceki SDK’dan değiştirildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-873">The order of the arguments for the constructor of the class **Source** (related to the **ScheduledQueryRuleSource** class) changed from the previous SDK.</span></span> <span data-ttu-id="b23a2-874">Bu değişiklik iki birim testinin düzeltilmesini gerektirdi: Bunlar derlenebiliyor ancak testleri geçemiyordu.</span><span class="sxs-lookup"><span data-stu-id="b23a2-874">This change required two unit tests to the be fixed: they compiled, but failed to pass the tests.</span></span>
+   - <span data-ttu-id="b23a2-875">**AlertingAction** (**ScheduledQueryRuleSource** sınıfı ile ilişkili) sınıfının oluşturucusu için bağımsız değişkenlerin sırası önceki SDK’dan değiştirildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-875">The order of the arguments for the constructor of the class **AlertingAction** (related to the **ScheduledQueryRuleSource** class) changed from the previous SDK.</span></span> <span data-ttu-id="b23a2-876">Bu değişiklik iki birim testinin düzeltilmesini gerektirdi: Bunlar derlenebiliyor ancak testleri geçemiyordu.</span><span class="sxs-lookup"><span data-stu-id="b23a2-876">This change required two unit tests to the be fixed: they compiled, but failed to pass the tests.</span></span>
+* <span data-ttu-id="b23a2-877">Ölçüm uyarısı V2 için Dinamik Eşik ölçütlerine yönelik destek eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-877">Support Dynamic Threshold criteria for metric alert V2</span></span>
+    - <span data-ttu-id="b23a2-878">New-AzMetricAlertRuleV2Criteria: Şimdi dinamik eşik ölçütleri de oluşturur</span><span class="sxs-lookup"><span data-stu-id="b23a2-878">New-AzMetricAlertRuleV2Criteria: now creats dynamic threshold criteria also</span></span>
+    - <span data-ttu-id="b23a2-879">Add-AzMetricAlertRuleV2: Şimdi dinamik eşik ölçütlerini de kabul eder</span><span class="sxs-lookup"><span data-stu-id="b23a2-879">Add-AzMetricAlertRuleV2: now accept dynamic threshold criteria also</span></span>
+* <span data-ttu-id="b23a2-880">Zamanlanmış Sorgu Kuralı cmdlet’lerinde (SQR) geliştirmeler</span><span class="sxs-lookup"><span data-stu-id="b23a2-880">Improvements in Scheduled Query Rule cmdlets (SQR)</span></span>
+ - <span data-ttu-id="b23a2-881">Cmdlet’ler 'Location' parametresini hem konum (ör. eastus) hem de konumun görünen adı (ör. Doğu ABD) biçiminde kabul eder</span><span class="sxs-lookup"><span data-stu-id="b23a2-881">Cmdlets will accept 'Location' paramater in both formats, either the location (e.g. eastus) or the location display name (e.g. East US)</span></span>
+ - <span data-ttu-id="b23a2-882">'Enabled' parametresi yardım dosyalarında düzgün şekilde açıklandı</span><span class="sxs-lookup"><span data-stu-id="b23a2-882">Illustrated 'Enabled' parameter in help files properly</span></span>
+ - <span data-ttu-id="b23a2-883">İsteğe bağlı 'ActionGroup' parametresi için örnekler eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-883">Added examples for 'ActionGroup' optional parameter</span></span>
+ - <span data-ttu-id="b23a2-884">Yardım dosyaları genel olarak geliştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-884">Overall improved help files</span></span>
+* <span data-ttu-id="b23a2-885">'Set-AzActionRule' için kapsam türünü belirlemeyle ilgili bir hata düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-885">Fix bug in determining scope type for 'Set-AzActionRule'</span></span>
+
+#### <a name="aznetwork"></a><span data-ttu-id="b23a2-886">Az.Network</span><span class="sxs-lookup"><span data-stu-id="b23a2-886">Az.Network</span></span>
+* <span data-ttu-id="b23a2-887">'New-AzApplicationGateway' başvuru belgesindeki yanlış örnek düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-887">Fix incorrect example in 'New-AzApplicationGateway' reference documentation</span></span>
+* <span data-ttu-id="b23a2-888">'Get-AzNetworkWatcherPacketCapture' başvuru belgesine paket yakalama için tüm özellikleri almayla ilgili not eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-888">Add note in 'Get-AzNetworkWatcherPacketCapture' reference documentation about retrieving all properties for a packet capture</span></span>
+* <span data-ttu-id="b23a2-889">'Test-AzNetworkWatcherIPFlow' başvuru belgesindeki örnek, NIC’lerin doğru olarak numaralandırılacağı şekilde düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-889">Fixed example in 'Test-AzNetworkWatcherIPFlow' reference documentation to correctly enumerate NICs</span></span>
+* <span data-ttu-id="b23a2-890">Bulut özel durum ayrıştırması, mevcut olması durumunda daha fazla ayrıntı gösterecek şekilde iyileştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-890">Improved cloud exception parsing to display additional details if they are present</span></span>
+* <span data-ttu-id="b23a2-891">Bulut özel durum ayrıştırması, ek SDK özel durum türünü işleyecek şekilde geliştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-891">Improved cloud exception parsing to handle additional type of SDK exception</span></span>
+* <span data-ttu-id="b23a2-892">Güvenlik Kuralı modellerinin yanlış eşlenmesi düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-892">Fixed incorrect mapping of Security Rule models</span></span>
+* <span data-ttu-id="b23a2-893">Özel IP özelliği için ağ arabirimine özellikler eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-893">Added properties to network interface for private ip feature</span></span>
+    - <span data-ttu-id="b23a2-894">'PrivateEndpoint' özelliği PSResourceId türü olarak PSNetworkInterface öğesine eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-894">Added property 'PrivateEndpoint' as type of PSResourceId to PSNetworkInterface</span></span>
+    - <span data-ttu-id="b23a2-895">'PrivateLinkConnectionProperties' özelliği PSIpConfigurationConnectivityInformation türü olarak PSNetworkInterfaceIPConfiguration öğesine eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-895">Added property 'PrivateLinkConnectionProperties' as type of PSIpConfigurationConnectivityInformation to PSNetworkInterfaceIPConfiguration</span></span>
+    - <span data-ttu-id="b23a2-896">Yeni PSIpConfigurationConnectivityInformation model sınıfı eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-896">Added new model class PSIpConfigurationConnectivityInformation</span></span>
+* <span data-ttu-id="b23a2-897">Azure Güvenlik Duvarı kaynağı için 'mssql' adlı yeni ApplicationRuleProtocolType eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-897">Added new ApplicationRuleProtocolType 'mssql' for Azure Firewall resource</span></span>
+* <span data-ttu-id="b23a2-898">Sanal WAN’da çoklu bağlantı desteği</span><span class="sxs-lookup"><span data-stu-id="b23a2-898">MultiLink support in Virtual WAN</span></span>
+    - <span data-ttu-id="b23a2-899">Yeni cmdlet’ler</span><span class="sxs-lookup"><span data-stu-id="b23a2-899">New cmdlets</span></span>
+        - <span data-ttu-id="b23a2-900">New-AzVpnSiteLink</span><span class="sxs-lookup"><span data-stu-id="b23a2-900">New-AzVpnSiteLink</span></span>
+        - <span data-ttu-id="b23a2-901">New-AzVpnSiteLinkConnection</span><span class="sxs-lookup"><span data-stu-id="b23a2-901">New-AzVpnSiteLinkConnection</span></span>
+    - <span data-ttu-id="b23a2-902">Şu cmdlet güncelleştirildi:</span><span class="sxs-lookup"><span data-stu-id="b23a2-902">Updated cmdlet:</span></span>
+        - <span data-ttu-id="b23a2-903">New-VpnSite</span><span class="sxs-lookup"><span data-stu-id="b23a2-903">New-VpnSite</span></span>
+        - <span data-ttu-id="b23a2-904">Update-VpnSite</span><span class="sxs-lookup"><span data-stu-id="b23a2-904">Update-VpnSite</span></span>
+        - <span data-ttu-id="b23a2-905">New-VpnConnection</span><span class="sxs-lookup"><span data-stu-id="b23a2-905">New-VpnConnection</span></span>
+        - <span data-ttu-id="b23a2-906">Update-VpnConnection</span><span class="sxs-lookup"><span data-stu-id="b23a2-906">Update-VpnConnection</span></span>
+* <span data-ttu-id="b23a2-907">Belgeler, bazı PowerShell örneklerinde AzureRM cmdlet’leri yerine Az cmdlet’leri kullanılacak şekilde düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-907">Fixed documents for some PowerShell examples to use Az cmdlets instead of AzureRM cmdlets</span></span>
+
+#### <a name="azrecoveryservices"></a><span data-ttu-id="b23a2-908">Az.RecoveryServices</span><span class="sxs-lookup"><span data-stu-id="b23a2-908">Az.RecoveryServices</span></span>
+* <span data-ttu-id="b23a2-909">AzureVMpolicy Nesnesi, ProtectedItemsCount Özniteliği ile güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-909">Update AzureVMpolicy Object with ProtectedItemsCount Attribute</span></span>
+* <span data-ttu-id="b23a2-910">VM ilkesi ve Özgün Depolama Hesabı Geri Yükleme için Testler eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-910">Added Tests for VM policy and Original Storage Account Restore</span></span>
+
+#### <a name="azresources"></a><span data-ttu-id="b23a2-911">Az.Resources</span><span class="sxs-lookup"><span data-stu-id="b23a2-911">Az.Resources</span></span>
+* <span data-ttu-id="b23a2-912">New-AzRoleAssignment cmdlet’inin Scope parametresi olmadan çağrılamamasına neden olan bir hata düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-912">Fix bug where New-AzRoleAssignment could not be called without parameter Scope.</span></span>
+
+#### <a name="azservicefabric"></a><span data-ttu-id="b23a2-913">Az.ServiceFabric</span><span class="sxs-lookup"><span data-stu-id="b23a2-913">Az.ServiceFabric</span></span>
+* <span data-ttu-id="b23a2-914">'Update-AzServiceFabricReliability' başvuru belgesindeki örnekteki yazım yanlışı düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-914">Fixed typo in example for 'Update-AzServiceFabricReliability' reference documentation</span></span>
+* <span data-ttu-id="b23a2-915">Uygulamaları ve hizmetleri yönetmek için yeni cmdlet’ler ekleniyor:</span><span class="sxs-lookup"><span data-stu-id="b23a2-915">Adding new cmdlets to manage appliaction and services:</span></span>
+    - <span data-ttu-id="b23a2-916">New-AzServiceFabricApplication</span><span class="sxs-lookup"><span data-stu-id="b23a2-916">New-AzServiceFabricApplication</span></span>
+    - <span data-ttu-id="b23a2-917">New-AzServiceFabricApplicationType</span><span class="sxs-lookup"><span data-stu-id="b23a2-917">New-AzServiceFabricApplicationType</span></span>
+    - <span data-ttu-id="b23a2-918">New-AzServiceFabricApplicationTypeVersion</span><span class="sxs-lookup"><span data-stu-id="b23a2-918">New-AzServiceFabricApplicationTypeVersion</span></span>
+    - <span data-ttu-id="b23a2-919">New-AzServiceFabricService</span><span class="sxs-lookup"><span data-stu-id="b23a2-919">New-AzServiceFabricService</span></span>
+    - <span data-ttu-id="b23a2-920">Update-AzServiceFabricApplication</span><span class="sxs-lookup"><span data-stu-id="b23a2-920">Update-AzServiceFabricApplication</span></span>
+    - <span data-ttu-id="b23a2-921">Get-AzServiceFabricApplication</span><span class="sxs-lookup"><span data-stu-id="b23a2-921">Get-AzServiceFabricApplication</span></span>
+    - <span data-ttu-id="b23a2-922">Get-AzServiceFabricApplicationType</span><span class="sxs-lookup"><span data-stu-id="b23a2-922">Get-AzServiceFabricApplicationType</span></span>
+    - <span data-ttu-id="b23a2-923">Get-AzServiceFabricApplicationTypeVersion</span><span class="sxs-lookup"><span data-stu-id="b23a2-923">Get-AzServiceFabricApplicationTypeVersion</span></span>
+    - <span data-ttu-id="b23a2-924">Get-AzServiceFabricService</span><span class="sxs-lookup"><span data-stu-id="b23a2-924">Get-AzServiceFabricService</span></span>
+    - <span data-ttu-id="b23a2-925">Remove-AzServiceFabricApplication</span><span class="sxs-lookup"><span data-stu-id="b23a2-925">Remove-AzServiceFabricApplication</span></span>
+    - <span data-ttu-id="b23a2-926">Remove-AzServiceFabricApplicationType</span><span class="sxs-lookup"><span data-stu-id="b23a2-926">Remove-AzServiceFabricApplicationType</span></span>
+    - <span data-ttu-id="b23a2-927">Remove-AzServiceFabricApplicationTypeVersion</span><span class="sxs-lookup"><span data-stu-id="b23a2-927">Remove-AzServiceFabricApplicationTypeVersion</span></span>
+    - <span data-ttu-id="b23a2-928">Remove-AzServiceFabricServic</span><span class="sxs-lookup"><span data-stu-id="b23a2-928">Remove-AzServiceFabricServic</span></span>
+* <span data-ttu-id="b23a2-929">Service Fabric SDK’sı, Service Fabric kaynak sağlayıcısı api-version 2019-03-01 kullanan 1.2.0 sürümüne yükseltildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-929">Upgraded Service Fabric SDK to version 1.2.0 which uses service fabric resource provider api-version 2019-03-01.</span></span>
+
+#### <a name="azsignalr"></a><span data-ttu-id="b23a2-930">Az.SignalR</span><span class="sxs-lookup"><span data-stu-id="b23a2-930">Az.SignalR</span></span>
+* <span data-ttu-id="b23a2-931">Update, Restart, CheckNameAvailability, GetUsage Cmdlet’leri eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-931">Add Update, Restart, CheckNameAvailability, GetUsage Cmdlets</span></span>
+
+#### <a name="azsql"></a><span data-ttu-id="b23a2-932">Az.Sql</span><span class="sxs-lookup"><span data-stu-id="b23a2-932">Az.Sql</span></span>
+* <span data-ttu-id="b23a2-933">'Get-AzSqlElasticPool' için başvuru belgesindeki örnek güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-933">Update example in reference documentation for 'Get-AzSqlElasticPool'</span></span>
+* <span data-ttu-id="b23a2-934">Elastik havuz oluşturmak (New-AzSqlElasticPool) için sanal çekirdek örneği eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-934">Added vCore example to creating an elastic pool (New-AzSqlElasticPool).</span></span>
+* <span data-ttu-id="b23a2-935">Set-AzSqlServerAdvancedThreatProtectionPolicy ve Set-AzSqlDatabaseAdvancedThreatProtectionPolicy içinde EmailAddresses’in doğrulanması ve EmailAddresses’in boş olması durumunda EmailAdmins’in false olmamasına yönelik denetim kaldırıldı</span><span class="sxs-lookup"><span data-stu-id="b23a2-935">Remove the validation of EmailAddresses and the check that EmailAdmins is not false in case EmailAddresses is empty in Set-AzSqlServerAdvancedThreatProtectionPolicy and Set-AzSqlDatabaseAdvancedThreatProtectionPolicy</span></span>
+* <span data-ttu-id="b23a2-936">Denetim kategorisini etkinleştiren birden çok tanılama ayarı olduğunda sunucu/veritabanı denetim ayarlarının kaldırılması etkinleştirildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-936">Enabled removal of server/database auditing settings when multiple diagnostic settings that enable audit category exist.</span></span>
+* <span data-ttu-id="b23a2-937">Birden çok Sql Güvenlik Açığı Değerlendirmesi cmdlet’inde (Update-AzSqlDatabaseVulnerabilityAssessmentSetting, Update-AzSqlServerVulnerabilityAssessmentSetting, Update-AzSqlInstanceDatabaseVulnerabilityAssessmentSetting ve Update-AzSqlInstanceVulnerabilityAssessmentSetting) e-posta adresleri doğrulaması düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-937">Fix email addresses validation in multiple Sql Vulnerability Assessment cmdlets (Update-AzSqlDatabaseVulnerabilityAssessmentSetting, Update-AzSqlServerVulnerabilityAssessmentSetting, Update-AzSqlInstanceDatabaseVulnerabilityAssessmentSetting and Update-AzSqlInstanceVulnerabilityAssessmentSetting).</span></span>
+
+#### <a name="azstorage"></a><span data-ttu-id="b23a2-938">Az.Storage</span><span class="sxs-lookup"><span data-stu-id="b23a2-938">Az.Storage</span></span>
+* <span data-ttu-id="b23a2-939">'Get-AzStorageAccountKey' için başvuru belgesindeki örnek güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-939">Updated example in reference documentation for 'Get-AzStorageAccountKey'</span></span>
+* <span data-ttu-id="b23a2-940">Azure Dosyasını karşıya yüklerken/indirirken, hedef dosyada, dosya SMB özelliklerinin (Dosya Öznitelikleri, Dosya Oluşturma Zamanı, Dosya Son Yazma Zamanı) korunmasına yönelik destek eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-940">In upload/Downalod Azure File,support perserve the source File SMB properties (File Attributtes, File Creation Time, File Last Write Time) in the destination file</span></span>
+    -  <span data-ttu-id="b23a2-941">Set-AzStorageFileContent</span><span class="sxs-lookup"><span data-stu-id="b23a2-941">Set-AzStorageFileContent</span></span>
+    -  <span data-ttu-id="b23a2-942">Get-AzStorageFileContent</span><span class="sxs-lookup"><span data-stu-id="b23a2-942">Get-AzStorageFileContent</span></span>
+* <span data-ttu-id="b23a2-943">Kapsayıcı tarafından etkinleştirilmiş ImmutabilityPolicy üzerinde özellikler/meta tarih hatası içeren Karşıya yükleme blok blobu düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-943">Fix Upload block blob with properties/metadate fail on container enabled ImmutabilityPolicy.</span></span>
+    -  <span data-ttu-id="b23a2-944">Set-AzStorageBlobContent</span><span class="sxs-lookup"><span data-stu-id="b23a2-944">Set-AzStorageBlobContent</span></span>
+* <span data-ttu-id="b23a2-945">Yönetim düzlemi API’si ile Azure Dosya paylaşımlarını yönetmeye yönelik destek eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-945">Support manage Azure File shares with Management plane API</span></span>
+    -  <span data-ttu-id="b23a2-946">New-AzRmStorageShare</span><span class="sxs-lookup"><span data-stu-id="b23a2-946">New-AzRmStorageShare</span></span>
+    -  <span data-ttu-id="b23a2-947">Get-AzRmStorageShare</span><span class="sxs-lookup"><span data-stu-id="b23a2-947">Get-AzRmStorageShare</span></span>
+    -  <span data-ttu-id="b23a2-948">Update-AzRmStorageShare</span><span class="sxs-lookup"><span data-stu-id="b23a2-948">Update-AzRmStorageShare</span></span>
+    -  <span data-ttu-id="b23a2-949">Remove-AzRmStorageShare</span><span class="sxs-lookup"><span data-stu-id="b23a2-949">Remove-AzRmStorageShare</span></span>
+
+#### <a name="azwebsites"></a><span data-ttu-id="b23a2-950">Az.Websites</span><span class="sxs-lookup"><span data-stu-id="b23a2-950">Az.Websites</span></span>
+* <span data-ttu-id="b23a2-951">Uygulamanın yeni ASP’ye geçirilmesi sırasında webapp Etiketlerinin silinmesine neden olan bir sorun düzeltiliyor</span><span class="sxs-lookup"><span data-stu-id="b23a2-951">Fixing issue where webapp Tags were getting deleted when migrating App to new ASPwhere webapp Tags were getting deleted when migrating App to new ASP</span></span>
+* <span data-ttu-id="b23a2-952">Publish-AzureWebapp cmdlet’i Linux ve Windows üzerinde çalışacak şekilde düzeltiliyor</span><span class="sxs-lookup"><span data-stu-id="b23a2-952">Fixing the Publish-AzureWebapp to work across Linux and windows</span></span>
+* <span data-ttu-id="b23a2-953">'Get-AzWebAppPublishingProfile' başvuru belgesindeki örnek güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-953">Update example in 'Get-AzWebAppPublishingProfile' reference documentation</span></span>
+
+## <a name="260---august-2019"></a><span data-ttu-id="b23a2-954">2.6.0 - Ağustos 2019</span><span class="sxs-lookup"><span data-stu-id="b23a2-954">2.6.0 - August 2019</span></span>
+#### <a name="general"></a><span data-ttu-id="b23a2-955">Genel</span><span class="sxs-lookup"><span data-stu-id="b23a2-955">General</span></span>
+* <span data-ttu-id="b23a2-956">Çok sayıda modülde çeşitli yazım hataları düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-956">Fixed miscellaneous typos across numerous modules</span></span>
+
+#### <a name="azaccounts"></a><span data-ttu-id="b23a2-957">Az.Accounts</span><span class="sxs-lookup"><span data-stu-id="b23a2-957">Az.Accounts</span></span>
+* <span data-ttu-id="b23a2-958">Azure İşlevleri Kimlik Doğrulaması’nda kullanıcı tarafından atanan MSI desteği (#9479)</span><span class="sxs-lookup"><span data-stu-id="b23a2-958">Support user-assigned MSI in Azure Functiosn Authentication (#9479)</span></span>
+
+#### <a name="azaks"></a><span data-ttu-id="b23a2-959">Az.Aks</span><span class="sxs-lookup"><span data-stu-id="b23a2-959">Az.Aks</span></span>
+* <span data-ttu-id="b23a2-960">‘Get-AzAks’ için çıkışla ilgili bir sorun düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-960">Fix issue with output for 'Get-AzAks'</span></span>
+    * <span data-ttu-id="b23a2-961">Burada daha fazla bilgi bulunabilir: https://github.com/Azure/azure-powershell/issues/9847</span><span class="sxs-lookup"><span data-stu-id="b23a2-961">More information here: https://github.com/Azure/azure-powershell/issues/9847</span></span>
+
+#### <a name="azapimanagement"></a><span data-ttu-id="b23a2-962">Az.ApiManagement</span><span class="sxs-lookup"><span data-stu-id="b23a2-962">Az.ApiManagement</span></span>
+* <span data-ttu-id="b23a2-963">[https://github.com/Azure/azure-powershell/issues/9351](https://github.com/Azure/azure-powershell/issues/9351 ) sorunu düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-963">Fix for issue https://github.com/Azure/azure-powershell/issues/9351</span></span>
+    - <span data-ttu-id="b23a2-964">ProductID, APIID, GroupID ve UserID için kısıtlamaları zorunlu kılmayan .NET NuGet sürümü güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-964">Update .net nuget version, which does not enforce restrictions on productId, apiId, groupId and userId</span></span>
+* <span data-ttu-id="b23a2-965">**Get-AzApiManagementProduct** - Ürünleri API kullanarak sorgulama desteği eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-965">**Get-AzApiManagementProduct** - Added support for querying products using Api.</span></span>
   https://github.com/Azure/azure-powershell/issues/9482
-* <span data-ttu-id="de109-966">**New-AzApiManagementApiRevision** - Yeni API düzeltmesi oluşturulurken ApiRevisionDescription parametresinin ayarlanmamasına neden olan sorun düzeltildi https://github.com/Azure/azure-powershell/issues/9752</span><span class="sxs-lookup"><span data-stu-id="de109-966">**New-AzApiManagementApiRevision** - Fix for issue where ApiRevisionDescription was not being set when creating new api revision https://github.com/Azure/azure-powershell/issues/9752</span></span>
-* <span data-ttu-id="de109-967">'PsApiManagementOAuth2AuthrozationServer' modeli 'PsApiManagementOAuth2AuthorizationServer' olarak değiştirilerek yazım hatası düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-967">Fixed typo in model 'PsApiManagementOAuth2AuthrozationServer' to 'PsApiManagementOAuth2AuthorizationServer'</span></span>
-
-#### <a name="azbatch"></a><span data-ttu-id="de109-968">Az.Batch</span><span class="sxs-lookup"><span data-stu-id="de109-968">Az.Batch</span></span>
-* <span data-ttu-id="de109-969">Windows’un ilk harfi büyütülerek yardım iletisindeki ve belgelerdeki yazım hatası düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-969">Fixed typo in help message and documentation to capitalize Windows</span></span>
-
-#### <a name="azcdn"></a><span data-ttu-id="de109-970">Az.Cdn</span><span class="sxs-lookup"><span data-stu-id="de109-970">Az.Cdn</span></span>
-* <span data-ttu-id="de109-971">CDN modülü dönüştürme yardımcısındaki yazım hatası düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-971">Fixed a typo in CDN module conversion helper</span></span>
-
-#### <a name="azcompute"></a><span data-ttu-id="de109-972">Az.Compute</span><span class="sxs-lookup"><span data-stu-id="de109-972">Az.Compute</span></span>
-* <span data-ttu-id="de109-973">New-AzVMConfig cmdlet’ine VmssID eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-973">Add VmssId to New-AzVMConfig cmdlet</span></span>
-* <span data-ttu-id="de109-974">New-AzVmssConfig ve Update-AzVmss öğelerine TerminateScheduledEvents ve TerminateScheduledEventNotBeforeTimeoutInMinutes parametreleri eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-974">Add TerminateScheduledEvents and TerminateScheduledEventNotBeforeTimeoutInMinutes parameters to New-AzVmssConfig and Update-AzVmss</span></span>
-* <span data-ttu-id="de109-975">VM görüntüsü nesnesine HyperVGeneration özelliği eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-975">Add HyperVGeneration property to VM image object</span></span>
-* <span data-ttu-id="de109-976">Host ve HostGroup özellikleri eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-976">Add Host and HostGroup features</span></span>
-    - <span data-ttu-id="de109-977">Yeni cmdlet’ler:   New-AzHostGroup   New-AzHost   Get-AzHostGroup   Get-AzHost   Remove-AzHostGroup   Remove-AzHost</span><span class="sxs-lookup"><span data-stu-id="de109-977">New cmdlets:   New-AzHostGroup   New-AzHost   Get-AzHostGroup   Get-AzHost   Remove-AzHostGroup   Remove-AzHost</span></span>
-    - <span data-ttu-id="de109-978">New-AzVMConfig ve New-AzVM öğelerine HostId parametresi eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-978">HostId parameter is added to New-AzVMConfig and New-AzVM</span></span>
-* <span data-ttu-id="de109-979">Doğru parametre adını kullanmak için ‘Invoke-AzVMRunCommand’ belgesindeki örnek güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-979">Update example in 'Invoke-AzVMRunCommand' documentation to use correct parameter name</span></span>
-* <span data-ttu-id="de109-980">'Set-AzVMDiskEncryptionExtension' ve 'Set-AzVmssDiskEncryptionExtension' referans belgelerindeki '-VolumeType' açıklaması güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-980">Update '-VolumeType' description in 'Set-AzVMDiskEncryptionExtension' and 'Set-AzVmssDiskEncryptionExtension' reference documentation</span></span>
-
-#### <a name="azdatafactory"></a><span data-ttu-id="de109-981">Az.DataFactory</span><span class="sxs-lookup"><span data-stu-id="de109-981">Az.DataFactory</span></span>
-* <span data-ttu-id="de109-982">‘Windows’ sözcüğünün baş harfi büyütülerek 'New-AzDataFactoryEncryptValue' belgesindeki yazım hatası düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-982">Fix typo to capitalize 'Windows' in 'New-AzDataFactoryEncryptValue' documentation</span></span>
-* <span data-ttu-id="de109-983">ADF .Net SDK sürümü 4.1.2’ye güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-983">Updated ADF .Net SDK version to 4.1.2</span></span>
-* <span data-ttu-id="de109-984">Şirket İçinde Barındırılan Integration Runtime’ı SSIS Integration Runtime için ara sunucu olarak ayarlamak üzere 'Set-AzureRmDataFactoryV2IntegrationRuntime' komutuna 'DataProxyIntegrationRuntimeName', 'DataProxyStagingLinkedServiceName' ve 'DataProxyStagingPath' parametreleri eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-984">Add parameter 'DataProxyIntegrationRuntimeName', 'DataProxyStagingLinkedServiceName' and 'DataProxyStagingPath' for 'Set-AzureRmDataFactoryV2IntegrationRuntime' cmd to enable set up Self-Hosted Integration Runtime as a proxy for SSIS Integration Runtime</span></span>
-* <span data-ttu-id="de109-985">Tetiklenen işlem hatlarını, iletiyi ve özellikleri göstermesi için PSTriggerRun öğesi, etkinlik türünü göstermesi için de PSActivityRun öğesi güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-985">Updated PSTriggerRun to show the triggered pipelines, message and properties, and PSActivityRun to show the activity type</span></span>
-
-#### <a name="azdatalakestore"></a><span data-ttu-id="de109-986">Az.DataLakeStore</span><span class="sxs-lookup"><span data-stu-id="de109-986">Az.DataLakeStore</span></span>
-* <span data-ttu-id="de109-987">Hata veya uzak özel durumları için Get-DataLakeStoreDeletedItem öğesinin yanıt vermemeye başlaması düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="de109-987">Fix hanging of Get-DataLakeStoreDeletedItem for any errors or remote exceptions.</span></span>
-
-#### <a name="azeventhub"></a><span data-ttu-id="de109-988">Az.EventHub</span><span class="sxs-lookup"><span data-stu-id="de109-988">Az.EventHub</span></span>
-* <span data-ttu-id="de109-989">#9658 numaralı şu sorun düzeltildi: Set-AzEventHubNetworkRuleSet öğesinde bulunan VirtualNteworkRule parametresindeki yazım hatası</span><span class="sxs-lookup"><span data-stu-id="de109-989">Fix for issue #9658 : Typo VirtualNteworkRule parameter in Set-AzEventHubNetworkRuleSet</span></span>
-* <span data-ttu-id="de109-990">#9558 numaralı şu sorun düzeltildi: Set-AzEventHubNamespace öğesinin PUT yerine PATCH kullanması</span><span class="sxs-lookup"><span data-stu-id="de109-990">Fix for issue #9558 : Set-AzEventHubNamespace is using PATCH instead of PUT</span></span>
-* <span data-ttu-id="de109-991">Set-AzEventHubNamespace cmdlet’ine EnableKafka parametresi eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-991">added EnableKafka parameter to Set-AzEventHubNamespace cmdlet</span></span>
-* <span data-ttu-id="de109-992">#9786 numaralı şu sorun düzeltildi: Yalnızca dinleme haklarıyla bir kural oluşturulamaması</span><span class="sxs-lookup"><span data-stu-id="de109-992">Fix for issue #9786 : cannot create a rule with Listen only rights</span></span>
-
-#### <a name="azmarketplaceordering"></a><span data-ttu-id="de109-993">Az.MarketplaceOrdering</span><span class="sxs-lookup"><span data-stu-id="de109-993">Az.MarketplaceOrdering</span></span>
-* <span data-ttu-id="de109-994">‘Azure’ın’ tamamen küçük harflerle yazılmasıyla belgede oluşan yazım hatası düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-994">Fixed documentation typo where 'Azure' was all lowercase letters</span></span>
-
-#### <a name="azmonitor"></a><span data-ttu-id="de109-995">Az.Monitor</span><span class="sxs-lookup"><span data-stu-id="de109-995">Az.Monitor</span></span>
-* <span data-ttu-id="de109-996">Yardım belgelerindeki yanlış parametre adı düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-996">Fixed incorrect parameter name in help documentation</span></span>
-
-#### <a name="aznetwork"></a><span data-ttu-id="de109-997">Az.Network</span><span class="sxs-lookup"><span data-stu-id="de109-997">Az.Network</span></span>
-* <span data-ttu-id="de109-998">New-AzPrivateLinkServiceIpConfig güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-998">Updated New-AzPrivateLinkServiceIpConfig</span></span>
-    - <span data-ttu-id="de109-999">Sunucu tarafında hiç kullanılmadığı için ‘PublicIpAddress’ parametresi kullanım dışı bırakıldı.</span><span class="sxs-lookup"><span data-stu-id="de109-999">Deprecated the paramster 'PublicIpAddress' since this is never used in the server side.</span></span>
-    - <span data-ttu-id="de109-1000">Mevcut IP yapılandırmasının birincil yapılandırma olup olmadığını belirten bir isteğe bağlı bir parametre (‘Primary’) eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-1000">Added one optional parameter 'Primary' that indicate the current ip configuration is primary one or not.</span></span>
-* <span data-ttu-id="de109-1001">SDK’daki istek hatası özel durumunun işlenmesi geliştirildi. Bu, daha önceden SDK özel durumlarının düzgün şekilde işlenenmemesiyle oluşan ve önemli hata ayrıntılarının görüntülenmemesine neden olan sorunu düzeltir</span><span class="sxs-lookup"><span data-stu-id="de109-1001">Improved handling of request error exception from SDK   -Fixes the issue that previously SDK exceptions aren't handled correctly which results in key error details not being displayed</span></span>
-* <span data-ttu-id="de109-1002">Doğru IPv6 ön ek uzunluğunu denetlemek amacıyla Ipv6 IP Ön eki için doğrulama mantığı ayarlandı.</span><span class="sxs-lookup"><span data-stu-id="de109-1002">Adjusted validation logic for Ipv6 IP Prefix to check for correct IPv6 prefix length.</span></span>
-* <span data-ttu-id="de109-1003">Get-AzVirtualNetworkSubnetConfig güncelleştirildi: Alt ağ kaynak kimliği ile almak için parametre kümesi eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-1003">Updated Get-AzVirtualNetworkSubnetConfig: Added parameter set to get by subnet resource id.</span></span>
-* <span data-ttu-id="de109-1004">AzNetworkServiceTag için Konum parametresinin açıklaması güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-1004">Updated description of Location parameter for AzNetworkServiceTag</span></span>
-
-#### <a name="azoperationalinsights"></a><span data-ttu-id="de109-1005">Az.OperationalInsights</span><span class="sxs-lookup"><span data-stu-id="de109-1005">Az.OperationalInsights</span></span>
-* <span data-ttu-id="de109-1006">'New-AzOperationalInsightsLinuxSyslogDataSource' öğesine yönelik belgeler güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-1006">Updated documentation for 'New-AzOperationalInsightsLinuxSyslogDataSource'</span></span>
-    - <span data-ttu-id="de109-1007">Örnek eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-1007">Added example</span></span>
-    - <span data-ttu-id="de109-1008">‘-Name’ parametresi için açıklama güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-1008">Updated description for '-Name' parameter</span></span>
-* <span data-ttu-id="de109-1009">New-AzOperationalInsightsWindowsEventDataSource için bir örnek eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-1009">Added an example for New-AzOperationalInsightsWindowsEventDataSource</span></span>
-* <span data-ttu-id="de109-1010">New-AzOperationalInsightsWindowsEventDataSource için -Name parametresinin açıklaması değiştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-1010">Changed the description of the -Name parameter for New-AzOperationalInsightsWindowsEventDataSource</span></span>
-
-#### <a name="azrecoveryservices"></a><span data-ttu-id="de109-1011">Az.RecoveryServices</span><span class="sxs-lookup"><span data-stu-id="de109-1011">Az.RecoveryServices</span></span>
-* <span data-ttu-id="de109-1012">'Get-AzRecoveryServicesBackupJobDetail.md' dosyası güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-1012">Update 'Get-AzRecoveryServicesBackupJobDetail.md'</span></span>
-
-#### <a name="azresources"></a><span data-ttu-id="de109-1013">Az.Resources</span><span class="sxs-lookup"><span data-stu-id="de109-1013">Az.Resources</span></span>
-* <span data-ttu-id="de109-1014">Microsoft.Resource için yeni API sürümüne (2019-05-10) yönelik destek eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-1014">Add support for new api version 2019-05-10 for Microsoft.Resource</span></span>
-    - <span data-ttu-id="de109-1015">Değişkenler, kaynaklar ve özellikler için copy.count = 0 parametresine yönelik destek eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-1015">Add support for 'copy.count = 0' for variables, resources and properties</span></span>
-    - <span data-ttu-id="de109-1016">'condition = false' veya 'copy.count = 0' içeren kaynaklar tam modda silinir</span><span class="sxs-lookup"><span data-stu-id="de109-1016">Resources with 'condition = false' or 'copy.count = 0' will be deleted in complete mode</span></span>
-* <span data-ttu-id="de109-1017">Belgelere yardımcı olması için abonelik düzeyinde ilke atama örneği eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-1017">Add an example of assigning policy at subscription level to help doc</span></span>
-
-#### <a name="azservicebus"></a><span data-ttu-id="de109-1018">Az.ServiceBus</span><span class="sxs-lookup"><span data-stu-id="de109-1018">Az.ServiceBus</span></span>
-* <span data-ttu-id="de109-1019">#9658 numaralı şu sorun düzeltildi: Set-AzServiceBusNetworkRuleSet öğesinde bulunan VirtualNetworkRule parametresindeki yazım hatası</span><span class="sxs-lookup"><span data-stu-id="de109-1019">Fix for issue #9658 : Typo VirtualNetworkRule parameter in Set-AzServiceBusNetworkRuleSet</span></span>
-* <span data-ttu-id="de109-1020">#9786 numaralı şu sorun düzeltildi: Yalnızca dinleme haklarıyla bir kural oluşturulamaması</span><span class="sxs-lookup"><span data-stu-id="de109-1020">Fix for issue #9786 : cannot create a rule with Listen only rights</span></span>
-* <span data-ttu-id="de109-1021">Sıra ve konu için ad kullanılabilirliğini denetlemeye yönelik yeni komut ('Test-AzServiceBusNameAvailability') eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-1021">Added new command 'Test-AzServiceBusNameAvailability' to check the name availability for queue and topic</span></span>
-
-#### <a name="azservicefabric"></a><span data-ttu-id="de109-1022">Az.ServiceFabric</span><span class="sxs-lookup"><span data-stu-id="de109-1022">Az.ServiceFabric</span></span>
-* <span data-ttu-id="de109-1023">Düğüm ekleme türü cmdlet hataları düzeltildi:</span><span class="sxs-lookup"><span data-stu-id="de109-1023">Fix add node type cmdlet bugs:</span></span>
-    - <span data-ttu-id="de109-1024">Kaynak grubunun Service Fabric kümesiyle ilgili diğer vmss öğesi olduğunda oluşan NullReferenceException hatası.</span><span class="sxs-lookup"><span data-stu-id="de109-1024">NullReferenceException bug when resource group had other vmss not related to the service fabric cluster.</span></span> <span data-ttu-id="de109-1025">Şu sorunu düzeltir: https://github.com/Azure/azure-powershell/issues/8681</span><span class="sxs-lookup"><span data-stu-id="de109-1025">Fixes issue: https://github.com/Azure/azure-powershell/issues/8681</span></span>
-    - <span data-ttu-id="de109-1026">virtualNetwork kümeyle farklı bir kaynak grubunda yer aldığında cmdlet’in başarısız olmasına neden olan sorun düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="de109-1026">Fix bug where cmdlet failed if virtualNetwork was in a different resource group that the cluster.</span></span> <span data-ttu-id="de109-1027">Şu sorunu düzeltir: https://github.com/Azure/azure-powershell/issues/8407</span><span class="sxs-lookup"><span data-stu-id="de109-1027">fixes issue: https://github.com/Azure/azure-powershell/issues/8407</span></span>
-    - <span data-ttu-id="de109-1028">Add-AzServiceFabricApplicationCertificate cmdlet’i kullanımdan kaldırıldı</span><span class="sxs-lookup"><span data-stu-id="de109-1028">Deprecating Add-AzServiceFabricApplicationCertificate cmdlet</span></span>
-
-#### <a name="azsql"></a><span data-ttu-id="de109-1029">Az.Sql</span><span class="sxs-lookup"><span data-stu-id="de109-1029">Az.Sql</span></span>
-* <span data-ttu-id="de109-1030">Eski denetim cmdlet’lerinin belgeleri güncelleştirildi.</span><span class="sxs-lookup"><span data-stu-id="de109-1030">Update documentation of old Auditing cmdlets.</span></span>
-
-#### <a name="azstorage"></a><span data-ttu-id="de109-1031">Az.Storage</span><span class="sxs-lookup"><span data-stu-id="de109-1031">Az.Storage</span></span>
-* <span data-ttu-id="de109-1032">Cmdlet örneklerine ve güncelleştirme parametresi açıklamalarına daha fazla senaryo eklenerek Get/Close-AzStorageFileHandle öğesi için yardım güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-1032">Update help for Get/Close-AzStorageFileHandle, by add more scenarios to cmdlet examples and update parameter descriptions</span></span>
-* <span data-ttu-id="de109-1033">Karşıya yükleme blobu ve kopyalama blobunda StandardBlobTier için destek</span><span class="sxs-lookup"><span data-stu-id="de109-1033">Support StandardBlobTier in upload blob and copy blob</span></span>
-    -  <span data-ttu-id="de109-1034">Set-AzStorageBlobContent</span><span class="sxs-lookup"><span data-stu-id="de109-1034">Set-AzStorageBlobContent</span></span>
-    -  <span data-ttu-id="de109-1035">Start-AzStorageBlobCopy</span><span class="sxs-lookup"><span data-stu-id="de109-1035">Start-AzStorageBlobCopy</span></span>
-* <span data-ttu-id="de109-1036">Blobu kopyala işleminde Yeniden Doldurma Önceliği Desteği</span><span class="sxs-lookup"><span data-stu-id="de109-1036">Support Rehydrate Priority in copy blob</span></span>
-    -  <span data-ttu-id="de109-1037">Start-AzStorageBlobCopy</span><span class="sxs-lookup"><span data-stu-id="de109-1037">Start-AzStorageBlobCopy</span></span>
-
-#### <a name="azwebsites"></a><span data-ttu-id="de109-1038">Az.Websites</span><span class="sxs-lookup"><span data-stu-id="de109-1038">Az.Websites</span></span>
-* <span data-ttu-id="de109-1039">Set-AzWebApp ve Set-AzWebAppSlot öğelerindeki -AppSettings parametresine yönelik açıklama eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-1039">Add clarification around -AppSettings parameter in Set-AzWebApp and Set-AzWebAppSlot</span></span>
-
-## <a name="250---july-2019"></a><span data-ttu-id="de109-1040">2.5.0 - Temmuz 2019</span><span class="sxs-lookup"><span data-stu-id="de109-1040">2.5.0 - July 2019</span></span>
-#### <a name="azaccounts"></a><span data-ttu-id="de109-1041">Az.Accounts</span><span class="sxs-lookup"><span data-stu-id="de109-1041">Az.Accounts</span></span>
-* <span data-ttu-id="de109-1042">ClientRuntime’ın en son sürümünü kullanacak şekilde ortak kod güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-1042">Update common code to use latest version of ClientRuntime</span></span>
-
-#### <a name="azapplicationinsights"></a><span data-ttu-id="de109-1043">Az.ApplicationInsights</span><span class="sxs-lookup"><span data-stu-id="de109-1043">Az.ApplicationInsights</span></span>
-* <span data-ttu-id="de109-1044">'Remove-AzApplicationInsightsApiKey' belgesindeki örnek yazım hatası düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-1044">Fix example typo in 'Remove-AzApplicationInsightsApiKey' documentation</span></span>
-
-#### <a name="azautomation"></a><span data-ttu-id="de109-1045">Az.Automation</span><span class="sxs-lookup"><span data-stu-id="de109-1045">Az.Automation</span></span>
-* <span data-ttu-id="de109-1046">Kaynak dizesindeki yazım hatası düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-1046">Fix typo in resource string</span></span>
-
-#### <a name="azcognitiveservices"></a><span data-ttu-id="de109-1047">Az.CognitiveServices</span><span class="sxs-lookup"><span data-stu-id="de109-1047">Az.CognitiveServices</span></span>
-* <span data-ttu-id="de109-1048">NetworkRuleSet desteği eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-1048">Added NetworkRuleSet support.</span></span>
-
-#### <a name="azcompute"></a><span data-ttu-id="de109-1049">Az.Compute</span><span class="sxs-lookup"><span data-stu-id="de109-1049">Az.Compute</span></span>
-* <span data-ttu-id="de109-1050">VM örneği görünüm nesnesinin eksik özellikleri (ComputerName, OsName, OsVersion ve HyperVGeneration) eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-1050">Add missing properties (ComputerName, OsName, OsVersion and HyperVGeneration) of VM instance view object.</span></span>
-
-#### <a name="azcontainerregistry"></a><span data-ttu-id="de109-1051">Az.ContainerRegistry</span><span class="sxs-lookup"><span data-stu-id="de109-1051">Az.ContainerRegistry</span></span>
-* <span data-ttu-id="de109-1052">Çoğaltma parametresi için Remove-AzContainerRegistryReplication içindeki yazım hatası düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-1052">Fix typo in Remove-AzContainerRegistryReplication for Replication parameter</span></span>
-    - <span data-ttu-id="de109-1053">Burada daha fazla bilgi bulunabilir: https://github.com/Azure/azure-powershell/issues/9633</span><span class="sxs-lookup"><span data-stu-id="de109-1053">More information here https://github.com/Azure/azure-powershell/issues/9633</span></span>
-
-#### <a name="azdatafactory"></a><span data-ttu-id="de109-1054">Az.DataFactory</span><span class="sxs-lookup"><span data-stu-id="de109-1054">Az.DataFactory</span></span>
-* <span data-ttu-id="de109-1055">ADF .Net SDK’sı 4.1.0 sürümüne güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-1055">Updated ADF .Net SDK version to 4.1.0</span></span>
-* <span data-ttu-id="de109-1056">'Get-AzDataFactoryV2PipelineRun' belgelerindeki yazım hatası düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-1056">Fix typo in documentation for 'Get-AzDataFactoryV2PipelineRun'</span></span>
-
-#### <a name="azeventhub"></a><span data-ttu-id="de109-1057">Az.EventHub</span><span class="sxs-lookup"><span data-stu-id="de109-1057">Az.EventHub</span></span>
-* <span data-ttu-id="de109-1058">SAS belirteci oluşturmak için yeni cmdlet eklendi: New-AzEventHubAuthorizationRuleSASToken</span><span class="sxs-lookup"><span data-stu-id="de109-1058">Added new cmmdlet added for generating SAS token : New-AzEventHubAuthorizationRuleSASToken</span></span>
-* <span data-ttu-id="de109-1059">yalnızca 'Manage' atanırsa authorizationrules hakları için doğrulama ve hata iletisi eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-1059">added verification and error message for authorizationrules rights if only 'Manage' is assigned</span></span>
-
-#### <a name="azkeyvault"></a><span data-ttu-id="de109-1060">Az.KeyVault</span><span class="sxs-lookup"><span data-stu-id="de109-1060">Az.KeyVault</span></span>
-* <span data-ttu-id="de109-1061">Sertifika İlkeleri için KeySize’ı belirtmeye yönelik destek eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-1061">Added support to specify the KeySize for Certificate Policies</span></span>
-
-#### <a name="azlogicapp"></a><span data-ttu-id="de109-1062">Az.LogicApp</span><span class="sxs-lookup"><span data-stu-id="de109-1062">Az.LogicApp</span></span>
-* <span data-ttu-id="de109-1063">Get-AzIntegrationAccountMap’in tüm eşleme türlerini listelemesi için düzeltme</span><span class="sxs-lookup"><span data-stu-id="de109-1063">Fix for Get-AzIntegrationAccountMap to list all map types</span></span>
-    - <span data-ttu-id="de109-1064">Filtreleme için yeni MapType parametresi eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-1064">Added new MapType parameter for filtering</span></span>
-
-#### <a name="azmanagedservices"></a><span data-ttu-id="de109-1065">Az.ManagedServices</span><span class="sxs-lookup"><span data-stu-id="de109-1065">Az.ManagedServices</span></span>
-* <span data-ttu-id="de109-1066">API 2019-06-01 sürümü için destek eklendi (GA)</span><span class="sxs-lookup"><span data-stu-id="de109-1066">Added support for api version 2019-06-01 (GA)</span></span>
-
-#### <a name="aznetwork"></a><span data-ttu-id="de109-1067">Az.Network</span><span class="sxs-lookup"><span data-stu-id="de109-1067">Az.Network</span></span>
-* <span data-ttu-id="de109-1068">Özel uç nokta ve özel bağlantı hizmeti için destek eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-1068">Add support for private endpoint and private link service</span></span>
-    - <span data-ttu-id="de109-1069">Yeni cmdlet’ler</span><span class="sxs-lookup"><span data-stu-id="de109-1069">New cmdlets</span></span>
-        - <span data-ttu-id="de109-1070">Set-AzPrivateEndpoint</span><span class="sxs-lookup"><span data-stu-id="de109-1070">Set-AzPrivateEndpoint</span></span>
-        - <span data-ttu-id="de109-1071">Set-AzPrivateLinkService</span><span class="sxs-lookup"><span data-stu-id="de109-1071">Set-AzPrivateLinkService</span></span>
-        - <span data-ttu-id="de109-1072">Approve-AzPrivateEndpointConnection</span><span class="sxs-lookup"><span data-stu-id="de109-1072">Approve-AzPrivateEndpointConnection</span></span>
-        - <span data-ttu-id="de109-1073">Deny-AzPrivateEndpointConnection</span><span class="sxs-lookup"><span data-stu-id="de109-1073">Deny-AzPrivateEndpointConnection</span></span>
-        - <span data-ttu-id="de109-1074">Get-AzPrivateEndpointConnection</span><span class="sxs-lookup"><span data-stu-id="de109-1074">Get-AzPrivateEndpointConnection</span></span>
-        - <span data-ttu-id="de109-1075">Remove-AzPrivateEndpointConnection</span><span class="sxs-lookup"><span data-stu-id="de109-1075">Remove-AzPrivateEndpointConnection</span></span>
-        - <span data-ttu-id="de109-1076">Test-AzPrivateLinkServiceVisibility</span><span class="sxs-lookup"><span data-stu-id="de109-1076">Test-AzPrivateLinkServiceVisibility</span></span>
-        - <span data-ttu-id="de109-1077">Get-AzAutoApprovedPrivateLinkService</span><span class="sxs-lookup"><span data-stu-id="de109-1077">Get-AzAutoApprovedPrivateLinkService</span></span>
-* <span data-ttu-id="de109-1078">Özellik için aşağıdaki komutlar güncelleştirildi: Virtualnetwork’te Alt Ağ üzerinde PrivateEndpointNetworkPolicies/PrivateLinkServiceNetworkPolicies bayrağı</span><span class="sxs-lookup"><span data-stu-id="de109-1078">Updated below commands for feature: PrivateEndpointNetworkPolicies/PrivateLinkServiceNetworkPolicies flag on Subnet in Virtualnetwork</span></span>
-    - <span data-ttu-id="de109-1079">New-AzVirtualNetworkSubnetConfig/Set-AzVirtualNetworkSubnetConfig/Add-AzVirtualNetworkSubnetConfig güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-1079">Updated New-AzVirtualNetworkSubnetConfig/Set-AzVirtualNetworkSubnetConfig/Add-AzVirtualNetworkSubnetConfig</span></span>
-        - <span data-ttu-id="de109-1080">Bu alt ağda özel uç nokta üzerinde ağ ilkelerinin uygulanıp uygulanmayacağını yapılandıran isteğe bağlı -PrivateEndpointNetworkPoliciesFlag parametresi eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-1080">Added optional parameter -PrivateEndpointNetworkPoliciesFlag that configures whether to apply network policies on private endpoint in this subnet.</span></span>
-        - <span data-ttu-id="de109-1081">Bu alt ağda özel bağlantı hizmeti üzerinde ağ ilkelerinin uygulanıp uygulanmayacağını yapılandıran isteğe bağlı -PrivateLinkServiceNetworkPoliciesFlag parametresi eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-1081">Added optional parameter -PrivateLinkServiceNetworkPoliciesFlag that configures whether to apply network policies network policies on private link service in this subnet.</span></span>
-* <span data-ttu-id="de109-1082">AzPrivateLinkService’in cmdlet 'ServiceName' parametresi, geriye yönelik uyumluluk için 'ServiceName' diğer adıyla 'Name' olarak yeniden adlandırıldı</span><span class="sxs-lookup"><span data-stu-id="de109-1082">AzPrivateLinkService's cmdlet parameter 'ServiceName' was renamed to 'Name' with an alias 'ServiceName' for backward compatibility</span></span>
-* <span data-ttu-id="de109-1083">Ağ güvenlik kuralı yapılandırmalarına yönelik ICMP protokolü etkinleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-1083">Enable ICMP protocol for network security rule configurations</span></span>
-    - <span data-ttu-id="de109-1084">Cmdlet'ler güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-1084">Updated cmdlets</span></span>
-        - <span data-ttu-id="de109-1085">Add-AzNetworkSecurityRuleConfig</span><span class="sxs-lookup"><span data-stu-id="de109-1085">Add-AzNetworkSecurityRuleConfig</span></span>
-        - <span data-ttu-id="de109-1086">New-AzNetworkSecurityRuleConfig</span><span class="sxs-lookup"><span data-stu-id="de109-1086">New-AzNetworkSecurityRuleConfig</span></span>
-        - <span data-ttu-id="de109-1087">Set-AzNetworkSecurityRuleConfig</span><span class="sxs-lookup"><span data-stu-id="de109-1087">Set-AzNetworkSecurityRuleConfig</span></span>
-* <span data-ttu-id="de109-1088">ConnectionProtocolType (Ikev1/Ikev2), New-AzVirtualNetworkGatewayConnection için yapılandırılabilir bir parametre olarak eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-1088">Add ConnectionProtocolType (Ikev1/Ikev2) as a configurable parameter for New-AzVirtualNetworkGatewayConnection</span></span>
-* <span data-ttu-id="de109-1089">LoadBalancerFrontendIpConfiguration içinde PrivateIpAddressVersion eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-1089">Add PrivateIpAddressVersion in LoadBalancerFrontendIpConfiguration</span></span>
-    - <span data-ttu-id="de109-1090">Şu cmdlet güncelleştirildi:</span><span class="sxs-lookup"><span data-stu-id="de109-1090">Updated cmdlet:</span></span>
-        - <span data-ttu-id="de109-1091">New-AzLoadBalancerFrontendIpConfig</span><span class="sxs-lookup"><span data-stu-id="de109-1091">New-AzLoadBalancerFrontendIpConfig</span></span>
-        - <span data-ttu-id="de109-1092">Add-AzLoadBalancerFrontendIpConfig</span><span class="sxs-lookup"><span data-stu-id="de109-1092">Add-AzLoadBalancerFrontendIpConfig</span></span>
-        - <span data-ttu-id="de109-1093">Set-AzLoadBalancerFrontendIpConfig</span><span class="sxs-lookup"><span data-stu-id="de109-1093">Set-AzLoadBalancerFrontendIpConfig</span></span>
-* <span data-ttu-id="de109-1094">Yoklama içinde özek bağlantı noktasını desteklemek için Application Gateway New-AzApplicationGatewayProbeConfig komutu güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-1094">Application Gateway New-AzApplicationGatewayProbeConfig command update for supporting custom port in Probe</span></span>
-    - <span data-ttu-id="de109-1095">New-AzApplicationGatewayProbeConfig güncelleştirildi: Arka uç sunucusunu yoklamak için kullanılan isteğe bağlı parametre Bağlantı Noktası eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-1095">Updated New-AzApplicationGatewayProbeConfig: Added optional parameter Port which is used for probing backend server.</span></span> <span data-ttu-id="de109-1096">Bu parametre Standard_V2 ve WAF_V2 SKU için geçerlidir.</span><span class="sxs-lookup"><span data-stu-id="de109-1096">This parameter is applicable for Standard_V2 and WAF_V2 SKU.</span></span>
-
-#### <a name="azoperationalinsights"></a><span data-ttu-id="de109-1097">Az.OperationalInsights</span><span class="sxs-lookup"><span data-stu-id="de109-1097">Az.OperationalInsights</span></span>
-* <span data-ttu-id="de109-1098">Kayıtlı aramaların varsayılan sürümü 1 olacak şekilde güncelleştirildi.</span><span class="sxs-lookup"><span data-stu-id="de109-1098">Updated default version for saved searches to be 1.</span></span>
-* <span data-ttu-id="de109-1099">Özel günlük null normal ifade işleme düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-1099">Fixed custom log null regex handling</span></span>
-
-#### <a name="azrecoveryservices"></a><span data-ttu-id="de109-1100">Az.RecoveryServices</span><span class="sxs-lookup"><span data-stu-id="de109-1100">Az.RecoveryServices</span></span>
-* <span data-ttu-id="de109-1101">'Get-AzRecoveryServicesBackupJob.md' güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-1101">Update 'Get-AzRecoveryServicesBackupJob.md'</span></span>
-* <span data-ttu-id="de109-1102">'Get-AzRecoveryServicesBackupContainer.md' güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-1102">Update 'Get-AzRecoveryServicesBackupContainer.md'</span></span>
-* <span data-ttu-id="de109-1103">'Get-AzRecoveryServicesVault.md' güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-1103">Update 'Get-AzRecoveryServicesVault.md'</span></span>
-* <span data-ttu-id="de109-1104">'Wait-AzRecoveryServicesBackupJob.md' güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-1104">Update 'Wait-AzRecoveryServicesBackupJob.md'</span></span>
-* <span data-ttu-id="de109-1105">'Set-AzRecoveryServicesVaultContext.md' güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-1105">Update 'Set-AzRecoveryServicesVaultContext.md'</span></span>
-* <span data-ttu-id="de109-1106">'Get-AzRecoveryServicesBackupItem.md' güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-1106">Update 'Get-AzRecoveryServicesBackupItem.md'</span></span>
-* <span data-ttu-id="de109-1107">'Get-AzRecoveryServicesBackupRecoveryPoint.md' güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-1107">Update 'Get-AzRecoveryServicesBackupRecoveryPoint.md'</span></span>
-* <span data-ttu-id="de109-1108">'Restore-AzRecoveryServicesBackupItem.md' güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-1108">Update 'Restore-AzRecoveryServicesBackupItem.md'</span></span>
-* <span data-ttu-id="de109-1109">Azure Dosya Paylaşımı kapsayıcısının Kaydını Silmeye yönelik hizmet çağrısı güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-1109">Updated service call for Unregistering container for Azure File Share</span></span>
-* <span data-ttu-id="de109-1110">'Set-AzRecoveryServicesAsrAlertSetting.md' güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-1110">Update 'Set-AzRecoveryServicesAsrAlertSetting.md'</span></span>
-
-#### <a name="azresources"></a><span data-ttu-id="de109-1111">Az.Resources</span><span class="sxs-lookup"><span data-stu-id="de109-1111">Az.Resources</span></span>
-- <span data-ttu-id="de109-1112">'New-AzResourceGroupDeployment' belgelerinde başvurulan eksik cmdlet kaldırıldı</span><span class="sxs-lookup"><span data-stu-id="de109-1112">Remove missing cmdlet referenced in 'New-AzResourceGroupDeployment' documentation</span></span>
-- <span data-ttu-id="de109-1113">İlke cmdlet’leri yeni 2019-01-01 api sürümünü kullanacak şekilde güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-1113">Updated policy cmdlets to use new api version 2019-01-01</span></span>
-
-#### <a name="azservicebus"></a><span data-ttu-id="de109-1114">Az.ServiceBus</span><span class="sxs-lookup"><span data-stu-id="de109-1114">Az.ServiceBus</span></span>
-* <span data-ttu-id="de109-1115">SAS belirteci oluşturmak için yeni cmdlet eklendi: New-AzServiceBusAuthorizationRuleSASToken</span><span class="sxs-lookup"><span data-stu-id="de109-1115">Added new cmmdlet added for generating SAS token : New-AzServiceBusAuthorizationRuleSASToken</span></span>
-* <span data-ttu-id="de109-1116">yalnızca 'Manage' atanırsa authorizationrules hakları için doğrulama ve hata iletisi eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-1116">added verification and error message for authorizationrules rights if only 'Manage' is assigned</span></span>
-
-#### <a name="azsql"></a><span data-ttu-id="de109-1117">Az.Sql</span><span class="sxs-lookup"><span data-stu-id="de109-1117">Az.Sql</span></span>
-* <span data-ttu-id="de109-1118">Set-AzSqlDatabaseSecondary cmdlet’i için eksik örnekler düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-1118">Fix missing examples for Set-AzSqlDatabaseSecondary cmdlet</span></span>
-* <span data-ttu-id="de109-1119">E-posta adresi sağlamadan yinelenen Güvenlik Açığı Değerlendirme taramalarının ayarlanması düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-1119">Fix set Vulnerability Assessment recurring scans without providing any email addresses</span></span>
-* <span data-ttu-id="de109-1120">Bir uyarı iletisindeki küçük bir yazım hatası düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="de109-1120">Fix a small typo in a warining message.</span></span>
-
-#### <a name="azstorage"></a><span data-ttu-id="de109-1121">Az.Storage</span><span class="sxs-lookup"><span data-stu-id="de109-1121">Az.Storage</span></span>
-* <span data-ttu-id="de109-1122">'Get-AzStorageAccount' başvuru belgelerindeki örnek, doğru parametre adını kullanacak şekilde güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-1122">Update example in reference documentation for 'Get-AzStorageAccount' to use correct parameter name</span></span>
-
-#### <a name="azstoragesync"></a><span data-ttu-id="de109-1123">Az.StorageSync</span><span class="sxs-lookup"><span data-stu-id="de109-1123">Az.StorageSync</span></span>
-* <span data-ttu-id="de109-1124">Invoke-AzStorageSyncChangeDetection cmdlet’i ekleniyor.</span><span class="sxs-lookup"><span data-stu-id="de109-1124">Adding Invoke-AzStorageSyncChangeDetection cmdlet.</span></span>
-* <span data-ttu-id="de109-1125">TierFilesOlderThanDays’in uygulanmasına yönelik Sorun 9551 düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-1125">Fix Issue 9551 for honoring TierFilesOlderThanDays</span></span>
-
-#### <a name="azwebsites"></a><span data-ttu-id="de109-1126">Az.Websites</span><span class="sxs-lookup"><span data-stu-id="de109-1126">Az.Websites</span></span>
-* <span data-ttu-id="de109-1127">Bazı SiteConfig özelliklerinin Get-AzWebApp ve Set-AzWebApp tarafından döndürülmemesi sorunu düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-1127">Fixing a bug where some SiteConfig properties were not returned by Get-AzWebApp and Set-AzWebApp</span></span>
-* <span data-ttu-id="de109-1128">Get-AzDeletedWebApp ve Restore-AzDeletedWebApp için yeni bir Konum parametresi eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-1128">Adds a new Location parameter to Get-AzDeletedWebApp and Restore-AzDeletedWebApp</span></span>
-* <span data-ttu-id="de109-1129">New-AzWebApp -IncludeSourceWebAppSlots kullanılarak web uygulaması yuvalarının kopyalanmasıyla ilgili bir hata düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-1129">Fixes a bug with cloning web app slots using New-AzWebApp -IncludeSourceWebAppSlots</span></span>
-
-## <a name="240---july-2019"></a><span data-ttu-id="de109-1130">2.4.0 - Temmuz 2019</span><span class="sxs-lookup"><span data-stu-id="de109-1130">2.4.0 - July 2019</span></span>
-#### <a name="azaccounts"></a><span data-ttu-id="de109-1131">Az.Accounts</span><span class="sxs-lookup"><span data-stu-id="de109-1131">Az.Accounts</span></span>
-* <span data-ttu-id="de109-1132">Profil cmdlet’leri için destek eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-1132">Add support for profile cmdlets</span></span>
-* <span data-ttu-id="de109-1133">Oluşturulan cmdlet’lerde ortamlar ve veri düzlemleri için destek eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-1133">Add support for environments and data planes in generated cmdlets</span></span>
-* <span data-ttu-id="de109-1134">Windows PowerShell’deki veri düzlemi cmdlet’leri için bazı durumlarda yanlış uç noktası kullanılması hatası düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-1134">Fix bug where incorrect endpoint was being used in some cases for data plane cmdlets in Windows PowerShell</span></span>
-
-#### <a name="azadvisor"></a><span data-ttu-id="de109-1135">Az.Advisor</span><span class="sxs-lookup"><span data-stu-id="de109-1135">Az.Advisor</span></span>
-* <span data-ttu-id="de109-1136">Az.Advisor genel kullanıma sunuldu</span><span class="sxs-lookup"><span data-stu-id="de109-1136">GA release of Az.Advisor</span></span>
-* <span data-ttu-id="de109-1137">Bu modül, artık toplama `Az` modülünün bir parçası olarak sunulur</span><span class="sxs-lookup"><span data-stu-id="de109-1137">This module is now included as a part of the roll-up `Az` module</span></span>
-
-#### <a name="azapimanagement"></a><span data-ttu-id="de109-1138">Az.ApiManagement</span><span class="sxs-lookup"><span data-stu-id="de109-1138">Az.ApiManagement</span></span>
-* <span data-ttu-id="de109-1139">[https://github.com/Azure/azure-powershell/issues/8671](https://github.com/Azure/azure-powershell/issues/8671 ) sorunu düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-1139">Fix for issue https://github.com/Azure/azure-powershell/issues/8671</span></span>
-    - <span data-ttu-id="de109-1140">**Get-AzApiManagementSubscription**</span><span class="sxs-lookup"><span data-stu-id="de109-1140">**Get-AzApiManagementSubscription**</span></span>
-        - <span data-ttu-id="de109-1141">Abonelikleri Kullanıcı ve Ürüne göre sorgulama desteği eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-1141">Added support for querying subscriptions by User and Product</span></span>
-        - <span data-ttu-id="de109-1142">Kapsam kullanarak sorgulama desteği eklendi ('/', '/apis', '/apis/echo-api')</span><span class="sxs-lookup"><span data-stu-id="de109-1142">Added support for querying using Scope '/', '/apis', '/apis/echo-api'</span></span>
-* <span data-ttu-id="de109-1143">[https://github.com/Azure/azure-powershell/issues/9307](https://github.com/Azure/azure-powershell/issues/9307 ) ve https://github.com/Azure/azure-powershell/issues/8432 sorunları için düzeltme</span><span class="sxs-lookup"><span data-stu-id="de109-1143">Fix for issue https://github.com/Azure/azure-powershell/issues/9307 and https://github.com/Azure/azure-powershell/issues/8432</span></span>
-    - <span data-ttu-id="de109-1144">**Import-AzApiManagementApi**</span><span class="sxs-lookup"><span data-stu-id="de109-1144">**Import-AzApiManagementApi**</span></span>
-        - <span data-ttu-id="de109-1145">API’leri içeri aktarırken ‘ApiVersion’ ve ‘ApiVersionSetId’ belirtmek için destek eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-1145">Added support for specifying 'ApiVersion' and 'ApiVersionSetId' when importing Apis</span></span>
-
-#### <a name="azautomation"></a><span data-ttu-id="de109-1146">Az.Automation</span><span class="sxs-lookup"><span data-stu-id="de109-1146">Az.Automation</span></span>
-* <span data-ttu-id="de109-1147">Dize değerini işlemek için Set-AzAutomationConnectionFieldValue cmdlet hatası düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="de109-1147">Fixed Set-AzAutomationConnectionFieldValue cmdlet bug to handle string value.</span></span>
-
-#### <a name="azcompute"></a><span data-ttu-id="de109-1148">Az.Compute</span><span class="sxs-lookup"><span data-stu-id="de109-1148">Az.Compute</span></span>
-* <span data-ttu-id="de109-1149">New-AzImageConfig’e HyperVGeneration parametresi eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-1149">Add HyperVGeneration parameter to New-AzImageConfig</span></span>
-
-#### <a name="azdatafactory"></a><span data-ttu-id="de109-1150">Az.DataFactory</span><span class="sxs-lookup"><span data-stu-id="de109-1150">Az.DataFactory</span></span>
-* <span data-ttu-id="de109-1151">Etkinlik çalıştırmalarını alma, işlem hattı çalıştırmalarını alma ve tetikleme çalıştırmalarını alma ADF cmdlet’lerinin çıkışları, Select-Object kanalını destekleyecek şekilde güncelleştiriliyor.</span><span class="sxs-lookup"><span data-stu-id="de109-1151">Updating the output of get activity runs, get pipeline runs, and get trigger runs ADF cmdlets to support Select-Object pipe.</span></span>
-
-#### <a name="azeventgrid"></a><span data-ttu-id="de109-1152">Az.EventGrid</span><span class="sxs-lookup"><span data-stu-id="de109-1152">Az.EventGrid</span></span>
-* <span data-ttu-id="de109-1153">‘New-AzEventGridSubscription’ belgesindeki yazım hatası düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-1153">Fix typo in 'New-AzEventGridSubscription' documentation</span></span>
-
-#### <a name="aziothub"></a><span data-ttu-id="de109-1154">Az.IotHub</span><span class="sxs-lookup"><span data-stu-id="de109-1154">Az.IotHub</span></span>
-* <span data-ttu-id="de109-1155">Yetkilendirme ilkesi anahtarlarını yeniden oluşturma desteği eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-1155">Add support to regenerate authorization policy keys.</span></span>
-
-#### <a name="aznetwork"></a><span data-ttu-id="de109-1156">Az.Network</span><span class="sxs-lookup"><span data-stu-id="de109-1156">Az.Network</span></span>
-* <span data-ttu-id="de109-1157">Genel IP etiketlerine ‘RoutingPreference’ eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-1157">Added 'RoutingPreference' to public ip tags</span></span>
-* <span data-ttu-id="de109-1158">‘Get-AzNetworkServiceTag’ başvuru belgesi için örnekler geliştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-1158">Improve examples for 'Get-AzNetworkServiceTag' reference documentation</span></span>
-
-#### <a name="azpolicyinsights"></a><span data-ttu-id="de109-1159">Az.PolicyInsights</span><span class="sxs-lookup"><span data-stu-id="de109-1159">Az.PolicyInsights</span></span>
-* <span data-ttu-id="de109-1160">Get-AzPolicyState’de boş başvuru sorunu düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-1160">Fix null reference issue in Get-AzPolicyState</span></span>
-    - <span data-ttu-id="de109-1161">Burada daha fazla bilgi bulunabilir: https://github.com/Azure/azure-powershell/issues/9446</span><span class="sxs-lookup"><span data-stu-id="de109-1161">More information here: https://github.com/Azure/azure-powershell/issues/9446</span></span>
-
-#### <a name="azoperationalinsights"></a><span data-ttu-id="de109-1162">Az.OperationalInsights</span><span class="sxs-lookup"><span data-stu-id="de109-1162">Az.OperationalInsights</span></span>
-* <span data-ttu-id="de109-1163">Get-AzOperationalInsightsDataSource’da döndürülen CustomLog veri kaynağı modeli düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-1163">Fixed CustomLog datasource model returned in Get-AzOperationalInsightsDataSource</span></span>
-
-#### <a name="azrecoveryservices"></a><span data-ttu-id="de109-1164">Az.RecoveryServices</span><span class="sxs-lookup"><span data-stu-id="de109-1164">Az.RecoveryServices</span></span>
-* <span data-ttu-id="de109-1165">IaaSVM’ler için get-policy komutu düzeltmesi</span><span class="sxs-lookup"><span data-stu-id="de109-1165">Fix for get-policy command for IaaSVMs</span></span>
-
-#### <a name="azresources"></a><span data-ttu-id="de109-1166">Az.Resources</span><span class="sxs-lookup"><span data-stu-id="de109-1166">Az.Resources</span></span>
-    - <span data-ttu-id="de109-1167">Get-AzPolicyState -Top parametresi için yardım metni düzeltmesi</span><span class="sxs-lookup"><span data-stu-id="de109-1167">Fix help text for Get-AzPolicyState -Top parameter</span></span>
-    - <span data-ttu-id="de109-1168">Get-AzPolicyAlias için istemci tarafı sayfalama desteği eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-1168">Add client-side paging support for Get-AzPolicyAlias</span></span>
-    - <span data-ttu-id="de109-1169">Set-AzPolicyAssignment, -PolicyParameters ve -PolicyParametersObject için yeni parametreler eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-1169">Add new parameters for Set-AzPolicyAssignment, -PolicyParameters and -PolicyParametersObject</span></span>
-    - <span data-ttu-id="de109-1170">İlke cmdlet’leri için bazı belge ve örnekler güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-1170">Handful of doc and example updates for Policy cmdlets</span></span>
-
-#### <a name="azservicebus"></a><span data-ttu-id="de109-1171">Az.ServiceBus</span><span class="sxs-lookup"><span data-stu-id="de109-1171">Az.ServiceBus</span></span>
-* <span data-ttu-id="de109-1172">4938 numaralı, MaxSizeInMegabytes ayarlanırken New-AzureRmServiceBusQueue’nun BadRequest döndürmesi sorunu düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-1172">Fix for issue #4938 - New-AzureRmServiceBusQueue returns BadRequest when setting MaxSizeInMegabytes</span></span>
-
-#### <a name="azsql"></a><span data-ttu-id="de109-1173">Az.Sql</span><span class="sxs-lookup"><span data-stu-id="de109-1173">Az.Sql</span></span>
-* <span data-ttu-id="de109-1174">Önizleme sürümündeki Örnek Yük Devretme Grubu cmdlet’leri genel kullanım sürümüne eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-1174">Add Instance Failover Group cmdlets from preview release to public release</span></span>
-* <span data-ttu-id="de109-1175">Yeni cmdlet’ler ile Azure SQL Server\Veritabanı Denetimi desteği.</span><span class="sxs-lookup"><span data-stu-id="de109-1175">Support Azure SQL Server\Database Auditing with new cmdlets.</span></span>
-    - <span data-ttu-id="de109-1176">Set-AzSqlServerAudit</span><span class="sxs-lookup"><span data-stu-id="de109-1176">Set-AzSqlServerAudit</span></span>
-    - <span data-ttu-id="de109-1177">Get-AzSqlServerAudit</span><span class="sxs-lookup"><span data-stu-id="de109-1177">Get-AzSqlServerAudit</span></span>
-    - <span data-ttu-id="de109-1178">Remove-AzSqlServerAudit</span><span class="sxs-lookup"><span data-stu-id="de109-1178">Remove-AzSqlServerAudit</span></span>
-    - <span data-ttu-id="de109-1179">Set-AzSqlDatabaseAudit</span><span class="sxs-lookup"><span data-stu-id="de109-1179">Set-AzSqlDatabaseAudit</span></span>
-    - <span data-ttu-id="de109-1180">Get-AzSqlDatabaseAudit</span><span class="sxs-lookup"><span data-stu-id="de109-1180">Get-AzSqlDatabaseAudit</span></span>
-    - <span data-ttu-id="de109-1181">Remove-AzSqlDatabaseAudit</span><span class="sxs-lookup"><span data-stu-id="de109-1181">Remove-AzSqlDatabaseAudit</span></span>
-* <span data-ttu-id="de109-1182">Güvenlik Açığı Değerlendirmesi ayarlarından e-posta kısıtlamaları kaldırıldı</span><span class="sxs-lookup"><span data-stu-id="de109-1182">Remove email constraints from Vulnerability Assessment settings</span></span>
-
-#### <a name="azstorage"></a><span data-ttu-id="de109-1183">Az.Storage</span><span class="sxs-lookup"><span data-stu-id="de109-1183">Az.Storage</span></span>
-* <span data-ttu-id="de109-1184">Aşağıdaki cmdlet’te 2 parametre (‘-IndexDocument’ ve ‘-ErrorDocument404Path’) gerekliden isteğe bağlı olarak değiştirildi:</span><span class="sxs-lookup"><span data-stu-id="de109-1184">Change 2 parameters '-IndexDocument' and '-ErrorDocument404Path' from required to optional  in cmdlet:</span></span>
-    -  <span data-ttu-id="de109-1185">Enable-AzStorageStaticWebsite</span><span class="sxs-lookup"><span data-stu-id="de109-1185">Enable-AzStorageStaticWebsite</span></span>
-* <span data-ttu-id="de109-1186">Get-AzStorageBlobContent’in yardımı, örnek eklenerek güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-1186">Update help of Get-AzStorageBlobContent by add an example</span></span>
-* <span data-ttu-id="de109-1187">Cmdlet StorageException ile başarısız olduğunda artık daha ayrıntılı hata bilgisi gösteriliyor</span><span class="sxs-lookup"><span data-stu-id="de109-1187">Show more error information when cmdlet failed with StorageException</span></span>
-* <span data-ttu-id="de109-1188">Azure Dosyalar AAD DS Kimlik Doğrulaması ile Depolama hesabı oluşturma veya güncelleştirme desteği eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-1188">Support create or update Storage account with Azure Files AAD DS Authentication</span></span>
-    -  <span data-ttu-id="de109-1189">New-AzStorageAccount</span><span class="sxs-lookup"><span data-stu-id="de109-1189">New-AzStorageAccount</span></span>
-    -  <span data-ttu-id="de109-1190">Set-AzStorageAccount</span><span class="sxs-lookup"><span data-stu-id="de109-1190">Set-AzStorageAccount</span></span>
-* <span data-ttu-id="de109-1191">Bir dosya paylaşımının, dosya dizininin veya dosyanın dosya tanıtıcılarını listeleme veya kapatma desteği eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-1191">Support list or close file handles of a file share, file directory or a file</span></span>
-    - <span data-ttu-id="de109-1192">Get-AzStorageFileHandle</span><span class="sxs-lookup"><span data-stu-id="de109-1192">Get-AzStorageFileHandle</span></span>
-    - <span data-ttu-id="de109-1193">Close-AzStorageFileHandle</span><span class="sxs-lookup"><span data-stu-id="de109-1193">Close-AzStorageFileHandle</span></span>
-
-#### <a name="azstoragesync"></a><span data-ttu-id="de109-1194">Az.StorageSync</span><span class="sxs-lookup"><span data-stu-id="de109-1194">Az.StorageSync</span></span>
-* <span data-ttu-id="de109-1195">Bu modül, artık toplama `Az` modülünün bir parçası olarak sunulur</span><span class="sxs-lookup"><span data-stu-id="de109-1195">This module is now included as a part of the roll-up `Az` module</span></span>
-
-## <a name="232---june-2019"></a><span data-ttu-id="de109-1196">2.3.2 - Haziran 2019</span><span class="sxs-lookup"><span data-stu-id="de109-1196">2.3.2 - June 2019</span></span>
-#### <a name="azaccounts"></a><span data-ttu-id="de109-1197">Az.Accounts</span><span class="sxs-lookup"><span data-stu-id="de109-1197">Az.Accounts</span></span>
-* <span data-ttu-id="de109-1198">İşlevler çağrıları için bazı durumlarda yanlış URL’nin kullanılmasına neden olan hata düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-1198">Fix bug with incorrect URL being used in some cases for Functions calls</span></span>
-    - <span data-ttu-id="de109-1199">Burada daha fazla bilgi bulunabilir: https://github.com/Azure/azure-powershell/issues/8983</span><span class="sxs-lookup"><span data-stu-id="de109-1199">More information here: https://github.com/Azure/azure-powershell/issues/8983</span></span>
-* <span data-ttu-id="de109-1200">AzureRM’den Az cmdlet’lerine yönelik diğer adlarla ilgili sorun düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-1200">Fix Issue with aliases from AzureRM to Az cmdlets</span></span>
-  - <span data-ttu-id="de109-1201">Set-AzureRmVMBootDiagnostics -> Set-AzVMBootDiagnostic</span><span class="sxs-lookup"><span data-stu-id="de109-1201">Set-AzureRmVMBootDiagnostics -> Set-AzVMBootDiagnostic</span></span>
-  - <span data-ttu-id="de109-1202">Export-AzureRMLogAnalyticThrottledRequests -> Export-AzLogAnalyticThrottledRequest</span><span class="sxs-lookup"><span data-stu-id="de109-1202">Export-AzureRMLogAnalyticThrottledRequests -> Export-AzLogAnalyticThrottledRequest</span></span>
-
-#### <a name="azcompute"></a><span data-ttu-id="de109-1203">Az.Compute</span><span class="sxs-lookup"><span data-stu-id="de109-1203">Az.Compute</span></span>
-* <span data-ttu-id="de109-1204">New-AzVm ve New-AzVmss basit parametre kümeleri artık 'ProximityPlacementGroup' parametresini kabul ediyor.</span><span class="sxs-lookup"><span data-stu-id="de109-1204">New-AzVm and New-AzVmss simple parameter sets now accept the 'ProximityPlacementGroup' parameter.</span></span>
-* <span data-ttu-id="de109-1205">'New-AzVM' başvuru belgelerindeki yazım hatası düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-1205">Fix typo in 'New-AzVM' reference documentation</span></span>
-
-#### <a name="azdns"></a><span data-ttu-id="de109-1206">Az.Dns</span><span class="sxs-lookup"><span data-stu-id="de109-1206">Az.Dns</span></span>
-* <span data-ttu-id="de109-1207">'Set-AzDnsZone' yardım örneklerindeki bir yazım hatası düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="de109-1207">Fixed a typo in 'Set-AzDnsZone' help examples.</span></span>
-
-#### <a name="azeventgrid"></a><span data-ttu-id="de109-1208">Az.EventGrid</span><span class="sxs-lookup"><span data-stu-id="de109-1208">Az.EventGrid</span></span>
-* <span data-ttu-id="de109-1209">2019-06-01 API sürümünü kullanacak biçimde güncelleştirildi.</span><span class="sxs-lookup"><span data-stu-id="de109-1209">Updated to use the 2019-06-01 API version.</span></span>
-* <span data-ttu-id="de109-1210">Yeni cmdlet’ler:</span><span class="sxs-lookup"><span data-stu-id="de109-1210">New cmdlets:</span></span>
-    - <span data-ttu-id="de109-1211">New-AzureRmEventGridDomain</span><span class="sxs-lookup"><span data-stu-id="de109-1211">New-AzureRmEventGridDomain</span></span>
-        - <span data-ttu-id="de109-1212">Yeni bir Azure Event Grid etki alanı oluşturur.</span><span class="sxs-lookup"><span data-stu-id="de109-1212">Creates a new Azure Event Grid Domain.</span></span>
-    - <span data-ttu-id="de109-1213">Get-AzureRmEventGridDomain</span><span class="sxs-lookup"><span data-stu-id="de109-1213">Get-AzureRmEventGridDomain</span></span>
-        - <span data-ttu-id="de109-1214">Event Grid Etki Alanının ayrıntılarını veya mevcut Azure aboneliğindeki tüm Event Grid Etki Alanlarının listesini alır.</span><span class="sxs-lookup"><span data-stu-id="de109-1214">Gets the details of an Event Grid Domain, or gets a list of all Event Grid Domains in the current Azure subscription.</span></span>
-    - <span data-ttu-id="de109-1215">Remove-AzureRmEventGridDomain</span><span class="sxs-lookup"><span data-stu-id="de109-1215">Remove-AzureRmEventGridDomain</span></span>
-        - <span data-ttu-id="de109-1216">Bir Azure Event Grid Etki Alanını kaldırır.</span><span class="sxs-lookup"><span data-stu-id="de109-1216">Removes an Azure Event Grid Domain.</span></span>
-    - <span data-ttu-id="de109-1217">New-AzureRmEventGridDomainKey</span><span class="sxs-lookup"><span data-stu-id="de109-1217">New-AzureRmEventGridDomainKey</span></span>
-        - <span data-ttu-id="de109-1218">Bir Azure Event Grid Etki Alanı için paylaşılan erişim anahtarını yeniden üretir.</span><span class="sxs-lookup"><span data-stu-id="de109-1218">Regenerates the shared access key for an Azure Event Grid Domain.</span></span>
-    - <span data-ttu-id="de109-1219">Get-AzureRmEventGridDomainKey</span><span class="sxs-lookup"><span data-stu-id="de109-1219">Get-AzureRmEventGridDomainKey</span></span>
-        - <span data-ttu-id="de109-1220">Etkinlikleri bir Event Grid Etki Alanıyla paylaşmak için kullanılan paylaşılan erişim anahtarlarını alır.</span><span class="sxs-lookup"><span data-stu-id="de109-1220">Gets the shared access keys used to publish events to an Event Grid Domain.</span></span>
-    - <span data-ttu-id="de109-1221">New-AzureRmEventGridDomainTopic:</span><span class="sxs-lookup"><span data-stu-id="de109-1221">New-AzureRmEventGridDomainTopic:</span></span>
-        - <span data-ttu-id="de109-1222">Yeni bir Azure Event Grid Etki Alanı Konu Başlığı oluşturur.</span><span class="sxs-lookup"><span data-stu-id="de109-1222">Creates a new Azure Event Grid Domain Topic.</span></span>
-    - <span data-ttu-id="de109-1223">Get-AzureRmEventGridDomainTopic</span><span class="sxs-lookup"><span data-stu-id="de109-1223">Get-AzureRmEventGridDomainTopic</span></span>
-        - <span data-ttu-id="de109-1224">Bir Event Grid Etki Alanının ayrıntılarını veya mevcut Azure aboneliğindeki belirli Event Grid Etki Alanlarının altında bulunan tüm Event Grid Etki Alanı Konu Başlıklarının listesini alır</span><span class="sxs-lookup"><span data-stu-id="de109-1224">Gets the details of an Event Grid Domain Topic, or gets a list of all Event Grid Domain Topics under specific Event Grid Domain in the current Azure</span></span>
-    - <span data-ttu-id="de109-1225">Remove-AzureRmEventGridDomainTopic:</span><span class="sxs-lookup"><span data-stu-id="de109-1225">Remove-AzureRmEventGridDomainTopic:</span></span>
-        - <span data-ttu-id="de109-1226">Mevcut bir Azure Event Grid Etki Alanı Konu Başlığını kaldırır.</span><span class="sxs-lookup"><span data-stu-id="de109-1226">Removes an existing Azure Event Grid Domain Topic.</span></span>
-* <span data-ttu-id="de109-1227">Cmdlet'ler güncelleştirildi:</span><span class="sxs-lookup"><span data-stu-id="de109-1227">Updated cmdlets:</span></span>
-    - <span data-ttu-id="de109-1228">New-AzureRmEventGridSubscription/Update-AzureRmEventGridSubscription:</span><span class="sxs-lookup"><span data-stu-id="de109-1228">New-AzureRmEventGridSubscription/Update-AzureRmEventGridSubscription:</span></span>
-        - <span data-ttu-id="de109-1229">Bu kaynakların altında yeni olay aboneliklerinin oluşturulmasına olanak tanımak amacıyla yeni Event Grid Etki Alanı ve Event Grid Etki Alanı Konu Başlığına yönelik kanal oluşturmanın desteklemesi için yeni zorunlu parametreler ekler.</span><span class="sxs-lookup"><span data-stu-id="de109-1229">Add new mandatory parameters to support piping for the new Event Grid Domain and Event Grid Domain Topic to allow creating new event subscription under these resources.</span></span>
-        - <span data-ttu-id="de109-1230">Bu kaynakların altında yeni olay aboneliklerinin oluşturulmasına olanak tanımak amacıyla yeni Event Grid Etki Alanı adını ve/veya Event Grid Etki Alanı Konu Başlığının adını belirtmek için yeni zorunlu parametreler ekler.</span><span class="sxs-lookup"><span data-stu-id="de109-1230">Add new mandatory parameters for specifying the new Event Grid Domain name and/or Event Grid Domain Topic name to allow creating new event subscription under these resources.</span></span>
-        - <span data-ttu-id="de109-1231">Mevcut parametrelerin yeniden kullanılmasına olanak tanımak için etki alanları ve etki alanı konu başlıkları için yeni Parametre kümeleri (örneğin, EndPointType, SubjectBeginsWith vb.) ekler.</span><span class="sxs-lookup"><span data-stu-id="de109-1231">Add new Parameter sets for domains and domain topics to allow reusing existing parameters (e.g., EndPointType, SubjectBeginsWith, etc).</span></span>
-        - <span data-ttu-id="de109-1232">Şunları belirtmek için yeni isteğe bağlı parametreler eklendi:</span><span class="sxs-lookup"><span data-stu-id="de109-1232">Add new optional parameters for specifying:</span></span>
-            - <span data-ttu-id="de109-1233">Olay aboneliği bitiş tarihi,</span><span class="sxs-lookup"><span data-stu-id="de109-1233">Event subscription expiration date,</span></span>
-            - <span data-ttu-id="de109-1234">Gelişmiş filtreleme parametreleri.</span><span class="sxs-lookup"><span data-stu-id="de109-1234">Advanced filtering parameters.</span></span>
-        - <span data-ttu-id="de109-1235">Hedef olarak servicebusqueue için yeni sabit listesi ekler.</span><span class="sxs-lookup"><span data-stu-id="de109-1235">Add new enum for servicebusqueue as destination.</span></span>
-        - <span data-ttu-id="de109-1236">-IncludedEventType seçeneğinde ‘All’ kullanılmasını engeller ve bunu şununla değiştirir</span><span class="sxs-lookup"><span data-stu-id="de109-1236">Disallow usage of 'All' in -IncludedEventType option and replace it with</span></span>
-    - <span data-ttu-id="de109-1237">Get-AzEventGridTopic, Get-AzEventGridDomain, Get-AzEventGridDomainTopic, Get-AzEventGridSubscription:</span><span class="sxs-lookup"><span data-stu-id="de109-1237">Get-AzEventGridTopic, Get-AzEventGridDomain, Get-AzEventGridDomainTopic, Get-AzEventGridSubscription:</span></span>
-        - <span data-ttu-id="de109-1238">Sayfalandırma ve filtreleme sonuçlarını desteklemek için yeni isteğe bağlı parametreler (Top, ODataQuery and NextLink) ekler.</span><span class="sxs-lookup"><span data-stu-id="de109-1238">Add new optional parameters (Top, ODataQuery and NextLink) to support results pagination and filtering.</span></span>
-    - <span data-ttu-id="de109-1239">Remove-AzureRmEventGridSubscription</span><span class="sxs-lookup"><span data-stu-id="de109-1239">Remove-AzureRmEventGridSubscription</span></span>
-        - <span data-ttu-id="de109-1240">Bu kaynakların altında bulunan mevcut olay aboneliklerinin taşınmasına olanak tanımak amacıyla Event Grid Etki Alanı ve Event Grid Etki Alanı Konu Başlığına yönelik kanal oluşturmayı desteklemek için yeni zorunlu parametreler ekler.</span><span class="sxs-lookup"><span data-stu-id="de109-1240">Add new mandatory parameters to support piping for Event Grid Domain and Event Grid Domain Topic to allow removing existing event subscription under these resources.</span></span>
-        - <span data-ttu-id="de109-1241">Bu kaynakların altında bulunan mevcut olay aboneliklerinin taşınmasına olanak tanımak amacıyla Event Grid Etki Alanı adının ve/veya Event Grid Etki Alanı Konu Başlığı adını belirtmek için yeni zorunlu parametreler ekler.</span><span class="sxs-lookup"><span data-stu-id="de109-1241">Add new mandatory parameters for specifying the Event Grid Domain name and/or Event Grid Domain Topic name to allow removing existing event subscription under these resources.</span></span>
-
-#### <a name="azfrontdoor"></a><span data-ttu-id="de109-1242">Az.FrontDoor</span><span class="sxs-lookup"><span data-stu-id="de109-1242">Az.FrontDoor</span></span>
-* <span data-ttu-id="de109-1243">New-AzFrontDoorWafMatchConditionObject</span><span class="sxs-lookup"><span data-stu-id="de109-1243">New-AzFrontDoorWafMatchConditionObject</span></span>
-    - <span data-ttu-id="de109-1244">Dönüştürmeler desteği ve yeni işleç otomatik tamamlama değeri (RegEx) ekler</span><span class="sxs-lookup"><span data-stu-id="de109-1244">Add transforms support and new operator auto-complete value (RegEx)</span></span>
-* <span data-ttu-id="de109-1245">New-AzFrontDoorWafManagedRuleObject</span><span class="sxs-lookup"><span data-stu-id="de109-1245">New-AzFrontDoorWafManagedRuleObject</span></span>
-    - <span data-ttu-id="de109-1246">Yeni otomatik tamamlama değerleri ekler</span><span class="sxs-lookup"><span data-stu-id="de109-1246">Add new auto-complete values</span></span>
-
-#### <a name="aznetwork"></a><span data-ttu-id="de109-1247">Az.Network</span><span class="sxs-lookup"><span data-stu-id="de109-1247">Az.Network</span></span>
-* <span data-ttu-id="de109-1248">Sanal Ağ Geçidi Kaynağı için destek ekler</span><span class="sxs-lookup"><span data-stu-id="de109-1248">Add support for Virtual Network Gateway Resource</span></span>
-    - <span data-ttu-id="de109-1249">Yeni cmdlet’ler</span><span class="sxs-lookup"><span data-stu-id="de109-1249">New cmdlets</span></span>
-        - <span data-ttu-id="de109-1250">Get-AzVirtualNetworkGatewayVpnClientConnectionHealth</span><span class="sxs-lookup"><span data-stu-id="de109-1250">Get-AzVirtualNetworkGatewayVpnClientConnectionHealth</span></span>
-* <span data-ttu-id="de109-1251">AvailablePrivateEndpointType ekler</span><span class="sxs-lookup"><span data-stu-id="de109-1251">Add AvailablePrivateEndpointType</span></span>
-    - <span data-ttu-id="de109-1252">Yeni cmdlet’ler</span><span class="sxs-lookup"><span data-stu-id="de109-1252">New cmdlets</span></span>
-        - <span data-ttu-id="de109-1253">Get-AzAvailablePrivateEndpointType</span><span class="sxs-lookup"><span data-stu-id="de109-1253">Get-AzAvailablePrivateEndpointType</span></span>
-* <span data-ttu-id="de109-1254">PrivatePrivateLinkService ekler</span><span class="sxs-lookup"><span data-stu-id="de109-1254">Add PrivatePrivateLinkService</span></span>
-    - <span data-ttu-id="de109-1255">Yeni cmdlet’ler</span><span class="sxs-lookup"><span data-stu-id="de109-1255">New cmdlets</span></span>
-        - <span data-ttu-id="de109-1256">Get-AzPrivateLinkService</span><span class="sxs-lookup"><span data-stu-id="de109-1256">Get-AzPrivateLinkService</span></span>
-        - <span data-ttu-id="de109-1257">New-AzPrivateLinkService</span><span class="sxs-lookup"><span data-stu-id="de109-1257">New-AzPrivateLinkService</span></span>
-        - <span data-ttu-id="de109-1258">Remove-AzPrivateLinkService</span><span class="sxs-lookup"><span data-stu-id="de109-1258">Remove-AzPrivateLinkService</span></span>
-        - <span data-ttu-id="de109-1259">New-AzPrivateLinkServiceIpConfig</span><span class="sxs-lookup"><span data-stu-id="de109-1259">New-AzPrivateLinkServiceIpConfig</span></span>
-        - <span data-ttu-id="de109-1260">Set-AzPrivateEndpointConnection</span><span class="sxs-lookup"><span data-stu-id="de109-1260">Set-AzPrivateEndpointConnection</span></span>
-* <span data-ttu-id="de109-1261">PrivateEndpoint ekler</span><span class="sxs-lookup"><span data-stu-id="de109-1261">Add PrivateEndpoint</span></span>
-    - <span data-ttu-id="de109-1262">Yeni cmdlet’ler</span><span class="sxs-lookup"><span data-stu-id="de109-1262">New cmdlets</span></span>
-        - <span data-ttu-id="de109-1263">Get-AzPrivateEndpoint</span><span class="sxs-lookup"><span data-stu-id="de109-1263">Get-AzPrivateEndpoint</span></span>
-        - <span data-ttu-id="de109-1264">New-AzPrivateEndpoint</span><span class="sxs-lookup"><span data-stu-id="de109-1264">New-AzPrivateEndpoint</span></span>
-        - <span data-ttu-id="de109-1265">Remove-AzPrivateEndpoint</span><span class="sxs-lookup"><span data-stu-id="de109-1265">Remove-AzPrivateEndpoint</span></span>
-        - <span data-ttu-id="de109-1266">New-AzPrivateLinkServiceConnection</span><span class="sxs-lookup"><span data-stu-id="de109-1266">New-AzPrivateLinkServiceConnection</span></span>
-* <span data-ttu-id="de109-1267">Özellik için aşağıdaki komutlar güncelleştirildi: VpnConnection’da UseLocalAzureIpAddress bayrağı</span><span class="sxs-lookup"><span data-stu-id="de109-1267">Updated below commands for feature: UseLocalAzureIpAddress flag on VpnConnection</span></span>
-    - <span data-ttu-id="de109-1268">New-AzVpnConnection güncelleştirildi: Bağlantı başlatılırken yerel Azure IP adresinin kullanılması gerektiğini belirtmek için isteğe bağlı -UseLocalAzureIpAddress parametresi eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-1268">Updated New-AzVpnConnection: Added optional parameter -UseLocalAzureIpAddress to indicate that local azure ip address should be used as source address while initiating connection.</span></span>
-    - <span data-ttu-id="de109-1269">Set-AzVpnConnection güncelleştirildi: Bağlantı başlatılırken yerel Azure IP adresinin kullanılması gerektiğini belirtmek için isteğe bağlı -UseLocalAzureIpAddress parametresi eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-1269">Updated Set-AzVpnConnection: Added optional parameter -UseLocalAzureIpAddress to indicate that local azure ip address should be used as source address while initiating connection.</span></span>
-* <span data-ttu-id="de109-1270">ExpressRoute eşlemede PeeredConnections salt okunur alanı eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-1270">Added readonly field PeeredConnections in ExpressRoute peering.</span></span>
-* <span data-ttu-id="de109-1271">ExpressRoute’ta GlobalReachEnabled salt okunur alanı eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-1271">Added readonly field GlobalReachEnabled in ExpressRoute.</span></span>
-* <span data-ttu-id="de109-1272">ExpressRouteCircuit modelindeki AllowGlobalReach alanının kullanımdan kaldırıldığını duyurmak için hataya neden olan değişiklik özniteliği eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-1272">Added breaking change attribute to call out deprecation of AllowGlobalReach field in ExpressRouteCircuit model</span></span>
-* <span data-ttu-id="de109-1273">AzApplicationGatewayRedirectConfiguration cmdlet’leri ile TargetListenerID’yi kullanırken oluşan 8756 Hatası Sorunu düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-1273">Fixed Issue 8756 Error using TargetListenerID with AzApplicationGatewayRedirectConfiguration cmdlets</span></span>
-* <span data-ttu-id="de109-1274">New-AzApplicationGatewayPathRuleConfig’de yeniden yazma kuralının ayarlanmasını engelleyen hata düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="de109-1274">Fixed bug in New-AzApplicationGatewayPathRuleConfig that prevented the rewrite ruleset from being set.</span></span>
-* <span data-ttu-id="de109-1275">NetworkInterfaceIpConfiguration’da VirtualNetworkTaps’in görüntülenmesi düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-1275">Fixed displaying of VirtualNetworkTaps in NetworkInterfaceIpConfiguration</span></span>
-* <span data-ttu-id="de109-1276">Tümünü listele bölümü için Cortex Get cmdlet’leri düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-1276">Fixed Cortex Get cmdlets for list all part</span></span>
-* <span data-ttu-id="de109-1277">ExpressRouteGateways ve VpnGateway için VirtualHub başvurusu oluşturma düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-1277">Fixed VirtualHub reference creation for ExpressRouteGateways, VpnGateway</span></span>
-* <span data-ttu-id="de109-1278">AzureFirewall ve NatGateway için Kullanılabilirlik Alanları desteği eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-1278">Added support for Availability Zones in AzureFirewall and NatGateway</span></span>
-* <span data-ttu-id="de109-1279">Get-AzNetworkServiceTag cmdlet’i eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-1279">Added cmdlet Get-AzNetworkServiceTag</span></span>
-* <span data-ttu-id="de109-1280">Azure Güvenlik Duvarı için birden fazla genel IP adresi desteği eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-1280">Add support for multiple public IP addresses for Azure Firewall</span></span>
-    - <span data-ttu-id="de109-1281">New-AzFirewall cmdlet'i güncelleştirildi:</span><span class="sxs-lookup"><span data-stu-id="de109-1281">Updated New-AzFirewall cmdlet:</span></span>
-        - <span data-ttu-id="de109-1282">Bir veya daha fazla Genel IP Adresi nesnesi kabul eden -PublicIpAddress parametresi eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-1282">Added parameter -PublicIpAddress which accepts one or more Public IP Address objects</span></span>
-        - <span data-ttu-id="de109-1283">Bir Sanal Ağ nesnesini kabul eden -VirtualNetwork parametresi eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-1283">Added parameter -VirtualNetwork which accepts a Virtual Network object</span></span>
-        - <span data-ttu-id="de109-1284">Güvenlik duvarı nesnesine AddPublicIpAddress ve RemovePublicIpAddress yöntemleri eklendi - bunlar giriş olarak Genel IP Adresi nesnesini kabul eder</span><span class="sxs-lookup"><span data-stu-id="de109-1284">Added methods AddPublicIpAddress and RemovePublicIpAddress on firewall object - these accept a Public IP Address object as input</span></span>
-        - <span data-ttu-id="de109-1285">Kullanım dışı parametreler - PublicIpName ve -VirtualNetworkName</span><span class="sxs-lookup"><span data-stu-id="de109-1285">Deprecated parameters -PublicIpName and -VirtualNetworkName</span></span>
-* <span data-ttu-id="de109-1286">Özellik için aşağıdaki komutlar güncelleştirildi: Sanal ağ geçidi kaynağına VpnClient AAD kimlik doğrulaması seçenekleri ayarlandı.</span><span class="sxs-lookup"><span data-stu-id="de109-1286">Updated below commands for feature: Set VpnClient AAD authentication options to Virtual network gateway resource.</span></span>
-    - <span data-ttu-id="de109-1287">New-AzVirtualNetworkGateway güncelleştirildi: Ağ Geçidinde VpnClient AAD kimlik doğrulamasını ayarlamak için isteğe bağlı AadTenantUri, AadAudienceId, AadIssuerUri parametreleri eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-1287">Updated New-AzVirtualNetworkGateway: Added optional parameters AadTenantUri,AadAudienceId,AadIssuerUri to set VpnClient AAD authentication options on Gateway.</span></span>
-    - <span data-ttu-id="de109-1288">Set-AzVirtualNetworkGateway güncelleştirildi: Ağ Geçidinde VpnClient AAD kimlik doğrulamasını ayarlamak için isteğe bağlı AadTenantUri, AadAudienceId, AadIssuerUri parametresi eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-1288">Updated Set-AzVirtualNetworkGateway: Added optional parameter AadTenantUri,AadAudienceId,AadIssuerUri to set VpnClient AAD authentication options on Gateway.</span></span>
-    - <span data-ttu-id="de109-1289">Set-AzVirtualNetworkGateway güncelleştirildi: VpnClient AAD kimlik doğrulaması seçeneklerini Ağ Geçidinden kaldırmak için isteğe bağlı RemoveAadAuthentication anahtar parametresi eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-1289">Updated Set-AzVirtualNetworkGateway: Added optional switch parameter RemoveAadAuthentication to remove VpnClient AAD authentication options from Gateway.</span></span>
-
-#### <a name="azoperationalinsights"></a><span data-ttu-id="de109-1290">Az.OperationalInsights</span><span class="sxs-lookup"><span data-stu-id="de109-1290">Az.OperationalInsights</span></span>
-* <span data-ttu-id="de109-1291">‘New-Azurermoperationalınsightsworkspace’ komutunda **pergb2018** fiyatlandırma katmanı etkinleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-1291">Enable **pergb2018** pricing tier in 'New-AzureRmOperationalInsightsWorkspace' command</span></span>
-
-#### <a name="azresources"></a><span data-ttu-id="de109-1292">Az.Resources</span><span class="sxs-lookup"><span data-stu-id="de109-1292">Az.Resources</span></span>
-* <span data-ttu-id="de109-1293">Ek Şablon Dışarı Aktarma seçenekleri için destek</span><span class="sxs-lookup"><span data-stu-id="de109-1293">Support for additional Template Export options</span></span>
-    - <span data-ttu-id="de109-1294">Export-AzResourceGroup’a ‘-SkipResourceNameParameterization’ parametresi eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-1294">Add '-SkipResourceNameParameterization' parameter to Export-AzResourceGroup</span></span>
-    - <span data-ttu-id="de109-1295">Export-AzResourceGroup’a ‘-SkipAllParameterization’ parametresi eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-1295">Add '-SkipAllParameterization' parameter to Export-AzResourceGroup</span></span>
-    - <span data-ttu-id="de109-1296">Dışarı aktarılan kaynak filtrelemesi için Export-AzResourceGroup’a ‘Resource’ parametresi eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-1296">Add '-Resource' parameter to Export-AzResourceGroup for exported resource filtering</span></span>
-
-#### <a name="azservicefabric"></a><span data-ttu-id="de109-1297">Az.ServiceFabric</span><span class="sxs-lookup"><span data-stu-id="de109-1297">Az.ServiceFabric</span></span>
-* <span data-ttu-id="de109-1298">ByExistingKeyVault sertifika eklemenin bazı durumlarda yanlış parmak izi alması düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-1298">Fix add certificate ByExistingKeyVault getting the wrong thumbprint in some cases</span></span>
-
-#### <a name="azsql"></a><span data-ttu-id="de109-1299">Az.Sql</span><span class="sxs-lookup"><span data-stu-id="de109-1299">Az.Sql</span></span>
-* <span data-ttu-id="de109-1300">Gelişmiş Tehdit Koruması depolama uç noktası son eki düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-1300">Fix Advanced Threat Protection storage endpoint suffix</span></span>
-* <span data-ttu-id="de109-1301">Gelişmiş Veri Güvenliği’ni etkinleştirmenin Gelişmiş Tehdit Koruması ilkesini geçersiz kılması düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-1301">Fix Advanced Data Security enable overrides Advanced Threat Protection policy</span></span>
-* <span data-ttu-id="de109-1302">Müşterilerin yönetilen örnekler için TDE anahtarları ekleyip TDE koruyucusu ayarlamasına olanak tanımak için Management.Sql’e yönelik yeni cmdlet’ler</span><span class="sxs-lookup"><span data-stu-id="de109-1302">New Cmdlets for Management.Sql to allow customers to add TDE keys and set TDE protector for managed instances</span></span>
-   - <span data-ttu-id="de109-1303">Add-AzSqlInstanceKeyVaultKey</span><span class="sxs-lookup"><span data-stu-id="de109-1303">Add-AzSqlInstanceKeyVaultKey</span></span>
-   - <span data-ttu-id="de109-1304">Get-AzSqlInstanceKeyVaultKey</span><span class="sxs-lookup"><span data-stu-id="de109-1304">Get-AzSqlInstanceKeyVaultKey</span></span>
-   - <span data-ttu-id="de109-1305">Remove-AzSqlInstanceKeyVaultKey</span><span class="sxs-lookup"><span data-stu-id="de109-1305">Remove-AzSqlInstanceKeyVaultKey</span></span>
-   - <span data-ttu-id="de109-1306">Get-AzSqlInstanceTransparentDataEncryptionProtector</span><span class="sxs-lookup"><span data-stu-id="de109-1306">Get-AzSqlInstanceTransparentDataEncryptionProtector</span></span>
-   - <span data-ttu-id="de109-1307">Set-AzSqlInstanceTransparentDataEncryptionProtector</span><span class="sxs-lookup"><span data-stu-id="de109-1307">Set-AzSqlInstanceTransparentDataEncryptionProtector</span></span>
-
-#### <a name="azstorage"></a><span data-ttu-id="de109-1308">Az.Storage</span><span class="sxs-lookup"><span data-stu-id="de109-1308">Az.Storage</span></span>
-* <span data-ttu-id="de109-1309">Depolama hesabı oluştururken FileStorage ve SkuName Premium_ZRS tiplerine yönelik destek</span><span class="sxs-lookup"><span data-stu-id="de109-1309">Support Kind FileStorage and SkuName Premium_ZRS when create Storage account</span></span>
-    - <span data-ttu-id="de109-1310">New-AzStorageAccount</span><span class="sxs-lookup"><span data-stu-id="de109-1310">New-AzStorageAccount</span></span>
-* <span data-ttu-id="de109-1311">Blob değiştirilemezlik cmdlet’inin açıklaması netleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-1311">Clarified description of blob immutability cmdlet</span></span>
-    -  <span data-ttu-id="de109-1312">Remove-AzRmStorageContainerImmutabilityPolicy</span><span class="sxs-lookup"><span data-stu-id="de109-1312">Remove-AzRmStorageContainerImmutabilityPolicy</span></span>
-
-#### <a name="azwebsites"></a><span data-ttu-id="de109-1313">Az.Websites</span><span class="sxs-lookup"><span data-stu-id="de109-1313">Az.Websites</span></span>
-* <span data-ttu-id="de109-1314">Kaynak grubu ile filtrelemeyi istemci yerine sunucuda yapmasını sağlayarak Get-AzWebAppCertificate’ı iyileştirir</span><span class="sxs-lookup"><span data-stu-id="de109-1314">Optimizes Get-AzWebAppCertificate to filter by resource group on the server instead of the client</span></span>
-* <span data-ttu-id="de109-1315">Get-AzWebAppSnapshot’a -UseDisasterRecovery anahtar parametresi ekler</span><span class="sxs-lookup"><span data-stu-id="de109-1315">Adds -UseDisasterRecovery switch parameter to Get-AzWebAppSnapshot</span></span>
-
-## <a name="220---june-2019"></a><span data-ttu-id="de109-1316">2.2.0 - Haziran 2019</span><span class="sxs-lookup"><span data-stu-id="de109-1316">2.2.0 - June 2019</span></span>
-#### <a name="azcdn"></a><span data-ttu-id="de109-1317">Az.Cdn</span><span class="sxs-lookup"><span data-stu-id="de109-1317">Az.Cdn</span></span>
-* <span data-ttu-id="de109-1318">Cmdlet'ler API sürümü 2019-04-15’i temel alan rulesEngine özelliğini destekleyecek şekilde güncelleştirildi.</span><span class="sxs-lookup"><span data-stu-id="de109-1318">Updated cmdlets to support rulesEngine feature based on API version 2019-04-15.</span></span>
-
-#### <a name="azcompute"></a><span data-ttu-id="de109-1319">Az.Compute</span><span class="sxs-lookup"><span data-stu-id="de109-1319">Az.Compute</span></span>
-* <span data-ttu-id="de109-1320">İşlemi başlatan ve işlem tamamlanmadan önce hemen döndürülen `NoWait` parametresi eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-1320">Added `NoWait` parameter that starts the operation and returns immediately, before the operation is completed.</span></span>
-    - <span data-ttu-id="de109-1321">Cmdlet'ler güncelleştirildi:   Export-AzLogAnalyticRequestRateByInterval   Export-AzLogAnalyticThrottledRequest   Remove-AzVM   Remove-AzVMAccessExtension   Remove-AzVMAEMExtension   Remove-AzVMChefExtension   Remove-AzVMCustomScriptExtension   Remove-AzVMDiagnosticsExtension   Remove-AzVMDiskEncryptionExtension   Remove-AzVMDscExtension   Remove-AzVMSqlServerExtension   Restart-AzVM   Set-AzVM   Set-AzVMAccessExtension   Set-AzVMADDomainExtension   Set-AzVMAEMExtension   Set-AzVMBginfoExtension   Set-AzVMChefExtension   Set-AzVMCustomScriptExtension   Set-AzVMDiagnosticsExtension   Set-AzVMDscExtension   Set-AzVMExtension   Start-AzVM   Stop-AzVM   Update-AzVM</span><span class="sxs-lookup"><span data-stu-id="de109-1321">Updated cmdlets:   Export-AzLogAnalyticRequestRateByInterval   Export-AzLogAnalyticThrottledRequest   Remove-AzVM   Remove-AzVMAccessExtension   Remove-AzVMAEMExtension   Remove-AzVMChefExtension   Remove-AzVMCustomScriptExtension   Remove-AzVMDiagnosticsExtension   Remove-AzVMDiskEncryptionExtension   Remove-AzVMDscExtension   Remove-AzVMSqlServerExtension   Restart-AzVM   Set-AzVM   Set-AzVMAccessExtension   Set-AzVMADDomainExtension   Set-AzVMAEMExtension   Set-AzVMBginfoExtension   Set-AzVMChefExtension   Set-AzVMCustomScriptExtension   Set-AzVMDiagnosticsExtension   Set-AzVMDscExtension   Set-AzVMExtension   Start-AzVM   Stop-AzVM   Update-AzVM</span></span>
-
-#### <a name="azeventhub"></a><span data-ttu-id="de109-1322">Az.EventHub</span><span class="sxs-lookup"><span data-stu-id="de109-1322">Az.EventHub</span></span>
-* <span data-ttu-id="de109-1323">#9231 - Get-AzEventHubNamespace etiketleri döndürmüyor hatasının düzeltmesi</span><span class="sxs-lookup"><span data-stu-id="de109-1323">Fix for #9231 - Get-AzEventHubNamespace does not return tags</span></span>
-* <span data-ttu-id="de109-1324">#9230 - Get-AzEventHubNamespace ResourceGroupName yerine ResourceGroup döndürüyor hatasının düzeltmesi</span><span class="sxs-lookup"><span data-stu-id="de109-1324">Fix for #9230 - Get-AzEventHubNamespace returns ResourceGroup instead of ResourceGroupName</span></span>
-
-#### <a name="aznetwork"></a><span data-ttu-id="de109-1325">Az.Network</span><span class="sxs-lookup"><span data-stu-id="de109-1325">Az.Network</span></span>
-* <span data-ttu-id="de109-1326">Nat Gateway için ResourceId ve InputObject değerleri güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-1326">Update ResourceId and InputObject for Nat Gateway</span></span>
-    - <span data-ttu-id="de109-1327">ResourceId ve InputObject için diğer ad eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-1327">Add alias for ResourceId and InputObject</span></span>
-
-#### <a name="azpolicyinsights"></a><span data-ttu-id="de109-1328">Az.PolicyInsights</span><span class="sxs-lookup"><span data-stu-id="de109-1328">Az.PolicyInsights</span></span>
-* <span data-ttu-id="de109-1329">Get-AzPolicyEvent’de Boş referans sorunu düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-1329">Fix Null reference issue in Get-AzPolicyEvent</span></span>
-
-#### <a name="azrecoveryservices"></a><span data-ttu-id="de109-1330">Az.RecoveryServices</span><span class="sxs-lookup"><span data-stu-id="de109-1330">Az.RecoveryServices</span></span>
-* <span data-ttu-id="de109-1331">IaaSVM ilkesinin gün cinsinden en kısa saklama süresi 1'den 7'ye değiştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-1331">IaaSVM policy minimum retention in days changed to 7 from 1</span></span>
-
-#### <a name="azservicebus"></a><span data-ttu-id="de109-1332">Az.ServiceBus</span><span class="sxs-lookup"><span data-stu-id="de109-1332">Az.ServiceBus</span></span>
-* <span data-ttu-id="de109-1333">#9182 - Get-AzServiceBusNamespace ResourceGroupName yerine ResourceGroup döndürüyor sorunu çözüldü</span><span class="sxs-lookup"><span data-stu-id="de109-1333">Fix for issue #9182 - Get-AzServiceBusNamespace returns ResourceGroup instead of ResourceGroupName</span></span>
-
-#### <a name="azservicefabric"></a><span data-ttu-id="de109-1334">Az.ServiceFabric</span><span class="sxs-lookup"><span data-stu-id="de109-1334">Az.ServiceFabric</span></span>
-* <span data-ttu-id="de109-1335">'Update-AzServiceFabricReliability' hata iletisindeki yazım hatası düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-1335">Fix typo in error message for 'Update-AzServiceFabricReliability'</span></span>
-* <span data-ttu-id="de109-1336">Service Fabric komut satırlarındaki eksik karakter düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-1336">Fix missing character in Service Fabric cmdlines</span></span>
-
-#### <a name="azsql"></a><span data-ttu-id="de109-1337">Az.Sql</span><span class="sxs-lookup"><span data-stu-id="de109-1337">Az.Sql</span></span>
-* <span data-ttu-id="de109-1338">Yönetilen Örnek için AutoDr’yi desteklemek amacıyla New-AzureSqlInstance cmdlet’ine DnsZonePartner parametresi eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-1338">Add DnsZonePartner Parameter for New-AzureSqlInstance cmdlet to support AutoDr for Managed Instance.</span></span>
-* <span data-ttu-id="de109-1339">Get-AzSqlDatabaseSecureConnectionPolicy cmdlet’i kullanım dışı bırakıldı</span><span class="sxs-lookup"><span data-stu-id="de109-1339">Deprecating Get-AzSqlDatabaseSecureConnectionPolicy cmdlet</span></span>
-* <span data-ttu-id="de109-1340">Gelişmiş Tehdit Koruması için Tehdit Algılama cmdlet’leri yeniden adlandırıldı</span><span class="sxs-lookup"><span data-stu-id="de109-1340">Rename Threat Detection cmdlets to Advanced Threat Protection</span></span>
-* <span data-ttu-id="de109-1341">New-AzSqlInstance - StorageSizeInGB ve -LicenseType parametreleri artık isteğe bağlı.</span><span class="sxs-lookup"><span data-stu-id="de109-1341">New-AzSqlInstance -StorageSizeInGB and -LicenseType parameters are now optional.</span></span>
-
-#### <a name="azwebsites"></a><span data-ttu-id="de109-1342">Az.Websites</span><span class="sxs-lookup"><span data-stu-id="de109-1342">Az.Websites</span></span>
-* <span data-ttu-id="de109-1343">Set-AzWebApp ve Set-AzWebAppSlot, WebApp özelliğiyle kullanıldığında etiketlerin kaldırılmasına neden olan sorun giderildi</span><span class="sxs-lookup"><span data-stu-id="de109-1343">fixes the issue where using  Set-AzWebApp and Set-AzWebAppSlot with -WebApp property was removing the tags</span></span>
-
-## <a name="210---may-2019"></a><span data-ttu-id="de109-1344">2.1.0 - Mayıs 2019</span><span class="sxs-lookup"><span data-stu-id="de109-1344">2.1.0 - May 2019</span></span>
-#### <a name="azapimanagement"></a><span data-ttu-id="de109-1345">Az.ApiManagement</span><span class="sxs-lookup"><span data-stu-id="de109-1345">Az.ApiManagement</span></span>
-* <span data-ttu-id="de109-1346">Genel Kapsamda ve API Kapsamında tanılamaları yönetmek için yeni Cmdlet'ler oluşturuldu</span><span class="sxs-lookup"><span data-stu-id="de109-1346">Created new Cmdlets for managing diagnostics at the global and API Scope</span></span>
-    - <span data-ttu-id="de109-1347">**Get-AzApiManagementDiagnostic** - Genel kapsam veya API Kapsamında yapılandırılan tanılamaları alır</span><span class="sxs-lookup"><span data-stu-id="de109-1347">**Get-AzApiManagementDiagnostic** - Get the diagnostics configured a global or api Scope</span></span>
-    - <span data-ttu-id="de109-1348">**New-AzApiManagementDiagnostic** - Genel kapsamda veya API Kapsamında yeni tanılama oluşturur</span><span class="sxs-lookup"><span data-stu-id="de109-1348">**New-AzApiManagementDiagnostic** - Create new diagnostics at the global scope or api Scope</span></span>
-    - <span data-ttu-id="de109-1349">**New-AzApiManagementHttpMessageDiagnostic** - Üst Bilgileri günlüğe kaydetme ve Gövde Baytları boyutu için tanılama ayarı oluşturur</span><span class="sxs-lookup"><span data-stu-id="de109-1349">**New-AzApiManagementHttpMessageDiagnostic** - Create diagnostic setting for which Headers to log and the size of Body Bytes</span></span>
-    - <span data-ttu-id="de109-1350">**New-AzApiManagementPipelineDiagnosticSetting** - Ağ Geçidinde gelen/giden HTTP iletileri için Tanılama ayarları oluşturur.</span><span class="sxs-lookup"><span data-stu-id="de109-1350">**New-AzApiManagementPipelineDiagnosticSetting** - Create Diagnostic settings for incoming/outgoing HTTP messages to the Gateway.</span></span>
-    - <span data-ttu-id="de109-1351">**New-AzApiManagementSamplingSetting** - Tanılamaya yönelik istekler/yanıtlar için Örnekleme Ayarı oluşturur</span><span class="sxs-lookup"><span data-stu-id="de109-1351">**New-AzApiManagementSamplingSetting** - Create Sampling Setting  for the requests/response for a diagnostic</span></span>
-    - <span data-ttu-id="de109-1352">**Remove-AzApiManagementDiagnostic** - Genel kapsamda veya API kapsamında tanılama varlığını kaldırır</span><span class="sxs-lookup"><span data-stu-id="de109-1352">**Remove-AzApiManagementDiagnostic** - Remove a diagnostic entity at global or api scope</span></span>
-    - <span data-ttu-id="de109-1353">**Set-AzApiManagementDiagnostic** - Genel kapsamda veya API kapsamında tanılama Varlığını güncelleştirir</span><span class="sxs-lookup"><span data-stu-id="de109-1353">**Set-AzApiManagementDiagnostic** - Update a diagnostic Entity at global or api scope</span></span>
-* <span data-ttu-id="de109-1354">ApiManagement hizmetinde Önbellek yönetimi için yeni Cmdlet'ler oluşturuldu</span><span class="sxs-lookup"><span data-stu-id="de109-1354">Created new Cmdlets for managing Cache in ApiManagement service</span></span>
-    - <span data-ttu-id="de109-1355">**Get-AzApiManagementCache** - Tanımlayıcı tarafından belirtilen Önbelleğin veya tüm önbelleklerin ayrıntılarını alır</span><span class="sxs-lookup"><span data-stu-id="de109-1355">**Get-AzApiManagementCache** - Get the details of the Cache specified by identifier or all caches</span></span>
-    - <span data-ttu-id="de109-1356">**New-AzApiManagementCache** - Yeni bir 'varsayılan' Önbellek veya belirli bir azure 'bölgesinde' Önbellek oluşturur</span><span class="sxs-lookup"><span data-stu-id="de109-1356">**New-AzApiManagementCache** - Create a new 'default' Cache or Cache in a particular azure 'region'</span></span>
-    - <span data-ttu-id="de109-1357">**Remove-AzApiManagementCache** - Önbelleği kaldırır</span><span class="sxs-lookup"><span data-stu-id="de109-1357">**Remove-AzApiManagementCache** - Remove a cache</span></span>
-    - <span data-ttu-id="de109-1358">**Update-AzApiManagementCache** - Önbelleği güncelleştirir</span><span class="sxs-lookup"><span data-stu-id="de109-1358">**Update-AzApiManagementCache** - Update a cache</span></span>
-* <span data-ttu-id="de109-1359">API Şemasını yönetmek için yeni Cmdlet'ler oluşturuldu</span><span class="sxs-lookup"><span data-stu-id="de109-1359">Created new Cmdlets for managing API Schema</span></span>
-    - <span data-ttu-id="de109-1360">**New-AzApiManagementSchema** - API için yeni Şema oluşturur</span><span class="sxs-lookup"><span data-stu-id="de109-1360">**New-AzApiManagementSchema** - Create a new Schema for an API</span></span>
-    - <span data-ttu-id="de109-1361">**Get-AzApiManagementSchema** - API'de yapılandırılan şemaları alır</span><span class="sxs-lookup"><span data-stu-id="de109-1361">**Get-AzApiManagementSchema** - Get the schemas configured in the API</span></span>
-    - <span data-ttu-id="de109-1362">**Remove-AzApiManagementSchema** - API'de yapılandırılan şemaları kaldırır</span><span class="sxs-lookup"><span data-stu-id="de109-1362">**Remove-AzApiManagementSchema** - Remove the schema configured in the API</span></span>
-    - <span data-ttu-id="de109-1363">**Set-AzApiManagementSchema** - API'de yapılandırılan şemayı güncelleştirir</span><span class="sxs-lookup"><span data-stu-id="de109-1363">**Set-AzApiManagementSchema** - Update the schema configured in the API</span></span>
-* <span data-ttu-id="de109-1364">Kullanıcı Belirteci oluşturmak için yeni Cmdlet oluşturuldu.</span><span class="sxs-lookup"><span data-stu-id="de109-1364">Created new Cmdlet for generating a User Token.</span></span>
-    - <span data-ttu-id="de109-1365">**New-AzApiManagementUserToken** - Varsayılan olarak 8 saat geçerli kalan yeni bir Kullanıcı Belirteci oluşturur. 'GIT' kullanıcısı için bu cmdlet kullanılarak Belirteç oluşturulabilir./</span><span class="sxs-lookup"><span data-stu-id="de109-1365">**New-AzApiManagementUserToken** - Generate a new User Token valid for 8 hours by default.Token for the 'GIT' user can be generated using this cmdlet./</span></span>
-* <span data-ttu-id="de109-1366">Ağ Durumunu almak için yeni cmdlet oluşturuldu</span><span class="sxs-lookup"><span data-stu-id="de109-1366">Created a new cmdlet to retrieving the Network Status</span></span>
-    - <span data-ttu-id="de109-1367">**Get-AzApiManagementNetworkStatus** - API Management hizmetinin bağımlı olduğu kaynakların bağlantısında ağ durumunu alır.</span><span class="sxs-lookup"><span data-stu-id="de109-1367">**Get-AzApiManagementNetworkStatus** - Get the Network status connectivity of resources on which API Management service depends on.</span></span> <span data-ttu-id="de109-1368">ApiManagement hizmeti Sanal Ağa dağıtılırken ve bağımlılıklardan herhangi birinin bozulup bozulmadığı denetlenirken bu cmdlet yararlı olur.</span><span class="sxs-lookup"><span data-stu-id="de109-1368">This is useful when deploying ApiManagement service into a Virtual Network and validing whether any of the dependencies are broken.</span></span>
-* <span data-ttu-id="de109-1369">**New-AzApiManagement** cmdlet'i ApiManagement hizmetini yönetecek şekilde güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-1369">Updated cmdlet **New-AzApiManagement** to manage ApiManagement service</span></span>
-    - <span data-ttu-id="de109-1370">Yeni 'Consumption' SKU'su için destek eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-1370">Added support for the new 'Consumption' SKU</span></span>
-    - <span data-ttu-id="de109-1371">'Consumption' SKU'sunda 'EnableClientCertificate' bayrağını etkinleştirmek için destek eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-1371">Added support to turn the 'EnableClientCertificate' flag on for 'Consumption' SKU</span></span>
-    - <span data-ttu-id="de109-1372">Yeni **New-AzApiManagementSslSetting** cmdlet'i 'Backend' ve 'Frontend'de 'TLS/SSL' ayarını yapılandırmaya olanak tanır.</span><span class="sxs-lookup"><span data-stu-id="de109-1372">The new cmdlet **New-AzApiManagementSslSetting** allows configuring 'TLS/SSL' setting on the 'Backend' and 'Frontend'.</span></span> <span data-ttu-id="de109-1373">Bu cmdlet ApiManagement hizmetinin 'Frontend'inde '3DES' gibi 'Ciphers' yapılandırması ve 'Http2' gibi 'ServerProtocols' yapılandırması için de kullanılabilir.</span><span class="sxs-lookup"><span data-stu-id="de109-1373">This can also be used to configure 'Ciphers' like '3DES' and 'ServerProtocols' like 'Http2' on the 'Frontend' of an ApiManagement service.</span></span>
-    - <span data-ttu-id="de109-1374">ApiManagement hizmetinde 'DeveloperPortal' ana bilgisayar adının yapılandırması için destek eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-1374">Added support for configuring the 'DeveloperPortal' hostname on ApiManagement service.</span></span>
-* <span data-ttu-id="de109-1375">**Get-AzApiManagementSsoToken** cmdlet'leri giriş olarak 'PsApiManagement' nesnesini alacak şekilde güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-1375">Updated cmdlets **Get-AzApiManagementSsoToken** to take 'PsApiManagement' object as input</span></span>
-* <span data-ttu-id="de109-1376">Cmdlet satır içinde Hata İletileri görüntüleyecek şekilde güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-1376">Updated the cmdlet to display Error Messages inline</span></span>
-     > <span data-ttu-id="de109-1377">PS D:\github\azure-powershell> Set-AzApiManagementPolicy -Context  -PolicyFilePath C:\wrongpolicy.xml -ApiId httpbin Set-AzApiManagementPolicy : Hata Kodu: ValidationError Hata İletisi: Bir veya birden çok alan yanlış değerler içeriyor: Hata Ayrıntıları:    [Code=ValidationError, Message=Error in element 'log-to-eventhub' on line 3, column 10: Logger not found, Target=log-to-eventhub]</span><span class="sxs-lookup"><span data-stu-id="de109-1377">PS D:\github\azure-powershell> Set-AzApiManagementPolicy -Context  -PolicyFilePath C:\wrongpolicy.xml -ApiId httpbin Set-AzApiManagementPolicy : Error Code: ValidationError Error Message: One or more fields contain incorrect values: Error Details:    [Code=ValidationError, Message=Error in element 'log-to-eventhub' on line 3, column 10: Logger not found, Target=log-to-eventhub]</span></span>
-* <span data-ttu-id="de109-1378">**Export-AzApiManagementApi** cmdlet'i API'leri 'OpenApi 3.0' biçiminde dışarı aktaracak şekilde güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-1378">Updated cmdlet **Export-AzApiManagementApi** to export APIs in 'OpenApi 3.0' format</span></span>
-* <span data-ttu-id="de109-1379">**Import-AzApiManagementApi** cmdlet'i güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-1379">Updated cmdlet **Import-AzApiManagementApi**</span></span>
-    - <span data-ttu-id="de109-1380">'OpenApi 3.0' belge belirtiminden Api'yi içeri aktarmak için</span><span class="sxs-lookup"><span data-stu-id="de109-1380">To import Api from 'OpenApi 3.0' document specification</span></span>
-    - <span data-ttu-id="de109-1381">Herhangi bir ('Swagger', 'Wadl', 'Wsdl', 'OpenApi') belgesinde belirtilen 'PsApiManagementSchema' özelliğini geçersiz kılmak için.</span><span class="sxs-lookup"><span data-stu-id="de109-1381">To override the 'PsApiManagementSchema' property specified in any ('Swagger', 'Wadl', 'Wsdl', 'OpenApi') document.</span></span>
-    - <span data-ttu-id="de109-1382">Herhangi bir belgede belirtilen 'ServiceUrl' özelliğini geçersiz kılmak için.</span><span class="sxs-lookup"><span data-stu-id="de109-1382">To override the 'ServiceUrl' property specified in any document.</span></span>
-* <span data-ttu-id="de109-1383">**Get-AzApiManagementPolicy** cmdlet'i ilkeyi 'rawxml' kullanarak Non-Xml kaçışlı 'format' olarak döndürecek şekilde güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-1383">Updated cmdlet **Get-AzApiManagementPolicy** to return policy in Non-Xml escaped 'format' using 'rawxml'</span></span>
-* <span data-ttu-id="de109-1384">**Set-AzApiManagementPolicy** cmdlet'i ilkeyi 'rawxml' kullanarak Non-Xml kaçışlı 'format' olarak ve 'xml' kullanarak Xml kaçışlı kabul edecek şekilde güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-1384">Updated cmdlet **Set-AzApiManagementPolicy** to accept policy in Non-Xml escaped 'format' using 'rawxml' and Xml escaped using 'xml'</span></span>
-* <span data-ttu-id="de109-1385">**New-AzApiManagementApi** cmdlet'i güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-1385">Updated cmdlet **New-AzApiManagementApi**</span></span>
-    - <span data-ttu-id="de109-1386">API'yi 'OpenId' yetkilendirme sunucusuyla yapılandırmak için.</span><span class="sxs-lookup"><span data-stu-id="de109-1386">To configure API with 'OpenId' authorization server.</span></span>
-    - <span data-ttu-id="de109-1387">'ApiVersionSet' içinde API oluşturmak için</span><span class="sxs-lookup"><span data-stu-id="de109-1387">To create an API in an 'ApiVersionSet'</span></span>
-    - <span data-ttu-id="de109-1388">'SourceApiId' ve 'SourceApiRevision' kullanıp API'yi kopyalamak için.</span><span class="sxs-lookup"><span data-stu-id="de109-1388">To clone an API using 'SourceApiId' and 'SourceApiRevision'.</span></span>
-    - <span data-ttu-id="de109-1389">Api kapsamında 'SubscriptionRequired' yapılandırabilme özelliği.</span><span class="sxs-lookup"><span data-stu-id="de109-1389">Ability to configure 'SubscriptionRequired' at the Api scope.</span></span>
-* <span data-ttu-id="de109-1390">**Set-AzApiManagementApi** cmdlet'i güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-1390">Updated cmdlet **Set-AzApiManagementApi**</span></span>
-    - <span data-ttu-id="de109-1391">API'yi 'OpenId' yetkilendirme sunucusuyla yapılandırmak için.</span><span class="sxs-lookup"><span data-stu-id="de109-1391">To configure API with 'OpenId' authorization server.</span></span>
-    - <span data-ttu-id="de109-1392">API'yi 'ApiVersionSet' olarak güncelleştirmek için</span><span class="sxs-lookup"><span data-stu-id="de109-1392">To updated an API into an 'ApiVersionSet'</span></span>
-    - <span data-ttu-id="de109-1393">Api kapsamında 'SubscriptionRequired' yapılandırabilme özelliği.</span><span class="sxs-lookup"><span data-stu-id="de109-1393">Ability to configure 'SubscriptionRequired' at the Api scope.</span></span>
-* <span data-ttu-id="de109-1394">**New-AzApiManagementRevision** cmdlet'i güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-1394">Updated cmdlet **New-AzApiManagementRevision**</span></span>
-    - <span data-ttu-id="de109-1395">'SourceApiRevision' kullanarak mevcut düzeltmeyi kopyalamak (etiketleri, ürünleri, işlemleri ve ilkeleri kopyalamak) için.</span><span class="sxs-lookup"><span data-stu-id="de109-1395">To clone (copy tags, products, operations and policies) an existing revision using 'SourceApiRevision'.</span></span> <span data-ttu-id="de109-1396">Yeni Düzeltme üst öğenin 'ApiId' değerini varsayılan olarak alır.</span><span class="sxs-lookup"><span data-stu-id="de109-1396">The new Revision assumes the 'ApiId' of the parent.</span></span>
-    - <span data-ttu-id="de109-1397">'ApiRevisionDescription' sağlamak için</span><span class="sxs-lookup"><span data-stu-id="de109-1397">To provide an 'ApiRevisionDescription'</span></span>
-    - <span data-ttu-id="de109-1398">API kopyalanırken 'ServiceUrl' değerini geçersiz kılmak için.</span><span class="sxs-lookup"><span data-stu-id="de109-1398">To override the 'ServiceUrl' when cloning an API.</span></span>
-* <span data-ttu-id="de109-1399">**New-AzApiManagementIdentityProvider** cmdlet'i güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-1399">Updated cmdlet **New-AzApiManagementIdentityProvider**</span></span>
-    - <span data-ttu-id="de109-1400">'AAD' veya 'AADB2C'yi bir 'Authority' ile yapılandırmak için</span><span class="sxs-lookup"><span data-stu-id="de109-1400">To configure 'AAD' or 'AADB2C' with an 'Authority'</span></span>
-    - <span data-ttu-id="de109-1401">'SignupPolicy', 'SigninPolicy', 'ProfileEditingPolicy' ve 'PasswordResetPolicy' ayarlamak için</span><span class="sxs-lookup"><span data-stu-id="de109-1401">To setup 'SignupPolicy', 'SigninPolicy', 'ProfileEditingPolicy' and 'PasswordResetPolicy'</span></span>
-* <span data-ttu-id="de109-1402">**New-AzApiManagementSubscription** cmdlet'i güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-1402">Updated cmdlet **New-AzApiManagementSubscription**</span></span>
-    - <span data-ttu-id="de109-1403">'Scope' ve 'UserId' kullanarak yeni SubscriptonModel'i hesaba katmak için</span><span class="sxs-lookup"><span data-stu-id="de109-1403">To account for the new SubscriptonModel using 'Scope' and 'UserId'</span></span>
-    - <span data-ttu-id="de109-1404">'ProductId' ve 'UserId' kullanarak eski abonelik modelini hesaba katmak için</span><span class="sxs-lookup"><span data-stu-id="de109-1404">To account for the old subscription model using 'ProductId' and 'UserId'</span></span>
-    - <span data-ttu-id="de109-1405">Abonelik düzeyinde 'AllowTracing' özelliğini etkinleştirmek için destek eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-1405">Add support to enable 'AllowTracing' at the subscription level.</span></span>
-* <span data-ttu-id="de109-1406">**Set-AzApiManagementSubscription** cmdlet'i güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-1406">Updated cmdlet **Set-AzApiManagementSubscription**</span></span>
-    - <span data-ttu-id="de109-1407">'Scope' ve 'UserId' kullanarak yeni SubscriptonModel'i hesaba katmak için</span><span class="sxs-lookup"><span data-stu-id="de109-1407">To account for the new SubscriptonModel using 'Scope' and 'UserId'</span></span>
-    - <span data-ttu-id="de109-1408">'ProductId' ve 'UserId' kullanarak eski abonelik modelini hesaba katmak için</span><span class="sxs-lookup"><span data-stu-id="de109-1408">To account for the old subscription model using 'ProductId' and 'UserId'</span></span>
-    - <span data-ttu-id="de109-1409">Abonelik düzeyinde 'AllowTracing' özelliğini etkinleştirmek için destek eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-1409">Add support to enable 'AllowTracing' at the subscription level.</span></span>
-* <span data-ttu-id="de109-1410">Aşağıdaki cmdlet'ler giriş olarak 'ResourceId' kabul edecek şekilde güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-1410">Updated following cmdlets to accept 'ResourceId' as input</span></span>
-    - <span data-ttu-id="de109-1411">'New-AzApiManagementContext'</span><span class="sxs-lookup"><span data-stu-id="de109-1411">'New-AzApiManagementContext'</span></span>
-        > <span data-ttu-id="de109-1412">New-AzApiManagementContext -ResourceId /subscriptions/subid/resourceGroups/rgName/providers/Microsoft.ApiManagement/service/contoso</span><span class="sxs-lookup"><span data-stu-id="de109-1412">New-AzApiManagementContext -ResourceId /subscriptions/subid/resourceGroups/rgName/providers/Microsoft.ApiManagement/service/contoso</span></span>
-    - <span data-ttu-id="de109-1413">'Get-AzApiManagementApiRelease'</span><span class="sxs-lookup"><span data-stu-id="de109-1413">'Get-AzApiManagementApiRelease'</span></span>
-        > <span data-ttu-id="de109-1414">Get-AzApiManagementApiRelease -ResourceId /subscriptions/subid/resourceGroups/rgName/providers/Microsoft.ApiManagement/service/contoso/apis/echo-api/releases/releaseId</span><span class="sxs-lookup"><span data-stu-id="de109-1414">Get-AzApiManagementApiRelease -ResourceId /subscriptions/subid/resourceGroups/rgName/providers/Microsoft.ApiManagement/service/contoso/apis/echo-api/releases/releaseId</span></span>
-    - <span data-ttu-id="de109-1415">'Get-AzApiManagementApiVersionSet'</span><span class="sxs-lookup"><span data-stu-id="de109-1415">'Get-AzApiManagementApiVersionSet'</span></span>
-        > <span data-ttu-id="de109-1416">Get-AzApiManagementApiVersionSet -ResourceId /subscriptions/subid/resourceGroups/rgName/providers/Microsoft.ApiManagement/service/constoso/apiversionsets/pathversionset</span><span class="sxs-lookup"><span data-stu-id="de109-1416">Get-AzApiManagementApiVersionSet -ResourceId /subscriptions/subid/resourceGroups/rgName/providers/Microsoft.ApiManagement/service/constoso/apiversionsets/pathversionset</span></span>
-    - <span data-ttu-id="de109-1417">'Get-AzApiManagementAuthorizationServer'</span><span class="sxs-lookup"><span data-stu-id="de109-1417">'Get-AzApiManagementAuthorizationServer'</span></span>
-    - <span data-ttu-id="de109-1418">'Get-AzApiManagementBackend'</span><span class="sxs-lookup"><span data-stu-id="de109-1418">'Get-AzApiManagementBackend'</span></span>
-        > <span data-ttu-id="de109-1419">Get-AzApiManagementBackend -ResourceId /subscriptions/subid/resourceGroups/rgName/providers/Microsoft.ApiManagement/service/contoso/backends/servicefabric</span><span class="sxs-lookup"><span data-stu-id="de109-1419">Get-AzApiManagementBackend -ResourceId /subscriptions/subid/resourceGroups/rgName/providers/Microsoft.ApiManagement/service/contoso/backends/servicefabric</span></span>
-    - <span data-ttu-id="de109-1420">'Get-AzApiManagementCertificate'</span><span class="sxs-lookup"><span data-stu-id="de109-1420">'Get-AzApiManagementCertificate'</span></span>
-    - <span data-ttu-id="de109-1421">'Remove-AzApiManagementApiVersionSet'</span><span class="sxs-lookup"><span data-stu-id="de109-1421">'Remove-AzApiManagementApiVersionSet'</span></span>
-    - <span data-ttu-id="de109-1422">'Remove-AzApiManagementSubscription'</span><span class="sxs-lookup"><span data-stu-id="de109-1422">'Remove-AzApiManagementSubscription'</span></span>
-
-#### <a name="azautomation"></a><span data-ttu-id="de109-1423">Az.Automation</span><span class="sxs-lookup"><span data-stu-id="de109-1423">Az.Automation</span></span>
-* <span data-ttu-id="de109-1424">Get-AzAutomationJobOutputRecord, JSON ve Text kayıt değerlerini işleyecek şekilde güncelleştirildi.</span><span class="sxs-lookup"><span data-stu-id="de109-1424">Updated Get-AzAutomationJobOutputRecord to handle JSON and Text record values.</span></span>
-    - <span data-ttu-id="de109-1425">[https://github.com/Azure/azure-powershell/issues/7977](https://github.com/Azure/azure-powershell/issues/7977 ) sorunu düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-1425">Fix for issue https://github.com/Azure/azure-powershell/issues/7977</span></span>
-    - <span data-ttu-id="de109-1426">[https://github.com/Azure/azure-powershell/issues/8600](https://github.com/Azure/azure-powershell/issues/8600 ) sorunu düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-1426">Fix for issue https://github.com/Azure/azure-powershell/issues/8600</span></span>
-* <span data-ttu-id="de109-1427">Start-AzAutomationDscCompilationJob cmdlet'inin davranışı tamamlanmasını beklemek yerine yalnızca işi başlatacak şekilde değiştirildi.</span><span class="sxs-lookup"><span data-stu-id="de109-1427">Changed behavior for Start-AzAutomationDscCompilationJob to just start the job instead of waiting for its completion.</span></span>
-    * <span data-ttu-id="de109-1428">[https://github.com/Azure/azure-powershell/issues/8347](https://github.com/Azure/azure-powershell/issues/8347 ) sorunu düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-1428">Fix for issue https://github.com/Azure/azure-powershell/issues/8347</span></span>
-* <span data-ttu-id="de109-1429">Get-AzAutomationDscNode için -Name kullanıldığında tüm düğümlerin döndürülmesi sorunu düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="de109-1429">Fix for Get-AzAutomationDscNode when using -Name returns all node.</span></span> <span data-ttu-id="de109-1430">Artık yalnızca eşleşen düğüm döndürülüyor.</span><span class="sxs-lookup"><span data-stu-id="de109-1430">Now it returns matching node only.</span></span>
-
-#### <a name="azcompute"></a><span data-ttu-id="de109-1431">Az.Compute</span><span class="sxs-lookup"><span data-stu-id="de109-1431">Az.Compute</span></span>
-* <span data-ttu-id="de109-1432">Update-AzVmssVM cmdlet'ine ProtectFromScaleIn ve ProtectFromScaleSetAction parametreleri eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-1432">Add ProtectFromScaleIn and ProtectFromScaleSetAction parameters to Update-AzVmssVM cmdlet.</span></span>
-* <span data-ttu-id="de109-1433">New-AzVM basit parametre kümesi artık 'East US' desteklenmiyorsa varsayılan olarak kullanılabilir bir konumu kullanıyor</span><span class="sxs-lookup"><span data-stu-id="de109-1433">New-AzVM wimple parameter set now uses by default an available location if 'East US' is not supported</span></span>
-
-#### <a name="azdatalakestore"></a><span data-ttu-id="de109-1434">Az.DataLakeStore</span><span class="sxs-lookup"><span data-stu-id="de109-1434">Az.DataLakeStore</span></span>
-* <span data-ttu-id="de109-1435">ADLS sdk'si azure çerçevesiyle httpclient, tümleşik veri düzlemi testi kullanacak şekilde güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-1435">Update the ADLS sdk to use httpclient, integrate dataplane testing with azure framework</span></span>
-
-#### <a name="azmonitor"></a><span data-ttu-id="de109-1436">Az.Monitor</span><span class="sxs-lookup"><span data-stu-id="de109-1436">Az.Monitor</span></span>
-* <span data-ttu-id="de109-1437">Yardım örneklerindeki yanlış parametre adları düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-1437">Fixed incorrect parameter names in help examples</span></span>
-
-#### <a name="aznetwork"></a><span data-ttu-id="de109-1438">Az.Network</span><span class="sxs-lookup"><span data-stu-id="de109-1438">Az.Network</span></span>
-* <span data-ttu-id="de109-1439">Etkin Yol Tablosu çıkışına DisableBgpRoutePropagation bayrağı eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-1439">Add DisableBgpRoutePropagation flag to Effective Route Table output</span></span>
-    - <span data-ttu-id="de109-1440">Şu cmdlet güncelleştirildi:</span><span class="sxs-lookup"><span data-stu-id="de109-1440">Updated cmdlet:</span></span>
-        - <span data-ttu-id="de109-1441">Get-AzEffectiveRouteTable</span><span class="sxs-lookup"><span data-stu-id="de109-1441">Get-AzEffectiveRouteTable</span></span>
-* <span data-ttu-id="de109-1442">New-AzApplicationGatewayTrustedRootCertificate belgelerindeki çift tire düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-1442">Fix double dash in New-AzApplicationGatewayTrustedRootCertificate documentation</span></span>
-
-#### <a name="azresources"></a><span data-ttu-id="de109-1443">Az.Resources</span><span class="sxs-lookup"><span data-stu-id="de109-1443">Az.Resources</span></span>
-* <span data-ttu-id="de109-1444">Reddetme atamalarını almak için yeni Get-AzureRmDenyAssignment cmdlet'i eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-1444">Add new cmdlet Get-AzureRmDenyAssignment for retrieving deny assignments</span></span>
-
-#### <a name="azsql"></a><span data-ttu-id="de109-1445">Az.Sql</span><span class="sxs-lookup"><span data-stu-id="de109-1445">Az.Sql</span></span>
-* <span data-ttu-id="de109-1446">Gelişmiş Tehdit Koruması (Advanced Threat Protection) cmdlet'leri Gelişmiş Veri Güvenliği (Advanced Data Security) olarak yeniden adlandırıldı ve varsayılan olarak Güvenlik Açığı Değerlendirmesi etkinleştiriliyor</span><span class="sxs-lookup"><span data-stu-id="de109-1446">Rename Advanced Threat Protection cmdlets to Advanced Data Security and enable Vulnerability Assessment by default</span></span>
-
-## <a name="200---may-2019"></a><span data-ttu-id="de109-1447">2.0.0 - Mayıs 2019</span><span class="sxs-lookup"><span data-stu-id="de109-1447">2.0.0 - May 2019</span></span>
-#### <a name="azaccounts"></a><span data-ttu-id="de109-1448">Az.Accounts</span><span class="sxs-lookup"><span data-stu-id="de109-1448">Az.Accounts</span></span>
-* <span data-ttu-id="de109-1449">Kullanıcı adı/parola kimlik doğrulamasıyla ilişkili ADFS sorunlarını düzeltmek için Authentication Library’i güncelleştirin</span><span class="sxs-lookup"><span data-stu-id="de109-1449">Update Authentication Library to fix ADFS issues with username/password auth</span></span>
-
-#### <a name="azcognitiveservices"></a><span data-ttu-id="de109-1450">Az.CognitiveServices</span><span class="sxs-lookup"><span data-stu-id="de109-1450">Az.CognitiveServices</span></span>
-* <span data-ttu-id="de109-1451">Yalnızca Bing Arama Hizmetleri için Bing bildirimini görüntüleyin.</span><span class="sxs-lookup"><span data-stu-id="de109-1451">Only display Bing disclaimer for Bing Search Services.</span></span>
-* <span data-ttu-id="de109-1452">Hesap oluşturma başarısız olduğunda hata iletisini geliştirin.</span><span class="sxs-lookup"><span data-stu-id="de109-1452">Improve error when create account failed.</span></span>
-
-#### <a name="azcompute"></a><span data-ttu-id="de109-1453">Az.Compute</span><span class="sxs-lookup"><span data-stu-id="de109-1453">Az.Compute</span></span>
-* <span data-ttu-id="de109-1454">Yakınlık yerleştirme grubu özelliği.</span><span class="sxs-lookup"><span data-stu-id="de109-1454">Proximity placement group feature.</span></span>
-    - <span data-ttu-id="de109-1455">Aşağıdaki yeni cmdlet’ler eklendi:   New-AzProximityPlacementGroup   Get-AzProximityPlacementGroup   Remove-AzProximityPlacementGroup</span><span class="sxs-lookup"><span data-stu-id="de109-1455">The following new cmdlets are added:   New-AzProximityPlacementGroup   Get-AzProximityPlacementGroup   Remove-AzProximityPlacementGroup</span></span>
-    - <span data-ttu-id="de109-1456">Yeni ProximityPlacementGroupId parametresi aşağıdaki cmdlet'lere eklendi:   New-AzAvailabilitySet   New-AzVMConfig   New-AzVmssConfig</span><span class="sxs-lookup"><span data-stu-id="de109-1456">The new parameter, ProximityPlacementGroupId, is added to the following cmdlets:   New-AzAvailabilitySet   New-AzVMConfig   New-AzVmssConfig</span></span>
-* <span data-ttu-id="de109-1457">StorageAccountType parametresi New-AzGalleryImageVersion öğesine eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-1457">StorageAccountType parameter is added to New-AzGalleryImageVersion.</span></span>
-* <span data-ttu-id="de109-1458">New-AzGalleryImageVersion komutunun TargetRegion parametresi StorageAccountType içerebilir.</span><span class="sxs-lookup"><span data-stu-id="de109-1458">TargetRegion of New-AzGalleryImageVersion can contain StorageAccountType.</span></span>
-* <span data-ttu-id="de109-1459">SkipShutdown anahtar parametresi Stop-AzVM ve Stop-AzVmss öğelerine eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-1459">SkipShutdown switch parameter is added to Stop-AzVM and Stop-AzVmss</span></span>
-* <span data-ttu-id="de109-1460">Yeni değişiklikler</span><span class="sxs-lookup"><span data-stu-id="de109-1460">Breaking changes</span></span>
-    - <span data-ttu-id="de109-1461">Set-AzVMBootDiagnostics, Set-AzVMBootDiagnostic olarak değiştirildi.</span><span class="sxs-lookup"><span data-stu-id="de109-1461">Set-AzVMBootDiagnostics is changed to Set-AzVMBootDiagnostic.</span></span>
-    - <span data-ttu-id="de109-1462">Export-AzLogAnalyticThrottledRequests, Export-AzLogAnalyticThrottledRequests olarak değiştirildi.</span><span class="sxs-lookup"><span data-stu-id="de109-1462">Export-AzLogAnalyticThrottledRequests is changed to Export-AzLogAnalyticThrottledRequests.</span></span>
-
-#### <a name="azdeploymentmanager"></a><span data-ttu-id="de109-1463">Az.DeploymentManager</span><span class="sxs-lookup"><span data-stu-id="de109-1463">Az.DeploymentManager</span></span>
-* <span data-ttu-id="de109-1464">Azure Deployment Manager cmdlet’lerinin Genel Kullanıma sunulan ilk sürümü</span><span class="sxs-lookup"><span data-stu-id="de109-1464">First Generally Available release of Azure Deployment Manager cmdlets</span></span>
-
-#### <a name="azdns"></a><span data-ttu-id="de109-1465">Az.Dns</span><span class="sxs-lookup"><span data-stu-id="de109-1465">Az.Dns</span></span>
-* <span data-ttu-id="de109-1466">Otomatik DNS NameServer Temsilcisi</span><span class="sxs-lookup"><span data-stu-id="de109-1466">Automatic DNS NameServer Delegation</span></span>
-    - <span data-ttu-id="de109-1467">Create DNS zone cmdlet’i üst bölge adını isteğe bağlı bir ek parametre olarak kabul eder.</span><span class="sxs-lookup"><span data-stu-id="de109-1467">Create DNS zone cmdlet accepts parent zone name as additional optional parameter.</span></span>
-    - <span data-ttu-id="de109-1468">Yeni oluşturulan alt bölge için NS kayıtlarını üst bölgeye ekler.</span><span class="sxs-lookup"><span data-stu-id="de109-1468">Adds NS records in the parent zone for newly created child zone.</span></span>
-
-#### <a name="azfrontdoor"></a><span data-ttu-id="de109-1469">Az.FrontDoor</span><span class="sxs-lookup"><span data-stu-id="de109-1469">Az.FrontDoor</span></span>
-* <span data-ttu-id="de109-1470">Azure FrontDoor cmdlet’lerinin Genel Kullanıma Sunulan ilk sürümü</span><span class="sxs-lookup"><span data-stu-id="de109-1470">First Generally Available Release of Azure FrontDoor cmdlets</span></span>
-* <span data-ttu-id="de109-1471">WAF cmdlet'lerini 'Waf' içerecek şekilde yeniden adlandırın</span><span class="sxs-lookup"><span data-stu-id="de109-1471">Rename WAF cmdlets to include 'Waf'</span></span>
+* <span data-ttu-id="b23a2-966">**New-AzApiManagementApiRevision** - Yeni API düzeltmesi oluşturulurken ApiRevisionDescription parametresinin ayarlanmamasına neden olan sorun düzeltildi https://github.com/Azure/azure-powershell/issues/9752</span><span class="sxs-lookup"><span data-stu-id="b23a2-966">**New-AzApiManagementApiRevision** - Fix for issue where ApiRevisionDescription was not being set when creating new api revision https://github.com/Azure/azure-powershell/issues/9752</span></span>
+* <span data-ttu-id="b23a2-967">'PsApiManagementOAuth2AuthrozationServer' modeli 'PsApiManagementOAuth2AuthorizationServer' olarak değiştirilerek yazım hatası düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-967">Fixed typo in model 'PsApiManagementOAuth2AuthrozationServer' to 'PsApiManagementOAuth2AuthorizationServer'</span></span>
+
+#### <a name="azbatch"></a><span data-ttu-id="b23a2-968">Az.Batch</span><span class="sxs-lookup"><span data-stu-id="b23a2-968">Az.Batch</span></span>
+* <span data-ttu-id="b23a2-969">Windows’un ilk harfi büyütülerek yardım iletisindeki ve belgelerdeki yazım hatası düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-969">Fixed typo in help message and documentation to capitalize Windows</span></span>
+
+#### <a name="azcdn"></a><span data-ttu-id="b23a2-970">Az.Cdn</span><span class="sxs-lookup"><span data-stu-id="b23a2-970">Az.Cdn</span></span>
+* <span data-ttu-id="b23a2-971">CDN modülü dönüştürme yardımcısındaki yazım hatası düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-971">Fixed a typo in CDN module conversion helper</span></span>
+
+#### <a name="azcompute"></a><span data-ttu-id="b23a2-972">Az.Compute</span><span class="sxs-lookup"><span data-stu-id="b23a2-972">Az.Compute</span></span>
+* <span data-ttu-id="b23a2-973">New-AzVMConfig cmdlet’ine VmssID eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-973">Add VmssId to New-AzVMConfig cmdlet</span></span>
+* <span data-ttu-id="b23a2-974">New-AzVmssConfig ve Update-AzVmss öğelerine TerminateScheduledEvents ve TerminateScheduledEventNotBeforeTimeoutInMinutes parametreleri eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-974">Add TerminateScheduledEvents and TerminateScheduledEventNotBeforeTimeoutInMinutes parameters to New-AzVmssConfig and Update-AzVmss</span></span>
+* <span data-ttu-id="b23a2-975">VM görüntüsü nesnesine HyperVGeneration özelliği eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-975">Add HyperVGeneration property to VM image object</span></span>
+* <span data-ttu-id="b23a2-976">Host ve HostGroup özellikleri eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-976">Add Host and HostGroup features</span></span>
+    - <span data-ttu-id="b23a2-977">Yeni cmdlet’ler:   New-AzHostGroup   New-AzHost   Get-AzHostGroup   Get-AzHost   Remove-AzHostGroup   Remove-AzHost</span><span class="sxs-lookup"><span data-stu-id="b23a2-977">New cmdlets:   New-AzHostGroup   New-AzHost   Get-AzHostGroup   Get-AzHost   Remove-AzHostGroup   Remove-AzHost</span></span>
+    - <span data-ttu-id="b23a2-978">New-AzVMConfig ve New-AzVM öğelerine HostId parametresi eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-978">HostId parameter is added to New-AzVMConfig and New-AzVM</span></span>
+* <span data-ttu-id="b23a2-979">Doğru parametre adını kullanmak için ‘Invoke-AzVMRunCommand’ belgesindeki örnek güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-979">Update example in 'Invoke-AzVMRunCommand' documentation to use correct parameter name</span></span>
+* <span data-ttu-id="b23a2-980">'Set-AzVMDiskEncryptionExtension' ve 'Set-AzVmssDiskEncryptionExtension' referans belgelerindeki '-VolumeType' açıklaması güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-980">Update '-VolumeType' description in 'Set-AzVMDiskEncryptionExtension' and 'Set-AzVmssDiskEncryptionExtension' reference documentation</span></span>
+
+#### <a name="azdatafactory"></a><span data-ttu-id="b23a2-981">Az.DataFactory</span><span class="sxs-lookup"><span data-stu-id="b23a2-981">Az.DataFactory</span></span>
+* <span data-ttu-id="b23a2-982">‘Windows’ sözcüğünün baş harfi büyütülerek 'New-AzDataFactoryEncryptValue' belgesindeki yazım hatası düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-982">Fix typo to capitalize 'Windows' in 'New-AzDataFactoryEncryptValue' documentation</span></span>
+* <span data-ttu-id="b23a2-983">ADF .Net SDK sürümü 4.1.2’ye güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-983">Updated ADF .Net SDK version to 4.1.2</span></span>
+* <span data-ttu-id="b23a2-984">Şirket İçinde Barındırılan Integration Runtime’ı SSIS Integration Runtime için ara sunucu olarak ayarlamak üzere 'Set-AzureRmDataFactoryV2IntegrationRuntime' komutuna 'DataProxyIntegrationRuntimeName', 'DataProxyStagingLinkedServiceName' ve 'DataProxyStagingPath' parametreleri eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-984">Add parameter 'DataProxyIntegrationRuntimeName', 'DataProxyStagingLinkedServiceName' and 'DataProxyStagingPath' for 'Set-AzureRmDataFactoryV2IntegrationRuntime' cmd to enable set up Self-Hosted Integration Runtime as a proxy for SSIS Integration Runtime</span></span>
+* <span data-ttu-id="b23a2-985">Tetiklenen işlem hatlarını, iletiyi ve özellikleri göstermesi için PSTriggerRun öğesi, etkinlik türünü göstermesi için de PSActivityRun öğesi güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-985">Updated PSTriggerRun to show the triggered pipelines, message and properties, and PSActivityRun to show the activity type</span></span>
+
+#### <a name="azdatalakestore"></a><span data-ttu-id="b23a2-986">Az.DataLakeStore</span><span class="sxs-lookup"><span data-stu-id="b23a2-986">Az.DataLakeStore</span></span>
+* <span data-ttu-id="b23a2-987">Hata veya uzak özel durumları için Get-DataLakeStoreDeletedItem öğesinin yanıt vermemeye başlaması düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-987">Fix hanging of Get-DataLakeStoreDeletedItem for any errors or remote exceptions.</span></span>
+
+#### <a name="azeventhub"></a><span data-ttu-id="b23a2-988">Az.EventHub</span><span class="sxs-lookup"><span data-stu-id="b23a2-988">Az.EventHub</span></span>
+* <span data-ttu-id="b23a2-989">#9658 numaralı şu sorun düzeltildi: Set-AzEventHubNetworkRuleSet öğesinde bulunan VirtualNteworkRule parametresindeki yazım hatası</span><span class="sxs-lookup"><span data-stu-id="b23a2-989">Fix for issue #9658 : Typo VirtualNteworkRule parameter in Set-AzEventHubNetworkRuleSet</span></span>
+* <span data-ttu-id="b23a2-990">#9558 numaralı şu sorun düzeltildi: Set-AzEventHubNamespace öğesinin PUT yerine PATCH kullanması</span><span class="sxs-lookup"><span data-stu-id="b23a2-990">Fix for issue #9558 : Set-AzEventHubNamespace is using PATCH instead of PUT</span></span>
+* <span data-ttu-id="b23a2-991">Set-AzEventHubNamespace cmdlet’ine EnableKafka parametresi eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-991">added EnableKafka parameter to Set-AzEventHubNamespace cmdlet</span></span>
+* <span data-ttu-id="b23a2-992">#9786 numaralı şu sorun düzeltildi: Yalnızca dinleme haklarıyla bir kural oluşturulamaması</span><span class="sxs-lookup"><span data-stu-id="b23a2-992">Fix for issue #9786 : cannot create a rule with Listen only rights</span></span>
+
+#### <a name="azmarketplaceordering"></a><span data-ttu-id="b23a2-993">Az.MarketplaceOrdering</span><span class="sxs-lookup"><span data-stu-id="b23a2-993">Az.MarketplaceOrdering</span></span>
+* <span data-ttu-id="b23a2-994">‘Azure’ın’ tamamen küçük harflerle yazılmasıyla belgede oluşan yazım hatası düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-994">Fixed documentation typo where 'Azure' was all lowercase letters</span></span>
+
+#### <a name="azmonitor"></a><span data-ttu-id="b23a2-995">Az.Monitor</span><span class="sxs-lookup"><span data-stu-id="b23a2-995">Az.Monitor</span></span>
+* <span data-ttu-id="b23a2-996">Yardım belgelerindeki yanlış parametre adı düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-996">Fixed incorrect parameter name in help documentation</span></span>
+
+#### <a name="aznetwork"></a><span data-ttu-id="b23a2-997">Az.Network</span><span class="sxs-lookup"><span data-stu-id="b23a2-997">Az.Network</span></span>
+* <span data-ttu-id="b23a2-998">New-AzPrivateLinkServiceIpConfig güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-998">Updated New-AzPrivateLinkServiceIpConfig</span></span>
+    - <span data-ttu-id="b23a2-999">Sunucu tarafında hiç kullanılmadığı için ‘PublicIpAddress’ parametresi kullanım dışı bırakıldı.</span><span class="sxs-lookup"><span data-stu-id="b23a2-999">Deprecated the paramster 'PublicIpAddress' since this is never used in the server side.</span></span>
+    - <span data-ttu-id="b23a2-1000">Mevcut IP yapılandırmasının birincil yapılandırma olup olmadığını belirten bir isteğe bağlı bir parametre (‘Primary’) eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1000">Added one optional parameter 'Primary' that indicate the current ip configuration is primary one or not.</span></span>
+* <span data-ttu-id="b23a2-1001">SDK’daki istek hatası özel durumunun işlenmesi geliştirildi. Bu, daha önceden SDK özel durumlarının düzgün şekilde işlenenmemesiyle oluşan ve önemli hata ayrıntılarının görüntülenmemesine neden olan sorunu düzeltir</span><span class="sxs-lookup"><span data-stu-id="b23a2-1001">Improved handling of request error exception from SDK   -Fixes the issue that previously SDK exceptions aren't handled correctly which results in key error details not being displayed</span></span>
+* <span data-ttu-id="b23a2-1002">Doğru IPv6 ön ek uzunluğunu denetlemek amacıyla Ipv6 IP Ön eki için doğrulama mantığı ayarlandı.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1002">Adjusted validation logic for Ipv6 IP Prefix to check for correct IPv6 prefix length.</span></span>
+* <span data-ttu-id="b23a2-1003">Get-AzVirtualNetworkSubnetConfig güncelleştirildi: Alt ağ kaynak kimliği ile almak için parametre kümesi eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1003">Updated Get-AzVirtualNetworkSubnetConfig: Added parameter set to get by subnet resource id.</span></span>
+* <span data-ttu-id="b23a2-1004">AzNetworkServiceTag için Konum parametresinin açıklaması güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1004">Updated description of Location parameter for AzNetworkServiceTag</span></span>
+
+#### <a name="azoperationalinsights"></a><span data-ttu-id="b23a2-1005">Az.OperationalInsights</span><span class="sxs-lookup"><span data-stu-id="b23a2-1005">Az.OperationalInsights</span></span>
+* <span data-ttu-id="b23a2-1006">'New-AzOperationalInsightsLinuxSyslogDataSource' öğesine yönelik belgeler güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1006">Updated documentation for 'New-AzOperationalInsightsLinuxSyslogDataSource'</span></span>
+    - <span data-ttu-id="b23a2-1007">Örnek eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1007">Added example</span></span>
+    - <span data-ttu-id="b23a2-1008">‘-Name’ parametresi için açıklama güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1008">Updated description for '-Name' parameter</span></span>
+* <span data-ttu-id="b23a2-1009">New-AzOperationalInsightsWindowsEventDataSource için bir örnek eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1009">Added an example for New-AzOperationalInsightsWindowsEventDataSource</span></span>
+* <span data-ttu-id="b23a2-1010">New-AzOperationalInsightsWindowsEventDataSource için -Name parametresinin açıklaması değiştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1010">Changed the description of the -Name parameter for New-AzOperationalInsightsWindowsEventDataSource</span></span>
+
+#### <a name="azrecoveryservices"></a><span data-ttu-id="b23a2-1011">Az.RecoveryServices</span><span class="sxs-lookup"><span data-stu-id="b23a2-1011">Az.RecoveryServices</span></span>
+* <span data-ttu-id="b23a2-1012">'Get-AzRecoveryServicesBackupJobDetail.md' dosyası güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1012">Update 'Get-AzRecoveryServicesBackupJobDetail.md'</span></span>
+
+#### <a name="azresources"></a><span data-ttu-id="b23a2-1013">Az.Resources</span><span class="sxs-lookup"><span data-stu-id="b23a2-1013">Az.Resources</span></span>
+* <span data-ttu-id="b23a2-1014">Microsoft.Resource için yeni API sürümüne (2019-05-10) yönelik destek eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1014">Add support for new api version 2019-05-10 for Microsoft.Resource</span></span>
+    - <span data-ttu-id="b23a2-1015">Değişkenler, kaynaklar ve özellikler için copy.count = 0 parametresine yönelik destek eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1015">Add support for 'copy.count = 0' for variables, resources and properties</span></span>
+    - <span data-ttu-id="b23a2-1016">'condition = false' veya 'copy.count = 0' içeren kaynaklar tam modda silinir</span><span class="sxs-lookup"><span data-stu-id="b23a2-1016">Resources with 'condition = false' or 'copy.count = 0' will be deleted in complete mode</span></span>
+* <span data-ttu-id="b23a2-1017">Belgelere yardımcı olması için abonelik düzeyinde ilke atama örneği eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1017">Add an example of assigning policy at subscription level to help doc</span></span>
+
+#### <a name="azservicebus"></a><span data-ttu-id="b23a2-1018">Az.ServiceBus</span><span class="sxs-lookup"><span data-stu-id="b23a2-1018">Az.ServiceBus</span></span>
+* <span data-ttu-id="b23a2-1019">#9658 numaralı şu sorun düzeltildi: Set-AzServiceBusNetworkRuleSet öğesinde bulunan VirtualNetworkRule parametresindeki yazım hatası</span><span class="sxs-lookup"><span data-stu-id="b23a2-1019">Fix for issue #9658 : Typo VirtualNetworkRule parameter in Set-AzServiceBusNetworkRuleSet</span></span>
+* <span data-ttu-id="b23a2-1020">#9786 numaralı şu sorun düzeltildi: Yalnızca dinleme haklarıyla bir kural oluşturulamaması</span><span class="sxs-lookup"><span data-stu-id="b23a2-1020">Fix for issue #9786 : cannot create a rule with Listen only rights</span></span>
+* <span data-ttu-id="b23a2-1021">Sıra ve konu için ad kullanılabilirliğini denetlemeye yönelik yeni komut ('Test-AzServiceBusNameAvailability') eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1021">Added new command 'Test-AzServiceBusNameAvailability' to check the name availability for queue and topic</span></span>
+
+#### <a name="azservicefabric"></a><span data-ttu-id="b23a2-1022">Az.ServiceFabric</span><span class="sxs-lookup"><span data-stu-id="b23a2-1022">Az.ServiceFabric</span></span>
+* <span data-ttu-id="b23a2-1023">Düğüm ekleme türü cmdlet hataları düzeltildi:</span><span class="sxs-lookup"><span data-stu-id="b23a2-1023">Fix add node type cmdlet bugs:</span></span>
+    - <span data-ttu-id="b23a2-1024">Kaynak grubunun Service Fabric kümesiyle ilgili diğer vmss öğesi olduğunda oluşan NullReferenceException hatası.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1024">NullReferenceException bug when resource group had other vmss not related to the service fabric cluster.</span></span> <span data-ttu-id="b23a2-1025">Şu sorunu düzeltir: https://github.com/Azure/azure-powershell/issues/8681</span><span class="sxs-lookup"><span data-stu-id="b23a2-1025">Fixes issue: https://github.com/Azure/azure-powershell/issues/8681</span></span>
+    - <span data-ttu-id="b23a2-1026">virtualNetwork kümeyle farklı bir kaynak grubunda yer aldığında cmdlet’in başarısız olmasına neden olan sorun düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1026">Fix bug where cmdlet failed if virtualNetwork was in a different resource group that the cluster.</span></span> <span data-ttu-id="b23a2-1027">Şu sorunu düzeltir: https://github.com/Azure/azure-powershell/issues/8407</span><span class="sxs-lookup"><span data-stu-id="b23a2-1027">fixes issue: https://github.com/Azure/azure-powershell/issues/8407</span></span>
+    - <span data-ttu-id="b23a2-1028">Add-AzServiceFabricApplicationCertificate cmdlet’i kullanımdan kaldırıldı</span><span class="sxs-lookup"><span data-stu-id="b23a2-1028">Deprecating Add-AzServiceFabricApplicationCertificate cmdlet</span></span>
+
+#### <a name="azsql"></a><span data-ttu-id="b23a2-1029">Az.Sql</span><span class="sxs-lookup"><span data-stu-id="b23a2-1029">Az.Sql</span></span>
+* <span data-ttu-id="b23a2-1030">Eski denetim cmdlet’lerinin belgeleri güncelleştirildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1030">Update documentation of old Auditing cmdlets.</span></span>
+
+#### <a name="azstorage"></a><span data-ttu-id="b23a2-1031">Az.Storage</span><span class="sxs-lookup"><span data-stu-id="b23a2-1031">Az.Storage</span></span>
+* <span data-ttu-id="b23a2-1032">Cmdlet örneklerine ve güncelleştirme parametresi açıklamalarına daha fazla senaryo eklenerek Get/Close-AzStorageFileHandle öğesi için yardım güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1032">Update help for Get/Close-AzStorageFileHandle, by add more scenarios to cmdlet examples and update parameter descriptions</span></span>
+* <span data-ttu-id="b23a2-1033">Karşıya yükleme blobu ve kopyalama blobunda StandardBlobTier için destek</span><span class="sxs-lookup"><span data-stu-id="b23a2-1033">Support StandardBlobTier in upload blob and copy blob</span></span>
+    -  <span data-ttu-id="b23a2-1034">Set-AzStorageBlobContent</span><span class="sxs-lookup"><span data-stu-id="b23a2-1034">Set-AzStorageBlobContent</span></span>
+    -  <span data-ttu-id="b23a2-1035">Start-AzStorageBlobCopy</span><span class="sxs-lookup"><span data-stu-id="b23a2-1035">Start-AzStorageBlobCopy</span></span>
+* <span data-ttu-id="b23a2-1036">Blobu kopyala işleminde Yeniden Doldurma Önceliği Desteği</span><span class="sxs-lookup"><span data-stu-id="b23a2-1036">Support Rehydrate Priority in copy blob</span></span>
+    -  <span data-ttu-id="b23a2-1037">Start-AzStorageBlobCopy</span><span class="sxs-lookup"><span data-stu-id="b23a2-1037">Start-AzStorageBlobCopy</span></span>
+
+#### <a name="azwebsites"></a><span data-ttu-id="b23a2-1038">Az.Websites</span><span class="sxs-lookup"><span data-stu-id="b23a2-1038">Az.Websites</span></span>
+* <span data-ttu-id="b23a2-1039">Set-AzWebApp ve Set-AzWebAppSlot öğelerindeki -AppSettings parametresine yönelik açıklama eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1039">Add clarification around -AppSettings parameter in Set-AzWebApp and Set-AzWebAppSlot</span></span>
+
+## <a name="250---july-2019"></a><span data-ttu-id="b23a2-1040">2.5.0 - Temmuz 2019</span><span class="sxs-lookup"><span data-stu-id="b23a2-1040">2.5.0 - July 2019</span></span>
+#### <a name="azaccounts"></a><span data-ttu-id="b23a2-1041">Az.Accounts</span><span class="sxs-lookup"><span data-stu-id="b23a2-1041">Az.Accounts</span></span>
+* <span data-ttu-id="b23a2-1042">ClientRuntime’ın en son sürümünü kullanacak şekilde ortak kod güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1042">Update common code to use latest version of ClientRuntime</span></span>
+
+#### <a name="azapplicationinsights"></a><span data-ttu-id="b23a2-1043">Az.ApplicationInsights</span><span class="sxs-lookup"><span data-stu-id="b23a2-1043">Az.ApplicationInsights</span></span>
+* <span data-ttu-id="b23a2-1044">'Remove-AzApplicationInsightsApiKey' belgesindeki örnek yazım hatası düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1044">Fix example typo in 'Remove-AzApplicationInsightsApiKey' documentation</span></span>
+
+#### <a name="azautomation"></a><span data-ttu-id="b23a2-1045">Az.Automation</span><span class="sxs-lookup"><span data-stu-id="b23a2-1045">Az.Automation</span></span>
+* <span data-ttu-id="b23a2-1046">Kaynak dizesindeki yazım hatası düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1046">Fix typo in resource string</span></span>
+
+#### <a name="azcognitiveservices"></a><span data-ttu-id="b23a2-1047">Az.CognitiveServices</span><span class="sxs-lookup"><span data-stu-id="b23a2-1047">Az.CognitiveServices</span></span>
+* <span data-ttu-id="b23a2-1048">NetworkRuleSet desteği eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1048">Added NetworkRuleSet support.</span></span>
+
+#### <a name="azcompute"></a><span data-ttu-id="b23a2-1049">Az.Compute</span><span class="sxs-lookup"><span data-stu-id="b23a2-1049">Az.Compute</span></span>
+* <span data-ttu-id="b23a2-1050">VM örneği görünüm nesnesinin eksik özellikleri (ComputerName, OsName, OsVersion ve HyperVGeneration) eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1050">Add missing properties (ComputerName, OsName, OsVersion and HyperVGeneration) of VM instance view object.</span></span>
+
+#### <a name="azcontainerregistry"></a><span data-ttu-id="b23a2-1051">Az.ContainerRegistry</span><span class="sxs-lookup"><span data-stu-id="b23a2-1051">Az.ContainerRegistry</span></span>
+* <span data-ttu-id="b23a2-1052">Çoğaltma parametresi için Remove-AzContainerRegistryReplication içindeki yazım hatası düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1052">Fix typo in Remove-AzContainerRegistryReplication for Replication parameter</span></span>
+    - <span data-ttu-id="b23a2-1053">Burada daha fazla bilgi bulunabilir: https://github.com/Azure/azure-powershell/issues/9633</span><span class="sxs-lookup"><span data-stu-id="b23a2-1053">More information here https://github.com/Azure/azure-powershell/issues/9633</span></span>
+
+#### <a name="azdatafactory"></a><span data-ttu-id="b23a2-1054">Az.DataFactory</span><span class="sxs-lookup"><span data-stu-id="b23a2-1054">Az.DataFactory</span></span>
+* <span data-ttu-id="b23a2-1055">ADF .Net SDK’sı 4.1.0 sürümüne güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1055">Updated ADF .Net SDK version to 4.1.0</span></span>
+* <span data-ttu-id="b23a2-1056">'Get-AzDataFactoryV2PipelineRun' belgelerindeki yazım hatası düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1056">Fix typo in documentation for 'Get-AzDataFactoryV2PipelineRun'</span></span>
+
+#### <a name="azeventhub"></a><span data-ttu-id="b23a2-1057">Az.EventHub</span><span class="sxs-lookup"><span data-stu-id="b23a2-1057">Az.EventHub</span></span>
+* <span data-ttu-id="b23a2-1058">SAS belirteci oluşturmak için yeni cmdlet eklendi: New-AzEventHubAuthorizationRuleSASToken</span><span class="sxs-lookup"><span data-stu-id="b23a2-1058">Added new cmmdlet added for generating SAS token : New-AzEventHubAuthorizationRuleSASToken</span></span>
+* <span data-ttu-id="b23a2-1059">yalnızca 'Manage' atanırsa authorizationrules hakları için doğrulama ve hata iletisi eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1059">added verification and error message for authorizationrules rights if only 'Manage' is assigned</span></span>
+
+#### <a name="azkeyvault"></a><span data-ttu-id="b23a2-1060">Az.KeyVault</span><span class="sxs-lookup"><span data-stu-id="b23a2-1060">Az.KeyVault</span></span>
+* <span data-ttu-id="b23a2-1061">Sertifika İlkeleri için KeySize’ı belirtmeye yönelik destek eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1061">Added support to specify the KeySize for Certificate Policies</span></span>
+
+#### <a name="azlogicapp"></a><span data-ttu-id="b23a2-1062">Az.LogicApp</span><span class="sxs-lookup"><span data-stu-id="b23a2-1062">Az.LogicApp</span></span>
+* <span data-ttu-id="b23a2-1063">Get-AzIntegrationAccountMap’in tüm eşleme türlerini listelemesi için düzeltme</span><span class="sxs-lookup"><span data-stu-id="b23a2-1063">Fix for Get-AzIntegrationAccountMap to list all map types</span></span>
+    - <span data-ttu-id="b23a2-1064">Filtreleme için yeni MapType parametresi eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1064">Added new MapType parameter for filtering</span></span>
+
+#### <a name="azmanagedservices"></a><span data-ttu-id="b23a2-1065">Az.ManagedServices</span><span class="sxs-lookup"><span data-stu-id="b23a2-1065">Az.ManagedServices</span></span>
+* <span data-ttu-id="b23a2-1066">API 2019-06-01 sürümü için destek eklendi (GA)</span><span class="sxs-lookup"><span data-stu-id="b23a2-1066">Added support for api version 2019-06-01 (GA)</span></span>
+
+#### <a name="aznetwork"></a><span data-ttu-id="b23a2-1067">Az.Network</span><span class="sxs-lookup"><span data-stu-id="b23a2-1067">Az.Network</span></span>
+* <span data-ttu-id="b23a2-1068">Özel uç nokta ve özel bağlantı hizmeti için destek eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1068">Add support for private endpoint and private link service</span></span>
+    - <span data-ttu-id="b23a2-1069">Yeni cmdlet’ler</span><span class="sxs-lookup"><span data-stu-id="b23a2-1069">New cmdlets</span></span>
+        - <span data-ttu-id="b23a2-1070">Set-AzPrivateEndpoint</span><span class="sxs-lookup"><span data-stu-id="b23a2-1070">Set-AzPrivateEndpoint</span></span>
+        - <span data-ttu-id="b23a2-1071">Set-AzPrivateLinkService</span><span class="sxs-lookup"><span data-stu-id="b23a2-1071">Set-AzPrivateLinkService</span></span>
+        - <span data-ttu-id="b23a2-1072">Approve-AzPrivateEndpointConnection</span><span class="sxs-lookup"><span data-stu-id="b23a2-1072">Approve-AzPrivateEndpointConnection</span></span>
+        - <span data-ttu-id="b23a2-1073">Deny-AzPrivateEndpointConnection</span><span class="sxs-lookup"><span data-stu-id="b23a2-1073">Deny-AzPrivateEndpointConnection</span></span>
+        - <span data-ttu-id="b23a2-1074">Get-AzPrivateEndpointConnection</span><span class="sxs-lookup"><span data-stu-id="b23a2-1074">Get-AzPrivateEndpointConnection</span></span>
+        - <span data-ttu-id="b23a2-1075">Remove-AzPrivateEndpointConnection</span><span class="sxs-lookup"><span data-stu-id="b23a2-1075">Remove-AzPrivateEndpointConnection</span></span>
+        - <span data-ttu-id="b23a2-1076">Test-AzPrivateLinkServiceVisibility</span><span class="sxs-lookup"><span data-stu-id="b23a2-1076">Test-AzPrivateLinkServiceVisibility</span></span>
+        - <span data-ttu-id="b23a2-1077">Get-AzAutoApprovedPrivateLinkService</span><span class="sxs-lookup"><span data-stu-id="b23a2-1077">Get-AzAutoApprovedPrivateLinkService</span></span>
+* <span data-ttu-id="b23a2-1078">Özellik için aşağıdaki komutlar güncelleştirildi: Virtualnetwork’te Alt Ağ üzerinde PrivateEndpointNetworkPolicies/PrivateLinkServiceNetworkPolicies bayrağı</span><span class="sxs-lookup"><span data-stu-id="b23a2-1078">Updated below commands for feature: PrivateEndpointNetworkPolicies/PrivateLinkServiceNetworkPolicies flag on Subnet in Virtualnetwork</span></span>
+    - <span data-ttu-id="b23a2-1079">New-AzVirtualNetworkSubnetConfig/Set-AzVirtualNetworkSubnetConfig/Add-AzVirtualNetworkSubnetConfig güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1079">Updated New-AzVirtualNetworkSubnetConfig/Set-AzVirtualNetworkSubnetConfig/Add-AzVirtualNetworkSubnetConfig</span></span>
+        - <span data-ttu-id="b23a2-1080">Bu alt ağda özel uç nokta üzerinde ağ ilkelerinin uygulanıp uygulanmayacağını yapılandıran isteğe bağlı -PrivateEndpointNetworkPoliciesFlag parametresi eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1080">Added optional parameter -PrivateEndpointNetworkPoliciesFlag that configures whether to apply network policies on private endpoint in this subnet.</span></span>
+        - <span data-ttu-id="b23a2-1081">Bu alt ağda özel bağlantı hizmeti üzerinde ağ ilkelerinin uygulanıp uygulanmayacağını yapılandıran isteğe bağlı -PrivateLinkServiceNetworkPoliciesFlag parametresi eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1081">Added optional parameter -PrivateLinkServiceNetworkPoliciesFlag that configures whether to apply network policies network policies on private link service in this subnet.</span></span>
+* <span data-ttu-id="b23a2-1082">AzPrivateLinkService’in cmdlet 'ServiceName' parametresi, geriye yönelik uyumluluk için 'ServiceName' diğer adıyla 'Name' olarak yeniden adlandırıldı</span><span class="sxs-lookup"><span data-stu-id="b23a2-1082">AzPrivateLinkService's cmdlet parameter 'ServiceName' was renamed to 'Name' with an alias 'ServiceName' for backward compatibility</span></span>
+* <span data-ttu-id="b23a2-1083">Ağ güvenlik kuralı yapılandırmalarına yönelik ICMP protokolü etkinleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1083">Enable ICMP protocol for network security rule configurations</span></span>
+    - <span data-ttu-id="b23a2-1084">Cmdlet'ler güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1084">Updated cmdlets</span></span>
+        - <span data-ttu-id="b23a2-1085">Add-AzNetworkSecurityRuleConfig</span><span class="sxs-lookup"><span data-stu-id="b23a2-1085">Add-AzNetworkSecurityRuleConfig</span></span>
+        - <span data-ttu-id="b23a2-1086">New-AzNetworkSecurityRuleConfig</span><span class="sxs-lookup"><span data-stu-id="b23a2-1086">New-AzNetworkSecurityRuleConfig</span></span>
+        - <span data-ttu-id="b23a2-1087">Set-AzNetworkSecurityRuleConfig</span><span class="sxs-lookup"><span data-stu-id="b23a2-1087">Set-AzNetworkSecurityRuleConfig</span></span>
+* <span data-ttu-id="b23a2-1088">ConnectionProtocolType (Ikev1/Ikev2), New-AzVirtualNetworkGatewayConnection için yapılandırılabilir bir parametre olarak eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1088">Add ConnectionProtocolType (Ikev1/Ikev2) as a configurable parameter for New-AzVirtualNetworkGatewayConnection</span></span>
+* <span data-ttu-id="b23a2-1089">LoadBalancerFrontendIpConfiguration içinde PrivateIpAddressVersion eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1089">Add PrivateIpAddressVersion in LoadBalancerFrontendIpConfiguration</span></span>
+    - <span data-ttu-id="b23a2-1090">Şu cmdlet güncelleştirildi:</span><span class="sxs-lookup"><span data-stu-id="b23a2-1090">Updated cmdlet:</span></span>
+        - <span data-ttu-id="b23a2-1091">New-AzLoadBalancerFrontendIpConfig</span><span class="sxs-lookup"><span data-stu-id="b23a2-1091">New-AzLoadBalancerFrontendIpConfig</span></span>
+        - <span data-ttu-id="b23a2-1092">Add-AzLoadBalancerFrontendIpConfig</span><span class="sxs-lookup"><span data-stu-id="b23a2-1092">Add-AzLoadBalancerFrontendIpConfig</span></span>
+        - <span data-ttu-id="b23a2-1093">Set-AzLoadBalancerFrontendIpConfig</span><span class="sxs-lookup"><span data-stu-id="b23a2-1093">Set-AzLoadBalancerFrontendIpConfig</span></span>
+* <span data-ttu-id="b23a2-1094">Yoklama içinde özek bağlantı noktasını desteklemek için Application Gateway New-AzApplicationGatewayProbeConfig komutu güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1094">Application Gateway New-AzApplicationGatewayProbeConfig command update for supporting custom port in Probe</span></span>
+    - <span data-ttu-id="b23a2-1095">New-AzApplicationGatewayProbeConfig güncelleştirildi: Arka uç sunucusunu yoklamak için kullanılan isteğe bağlı parametre Bağlantı Noktası eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1095">Updated New-AzApplicationGatewayProbeConfig: Added optional parameter Port which is used for probing backend server.</span></span> <span data-ttu-id="b23a2-1096">Bu parametre Standard_V2 ve WAF_V2 SKU için geçerlidir.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1096">This parameter is applicable for Standard_V2 and WAF_V2 SKU.</span></span>
+
+#### <a name="azoperationalinsights"></a><span data-ttu-id="b23a2-1097">Az.OperationalInsights</span><span class="sxs-lookup"><span data-stu-id="b23a2-1097">Az.OperationalInsights</span></span>
+* <span data-ttu-id="b23a2-1098">Kayıtlı aramaların varsayılan sürümü 1 olacak şekilde güncelleştirildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1098">Updated default version for saved searches to be 1.</span></span>
+* <span data-ttu-id="b23a2-1099">Özel günlük null normal ifade işleme düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1099">Fixed custom log null regex handling</span></span>
+
+#### <a name="azrecoveryservices"></a><span data-ttu-id="b23a2-1100">Az.RecoveryServices</span><span class="sxs-lookup"><span data-stu-id="b23a2-1100">Az.RecoveryServices</span></span>
+* <span data-ttu-id="b23a2-1101">'Get-AzRecoveryServicesBackupJob.md' güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1101">Update 'Get-AzRecoveryServicesBackupJob.md'</span></span>
+* <span data-ttu-id="b23a2-1102">'Get-AzRecoveryServicesBackupContainer.md' güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1102">Update 'Get-AzRecoveryServicesBackupContainer.md'</span></span>
+* <span data-ttu-id="b23a2-1103">'Get-AzRecoveryServicesVault.md' güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1103">Update 'Get-AzRecoveryServicesVault.md'</span></span>
+* <span data-ttu-id="b23a2-1104">'Wait-AzRecoveryServicesBackupJob.md' güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1104">Update 'Wait-AzRecoveryServicesBackupJob.md'</span></span>
+* <span data-ttu-id="b23a2-1105">'Set-AzRecoveryServicesVaultContext.md' güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1105">Update 'Set-AzRecoveryServicesVaultContext.md'</span></span>
+* <span data-ttu-id="b23a2-1106">'Get-AzRecoveryServicesBackupItem.md' güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1106">Update 'Get-AzRecoveryServicesBackupItem.md'</span></span>
+* <span data-ttu-id="b23a2-1107">'Get-AzRecoveryServicesBackupRecoveryPoint.md' güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1107">Update 'Get-AzRecoveryServicesBackupRecoveryPoint.md'</span></span>
+* <span data-ttu-id="b23a2-1108">'Restore-AzRecoveryServicesBackupItem.md' güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1108">Update 'Restore-AzRecoveryServicesBackupItem.md'</span></span>
+* <span data-ttu-id="b23a2-1109">Azure Dosya Paylaşımı kapsayıcısının Kaydını Silmeye yönelik hizmet çağrısı güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1109">Updated service call for Unregistering container for Azure File Share</span></span>
+* <span data-ttu-id="b23a2-1110">'Set-AzRecoveryServicesAsrAlertSetting.md' güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1110">Update 'Set-AzRecoveryServicesAsrAlertSetting.md'</span></span>
+
+#### <a name="azresources"></a><span data-ttu-id="b23a2-1111">Az.Resources</span><span class="sxs-lookup"><span data-stu-id="b23a2-1111">Az.Resources</span></span>
+- <span data-ttu-id="b23a2-1112">'New-AzResourceGroupDeployment' belgelerinde başvurulan eksik cmdlet kaldırıldı</span><span class="sxs-lookup"><span data-stu-id="b23a2-1112">Remove missing cmdlet referenced in 'New-AzResourceGroupDeployment' documentation</span></span>
+- <span data-ttu-id="b23a2-1113">İlke cmdlet’leri yeni 2019-01-01 api sürümünü kullanacak şekilde güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1113">Updated policy cmdlets to use new api version 2019-01-01</span></span>
+
+#### <a name="azservicebus"></a><span data-ttu-id="b23a2-1114">Az.ServiceBus</span><span class="sxs-lookup"><span data-stu-id="b23a2-1114">Az.ServiceBus</span></span>
+* <span data-ttu-id="b23a2-1115">SAS belirteci oluşturmak için yeni cmdlet eklendi: New-AzServiceBusAuthorizationRuleSASToken</span><span class="sxs-lookup"><span data-stu-id="b23a2-1115">Added new cmmdlet added for generating SAS token : New-AzServiceBusAuthorizationRuleSASToken</span></span>
+* <span data-ttu-id="b23a2-1116">yalnızca 'Manage' atanırsa authorizationrules hakları için doğrulama ve hata iletisi eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1116">added verification and error message for authorizationrules rights if only 'Manage' is assigned</span></span>
+
+#### <a name="azsql"></a><span data-ttu-id="b23a2-1117">Az.Sql</span><span class="sxs-lookup"><span data-stu-id="b23a2-1117">Az.Sql</span></span>
+* <span data-ttu-id="b23a2-1118">Set-AzSqlDatabaseSecondary cmdlet’i için eksik örnekler düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1118">Fix missing examples for Set-AzSqlDatabaseSecondary cmdlet</span></span>
+* <span data-ttu-id="b23a2-1119">E-posta adresi sağlamadan yinelenen Güvenlik Açığı Değerlendirme taramalarının ayarlanması düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1119">Fix set Vulnerability Assessment recurring scans without providing any email addresses</span></span>
+* <span data-ttu-id="b23a2-1120">Bir uyarı iletisindeki küçük bir yazım hatası düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1120">Fix a small typo in a warining message.</span></span>
+
+#### <a name="azstorage"></a><span data-ttu-id="b23a2-1121">Az.Storage</span><span class="sxs-lookup"><span data-stu-id="b23a2-1121">Az.Storage</span></span>
+* <span data-ttu-id="b23a2-1122">'Get-AzStorageAccount' başvuru belgelerindeki örnek, doğru parametre adını kullanacak şekilde güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1122">Update example in reference documentation for 'Get-AzStorageAccount' to use correct parameter name</span></span>
+
+#### <a name="azstoragesync"></a><span data-ttu-id="b23a2-1123">Az.StorageSync</span><span class="sxs-lookup"><span data-stu-id="b23a2-1123">Az.StorageSync</span></span>
+* <span data-ttu-id="b23a2-1124">Invoke-AzStorageSyncChangeDetection cmdlet’i ekleniyor.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1124">Adding Invoke-AzStorageSyncChangeDetection cmdlet.</span></span>
+* <span data-ttu-id="b23a2-1125">TierFilesOlderThanDays’in uygulanmasına yönelik Sorun 9551 düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1125">Fix Issue 9551 for honoring TierFilesOlderThanDays</span></span>
+
+#### <a name="azwebsites"></a><span data-ttu-id="b23a2-1126">Az.Websites</span><span class="sxs-lookup"><span data-stu-id="b23a2-1126">Az.Websites</span></span>
+* <span data-ttu-id="b23a2-1127">Bazı SiteConfig özelliklerinin Get-AzWebApp ve Set-AzWebApp tarafından döndürülmemesi sorunu düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1127">Fixing a bug where some SiteConfig properties were not returned by Get-AzWebApp and Set-AzWebApp</span></span>
+* <span data-ttu-id="b23a2-1128">Get-AzDeletedWebApp ve Restore-AzDeletedWebApp için yeni bir Konum parametresi eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1128">Adds a new Location parameter to Get-AzDeletedWebApp and Restore-AzDeletedWebApp</span></span>
+* <span data-ttu-id="b23a2-1129">New-AzWebApp -IncludeSourceWebAppSlots kullanılarak web uygulaması yuvalarının kopyalanmasıyla ilgili bir hata düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1129">Fixes a bug with cloning web app slots using New-AzWebApp -IncludeSourceWebAppSlots</span></span>
+
+## <a name="240---july-2019"></a><span data-ttu-id="b23a2-1130">2.4.0 - Temmuz 2019</span><span class="sxs-lookup"><span data-stu-id="b23a2-1130">2.4.0 - July 2019</span></span>
+#### <a name="azaccounts"></a><span data-ttu-id="b23a2-1131">Az.Accounts</span><span class="sxs-lookup"><span data-stu-id="b23a2-1131">Az.Accounts</span></span>
+* <span data-ttu-id="b23a2-1132">Profil cmdlet’leri için destek eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1132">Add support for profile cmdlets</span></span>
+* <span data-ttu-id="b23a2-1133">Oluşturulan cmdlet’lerde ortamlar ve veri düzlemleri için destek eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1133">Add support for environments and data planes in generated cmdlets</span></span>
+* <span data-ttu-id="b23a2-1134">Windows PowerShell’deki veri düzlemi cmdlet’leri için bazı durumlarda yanlış uç noktası kullanılması hatası düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1134">Fix bug where incorrect endpoint was being used in some cases for data plane cmdlets in Windows PowerShell</span></span>
+
+#### <a name="azadvisor"></a><span data-ttu-id="b23a2-1135">Az.Advisor</span><span class="sxs-lookup"><span data-stu-id="b23a2-1135">Az.Advisor</span></span>
+* <span data-ttu-id="b23a2-1136">Az.Advisor genel kullanıma sunuldu</span><span class="sxs-lookup"><span data-stu-id="b23a2-1136">GA release of Az.Advisor</span></span>
+* <span data-ttu-id="b23a2-1137">Bu modül, artık toplama `Az` modülünün bir parçası olarak sunulur</span><span class="sxs-lookup"><span data-stu-id="b23a2-1137">This module is now included as a part of the roll-up `Az` module</span></span>
+
+#### <a name="azapimanagement"></a><span data-ttu-id="b23a2-1138">Az.ApiManagement</span><span class="sxs-lookup"><span data-stu-id="b23a2-1138">Az.ApiManagement</span></span>
+* <span data-ttu-id="b23a2-1139">[https://github.com/Azure/azure-powershell/issues/8671](https://github.com/Azure/azure-powershell/issues/8671 ) sorunu düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1139">Fix for issue https://github.com/Azure/azure-powershell/issues/8671</span></span>
+    - <span data-ttu-id="b23a2-1140">**Get-AzApiManagementSubscription**</span><span class="sxs-lookup"><span data-stu-id="b23a2-1140">**Get-AzApiManagementSubscription**</span></span>
+        - <span data-ttu-id="b23a2-1141">Abonelikleri Kullanıcı ve Ürüne göre sorgulama desteği eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1141">Added support for querying subscriptions by User and Product</span></span>
+        - <span data-ttu-id="b23a2-1142">Kapsam kullanarak sorgulama desteği eklendi ('/', '/apis', '/apis/echo-api')</span><span class="sxs-lookup"><span data-stu-id="b23a2-1142">Added support for querying using Scope '/', '/apis', '/apis/echo-api'</span></span>
+* <span data-ttu-id="b23a2-1143">[https://github.com/Azure/azure-powershell/issues/9307](https://github.com/Azure/azure-powershell/issues/9307 ) ve https://github.com/Azure/azure-powershell/issues/8432 sorunları için düzeltme</span><span class="sxs-lookup"><span data-stu-id="b23a2-1143">Fix for issue https://github.com/Azure/azure-powershell/issues/9307 and https://github.com/Azure/azure-powershell/issues/8432</span></span>
+    - <span data-ttu-id="b23a2-1144">**Import-AzApiManagementApi**</span><span class="sxs-lookup"><span data-stu-id="b23a2-1144">**Import-AzApiManagementApi**</span></span>
+        - <span data-ttu-id="b23a2-1145">API’leri içeri aktarırken ‘ApiVersion’ ve ‘ApiVersionSetId’ belirtmek için destek eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1145">Added support for specifying 'ApiVersion' and 'ApiVersionSetId' when importing Apis</span></span>
+
+#### <a name="azautomation"></a><span data-ttu-id="b23a2-1146">Az.Automation</span><span class="sxs-lookup"><span data-stu-id="b23a2-1146">Az.Automation</span></span>
+* <span data-ttu-id="b23a2-1147">Dize değerini işlemek için Set-AzAutomationConnectionFieldValue cmdlet hatası düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1147">Fixed Set-AzAutomationConnectionFieldValue cmdlet bug to handle string value.</span></span>
+
+#### <a name="azcompute"></a><span data-ttu-id="b23a2-1148">Az.Compute</span><span class="sxs-lookup"><span data-stu-id="b23a2-1148">Az.Compute</span></span>
+* <span data-ttu-id="b23a2-1149">New-AzImageConfig’e HyperVGeneration parametresi eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1149">Add HyperVGeneration parameter to New-AzImageConfig</span></span>
+
+#### <a name="azdatafactory"></a><span data-ttu-id="b23a2-1150">Az.DataFactory</span><span class="sxs-lookup"><span data-stu-id="b23a2-1150">Az.DataFactory</span></span>
+* <span data-ttu-id="b23a2-1151">Etkinlik çalıştırmalarını alma, işlem hattı çalıştırmalarını alma ve tetikleme çalıştırmalarını alma ADF cmdlet’lerinin çıkışları, Select-Object kanalını destekleyecek şekilde güncelleştiriliyor.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1151">Updating the output of get activity runs, get pipeline runs, and get trigger runs ADF cmdlets to support Select-Object pipe.</span></span>
+
+#### <a name="azeventgrid"></a><span data-ttu-id="b23a2-1152">Az.EventGrid</span><span class="sxs-lookup"><span data-stu-id="b23a2-1152">Az.EventGrid</span></span>
+* <span data-ttu-id="b23a2-1153">‘New-AzEventGridSubscription’ belgesindeki yazım hatası düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1153">Fix typo in 'New-AzEventGridSubscription' documentation</span></span>
+
+#### <a name="aziothub"></a><span data-ttu-id="b23a2-1154">Az.IotHub</span><span class="sxs-lookup"><span data-stu-id="b23a2-1154">Az.IotHub</span></span>
+* <span data-ttu-id="b23a2-1155">Yetkilendirme ilkesi anahtarlarını yeniden oluşturma desteği eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1155">Add support to regenerate authorization policy keys.</span></span>
+
+#### <a name="aznetwork"></a><span data-ttu-id="b23a2-1156">Az.Network</span><span class="sxs-lookup"><span data-stu-id="b23a2-1156">Az.Network</span></span>
+* <span data-ttu-id="b23a2-1157">Genel IP etiketlerine ‘RoutingPreference’ eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1157">Added 'RoutingPreference' to public ip tags</span></span>
+* <span data-ttu-id="b23a2-1158">‘Get-AzNetworkServiceTag’ başvuru belgesi için örnekler geliştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1158">Improve examples for 'Get-AzNetworkServiceTag' reference documentation</span></span>
+
+#### <a name="azpolicyinsights"></a><span data-ttu-id="b23a2-1159">Az.PolicyInsights</span><span class="sxs-lookup"><span data-stu-id="b23a2-1159">Az.PolicyInsights</span></span>
+* <span data-ttu-id="b23a2-1160">Get-AzPolicyState’de boş başvuru sorunu düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1160">Fix null reference issue in Get-AzPolicyState</span></span>
+    - <span data-ttu-id="b23a2-1161">Burada daha fazla bilgi bulunabilir: https://github.com/Azure/azure-powershell/issues/9446</span><span class="sxs-lookup"><span data-stu-id="b23a2-1161">More information here: https://github.com/Azure/azure-powershell/issues/9446</span></span>
+
+#### <a name="azoperationalinsights"></a><span data-ttu-id="b23a2-1162">Az.OperationalInsights</span><span class="sxs-lookup"><span data-stu-id="b23a2-1162">Az.OperationalInsights</span></span>
+* <span data-ttu-id="b23a2-1163">Get-AzOperationalInsightsDataSource’da döndürülen CustomLog veri kaynağı modeli düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1163">Fixed CustomLog datasource model returned in Get-AzOperationalInsightsDataSource</span></span>
+
+#### <a name="azrecoveryservices"></a><span data-ttu-id="b23a2-1164">Az.RecoveryServices</span><span class="sxs-lookup"><span data-stu-id="b23a2-1164">Az.RecoveryServices</span></span>
+* <span data-ttu-id="b23a2-1165">IaaSVM’ler için get-policy komutu düzeltmesi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1165">Fix for get-policy command for IaaSVMs</span></span>
+
+#### <a name="azresources"></a><span data-ttu-id="b23a2-1166">Az.Resources</span><span class="sxs-lookup"><span data-stu-id="b23a2-1166">Az.Resources</span></span>
+    - <span data-ttu-id="b23a2-1167">Get-AzPolicyState -Top parametresi için yardım metni düzeltmesi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1167">Fix help text for Get-AzPolicyState -Top parameter</span></span>
+    - <span data-ttu-id="b23a2-1168">Get-AzPolicyAlias için istemci tarafı sayfalama desteği eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1168">Add client-side paging support for Get-AzPolicyAlias</span></span>
+    - <span data-ttu-id="b23a2-1169">Set-AzPolicyAssignment, -PolicyParameters ve -PolicyParametersObject için yeni parametreler eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1169">Add new parameters for Set-AzPolicyAssignment, -PolicyParameters and -PolicyParametersObject</span></span>
+    - <span data-ttu-id="b23a2-1170">İlke cmdlet’leri için bazı belge ve örnekler güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1170">Handful of doc and example updates for Policy cmdlets</span></span>
+
+#### <a name="azservicebus"></a><span data-ttu-id="b23a2-1171">Az.ServiceBus</span><span class="sxs-lookup"><span data-stu-id="b23a2-1171">Az.ServiceBus</span></span>
+* <span data-ttu-id="b23a2-1172">4938 numaralı, MaxSizeInMegabytes ayarlanırken New-AzureRmServiceBusQueue’nun BadRequest döndürmesi sorunu düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1172">Fix for issue #4938 - New-AzureRmServiceBusQueue returns BadRequest when setting MaxSizeInMegabytes</span></span>
+
+#### <a name="azsql"></a><span data-ttu-id="b23a2-1173">Az.Sql</span><span class="sxs-lookup"><span data-stu-id="b23a2-1173">Az.Sql</span></span>
+* <span data-ttu-id="b23a2-1174">Önizleme sürümündeki Örnek Yük Devretme Grubu cmdlet’leri genel kullanım sürümüne eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1174">Add Instance Failover Group cmdlets from preview release to public release</span></span>
+* <span data-ttu-id="b23a2-1175">Yeni cmdlet’ler ile Azure SQL Server\Veritabanı Denetimi desteği.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1175">Support Azure SQL Server\Database Auditing with new cmdlets.</span></span>
+    - <span data-ttu-id="b23a2-1176">Set-AzSqlServerAudit</span><span class="sxs-lookup"><span data-stu-id="b23a2-1176">Set-AzSqlServerAudit</span></span>
+    - <span data-ttu-id="b23a2-1177">Get-AzSqlServerAudit</span><span class="sxs-lookup"><span data-stu-id="b23a2-1177">Get-AzSqlServerAudit</span></span>
+    - <span data-ttu-id="b23a2-1178">Remove-AzSqlServerAudit</span><span class="sxs-lookup"><span data-stu-id="b23a2-1178">Remove-AzSqlServerAudit</span></span>
+    - <span data-ttu-id="b23a2-1179">Set-AzSqlDatabaseAudit</span><span class="sxs-lookup"><span data-stu-id="b23a2-1179">Set-AzSqlDatabaseAudit</span></span>
+    - <span data-ttu-id="b23a2-1180">Get-AzSqlDatabaseAudit</span><span class="sxs-lookup"><span data-stu-id="b23a2-1180">Get-AzSqlDatabaseAudit</span></span>
+    - <span data-ttu-id="b23a2-1181">Remove-AzSqlDatabaseAudit</span><span class="sxs-lookup"><span data-stu-id="b23a2-1181">Remove-AzSqlDatabaseAudit</span></span>
+* <span data-ttu-id="b23a2-1182">Güvenlik Açığı Değerlendirmesi ayarlarından e-posta kısıtlamaları kaldırıldı</span><span class="sxs-lookup"><span data-stu-id="b23a2-1182">Remove email constraints from Vulnerability Assessment settings</span></span>
+
+#### <a name="azstorage"></a><span data-ttu-id="b23a2-1183">Az.Storage</span><span class="sxs-lookup"><span data-stu-id="b23a2-1183">Az.Storage</span></span>
+* <span data-ttu-id="b23a2-1184">Aşağıdaki cmdlet’te 2 parametre (‘-IndexDocument’ ve ‘-ErrorDocument404Path’) gerekliden isteğe bağlı olarak değiştirildi:</span><span class="sxs-lookup"><span data-stu-id="b23a2-1184">Change 2 parameters '-IndexDocument' and '-ErrorDocument404Path' from required to optional  in cmdlet:</span></span>
+    -  <span data-ttu-id="b23a2-1185">Enable-AzStorageStaticWebsite</span><span class="sxs-lookup"><span data-stu-id="b23a2-1185">Enable-AzStorageStaticWebsite</span></span>
+* <span data-ttu-id="b23a2-1186">Get-AzStorageBlobContent’in yardımı, örnek eklenerek güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1186">Update help of Get-AzStorageBlobContent by add an example</span></span>
+* <span data-ttu-id="b23a2-1187">Cmdlet StorageException ile başarısız olduğunda artık daha ayrıntılı hata bilgisi gösteriliyor</span><span class="sxs-lookup"><span data-stu-id="b23a2-1187">Show more error information when cmdlet failed with StorageException</span></span>
+* <span data-ttu-id="b23a2-1188">Azure Dosyalar AAD DS Kimlik Doğrulaması ile Depolama hesabı oluşturma veya güncelleştirme desteği eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1188">Support create or update Storage account with Azure Files AAD DS Authentication</span></span>
+    -  <span data-ttu-id="b23a2-1189">New-AzStorageAccount</span><span class="sxs-lookup"><span data-stu-id="b23a2-1189">New-AzStorageAccount</span></span>
+    -  <span data-ttu-id="b23a2-1190">Set-AzStorageAccount</span><span class="sxs-lookup"><span data-stu-id="b23a2-1190">Set-AzStorageAccount</span></span>
+* <span data-ttu-id="b23a2-1191">Bir dosya paylaşımının, dosya dizininin veya dosyanın dosya tanıtıcılarını listeleme veya kapatma desteği eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1191">Support list or close file handles of a file share, file directory or a file</span></span>
+    - <span data-ttu-id="b23a2-1192">Get-AzStorageFileHandle</span><span class="sxs-lookup"><span data-stu-id="b23a2-1192">Get-AzStorageFileHandle</span></span>
+    - <span data-ttu-id="b23a2-1193">Close-AzStorageFileHandle</span><span class="sxs-lookup"><span data-stu-id="b23a2-1193">Close-AzStorageFileHandle</span></span>
+
+#### <a name="azstoragesync"></a><span data-ttu-id="b23a2-1194">Az.StorageSync</span><span class="sxs-lookup"><span data-stu-id="b23a2-1194">Az.StorageSync</span></span>
+* <span data-ttu-id="b23a2-1195">Bu modül, artık toplama `Az` modülünün bir parçası olarak sunulur</span><span class="sxs-lookup"><span data-stu-id="b23a2-1195">This module is now included as a part of the roll-up `Az` module</span></span>
+
+## <a name="232---june-2019"></a><span data-ttu-id="b23a2-1196">2.3.2 - Haziran 2019</span><span class="sxs-lookup"><span data-stu-id="b23a2-1196">2.3.2 - June 2019</span></span>
+#### <a name="azaccounts"></a><span data-ttu-id="b23a2-1197">Az.Accounts</span><span class="sxs-lookup"><span data-stu-id="b23a2-1197">Az.Accounts</span></span>
+* <span data-ttu-id="b23a2-1198">İşlevler çağrıları için bazı durumlarda yanlış URL’nin kullanılmasına neden olan hata düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1198">Fix bug with incorrect URL being used in some cases for Functions calls</span></span>
+    - <span data-ttu-id="b23a2-1199">Burada daha fazla bilgi bulunabilir: https://github.com/Azure/azure-powershell/issues/8983</span><span class="sxs-lookup"><span data-stu-id="b23a2-1199">More information here: https://github.com/Azure/azure-powershell/issues/8983</span></span>
+* <span data-ttu-id="b23a2-1200">AzureRM’den Az cmdlet’lerine yönelik diğer adlarla ilgili sorun düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1200">Fix Issue with aliases from AzureRM to Az cmdlets</span></span>
+  - <span data-ttu-id="b23a2-1201">Set-AzureRmVMBootDiagnostics -> Set-AzVMBootDiagnostic</span><span class="sxs-lookup"><span data-stu-id="b23a2-1201">Set-AzureRmVMBootDiagnostics -> Set-AzVMBootDiagnostic</span></span>
+  - <span data-ttu-id="b23a2-1202">Export-AzureRMLogAnalyticThrottledRequests -> Export-AzLogAnalyticThrottledRequest</span><span class="sxs-lookup"><span data-stu-id="b23a2-1202">Export-AzureRMLogAnalyticThrottledRequests -> Export-AzLogAnalyticThrottledRequest</span></span>
+
+#### <a name="azcompute"></a><span data-ttu-id="b23a2-1203">Az.Compute</span><span class="sxs-lookup"><span data-stu-id="b23a2-1203">Az.Compute</span></span>
+* <span data-ttu-id="b23a2-1204">New-AzVm ve New-AzVmss basit parametre kümeleri artık 'ProximityPlacementGroup' parametresini kabul ediyor.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1204">New-AzVm and New-AzVmss simple parameter sets now accept the 'ProximityPlacementGroup' parameter.</span></span>
+* <span data-ttu-id="b23a2-1205">'New-AzVM' başvuru belgelerindeki yazım hatası düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1205">Fix typo in 'New-AzVM' reference documentation</span></span>
+
+#### <a name="azdns"></a><span data-ttu-id="b23a2-1206">Az.Dns</span><span class="sxs-lookup"><span data-stu-id="b23a2-1206">Az.Dns</span></span>
+* <span data-ttu-id="b23a2-1207">'Set-AzDnsZone' yardım örneklerindeki bir yazım hatası düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1207">Fixed a typo in 'Set-AzDnsZone' help examples.</span></span>
+
+#### <a name="azeventgrid"></a><span data-ttu-id="b23a2-1208">Az.EventGrid</span><span class="sxs-lookup"><span data-stu-id="b23a2-1208">Az.EventGrid</span></span>
+* <span data-ttu-id="b23a2-1209">2019-06-01 API sürümünü kullanacak biçimde güncelleştirildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1209">Updated to use the 2019-06-01 API version.</span></span>
+* <span data-ttu-id="b23a2-1210">Yeni cmdlet’ler:</span><span class="sxs-lookup"><span data-stu-id="b23a2-1210">New cmdlets:</span></span>
+    - <span data-ttu-id="b23a2-1211">New-AzureRmEventGridDomain</span><span class="sxs-lookup"><span data-stu-id="b23a2-1211">New-AzureRmEventGridDomain</span></span>
+        - <span data-ttu-id="b23a2-1212">Yeni bir Azure Event Grid etki alanı oluşturur.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1212">Creates a new Azure Event Grid Domain.</span></span>
+    - <span data-ttu-id="b23a2-1213">Get-AzureRmEventGridDomain</span><span class="sxs-lookup"><span data-stu-id="b23a2-1213">Get-AzureRmEventGridDomain</span></span>
+        - <span data-ttu-id="b23a2-1214">Event Grid Etki Alanının ayrıntılarını veya mevcut Azure aboneliğindeki tüm Event Grid Etki Alanlarının listesini alır.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1214">Gets the details of an Event Grid Domain, or gets a list of all Event Grid Domains in the current Azure subscription.</span></span>
+    - <span data-ttu-id="b23a2-1215">Remove-AzureRmEventGridDomain</span><span class="sxs-lookup"><span data-stu-id="b23a2-1215">Remove-AzureRmEventGridDomain</span></span>
+        - <span data-ttu-id="b23a2-1216">Bir Azure Event Grid Etki Alanını kaldırır.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1216">Removes an Azure Event Grid Domain.</span></span>
+    - <span data-ttu-id="b23a2-1217">New-AzureRmEventGridDomainKey</span><span class="sxs-lookup"><span data-stu-id="b23a2-1217">New-AzureRmEventGridDomainKey</span></span>
+        - <span data-ttu-id="b23a2-1218">Bir Azure Event Grid Etki Alanı için paylaşılan erişim anahtarını yeniden üretir.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1218">Regenerates the shared access key for an Azure Event Grid Domain.</span></span>
+    - <span data-ttu-id="b23a2-1219">Get-AzureRmEventGridDomainKey</span><span class="sxs-lookup"><span data-stu-id="b23a2-1219">Get-AzureRmEventGridDomainKey</span></span>
+        - <span data-ttu-id="b23a2-1220">Etkinlikleri bir Event Grid Etki Alanıyla paylaşmak için kullanılan paylaşılan erişim anahtarlarını alır.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1220">Gets the shared access keys used to publish events to an Event Grid Domain.</span></span>
+    - <span data-ttu-id="b23a2-1221">New-AzureRmEventGridDomainTopic:</span><span class="sxs-lookup"><span data-stu-id="b23a2-1221">New-AzureRmEventGridDomainTopic:</span></span>
+        - <span data-ttu-id="b23a2-1222">Yeni bir Azure Event Grid Etki Alanı Konu Başlığı oluşturur.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1222">Creates a new Azure Event Grid Domain Topic.</span></span>
+    - <span data-ttu-id="b23a2-1223">Get-AzureRmEventGridDomainTopic</span><span class="sxs-lookup"><span data-stu-id="b23a2-1223">Get-AzureRmEventGridDomainTopic</span></span>
+        - <span data-ttu-id="b23a2-1224">Bir Event Grid Etki Alanının ayrıntılarını veya mevcut Azure aboneliğindeki belirli Event Grid Etki Alanlarının altında bulunan tüm Event Grid Etki Alanı Konu Başlıklarının listesini alır</span><span class="sxs-lookup"><span data-stu-id="b23a2-1224">Gets the details of an Event Grid Domain Topic, or gets a list of all Event Grid Domain Topics under specific Event Grid Domain in the current Azure</span></span>
+    - <span data-ttu-id="b23a2-1225">Remove-AzureRmEventGridDomainTopic:</span><span class="sxs-lookup"><span data-stu-id="b23a2-1225">Remove-AzureRmEventGridDomainTopic:</span></span>
+        - <span data-ttu-id="b23a2-1226">Mevcut bir Azure Event Grid Etki Alanı Konu Başlığını kaldırır.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1226">Removes an existing Azure Event Grid Domain Topic.</span></span>
+* <span data-ttu-id="b23a2-1227">Cmdlet'ler güncelleştirildi:</span><span class="sxs-lookup"><span data-stu-id="b23a2-1227">Updated cmdlets:</span></span>
+    - <span data-ttu-id="b23a2-1228">New-AzureRmEventGridSubscription/Update-AzureRmEventGridSubscription:</span><span class="sxs-lookup"><span data-stu-id="b23a2-1228">New-AzureRmEventGridSubscription/Update-AzureRmEventGridSubscription:</span></span>
+        - <span data-ttu-id="b23a2-1229">Bu kaynakların altında yeni olay aboneliklerinin oluşturulmasına olanak tanımak amacıyla yeni Event Grid Etki Alanı ve Event Grid Etki Alanı Konu Başlığına yönelik kanal oluşturmanın desteklemesi için yeni zorunlu parametreler ekler.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1229">Add new mandatory parameters to support piping for the new Event Grid Domain and Event Grid Domain Topic to allow creating new event subscription under these resources.</span></span>
+        - <span data-ttu-id="b23a2-1230">Bu kaynakların altında yeni olay aboneliklerinin oluşturulmasına olanak tanımak amacıyla yeni Event Grid Etki Alanı adını ve/veya Event Grid Etki Alanı Konu Başlığının adını belirtmek için yeni zorunlu parametreler ekler.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1230">Add new mandatory parameters for specifying the new Event Grid Domain name and/or Event Grid Domain Topic name to allow creating new event subscription under these resources.</span></span>
+        - <span data-ttu-id="b23a2-1231">Mevcut parametrelerin yeniden kullanılmasına olanak tanımak için etki alanları ve etki alanı konu başlıkları için yeni Parametre kümeleri (örneğin, EndPointType, SubjectBeginsWith vb.) ekler.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1231">Add new Parameter sets for domains and domain topics to allow reusing existing parameters (e.g., EndPointType, SubjectBeginsWith, etc).</span></span>
+        - <span data-ttu-id="b23a2-1232">Şunları belirtmek için yeni isteğe bağlı parametreler eklendi:</span><span class="sxs-lookup"><span data-stu-id="b23a2-1232">Add new optional parameters for specifying:</span></span>
+            - <span data-ttu-id="b23a2-1233">Olay aboneliği bitiş tarihi,</span><span class="sxs-lookup"><span data-stu-id="b23a2-1233">Event subscription expiration date,</span></span>
+            - <span data-ttu-id="b23a2-1234">Gelişmiş filtreleme parametreleri.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1234">Advanced filtering parameters.</span></span>
+        - <span data-ttu-id="b23a2-1235">Hedef olarak servicebusqueue için yeni sabit listesi ekler.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1235">Add new enum for servicebusqueue as destination.</span></span>
+        - <span data-ttu-id="b23a2-1236">-IncludedEventType seçeneğinde ‘All’ kullanılmasını engeller ve bunu şununla değiştirir</span><span class="sxs-lookup"><span data-stu-id="b23a2-1236">Disallow usage of 'All' in -IncludedEventType option and replace it with</span></span>
+    - <span data-ttu-id="b23a2-1237">Get-AzEventGridTopic, Get-AzEventGridDomain, Get-AzEventGridDomainTopic, Get-AzEventGridSubscription:</span><span class="sxs-lookup"><span data-stu-id="b23a2-1237">Get-AzEventGridTopic, Get-AzEventGridDomain, Get-AzEventGridDomainTopic, Get-AzEventGridSubscription:</span></span>
+        - <span data-ttu-id="b23a2-1238">Sayfalandırma ve filtreleme sonuçlarını desteklemek için yeni isteğe bağlı parametreler (Top, ODataQuery and NextLink) ekler.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1238">Add new optional parameters (Top, ODataQuery and NextLink) to support results pagination and filtering.</span></span>
+    - <span data-ttu-id="b23a2-1239">Remove-AzureRmEventGridSubscription</span><span class="sxs-lookup"><span data-stu-id="b23a2-1239">Remove-AzureRmEventGridSubscription</span></span>
+        - <span data-ttu-id="b23a2-1240">Bu kaynakların altında bulunan mevcut olay aboneliklerinin taşınmasına olanak tanımak amacıyla Event Grid Etki Alanı ve Event Grid Etki Alanı Konu Başlığına yönelik kanal oluşturmayı desteklemek için yeni zorunlu parametreler ekler.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1240">Add new mandatory parameters to support piping for Event Grid Domain and Event Grid Domain Topic to allow removing existing event subscription under these resources.</span></span>
+        - <span data-ttu-id="b23a2-1241">Bu kaynakların altında bulunan mevcut olay aboneliklerinin taşınmasına olanak tanımak amacıyla Event Grid Etki Alanı adının ve/veya Event Grid Etki Alanı Konu Başlığı adını belirtmek için yeni zorunlu parametreler ekler.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1241">Add new mandatory parameters for specifying the Event Grid Domain name and/or Event Grid Domain Topic name to allow removing existing event subscription under these resources.</span></span>
+
+#### <a name="azfrontdoor"></a><span data-ttu-id="b23a2-1242">Az.FrontDoor</span><span class="sxs-lookup"><span data-stu-id="b23a2-1242">Az.FrontDoor</span></span>
+* <span data-ttu-id="b23a2-1243">New-AzFrontDoorWafMatchConditionObject</span><span class="sxs-lookup"><span data-stu-id="b23a2-1243">New-AzFrontDoorWafMatchConditionObject</span></span>
+    - <span data-ttu-id="b23a2-1244">Dönüştürmeler desteği ve yeni işleç otomatik tamamlama değeri (RegEx) ekler</span><span class="sxs-lookup"><span data-stu-id="b23a2-1244">Add transforms support and new operator auto-complete value (RegEx)</span></span>
+* <span data-ttu-id="b23a2-1245">New-AzFrontDoorWafManagedRuleObject</span><span class="sxs-lookup"><span data-stu-id="b23a2-1245">New-AzFrontDoorWafManagedRuleObject</span></span>
+    - <span data-ttu-id="b23a2-1246">Yeni otomatik tamamlama değerleri ekler</span><span class="sxs-lookup"><span data-stu-id="b23a2-1246">Add new auto-complete values</span></span>
+
+#### <a name="aznetwork"></a><span data-ttu-id="b23a2-1247">Az.Network</span><span class="sxs-lookup"><span data-stu-id="b23a2-1247">Az.Network</span></span>
+* <span data-ttu-id="b23a2-1248">Sanal Ağ Geçidi Kaynağı için destek ekler</span><span class="sxs-lookup"><span data-stu-id="b23a2-1248">Add support for Virtual Network Gateway Resource</span></span>
+    - <span data-ttu-id="b23a2-1249">Yeni cmdlet’ler</span><span class="sxs-lookup"><span data-stu-id="b23a2-1249">New cmdlets</span></span>
+        - <span data-ttu-id="b23a2-1250">Get-AzVirtualNetworkGatewayVpnClientConnectionHealth</span><span class="sxs-lookup"><span data-stu-id="b23a2-1250">Get-AzVirtualNetworkGatewayVpnClientConnectionHealth</span></span>
+* <span data-ttu-id="b23a2-1251">AvailablePrivateEndpointType ekler</span><span class="sxs-lookup"><span data-stu-id="b23a2-1251">Add AvailablePrivateEndpointType</span></span>
+    - <span data-ttu-id="b23a2-1252">Yeni cmdlet’ler</span><span class="sxs-lookup"><span data-stu-id="b23a2-1252">New cmdlets</span></span>
+        - <span data-ttu-id="b23a2-1253">Get-AzAvailablePrivateEndpointType</span><span class="sxs-lookup"><span data-stu-id="b23a2-1253">Get-AzAvailablePrivateEndpointType</span></span>
+* <span data-ttu-id="b23a2-1254">PrivatePrivateLinkService ekler</span><span class="sxs-lookup"><span data-stu-id="b23a2-1254">Add PrivatePrivateLinkService</span></span>
+    - <span data-ttu-id="b23a2-1255">Yeni cmdlet’ler</span><span class="sxs-lookup"><span data-stu-id="b23a2-1255">New cmdlets</span></span>
+        - <span data-ttu-id="b23a2-1256">Get-AzPrivateLinkService</span><span class="sxs-lookup"><span data-stu-id="b23a2-1256">Get-AzPrivateLinkService</span></span>
+        - <span data-ttu-id="b23a2-1257">New-AzPrivateLinkService</span><span class="sxs-lookup"><span data-stu-id="b23a2-1257">New-AzPrivateLinkService</span></span>
+        - <span data-ttu-id="b23a2-1258">Remove-AzPrivateLinkService</span><span class="sxs-lookup"><span data-stu-id="b23a2-1258">Remove-AzPrivateLinkService</span></span>
+        - <span data-ttu-id="b23a2-1259">New-AzPrivateLinkServiceIpConfig</span><span class="sxs-lookup"><span data-stu-id="b23a2-1259">New-AzPrivateLinkServiceIpConfig</span></span>
+        - <span data-ttu-id="b23a2-1260">Set-AzPrivateEndpointConnection</span><span class="sxs-lookup"><span data-stu-id="b23a2-1260">Set-AzPrivateEndpointConnection</span></span>
+* <span data-ttu-id="b23a2-1261">PrivateEndpoint ekler</span><span class="sxs-lookup"><span data-stu-id="b23a2-1261">Add PrivateEndpoint</span></span>
+    - <span data-ttu-id="b23a2-1262">Yeni cmdlet’ler</span><span class="sxs-lookup"><span data-stu-id="b23a2-1262">New cmdlets</span></span>
+        - <span data-ttu-id="b23a2-1263">Get-AzPrivateEndpoint</span><span class="sxs-lookup"><span data-stu-id="b23a2-1263">Get-AzPrivateEndpoint</span></span>
+        - <span data-ttu-id="b23a2-1264">New-AzPrivateEndpoint</span><span class="sxs-lookup"><span data-stu-id="b23a2-1264">New-AzPrivateEndpoint</span></span>
+        - <span data-ttu-id="b23a2-1265">Remove-AzPrivateEndpoint</span><span class="sxs-lookup"><span data-stu-id="b23a2-1265">Remove-AzPrivateEndpoint</span></span>
+        - <span data-ttu-id="b23a2-1266">New-AzPrivateLinkServiceConnection</span><span class="sxs-lookup"><span data-stu-id="b23a2-1266">New-AzPrivateLinkServiceConnection</span></span>
+* <span data-ttu-id="b23a2-1267">Özellik için aşağıdaki komutlar güncelleştirildi: VpnConnection’da UseLocalAzureIpAddress bayrağı</span><span class="sxs-lookup"><span data-stu-id="b23a2-1267">Updated below commands for feature: UseLocalAzureIpAddress flag on VpnConnection</span></span>
+    - <span data-ttu-id="b23a2-1268">New-AzVpnConnection güncelleştirildi: Bağlantı başlatılırken yerel Azure IP adresinin kullanılması gerektiğini belirtmek için isteğe bağlı -UseLocalAzureIpAddress parametresi eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1268">Updated New-AzVpnConnection: Added optional parameter -UseLocalAzureIpAddress to indicate that local azure ip address should be used as source address while initiating connection.</span></span>
+    - <span data-ttu-id="b23a2-1269">Set-AzVpnConnection güncelleştirildi: Bağlantı başlatılırken yerel Azure IP adresinin kullanılması gerektiğini belirtmek için isteğe bağlı -UseLocalAzureIpAddress parametresi eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1269">Updated Set-AzVpnConnection: Added optional parameter -UseLocalAzureIpAddress to indicate that local azure ip address should be used as source address while initiating connection.</span></span>
+* <span data-ttu-id="b23a2-1270">ExpressRoute eşlemede PeeredConnections salt okunur alanı eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1270">Added readonly field PeeredConnections in ExpressRoute peering.</span></span>
+* <span data-ttu-id="b23a2-1271">ExpressRoute’ta GlobalReachEnabled salt okunur alanı eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1271">Added readonly field GlobalReachEnabled in ExpressRoute.</span></span>
+* <span data-ttu-id="b23a2-1272">ExpressRouteCircuit modelindeki AllowGlobalReach alanının kullanımdan kaldırıldığını duyurmak için hataya neden olan değişiklik özniteliği eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1272">Added breaking change attribute to call out deprecation of AllowGlobalReach field in ExpressRouteCircuit model</span></span>
+* <span data-ttu-id="b23a2-1273">AzApplicationGatewayRedirectConfiguration cmdlet’leri ile TargetListenerID’yi kullanırken oluşan 8756 Hatası Sorunu düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1273">Fixed Issue 8756 Error using TargetListenerID with AzApplicationGatewayRedirectConfiguration cmdlets</span></span>
+* <span data-ttu-id="b23a2-1274">New-AzApplicationGatewayPathRuleConfig’de yeniden yazma kuralının ayarlanmasını engelleyen hata düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1274">Fixed bug in New-AzApplicationGatewayPathRuleConfig that prevented the rewrite ruleset from being set.</span></span>
+* <span data-ttu-id="b23a2-1275">NetworkInterfaceIpConfiguration’da VirtualNetworkTaps’in görüntülenmesi düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1275">Fixed displaying of VirtualNetworkTaps in NetworkInterfaceIpConfiguration</span></span>
+* <span data-ttu-id="b23a2-1276">Tümünü listele bölümü için Cortex Get cmdlet’leri düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1276">Fixed Cortex Get cmdlets for list all part</span></span>
+* <span data-ttu-id="b23a2-1277">ExpressRouteGateways ve VpnGateway için VirtualHub başvurusu oluşturma düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1277">Fixed VirtualHub reference creation for ExpressRouteGateways, VpnGateway</span></span>
+* <span data-ttu-id="b23a2-1278">AzureFirewall ve NatGateway için Kullanılabilirlik Alanları desteği eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1278">Added support for Availability Zones in AzureFirewall and NatGateway</span></span>
+* <span data-ttu-id="b23a2-1279">Get-AzNetworkServiceTag cmdlet’i eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1279">Added cmdlet Get-AzNetworkServiceTag</span></span>
+* <span data-ttu-id="b23a2-1280">Azure Güvenlik Duvarı için birden fazla genel IP adresi desteği eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1280">Add support for multiple public IP addresses for Azure Firewall</span></span>
+    - <span data-ttu-id="b23a2-1281">New-AzFirewall cmdlet'i güncelleştirildi:</span><span class="sxs-lookup"><span data-stu-id="b23a2-1281">Updated New-AzFirewall cmdlet:</span></span>
+        - <span data-ttu-id="b23a2-1282">Bir veya daha fazla Genel IP Adresi nesnesi kabul eden -PublicIpAddress parametresi eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1282">Added parameter -PublicIpAddress which accepts one or more Public IP Address objects</span></span>
+        - <span data-ttu-id="b23a2-1283">Bir Sanal Ağ nesnesini kabul eden -VirtualNetwork parametresi eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1283">Added parameter -VirtualNetwork which accepts a Virtual Network object</span></span>
+        - <span data-ttu-id="b23a2-1284">Güvenlik duvarı nesnesine AddPublicIpAddress ve RemovePublicIpAddress yöntemleri eklendi - bunlar giriş olarak Genel IP Adresi nesnesini kabul eder</span><span class="sxs-lookup"><span data-stu-id="b23a2-1284">Added methods AddPublicIpAddress and RemovePublicIpAddress on firewall object - these accept a Public IP Address object as input</span></span>
+        - <span data-ttu-id="b23a2-1285">Kullanım dışı parametreler - PublicIpName ve -VirtualNetworkName</span><span class="sxs-lookup"><span data-stu-id="b23a2-1285">Deprecated parameters -PublicIpName and -VirtualNetworkName</span></span>
+* <span data-ttu-id="b23a2-1286">Özellik için aşağıdaki komutlar güncelleştirildi: Sanal ağ geçidi kaynağına VpnClient AAD kimlik doğrulaması seçenekleri ayarlandı.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1286">Updated below commands for feature: Set VpnClient AAD authentication options to Virtual network gateway resource.</span></span>
+    - <span data-ttu-id="b23a2-1287">New-AzVirtualNetworkGateway güncelleştirildi: Ağ Geçidinde VpnClient AAD kimlik doğrulamasını ayarlamak için isteğe bağlı AadTenantUri, AadAudienceId, AadIssuerUri parametreleri eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1287">Updated New-AzVirtualNetworkGateway: Added optional parameters AadTenantUri,AadAudienceId,AadIssuerUri to set VpnClient AAD authentication options on Gateway.</span></span>
+    - <span data-ttu-id="b23a2-1288">Set-AzVirtualNetworkGateway güncelleştirildi: Ağ Geçidinde VpnClient AAD kimlik doğrulamasını ayarlamak için isteğe bağlı AadTenantUri, AadAudienceId, AadIssuerUri parametresi eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1288">Updated Set-AzVirtualNetworkGateway: Added optional parameter AadTenantUri,AadAudienceId,AadIssuerUri to set VpnClient AAD authentication options on Gateway.</span></span>
+    - <span data-ttu-id="b23a2-1289">Set-AzVirtualNetworkGateway güncelleştirildi: VpnClient AAD kimlik doğrulaması seçeneklerini Ağ Geçidinden kaldırmak için isteğe bağlı RemoveAadAuthentication anahtar parametresi eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1289">Updated Set-AzVirtualNetworkGateway: Added optional switch parameter RemoveAadAuthentication to remove VpnClient AAD authentication options from Gateway.</span></span>
+
+#### <a name="azoperationalinsights"></a><span data-ttu-id="b23a2-1290">Az.OperationalInsights</span><span class="sxs-lookup"><span data-stu-id="b23a2-1290">Az.OperationalInsights</span></span>
+* <span data-ttu-id="b23a2-1291">‘New-Azurermoperationalınsightsworkspace’ komutunda **pergb2018** fiyatlandırma katmanı etkinleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1291">Enable **pergb2018** pricing tier in 'New-AzureRmOperationalInsightsWorkspace' command</span></span>
+
+#### <a name="azresources"></a><span data-ttu-id="b23a2-1292">Az.Resources</span><span class="sxs-lookup"><span data-stu-id="b23a2-1292">Az.Resources</span></span>
+* <span data-ttu-id="b23a2-1293">Ek Şablon Dışarı Aktarma seçenekleri için destek</span><span class="sxs-lookup"><span data-stu-id="b23a2-1293">Support for additional Template Export options</span></span>
+    - <span data-ttu-id="b23a2-1294">Export-AzResourceGroup’a ‘-SkipResourceNameParameterization’ parametresi eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1294">Add '-SkipResourceNameParameterization' parameter to Export-AzResourceGroup</span></span>
+    - <span data-ttu-id="b23a2-1295">Export-AzResourceGroup’a ‘-SkipAllParameterization’ parametresi eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1295">Add '-SkipAllParameterization' parameter to Export-AzResourceGroup</span></span>
+    - <span data-ttu-id="b23a2-1296">Dışarı aktarılan kaynak filtrelemesi için Export-AzResourceGroup’a ‘Resource’ parametresi eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1296">Add '-Resource' parameter to Export-AzResourceGroup for exported resource filtering</span></span>
+
+#### <a name="azservicefabric"></a><span data-ttu-id="b23a2-1297">Az.ServiceFabric</span><span class="sxs-lookup"><span data-stu-id="b23a2-1297">Az.ServiceFabric</span></span>
+* <span data-ttu-id="b23a2-1298">ByExistingKeyVault sertifika eklemenin bazı durumlarda yanlış parmak izi alması düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1298">Fix add certificate ByExistingKeyVault getting the wrong thumbprint in some cases</span></span>
+
+#### <a name="azsql"></a><span data-ttu-id="b23a2-1299">Az.Sql</span><span class="sxs-lookup"><span data-stu-id="b23a2-1299">Az.Sql</span></span>
+* <span data-ttu-id="b23a2-1300">Gelişmiş Tehdit Koruması depolama uç noktası son eki düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1300">Fix Advanced Threat Protection storage endpoint suffix</span></span>
+* <span data-ttu-id="b23a2-1301">Gelişmiş Veri Güvenliği’ni etkinleştirmenin Gelişmiş Tehdit Koruması ilkesini geçersiz kılması düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1301">Fix Advanced Data Security enable overrides Advanced Threat Protection policy</span></span>
+* <span data-ttu-id="b23a2-1302">Müşterilerin yönetilen örnekler için TDE anahtarları ekleyip TDE koruyucusu ayarlamasına olanak tanımak için Management.Sql’e yönelik yeni cmdlet’ler</span><span class="sxs-lookup"><span data-stu-id="b23a2-1302">New Cmdlets for Management.Sql to allow customers to add TDE keys and set TDE protector for managed instances</span></span>
+   - <span data-ttu-id="b23a2-1303">Add-AzSqlInstanceKeyVaultKey</span><span class="sxs-lookup"><span data-stu-id="b23a2-1303">Add-AzSqlInstanceKeyVaultKey</span></span>
+   - <span data-ttu-id="b23a2-1304">Get-AzSqlInstanceKeyVaultKey</span><span class="sxs-lookup"><span data-stu-id="b23a2-1304">Get-AzSqlInstanceKeyVaultKey</span></span>
+   - <span data-ttu-id="b23a2-1305">Remove-AzSqlInstanceKeyVaultKey</span><span class="sxs-lookup"><span data-stu-id="b23a2-1305">Remove-AzSqlInstanceKeyVaultKey</span></span>
+   - <span data-ttu-id="b23a2-1306">Get-AzSqlInstanceTransparentDataEncryptionProtector</span><span class="sxs-lookup"><span data-stu-id="b23a2-1306">Get-AzSqlInstanceTransparentDataEncryptionProtector</span></span>
+   - <span data-ttu-id="b23a2-1307">Set-AzSqlInstanceTransparentDataEncryptionProtector</span><span class="sxs-lookup"><span data-stu-id="b23a2-1307">Set-AzSqlInstanceTransparentDataEncryptionProtector</span></span>
+
+#### <a name="azstorage"></a><span data-ttu-id="b23a2-1308">Az.Storage</span><span class="sxs-lookup"><span data-stu-id="b23a2-1308">Az.Storage</span></span>
+* <span data-ttu-id="b23a2-1309">Depolama hesabı oluştururken FileStorage ve SkuName Premium_ZRS tiplerine yönelik destek</span><span class="sxs-lookup"><span data-stu-id="b23a2-1309">Support Kind FileStorage and SkuName Premium_ZRS when create Storage account</span></span>
+    - <span data-ttu-id="b23a2-1310">New-AzStorageAccount</span><span class="sxs-lookup"><span data-stu-id="b23a2-1310">New-AzStorageAccount</span></span>
+* <span data-ttu-id="b23a2-1311">Blob değiştirilemezlik cmdlet’inin açıklaması netleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1311">Clarified description of blob immutability cmdlet</span></span>
+    -  <span data-ttu-id="b23a2-1312">Remove-AzRmStorageContainerImmutabilityPolicy</span><span class="sxs-lookup"><span data-stu-id="b23a2-1312">Remove-AzRmStorageContainerImmutabilityPolicy</span></span>
+
+#### <a name="azwebsites"></a><span data-ttu-id="b23a2-1313">Az.Websites</span><span class="sxs-lookup"><span data-stu-id="b23a2-1313">Az.Websites</span></span>
+* <span data-ttu-id="b23a2-1314">Kaynak grubu ile filtrelemeyi istemci yerine sunucuda yapmasını sağlayarak Get-AzWebAppCertificate’ı iyileştirir</span><span class="sxs-lookup"><span data-stu-id="b23a2-1314">Optimizes Get-AzWebAppCertificate to filter by resource group on the server instead of the client</span></span>
+* <span data-ttu-id="b23a2-1315">Get-AzWebAppSnapshot’a -UseDisasterRecovery anahtar parametresi ekler</span><span class="sxs-lookup"><span data-stu-id="b23a2-1315">Adds -UseDisasterRecovery switch parameter to Get-AzWebAppSnapshot</span></span>
+
+## <a name="220---june-2019"></a><span data-ttu-id="b23a2-1316">2.2.0 - Haziran 2019</span><span class="sxs-lookup"><span data-stu-id="b23a2-1316">2.2.0 - June 2019</span></span>
+#### <a name="azcdn"></a><span data-ttu-id="b23a2-1317">Az.Cdn</span><span class="sxs-lookup"><span data-stu-id="b23a2-1317">Az.Cdn</span></span>
+* <span data-ttu-id="b23a2-1318">Cmdlet'ler API sürümü 2019-04-15’i temel alan rulesEngine özelliğini destekleyecek şekilde güncelleştirildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1318">Updated cmdlets to support rulesEngine feature based on API version 2019-04-15.</span></span>
+
+#### <a name="azcompute"></a><span data-ttu-id="b23a2-1319">Az.Compute</span><span class="sxs-lookup"><span data-stu-id="b23a2-1319">Az.Compute</span></span>
+* <span data-ttu-id="b23a2-1320">İşlemi başlatan ve işlem tamamlanmadan önce hemen döndürülen `NoWait` parametresi eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1320">Added `NoWait` parameter that starts the operation and returns immediately, before the operation is completed.</span></span>
+    - <span data-ttu-id="b23a2-1321">Cmdlet'ler güncelleştirildi:   Export-AzLogAnalyticRequestRateByInterval   Export-AzLogAnalyticThrottledRequest   Remove-AzVM   Remove-AzVMAccessExtension   Remove-AzVMAEMExtension   Remove-AzVMChefExtension   Remove-AzVMCustomScriptExtension   Remove-AzVMDiagnosticsExtension   Remove-AzVMDiskEncryptionExtension   Remove-AzVMDscExtension   Remove-AzVMSqlServerExtension   Restart-AzVM   Set-AzVM   Set-AzVMAccessExtension   Set-AzVMADDomainExtension   Set-AzVMAEMExtension   Set-AzVMBginfoExtension   Set-AzVMChefExtension   Set-AzVMCustomScriptExtension   Set-AzVMDiagnosticsExtension   Set-AzVMDscExtension   Set-AzVMExtension   Start-AzVM   Stop-AzVM   Update-AzVM</span><span class="sxs-lookup"><span data-stu-id="b23a2-1321">Updated cmdlets:   Export-AzLogAnalyticRequestRateByInterval   Export-AzLogAnalyticThrottledRequest   Remove-AzVM   Remove-AzVMAccessExtension   Remove-AzVMAEMExtension   Remove-AzVMChefExtension   Remove-AzVMCustomScriptExtension   Remove-AzVMDiagnosticsExtension   Remove-AzVMDiskEncryptionExtension   Remove-AzVMDscExtension   Remove-AzVMSqlServerExtension   Restart-AzVM   Set-AzVM   Set-AzVMAccessExtension   Set-AzVMADDomainExtension   Set-AzVMAEMExtension   Set-AzVMBginfoExtension   Set-AzVMChefExtension   Set-AzVMCustomScriptExtension   Set-AzVMDiagnosticsExtension   Set-AzVMDscExtension   Set-AzVMExtension   Start-AzVM   Stop-AzVM   Update-AzVM</span></span>
+
+#### <a name="azeventhub"></a><span data-ttu-id="b23a2-1322">Az.EventHub</span><span class="sxs-lookup"><span data-stu-id="b23a2-1322">Az.EventHub</span></span>
+* <span data-ttu-id="b23a2-1323">#9231 - Get-AzEventHubNamespace etiketleri döndürmüyor hatasının düzeltmesi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1323">Fix for #9231 - Get-AzEventHubNamespace does not return tags</span></span>
+* <span data-ttu-id="b23a2-1324">#9230 - Get-AzEventHubNamespace ResourceGroupName yerine ResourceGroup döndürüyor hatasının düzeltmesi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1324">Fix for #9230 - Get-AzEventHubNamespace returns ResourceGroup instead of ResourceGroupName</span></span>
+
+#### <a name="aznetwork"></a><span data-ttu-id="b23a2-1325">Az.Network</span><span class="sxs-lookup"><span data-stu-id="b23a2-1325">Az.Network</span></span>
+* <span data-ttu-id="b23a2-1326">Nat Gateway için ResourceId ve InputObject değerleri güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1326">Update ResourceId and InputObject for Nat Gateway</span></span>
+    - <span data-ttu-id="b23a2-1327">ResourceId ve InputObject için diğer ad eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1327">Add alias for ResourceId and InputObject</span></span>
+
+#### <a name="azpolicyinsights"></a><span data-ttu-id="b23a2-1328">Az.PolicyInsights</span><span class="sxs-lookup"><span data-stu-id="b23a2-1328">Az.PolicyInsights</span></span>
+* <span data-ttu-id="b23a2-1329">Get-AzPolicyEvent’de Boş referans sorunu düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1329">Fix Null reference issue in Get-AzPolicyEvent</span></span>
+
+#### <a name="azrecoveryservices"></a><span data-ttu-id="b23a2-1330">Az.RecoveryServices</span><span class="sxs-lookup"><span data-stu-id="b23a2-1330">Az.RecoveryServices</span></span>
+* <span data-ttu-id="b23a2-1331">IaaSVM ilkesinin gün cinsinden en kısa saklama süresi 1'den 7'ye değiştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1331">IaaSVM policy minimum retention in days changed to 7 from 1</span></span>
+
+#### <a name="azservicebus"></a><span data-ttu-id="b23a2-1332">Az.ServiceBus</span><span class="sxs-lookup"><span data-stu-id="b23a2-1332">Az.ServiceBus</span></span>
+* <span data-ttu-id="b23a2-1333">#9182 - Get-AzServiceBusNamespace ResourceGroupName yerine ResourceGroup döndürüyor sorunu çözüldü</span><span class="sxs-lookup"><span data-stu-id="b23a2-1333">Fix for issue #9182 - Get-AzServiceBusNamespace returns ResourceGroup instead of ResourceGroupName</span></span>
+
+#### <a name="azservicefabric"></a><span data-ttu-id="b23a2-1334">Az.ServiceFabric</span><span class="sxs-lookup"><span data-stu-id="b23a2-1334">Az.ServiceFabric</span></span>
+* <span data-ttu-id="b23a2-1335">'Update-AzServiceFabricReliability' hata iletisindeki yazım hatası düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1335">Fix typo in error message for 'Update-AzServiceFabricReliability'</span></span>
+* <span data-ttu-id="b23a2-1336">Service Fabric komut satırlarındaki eksik karakter düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1336">Fix missing character in Service Fabric cmdlines</span></span>
+
+#### <a name="azsql"></a><span data-ttu-id="b23a2-1337">Az.Sql</span><span class="sxs-lookup"><span data-stu-id="b23a2-1337">Az.Sql</span></span>
+* <span data-ttu-id="b23a2-1338">Yönetilen Örnek için AutoDr’yi desteklemek amacıyla New-AzureSqlInstance cmdlet’ine DnsZonePartner parametresi eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1338">Add DnsZonePartner Parameter for New-AzureSqlInstance cmdlet to support AutoDr for Managed Instance.</span></span>
+* <span data-ttu-id="b23a2-1339">Get-AzSqlDatabaseSecureConnectionPolicy cmdlet’i kullanım dışı bırakıldı</span><span class="sxs-lookup"><span data-stu-id="b23a2-1339">Deprecating Get-AzSqlDatabaseSecureConnectionPolicy cmdlet</span></span>
+* <span data-ttu-id="b23a2-1340">Gelişmiş Tehdit Koruması için Tehdit Algılama cmdlet’leri yeniden adlandırıldı</span><span class="sxs-lookup"><span data-stu-id="b23a2-1340">Rename Threat Detection cmdlets to Advanced Threat Protection</span></span>
+* <span data-ttu-id="b23a2-1341">New-AzSqlInstance - StorageSizeInGB ve -LicenseType parametreleri artık isteğe bağlı.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1341">New-AzSqlInstance -StorageSizeInGB and -LicenseType parameters are now optional.</span></span>
+
+#### <a name="azwebsites"></a><span data-ttu-id="b23a2-1342">Az.Websites</span><span class="sxs-lookup"><span data-stu-id="b23a2-1342">Az.Websites</span></span>
+* <span data-ttu-id="b23a2-1343">Set-AzWebApp ve Set-AzWebAppSlot, WebApp özelliğiyle kullanıldığında etiketlerin kaldırılmasına neden olan sorun giderildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1343">fixes the issue where using  Set-AzWebApp and Set-AzWebAppSlot with -WebApp property was removing the tags</span></span>
+
+## <a name="210---may-2019"></a><span data-ttu-id="b23a2-1344">2.1.0 - Mayıs 2019</span><span class="sxs-lookup"><span data-stu-id="b23a2-1344">2.1.0 - May 2019</span></span>
+#### <a name="azapimanagement"></a><span data-ttu-id="b23a2-1345">Az.ApiManagement</span><span class="sxs-lookup"><span data-stu-id="b23a2-1345">Az.ApiManagement</span></span>
+* <span data-ttu-id="b23a2-1346">Genel Kapsamda ve API Kapsamında tanılamaları yönetmek için yeni Cmdlet'ler oluşturuldu</span><span class="sxs-lookup"><span data-stu-id="b23a2-1346">Created new Cmdlets for managing diagnostics at the global and API Scope</span></span>
+    - <span data-ttu-id="b23a2-1347">**Get-AzApiManagementDiagnostic** - Genel kapsam veya API Kapsamında yapılandırılan tanılamaları alır</span><span class="sxs-lookup"><span data-stu-id="b23a2-1347">**Get-AzApiManagementDiagnostic** - Get the diagnostics configured a global or api Scope</span></span>
+    - <span data-ttu-id="b23a2-1348">**New-AzApiManagementDiagnostic** - Genel kapsamda veya API Kapsamında yeni tanılama oluşturur</span><span class="sxs-lookup"><span data-stu-id="b23a2-1348">**New-AzApiManagementDiagnostic** - Create new diagnostics at the global scope or api Scope</span></span>
+    - <span data-ttu-id="b23a2-1349">**New-AzApiManagementHttpMessageDiagnostic** - Üst Bilgileri günlüğe kaydetme ve Gövde Baytları boyutu için tanılama ayarı oluşturur</span><span class="sxs-lookup"><span data-stu-id="b23a2-1349">**New-AzApiManagementHttpMessageDiagnostic** - Create diagnostic setting for which Headers to log and the size of Body Bytes</span></span>
+    - <span data-ttu-id="b23a2-1350">**New-AzApiManagementPipelineDiagnosticSetting** - Ağ Geçidinde gelen/giden HTTP iletileri için Tanılama ayarları oluşturur.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1350">**New-AzApiManagementPipelineDiagnosticSetting** - Create Diagnostic settings for incoming/outgoing HTTP messages to the Gateway.</span></span>
+    - <span data-ttu-id="b23a2-1351">**New-AzApiManagementSamplingSetting** - Tanılamaya yönelik istekler/yanıtlar için Örnekleme Ayarı oluşturur</span><span class="sxs-lookup"><span data-stu-id="b23a2-1351">**New-AzApiManagementSamplingSetting** - Create Sampling Setting  for the requests/response for a diagnostic</span></span>
+    - <span data-ttu-id="b23a2-1352">**Remove-AzApiManagementDiagnostic** - Genel kapsamda veya API kapsamında tanılama varlığını kaldırır</span><span class="sxs-lookup"><span data-stu-id="b23a2-1352">**Remove-AzApiManagementDiagnostic** - Remove a diagnostic entity at global or api scope</span></span>
+    - <span data-ttu-id="b23a2-1353">**Set-AzApiManagementDiagnostic** - Genel kapsamda veya API kapsamında tanılama Varlığını güncelleştirir</span><span class="sxs-lookup"><span data-stu-id="b23a2-1353">**Set-AzApiManagementDiagnostic** - Update a diagnostic Entity at global or api scope</span></span>
+* <span data-ttu-id="b23a2-1354">ApiManagement hizmetinde Önbellek yönetimi için yeni Cmdlet'ler oluşturuldu</span><span class="sxs-lookup"><span data-stu-id="b23a2-1354">Created new Cmdlets for managing Cache in ApiManagement service</span></span>
+    - <span data-ttu-id="b23a2-1355">**Get-AzApiManagementCache** - Tanımlayıcı tarafından belirtilen Önbelleğin veya tüm önbelleklerin ayrıntılarını alır</span><span class="sxs-lookup"><span data-stu-id="b23a2-1355">**Get-AzApiManagementCache** - Get the details of the Cache specified by identifier or all caches</span></span>
+    - <span data-ttu-id="b23a2-1356">**New-AzApiManagementCache** - Yeni bir 'varsayılan' Önbellek veya belirli bir azure 'bölgesinde' Önbellek oluşturur</span><span class="sxs-lookup"><span data-stu-id="b23a2-1356">**New-AzApiManagementCache** - Create a new 'default' Cache or Cache in a particular azure 'region'</span></span>
+    - <span data-ttu-id="b23a2-1357">**Remove-AzApiManagementCache** - Önbelleği kaldırır</span><span class="sxs-lookup"><span data-stu-id="b23a2-1357">**Remove-AzApiManagementCache** - Remove a cache</span></span>
+    - <span data-ttu-id="b23a2-1358">**Update-AzApiManagementCache** - Önbelleği güncelleştirir</span><span class="sxs-lookup"><span data-stu-id="b23a2-1358">**Update-AzApiManagementCache** - Update a cache</span></span>
+* <span data-ttu-id="b23a2-1359">API Şemasını yönetmek için yeni Cmdlet'ler oluşturuldu</span><span class="sxs-lookup"><span data-stu-id="b23a2-1359">Created new Cmdlets for managing API Schema</span></span>
+    - <span data-ttu-id="b23a2-1360">**New-AzApiManagementSchema** - API için yeni Şema oluşturur</span><span class="sxs-lookup"><span data-stu-id="b23a2-1360">**New-AzApiManagementSchema** - Create a new Schema for an API</span></span>
+    - <span data-ttu-id="b23a2-1361">**Get-AzApiManagementSchema** - API'de yapılandırılan şemaları alır</span><span class="sxs-lookup"><span data-stu-id="b23a2-1361">**Get-AzApiManagementSchema** - Get the schemas configured in the API</span></span>
+    - <span data-ttu-id="b23a2-1362">**Remove-AzApiManagementSchema** - API'de yapılandırılan şemaları kaldırır</span><span class="sxs-lookup"><span data-stu-id="b23a2-1362">**Remove-AzApiManagementSchema** - Remove the schema configured in the API</span></span>
+    - <span data-ttu-id="b23a2-1363">**Set-AzApiManagementSchema** - API'de yapılandırılan şemayı güncelleştirir</span><span class="sxs-lookup"><span data-stu-id="b23a2-1363">**Set-AzApiManagementSchema** - Update the schema configured in the API</span></span>
+* <span data-ttu-id="b23a2-1364">Kullanıcı Belirteci oluşturmak için yeni Cmdlet oluşturuldu.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1364">Created new Cmdlet for generating a User Token.</span></span>
+    - <span data-ttu-id="b23a2-1365">**New-AzApiManagementUserToken** - Varsayılan olarak 8 saat geçerli kalan yeni bir Kullanıcı Belirteci oluşturur. 'GIT' kullanıcısı için bu cmdlet kullanılarak Belirteç oluşturulabilir./</span><span class="sxs-lookup"><span data-stu-id="b23a2-1365">**New-AzApiManagementUserToken** - Generate a new User Token valid for 8 hours by default.Token for the 'GIT' user can be generated using this cmdlet./</span></span>
+* <span data-ttu-id="b23a2-1366">Ağ Durumunu almak için yeni cmdlet oluşturuldu</span><span class="sxs-lookup"><span data-stu-id="b23a2-1366">Created a new cmdlet to retrieving the Network Status</span></span>
+    - <span data-ttu-id="b23a2-1367">**Get-AzApiManagementNetworkStatus** - API Management hizmetinin bağımlı olduğu kaynakların bağlantısında ağ durumunu alır.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1367">**Get-AzApiManagementNetworkStatus** - Get the Network status connectivity of resources on which API Management service depends on.</span></span> <span data-ttu-id="b23a2-1368">ApiManagement hizmeti Sanal Ağa dağıtılırken ve bağımlılıklardan herhangi birinin bozulup bozulmadığı denetlenirken bu cmdlet yararlı olur.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1368">This is useful when deploying ApiManagement service into a Virtual Network and validing whether any of the dependencies are broken.</span></span>
+* <span data-ttu-id="b23a2-1369">**New-AzApiManagement** cmdlet'i ApiManagement hizmetini yönetecek şekilde güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1369">Updated cmdlet **New-AzApiManagement** to manage ApiManagement service</span></span>
+    - <span data-ttu-id="b23a2-1370">Yeni 'Consumption' SKU'su için destek eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1370">Added support for the new 'Consumption' SKU</span></span>
+    - <span data-ttu-id="b23a2-1371">'Consumption' SKU'sunda 'EnableClientCertificate' bayrağını etkinleştirmek için destek eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1371">Added support to turn the 'EnableClientCertificate' flag on for 'Consumption' SKU</span></span>
+    - <span data-ttu-id="b23a2-1372">Yeni **New-AzApiManagementSslSetting** cmdlet'i 'Backend' ve 'Frontend'de 'TLS/SSL' ayarını yapılandırmaya olanak tanır.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1372">The new cmdlet **New-AzApiManagementSslSetting** allows configuring 'TLS/SSL' setting on the 'Backend' and 'Frontend'.</span></span> <span data-ttu-id="b23a2-1373">Bu cmdlet ApiManagement hizmetinin 'Frontend'inde '3DES' gibi 'Ciphers' yapılandırması ve 'Http2' gibi 'ServerProtocols' yapılandırması için de kullanılabilir.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1373">This can also be used to configure 'Ciphers' like '3DES' and 'ServerProtocols' like 'Http2' on the 'Frontend' of an ApiManagement service.</span></span>
+    - <span data-ttu-id="b23a2-1374">ApiManagement hizmetinde 'DeveloperPortal' ana bilgisayar adının yapılandırması için destek eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1374">Added support for configuring the 'DeveloperPortal' hostname on ApiManagement service.</span></span>
+* <span data-ttu-id="b23a2-1375">**Get-AzApiManagementSsoToken** cmdlet'leri giriş olarak 'PsApiManagement' nesnesini alacak şekilde güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1375">Updated cmdlets **Get-AzApiManagementSsoToken** to take 'PsApiManagement' object as input</span></span>
+* <span data-ttu-id="b23a2-1376">Cmdlet satır içinde Hata İletileri görüntüleyecek şekilde güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1376">Updated the cmdlet to display Error Messages inline</span></span>
+     > <span data-ttu-id="b23a2-1377">PS D:\github\azure-powershell> Set-AzApiManagementPolicy -Context  -PolicyFilePath C:\wrongpolicy.xml -ApiId httpbin Set-AzApiManagementPolicy : Hata Kodu: ValidationError Hata İletisi: Bir veya birden çok alan yanlış değerler içeriyor: Hata Ayrıntıları:    [Code=ValidationError, Message=Error in element 'log-to-eventhub' on line 3, column 10: Logger not found, Target=log-to-eventhub]</span><span class="sxs-lookup"><span data-stu-id="b23a2-1377">PS D:\github\azure-powershell> Set-AzApiManagementPolicy -Context  -PolicyFilePath C:\wrongpolicy.xml -ApiId httpbin Set-AzApiManagementPolicy : Error Code: ValidationError Error Message: One or more fields contain incorrect values: Error Details:    [Code=ValidationError, Message=Error in element 'log-to-eventhub' on line 3, column 10: Logger not found, Target=log-to-eventhub]</span></span>
+* <span data-ttu-id="b23a2-1378">**Export-AzApiManagementApi** cmdlet'i API'leri 'OpenApi 3.0' biçiminde dışarı aktaracak şekilde güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1378">Updated cmdlet **Export-AzApiManagementApi** to export APIs in 'OpenApi 3.0' format</span></span>
+* <span data-ttu-id="b23a2-1379">**Import-AzApiManagementApi** cmdlet'i güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1379">Updated cmdlet **Import-AzApiManagementApi**</span></span>
+    - <span data-ttu-id="b23a2-1380">'OpenApi 3.0' belge belirtiminden Api'yi içeri aktarmak için</span><span class="sxs-lookup"><span data-stu-id="b23a2-1380">To import Api from 'OpenApi 3.0' document specification</span></span>
+    - <span data-ttu-id="b23a2-1381">Herhangi bir ('Swagger', 'Wadl', 'Wsdl', 'OpenApi') belgesinde belirtilen 'PsApiManagementSchema' özelliğini geçersiz kılmak için.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1381">To override the 'PsApiManagementSchema' property specified in any ('Swagger', 'Wadl', 'Wsdl', 'OpenApi') document.</span></span>
+    - <span data-ttu-id="b23a2-1382">Herhangi bir belgede belirtilen 'ServiceUrl' özelliğini geçersiz kılmak için.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1382">To override the 'ServiceUrl' property specified in any document.</span></span>
+* <span data-ttu-id="b23a2-1383">**Get-AzApiManagementPolicy** cmdlet'i ilkeyi 'rawxml' kullanarak Non-Xml kaçışlı 'format' olarak döndürecek şekilde güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1383">Updated cmdlet **Get-AzApiManagementPolicy** to return policy in Non-Xml escaped 'format' using 'rawxml'</span></span>
+* <span data-ttu-id="b23a2-1384">**Set-AzApiManagementPolicy** cmdlet'i ilkeyi 'rawxml' kullanarak Non-Xml kaçışlı 'format' olarak ve 'xml' kullanarak Xml kaçışlı kabul edecek şekilde güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1384">Updated cmdlet **Set-AzApiManagementPolicy** to accept policy in Non-Xml escaped 'format' using 'rawxml' and Xml escaped using 'xml'</span></span>
+* <span data-ttu-id="b23a2-1385">**New-AzApiManagementApi** cmdlet'i güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1385">Updated cmdlet **New-AzApiManagementApi**</span></span>
+    - <span data-ttu-id="b23a2-1386">API'yi 'OpenId' yetkilendirme sunucusuyla yapılandırmak için.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1386">To configure API with 'OpenId' authorization server.</span></span>
+    - <span data-ttu-id="b23a2-1387">'ApiVersionSet' içinde API oluşturmak için</span><span class="sxs-lookup"><span data-stu-id="b23a2-1387">To create an API in an 'ApiVersionSet'</span></span>
+    - <span data-ttu-id="b23a2-1388">'SourceApiId' ve 'SourceApiRevision' kullanıp API'yi kopyalamak için.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1388">To clone an API using 'SourceApiId' and 'SourceApiRevision'.</span></span>
+    - <span data-ttu-id="b23a2-1389">Api kapsamında 'SubscriptionRequired' yapılandırabilme özelliği.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1389">Ability to configure 'SubscriptionRequired' at the Api scope.</span></span>
+* <span data-ttu-id="b23a2-1390">**Set-AzApiManagementApi** cmdlet'i güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1390">Updated cmdlet **Set-AzApiManagementApi**</span></span>
+    - <span data-ttu-id="b23a2-1391">API'yi 'OpenId' yetkilendirme sunucusuyla yapılandırmak için.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1391">To configure API with 'OpenId' authorization server.</span></span>
+    - <span data-ttu-id="b23a2-1392">API'yi 'ApiVersionSet' olarak güncelleştirmek için</span><span class="sxs-lookup"><span data-stu-id="b23a2-1392">To updated an API into an 'ApiVersionSet'</span></span>
+    - <span data-ttu-id="b23a2-1393">Api kapsamında 'SubscriptionRequired' yapılandırabilme özelliği.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1393">Ability to configure 'SubscriptionRequired' at the Api scope.</span></span>
+* <span data-ttu-id="b23a2-1394">**New-AzApiManagementRevision** cmdlet'i güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1394">Updated cmdlet **New-AzApiManagementRevision**</span></span>
+    - <span data-ttu-id="b23a2-1395">'SourceApiRevision' kullanarak mevcut düzeltmeyi kopyalamak (etiketleri, ürünleri, işlemleri ve ilkeleri kopyalamak) için.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1395">To clone (copy tags, products, operations and policies) an existing revision using 'SourceApiRevision'.</span></span> <span data-ttu-id="b23a2-1396">Yeni Düzeltme üst öğenin 'ApiId' değerini varsayılan olarak alır.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1396">The new Revision assumes the 'ApiId' of the parent.</span></span>
+    - <span data-ttu-id="b23a2-1397">'ApiRevisionDescription' sağlamak için</span><span class="sxs-lookup"><span data-stu-id="b23a2-1397">To provide an 'ApiRevisionDescription'</span></span>
+    - <span data-ttu-id="b23a2-1398">API kopyalanırken 'ServiceUrl' değerini geçersiz kılmak için.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1398">To override the 'ServiceUrl' when cloning an API.</span></span>
+* <span data-ttu-id="b23a2-1399">**New-AzApiManagementIdentityProvider** cmdlet'i güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1399">Updated cmdlet **New-AzApiManagementIdentityProvider**</span></span>
+    - <span data-ttu-id="b23a2-1400">'AAD' veya 'AADB2C'yi bir 'Authority' ile yapılandırmak için</span><span class="sxs-lookup"><span data-stu-id="b23a2-1400">To configure 'AAD' or 'AADB2C' with an 'Authority'</span></span>
+    - <span data-ttu-id="b23a2-1401">'SignupPolicy', 'SigninPolicy', 'ProfileEditingPolicy' ve 'PasswordResetPolicy' ayarlamak için</span><span class="sxs-lookup"><span data-stu-id="b23a2-1401">To setup 'SignupPolicy', 'SigninPolicy', 'ProfileEditingPolicy' and 'PasswordResetPolicy'</span></span>
+* <span data-ttu-id="b23a2-1402">**New-AzApiManagementSubscription** cmdlet'i güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1402">Updated cmdlet **New-AzApiManagementSubscription**</span></span>
+    - <span data-ttu-id="b23a2-1403">'Scope' ve 'UserId' kullanarak yeni SubscriptonModel'i hesaba katmak için</span><span class="sxs-lookup"><span data-stu-id="b23a2-1403">To account for the new SubscriptonModel using 'Scope' and 'UserId'</span></span>
+    - <span data-ttu-id="b23a2-1404">'ProductId' ve 'UserId' kullanarak eski abonelik modelini hesaba katmak için</span><span class="sxs-lookup"><span data-stu-id="b23a2-1404">To account for the old subscription model using 'ProductId' and 'UserId'</span></span>
+    - <span data-ttu-id="b23a2-1405">Abonelik düzeyinde 'AllowTracing' özelliğini etkinleştirmek için destek eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1405">Add support to enable 'AllowTracing' at the subscription level.</span></span>
+* <span data-ttu-id="b23a2-1406">**Set-AzApiManagementSubscription** cmdlet'i güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1406">Updated cmdlet **Set-AzApiManagementSubscription**</span></span>
+    - <span data-ttu-id="b23a2-1407">'Scope' ve 'UserId' kullanarak yeni SubscriptonModel'i hesaba katmak için</span><span class="sxs-lookup"><span data-stu-id="b23a2-1407">To account for the new SubscriptonModel using 'Scope' and 'UserId'</span></span>
+    - <span data-ttu-id="b23a2-1408">'ProductId' ve 'UserId' kullanarak eski abonelik modelini hesaba katmak için</span><span class="sxs-lookup"><span data-stu-id="b23a2-1408">To account for the old subscription model using 'ProductId' and 'UserId'</span></span>
+    - <span data-ttu-id="b23a2-1409">Abonelik düzeyinde 'AllowTracing' özelliğini etkinleştirmek için destek eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1409">Add support to enable 'AllowTracing' at the subscription level.</span></span>
+* <span data-ttu-id="b23a2-1410">Aşağıdaki cmdlet'ler giriş olarak 'ResourceId' kabul edecek şekilde güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1410">Updated following cmdlets to accept 'ResourceId' as input</span></span>
+    - <span data-ttu-id="b23a2-1411">'New-AzApiManagementContext'</span><span class="sxs-lookup"><span data-stu-id="b23a2-1411">'New-AzApiManagementContext'</span></span>
+        > <span data-ttu-id="b23a2-1412">New-AzApiManagementContext -ResourceId /subscriptions/subid/resourceGroups/rgName/providers/Microsoft.ApiManagement/service/contoso</span><span class="sxs-lookup"><span data-stu-id="b23a2-1412">New-AzApiManagementContext -ResourceId /subscriptions/subid/resourceGroups/rgName/providers/Microsoft.ApiManagement/service/contoso</span></span>
+    - <span data-ttu-id="b23a2-1413">'Get-AzApiManagementApiRelease'</span><span class="sxs-lookup"><span data-stu-id="b23a2-1413">'Get-AzApiManagementApiRelease'</span></span>
+        > <span data-ttu-id="b23a2-1414">Get-AzApiManagementApiRelease -ResourceId /subscriptions/subid/resourceGroups/rgName/providers/Microsoft.ApiManagement/service/contoso/apis/echo-api/releases/releaseId</span><span class="sxs-lookup"><span data-stu-id="b23a2-1414">Get-AzApiManagementApiRelease -ResourceId /subscriptions/subid/resourceGroups/rgName/providers/Microsoft.ApiManagement/service/contoso/apis/echo-api/releases/releaseId</span></span>
+    - <span data-ttu-id="b23a2-1415">'Get-AzApiManagementApiVersionSet'</span><span class="sxs-lookup"><span data-stu-id="b23a2-1415">'Get-AzApiManagementApiVersionSet'</span></span>
+        > <span data-ttu-id="b23a2-1416">Get-AzApiManagementApiVersionSet -ResourceId /subscriptions/subid/resourceGroups/rgName/providers/Microsoft.ApiManagement/service/constoso/apiversionsets/pathversionset</span><span class="sxs-lookup"><span data-stu-id="b23a2-1416">Get-AzApiManagementApiVersionSet -ResourceId /subscriptions/subid/resourceGroups/rgName/providers/Microsoft.ApiManagement/service/constoso/apiversionsets/pathversionset</span></span>
+    - <span data-ttu-id="b23a2-1417">'Get-AzApiManagementAuthorizationServer'</span><span class="sxs-lookup"><span data-stu-id="b23a2-1417">'Get-AzApiManagementAuthorizationServer'</span></span>
+    - <span data-ttu-id="b23a2-1418">'Get-AzApiManagementBackend'</span><span class="sxs-lookup"><span data-stu-id="b23a2-1418">'Get-AzApiManagementBackend'</span></span>
+        > <span data-ttu-id="b23a2-1419">Get-AzApiManagementBackend -ResourceId /subscriptions/subid/resourceGroups/rgName/providers/Microsoft.ApiManagement/service/contoso/backends/servicefabric</span><span class="sxs-lookup"><span data-stu-id="b23a2-1419">Get-AzApiManagementBackend -ResourceId /subscriptions/subid/resourceGroups/rgName/providers/Microsoft.ApiManagement/service/contoso/backends/servicefabric</span></span>
+    - <span data-ttu-id="b23a2-1420">'Get-AzApiManagementCertificate'</span><span class="sxs-lookup"><span data-stu-id="b23a2-1420">'Get-AzApiManagementCertificate'</span></span>
+    - <span data-ttu-id="b23a2-1421">'Remove-AzApiManagementApiVersionSet'</span><span class="sxs-lookup"><span data-stu-id="b23a2-1421">'Remove-AzApiManagementApiVersionSet'</span></span>
+    - <span data-ttu-id="b23a2-1422">'Remove-AzApiManagementSubscription'</span><span class="sxs-lookup"><span data-stu-id="b23a2-1422">'Remove-AzApiManagementSubscription'</span></span>
+
+#### <a name="azautomation"></a><span data-ttu-id="b23a2-1423">Az.Automation</span><span class="sxs-lookup"><span data-stu-id="b23a2-1423">Az.Automation</span></span>
+* <span data-ttu-id="b23a2-1424">Get-AzAutomationJobOutputRecord, JSON ve Text kayıt değerlerini işleyecek şekilde güncelleştirildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1424">Updated Get-AzAutomationJobOutputRecord to handle JSON and Text record values.</span></span>
+    - <span data-ttu-id="b23a2-1425">[https://github.com/Azure/azure-powershell/issues/7977](https://github.com/Azure/azure-powershell/issues/7977 ) sorunu düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1425">Fix for issue https://github.com/Azure/azure-powershell/issues/7977</span></span>
+    - <span data-ttu-id="b23a2-1426">[https://github.com/Azure/azure-powershell/issues/8600](https://github.com/Azure/azure-powershell/issues/8600 ) sorunu düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1426">Fix for issue https://github.com/Azure/azure-powershell/issues/8600</span></span>
+* <span data-ttu-id="b23a2-1427">Start-AzAutomationDscCompilationJob cmdlet'inin davranışı tamamlanmasını beklemek yerine yalnızca işi başlatacak şekilde değiştirildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1427">Changed behavior for Start-AzAutomationDscCompilationJob to just start the job instead of waiting for its completion.</span></span>
+    * <span data-ttu-id="b23a2-1428">[https://github.com/Azure/azure-powershell/issues/8347](https://github.com/Azure/azure-powershell/issues/8347 ) sorunu düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1428">Fix for issue https://github.com/Azure/azure-powershell/issues/8347</span></span>
+* <span data-ttu-id="b23a2-1429">Get-AzAutomationDscNode için -Name kullanıldığında tüm düğümlerin döndürülmesi sorunu düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1429">Fix for Get-AzAutomationDscNode when using -Name returns all node.</span></span> <span data-ttu-id="b23a2-1430">Artık yalnızca eşleşen düğüm döndürülüyor.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1430">Now it returns matching node only.</span></span>
+
+#### <a name="azcompute"></a><span data-ttu-id="b23a2-1431">Az.Compute</span><span class="sxs-lookup"><span data-stu-id="b23a2-1431">Az.Compute</span></span>
+* <span data-ttu-id="b23a2-1432">Update-AzVmssVM cmdlet'ine ProtectFromScaleIn ve ProtectFromScaleSetAction parametreleri eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1432">Add ProtectFromScaleIn and ProtectFromScaleSetAction parameters to Update-AzVmssVM cmdlet.</span></span>
+* <span data-ttu-id="b23a2-1433">New-AzVM basit parametre kümesi artık 'East US' desteklenmiyorsa varsayılan olarak kullanılabilir bir konumu kullanıyor</span><span class="sxs-lookup"><span data-stu-id="b23a2-1433">New-AzVM wimple parameter set now uses by default an available location if 'East US' is not supported</span></span>
+
+#### <a name="azdatalakestore"></a><span data-ttu-id="b23a2-1434">Az.DataLakeStore</span><span class="sxs-lookup"><span data-stu-id="b23a2-1434">Az.DataLakeStore</span></span>
+* <span data-ttu-id="b23a2-1435">ADLS sdk'si azure çerçevesiyle httpclient, tümleşik veri düzlemi testi kullanacak şekilde güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1435">Update the ADLS sdk to use httpclient, integrate dataplane testing with azure framework</span></span>
+
+#### <a name="azmonitor"></a><span data-ttu-id="b23a2-1436">Az.Monitor</span><span class="sxs-lookup"><span data-stu-id="b23a2-1436">Az.Monitor</span></span>
+* <span data-ttu-id="b23a2-1437">Yardım örneklerindeki yanlış parametre adları düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1437">Fixed incorrect parameter names in help examples</span></span>
+
+#### <a name="aznetwork"></a><span data-ttu-id="b23a2-1438">Az.Network</span><span class="sxs-lookup"><span data-stu-id="b23a2-1438">Az.Network</span></span>
+* <span data-ttu-id="b23a2-1439">Etkin Yol Tablosu çıkışına DisableBgpRoutePropagation bayrağı eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1439">Add DisableBgpRoutePropagation flag to Effective Route Table output</span></span>
+    - <span data-ttu-id="b23a2-1440">Şu cmdlet güncelleştirildi:</span><span class="sxs-lookup"><span data-stu-id="b23a2-1440">Updated cmdlet:</span></span>
+        - <span data-ttu-id="b23a2-1441">Get-AzEffectiveRouteTable</span><span class="sxs-lookup"><span data-stu-id="b23a2-1441">Get-AzEffectiveRouteTable</span></span>
+* <span data-ttu-id="b23a2-1442">New-AzApplicationGatewayTrustedRootCertificate belgelerindeki çift tire düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1442">Fix double dash in New-AzApplicationGatewayTrustedRootCertificate documentation</span></span>
+
+#### <a name="azresources"></a><span data-ttu-id="b23a2-1443">Az.Resources</span><span class="sxs-lookup"><span data-stu-id="b23a2-1443">Az.Resources</span></span>
+* <span data-ttu-id="b23a2-1444">Reddetme atamalarını almak için yeni Get-AzureRmDenyAssignment cmdlet'i eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1444">Add new cmdlet Get-AzureRmDenyAssignment for retrieving deny assignments</span></span>
+
+#### <a name="azsql"></a><span data-ttu-id="b23a2-1445">Az.Sql</span><span class="sxs-lookup"><span data-stu-id="b23a2-1445">Az.Sql</span></span>
+* <span data-ttu-id="b23a2-1446">Gelişmiş Tehdit Koruması (Advanced Threat Protection) cmdlet'leri Gelişmiş Veri Güvenliği (Advanced Data Security) olarak yeniden adlandırıldı ve varsayılan olarak Güvenlik Açığı Değerlendirmesi etkinleştiriliyor</span><span class="sxs-lookup"><span data-stu-id="b23a2-1446">Rename Advanced Threat Protection cmdlets to Advanced Data Security and enable Vulnerability Assessment by default</span></span>
+
+## <a name="200---may-2019"></a><span data-ttu-id="b23a2-1447">2.0.0 - Mayıs 2019</span><span class="sxs-lookup"><span data-stu-id="b23a2-1447">2.0.0 - May 2019</span></span>
+#### <a name="azaccounts"></a><span data-ttu-id="b23a2-1448">Az.Accounts</span><span class="sxs-lookup"><span data-stu-id="b23a2-1448">Az.Accounts</span></span>
+* <span data-ttu-id="b23a2-1449">Kullanıcı adı/parola kimlik doğrulamasıyla ilişkili ADFS sorunlarını düzeltmek için Authentication Library’i güncelleştirin</span><span class="sxs-lookup"><span data-stu-id="b23a2-1449">Update Authentication Library to fix ADFS issues with username/password auth</span></span>
+
+#### <a name="azcognitiveservices"></a><span data-ttu-id="b23a2-1450">Az.CognitiveServices</span><span class="sxs-lookup"><span data-stu-id="b23a2-1450">Az.CognitiveServices</span></span>
+* <span data-ttu-id="b23a2-1451">Yalnızca Bing Arama Hizmetleri için Bing bildirimini görüntüleyin.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1451">Only display Bing disclaimer for Bing Search Services.</span></span>
+* <span data-ttu-id="b23a2-1452">Hesap oluşturma başarısız olduğunda hata iletisini geliştirin.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1452">Improve error when create account failed.</span></span>
+
+#### <a name="azcompute"></a><span data-ttu-id="b23a2-1453">Az.Compute</span><span class="sxs-lookup"><span data-stu-id="b23a2-1453">Az.Compute</span></span>
+* <span data-ttu-id="b23a2-1454">Yakınlık yerleştirme grubu özelliği.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1454">Proximity placement group feature.</span></span>
+    - <span data-ttu-id="b23a2-1455">Aşağıdaki yeni cmdlet’ler eklendi:   New-AzProximityPlacementGroup   Get-AzProximityPlacementGroup   Remove-AzProximityPlacementGroup</span><span class="sxs-lookup"><span data-stu-id="b23a2-1455">The following new cmdlets are added:   New-AzProximityPlacementGroup   Get-AzProximityPlacementGroup   Remove-AzProximityPlacementGroup</span></span>
+    - <span data-ttu-id="b23a2-1456">Yeni ProximityPlacementGroupId parametresi aşağıdaki cmdlet'lere eklendi:   New-AzAvailabilitySet   New-AzVMConfig   New-AzVmssConfig</span><span class="sxs-lookup"><span data-stu-id="b23a2-1456">The new parameter, ProximityPlacementGroupId, is added to the following cmdlets:   New-AzAvailabilitySet   New-AzVMConfig   New-AzVmssConfig</span></span>
+* <span data-ttu-id="b23a2-1457">StorageAccountType parametresi New-AzGalleryImageVersion öğesine eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1457">StorageAccountType parameter is added to New-AzGalleryImageVersion.</span></span>
+* <span data-ttu-id="b23a2-1458">New-AzGalleryImageVersion komutunun TargetRegion parametresi StorageAccountType içerebilir.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1458">TargetRegion of New-AzGalleryImageVersion can contain StorageAccountType.</span></span>
+* <span data-ttu-id="b23a2-1459">SkipShutdown anahtar parametresi Stop-AzVM ve Stop-AzVmss öğelerine eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1459">SkipShutdown switch parameter is added to Stop-AzVM and Stop-AzVmss</span></span>
+* <span data-ttu-id="b23a2-1460">Yeni değişiklikler</span><span class="sxs-lookup"><span data-stu-id="b23a2-1460">Breaking changes</span></span>
+    - <span data-ttu-id="b23a2-1461">Set-AzVMBootDiagnostics, Set-AzVMBootDiagnostic olarak değiştirildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1461">Set-AzVMBootDiagnostics is changed to Set-AzVMBootDiagnostic.</span></span>
+    - <span data-ttu-id="b23a2-1462">Export-AzLogAnalyticThrottledRequests, Export-AzLogAnalyticThrottledRequests olarak değiştirildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1462">Export-AzLogAnalyticThrottledRequests is changed to Export-AzLogAnalyticThrottledRequests.</span></span>
+
+#### <a name="azdeploymentmanager"></a><span data-ttu-id="b23a2-1463">Az.DeploymentManager</span><span class="sxs-lookup"><span data-stu-id="b23a2-1463">Az.DeploymentManager</span></span>
+* <span data-ttu-id="b23a2-1464">Azure Deployment Manager cmdlet’lerinin Genel Kullanıma sunulan ilk sürümü</span><span class="sxs-lookup"><span data-stu-id="b23a2-1464">First Generally Available release of Azure Deployment Manager cmdlets</span></span>
+
+#### <a name="azdns"></a><span data-ttu-id="b23a2-1465">Az.Dns</span><span class="sxs-lookup"><span data-stu-id="b23a2-1465">Az.Dns</span></span>
+* <span data-ttu-id="b23a2-1466">Otomatik DNS NameServer Temsilcisi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1466">Automatic DNS NameServer Delegation</span></span>
+    - <span data-ttu-id="b23a2-1467">Create DNS zone cmdlet’i üst bölge adını isteğe bağlı bir ek parametre olarak kabul eder.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1467">Create DNS zone cmdlet accepts parent zone name as additional optional parameter.</span></span>
+    - <span data-ttu-id="b23a2-1468">Yeni oluşturulan alt bölge için NS kayıtlarını üst bölgeye ekler.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1468">Adds NS records in the parent zone for newly created child zone.</span></span>
+
+#### <a name="azfrontdoor"></a><span data-ttu-id="b23a2-1469">Az.FrontDoor</span><span class="sxs-lookup"><span data-stu-id="b23a2-1469">Az.FrontDoor</span></span>
+* <span data-ttu-id="b23a2-1470">Azure FrontDoor cmdlet’lerinin Genel Kullanıma Sunulan ilk sürümü</span><span class="sxs-lookup"><span data-stu-id="b23a2-1470">First Generally Available Release of Azure FrontDoor cmdlets</span></span>
+* <span data-ttu-id="b23a2-1471">WAF cmdlet'lerini 'Waf' içerecek şekilde yeniden adlandırın</span><span class="sxs-lookup"><span data-stu-id="b23a2-1471">Rename WAF cmdlets to include 'Waf'</span></span>
     - `Get-AzFrontDoorFireWallPolicy --> Get-AzFrontDoorWafPolicy`
     - `New-AzFrontDoorCustomRuleObject --> New-AzFrontDoorWafCustomRuleObject`
     - `New-AzFrontDoorFireWallPolicy --> New-AzFrontDoorWafPolicy`
@@ -1594,919 +1594,919 @@ ms.locfileid: "81446062"
     - `New-AzFrontDoorRuleGroupOverrideObject --> New-AzFrontDoorWafRuleGroupOverrideObject`
     - `Remove-AzFrontDoorFireWallPolicy --> Remove-AzFrontDoorWafPolicy`
     - `Update-AzFrontDoorFireWallPolicy --> Update-AzFrontDoorWafPolicy`
-#### <a name="azhdinsight"></a><span data-ttu-id="de109-1472">Az.HDInsight</span><span class="sxs-lookup"><span data-stu-id="de109-1472">Az.HDInsight</span></span>
-* <span data-ttu-id="de109-1473">İki cmdlet kaldırıldı:</span><span class="sxs-lookup"><span data-stu-id="de109-1473">Removed two cmdlets:</span></span>
-    - <span data-ttu-id="de109-1474">Grant-AzHDInsightHttpServicesAccess</span><span class="sxs-lookup"><span data-stu-id="de109-1474">Grant-AzHDInsightHttpServicesAccess</span></span>
-    - <span data-ttu-id="de109-1475">Revoke-AzHDInsightHttpServicesAccess</span><span class="sxs-lookup"><span data-stu-id="de109-1475">Revoke-AzHDInsightHttpServicesAccess</span></span>
-* <span data-ttu-id="de109-1476">Grant-AzHDInsightHttpServicesAccess, yeni Set-AzHDInsightGatewayCredential cmdlet’i ile değiştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-1476">Added a new cmdlet Set-AzHDInsightGatewayCredential to replace Grant-AzHDInsightHttpServicesAccess</span></span>
-* <span data-ttu-id="de109-1477">Okuyucu rolü ile hdinsight işleç rolünü ayırt etmek için Get-AzHDInsightJobOutput cmdlet’ini güncelleştirin:</span><span class="sxs-lookup"><span data-stu-id="de109-1477">Update cmdlet Get-AzHDInsightJobOutput to distinguish reader role and hdinsight operator role:</span></span>
-    - <span data-ttu-id="de109-1478">Okuyucu rolüne sahip kullanıcıların, 'DefaultStorageAccountKey' parametresini açıkça belirtmesi gerekir, aksi takdirde hata oluşur.</span><span class="sxs-lookup"><span data-stu-id="de109-1478">Users with reader role need to specify 'DefaultStorageAccountKey' parameter explicitly, otherwise error occurs.</span></span>
-    - <span data-ttu-id="de109-1479">hdinsight işleç rolüne sahip kullanıcılar bu durumdan etkilenmez.</span><span class="sxs-lookup"><span data-stu-id="de109-1479">Users with hdinsight operator role will not be affected.</span></span>
-
-#### <a name="azmonitor"></a><span data-ttu-id="de109-1480">Az.Monitor</span><span class="sxs-lookup"><span data-stu-id="de109-1480">Az.Monitor</span></span>
-* <span data-ttu-id="de109-1481">SQR API (Zamanlanmış Sorgu Kuralı) için yeni cmdlet'ler</span><span class="sxs-lookup"><span data-stu-id="de109-1481">New cmdlets for SQR API (Scheduled Query Rule)</span></span>
-    - <span data-ttu-id="de109-1482">New-AzScheduledQueryRuleAlertingAction</span><span class="sxs-lookup"><span data-stu-id="de109-1482">New-AzScheduledQueryRuleAlertingAction</span></span>
-    - <span data-ttu-id="de109-1483">New-AzScheduledQueryRuleAznsActionGroup</span><span class="sxs-lookup"><span data-stu-id="de109-1483">New-AzScheduledQueryRuleAznsActionGroup</span></span>
-    - <span data-ttu-id="de109-1484">New-AzScheduledQueryRuleLogMetricTrigger</span><span class="sxs-lookup"><span data-stu-id="de109-1484">New-AzScheduledQueryRuleLogMetricTrigger</span></span>
-    - <span data-ttu-id="de109-1485">New-AzScheduledQueryRuleSchedule</span><span class="sxs-lookup"><span data-stu-id="de109-1485">New-AzScheduledQueryRuleSchedule</span></span>
-    - <span data-ttu-id="de109-1486">New-AzScheduledQueryRuleSource</span><span class="sxs-lookup"><span data-stu-id="de109-1486">New-AzScheduledQueryRuleSource</span></span>
-    - <span data-ttu-id="de109-1487">New-AzScheduledQueryRuleTriggerCondition</span><span class="sxs-lookup"><span data-stu-id="de109-1487">New-AzScheduledQueryRuleTriggerCondition</span></span>
-    - <span data-ttu-id="de109-1488">New-AzScheduledQueryRule</span><span class="sxs-lookup"><span data-stu-id="de109-1488">New-AzScheduledQueryRule</span></span>
-    - <span data-ttu-id="de109-1489">Get-AzScheduledQueryRule</span><span class="sxs-lookup"><span data-stu-id="de109-1489">Get-AzScheduledQueryRule</span></span>
-    - <span data-ttu-id="de109-1490">Set-AzScheduledQueryRule</span><span class="sxs-lookup"><span data-stu-id="de109-1490">Set-AzScheduledQueryRule</span></span>
-    - <span data-ttu-id="de109-1491">Update-AzScheduledQueryRule</span><span class="sxs-lookup"><span data-stu-id="de109-1491">Update-AzScheduledQueryRule</span></span>
-    - <span data-ttu-id="de109-1492">Remove-AzScheduledQueryRule</span><span class="sxs-lookup"><span data-stu-id="de109-1492">Remove-AzScheduledQueryRule</span></span>
-    - <span data-ttu-id="de109-1493">SQR API hakkında [daha fazla](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules) bilgi</span><span class="sxs-lookup"><span data-stu-id="de109-1493">[More](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules) information about SQR API</span></span>
-    - <span data-ttu-id="de109-1494">Az.Monitor.md, GenV2 (klasik olmayan) ölçüm tabanlı uyarı kuralı için cmdlet'leri içerecek şekilde güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-1494">Updated Az.Monitor.md to include cmdlets for GenV2(non classic) metric-based alert rule</span></span>
-
-#### <a name="aznetwork"></a><span data-ttu-id="de109-1495">Az.Network</span><span class="sxs-lookup"><span data-stu-id="de109-1495">Az.Network</span></span>
-* <span data-ttu-id="de109-1496">Nat Gateway Resource için destek ekleyin</span><span class="sxs-lookup"><span data-stu-id="de109-1496">Add support for Nat Gateway Resource</span></span>
-    - <span data-ttu-id="de109-1497">Yeni cmdlet’ler</span><span class="sxs-lookup"><span data-stu-id="de109-1497">New cmdlets</span></span>
-        - <span data-ttu-id="de109-1498">New-AzNatGateway</span><span class="sxs-lookup"><span data-stu-id="de109-1498">New-AzNatGateway</span></span>
-        - <span data-ttu-id="de109-1499">Get-AzNatGateway</span><span class="sxs-lookup"><span data-stu-id="de109-1499">Get-AzNatGateway</span></span>
-        - <span data-ttu-id="de109-1500">Set-AzNatGateway</span><span class="sxs-lookup"><span data-stu-id="de109-1500">Set-AzNatGateway</span></span>
-        - <span data-ttu-id="de109-1501">Remove-AzNatGateway</span><span class="sxs-lookup"><span data-stu-id="de109-1501">Remove-AzNatGateway</span></span>
-   - <span data-ttu-id="de109-1502">Cmdlet'ler güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-1502">Updated cmdlets</span></span>
-        - <span data-ttu-id="de109-1503">New-AzureVirtualNetworkSubnetConfigCommand</span><span class="sxs-lookup"><span data-stu-id="de109-1503">New-AzureVirtualNetworkSubnetConfigCommand</span></span>
-        - <span data-ttu-id="de109-1504">Add-AzureVirtualNetworkSubnetConfigCommand</span><span class="sxs-lookup"><span data-stu-id="de109-1504">Add-AzureVirtualNetworkSubnetConfigCommand</span></span>
-* <span data-ttu-id="de109-1505">Özellik için aşağıdaki komutlar güncelleştirildi: Brooklyn Gateway üzerinde özel yollar ayarlama/kaldırma.</span><span class="sxs-lookup"><span data-stu-id="de109-1505">Updated below commands for feature: Custom routes set/remove on Brooklyn Gateway.</span></span>
-    - <span data-ttu-id="de109-1506">New-AzVirtualNetworkGateway güncelleştirildi: Adres ön eklerini Gateway’de ayarlanacak özel yol olarak belirlemek için isteğe bağlı -CustomRoute parametresi eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-1506">Updated New-AzVirtualNetworkGateway: Added optional parameter -CustomRoute to set the address prefixes as custom routes to set on Gateway.</span></span>
-    - <span data-ttu-id="de109-1507">Set-AzVirtualNetworkGateway güncelleştirildi: Adres ön eklerini Gateway’de ayarlanacak özel yol olarak belirlemek için isteğe bağlı -CustomRoute parametresi eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-1507">Updated Set-AzVirtualNetworkGateway: Added optional parameter -CustomRoute to set the address prefixes as custom routes to set on Gateway.</span></span>
-
-#### <a name="azpolicyinsights"></a><span data-ttu-id="de109-1508">Az.PolicyInsights</span><span class="sxs-lookup"><span data-stu-id="de109-1508">Az.PolicyInsights</span></span>
-* <span data-ttu-id="de109-1509">İlke değerlendirme ayrıntılarını sorgulama desteği.</span><span class="sxs-lookup"><span data-stu-id="de109-1509">Support for querying policy evaluation details.</span></span>
-    - <span data-ttu-id="de109-1510">Get-AzPolicyState komutuna '-Expand' parametresini ekleyin.</span><span class="sxs-lookup"><span data-stu-id="de109-1510">Add '-Expand' parameter to Get-AzPolicyState.</span></span> <span data-ttu-id="de109-1511">'-Expand PolicyEvaluationDetails' öğesini destekleyin.</span><span class="sxs-lookup"><span data-stu-id="de109-1511">Support '-Expand PolicyEvaluationDetails'.</span></span>
-
-#### <a name="azrecoveryservices"></a><span data-ttu-id="de109-1512">Az.RecoveryServices</span><span class="sxs-lookup"><span data-stu-id="de109-1512">Az.RecoveryServices</span></span>
-* <span data-ttu-id="de109-1513">Abonelikler arası Azure'dan Azure’a konum kurtarma desteği.</span><span class="sxs-lookup"><span data-stu-id="de109-1513">Support for Cross subscription Azure to Azure site recovery.</span></span>
-* <span data-ttu-id="de109-1514">Azure Site Recovery için yaklaşan hataya neden olan değişiklikleri işaretleme.</span><span class="sxs-lookup"><span data-stu-id="de109-1514">Marking upcoming breaking changes for Azure Site Recovery.</span></span>
-* <span data-ttu-id="de109-1515">Azure Site Recovery kurtarma planı ve eylem planı için düzeltme.</span><span class="sxs-lookup"><span data-stu-id="de109-1515">Fix for Azure Site Recovery recovery plan end action plan.</span></span>
-* <span data-ttu-id="de109-1516">Azure'dan Azure'a Azure Site Recovery Güncelleştirmesi ağ eşlemesi için düzeltme.</span><span class="sxs-lookup"><span data-stu-id="de109-1516">Fix for Azure Site Recovery Update network mapping for Azure to Azure.</span></span>
-* <span data-ttu-id="de109-1517">Yönetilen diske yönelik Azure'dan Azure'a Azure Site Recovery güncelleştirmesi koruma yönü için düzeltme.</span><span class="sxs-lookup"><span data-stu-id="de109-1517">Fix for Azure Site Recovery update protection direction for Azure to Azure for managed disk.</span></span>
-* <span data-ttu-id="de109-1518">Diğer küçük düzeltmeler.</span><span class="sxs-lookup"><span data-stu-id="de109-1518">Other minor fixes.</span></span>
-
-#### <a name="azrelay"></a><span data-ttu-id="de109-1519">Az.Relay</span><span class="sxs-lookup"><span data-stu-id="de109-1519">Az.Relay</span></span>
-* <span data-ttu-id="de109-1520">Müşteriye dönük iletilerdeki yazım hatalarını düzeltin</span><span class="sxs-lookup"><span data-stu-id="de109-1520">Fix typos in customer-facing messages</span></span>
-
-#### <a name="azservicebus"></a><span data-ttu-id="de109-1521">Az.ServiceBus</span><span class="sxs-lookup"><span data-stu-id="de109-1521">Az.ServiceBus</span></span>
-* <span data-ttu-id="de109-1522">Ad alanının NetworkRuleSet’i için yeni cmdlet’ler eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-1522">Added new cmdlets for NetworkRuleSet of Namespace</span></span>
-
-#### <a name="azstorage"></a><span data-ttu-id="de109-1523">Az.Storage</span><span class="sxs-lookup"><span data-stu-id="de109-1523">Az.Storage</span></span>
-* <span data-ttu-id="de109-1524">Storage Client Library 10.0.1 sürümüne güncelleştirin (bu SDK’daki tüm nesnelerin 'Microsoft.WindowsAzure.Storage. *' ad alanı, 'Microsoft.Azure.Storage.* ' olarak değiştirilir)</span><span class="sxs-lookup"><span data-stu-id="de109-1524">Upgrade to Storage Client Library 10.0.1 (the namespace of all objects from this SDK change from 'Microsoft.WindowsAzure.Storage.*' to 'Microsoft.Azure.Storage.*')</span></span>
-* <span data-ttu-id="de109-1525">Yeni 2019-04-01 API sürümünü desteklemek için Microsoft.Azure.Management.Storage 11.0.0 sürümüne güncelleştirin.</span><span class="sxs-lookup"><span data-stu-id="de109-1525">Upgrade to Microsoft.Azure.Management.Storage 11.0.0, to support new API version 2019-04-01.</span></span>
-* <span data-ttu-id="de109-1526">Depolama hesabı oluştur komutundaki varsayılan 'Storage' Depolama hesabı Türü 'StorageV2' olarak değişir</span><span class="sxs-lookup"><span data-stu-id="de109-1526">The default Storage account Kind in Create Storage account change from 'Storage' to 'StorageV2'</span></span>
-    - <span data-ttu-id="de109-1527">New-AzStorageAccount</span><span class="sxs-lookup"><span data-stu-id="de109-1527">New-AzStorageAccount</span></span>
-* <span data-ttu-id="de109-1528">'StandardLRS' öğesinin 'Standard_LRS' olarak değiştirilmesi gibi, '-' ekleyerek Sku.Name Depolama hesabı cmdlet çıkışını giriş SkuName ile hizalanacak şekilde değiştirin</span><span class="sxs-lookup"><span data-stu-id="de109-1528">Change the Storage account cmdlet output Sku.Name to be aligned with input SkuName by add '-', like 'StandardLRS' change to 'Standard_LRS'</span></span>
-    - <span data-ttu-id="de109-1529">New-AzStorageAccount</span><span class="sxs-lookup"><span data-stu-id="de109-1529">New-AzStorageAccount</span></span>
-    - <span data-ttu-id="de109-1530">Get-AzStorageAccount</span><span class="sxs-lookup"><span data-stu-id="de109-1530">Get-AzStorageAccount</span></span>
-    - <span data-ttu-id="de109-1531">Set-AzStorageAccount</span><span class="sxs-lookup"><span data-stu-id="de109-1531">Set-AzStorageAccount</span></span>
-
-#### <a name="azwebsites"></a><span data-ttu-id="de109-1532">Az.Websites</span><span class="sxs-lookup"><span data-stu-id="de109-1532">Az.Websites</span></span>
-* <span data-ttu-id="de109-1533">'Kind' özelliği artık Get-AzWebApp tarafından döndürülen PSSite nesneleri için ayarlanır</span><span class="sxs-lookup"><span data-stu-id="de109-1533">'Kind' property will now be set for PSSite objects returned by Get-AzWebApp</span></span>
-* <span data-ttu-id="de109-1534">Get-AzWebApp\*Metrics ve Get-AzAppServicePlanMetrics, kullanım dışı olarak işaretlendi</span><span class="sxs-lookup"><span data-stu-id="de109-1534">Get-AzWebApp\*Metrics and Get-AzAppServicePlanMetrics marked deprecated</span></span>
-
-## <a name="180---april-2019"></a><span data-ttu-id="de109-1535">1.8.0 - Nisan 2019</span><span class="sxs-lookup"><span data-stu-id="de109-1535">1.8.0 - April 2019</span></span>
-### <a name="highlights-since-the-last-major-release"></a><span data-ttu-id="de109-1536">Son ana sürümden bu yana öne çıkanlar</span><span class="sxs-lookup"><span data-stu-id="de109-1536">Highlights since the last major release</span></span>
-* <span data-ttu-id="de109-1537">`Az` modülünü genel kullanıma sunuldu</span><span class="sxs-lookup"><span data-stu-id="de109-1537">General availability of `Az` module</span></span>
-* <span data-ttu-id="de109-1538">`Az` modülü hakkında daha fazla bilgi için şu bağlantıyı ziyaret edin: https://aka.ms/azps-announce</span><span class="sxs-lookup"><span data-stu-id="de109-1538">For more information about the `Az` module, please visit the following: https://aka.ms/azps-announce</span></span>
-* <span data-ttu-id="de109-1539">Location, ResourceGroup ve ResourceName tamamlayıcıları eklendi: https://azure.microsoft.com/blog/completers-in-azure-powershell/</span><span class="sxs-lookup"><span data-stu-id="de109-1539">Added Location, ResourceGroup, and ResourceName completers: https://azure.microsoft.com/blog/completers-in-azure-powershell/</span></span>
-* <span data-ttu-id="de109-1540">Az.Compute ve Az.Network için Get cmdlet'lerine joker karakter desteği eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-1540">Added wildcard support to Get cmdlets for Az.Compute and Az.Network</span></span>
-* <span data-ttu-id="de109-1541">Yalnızca Windows PowerShell 5.1 için etkileşim ve kullanıcı adı/parola kimlik doğrulaması eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-1541">Added interactive and username/password authentication for Windows PowerShell 5.1 only</span></span>
-* <span data-ttu-id="de109-1542">Az.Automation'da Python 2 runbook'ları için destek eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-1542">Added support for Python 2 runbooks in Az.Automation</span></span>
-* <span data-ttu-id="de109-1543">Az.LogicApp: Tümleştirme Hesabı Derlemeleri ve Toplu Yapılandırması için yeni cmdlet’ler</span><span class="sxs-lookup"><span data-stu-id="de109-1543">Az.LogicApp: New cmdlets for Integration Account Assemblies and Batch Configuration</span></span>
-
-#### <a name="azaccounts"></a><span data-ttu-id="de109-1544">Az.Accounts</span><span class="sxs-lookup"><span data-stu-id="de109-1544">Az.Accounts</span></span>
-* <span data-ttu-id="de109-1545">Mac’te modülleri doğru bir biçimde silmek için Uninstall-AzureRm güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-1545">Update Uninstall-AzureRm to correctly delete modules in Mac</span></span>
-
-#### <a name="azbatch"></a><span data-ttu-id="de109-1546">Az.Batch</span><span class="sxs-lookup"><span data-stu-id="de109-1546">Az.Batch</span></span>
-* <span data-ttu-id="de109-1547">Çoğul isimli cmdlet’ler tekil isimli olarak güncelleştirildi ve çoğul isimler kullanım dışı bırakıldı.</span><span class="sxs-lookup"><span data-stu-id="de109-1547">Updated cmdlets with plural nouns to singular, and deprecated plural names.</span></span>
-
-#### <a name="azcdn"></a><span data-ttu-id="de109-1548">Az.Cdn</span><span class="sxs-lookup"><span data-stu-id="de109-1548">Az.Cdn</span></span>
-* <span data-ttu-id="de109-1549">Çoğul isimli cmdlet’ler tekil isimli olarak güncelleştirildi ve çoğul isimler kullanım dışı bırakıldı.</span><span class="sxs-lookup"><span data-stu-id="de109-1549">Updated cmdlets with plural nouns to singular, and deprecated plural names.</span></span>
-
-#### <a name="azcognitiveservices"></a><span data-ttu-id="de109-1550">Az.CognitiveServices</span><span class="sxs-lookup"><span data-stu-id="de109-1550">Az.CognitiveServices</span></span>
-* <span data-ttu-id="de109-1551">Çoğul isimli cmdlet’ler tekil isimli olarak güncelleştirildi ve çoğul isimler kullanım dışı bırakıldı.</span><span class="sxs-lookup"><span data-stu-id="de109-1551">Updated cmdlets with plural nouns to singular, and deprecated plural names.</span></span>
-
-#### <a name="azcompute"></a><span data-ttu-id="de109-1552">Az.Compute</span><span class="sxs-lookup"><span data-stu-id="de109-1552">Az.Compute</span></span>
-* <span data-ttu-id="de109-1553">Disklerin kaynak kimlikleri kaynak kimliğinde küçük harfli kaynak grubu içerdiğinde oluşan AEM yüklemesiyle ilgili sorun düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-1553">Fix issue with AEM installation if resource ids of disks had lowercase resourcegroups in resource id</span></span>
-* <span data-ttu-id="de109-1554">Çoğul isimli cmdlet’ler tekil isimli olarak güncelleştirildi ve çoğul isimler kullanım dışı bırakıldı.</span><span class="sxs-lookup"><span data-stu-id="de109-1554">Updated cmdlets with plural nouns to singular, and deprecated plural names.</span></span>
-* <span data-ttu-id="de109-1555">Joker karakterlere ilişkin belgeler düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-1555">Fix documentation for wildcards</span></span>
-
-#### <a name="azdatafactory"></a><span data-ttu-id="de109-1556">Az.DataFactory</span><span class="sxs-lookup"><span data-stu-id="de109-1556">Az.DataFactory</span></span>
-* <span data-ttu-id="de109-1557">Yönetilen tümleştirme çalışma zamanı için Nodecount’ın null olmadığı durumlar için SsisProperties eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-1557">Add SsisProperties if NodeCount not null for managed integration runtime.</span></span>
-
-#### <a name="azdatalakestore"></a><span data-ttu-id="de109-1558">Az.DataLakeStore</span><span class="sxs-lookup"><span data-stu-id="de109-1558">Az.DataLakeStore</span></span>
-* <span data-ttu-id="de109-1559">Çoğul isimli cmdlet’ler tekil isimli olarak güncelleştirildi ve çoğul isimler kullanım dışı bırakıldı.</span><span class="sxs-lookup"><span data-stu-id="de109-1559">Updated cmdlets with plural nouns to singular, and deprecated plural names.</span></span>
-
-#### <a name="azeventgrid"></a><span data-ttu-id="de109-1560">Az.EventGrid</span><span class="sxs-lookup"><span data-stu-id="de109-1560">Az.EventGrid</span></span>
-* <span data-ttu-id="de109-1561">Oluşturma/güncelleştirme etkinliği için abonelik cmdlet’lerini kullanmadan önce kaynakların oluşturulmasının gerektiğini belirten yardım metni güncelleştirildi.</span><span class="sxs-lookup"><span data-stu-id="de109-1561">Updated the help text for endpoint to indicate that resources should be created before using the create/update event subscription cmdlets.</span></span>
-
-#### <a name="azeventhub"></a><span data-ttu-id="de109-1562">Az.EventHub</span><span class="sxs-lookup"><span data-stu-id="de109-1562">Az.EventHub</span></span>
-* <span data-ttu-id="de109-1563">Ad alanının NetworkRuleSet’i için yeni cmdlet’ler eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-1563">Added new cmdlets for NetworkRuleSet of Namespace</span></span>
-
-#### <a name="azhdinsight"></a><span data-ttu-id="de109-1564">Az.HDInsight</span><span class="sxs-lookup"><span data-stu-id="de109-1564">Az.HDInsight</span></span>
-* <span data-ttu-id="de109-1565">Çoğul isimli cmdlet’ler tekil isimli olarak güncelleştirildi ve çoğul isimler kullanım dışı bırakıldı.</span><span class="sxs-lookup"><span data-stu-id="de109-1565">Updated cmdlets with plural nouns to singular, and deprecated plural names.</span></span>
-
-#### <a name="aziothub"></a><span data-ttu-id="de109-1566">Az.IotHub</span><span class="sxs-lookup"><span data-stu-id="de109-1566">Az.IotHub</span></span>
-* <span data-ttu-id="de109-1567">Çoğul isimli cmdlet’ler tekil isimli olarak güncelleştirildi ve çoğul isimler kullanım dışı bırakıldı.</span><span class="sxs-lookup"><span data-stu-id="de109-1567">Updated cmdlets with plural nouns to singular, and deprecated plural names.</span></span>
-
-#### <a name="azkeyvault"></a><span data-ttu-id="de109-1568">Az.KeyVault</span><span class="sxs-lookup"><span data-stu-id="de109-1568">Az.KeyVault</span></span>
-* <span data-ttu-id="de109-1569">Çoğul isimli cmdlet’ler tekil isimli olarak güncelleştirildi ve çoğul isimler kullanım dışı bırakıldı.</span><span class="sxs-lookup"><span data-stu-id="de109-1569">Updated cmdlets with plural nouns to singular, and deprecated plural names.</span></span>
-* <span data-ttu-id="de109-1570">Joker karakterlere ilişkin belgeler düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-1570">Fix documentation for wildcards</span></span>
-
-#### <a name="azmachinelearning"></a><span data-ttu-id="de109-1571">Az.MachineLearning</span><span class="sxs-lookup"><span data-stu-id="de109-1571">Az.MachineLearning</span></span>
-* <span data-ttu-id="de109-1572">Çoğul isimli cmdlet’ler tekil isimli olarak güncelleştirildi ve çoğul isimler kullanım dışı bırakıldı.</span><span class="sxs-lookup"><span data-stu-id="de109-1572">Updated cmdlets with plural nouns to singular, and deprecated plural names.</span></span>
-
-#### <a name="azmedia"></a><span data-ttu-id="de109-1573">Az.Media</span><span class="sxs-lookup"><span data-stu-id="de109-1573">Az.Media</span></span>
-* <span data-ttu-id="de109-1574">Çoğul isimli cmdlet’ler tekil isimli olarak güncelleştirildi ve çoğul isimler kullanım dışı bırakıldı.</span><span class="sxs-lookup"><span data-stu-id="de109-1574">Updated cmdlets with plural nouns to singular, and deprecated plural names.</span></span>
-
-#### <a name="azmonitor"></a><span data-ttu-id="de109-1575">Az.Monitor</span><span class="sxs-lookup"><span data-stu-id="de109-1575">Az.Monitor</span></span>
-  * <span data-ttu-id="de109-1576">GenV2 (klasik olmayan) ölçüm tabanlı uyarı kuralı için yeni cmdlet'ler</span><span class="sxs-lookup"><span data-stu-id="de109-1576">New cmdlets for GenV2(non classic) metric-based alert rule</span></span>
-      - <span data-ttu-id="de109-1577">New-AzMetricAlertRuleV2DimensionSelection</span><span class="sxs-lookup"><span data-stu-id="de109-1577">New-AzMetricAlertRuleV2DimensionSelection</span></span>
-      - <span data-ttu-id="de109-1578">New-AzMetricAlertRuleV2Criteria</span><span class="sxs-lookup"><span data-stu-id="de109-1578">New-AzMetricAlertRuleV2Criteria</span></span>
-      - <span data-ttu-id="de109-1579">Remove-AzMetricAlertRuleV2</span><span class="sxs-lookup"><span data-stu-id="de109-1579">Remove-AzMetricAlertRuleV2</span></span>
-      - <span data-ttu-id="de109-1580">Get-AzMetricAlertRuleV2</span><span class="sxs-lookup"><span data-stu-id="de109-1580">Get-AzMetricAlertRuleV2</span></span>
-      - <span data-ttu-id="de109-1581">Add-AzMetricAlertRuleV2</span><span class="sxs-lookup"><span data-stu-id="de109-1581">Add-AzMetricAlertRuleV2</span></span>
-  * <span data-ttu-id="de109-1582">İzleyici SDK’sı 0.22.0-önizleme sürümüne güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-1582">Updated Monitor SDK to version 0.22.0-preview</span></span>
-
-#### <a name="aznetwork"></a><span data-ttu-id="de109-1583">Az.Network</span><span class="sxs-lookup"><span data-stu-id="de109-1583">Az.Network</span></span>
-* <span data-ttu-id="de109-1584">Çoğul isimli cmdlet’ler tekil isimli olarak güncelleştirildi ve çoğul isimler kullanım dışı bırakıldı.</span><span class="sxs-lookup"><span data-stu-id="de109-1584">Updated cmdlets with plural nouns to singular, and deprecated plural names.</span></span>
-* <span data-ttu-id="de109-1585">Joker karakterlere ilişkin belgeler düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-1585">Fix documentation for wildcards</span></span>
-
-#### <a name="aznotificationhubs"></a><span data-ttu-id="de109-1586">Az.NotificationHubs</span><span class="sxs-lookup"><span data-stu-id="de109-1586">Az.NotificationHubs</span></span>
-* <span data-ttu-id="de109-1587">Çoğul isimli cmdlet’ler tekil isimli olarak güncelleştirildi ve çoğul isimler kullanım dışı bırakıldı.</span><span class="sxs-lookup"><span data-stu-id="de109-1587">Updated cmdlets with plural nouns to singular, and deprecated plural names.</span></span>
-
-#### <a name="azoperationalinsights"></a><span data-ttu-id="de109-1588">Az.OperationalInsights</span><span class="sxs-lookup"><span data-stu-id="de109-1588">Az.OperationalInsights</span></span>
-* <span data-ttu-id="de109-1589">Çoğul isimli cmdlet’ler tekil isimli olarak güncelleştirildi ve çoğul isimler kullanım dışı bırakıldı.</span><span class="sxs-lookup"><span data-stu-id="de109-1589">Updated cmdlets with plural nouns to singular, and deprecated plural names.</span></span>
-
-#### <a name="azpowerbiembedded"></a><span data-ttu-id="de109-1590">Az.PowerBIEmbedded</span><span class="sxs-lookup"><span data-stu-id="de109-1590">Az.PowerBIEmbedded</span></span>
-* <span data-ttu-id="de109-1591">Çoğul isimli cmdlet’ler tekil isimli olarak güncelleştirildi ve çoğul isimler kullanım dışı bırakıldı.</span><span class="sxs-lookup"><span data-stu-id="de109-1591">Updated cmdlets with plural nouns to singular, and deprecated plural names.</span></span>
-
-#### <a name="azrecoveryservices"></a><span data-ttu-id="de109-1592">Az.RecoveryServices</span><span class="sxs-lookup"><span data-stu-id="de109-1592">Az.RecoveryServices</span></span>
-* <span data-ttu-id="de109-1593">Çoğul isimli cmdlet’ler tekil isimli olarak güncelleştirildi ve çoğul isimler kullanım dışı bırakıldı.</span><span class="sxs-lookup"><span data-stu-id="de109-1593">Updated cmdlets with plural nouns to singular, and deprecated plural names.</span></span>
-* <span data-ttu-id="de109-1594">Azure VM'de SQL için güncelleştirilmiş tablo biçimi</span><span class="sxs-lookup"><span data-stu-id="de109-1594">Updated table format for SQL in azure VM</span></span>
-* <span data-ttu-id="de109-1595">AzureFileShare’de konumu getirmeye yönelik alternatif yöntem eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-1595">Added alternate method to fetch location in AzureFileShare</span></span>
-* <span data-ttu-id="de109-1596">SchedulePolicy nesnesindeki ScheduleRunDays saat dilimine göre güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-1596">Updated ScheduleRunDays in SchedulePolicy object according to timezone</span></span>
-
-#### <a name="azrediscache"></a><span data-ttu-id="de109-1597">Az.RedisCache</span><span class="sxs-lookup"><span data-stu-id="de109-1597">Az.RedisCache</span></span>
-* <span data-ttu-id="de109-1598">Çoğul isimli cmdlet’ler tekil isimli olarak güncelleştirildi ve çoğul isimler kullanım dışı bırakıldı.</span><span class="sxs-lookup"><span data-stu-id="de109-1598">Updated cmdlets with plural nouns to singular, and deprecated plural names.</span></span>
-
-#### <a name="azresources"></a><span data-ttu-id="de109-1599">Az.Resources</span><span class="sxs-lookup"><span data-stu-id="de109-1599">Az.Resources</span></span>
-* <span data-ttu-id="de109-1600">Joker karakterlere ilişkin belgeler düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-1600">Fix documentation for wildcards</span></span>
-
-#### <a name="azsql"></a><span data-ttu-id="de109-1601">Az.Sql</span><span class="sxs-lookup"><span data-stu-id="de109-1601">Az.Sql</span></span>
-* <span data-ttu-id="de109-1602">İzleyici SDK’sının bağımlılığı ortak kod ile değiştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-1602">Replace dependency on Monitor SDK with common code</span></span>
-* <span data-ttu-id="de109-1603">Çoğul isimli cmdlet’ler tekil isimli olarak güncelleştirildi ve çoğul isimler kullanım dışı bırakıldı.</span><span class="sxs-lookup"><span data-stu-id="de109-1603">Updated cmdlets with plural nouns to singular, and deprecated plural names.</span></span>
-* <span data-ttu-id="de109-1604">Birden fazla sütun sınıflandırma işlemi geliştirildi.</span><span class="sxs-lookup"><span data-stu-id="de109-1604">Enhanced process of multiple columns classification.</span></span>
-* <span data-ttu-id="de109-1605">Get-AzSqlServerServiceObjective’den alınan yanıta SKU özellikleri (SKU adı, ailesi, kapasitesi) dahil edildi ve bunlar varsayılan olarak tablo şeklinde biçimlendirildi.</span><span class="sxs-lookup"><span data-stu-id="de109-1605">Include sku properties (sku name, family, capacity) in response from Get-AzSqlServerServiceObjective and format as table by default.</span></span>
-* <span data-ttu-id="de109-1606">Bölgede önceden var olan bir sunucuya ihtiyaç duymadan, konuma göre Get-AzSqlServerServiceObjective yapabilme olanağı eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-1606">Ability to Get-AzSqlServerServiceObjective by location without needing a preexisting server in the region.</span></span>
-* <span data-ttu-id="de109-1607">Yönetilen Örnek oluşturmadaki saat dilimi parametresi desteği.</span><span class="sxs-lookup"><span data-stu-id="de109-1607">Support for time zone parameter in Managed Instance create.</span></span>
-* <span data-ttu-id="de109-1608">Joker karakterlere ilişkin belgeler düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-1608">Fix documentation for wildcards</span></span>
-
-#### <a name="azwebsites"></a><span data-ttu-id="de109-1609">Az.Websites</span><span class="sxs-lookup"><span data-stu-id="de109-1609">Az.Websites</span></span>
-* <span data-ttu-id="de109-1610">Set-AzWebApp ve Set-AzWebAppSlot çalıştırılırken etiketlerin kaldırılmaması sorunu düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-1610">fixes the Set-AzWebApp and Set-AzWebAppSlot to not remove the tags on execution</span></span>
-* <span data-ttu-id="de109-1611">Çoğul isimli cmdlet’ler tekil isimli olarak güncelleştirildi ve çoğul isimler kullanım dışı bırakıldı.</span><span class="sxs-lookup"><span data-stu-id="de109-1611">Updated cmdlets with plural nouns to singular, and deprecated plural names.</span></span>
-* <span data-ttu-id="de109-1612">Web siteleri SDK'sı güncelleştirildi.</span><span class="sxs-lookup"><span data-stu-id="de109-1612">Updated the WebSites SDK.</span></span>
-* <span data-ttu-id="de109-1613">PSAppServicePlan’den AdminSiteName özelliği kaldırıldı.</span><span class="sxs-lookup"><span data-stu-id="de109-1613">Removed the AdminSiteName property from PSAppServicePlan.</span></span>
-
-## <a name="170---april-2019"></a><span data-ttu-id="de109-1614">1.7.0 - Nisan 2019</span><span class="sxs-lookup"><span data-stu-id="de109-1614">1.7.0 - April 2019</span></span>
-### <a name="highlights-since-the-last-major-release"></a><span data-ttu-id="de109-1615">Son ana sürümden bu yana öne çıkanlar</span><span class="sxs-lookup"><span data-stu-id="de109-1615">Highlights since the last major release</span></span>
-* <span data-ttu-id="de109-1616">`Az` modülünü genel kullanıma sunuldu</span><span class="sxs-lookup"><span data-stu-id="de109-1616">General availability of `Az` module</span></span>
-* <span data-ttu-id="de109-1617">`Az` modülü hakkında daha fazla bilgi için şu bağlantıyı ziyaret edin: https://aka.ms/azps-announce</span><span class="sxs-lookup"><span data-stu-id="de109-1617">For more information about the `Az` module, please visit the following: https://aka.ms/azps-announce</span></span>
-* <span data-ttu-id="de109-1618">Location, ResourceGroup ve ResourceName tamamlayıcıları eklendi: https://azure.microsoft.com/blog/completers-in-azure-powershell/</span><span class="sxs-lookup"><span data-stu-id="de109-1618">Added Location, ResourceGroup, and ResourceName completers: https://azure.microsoft.com/blog/completers-in-azure-powershell/</span></span>
-* <span data-ttu-id="de109-1619">Az.Compute ve Az.Network için Get cmdlet'lerine joker karakter desteği eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-1619">Added wildcard support to Get cmdlets for Az.Compute and Az.Network</span></span>
-* <span data-ttu-id="de109-1620">Yalnızca Windows PowerShell 5.1 için etkileşim ve kullanıcı adı/parola kimlik doğrulaması eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-1620">Added interactive and username/password authentication for Windows PowerShell 5.1 only</span></span>
-* <span data-ttu-id="de109-1621">Az.Automation'da Python 2 runbook'ları için destek eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-1621">Added support for Python 2 runbooks in Az.Automation</span></span>
-* <span data-ttu-id="de109-1622">Az.LogicApp: Tümleştirme Hesabı Derlemeleri ve Toplu Yapılandırması için yeni cmdlet’ler</span><span class="sxs-lookup"><span data-stu-id="de109-1622">Az.LogicApp: New cmdlets for Integration Account Assemblies and Batch Configuration</span></span>
-
-#### <a name="azaccounts"></a><span data-ttu-id="de109-1623">Az.Accounts</span><span class="sxs-lookup"><span data-stu-id="de109-1623">Az.Accounts</span></span>
-* <span data-ttu-id="de109-1624">Add-AzEnvironment ve Set-AzEnvironment, AzureAnalysisServicesEndpointResourceId parametresini kabul edecek biçimde güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-1624">Updated Add-AzEnvironment and Set-AzEnvironment to accept parameter AzureAnalysisServicesEndpointResourceId</span></span>
-
-#### <a name="azanalysisservices"></a><span data-ttu-id="de109-1625">Az.AnalysisServices</span><span class="sxs-lookup"><span data-stu-id="de109-1625">Az.AnalysisServices</span></span>
-* <span data-ttu-id="de109-1626">Veri düzlemi cmdlet’lerinde ServiceClient kullanma ve orijinal kimlik doğrulaması mantığını kaldırma</span><span class="sxs-lookup"><span data-stu-id="de109-1626">Using ServiceClient in dataplane cmdlets and removing the original authentication logic</span></span>
-* <span data-ttu-id="de109-1627">Hataya neden olan değişikliklerden kaçınmak için Add-AzureASAccount’ı Connect-AzAccount’ın sarmalayıcısı yapma</span><span class="sxs-lookup"><span data-stu-id="de109-1627">Making Add-AzureASAccount a wrapper of Connect-AzAccount to avoid a breaking change</span></span>
-
-#### <a name="azautomation"></a><span data-ttu-id="de109-1628">Az.Automation</span><span class="sxs-lookup"><span data-stu-id="de109-1628">Az.Automation</span></span>
-* <span data-ttu-id="de109-1629">Eklemeler için New-AzAutomationSoftwareUpdateConfiguration cmdlet hatası düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="de109-1629">Fixed New-AzAutomationSoftwareUpdateConfiguration cmdlet bug for Inclusions.</span></span> <span data-ttu-id="de109-1630">IncludedKbNumber ve IncludedPackageNameMask parametrelerinin artık çalışması bekleniyor.</span><span class="sxs-lookup"><span data-stu-id="de109-1630">Now parameter IncludedKbNumber and IncludedPackageNameMask should work.</span></span>
-* <span data-ttu-id="de109-1631">Azure otomasyonu güncelleştirmesi yönetim dinamik grubu için hata düzeltmesi</span><span class="sxs-lookup"><span data-stu-id="de109-1631">Bug fix for azure automation update management dynamic group</span></span>
-
-#### <a name="azcompute"></a><span data-ttu-id="de109-1632">Az.Compute</span><span class="sxs-lookup"><span data-stu-id="de109-1632">Az.Compute</span></span>
-* <span data-ttu-id="de109-1633">New-AzDiskConfig ve New-AzSnapshotConfig’e HyperVGeneration parametresi eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-1633">Add HyperVGeneration parameter to New-AzDiskConfig and New-AzSnapshotConfig</span></span>
-* <span data-ttu-id="de109-1634">Diğer kiracıların karakter görüntüleriyle VM oluşturmaya izin verildi.</span><span class="sxs-lookup"><span data-stu-id="de109-1634">Allow VM creation with galley image from other tenants.</span></span>
-
-#### <a name="azcontainerinstance"></a><span data-ttu-id="de109-1635">Az.ContainerInstance</span><span class="sxs-lookup"><span data-stu-id="de109-1635">Az.ContainerInstance</span></span>
-* <span data-ttu-id="de109-1636">New-AzContainerGroup’un -command parametresinde bağımsız boş değişken ekleyen sorun düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-1636">Fixed issue in the -Command parameter of New-AzContainerGroup which added a trailing empty argument</span></span>
-
-#### <a name="azdatafactory"></a><span data-ttu-id="de109-1637">Az.DataFactory</span><span class="sxs-lookup"><span data-stu-id="de109-1637">Az.DataFactory</span></span>
-* <span data-ttu-id="de109-1638">ADF .Net SDK’sı 3.0.2 sürümüne güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-1638">Updated ADF .Net SDK version to 3.0.2</span></span>
-* <span data-ttu-id="de109-1639">Set-AzDataFactoryV2 cmdlet’i RepoConfiguration ile ilgili ayarların ek parametreleriyle güncelleştirildi.</span><span class="sxs-lookup"><span data-stu-id="de109-1639">Updated Set-AzDataFactoryV2 cmdlet with extra parameters for RepoConfiguration related settings.</span></span>
-
-#### <a name="azresources"></a><span data-ttu-id="de109-1640">Az.Resources</span><span class="sxs-lookup"><span data-stu-id="de109-1640">Az.Resources</span></span>
-* <span data-ttu-id="de109-1641">'-ResourceId' veya '-ResourceGroupName', '-Name' ve '-ResourceType' parametreleri sağlanırken ‘Get-AzResource’ için sağlayıcıların işlenmesi geliştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-1641">Improve handling of providers for 'Get-AzResource' when providing '-ResourceId' or '-ResourceGroupName', '-Name' and '-ResourceType' parameters</span></span>
-* <span data-ttu-id="de109-1642">‘Test-AzDeployment’ ve ‘Test-AzResourceGroupDeployment’ için hata işleme geliştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-1642">Improve error handling for 'Test-AzDeployment' and 'Test-AzResourceGroupDeployment'</span></span>
-    - <span data-ttu-id="de109-1643">İşleme hataları dağıtım doğrulamasının dışında tutuldu ve komut çıkışına dahil edildi</span><span class="sxs-lookup"><span data-stu-id="de109-1643">Handle errors thrown outside of deployment validation and include them in output of command instead</span></span>
-    - <span data-ttu-id="de109-1644">Burada daha fazla bilgi bulunabilir: https://github.com/Azure/azure-powershell/issues/6856</span><span class="sxs-lookup"><span data-stu-id="de109-1644">More information here: https://github.com/Azure/azure-powershell/issues/6856</span></span>
-* <span data-ttu-id="de109-1645">Betik ve iş senaryolarında istemi atlamak için bir dizi dağıtım cmdlet’lerine ‘-IgnoreDynamicParameters’ anahtar parametresi eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-1645">Add '-IgnoreDynamicParameters' switch parameter to set of deployment cmdlets to skip prompt in script and job scenarios</span></span>
-    - <span data-ttu-id="de109-1646">Burada daha fazla bilgi bulunabilir: https://github.com/Azure/azure-powershell/issues/6856</span><span class="sxs-lookup"><span data-stu-id="de109-1646">More information here: https://github.com/Azure/azure-powershell/issues/6856</span></span>
-
-#### <a name="azsql"></a><span data-ttu-id="de109-1647">Az.Sql</span><span class="sxs-lookup"><span data-stu-id="de109-1647">Az.Sql</span></span>
-* <span data-ttu-id="de109-1648">Veritabanı Verileri Sınıflandırması Desteği.</span><span class="sxs-lookup"><span data-stu-id="de109-1648">Support Database Data Classification.</span></span>
-
-#### <a name="azstorage"></a><span data-ttu-id="de109-1649">Az.Storage</span><span class="sxs-lookup"><span data-stu-id="de109-1649">Az.Storage</span></span>
-* <span data-ttu-id="de109-1650">-UseConnectedAccount parametresi ile depolama bağlamı oluştururken ayrıntı hatası raporlama</span><span class="sxs-lookup"><span data-stu-id="de109-1650">Report detail error when create Storage context with parameter -UseConnectedAccount, but without login Azure account</span></span>
-    - <span data-ttu-id="de109-1651">New-AzStorageContext</span><span class="sxs-lookup"><span data-stu-id="de109-1651">New-AzStorageContext</span></span>
-* <span data-ttu-id="de109-1652">Belirtilen depolama hesabının Yönetim düzlemi API’si ile Blob Hizmeti Özellikleri için Yönetim Desteği</span><span class="sxs-lookup"><span data-stu-id="de109-1652">Support Manage Blob Service Properties of a specified Storage account with Management plane API</span></span>
-    - <span data-ttu-id="de109-1653">Update-AzStorageBlobServiceProperty</span><span class="sxs-lookup"><span data-stu-id="de109-1653">Update-AzStorageBlobServiceProperty</span></span>
-    - <span data-ttu-id="de109-1654">Get-AzStorageBlobServiceProperty</span><span class="sxs-lookup"><span data-stu-id="de109-1654">Get-AzStorageBlobServiceProperty</span></span>
-    - <span data-ttu-id="de109-1655">Enable-AzStorageBlobDeleteRetentionPolicy</span><span class="sxs-lookup"><span data-stu-id="de109-1655">Enable-AzStorageBlobDeleteRetentionPolicy</span></span>
-    - <span data-ttu-id="de109-1656">Disable-AzStorageBlobDeleteRetentionPolicy</span><span class="sxs-lookup"><span data-stu-id="de109-1656">Disable-AzStorageBlobDeleteRetentionPolicy</span></span>
-* <span data-ttu-id="de109-1657">Blob ve dosya karşıya yükleme ve indirme cmdlet’leri için -Asjob desteği</span><span class="sxs-lookup"><span data-stu-id="de109-1657">-AsJob support for Blob and file upload and download cmdlets</span></span>
-    - <span data-ttu-id="de109-1658">Get-AzStorageBlobContent</span><span class="sxs-lookup"><span data-stu-id="de109-1658">Get-AzStorageBlobContent</span></span>
-    - <span data-ttu-id="de109-1659">Set-AzStorageBlobContent</span><span class="sxs-lookup"><span data-stu-id="de109-1659">Set-AzStorageBlobContent</span></span>
-    - <span data-ttu-id="de109-1660">Get-AzStorageFileContent</span><span class="sxs-lookup"><span data-stu-id="de109-1660">Get-AzStorageFileContent</span></span>
-    - <span data-ttu-id="de109-1661">Set-AzStorageFileContent</span><span class="sxs-lookup"><span data-stu-id="de109-1661">Set-AzStorageFileContent</span></span>
-
-## <a name="160---march-2019"></a><span data-ttu-id="de109-1662">1.6.0 - Mart 2019</span><span class="sxs-lookup"><span data-stu-id="de109-1662">1.6.0 - March 2019</span></span>
-### <a name="highlights-since-the-last-major-release"></a><span data-ttu-id="de109-1663">Son ana sürümden bu yana öne çıkanlar</span><span class="sxs-lookup"><span data-stu-id="de109-1663">Highlights since the last major release</span></span>
-* <span data-ttu-id="de109-1664">`Az` modülünü genel kullanıma sunuldu</span><span class="sxs-lookup"><span data-stu-id="de109-1664">General availability of `Az` module</span></span>
-* <span data-ttu-id="de109-1665">`Az` modülü hakkında daha fazla bilgi için şu bağlantıyı ziyaret edin: https://aka.ms/azps-announce</span><span class="sxs-lookup"><span data-stu-id="de109-1665">For more information about the `Az` module, please visit the following: https://aka.ms/azps-announce</span></span>
-* <span data-ttu-id="de109-1666">Location, ResourceGroup ve ResourceName tamamlayıcıları eklendi: https://azure.microsoft.com/blog/completers-in-azure-powershell/</span><span class="sxs-lookup"><span data-stu-id="de109-1666">Added Location, ResourceGroup, and ResourceName completers: https://azure.microsoft.com/blog/completers-in-azure-powershell/</span></span>
-* <span data-ttu-id="de109-1667">Az.Compute ve Az.Network için Get cmdlet'lerine joker karakter desteği eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-1667">Added wildcard support to Get cmdlets for Az.Compute and Az.Network</span></span>
-* <span data-ttu-id="de109-1668">Yalnızca Windows PowerShell 5.1 için etkileşim ve kullanıcı adı/parola kimlik doğrulaması eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-1668">Added interactive and username/password authentication for Windows PowerShell 5.1 only</span></span>
-* <span data-ttu-id="de109-1669">Az.Automation'da Python 2 runbook'ları için destek eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-1669">Added support for Python 2 runbooks in Az.Automation</span></span>
-* <span data-ttu-id="de109-1670">Az.LogicApp: Tümleştirme Hesabı Derlemeleri ve Toplu Yapılandırması için yeni cmdlet’ler</span><span class="sxs-lookup"><span data-stu-id="de109-1670">Az.LogicApp: New cmdlets for Integration Account Assemblies and Batch Configuration</span></span>
-
-#### <a name="azautomation"></a><span data-ttu-id="de109-1671">Az.Automation</span><span class="sxs-lookup"><span data-stu-id="de109-1671">Az.Automation</span></span>
-* <span data-ttu-id="de109-1672">Aşağıdaki yeni özellikleri desteklemek için Azure otomasyonu güncelleştirme yönetimi değişikliği:</span><span class="sxs-lookup"><span data-stu-id="de109-1672">Azure automation update management change to support the following new features :</span></span>
-    * <span data-ttu-id="de109-1673">Dinamik gruplandırma</span><span class="sxs-lookup"><span data-stu-id="de109-1673">Dynamic grouping</span></span>
-    * <span data-ttu-id="de109-1674">Ön-Son betik</span><span class="sxs-lookup"><span data-stu-id="de109-1674">Pre-Post script</span></span>
-    * <span data-ttu-id="de109-1675">Yeniden Başlatma Ayarı</span><span class="sxs-lookup"><span data-stu-id="de109-1675">Reboot Setting</span></span>
-
-#### <a name="azcompute"></a><span data-ttu-id="de109-1676">Az.Compute</span><span class="sxs-lookup"><span data-stu-id="de109-1676">Az.Compute</span></span>
-* <span data-ttu-id="de109-1677">Get-AzVmBootDiagnosticsData içinde yol çözümleme sorunu çözüldü</span><span class="sxs-lookup"><span data-stu-id="de109-1677">Fix issue with path resolution in Get-AzVmBootDiagnosticsData</span></span>
-* <span data-ttu-id="de109-1678">İşlem istemci kitaplığı 25.0.0'a güncelleştirildi.</span><span class="sxs-lookup"><span data-stu-id="de109-1678">Update Compute client library to 25.0.0.</span></span>
-
-#### <a name="azkeyvault"></a><span data-ttu-id="de109-1679">Az.KeyVault</span><span class="sxs-lookup"><span data-stu-id="de109-1679">Az.KeyVault</span></span>
-* <span data-ttu-id="de109-1680">KeyVault cmdlet'lerine joker karakter desteği eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-1680">Added wildcard support to KeyVault cmdlets</span></span>
-
-#### <a name="aznetwork"></a><span data-ttu-id="de109-1681">Az.Network</span><span class="sxs-lookup"><span data-stu-id="de109-1681">Az.Network</span></span>
-* <span data-ttu-id="de109-1682">Azure Güvenlik Duvarı için Tehdit Bilgileri desteği eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-1682">Add Threat Intelligence support for Azure Firewall</span></span>
-* <span data-ttu-id="de109-1683">Application Gateway Güvenlik Duvarı İlkesi üst düzey kaynağı ve Özel Kurallar eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-1683">Add Application Gateway Firewall Policy top level resource and Custom Rules</span></span>
-
-#### <a name="azrecoveryservices"></a><span data-ttu-id="de109-1684">Az.RecoveryServices</span><span class="sxs-lookup"><span data-stu-id="de109-1684">Az.RecoveryServices</span></span>
-* <span data-ttu-id="de109-1685">Anında RP desteği için Azure VM ilkesine SnapshotRetentionInDays eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-1685">Added SnapshotRetentionInDays in Azure VM policy to support Instant RP</span></span>
-* <span data-ttu-id="de109-1686">Kapsayıcı kaydını kaldırmak için kanal desteği eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-1686">Added pipe support for unregister container</span></span>
-
-#### <a name="azresources"></a><span data-ttu-id="de109-1687">Az.Resources</span><span class="sxs-lookup"><span data-stu-id="de109-1687">Az.Resources</span></span>
-* <span data-ttu-id="de109-1688">Get-AzResource ve Get-AzResourceGroup için joker karakter desteği güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-1688">Update wildcard support for Get-AzResource and Get-AzResourceGroup</span></span>
-* <span data-ttu-id="de109-1689">ARM'ye genel çağrı yapılırken kullanılan kimlik bilgileri güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-1689">Update credentials used when making generic calls to ARM</span></span>
-
-#### <a name="azsql"></a><span data-ttu-id="de109-1690">Az.Sql</span><span class="sxs-lookup"><span data-stu-id="de109-1690">Az.Sql</span></span>
-* <span data-ttu-id="de109-1691">Yeni DetectionType'lar eklendiğinde gelecekte kullanılabilmesini sağlamak ve otomatik tamamlamayı da desteklemek için Tehdit Algılama cmdlet'lerinin DetectionType olan parametresi (ExcludeDetectionType) string[] olarak değiştirildi.</span><span class="sxs-lookup"><span data-stu-id="de109-1691">changed Threat Detection's cmdlets param (ExcludeDetectionType) from DetectionType to string[] to make it future proof when new DetectionTypes are added and to support autocomplete as well.</span></span>
-
-#### <a name="azstorage"></a><span data-ttu-id="de109-1692">Az.Storage</span><span class="sxs-lookup"><span data-stu-id="de109-1692">Az.Storage</span></span>
-* <span data-ttu-id="de109-1693">Depolama hesabında Yönetim İlkesini Alma/Ayarlama/Kaldırma desteği</span><span class="sxs-lookup"><span data-stu-id="de109-1693">Support Get/Set/Remove Management Policy on a Storage account</span></span>
-    - <span data-ttu-id="de109-1694">Set-AzStorageAccountManagementPolicy</span><span class="sxs-lookup"><span data-stu-id="de109-1694">Set-AzStorageAccountManagementPolicy</span></span>
-    - <span data-ttu-id="de109-1695">Get-AzStorageAccountManagementPolicy</span><span class="sxs-lookup"><span data-stu-id="de109-1695">Get-AzStorageAccountManagementPolicy</span></span>
-    - <span data-ttu-id="de109-1696">Remove-AzStorageAccountManagementPolicy</span><span class="sxs-lookup"><span data-stu-id="de109-1696">Remove-AzStorageAccountManagementPolicy</span></span>
-    - <span data-ttu-id="de109-1697">Add-AzStorageAccountManagementPolicyAction</span><span class="sxs-lookup"><span data-stu-id="de109-1697">Add-AzStorageAccountManagementPolicyAction</span></span>
-    - <span data-ttu-id="de109-1698">New-AzStorageAccountManagementPolicyFilter</span><span class="sxs-lookup"><span data-stu-id="de109-1698">New-AzStorageAccountManagementPolicyFilter</span></span>
-    - <span data-ttu-id="de109-1699">New-AzStorageAccountManagementPolicyRule</span><span class="sxs-lookup"><span data-stu-id="de109-1699">New-AzStorageAccountManagementPolicyRule</span></span>
-
-#### <a name="azwebsites"></a><span data-ttu-id="de109-1700">Az.Websites</span><span class="sxs-lookup"><span data-stu-id="de109-1700">Az.Websites</span></span>
-* <span data-ttu-id="de109-1701">'New-AzWebApp -IncludeSourceWebAppSlots' kullanarak tüm yuvaların kopyalanmasını kesintiye uğratan ARM şablon hatası düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-1701">Fix ARM template bug that breaks cloning all slots using 'New-AzWebApp -IncludeSourceWebAppSlots'</span></span>
-
-## <a name="150---march-2019"></a><span data-ttu-id="de109-1702">1.5.0 - Mart 2019</span><span class="sxs-lookup"><span data-stu-id="de109-1702">1.5.0 - March 2019</span></span>
-#### <a name="azaccounts"></a><span data-ttu-id="de109-1703">Az.Accounts</span><span class="sxs-lookup"><span data-stu-id="de109-1703">Az.Accounts</span></span>
-* <span data-ttu-id="de109-1704">AutoRest tarafından oluşturulan cmdlet’leri desteklemek için 'Register-AzModule' komutu eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-1704">Add 'Register-AzModule' command to support AutoRest generated cmdlets</span></span>
-* <span data-ttu-id="de109-1705">Connect-AzAccount örnekleri güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-1705">Update examples for Connect-AzAccount</span></span>
-
-#### <a name="azautomation"></a><span data-ttu-id="de109-1706">Az.Automation</span><span class="sxs-lookup"><span data-stu-id="de109-1706">Az.Automation</span></span>
-* <span data-ttu-id="de109-1707">Birden fazla Azure Otomasyonu cmdlet’inde belirli aylık zamanlamalar alınırken yaşanan sorun düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-1707">Fixed issue when retreiving certain monthly schedules in several Azure Automation cmdlets</span></span>
-* <span data-ttu-id="de109-1708">Yalnızca ilk 20 düğümü döndüren Get-AzAutomationDscNode düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="de109-1708">Fix Get-AzAutomationDscNode returning just top 20 nodes.</span></span> <span data-ttu-id="de109-1709">Artık tüm düğümleri döndürür</span><span class="sxs-lookup"><span data-stu-id="de109-1709">Now it returns all nodes</span></span>
-
-#### <a name="azcdn"></a><span data-ttu-id="de109-1710">Az.Cdn</span><span class="sxs-lookup"><span data-stu-id="de109-1710">Az.Cdn</span></span>
-* <span data-ttu-id="de109-1711">Özel Etki Alanı Https Etkinleştirmesi/Devre Dışı Bırakması için yeni PowerShell cmdlet’leri eklendi ve eskiler kullanım dışı bırakıldı</span><span class="sxs-lookup"><span data-stu-id="de109-1711">Added new Powershell cmdlets for Enable/Disable Custom Domain Https and deprecated the old ones</span></span>
-
-#### <a name="azcompute"></a><span data-ttu-id="de109-1712">Az.Compute</span><span class="sxs-lookup"><span data-stu-id="de109-1712">Az.Compute</span></span>
-* <span data-ttu-id="de109-1713">Get cmdlet’lerine joker karakter desteği eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-1713">Add wildcard support to Get cmdlets</span></span>
-
-#### <a name="azdatafactory"></a><span data-ttu-id="de109-1714">Az.DataFactory</span><span class="sxs-lookup"><span data-stu-id="de109-1714">Az.DataFactory</span></span>
-* <span data-ttu-id="de109-1715">ADF .Net SDK sürümü 3.0.1'e güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-1715">Updated ADF .Net SDK version to 3.0.1</span></span>
-
-#### <a name="azlogicapp"></a><span data-ttu-id="de109-1716">Az.LogicApp</span><span class="sxs-lookup"><span data-stu-id="de109-1716">Az.LogicApp</span></span>
-* <span data-ttu-id="de109-1717">Yalnızca ilk sonuç sayfasını getiren ListWorkflows için düzeltme</span><span class="sxs-lookup"><span data-stu-id="de109-1717">Fix for ListWorkflows only retrieving the first page of results</span></span>
-
-#### <a name="aznetwork"></a><span data-ttu-id="de109-1718">Az.Network</span><span class="sxs-lookup"><span data-stu-id="de109-1718">Az.Network</span></span>
-* <span data-ttu-id="de109-1719">Network cmdlet’lerine joker karakter desteği eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-1719">Add wildcard support to Network cmdlets</span></span>
-
-#### <a name="azrecoveryservices"></a><span data-ttu-id="de109-1720">Az.RecoveryServices</span><span class="sxs-lookup"><span data-stu-id="de109-1720">Az.RecoveryServices</span></span>
-* <span data-ttu-id="de109-1721">Azure VM desteğine SQL Server eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-1721">Added Sql server in Azure VM support</span></span>
-* <span data-ttu-id="de109-1722">SDK Güncelleştirmesi</span><span class="sxs-lookup"><span data-stu-id="de109-1722">SDK Update</span></span>
-* <span data-ttu-id="de109-1723">Get-ProtectableItem içindeki Removed VMappContainer denetimi kaldırıldı</span><span class="sxs-lookup"><span data-stu-id="de109-1723">Removed VMappContainer check in Get-ProtectableItem</span></span>
-* <span data-ttu-id="de109-1724">Get-ProtectableItem için Name ve ServerName parametreleri eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-1724">Added Name and ServerName as parameters for Get-ProtectableItem</span></span>
-
-#### <a name="azresources"></a><span data-ttu-id="de109-1725">Az.Resources</span><span class="sxs-lookup"><span data-stu-id="de109-1725">Az.Resources</span></span>
-* <span data-ttu-id="de109-1726">Dağıtım cmdlet’lerine `-TemplateObject` parametresi eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-1726">Add `-TemplateObject` parameter to deployment cmdlets</span></span>
-    - <span data-ttu-id="de109-1727">Burada daha fazla bilgi bulunabilir: https://github.com/Azure/azure-powershell/issues/2933</span><span class="sxs-lookup"><span data-stu-id="de109-1727">More information here: https://github.com/Azure/azure-powershell/issues/2933</span></span>
-* <span data-ttu-id="de109-1728">`Get-AzResource` sonucu `Set-AzResource` üzerine aktarılırken oluşan sorun düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-1728">Fix issue when piping the result of `Get-AzResource` to `Set-AzResource`</span></span>
-    - <span data-ttu-id="de109-1729">Burada daha fazla bilgi bulunabilir: https://github.com/Azure/azure-powershell/issues/8240</span><span class="sxs-lookup"><span data-stu-id="de109-1729">More information here: https://github.com/Azure/azure-powershell/issues/8240</span></span>
-* <span data-ttu-id="de109-1730">`Set-AzResource` çalıştırılırken JSON veri türü değişikliğine neden olan sorun düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-1730">Fix issue with JSON data type change when running `Set-AzResource`</span></span>
-    - <span data-ttu-id="de109-1731">Burada daha fazla bilgi bulunabilir: https://github.com/Azure/azure-powershell/issues/7930</span><span class="sxs-lookup"><span data-stu-id="de109-1731">More information here: https://github.com/Azure/azure-powershell/issues/7930</span></span>
-
-#### <a name="azsql"></a><span data-ttu-id="de109-1732">Az.Sql</span><span class="sxs-lookup"><span data-stu-id="de109-1732">Az.Sql</span></span>
-* <span data-ttu-id="de109-1733">AuditingEndpointsCommunicator güncelleştiriliyor.</span><span class="sxs-lookup"><span data-stu-id="de109-1733">Updating AuditingEndpointsCommunicator.</span></span>
-    - <span data-ttu-id="de109-1734">Yeni tanılama ayarları oluşturulurken kenar durumunun davranışı düzeltiliyor.</span><span class="sxs-lookup"><span data-stu-id="de109-1734">Fixing the behavior of an edge case while creating new diagnostic settings.</span></span>
-
-#### <a name="azstorage"></a><span data-ttu-id="de109-1735">Az.Storage</span><span class="sxs-lookup"><span data-stu-id="de109-1735">Az.Storage</span></span>
-* <span data-ttu-id="de109-1736">Depolama hesabı oluşturulurken Support Kind BlockBlobStorage desteği sağlandı      - New-AzStorageAccount</span><span class="sxs-lookup"><span data-stu-id="de109-1736">Support Kind BlockBlobStorage when create Storage account      - New-AzStorageAccount</span></span>
-
-## <a name="140---february-2019"></a><span data-ttu-id="de109-1737">1.4.0 - Şubat 2019</span><span class="sxs-lookup"><span data-stu-id="de109-1737">1.4.0 - February 2019</span></span>
-#### <a name="azanalysisservices"></a><span data-ttu-id="de109-1738">Az.AnalysisServices</span><span class="sxs-lookup"><span data-stu-id="de109-1738">Az.AnalysisServices</span></span>
-* <span data-ttu-id="de109-1739">AddAzureASAccount cmdlet'i kullanım dışı bırakıldı</span><span class="sxs-lookup"><span data-stu-id="de109-1739">Deprecated AddAzureASAccount cmdlet</span></span>
-
-#### <a name="azautomation"></a><span data-ttu-id="de109-1740">Az.Automation</span><span class="sxs-lookup"><span data-stu-id="de109-1740">Az.Automation</span></span>
-* <span data-ttu-id="de109-1741">Import-AzAutomationDscNodeConfiguration için yardım güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-1741">Update help for Import-AzAutomationDscNodeConfiguration</span></span>
-* <span data-ttu-id="de109-1742">Import-AzAutomationDscConfiguration cmdlet'ine yapılandırma adı doğrulaması eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-1742">Added configuration name validation to Import-AzAutomationDscConfiguration cmdlet</span></span>
-* <span data-ttu-id="de109-1743">Import-AzAutomationDscConfiguration cmdlet'i için hata işleme iyileştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-1743">Improved error handling for Import-AzAutomationDscConfiguration cmdlet</span></span>
-
-#### <a name="azcognitiveservices"></a><span data-ttu-id="de109-1744">Az.CognitiveServices</span><span class="sxs-lookup"><span data-stu-id="de109-1744">Az.CognitiveServices</span></span>
-* <span data-ttu-id="de109-1745">Kaynağın alt etki alanını belirtmek amacıyla kullanılan New-AzCognitiveServicesAccount için CustomSubdomainName adlı, isteğe bağlı, yeni bir parametre eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-1745">Added CustomSubdomainName as a new optional parameter for New-AzCognitiveServicesAccount which is used to specify subdomain for the resource.</span></span>
-
-#### <a name="azcompute"></a><span data-ttu-id="de109-1746">Az.Compute</span><span class="sxs-lookup"><span data-stu-id="de109-1746">Az.Compute</span></span>
-* <span data-ttu-id="de109-1747">Kimlik parametresi kümeleriyle ilgili sorun düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-1747">Fix issue with ID parameter sets</span></span>
-* <span data-ttu-id="de109-1748">Get-AzVMExtension, Name parametresi sağlanmadığında yüklü tüm uzantıları listeleyecek şekilde güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-1748">Update Get-AzVMExtension to list all installed extension if Name parameter is not provided</span></span>
-* <span data-ttu-id="de109-1749">Update-AzImage cmdlet’ine Tag ve ResourceId parametreleri eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-1749">Add Tag and ResourceId parameters to Update-AzImage cmdlet</span></span>
-* <span data-ttu-id="de109-1750">Get-AzVmssVM, örnek kimliği olmadan ve InstanceView ile, örnek görünümüne sahip VMSS VM’lerini listeleyebilir.</span><span class="sxs-lookup"><span data-stu-id="de109-1750">Get-AzVmssVM without instance ID and with InstanceView can list VMSS VMs with instance view.</span></span>
-
-#### <a name="azdatalakestore"></a><span data-ttu-id="de109-1751">Az.DataLakeStore</span><span class="sxs-lookup"><span data-stu-id="de109-1751">Az.DataLakeStore</span></span>
-* <span data-ttu-id="de109-1752">ADL silinmiş öğe listeleme ve geri yükleme cmdlet’leri eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-1752">Add cmdlets for ADL deleted item enumerate and restore</span></span>
-
-#### <a name="azeventhub"></a><span data-ttu-id="de109-1753">Az.EventHub</span><span class="sxs-lookup"><span data-stu-id="de109-1753">Az.EventHub</span></span>
-* <span data-ttu-id="de109-1754">EventHub’ın CaptureDescription sınıfında Boş Arşivleri Atlamak için SkipEmptyArchives adlı yeni Boole özelliği eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-1754">Added new boolean property SkipEmptyArchives to Skip Empty Archives in CaptureDescription class of Eventhub</span></span>
-
-#### <a name="azkeyvault"></a><span data-ttu-id="de109-1755">Az.KeyVault</span><span class="sxs-lookup"><span data-stu-id="de109-1755">Az.KeyVault</span></span>
-* <span data-ttu-id="de109-1756">Set-AzKeyVaultSecret’daki etiketleme düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-1756">Fix tagging on Set-AzKeyVaultSecret</span></span>
-
-#### <a name="azlogicapp"></a><span data-ttu-id="de109-1757">Az.LogicApp</span><span class="sxs-lookup"><span data-stu-id="de109-1757">Az.LogicApp</span></span>
-* <span data-ttu-id="de109-1758">Tümleştirme Hesapları için Temel SKU eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-1758">Add in Basic sku for Integration Accounts</span></span>
-* <span data-ttu-id="de109-1759">XSLT 2.0, XSLT 3.0 ve Liquid Eşleşme Türleri eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-1759">Add in XSLT 2.0, XSLT 3.0 and Liquid Map Types</span></span>
-* <span data-ttu-id="de109-1760">Tümleştirme Hesabı Bütünleştirilmiş Kodları için yeni cmdlet’ler</span><span class="sxs-lookup"><span data-stu-id="de109-1760">New cmdlets for Integration Account Assemblies</span></span>
-    - <span data-ttu-id="de109-1761">Get-AzIntegrationAccountAssembly</span><span class="sxs-lookup"><span data-stu-id="de109-1761">Get-AzIntegrationAccountAssembly</span></span>
-    - <span data-ttu-id="de109-1762">New-AzIntegrationAccountAssembly</span><span class="sxs-lookup"><span data-stu-id="de109-1762">New-AzIntegrationAccountAssembly</span></span>
-    - <span data-ttu-id="de109-1763">Remove-AzIntegrationAccountAssembly</span><span class="sxs-lookup"><span data-stu-id="de109-1763">Remove-AzIntegrationAccountAssembly</span></span>
-    - <span data-ttu-id="de109-1764">Set-AzIntegrationAccountAssembly</span><span class="sxs-lookup"><span data-stu-id="de109-1764">Set-AzIntegrationAccountAssembly</span></span>
-* <span data-ttu-id="de109-1765">Tümleştirme Hesabı Toplu Yapılandırması için yeni cmdlet’ler</span><span class="sxs-lookup"><span data-stu-id="de109-1765">New cmdlets for Integration Account Batch Configuration</span></span>
-    - <span data-ttu-id="de109-1766">Get-AzIntegrationAccountBatchConfiguration</span><span class="sxs-lookup"><span data-stu-id="de109-1766">Get-AzIntegrationAccountBatchConfiguration</span></span>
-    - <span data-ttu-id="de109-1767">New-AzIntegrationAccountBatchConfiguration</span><span class="sxs-lookup"><span data-stu-id="de109-1767">New-AzIntegrationAccountBatchConfiguration</span></span>
-    - <span data-ttu-id="de109-1768">Remove-AzIntegrationAccountBatchConfiguration</span><span class="sxs-lookup"><span data-stu-id="de109-1768">Remove-AzIntegrationAccountBatchConfiguration</span></span>
-    - <span data-ttu-id="de109-1769">Set-AzIntegrationAccountBatchConfiguration</span><span class="sxs-lookup"><span data-stu-id="de109-1769">Set-AzIntegrationAccountBatchConfiguration</span></span>
-* <span data-ttu-id="de109-1770">Logic Apps SDK sürüm 4.1.0’a güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-1770">Update Logic App SDK to version 4.1.0</span></span>
-
-#### <a name="azmonitor"></a><span data-ttu-id="de109-1771">Az.Monitor</span><span class="sxs-lookup"><span data-stu-id="de109-1771">Az.Monitor</span></span>
-* <span data-ttu-id="de109-1772">Get-AzMetric için yardım güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-1772">Update help for Get-AzMetric</span></span>
-
-#### <a name="aznetwork"></a><span data-ttu-id="de109-1773">Az.Network</span><span class="sxs-lookup"><span data-stu-id="de109-1773">Az.Network</span></span>
-* <span data-ttu-id="de109-1774">Add-AzApplicationGatewayCustomError için yardım örneği güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-1774">Update help example for Add-AzApplicationGatewayCustomError</span></span>
-
-#### <a name="azoperationalinsights"></a><span data-ttu-id="de109-1775">Az.OperationalInsights</span><span class="sxs-lookup"><span data-stu-id="de109-1775">Az.OperationalInsights</span></span>
-* <span data-ttu-id="de109-1776">New ve Get ApplicationInsights veri kaynağı için ek destek sunuldu.</span><span class="sxs-lookup"><span data-stu-id="de109-1776">Additional support for New and Get ApplicationInsights data source.</span></span>
-    - <span data-ttu-id="de109-1777">Belirli bir çalışma alanı için belirli ve tüm Get ApplicationInsights veri kaynaklarını desteklemek için yeni ‘ApplicationInsights’ türü eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-1777">Added new 'ApplicationInsights' kind to support Get specific and Get all ApplicationInsights data sources for given workspace.</span></span>
-    - <span data-ttu-id="de109-1778">Belirli Application-Insights kaynak parametrelerine (abonelik kimliği, resourceGroupName ve ad) göre veri kaynağı oluşturmak için New-AzOperationalInsightsApplicationInsightsDataSource cmdlet’i eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-1778">Added New-AzOperationalInsightsApplicationInsightsDataSource cmdlet for creating data source by given Application-Insights resource parameters: subscription Id, resourceGroupName and name.</span></span>
-
-#### <a name="azresources"></a><span data-ttu-id="de109-1779">Az.Resources</span><span class="sxs-lookup"><span data-stu-id="de109-1779">Az.Resources</span></span>
-* <span data-ttu-id="de109-1780">[https://github.com/Azure/azure-powershell/issues/8166](https://github.com/Azure/azure-powershell/issues/8166 ) sorunu düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-1780">Fix for issue https://github.com/Azure/azure-powershell/issues/8166</span></span>
-* <span data-ttu-id="de109-1781">[https://github.com/Azure/azure-powershell/issues/8235](https://github.com/Azure/azure-powershell/issues/8235 ) sorunu düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-1781">Fix for issue https://github.com/Azure/azure-powershell/issues/8235</span></span>
-* <span data-ttu-id="de109-1782">[https://github.com/Azure/azure-powershell/issues/6219](https://github.com/Azure/azure-powershell/issues/6219 ) sorunu düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-1782">Fix for issue https://github.com/Azure/azure-powershell/issues/6219</span></span>
-* <span data-ttu-id="de109-1783">KeyCredentials’ın tekrar oluşturmasını engelleyen hata düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-1783">Fix bug preventing repeat creation of KeyCredentials</span></span>
-
-#### <a name="azsql"></a><span data-ttu-id="de109-1784">Az.Sql</span><span class="sxs-lookup"><span data-stu-id="de109-1784">Az.Sql</span></span>
-* <span data-ttu-id="de109-1785">SQL DB Hiper Ölçek katmanı için destek eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-1785">Add support for SQL DB Hyperscale tier</span></span>
-* <span data-ttu-id="de109-1786">Geri yükleme isteğinde gereksiz özellikler ayarlandığı için geri yüklemenin başarısız olmasına yol açan hata düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-1786">Fixed bug where restore could fail due to setting unnecessary properties in restore request</span></span>
-
-#### <a name="azwebsites"></a><span data-ttu-id="de109-1787">Az.Websites</span><span class="sxs-lookup"><span data-stu-id="de109-1787">Az.Websites</span></span>
-* <span data-ttu-id="de109-1788">Get-AzWebAppSlotMetrics örneği düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-1788">Correct example in Get-AzWebAppSlotMetrics</span></span>
-
-## <a name="130---february-2019"></a><span data-ttu-id="de109-1789">1.3.0 - Şubat 2019</span><span class="sxs-lookup"><span data-stu-id="de109-1789">1.3.0 - February 2019</span></span>
-#### <a name="azaccounts"></a><span data-ttu-id="de109-1790">Az.Accounts</span><span class="sxs-lookup"><span data-stu-id="de109-1790">Az.Accounts</span></span>
-* <span data-ttu-id="de109-1791">En son ClientRuntime sürümüne güncelleştirme</span><span class="sxs-lookup"><span data-stu-id="de109-1791">Update to latest version of ClientRuntime</span></span>
-
-#### <a name="azanalysisservices"></a><span data-ttu-id="de109-1792">Az.AnalysisServices</span><span class="sxs-lookup"><span data-stu-id="de109-1792">Az.AnalysisServices</span></span>
-<span data-ttu-id="de109-1793">Az.AnalysisServices modülü için genel kullanılabilirlik.</span><span class="sxs-lookup"><span data-stu-id="de109-1793">General availability for Az.AnalysisServices module.</span></span>
-
-#### <a name="azcompute"></a><span data-ttu-id="de109-1794">Az.Compute</span><span class="sxs-lookup"><span data-stu-id="de109-1794">Az.Compute</span></span>
-* <span data-ttu-id="de109-1795">AEM uzantısı: UltraSSD ile P60,P70 ve P80 diskleri için destek eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-1795">AEM extension: Add support for UltraSSD and P60,P70 and P80 disks</span></span>
-* <span data-ttu-id="de109-1796">Set-AzVMBootDiagnostics yardım açıklaması güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-1796">Update help description for Set-AzVMBootDiagnostics</span></span>
-* <span data-ttu-id="de109-1797">Update-AzImage için yardım açıklaması ve örnek güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-1797">Update help description and example for Update-AzImage</span></span>
-
-#### <a name="azrecoveryservices"></a><span data-ttu-id="de109-1798">Az.RecoveryServices</span><span class="sxs-lookup"><span data-stu-id="de109-1798">Az.RecoveryServices</span></span>
-<span data-ttu-id="de109-1799">Az.RecoveryServices modülü için genel kullanılabilirlik.</span><span class="sxs-lookup"><span data-stu-id="de109-1799">General availability for Az.RecoveryServices module.</span></span>
-
-#### <a name="azresources"></a><span data-ttu-id="de109-1800">Az.Resources</span><span class="sxs-lookup"><span data-stu-id="de109-1800">Az.Resources</span></span>
-* <span data-ttu-id="de109-1801">Kaynak grupları için etiketleme düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-1801">Fix tagging for resource groups</span></span>
-    - <span data-ttu-id="de109-1802">Burada daha fazla bilgi bulunabilir: https://github.com/Azure/azure-powershell/issues/8166</span><span class="sxs-lookup"><span data-stu-id="de109-1802">More information here: https://github.com/Azure/azure-powershell/issues/8166</span></span>
-* <span data-ttu-id="de109-1803">`Get-AzureRmRoleAssignment` komutunun -ErrorAction'a uymama sorunu düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-1803">Fix issue where `Get-AzureRmRoleAssignment` doesn't respect -ErrorAction</span></span>
-    - <span data-ttu-id="de109-1804">Burada daha fazla bilgi bulunabilir: https://github.com/Azure/azure-powershell/issues/8235</span><span class="sxs-lookup"><span data-stu-id="de109-1804">More information here: https://github.com/Azure/azure-powershell/issues/8235</span></span>
-
-#### <a name="azsql"></a><span data-ttu-id="de109-1805">Az.Sql</span><span class="sxs-lookup"><span data-stu-id="de109-1805">Az.Sql</span></span>
-* <span data-ttu-id="de109-1806">Add Get/Set AzSqlDatabaseBackupShortTermRetentionPolicy</span><span class="sxs-lookup"><span data-stu-id="de109-1806">Add Get/Set AzSqlDatabaseBackupShortTermRetentionPolicy</span></span>
-* <span data-ttu-id="de109-1807">Azure hesabında oturum açılmamasının SQL cmdlet'leri yürütülürken nullref özel durumuna yol açması sorunu düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-1807">Fix issue where not being logged into Azure account would result in nullref exception when executing SQL cmdlets</span></span>
-* <span data-ttu-id="de109-1808">Get-AzSqlCapability'de null başvuru özel durumu düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-1808">Fixed null ref exception in Get-AzSqlCapability</span></span>
-
-## <a name="121---january-2019"></a><span data-ttu-id="de109-1809">1.2.1 - Ocak 2019</span><span class="sxs-lookup"><span data-stu-id="de109-1809">1.2.1 - January 2019</span></span>
-#### <a name="azaccounts"></a><span data-ttu-id="de109-1810">Az.Accounts</span><span class="sxs-lookup"><span data-stu-id="de109-1810">Az.Accounts</span></span>
-* <span data-ttu-id="de109-1811">Kimlik Doğrulaması'nın doğru yayınını içeren sürümü</span><span class="sxs-lookup"><span data-stu-id="de109-1811">Release with correct version of Authentication</span></span>
-
-#### <a name="azanalysisservices"></a><span data-ttu-id="de109-1812">Az.AnalysisServices</span><span class="sxs-lookup"><span data-stu-id="de109-1812">Az.AnalysisServices</span></span>
-* <span data-ttu-id="de109-1813">Güncelleştirilmiş Kimlik Doğrulaması bağımlılığını içeren sürüm</span><span class="sxs-lookup"><span data-stu-id="de109-1813">Release with updated Authentication dependency</span></span>
-
-#### <a name="azrecoveryservices"></a><span data-ttu-id="de109-1814">Az.RecoveryServices</span><span class="sxs-lookup"><span data-stu-id="de109-1814">Az.RecoveryServices</span></span>
-* <span data-ttu-id="de109-1815">Güncelleştirilmiş Kimlik Doğrulaması bağımlılığını içeren sürüm</span><span class="sxs-lookup"><span data-stu-id="de109-1815">Release with updated Authentication dependency</span></span>
-
-## <a name="120---january-2019"></a><span data-ttu-id="de109-1816">1.2.0 - Ocak 2019</span><span class="sxs-lookup"><span data-stu-id="de109-1816">1.2.0 - January 2019</span></span>
-#### <a name="azaccounts"></a><span data-ttu-id="de109-1817">Az.Accounts</span><span class="sxs-lookup"><span data-stu-id="de109-1817">Az.Accounts</span></span>
-* <span data-ttu-id="de109-1818">Yalnızca Windows PowerShell 5.1 için etkileşim ve kullanıcı adı/parola kimlik doğrulaması eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-1818">Add interactive and username/password authentication for Windows PowerShell 5.1 only</span></span>
-* <span data-ttu-id="de109-1819">Hatalı çevrimiçi yardım URL'leri güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-1819">Update incorrect online help URLs</span></span>
-* <span data-ttu-id="de109-1820">Uninstall-AzureRm için PC Çekirdeğine uyarı iletisi eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-1820">Add warning message in PS Core for Uninstall-AzureRm</span></span>
-
-#### <a name="azaks"></a><span data-ttu-id="de109-1821">Az.Aks</span><span class="sxs-lookup"><span data-stu-id="de109-1821">Az.Aks</span></span>
-* <span data-ttu-id="de109-1822">Hatalı çevrimiçi yardım URL'leri güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-1822">Update incorrect online help URLs</span></span>
-
-#### <a name="azautomation"></a><span data-ttu-id="de109-1823">Az.Automation</span><span class="sxs-lookup"><span data-stu-id="de109-1823">Az.Automation</span></span>
-* <span data-ttu-id="de109-1824">Python 2 runbook'ları için destek eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-1824">Added support for Python 2 runbooks</span></span>
-* <span data-ttu-id="de109-1825">Hatalı çevrimiçi yardım URL'leri güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-1825">Update incorrect online help URLs</span></span>
-
-#### <a name="azcdn"></a><span data-ttu-id="de109-1826">Az.Cdn</span><span class="sxs-lookup"><span data-stu-id="de109-1826">Az.Cdn</span></span>
-* <span data-ttu-id="de109-1827">Hatalı çevrimiçi yardım URL'leri güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-1827">Update incorrect online help URLs</span></span>
-
-#### <a name="azcompute"></a><span data-ttu-id="de109-1828">Az.Compute</span><span class="sxs-lookup"><span data-stu-id="de109-1828">Az.Compute</span></span>
-* <span data-ttu-id="de109-1829">Invoke-AzVMReimage cmdlet'i eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-1829">Add Invoke-AzVMReimage cmdlet</span></span>
-* <span data-ttu-id="de109-1830">Set-AzVmss'ye TempDisk parametresi eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-1830">Add TempDisk parameter to Set-AzVmss</span></span>
-* <span data-ttu-id="de109-1831">New-AzVM'nin uyarı iletisi düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-1831">Fix the warning message of New-AzVM</span></span>
-
-#### <a name="azcontainerregistry"></a><span data-ttu-id="de109-1832">Az.ContainerRegistry</span><span class="sxs-lookup"><span data-stu-id="de109-1832">Az.ContainerRegistry</span></span>
-* <span data-ttu-id="de109-1833">Hatalı çevrimiçi yardım URL'leri güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-1833">Update incorrect online help URLs</span></span>
-
-#### <a name="azdatafactory"></a><span data-ttu-id="de109-1834">Az.DataFactory</span><span class="sxs-lookup"><span data-stu-id="de109-1834">Az.DataFactory</span></span>
-* <span data-ttu-id="de109-1835">ADF .Net SDK sürümü 3.0.0'a güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-1835">Updated ADF .Net SDK version to 3.0.0</span></span>
-
-#### <a name="azdatalakestore"></a><span data-ttu-id="de109-1836">Az.DataLakeStore</span><span class="sxs-lookup"><span data-stu-id="de109-1836">Az.DataLakeStore</span></span>
-* <span data-ttu-id="de109-1837">MSI kullanırken ADLS uç noktasındaki sorun düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-1837">Fix issue with ADLS endpoint when using MSI</span></span>
-    - <span data-ttu-id="de109-1838">Burada daha fazla bilgi bulunabilir: https://github.com/Azure/azure-powershell/issues/7462</span><span class="sxs-lookup"><span data-stu-id="de109-1838">More information here: https://github.com/Azure/azure-powershell/issues/7462</span></span>
-* <span data-ttu-id="de109-1839">Hatalı çevrimiçi yardım URL'leri güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-1839">Update incorrect online help URLs</span></span>
-
-#### <a name="aziothub"></a><span data-ttu-id="de109-1840">Az.IotHub</span><span class="sxs-lookup"><span data-stu-id="de109-1840">Az.IotHub</span></span>
-* <span data-ttu-id="de109-1841">Add-IotHubRoutingEndpoint cmdlet'ine Kodlama biçimi eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-1841">Add Encoding format to Add-IotHubRoutingEndpoint cmdlet.</span></span>
-
-#### <a name="azkeyvault"></a><span data-ttu-id="de109-1842">Az.KeyVault</span><span class="sxs-lookup"><span data-stu-id="de109-1842">Az.KeyVault</span></span>
-* <span data-ttu-id="de109-1843">Hatalı çevrimiçi yardım URL'leri güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-1843">Update incorrect online help URLs</span></span>
-
-#### <a name="aznetwork"></a><span data-ttu-id="de109-1844">Az.Network</span><span class="sxs-lookup"><span data-stu-id="de109-1844">Az.Network</span></span>
-* <span data-ttu-id="de109-1845">Hatalı çevrimiçi yardım URL'leri güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-1845">Update incorrect online help URLs</span></span>
-
-#### <a name="azresources"></a><span data-ttu-id="de109-1846">Az.Resources</span><span class="sxs-lookup"><span data-stu-id="de109-1846">Az.Resources</span></span>
-* <span data-ttu-id="de109-1847">'New-AzADAppCredential' ve 'New-AzADSpCredential' başvuru belgelerindeki hatalı örnekler düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-1847">Fix incorrect examples in 'New-AzADAppCredential' and 'New-AzADSpCredential' reference documentation</span></span>
-* <span data-ttu-id="de109-1848">Kaynak grubu dağıtım cmdlet'lerini yürütmeden önce '-TemplateFile' parametresi yolunun çözülmemesi sorunu düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-1848">Fix issue where path for '-TemplateFile' parameter was not being resolved before executing resource group deployment cmdlets</span></span>
-* <span data-ttu-id="de109-1849">Az.Resources: Belgede New-AzureRmPolicyDefinition -Mode varsayılan değeri düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-1849">Az.Resources: Correct documentation for New-AzureRmPolicyDefinition -Mode default value</span></span>
-* <span data-ttu-id="de109-1850">Az.Resources: [https://github.com/Azure/azure-powershell/issues/9351](https://github.com/Azure/azure-powershell/issues/7522 ) sorunu düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-1850">Az.Resources: Fix for issue https://github.com/Azure/azure-powershell/issues/7522</span></span>
-* <span data-ttu-id="de109-1851">Az.Resources: https://github.com/Azure/azure-powershell/issues/5747 sorunu düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-1851">Az.Resources: Fix for issue https://github.com/Azure/azure-powershell/issues/5747</span></span>
-* <span data-ttu-id="de109-1852">'PSResourceGroupDeployment' nesnesinin biçimlendirme sorunu düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-1852">Fix formatting issue with 'PSResourceGroupDeployment' object</span></span>
-    - <span data-ttu-id="de109-1853">Burada daha fazla bilgi bulunabilir: https://github.com/Azure/azure-powershell/issues/2123</span><span class="sxs-lookup"><span data-stu-id="de109-1853">More information here: https://github.com/Azure/azure-powershell/issues/2123</span></span>
-
-#### <a name="azservicefabric"></a><span data-ttu-id="de109-1854">Az.ServiceFabric</span><span class="sxs-lookup"><span data-stu-id="de109-1854">Az.ServiceFabric</span></span>
-* <span data-ttu-id="de109-1855">VMSS modeline sertifika eklendiğinde ama özel durum oluştuğunda geri alma için hata düzeltmesi: https://github.com/Azure/service-fabric-issues/issues/932</span><span class="sxs-lookup"><span data-stu-id="de109-1855">Rollback when a certificate is added to VMSS model but an exception is thrown this is to fix bug: https://github.com/Azure/service-fabric-issues/issues/932</span></span>
-* <span data-ttu-id="de109-1856">Bazı hata iletileri düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="de109-1856">Fix some error messages.</span></span>
-* <span data-ttu-id="de109-1857">Az geçişinde çalışmayan New-AzServiceFabriCluster için varsayılan ARM şablonuyla küme oluşturma sorunu düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="de109-1857">Fix create cluster with default ARM template for New-AzServiceFabriCluster which was not working with migration to Az.</span></span>
-* <span data-ttu-id="de109-1858">Uzantıda küme kimliği denetlenerek küme/uygulama sertifikasının yalnızca kümeye karşılık gelen VM Ölçek Kümelerine eklenmesi düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="de109-1858">Fix add cluster/application certificate to only add to VM Scale Sets that correspond to the cluster by checking cluster id in the extension.</span></span>
-
-#### <a name="azsignalr"></a><span data-ttu-id="de109-1859">Az.SignalR</span><span class="sxs-lookup"><span data-stu-id="de109-1859">Az.SignalR</span></span>
-* <span data-ttu-id="de109-1860">Hatalı çevrimiçi yardım URL'leri güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-1860">Update incorrect online help URLs</span></span>
-
-#### <a name="azsql"></a><span data-ttu-id="de109-1861">Az.Sql</span><span class="sxs-lookup"><span data-stu-id="de109-1861">Az.Sql</span></span>
-* <span data-ttu-id="de109-1862">Hatalı çevrimiçi yardım URL'leri güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-1862">Update incorrect online help URLs</span></span>
-* <span data-ttu-id="de109-1863">LicenseType parametresinin parametre açıklaması olası değerlerle güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-1863">Updated parameter description for LicenseType parameter with possible values</span></span>
-* <span data-ttu-id="de109-1864">Yönetilen örnek kimliği güncelleştirmesinin, güncelleştirilen tek özellik bu olduğunda çalışmaması sorunu düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-1864">Fix for updating managed instance identity not working when it is the only updated property</span></span>
-* <span data-ttu-id="de109-1865">Yönetilen örnekte özel harmanlama desteği</span><span class="sxs-lookup"><span data-stu-id="de109-1865">Support for custom collation on managed instance</span></span>
-
-#### <a name="azstorage"></a><span data-ttu-id="de109-1866">Az.Storage</span><span class="sxs-lookup"><span data-stu-id="de109-1866">Az.Storage</span></span>
-* <span data-ttu-id="de109-1867">Hatalı çevrimiçi yardım URL'leri güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-1867">Update incorrect online help URLs</span></span>
-* <span data-ttu-id="de109-1868">Premium Depolama Hesabı klasik Günlük/Ölçüm desteği sağlamadığından, Premium Depolama Hesabında klasik Günlük/Ölçüm için get/set komutları kullanıldığında ayrıntılı hata iletisi veriliyor.</span><span class="sxs-lookup"><span data-stu-id="de109-1868">Give detail error message when get/set classic Logging/Metric on Premium Storage Account, since Premium Storage Account not supoort classic Logging/Metric.</span></span>
-    - <span data-ttu-id="de109-1869">Get/Set-AzStorageServiceLoggingProperty</span><span class="sxs-lookup"><span data-stu-id="de109-1869">Get/Set-AzStorageServiceLoggingProperty</span></span>
-    - <span data-ttu-id="de109-1870">Get/Set-AzStorageServiceMetricsProperty</span><span class="sxs-lookup"><span data-stu-id="de109-1870">Get/Set-AzStorageServiceMetricsProperty</span></span>
-
-#### <a name="aztrafficmanager"></a><span data-ttu-id="de109-1871">Az.TrafficManager</span><span class="sxs-lookup"><span data-stu-id="de109-1871">Az.TrafficManager</span></span>
-* <span data-ttu-id="de109-1872">Hatalı çevrimiçi yardım URL'leri güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-1872">Update incorrect online help URLs</span></span>
-
-#### <a name="azwebsites"></a><span data-ttu-id="de109-1873">Az.Websites</span><span class="sxs-lookup"><span data-stu-id="de109-1873">Az.Websites</span></span>
-* <span data-ttu-id="de109-1874">Hatalı çevrimiçi yardım URL'leri güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-1874">Update incorrect online help URLs</span></span>
-* <span data-ttu-id="de109-1875">Uygulama ASE'de barındırılıyorsa, sertifikayı doğru kaynak grubuna ve konuma yüklemek için 'New-AzWebAppSSLBinding' düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="de109-1875">Fixes 'New-AzWebAppSSLBinding' to upload the certificate to the correct resourcegroup+location if the app is hosted on an ASE.</span></span>
-* <span data-ttu-id="de109-1876">SSL sertifikası bir uygulamaya bağlanırken etiketlerin üzerine yazılmaması için 'New-AzWebAppSSLBinding' düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-1876">Fixes 'New-AzWebAppSSLBinding' to not overwrite the tags on binding an SSL certificate to an app</span></span>
-
-## <a name="110---january-2019"></a><span data-ttu-id="de109-1877">1.1.0 - Ocak 2019</span><span class="sxs-lookup"><span data-stu-id="de109-1877">1.1.0 - January 2019</span></span>
-#### <a name="azaccounts"></a><span data-ttu-id="de109-1878">Az.Accounts</span><span class="sxs-lookup"><span data-stu-id="de109-1878">Az.Accounts</span></span>
-* <span data-ttu-id="de109-1879">Enable-AzureRmAlias cmdlet'ine 'Local' Kapsamı eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-1879">Add 'Local' Scope to Enable-AzureRmAlias</span></span>
-
-#### <a name="azcompute"></a><span data-ttu-id="de109-1880">Az.Compute</span><span class="sxs-lookup"><span data-stu-id="de109-1880">Az.Compute</span></span>
-* <span data-ttu-id="de109-1881">Restart/Start/Stop/Remove/Set-AzVM ve Save-AzVMImage için ayarlanan ID parametresinde ad artık isteğe bağlı</span><span class="sxs-lookup"><span data-stu-id="de109-1881">Name is now optional in ID parameter set for Restart/Start/Stop/Remove/Set-AzVM and Save-AzVMImage</span></span>
-* <span data-ttu-id="de109-1882">Yardım dosyalarında ID parametresinin açıklaması güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-1882">Updated the description of ID in help files</span></span>
-* <span data-ttu-id="de109-1883">Az.Accounts modülündeki geriye dönük uyumluluk sorunu çözüldü</span><span class="sxs-lookup"><span data-stu-id="de109-1883">Fix backward compatibility issue with Az.Accounts module</span></span>
-
-#### <a name="azdatalakestore"></a><span data-ttu-id="de109-1884">Az.DataLakeStore</span><span class="sxs-lookup"><span data-stu-id="de109-1884">Az.DataLakeStore</span></span>
-* <span data-ttu-id="de109-1885">SDK düzeltmeleri için veri düzleminin SDK sürümü 1.1.14 olarak güncelleştirildi.</span><span class="sxs-lookup"><span data-stu-id="de109-1885">Update the sdk version of dataplane to 1.1.14 for SDK fixes.</span></span>
-    - <span data-ttu-id="de109-1886">getfilestatus ve liststatus için negatif acesstime ve modificationtime değerlerini işleme yöntemi düzeltildi, async iptal belirteci düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-1886">Fix handling of negative acesstime and modificationtime for getfilestatus and liststatus, Fix async cancellation token</span></span>
-
-#### <a name="azeventgrid"></a><span data-ttu-id="de109-1887">Az.EventGrid</span><span class="sxs-lookup"><span data-stu-id="de109-1887">Az.EventGrid</span></span>
-* <span data-ttu-id="de109-1888">2019-01-01 API sürümünü kullanmak için güncelleştirildi.</span><span class="sxs-lookup"><span data-stu-id="de109-1888">Updated to use the 2019-01-01 API version.</span></span>
-* <span data-ttu-id="de109-1889">Aşağıdaki cmdlet'ler 2019-01-01 API sürümünde yeni senaryoyu destekleyecek şekilde güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-1889">Update the following cmdlets to support new scenario in 2019-01-01 API version</span></span>
-    - <span data-ttu-id="de109-1890">New-AzureRmEventGridSubscription: Şunları belirtmek için yeni isteğe bağlı parametreler eklendi:</span><span class="sxs-lookup"><span data-stu-id="de109-1890">New-AzureRmEventGridSubscription: Add new optional parameters for specifying:</span></span>
-        - <span data-ttu-id="de109-1891">Olay Yaşam Süresi,</span><span class="sxs-lookup"><span data-stu-id="de109-1891">Event Time-To-Live,</span></span>
-        - <span data-ttu-id="de109-1892">Olaylar için teslim girişimleri sayısı üst sınırı,</span><span class="sxs-lookup"><span data-stu-id="de109-1892">Maximum number of delivery attempts for the events,</span></span>
-        - <span data-ttu-id="de109-1893">Teslim edilemeyen ileti uç noktası.</span><span class="sxs-lookup"><span data-stu-id="de109-1893">Dead letter endpoint.</span></span>
-    - <span data-ttu-id="de109-1894">Update-AzureRmEventGridSubscription: Şunları belirtmek için yeni isteğe bağlı parametreler eklendi:</span><span class="sxs-lookup"><span data-stu-id="de109-1894">Update-AzureRmEventGridSubscription: Add new optional parameters for specifying:</span></span>
-        - <span data-ttu-id="de109-1895">Olay Yaşam Süresi,</span><span class="sxs-lookup"><span data-stu-id="de109-1895">Event Time-To-Live,</span></span>
-        - <span data-ttu-id="de109-1896">Olaylar için teslim girişimleri sayısı üst sınırı,</span><span class="sxs-lookup"><span data-stu-id="de109-1896">Maximum number of delivery attempts for the events,</span></span>
-        - <span data-ttu-id="de109-1897">Teslim edilemeyen ileti uç noktası.</span><span class="sxs-lookup"><span data-stu-id="de109-1897">Dead letter endpoint.</span></span>
-* <span data-ttu-id="de109-1898">New-AzureRmEventGridSubscription ve Update-AzureRmEventGridSubscription cmdlet'lerinde EndpointType seçeneği için yeni enum değerleri (storageQueue ve hybridConnection) eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-1898">Add new enum values (namely, storageQueue and hybridConnection) for EndpointType option in New-AzureRmEventGridSubscription and Update-AzureRmEventGridSubscription cmdlets.</span></span>
-* <span data-ttu-id="de109-1899">Olay aboneliğini oluşturma veya güncelleştirme işleminde kullanıcının el ile bir eylem yapması beklendiğinde uyarı iletisi gösteriliyor.</span><span class="sxs-lookup"><span data-stu-id="de109-1899">Show warning message if creating or updating the event subscription is expected to entail manual action from user.</span></span>
-
-#### <a name="aziothub"></a><span data-ttu-id="de109-1900">Az.IotHub</span><span class="sxs-lookup"><span data-stu-id="de109-1900">Az.IotHub</span></span>
-* <span data-ttu-id="de109-1901">IotHub SDK'sı en son sürümüne güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-1901">Updated to the latest version of the IotHub SDK</span></span>
-
-#### <a name="azlogicapp"></a><span data-ttu-id="de109-1902">Az.LogicApp</span><span class="sxs-lookup"><span data-stu-id="de109-1902">Az.LogicApp</span></span>
-* <span data-ttu-id="de109-1903">Get-AzLogicApp, Name değeri belirtilmemiş olanların tümünü listeliyor</span><span class="sxs-lookup"><span data-stu-id="de109-1903">Get-AzLogicApp lists all without specified Name</span></span>
-
-#### <a name="azresources"></a><span data-ttu-id="de109-1904">Az.Resources</span><span class="sxs-lookup"><span data-stu-id="de109-1904">Az.Resources</span></span>
-* <span data-ttu-id="de109-1905">'Get-AzResource' için '-ODataQuery' ve '-ResourceId' parametreleri sağlanırken ortaya çıkan parametre ayarlama sorunu düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-1905">Fix parameter set issue when providing '-ODataQuery' and '-ResourceId' parameters for 'Get-AzResource'</span></span>
-    - <span data-ttu-id="de109-1906">Burada daha fazla bilgi bulunabilir: https://github.com/Azure/azure-powershell/issues/7875</span><span class="sxs-lookup"><span data-stu-id="de109-1906">More information here: https://github.com/Azure/azure-powershell/issues/7875</span></span>
-* <span data-ttu-id="de109-1907">New/Set-AzPolicyDefinition cmdlet'lerinde -Custom parametresinin işlenmesi düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-1907">Fix handling of the -Custom parameter in New/Set-AzPolicyDefinition</span></span>
-* <span data-ttu-id="de109-1908">New-AzDeployment belgelerindeki yazım hatası düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-1908">Fix typo in New-AzDeployment documentation</span></span>
-* <span data-ttu-id="de109-1909">'New-AzADUser' için '-MailNickname' parametresi zorunlu hale getirildi</span><span class="sxs-lookup"><span data-stu-id="de109-1909">Made '-MailNickname' parameter mandatory for 'New-AzADUser'</span></span>
-    - <span data-ttu-id="de109-1910">Burada daha fazla bilgi bulunabilir: https://github.com/Azure/azure-powershell/issues/8220</span><span class="sxs-lookup"><span data-stu-id="de109-1910">More information here: https://github.com/Azure/azure-powershell/issues/8220</span></span>
-
-#### <a name="azsignalr"></a><span data-ttu-id="de109-1911">Az.SignalR</span><span class="sxs-lookup"><span data-stu-id="de109-1911">Az.SignalR</span></span>
-* <span data-ttu-id="de109-1912">Az.Accounts modülündeki geriye dönük uyumluluk sorunu çözüldü</span><span class="sxs-lookup"><span data-stu-id="de109-1912">Fix backward compatibility issue with Az.Accounts module</span></span>
-
-#### <a name="azsql"></a><span data-ttu-id="de109-1913">Az.Sql</span><span class="sxs-lookup"><span data-stu-id="de109-1913">Az.Sql</span></span>
-* <span data-ttu-id="de109-1914">Depolama yönetimi istemci bağımlılığı ortak SDK uygulamasına dönüştürüldü.</span><span class="sxs-lookup"><span data-stu-id="de109-1914">Converted the Storage management client dependency to the common SDK implementation.</span></span>
-
-#### <a name="azstorage"></a><span data-ttu-id="de109-1915">Az.Storage</span><span class="sxs-lookup"><span data-stu-id="de109-1915">Az.Storage</span></span>
-* <span data-ttu-id="de109-1916">Sas Token, OAuth veya Anonymous ile oluşturulduğunda Storage bağlamının StorageAccountName değeri gerçek Depolama Hesabı Adına ayarlanıyor</span><span class="sxs-lookup"><span data-stu-id="de109-1916">Set the StorageAccountName of Storage context as the real Storage Account Name, when it's created with Sas Token, OAuth or Anonymous</span></span>
-    - <span data-ttu-id="de109-1917">New-AzStorageContext</span><span class="sxs-lookup"><span data-stu-id="de109-1917">New-AzStorageContext</span></span>
-* <span data-ttu-id="de109-1918">Blob Anlık Görüntü Nesnesinin Sas Belirteci '-FullUri' parametresiyle oluşturulduğunda, döndürülen Uri anlık görüntü Uri'si olacak şekilde düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-1918">Create Sas Token of Blob Snapshot Object with '-FullUri' parameter, fix the returned Uri to be the sanpshot Uri</span></span>
-    - <span data-ttu-id="de109-1919">New-AzStorageBlobSASToken</span><span class="sxs-lookup"><span data-stu-id="de109-1919">New-AzStorageBlobSASToken</span></span>
-
-#### <a name="azwebsites"></a><span data-ttu-id="de109-1920">Az.Websites</span><span class="sxs-lookup"><span data-stu-id="de109-1920">Az.Websites</span></span>
-* <span data-ttu-id="de109-1921">'Get-AzDeletedWebApp' cmdlet'indeki tarih ayrıştırma hatası düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-1921">Fixed a date parsing bug in 'Get-AzDeletedWebApp'</span></span>
-* <span data-ttu-id="de109-1922">Az.Accounts modülündeki geriye dönük uyumluluk sorunu çözüldü</span><span class="sxs-lookup"><span data-stu-id="de109-1922">Fix backward compatibility issue with Az.Accounts module</span></span>
-
-## <a name="100---december-2018"></a><span data-ttu-id="de109-1923">1.0.0 - Aralık 2018</span><span class="sxs-lookup"><span data-stu-id="de109-1923">1.0.0 - December 2018</span></span>
-### <a name="general"></a><span data-ttu-id="de109-1924">Genel</span><span class="sxs-lookup"><span data-stu-id="de109-1924">General</span></span>
-
-- <span data-ttu-id="de109-1925">Az Modülü Genel Kullanıma Sunuldu</span><span class="sxs-lookup"><span data-stu-id="de109-1925">General Availability of Az Module</span></span>
-- <span data-ttu-id="de109-1926">Her modül için çevrimiçi yardım</span><span class="sxs-lookup"><span data-stu-id="de109-1926">Online help for each module</span></span>
-- <span data-ttu-id="de109-1927">Diğer ayrıntılar ve yol haritası için bkz. [Az Duyuru Sayfası](https://aka.ms/azps-announce)</span><span class="sxs-lookup"><span data-stu-id="de109-1927">For more details and a roadmap, see the [Az Announcement page](https://aka.ms/azps-announce)</span></span>
-- <span data-ttu-id="de109-1928">AzureRM’den geçiş hakkında bilgi edinmek için bkz. [Geçiş Kılavuzu](https://aka.ms/azps-migration-guide)</span><span class="sxs-lookup"><span data-stu-id="de109-1928">See the [Migration Guide](https://aka.ms/azps-migration-guide) for information on migrating from AzureRM</span></span>
-
-### <a name="azaccounts"></a><span data-ttu-id="de109-1929">Az.Accounts</span><span class="sxs-lookup"><span data-stu-id="de109-1929">Az.Accounts</span></span>
-- <span data-ttu-id="de109-1930">Önceki adı: Az.Profile</span><span class="sxs-lookup"><span data-stu-id="de109-1930">Changed from Az.Profile</span></span>
-- <span data-ttu-id="de109-1931">Profil ve bağlam türleri için tablo biçimleri düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-1931">Fixed table formats for profile and context types</span></span>
-
-### <a name="azapimanagement"></a><span data-ttu-id="de109-1932">Az.ApiManagement</span><span class="sxs-lookup"><span data-stu-id="de109-1932">Az.ApiManagement</span></span>
-- <span data-ttu-id="de109-1933">#7002 düzeltmeleri</span><span class="sxs-lookup"><span data-stu-id="de109-1933">Fixes for #7002</span></span>
-- <span data-ttu-id="de109-1934">Küçük yeni değişiklikler, ayrıntılar için bkz. [Geçiş Kılavuzu](https://aka.ms/azps-migration-guide)</span><span class="sxs-lookup"><span data-stu-id="de109-1934">Minor breaking changes, see the [Migration Guide](https://aka.ms/azps-migration-guide)  for details</span></span>
-
-### <a name="azbatch"></a><span data-ttu-id="de109-1935">Az.Batch</span><span class="sxs-lookup"><span data-stu-id="de109-1935">Az.Batch</span></span>
-- <span data-ttu-id="de109-1936">`PSComputeNode` üzerinde yeni `NodeAgentInformation` aracılığıyla bir havuzdaki her bir VM’de Azure Batch Düğüm Aracısı’nın hangi sürümünün çalıştığını görme olanağı eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-1936">Added the ability to see what version of the Azure Batch Node Agent is running on each of the VMs in a pool, via the new `NodeAgentInformation` property on `PSComputeNode`.</span></span>
-- <span data-ttu-id="de109-1937">`PSDataDisk` için `Caching` varsayılan ayarı artık `None` yerine `ReadWrite`.</span><span class="sxs-lookup"><span data-stu-id="de109-1937">The `Caching` default for `PSDataDisk` is now `ReadWrite` instead of `None`.</span></span>
-- <span data-ttu-id="de109-1938">Küçük yeni değişiklikler, ayrıntılar için bkz. [Geçiş Kılavuzu](https://aka.ms/azps-migration-guide)</span><span class="sxs-lookup"><span data-stu-id="de109-1938">Minor breaking changes, see the [Migration Guide](https://aka.ms/azps-migration-guide)  for details</span></span>
-
-### <a name="azbilling"></a><span data-ttu-id="de109-1939">Az.Billing</span><span class="sxs-lookup"><span data-stu-id="de109-1939">Az.Billing</span></span>
-- <span data-ttu-id="de109-1940">Billing, Consumption ve UsageAggregates cmdlet’lerini birleştirir, ayrıntılar için bkz. [Geçiş Kılavuzu](https://aka.ms/azps-migration-guide)</span><span class="sxs-lookup"><span data-stu-id="de109-1940">Combines Billing, Consumption, and UsageAggregates cmdlets, see the [Migration Guide](https://aka.ms/azps-migration-guide)  for details</span></span>
-
-### <a name="azcognitivservices"></a><span data-ttu-id="de109-1941">Az.CognitivServices</span><span class="sxs-lookup"><span data-stu-id="de109-1941">Az.CognitivServices</span></span>
-- <span data-ttu-id="de109-1942">New-AzureRmCognitiveServicesAccount işleminde kullanılabilen SkuName ve Typem için tamamlayıcılar eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-1942">Add completers for SkuName and Typem available on New-AzureRmCognitiveServicesAccount operation</span></span>
-- <span data-ttu-id="de109-1943">Get-AzCognitiveServicesAccountSkus cmdlet’inden GetSkusWithAccountParamSetName parametresi kaldırıldı</span><span class="sxs-lookup"><span data-stu-id="de109-1943">Removed GetSkusWithAccountParamSetName parameter set from Get-AzCognitiveServicesAccountSkus</span></span>
-
-### <a name="azcontainerinstance"></a><span data-ttu-id="de109-1944">Az.ContainerInstance</span><span class="sxs-lookup"><span data-stu-id="de109-1944">Az.ContainerInstance</span></span>
-- <span data-ttu-id="de109-1945">ManagedIdentity desteği eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-1945">Added ManagedIdentity support</span></span>
-
-### <a name="azdatalakeanalytics"></a><span data-ttu-id="de109-1946">Az.DataLakeAnalytics</span><span class="sxs-lookup"><span data-stu-id="de109-1946">Az.DataLakeAnalytics</span></span>
-- <span data-ttu-id="de109-1947">Küçük yeni değişiklikler, ayrıntılar için bkz. [Geçiş Kılavuzu](https://aka.ms/azps-migration-guide)</span><span class="sxs-lookup"><span data-stu-id="de109-1947">Minor breaking changes, see the [Migration Guide](https://aka.ms/azps-migration-guide)  for details</span></span>
-
-### <a name="azdatalakestore"></a><span data-ttu-id="de109-1948">Az.DataLakeStore</span><span class="sxs-lookup"><span data-stu-id="de109-1948">Az.DataLakeStore</span></span>
-- <span data-ttu-id="de109-1949">Küçük yeni değişiklikler, ayrıntılar için bkz. [Geçiş Kılavuzu](https://aka.ms/azps-migration-guide)</span><span class="sxs-lookup"><span data-stu-id="de109-1949">Minor breaking changes, see the [Migration Guide](https://aka.ms/azps-migration-guide)  for details</span></span>
-
-### <a name="azmonitor"></a><span data-ttu-id="de109-1950">Az.Monitor</span><span class="sxs-lookup"><span data-stu-id="de109-1950">Az.Monitor</span></span>
-- <span data-ttu-id="de109-1951">Az.Insights cmdlet’inin adı Az.Monitor olarak değiştirildi ve başka yeni değişiklikler yapıldı, ayrıntılar için bkz. [Geçiş Kılavuzu](https://aka.ms/azps-migration-guide)</span><span class="sxs-lookup"><span data-stu-id="de109-1951">Renamed Az.Insights to Az.Monitor and other minor breaking changes, see the [Migration Guide](https://aka.ms/azps-migration-guide)  for details</span></span>
-
-### <a name="azkeyvault"></a><span data-ttu-id="de109-1952">Az.KeyVault</span><span class="sxs-lookup"><span data-stu-id="de109-1952">Az.KeyVault</span></span>
-- <span data-ttu-id="de109-1953">Çıkış türlerinden kullanım dışı 'PurgeDisabled' özelliği kaldırıldı</span><span class="sxs-lookup"><span data-stu-id="de109-1953">Removed the deprecated 'PurgeDisabled' property from output types</span></span>
-
-### <a name="azmachinelearning"></a><span data-ttu-id="de109-1954">Az.MachineLearning</span><span class="sxs-lookup"><span data-stu-id="de109-1954">Az.MachineLearning</span></span>
-- <span data-ttu-id="de109-1955">Az.MachineLearningCompute modülünden cmdlet’ler eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-1955">Included cmdlets from Az.MachineLearningCompute module</span></span>
-
-### <a name="azmedia"></a><span data-ttu-id="de109-1956">Az.Media</span><span class="sxs-lookup"><span data-stu-id="de109-1956">Az.Media</span></span>
-- <span data-ttu-id="de109-1957">New-AzMediaService cmdlet’inden kullanım dışı -Tags diğer adı kaldırıldı</span><span class="sxs-lookup"><span data-stu-id="de109-1957">Remove deprecated -Tags alias from New-AzMediaService</span></span>
-
-### <a name="aznetwork"></a><span data-ttu-id="de109-1958">Az.Network</span><span class="sxs-lookup"><span data-stu-id="de109-1958">Az.Network</span></span>
-<span data-ttu-id="de109-1959">Application Gateway’de RewriteRuleSets parametresini yapılandırma desteği eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-1959">Added support for the configuring RewriteRuleSets in the Application Gateway</span></span>
-    - <span data-ttu-id="de109-1960">Yeni cmdlet'ler eklendi:</span><span class="sxs-lookup"><span data-stu-id="de109-1960">New cmdlets added:</span></span>
-        - <span data-ttu-id="de109-1961">Add-AzureRmApplicationGatewayRewriteRuleSet</span><span class="sxs-lookup"><span data-stu-id="de109-1961">Add-AzureRmApplicationGatewayRewriteRuleSet</span></span>
-        - <span data-ttu-id="de109-1962">Get-AzureRmApplicationGatewayRewriteRuleSet</span><span class="sxs-lookup"><span data-stu-id="de109-1962">Get-AzureRmApplicationGatewayRewriteRuleSet</span></span>
-        - <span data-ttu-id="de109-1963">New-AzureRmApplicationGatewayRewriteRuleSet</span><span class="sxs-lookup"><span data-stu-id="de109-1963">New-AzureRmApplicationGatewayRewriteRuleSet</span></span>
-        - <span data-ttu-id="de109-1964">Remove-AzureRmApplicationGatewayRewriteRuleSet</span><span class="sxs-lookup"><span data-stu-id="de109-1964">Remove-AzureRmApplicationGatewayRewriteRuleSet</span></span>
-        - <span data-ttu-id="de109-1965">Set-AzureRmApplicationGatewayRewriteRuleSet</span><span class="sxs-lookup"><span data-stu-id="de109-1965">Set-AzureRmApplicationGatewayRewriteRuleSet</span></span>
-        - <span data-ttu-id="de109-1966">New-AzureRmApplicationGatewayRewriteRule</span><span class="sxs-lookup"><span data-stu-id="de109-1966">New-AzureRmApplicationGatewayRewriteRule</span></span>
-        - <span data-ttu-id="de109-1967">New-AzureRmApplicationGatewayRewriteRuleActionSet</span><span class="sxs-lookup"><span data-stu-id="de109-1967">New-AzureRmApplicationGatewayRewriteRuleActionSet</span></span>
-        - <span data-ttu-id="de109-1968">New-AzureRmApplicationGatewayRewriteRuleHeaderConfiguration</span><span class="sxs-lookup"><span data-stu-id="de109-1968">New-AzureRmApplicationGatewayRewriteRuleHeaderConfiguration</span></span>
-    - <span data-ttu-id="de109-1969">Cmdlet’ler isteğe bağlı -RewriteRuleSet parametresiyle güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-1969">Cmdlets updated with optional parameter -RewriteRuleSet</span></span>
-        - <span data-ttu-id="de109-1970">New-AzureRmApplicationGateway</span><span class="sxs-lookup"><span data-stu-id="de109-1970">New-AzureRmApplicationGateway</span></span>
-        - <span data-ttu-id="de109-1971">New-AzureRmApplicationGatewayRequestRoutingRule</span><span class="sxs-lookup"><span data-stu-id="de109-1971">New-AzureRmApplicationGatewayRequestRoutingRule</span></span>
-        - <span data-ttu-id="de109-1972">Add-AzureRmApplicationGatewayRequestRoutingRule</span><span class="sxs-lookup"><span data-stu-id="de109-1972">Add-AzureRmApplicationGatewayRequestRoutingRule</span></span>
-        - <span data-ttu-id="de109-1973">New-AzureRmApplicationGatewayPathRuleConfig</span><span class="sxs-lookup"><span data-stu-id="de109-1973">New-AzureRmApplicationGatewayPathRuleConfig</span></span>
-        - <span data-ttu-id="de109-1974">Add-AzureRmApplicationGatewayUrlPathMapConfig</span><span class="sxs-lookup"><span data-stu-id="de109-1974">Add-AzureRmApplicationGatewayUrlPathMapConfig</span></span>
-        - <span data-ttu-id="de109-1975">New-AzureRmApplicationGatewayUrlPathMapConfig, Kimlik kullanarak Application Gateway’e KeyVault Desteği ekledi.</span><span class="sxs-lookup"><span data-stu-id="de109-1975">New-AzureRmApplicationGatewayUrlPathMapConfig Added KeyVault Support to Application Gateway using Identity.</span></span>
-    - <span data-ttu-id="de109-1976">Cmdlet’ler isteğe bağlı -KeyVaultSecretId, -KeyVaultSecret parametresiyle güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-1976">Cmdlets updated with optonal parameter -KeyVaultSecretId, -KeyVaultSecret</span></span>
-        - <span data-ttu-id="de109-1977">Add-AzApplicationGatewaySslCertificate</span><span class="sxs-lookup"><span data-stu-id="de109-1977">Add-AzApplicationGatewaySslCertificate</span></span>
-        - <span data-ttu-id="de109-1978">New-AzApplicationGatewaySslCertificate</span><span class="sxs-lookup"><span data-stu-id="de109-1978">New-AzApplicationGatewaySslCertificate</span></span>
-        - <span data-ttu-id="de109-1979">Set-AzApplicationGatewaySslCertificate</span><span class="sxs-lookup"><span data-stu-id="de109-1979">Set-AzApplicationGatewaySslCertificate</span></span>
-    - <span data-ttu-id="de109-1980">New-AzApplicationGateway cmdlet’i isteğe bağlı -UserAssignedIdentity parametresiyle güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-1980">New-AzApplicationGateway cmdlet updated with optional parameter -UserAssignedIdentity</span></span>
-- <span data-ttu-id="de109-1981">Küçük yeni değişiklikler, ayrıntılar için bkz. [Geçiş Kılavuzu](https://aka.ms/azps-migration-guide)</span><span class="sxs-lookup"><span data-stu-id="de109-1981">Minor breaking changes, see the [Migration Guide](https://aka.ms/azps-migration-guide)  for details</span></span>
-
-### <a name="azoperationalinsights"></a><span data-ttu-id="de109-1982">Az.OperationalInsights</span><span class="sxs-lookup"><span data-stu-id="de109-1982">Az.OperationalInsights</span></span>
-- <span data-ttu-id="de109-1983">Küçük yeni değişiklikler, ayrıntılar için bkz. [Geçiş Kılavuzu](https://aka.ms/azps-migration-guide)</span><span class="sxs-lookup"><span data-stu-id="de109-1983">Minor breaking changes, see the [Migration Guide](https://aka.ms/azps-migration-guide)  for details</span></span>
-
-### <a name="azprofile"></a><span data-ttu-id="de109-1984">Az.Profile</span><span class="sxs-lookup"><span data-stu-id="de109-1984">Az.Profile</span></span>
-- <span data-ttu-id="de109-1985">Modül adı Az.Accounts olarak değiştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-1985">Changed module name to Az.Accounts</span></span>
-
-### <a name="azrecoveryservices"></a><span data-ttu-id="de109-1986">Az.RecoveryServices</span><span class="sxs-lookup"><span data-stu-id="de109-1986">Az.RecoveryServices</span></span>
-- <span data-ttu-id="de109-1987">Küçük yeni değişiklikler, ayrıntılar için bkz. [Geçiş Kılavuzu](https://aka.ms/azps-migration-guide)</span><span class="sxs-lookup"><span data-stu-id="de109-1987">Minor breaking changes, see the [Migration Guide](https://aka.ms/azps-migration-guide)  for details</span></span>
-
-### <a name="azresources"></a><span data-ttu-id="de109-1988">Az.Resources</span><span class="sxs-lookup"><span data-stu-id="de109-1988">Az.Resources</span></span>
-- <span data-ttu-id="de109-1989">Küçük yeni değişiklikler, ayrıntılar için bkz. [Geçiş Kılavuzu](https://aka.ms/azps-migration-guide)</span><span class="sxs-lookup"><span data-stu-id="de109-1989">Minor breaking changes, see the [Migration Guide](https://aka.ms/azps-migration-guide)  for details</span></span>
-
-### <a name="azservicefabric"></a><span data-ttu-id="de109-1990">Az.ServiceFabric</span><span class="sxs-lookup"><span data-stu-id="de109-1990">Az.ServiceFabric</span></span>
-- <span data-ttu-id="de109-1991">Sertifikayı ortak ad ve parmak iziyle belirtme desteği</span><span class="sxs-lookup"><span data-stu-id="de109-1991">Support specfying certificate by common name and thumbprint</span></span>
-- <span data-ttu-id="de109-1992">Küçük yeni değişiklikler, ayrıntılar için bkz. [Geçiş Kılavuzu](https://aka.ms/azps-migration-guide)</span><span class="sxs-lookup"><span data-stu-id="de109-1992">Mnor breaking changes, see the [Migration Guide](https://aka.ms/azps-migration-guide)  for details</span></span>
-
-### <a name="azsignalr"></a><span data-ttu-id="de109-1993">Az.SIgnalR</span><span class="sxs-lookup"><span data-stu-id="de109-1993">Az.SIgnalR</span></span>
-- <span data-ttu-id="de109-1994">SIgnalR için PowerShell cmdlet'leri Genel Kullanıma sunuldu</span><span class="sxs-lookup"><span data-stu-id="de109-1994">General Availability for PowerShell cmdlets for SIgnalR</span></span>
-
-### <a name="azsql"></a><span data-ttu-id="de109-1995">Az.Sql</span><span class="sxs-lookup"><span data-stu-id="de109-1995">Az.Sql</span></span>
-- <span data-ttu-id="de109-1996">Tehdit Algılama cmdlet’lerine yeni Data_Exfiltration ve Unsafe_Action algılama türleri eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-1996">Added new Data_Exfiltration and Unsafe_Action detection types to Threat Detection's cmdlets</span></span>
-- <span data-ttu-id="de109-1997">Sql Denetimi cmdlet'leri için belge örnekleri güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-1997">Updated documentation examples for Sql Auditing cmdlets</span></span>
-- <span data-ttu-id="de109-1998">Küçük yeni değişiklikler, ayrıntılar için bkz. [Geçiş Kılavuzu](https://aka.ms/azps-migration-guide)</span><span class="sxs-lookup"><span data-stu-id="de109-1998">Minor breaking changes, see the [Migration Guide](https://aka.ms/azps-migration-guide)  for details</span></span>
-
-### <a name="azstorage"></a><span data-ttu-id="de109-1999">Az.Storage</span><span class="sxs-lookup"><span data-stu-id="de109-1999">Az.Storage</span></span>
-- <span data-ttu-id="de109-2000">Küçük yeni değişiklikler, ayrıntılar için bkz. [Geçiş Kılavuzu](https://aka.ms/azps-migration-guide)</span><span class="sxs-lookup"><span data-stu-id="de109-2000">Minor breaking changes, see the [Migration Guide](https://aka.ms/azps-migration-guide)  for details</span></span>
-
-### <a name="azwebsites"></a><span data-ttu-id="de109-2001">Az.Websites</span><span class="sxs-lookup"><span data-stu-id="de109-2001">Az.Websites</span></span>
-- <span data-ttu-id="de109-2002">Küçük yeni değişiklikler, ayrıntılar için bkz. [Geçiş Kılavuzu](https://aka.ms/azps-migration-guide)</span><span class="sxs-lookup"><span data-stu-id="de109-2002">Minor breaking changes, see the [Migration Guide](https://aka.ms/azps-migration-guide)  for details</span></span>
-
-## <a name="070---december-2018"></a><span data-ttu-id="de109-2003">0.7.0 - Aralık 2018</span><span class="sxs-lookup"><span data-stu-id="de109-2003">0.7.0 - December 2018</span></span>
-
-### <a name="general"></a><span data-ttu-id="de109-2004">Genel</span><span class="sxs-lookup"><span data-stu-id="de109-2004">General</span></span>
-
-* <span data-ttu-id="de109-2005">Yakında gerçekleşecek AzureRM’den Az’ye geçiş süreci için küçük değişiklikler</span><span class="sxs-lookup"><span data-stu-id="de109-2005">Minor changes for upcoming AzureRM to Az transition</span></span>
-
-### <a name="azcompute"></a><span data-ttu-id="de109-2006">Az.Compute</span><span class="sxs-lookup"><span data-stu-id="de109-2006">Az.Compute</span></span>
-
-* <span data-ttu-id="de109-2007">`New-AzVm(ss)` cmdlet’leri için basit parametre kümelerinde UltraSSD ve Galeri Görüntüleri desteği eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-2007">Add support for UltraSSD and Gallery Images in the simple param sets for `New-AzVm(ss)` cmdlets.</span></span>
-
-### <a name="azdatalakestore"></a><span data-ttu-id="de109-2008">Az.DataLakeStore</span><span class="sxs-lookup"><span data-stu-id="de109-2008">Az.DataLakeStore</span></span>
-
-* <span data-ttu-id="de109-2009">Adls hesabı etki alanının sonundaki eğik çizgi düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-2009">Fix the trailing slash of the domain of adls account</span></span>
-
-### <a name="azfrontdoor"></a><span data-ttu-id="de109-2010">Az.FrontDoor</span><span class="sxs-lookup"><span data-stu-id="de109-2010">Az.FrontDoor</span></span>
-
-* <span data-ttu-id="de109-2011">Bazı bozuk bağlantılar düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-2011">Fixed some broken links</span></span>
-    - <span data-ttu-id="de109-2012">New-AzureRmFrontDoor ve Set-AzureRmFrontDoor makalelerinde, New-AzureRmFrontDoorHealthProbeSettingObject cmdlet’i makalesinin bağlantısı düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="de109-2012">In the New-AzureRmFrontDoor and Set-AzureRmFrontDoor articles, fixed the link to the New-AzureRmFrontDoorHealthProbeSettingObject cmdlet article.</span></span>
-    - <span data-ttu-id="de109-2013">New-AzureRmFrontDoorManagedRuleObject makalesinde, New-AzureRmFrontDoorRuleGroupOverrideObject cmdlet’i makalesinin bağlantısı düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="de109-2013">In the New-AzureRmFrontDoorManagedRuleObject article, fixed the link to the New-AzureRmFrontDoorRuleGroupOverrideObject cmdlet article.</span></span>
-
-### <a name="azrecoveryservices"></a><span data-ttu-id="de109-2014">Az.RecoveryServices</span><span class="sxs-lookup"><span data-stu-id="de109-2014">Az.RecoveryServices</span></span>
-
-* <span data-ttu-id="de109-2015">Azure Dosya Paylaşımı geri yükleme işlemleri için istemci tarafı doğrulamalar eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-2015">Added client side validations for Azure File Share restore operations.</span></span>
-* <span data-ttu-id="de109-2016">Afs geri yükleme işlemi için storageAccountName ve storageAccountResourceGroupName isteğe bağlı hale getirildi.</span><span class="sxs-lookup"><span data-stu-id="de109-2016">Made storageAccountName and storageAccountResourceGroupName optional for afs restore.</span></span>
-
-### <a name="azresources"></a><span data-ttu-id="de109-2017">Az.Resources</span><span class="sxs-lookup"><span data-stu-id="de109-2017">Az.Resources</span></span>
-
-* <span data-ttu-id="de109-2018">https://github.com/Azure/azure-powershell/issues/7679 düzeltmesi</span><span class="sxs-lookup"><span data-stu-id="de109-2018">Fix for https://github.com/Azure/azure-powershell/issues/7679</span></span>
-    - <span data-ttu-id="de109-2019">Get-AzureRmRoleAssignment, klasik yöneticiler istenirken sağlanmışsa abonelik kapsamını kullanacak şekilde güncelleştirildi.</span><span class="sxs-lookup"><span data-stu-id="de109-2019">Update Get-AzureRmRoleAssignment to use the subscription scope if it is provided when requesting classic administrators.</span></span>
-
-### <a name="azsql"></a><span data-ttu-id="de109-2020">Az.Sql</span><span class="sxs-lookup"><span data-stu-id="de109-2020">Az.Sql</span></span>
-
-* <span data-ttu-id="de109-2021">Yakında gerçekleşecek AzureRM’den Az’ye geçiş süreci için küçük değişiklikler</span><span class="sxs-lookup"><span data-stu-id="de109-2021">Minor changes for upcoming AzureRM to Az transition</span></span>
-* <span data-ttu-id="de109-2022">Get-AzureRmSqlDatabaseVulnerabilityAssessment cmdlet’inin DotNet core ile kullanılması konusundaki bir sorun düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-2022">Fixed issue with using Get-AzureRmSqlDatabaseVulnerabilityAssessment with DotNet core</span></span>
-* <span data-ttu-id="de109-2023">SQL Denetimi cmdlet’leriyle ilgili yardım iletilerinin belgeleri değiştirildi.</span><span class="sxs-lookup"><span data-stu-id="de109-2023">Modified documentation of help messages related to SQL Auditing cmdlets.</span></span>
-
-### <a name="azstorage"></a><span data-ttu-id="de109-2024">Az.Storage</span><span class="sxs-lookup"><span data-stu-id="de109-2024">Az.Storage</span></span>
-
-* <span data-ttu-id="de109-2025">New-AzureRmStorageAccount cmdlet’ine -EnableHierarchicalNamespace eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-2025">Add -EnableHierarchicalNamespace to New-AzureRmStorageAccount</span></span>
-* <span data-ttu-id="de109-2026">-DestContext girilmediğinde Dosya Kopyalama cmdlet’inin hedefte kaynak bağlamını yeniden kullanamamasına yol açan sorun düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-2026">Fix issue that Copy File cmdlet can't reuse source context in destination when not input -DestContext</span></span>
-    - <span data-ttu-id="de109-2027">Start-AzureStorageFileCopy</span><span class="sxs-lookup"><span data-stu-id="de109-2027">Start-AzureStorageFileCopy</span></span>
-* <span data-ttu-id="de109-2028">Statik Web Sitesi yapılandırması için destek eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-2028">Support Static Website configuration</span></span>
-    - <span data-ttu-id="de109-2029">Enable-AzureStorageStaticWebsite</span><span class="sxs-lookup"><span data-stu-id="de109-2029">Enable-AzureStorageStaticWebsite</span></span>
-    - <span data-ttu-id="de109-2030">Disable-AzureStorageStaticWebsite</span><span class="sxs-lookup"><span data-stu-id="de109-2030">Disable-AzureStorageStaticWebsite</span></span>
-
-### <a name="azwebsites"></a><span data-ttu-id="de109-2031">Az.Websites</span><span class="sxs-lookup"><span data-stu-id="de109-2031">Az.Websites</span></span>
-
-* <span data-ttu-id="de109-2032">Set-AzureRmWebApp ve Set-AzureRmWebAppSlot</span><span class="sxs-lookup"><span data-stu-id="de109-2032">Set-AzureRmWebApp and Set-AzureRmWebAppSlot</span></span>
-    - <span data-ttu-id="de109-2033">Windows ve Linux kapsayıcı uygulamalarında bağlanacak Azure Depolama yollarının belirtilmesi için yeni parametre (-AzureStoragePath) eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-2033">New parameter (-AzureStoragePath) added to specify Azure Storage paths to be mounted in Windows and Linux container apps.</span></span> <span data-ttu-id="de109-2034">Azure Depolama yollarını ayarlamak için yeni New-AzureRmWebAppAzureStoragePath cmdlet’inin çıktısını bir parametre olarak kullanın.</span><span class="sxs-lookup"><span data-stu-id="de109-2034">Use the output of the new cmdlet New-AzureRmWebAppAzureStoragePath as a parameter to set the Azure Storage paths.</span></span>
-
-## <a name="061---november-2018"></a><span data-ttu-id="de109-2035">0.6.1 - Kasım 2018</span><span class="sxs-lookup"><span data-stu-id="de109-2035">0.6.1 - November 2018</span></span>
-
-### <a name="azapimanagement"></a><span data-ttu-id="de109-2036">Az.ApiManagement</span><span class="sxs-lookup"><span data-stu-id="de109-2036">Az.ApiManagement</span></span>
-* <span data-ttu-id="de109-2037">Tür eşlemesinde güncelleştirme bağımlılıkları sorunu</span><span class="sxs-lookup"><span data-stu-id="de109-2037">Update dependencies for type mapping issue</span></span>
-
-### <a name="azautomation"></a><span data-ttu-id="de109-2038">Az.Automation</span><span class="sxs-lookup"><span data-stu-id="de109-2038">Az.Automation</span></span>
-* <span data-ttu-id="de109-2039">Swagger tabanlı Azure Otomasyon cmdlet'leri</span><span class="sxs-lookup"><span data-stu-id="de109-2039">Swagger based Azure Automation cmdlets</span></span>
-* <span data-ttu-id="de109-2040">Güncelleştirme Yönetimi cmdlet'leri eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-2040">Added Update Management cmdlets</span></span>
-* <span data-ttu-id="de109-2041">Kaynak Denetimi cmdlet'leri eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-2041">Added Source Control cmdlets</span></span>
-* <span data-ttu-id="de109-2042">Remove-AzureRmAutomationHybridWorkerGroup cmdlet'i eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-2042">Added Remove-AzureRmAutomationHybridWorkerGroup cmdlet</span></span>
-* <span data-ttu-id="de109-2043">DSC Kayıt Düğümü komutu düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-2043">Fixed the DSC Register Node command</span></span>
-
-### <a name="azcompute"></a><span data-ttu-id="de109-2044">Az.Compute</span><span class="sxs-lookup"><span data-stu-id="de109-2044">Az.Compute</span></span>
-* <span data-ttu-id="de109-2045">SystemAssigned kimliği için kimlik sorunu düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-2045">Fixed identity issue for SystemAssigned identity</span></span>
-* <span data-ttu-id="de109-2046">Tür eşlemesinde güncelleştirme bağımlılıkları sorunu</span><span class="sxs-lookup"><span data-stu-id="de109-2046">Update dependencies for type mapping issue</span></span>
-
-### <a name="azcontainerinstance"></a><span data-ttu-id="de109-2047">Az.ContainerInstance</span><span class="sxs-lookup"><span data-stu-id="de109-2047">Az.ContainerInstance</span></span>
-* <span data-ttu-id="de109-2048">Tür eşlemesinde güncelleştirme bağımlılıkları sorunu</span><span class="sxs-lookup"><span data-stu-id="de109-2048">Update dependencies for type mapping issue</span></span>
-
-### <a name="azmarketplaceordering"></a><span data-ttu-id="de109-2049">Az.MarketplaceOrdering</span><span class="sxs-lookup"><span data-stu-id="de109-2049">Az.MarketplaceOrdering</span></span>
-* <span data-ttu-id="de109-2050">Market cmdlet'leri için örnekler açıklaması güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-2050">update the examples description for marketplace cmdlets</span></span>
-
-### <a name="aznetwork"></a><span data-ttu-id="de109-2051">Az.Network</span><span class="sxs-lookup"><span data-stu-id="de109-2051">Az.Network</span></span>
-* <span data-ttu-id="de109-2052">New-AzureRmApplicationGatewayCustomError, Add-AzureRmApplicationGatewayCustomError, Get-AzureRmApplicationGatewayCustomError, Set-AzureRmApplicationGatewayCustomError, Remove-AzureRmApplicationGatewayCustomError, Add-AzureRmApplicationGatewayHttpListenerCustomError, Get-AzureRmApplicationGatewayHttpListenerCustomError, Set-AzureRmApplicationGatewayHttpListenerCustomError, Remove-AzureRmApplicationGatewayHttpListenerCustomError cmdlet'leri eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-2052">Added cmdlet New-AzureRmApplicationGatewayCustomError, Add-AzureRmApplicationGatewayCustomError, Get-AzureRmApplicationGatewayCustomError, Set-AzureRmApplicationGatewayCustomError, Remove-AzureRmApplicationGatewayCustomError, Add-AzureRmApplicationGatewayHttpListenerCustomError, Get-AzureRmApplicationGatewayHttpListenerCustomError, Set-AzureRmApplicationGatewayHttpListenerCustomError, Remove-AzureRmApplicationGatewayHttpListenerCustomError</span></span>
-* <span data-ttu-id="de109-2053">Desteklenen AzureFirewall Ağ Protokollerine yeniden ICMP eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-2053">Added ICMP back to supported AzureFirewall Network Protocols</span></span>
-* <span data-ttu-id="de109-2054">Test-AzureRmNetworkWatcherConnectivity cmdlet'i güncelleştirildi; hedef kimlik, adres ve bağlantı noktasında doğrulama eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-2054">Update cmdlet Test-AzureRmNetworkWatcherConnectivity, add validation on destination id, address and port.</span></span>
-* <span data-ttu-id="de109-2055">VirtualNetwork eşlemesinde bellek kullanımıyla ilgili sorunlar düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-2055">Fix issues with memory usage in VirtualNetwork map</span></span>
-
-### <a name="azrecoveryservicesbackup"></a><span data-ttu-id="de109-2056">Az.RecoveryServices.Backup</span><span class="sxs-lookup"><span data-stu-id="de109-2056">Az.RecoveryServices.Backup</span></span>
-* <span data-ttu-id="de109-2057">Korumalı dosya paylaşımı için ilke değiştirme sorunu düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="de109-2057">Fix for modifying policy for a protected file share.</span></span>
-* <span data-ttu-id="de109-2058">İlke saat dilimi büyük harfe dönüştürüldü.</span><span class="sxs-lookup"><span data-stu-id="de109-2058">Converted policy timezone to uppercase.</span></span>
-
-### <a name="azrecoveryservicessiterecovery"></a><span data-ttu-id="de109-2059">Az.RecoveryServices.SiteRecovery</span><span class="sxs-lookup"><span data-stu-id="de109-2059">Az.RecoveryServices.SiteRecovery</span></span>
-* <span data-ttu-id="de109-2060">New-AzureRmRecoveryServicesAsrProtectableItem cmdlet'indeki örnek düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-2060">Corrected example in New-AzureRmRecoveryServicesAsrProtectableItem</span></span>
-* <span data-ttu-id="de109-2061">Tür eşlemesinde güncelleştirme bağımlılıkları sorunu</span><span class="sxs-lookup"><span data-stu-id="de109-2061">Update dependencies for type mapping issue</span></span>
-
-### <a name="azrelay"></a><span data-ttu-id="de109-2062">Az.Relay</span><span class="sxs-lookup"><span data-stu-id="de109-2062">Az.Relay</span></span>
-* <span data-ttu-id="de109-2063">Kullanıcının New-AzureRmRelayKey cmdlet'ine KeyValue sağlamasına olanak tanıyan isteğe bağlı -KeyValue parametresi eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-2063">Added optional Parameter -KeyValue to New-AzureRmRelayKey cmdlet, which enables user to provide KeyValue.</span></span>
-
-### <a name="azresources"></a><span data-ttu-id="de109-2064">Az.Resources</span><span class="sxs-lookup"><span data-stu-id="de109-2064">Az.Resources</span></span>
-* <span data-ttu-id="de109-2065">`New-AzureRmPolicyAssignment` ve `Set-AzureRmPolicyAssignment` cmdlet'lerindeki kaynak kimliğiyle ilgili parametrelerin yardım belgeleri güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-2065">Update help documentation for resource identity related parameters in `New-AzureRmPolicyAssignment` and `Set-AzureRmPolicyAssignment`</span></span>
-* <span data-ttu-id="de109-2066">New-AzureRmPolicyDefinition cmdlet'ine -Metadata kullanan bir örnek eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-2066">Add an example for New-AzureRmPolicyDefinition that uses -Metadata</span></span>
-* <span data-ttu-id="de109-2067">NetStandard'da Tag anahtarında büyük/küçük harf kullanımının korunmasına yönelik düzeltme yapıldı: #7678 #7703</span><span class="sxs-lookup"><span data-stu-id="de109-2067">Fix to allow case preservation in Tag keys in NetStandard: #7678 #7703</span></span>
-
-### <a name="azservicefabric"></a><span data-ttu-id="de109-2068">Az.ServiceFabric</span><span class="sxs-lookup"><span data-stu-id="de109-2068">Az.ServiceFabric</span></span>
-* <span data-ttu-id="de109-2069">Hataya neden olan değişiklikler yayınlanacağından kullanımdan kaldırılacak özellikleri belirten iletiler eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-2069">Add deprecation messages for upcoming breaking changes</span></span>
-
-### <a name="azsql"></a><span data-ttu-id="de109-2070">Az.Sql</span><span class="sxs-lookup"><span data-stu-id="de109-2070">Az.Sql</span></span>
-* <span data-ttu-id="de109-2071">Azure Sql Veritabanı Yönetilen Örneği ve Azure Sql Yönetilen Veritabanı'nındaki CRUD işlemleri için yeni cmdlet'ler eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-2071">Added new cmdlets for CRUD operations on Azure Sql Database Managed Instance and Azure Sql Managed Database</span></span>
-    - <span data-ttu-id="de109-2072">Get-AzureRmSqlInstance</span><span class="sxs-lookup"><span data-stu-id="de109-2072">Get-AzureRmSqlInstance</span></span>
-    - <span data-ttu-id="de109-2073">New-AzureRmSqlInstance</span><span class="sxs-lookup"><span data-stu-id="de109-2073">New-AzureRmSqlInstance</span></span>
-    - <span data-ttu-id="de109-2074">Set-AzureRmSqlInstance</span><span class="sxs-lookup"><span data-stu-id="de109-2074">Set-AzureRmSqlInstance</span></span>
-    - <span data-ttu-id="de109-2075">Remove-AzureRmSqlInstance</span><span class="sxs-lookup"><span data-stu-id="de109-2075">Remove-AzureRmSqlInstance</span></span>
-    - <span data-ttu-id="de109-2076">Get-AzureRmSqlInstanceDatabase</span><span class="sxs-lookup"><span data-stu-id="de109-2076">Get-AzureRmSqlInstanceDatabase</span></span>
-    - <span data-ttu-id="de109-2077">New-AzureRmSqlInstanceDatabase</span><span class="sxs-lookup"><span data-stu-id="de109-2077">New-AzureRmSqlInstanceDatabase</span></span>
-    - <span data-ttu-id="de109-2078">Restore-AzureRmSqlInstanceDatabase</span><span class="sxs-lookup"><span data-stu-id="de109-2078">Restore-AzureRmSqlInstanceDatabase</span></span>
-    - <span data-ttu-id="de109-2079">Remove-AzureRmSqlInstanceDatabase</span><span class="sxs-lookup"><span data-stu-id="de109-2079">Remove-AzureRmSqlInstanceDatabase</span></span>
-* <span data-ttu-id="de109-2080">Sunucuda veya veritabanında Genişletilmiş Denetim İlkesi yönetimi etkinleştirildi.</span><span class="sxs-lookup"><span data-stu-id="de109-2080">Enabled Extended Auditing Policy management on a server or a database.</span></span>
-    - <span data-ttu-id="de109-2081">Denetim günlüklerinde filtrelemeyi etkinleştirmek için yeni parametre (PredicateExpression) eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-2081">New parameter (PredicateExpression) was added to enable filtering of audit logs.</span></span>
-    - <span data-ttu-id="de109-2082">Cmdlet'ler, SQL istemcileri yerine Eski istemcileri kullanacak şekilde değiştirildi.</span><span class="sxs-lookup"><span data-stu-id="de109-2082">Cmdlets were modified to use SQL clients instead of Legacy clients.</span></span>
-    - <span data-ttu-id="de109-2083">Set-AzureRmSqlServerAuditing.</span><span class="sxs-lookup"><span data-stu-id="de109-2083">Set-AzureRmSqlServerAuditing.</span></span>
-    - <span data-ttu-id="de109-2084">Get-AzureRmSqlServerAuditing.</span><span class="sxs-lookup"><span data-stu-id="de109-2084">Get-AzureRmSqlServerAuditing.</span></span>
-    - <span data-ttu-id="de109-2085">Set-AzureRmSqlDatabaseAuditing.</span><span class="sxs-lookup"><span data-stu-id="de109-2085">Set-AzureRmSqlDatabaseAuditing.</span></span>
-    - <span data-ttu-id="de109-2086">Get-AzureRmSqlDatabaseAuditing.</span><span class="sxs-lookup"><span data-stu-id="de109-2086">Get-AzureRmSqlDatabaseAuditing.</span></span>
-* <span data-ttu-id="de109-2087">Update-AzureRmSqlDatabaseVulnerabilityAssessmentSettings cmdlet'inin depolama hesabı ad parametre kümesiyle kullanılmasıyla ilgili sorun düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-2087">Fixed issue with using Update-AzureRmSqlDatabaseVulnerabilityAssessmentSettings with storage account name parameter set</span></span>
-
-## <a name="050---november-2018"></a><span data-ttu-id="de109-2088">0.5.0 - Kasım 2018</span><span class="sxs-lookup"><span data-stu-id="de109-2088">0.5.0 - November 2018</span></span>
-#### <a name="general"></a><span data-ttu-id="de109-2089">Genel</span><span class="sxs-lookup"><span data-stu-id="de109-2089">General</span></span>
-* <span data-ttu-id="de109-2090">Birçok temel cmdlet’e Kaynak Tamamlayıcıları eklendi - bunlar cmdlet’leri etkileşimli olarak çağırırken mevcut kaynak adları arasında gezinmenize olanak tanır</span><span class="sxs-lookup"><span data-stu-id="de109-2090">Added Resource Completers to many core cmdlets - these alloow you to tab through existing resource names when invoking cmdlets interactively</span></span>
-
-#### <a name="azprofile"></a><span data-ttu-id="de109-2091">Az.Profile</span><span class="sxs-lookup"><span data-stu-id="de109-2091">Az.Profile</span></span>
-* <span data-ttu-id="de109-2092">ClientRuntime’ın en son sürümünü kullanacak şekilde ortak kod güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-2092">Update common code to use latest version of ClientRuntime</span></span>
-* <span data-ttu-id="de109-2093">Connect-AzAccount cmdlet'indeki TenantId parametresi Tenant olarak yeniden adlandırıldı ve TenantId için diğer ad eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-2093">Rename param TenantId in cmdlet Connect-AzAccount to Tenant and add an alias for TenantId</span></span>
-* <span data-ttu-id="de109-2094">Connect-AzAccount için TenantId açıklaması güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-2094">Updated TenantId description for Connect-AzAccount</span></span>
-* <span data-ttu-id="de109-2095">Kiracı etki alanı sağlanırken başarısız oturum açma durumunda gösterilen hata iletisi düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-2095">Fix error message for failed login when providing tenant domain</span></span>
+#### <a name="azhdinsight"></a><span data-ttu-id="b23a2-1472">Az.HDInsight</span><span class="sxs-lookup"><span data-stu-id="b23a2-1472">Az.HDInsight</span></span>
+* <span data-ttu-id="b23a2-1473">İki cmdlet kaldırıldı:</span><span class="sxs-lookup"><span data-stu-id="b23a2-1473">Removed two cmdlets:</span></span>
+    - <span data-ttu-id="b23a2-1474">Grant-AzHDInsightHttpServicesAccess</span><span class="sxs-lookup"><span data-stu-id="b23a2-1474">Grant-AzHDInsightHttpServicesAccess</span></span>
+    - <span data-ttu-id="b23a2-1475">Revoke-AzHDInsightHttpServicesAccess</span><span class="sxs-lookup"><span data-stu-id="b23a2-1475">Revoke-AzHDInsightHttpServicesAccess</span></span>
+* <span data-ttu-id="b23a2-1476">Grant-AzHDInsightHttpServicesAccess, yeni Set-AzHDInsightGatewayCredential cmdlet’i ile değiştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1476">Added a new cmdlet Set-AzHDInsightGatewayCredential to replace Grant-AzHDInsightHttpServicesAccess</span></span>
+* <span data-ttu-id="b23a2-1477">Okuyucu rolü ile hdinsight işleç rolünü ayırt etmek için Get-AzHDInsightJobOutput cmdlet’ini güncelleştirin:</span><span class="sxs-lookup"><span data-stu-id="b23a2-1477">Update cmdlet Get-AzHDInsightJobOutput to distinguish reader role and hdinsight operator role:</span></span>
+    - <span data-ttu-id="b23a2-1478">Okuyucu rolüne sahip kullanıcıların, 'DefaultStorageAccountKey' parametresini açıkça belirtmesi gerekir, aksi takdirde hata oluşur.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1478">Users with reader role need to specify 'DefaultStorageAccountKey' parameter explicitly, otherwise error occurs.</span></span>
+    - <span data-ttu-id="b23a2-1479">hdinsight işleç rolüne sahip kullanıcılar bu durumdan etkilenmez.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1479">Users with hdinsight operator role will not be affected.</span></span>
+
+#### <a name="azmonitor"></a><span data-ttu-id="b23a2-1480">Az.Monitor</span><span class="sxs-lookup"><span data-stu-id="b23a2-1480">Az.Monitor</span></span>
+* <span data-ttu-id="b23a2-1481">SQR API (Zamanlanmış Sorgu Kuralı) için yeni cmdlet'ler</span><span class="sxs-lookup"><span data-stu-id="b23a2-1481">New cmdlets for SQR API (Scheduled Query Rule)</span></span>
+    - <span data-ttu-id="b23a2-1482">New-AzScheduledQueryRuleAlertingAction</span><span class="sxs-lookup"><span data-stu-id="b23a2-1482">New-AzScheduledQueryRuleAlertingAction</span></span>
+    - <span data-ttu-id="b23a2-1483">New-AzScheduledQueryRuleAznsActionGroup</span><span class="sxs-lookup"><span data-stu-id="b23a2-1483">New-AzScheduledQueryRuleAznsActionGroup</span></span>
+    - <span data-ttu-id="b23a2-1484">New-AzScheduledQueryRuleLogMetricTrigger</span><span class="sxs-lookup"><span data-stu-id="b23a2-1484">New-AzScheduledQueryRuleLogMetricTrigger</span></span>
+    - <span data-ttu-id="b23a2-1485">New-AzScheduledQueryRuleSchedule</span><span class="sxs-lookup"><span data-stu-id="b23a2-1485">New-AzScheduledQueryRuleSchedule</span></span>
+    - <span data-ttu-id="b23a2-1486">New-AzScheduledQueryRuleSource</span><span class="sxs-lookup"><span data-stu-id="b23a2-1486">New-AzScheduledQueryRuleSource</span></span>
+    - <span data-ttu-id="b23a2-1487">New-AzScheduledQueryRuleTriggerCondition</span><span class="sxs-lookup"><span data-stu-id="b23a2-1487">New-AzScheduledQueryRuleTriggerCondition</span></span>
+    - <span data-ttu-id="b23a2-1488">New-AzScheduledQueryRule</span><span class="sxs-lookup"><span data-stu-id="b23a2-1488">New-AzScheduledQueryRule</span></span>
+    - <span data-ttu-id="b23a2-1489">Get-AzScheduledQueryRule</span><span class="sxs-lookup"><span data-stu-id="b23a2-1489">Get-AzScheduledQueryRule</span></span>
+    - <span data-ttu-id="b23a2-1490">Set-AzScheduledQueryRule</span><span class="sxs-lookup"><span data-stu-id="b23a2-1490">Set-AzScheduledQueryRule</span></span>
+    - <span data-ttu-id="b23a2-1491">Update-AzScheduledQueryRule</span><span class="sxs-lookup"><span data-stu-id="b23a2-1491">Update-AzScheduledQueryRule</span></span>
+    - <span data-ttu-id="b23a2-1492">Remove-AzScheduledQueryRule</span><span class="sxs-lookup"><span data-stu-id="b23a2-1492">Remove-AzScheduledQueryRule</span></span>
+    - <span data-ttu-id="b23a2-1493">SQR API hakkında [daha fazla](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules) bilgi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1493">[More](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules) information about SQR API</span></span>
+    - <span data-ttu-id="b23a2-1494">Az.Monitor.md, GenV2 (klasik olmayan) ölçüm tabanlı uyarı kuralı için cmdlet'leri içerecek şekilde güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1494">Updated Az.Monitor.md to include cmdlets for GenV2(non classic) metric-based alert rule</span></span>
+
+#### <a name="aznetwork"></a><span data-ttu-id="b23a2-1495">Az.Network</span><span class="sxs-lookup"><span data-stu-id="b23a2-1495">Az.Network</span></span>
+* <span data-ttu-id="b23a2-1496">Nat Gateway Resource için destek ekleyin</span><span class="sxs-lookup"><span data-stu-id="b23a2-1496">Add support for Nat Gateway Resource</span></span>
+    - <span data-ttu-id="b23a2-1497">Yeni cmdlet’ler</span><span class="sxs-lookup"><span data-stu-id="b23a2-1497">New cmdlets</span></span>
+        - <span data-ttu-id="b23a2-1498">New-AzNatGateway</span><span class="sxs-lookup"><span data-stu-id="b23a2-1498">New-AzNatGateway</span></span>
+        - <span data-ttu-id="b23a2-1499">Get-AzNatGateway</span><span class="sxs-lookup"><span data-stu-id="b23a2-1499">Get-AzNatGateway</span></span>
+        - <span data-ttu-id="b23a2-1500">Set-AzNatGateway</span><span class="sxs-lookup"><span data-stu-id="b23a2-1500">Set-AzNatGateway</span></span>
+        - <span data-ttu-id="b23a2-1501">Remove-AzNatGateway</span><span class="sxs-lookup"><span data-stu-id="b23a2-1501">Remove-AzNatGateway</span></span>
+   - <span data-ttu-id="b23a2-1502">Cmdlet'ler güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1502">Updated cmdlets</span></span>
+        - <span data-ttu-id="b23a2-1503">New-AzureVirtualNetworkSubnetConfigCommand</span><span class="sxs-lookup"><span data-stu-id="b23a2-1503">New-AzureVirtualNetworkSubnetConfigCommand</span></span>
+        - <span data-ttu-id="b23a2-1504">Add-AzureVirtualNetworkSubnetConfigCommand</span><span class="sxs-lookup"><span data-stu-id="b23a2-1504">Add-AzureVirtualNetworkSubnetConfigCommand</span></span>
+* <span data-ttu-id="b23a2-1505">Özellik için aşağıdaki komutlar güncelleştirildi: Brooklyn Gateway üzerinde özel yollar ayarlama/kaldırma.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1505">Updated below commands for feature: Custom routes set/remove on Brooklyn Gateway.</span></span>
+    - <span data-ttu-id="b23a2-1506">New-AzVirtualNetworkGateway güncelleştirildi: Adres ön eklerini Gateway’de ayarlanacak özel yol olarak belirlemek için isteğe bağlı -CustomRoute parametresi eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1506">Updated New-AzVirtualNetworkGateway: Added optional parameter -CustomRoute to set the address prefixes as custom routes to set on Gateway.</span></span>
+    - <span data-ttu-id="b23a2-1507">Set-AzVirtualNetworkGateway güncelleştirildi: Adres ön eklerini Gateway’de ayarlanacak özel yol olarak belirlemek için isteğe bağlı -CustomRoute parametresi eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1507">Updated Set-AzVirtualNetworkGateway: Added optional parameter -CustomRoute to set the address prefixes as custom routes to set on Gateway.</span></span>
+
+#### <a name="azpolicyinsights"></a><span data-ttu-id="b23a2-1508">Az.PolicyInsights</span><span class="sxs-lookup"><span data-stu-id="b23a2-1508">Az.PolicyInsights</span></span>
+* <span data-ttu-id="b23a2-1509">İlke değerlendirme ayrıntılarını sorgulama desteği.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1509">Support for querying policy evaluation details.</span></span>
+    - <span data-ttu-id="b23a2-1510">Get-AzPolicyState komutuna '-Expand' parametresini ekleyin.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1510">Add '-Expand' parameter to Get-AzPolicyState.</span></span> <span data-ttu-id="b23a2-1511">'-Expand PolicyEvaluationDetails' öğesini destekleyin.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1511">Support '-Expand PolicyEvaluationDetails'.</span></span>
+
+#### <a name="azrecoveryservices"></a><span data-ttu-id="b23a2-1512">Az.RecoveryServices</span><span class="sxs-lookup"><span data-stu-id="b23a2-1512">Az.RecoveryServices</span></span>
+* <span data-ttu-id="b23a2-1513">Abonelikler arası Azure'dan Azure’a konum kurtarma desteği.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1513">Support for Cross subscription Azure to Azure site recovery.</span></span>
+* <span data-ttu-id="b23a2-1514">Azure Site Recovery için yaklaşan hataya neden olan değişiklikleri işaretleme.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1514">Marking upcoming breaking changes for Azure Site Recovery.</span></span>
+* <span data-ttu-id="b23a2-1515">Azure Site Recovery kurtarma planı ve eylem planı için düzeltme.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1515">Fix for Azure Site Recovery recovery plan end action plan.</span></span>
+* <span data-ttu-id="b23a2-1516">Azure'dan Azure'a Azure Site Recovery Güncelleştirmesi ağ eşlemesi için düzeltme.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1516">Fix for Azure Site Recovery Update network mapping for Azure to Azure.</span></span>
+* <span data-ttu-id="b23a2-1517">Yönetilen diske yönelik Azure'dan Azure'a Azure Site Recovery güncelleştirmesi koruma yönü için düzeltme.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1517">Fix for Azure Site Recovery update protection direction for Azure to Azure for managed disk.</span></span>
+* <span data-ttu-id="b23a2-1518">Diğer küçük düzeltmeler.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1518">Other minor fixes.</span></span>
+
+#### <a name="azrelay"></a><span data-ttu-id="b23a2-1519">Az.Relay</span><span class="sxs-lookup"><span data-stu-id="b23a2-1519">Az.Relay</span></span>
+* <span data-ttu-id="b23a2-1520">Müşteriye dönük iletilerdeki yazım hatalarını düzeltin</span><span class="sxs-lookup"><span data-stu-id="b23a2-1520">Fix typos in customer-facing messages</span></span>
+
+#### <a name="azservicebus"></a><span data-ttu-id="b23a2-1521">Az.ServiceBus</span><span class="sxs-lookup"><span data-stu-id="b23a2-1521">Az.ServiceBus</span></span>
+* <span data-ttu-id="b23a2-1522">Ad alanının NetworkRuleSet’i için yeni cmdlet’ler eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1522">Added new cmdlets for NetworkRuleSet of Namespace</span></span>
+
+#### <a name="azstorage"></a><span data-ttu-id="b23a2-1523">Az.Storage</span><span class="sxs-lookup"><span data-stu-id="b23a2-1523">Az.Storage</span></span>
+* <span data-ttu-id="b23a2-1524">Storage Client Library 10.0.1 sürümüne güncelleştirin (bu SDK’daki tüm nesnelerin 'Microsoft.WindowsAzure.Storage. *' ad alanı, 'Microsoft.Azure.Storage.* ' olarak değiştirilir)</span><span class="sxs-lookup"><span data-stu-id="b23a2-1524">Upgrade to Storage Client Library 10.0.1 (the namespace of all objects from this SDK change from 'Microsoft.WindowsAzure.Storage.*' to 'Microsoft.Azure.Storage.*')</span></span>
+* <span data-ttu-id="b23a2-1525">Yeni 2019-04-01 API sürümünü desteklemek için Microsoft.Azure.Management.Storage 11.0.0 sürümüne güncelleştirin.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1525">Upgrade to Microsoft.Azure.Management.Storage 11.0.0, to support new API version 2019-04-01.</span></span>
+* <span data-ttu-id="b23a2-1526">Depolama hesabı oluştur komutundaki varsayılan 'Storage' Depolama hesabı Türü 'StorageV2' olarak değişir</span><span class="sxs-lookup"><span data-stu-id="b23a2-1526">The default Storage account Kind in Create Storage account change from 'Storage' to 'StorageV2'</span></span>
+    - <span data-ttu-id="b23a2-1527">New-AzStorageAccount</span><span class="sxs-lookup"><span data-stu-id="b23a2-1527">New-AzStorageAccount</span></span>
+* <span data-ttu-id="b23a2-1528">'StandardLRS' öğesinin 'Standard_LRS' olarak değiştirilmesi gibi, '-' ekleyerek Sku.Name Depolama hesabı cmdlet çıkışını giriş SkuName ile hizalanacak şekilde değiştirin</span><span class="sxs-lookup"><span data-stu-id="b23a2-1528">Change the Storage account cmdlet output Sku.Name to be aligned with input SkuName by add '-', like 'StandardLRS' change to 'Standard_LRS'</span></span>
+    - <span data-ttu-id="b23a2-1529">New-AzStorageAccount</span><span class="sxs-lookup"><span data-stu-id="b23a2-1529">New-AzStorageAccount</span></span>
+    - <span data-ttu-id="b23a2-1530">Get-AzStorageAccount</span><span class="sxs-lookup"><span data-stu-id="b23a2-1530">Get-AzStorageAccount</span></span>
+    - <span data-ttu-id="b23a2-1531">Set-AzStorageAccount</span><span class="sxs-lookup"><span data-stu-id="b23a2-1531">Set-AzStorageAccount</span></span>
+
+#### <a name="azwebsites"></a><span data-ttu-id="b23a2-1532">Az.Websites</span><span class="sxs-lookup"><span data-stu-id="b23a2-1532">Az.Websites</span></span>
+* <span data-ttu-id="b23a2-1533">'Kind' özelliği artık Get-AzWebApp tarafından döndürülen PSSite nesneleri için ayarlanır</span><span class="sxs-lookup"><span data-stu-id="b23a2-1533">'Kind' property will now be set for PSSite objects returned by Get-AzWebApp</span></span>
+* <span data-ttu-id="b23a2-1534">Get-AzWebApp\*Metrics ve Get-AzAppServicePlanMetrics, kullanım dışı olarak işaretlendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1534">Get-AzWebApp\*Metrics and Get-AzAppServicePlanMetrics marked deprecated</span></span>
+
+## <a name="180---april-2019"></a><span data-ttu-id="b23a2-1535">1.8.0 - Nisan 2019</span><span class="sxs-lookup"><span data-stu-id="b23a2-1535">1.8.0 - April 2019</span></span>
+### <a name="highlights-since-the-last-major-release"></a><span data-ttu-id="b23a2-1536">Son ana sürümden bu yana öne çıkanlar</span><span class="sxs-lookup"><span data-stu-id="b23a2-1536">Highlights since the last major release</span></span>
+* <span data-ttu-id="b23a2-1537">`Az` modülünü genel kullanıma sunuldu</span><span class="sxs-lookup"><span data-stu-id="b23a2-1537">General availability of `Az` module</span></span>
+* <span data-ttu-id="b23a2-1538">`Az` modülü hakkında daha fazla bilgi için şu bağlantıyı ziyaret edin: https://aka.ms/azps-announce</span><span class="sxs-lookup"><span data-stu-id="b23a2-1538">For more information about the `Az` module, please visit the following: https://aka.ms/azps-announce</span></span>
+* <span data-ttu-id="b23a2-1539">Location, ResourceGroup ve ResourceName tamamlayıcıları eklendi: https://azure.microsoft.com/blog/completers-in-azure-powershell/</span><span class="sxs-lookup"><span data-stu-id="b23a2-1539">Added Location, ResourceGroup, and ResourceName completers: https://azure.microsoft.com/blog/completers-in-azure-powershell/</span></span>
+* <span data-ttu-id="b23a2-1540">Az.Compute ve Az.Network için Get cmdlet'lerine joker karakter desteği eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1540">Added wildcard support to Get cmdlets for Az.Compute and Az.Network</span></span>
+* <span data-ttu-id="b23a2-1541">Yalnızca Windows PowerShell 5.1 için etkileşim ve kullanıcı adı/parola kimlik doğrulaması eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1541">Added interactive and username/password authentication for Windows PowerShell 5.1 only</span></span>
+* <span data-ttu-id="b23a2-1542">Az.Automation'da Python 2 runbook'ları için destek eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1542">Added support for Python 2 runbooks in Az.Automation</span></span>
+* <span data-ttu-id="b23a2-1543">Az.LogicApp: Tümleştirme Hesabı Derlemeleri ve Toplu Yapılandırması için yeni cmdlet’ler</span><span class="sxs-lookup"><span data-stu-id="b23a2-1543">Az.LogicApp: New cmdlets for Integration Account Assemblies and Batch Configuration</span></span>
+
+#### <a name="azaccounts"></a><span data-ttu-id="b23a2-1544">Az.Accounts</span><span class="sxs-lookup"><span data-stu-id="b23a2-1544">Az.Accounts</span></span>
+* <span data-ttu-id="b23a2-1545">Mac’te modülleri doğru bir biçimde silmek için Uninstall-AzureRm güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1545">Update Uninstall-AzureRm to correctly delete modules in Mac</span></span>
+
+#### <a name="azbatch"></a><span data-ttu-id="b23a2-1546">Az.Batch</span><span class="sxs-lookup"><span data-stu-id="b23a2-1546">Az.Batch</span></span>
+* <span data-ttu-id="b23a2-1547">Çoğul isimli cmdlet’ler tekil isimli olarak güncelleştirildi ve çoğul isimler kullanım dışı bırakıldı.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1547">Updated cmdlets with plural nouns to singular, and deprecated plural names.</span></span>
+
+#### <a name="azcdn"></a><span data-ttu-id="b23a2-1548">Az.Cdn</span><span class="sxs-lookup"><span data-stu-id="b23a2-1548">Az.Cdn</span></span>
+* <span data-ttu-id="b23a2-1549">Çoğul isimli cmdlet’ler tekil isimli olarak güncelleştirildi ve çoğul isimler kullanım dışı bırakıldı.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1549">Updated cmdlets with plural nouns to singular, and deprecated plural names.</span></span>
+
+#### <a name="azcognitiveservices"></a><span data-ttu-id="b23a2-1550">Az.CognitiveServices</span><span class="sxs-lookup"><span data-stu-id="b23a2-1550">Az.CognitiveServices</span></span>
+* <span data-ttu-id="b23a2-1551">Çoğul isimli cmdlet’ler tekil isimli olarak güncelleştirildi ve çoğul isimler kullanım dışı bırakıldı.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1551">Updated cmdlets with plural nouns to singular, and deprecated plural names.</span></span>
+
+#### <a name="azcompute"></a><span data-ttu-id="b23a2-1552">Az.Compute</span><span class="sxs-lookup"><span data-stu-id="b23a2-1552">Az.Compute</span></span>
+* <span data-ttu-id="b23a2-1553">Disklerin kaynak kimlikleri kaynak kimliğinde küçük harfli kaynak grubu içerdiğinde oluşan AEM yüklemesiyle ilgili sorun düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1553">Fix issue with AEM installation if resource ids of disks had lowercase resourcegroups in resource id</span></span>
+* <span data-ttu-id="b23a2-1554">Çoğul isimli cmdlet’ler tekil isimli olarak güncelleştirildi ve çoğul isimler kullanım dışı bırakıldı.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1554">Updated cmdlets with plural nouns to singular, and deprecated plural names.</span></span>
+* <span data-ttu-id="b23a2-1555">Joker karakterlere ilişkin belgeler düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1555">Fix documentation for wildcards</span></span>
+
+#### <a name="azdatafactory"></a><span data-ttu-id="b23a2-1556">Az.DataFactory</span><span class="sxs-lookup"><span data-stu-id="b23a2-1556">Az.DataFactory</span></span>
+* <span data-ttu-id="b23a2-1557">Yönetilen tümleştirme çalışma zamanı için Nodecount’ın null olmadığı durumlar için SsisProperties eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1557">Add SsisProperties if NodeCount not null for managed integration runtime.</span></span>
+
+#### <a name="azdatalakestore"></a><span data-ttu-id="b23a2-1558">Az.DataLakeStore</span><span class="sxs-lookup"><span data-stu-id="b23a2-1558">Az.DataLakeStore</span></span>
+* <span data-ttu-id="b23a2-1559">Çoğul isimli cmdlet’ler tekil isimli olarak güncelleştirildi ve çoğul isimler kullanım dışı bırakıldı.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1559">Updated cmdlets with plural nouns to singular, and deprecated plural names.</span></span>
+
+#### <a name="azeventgrid"></a><span data-ttu-id="b23a2-1560">Az.EventGrid</span><span class="sxs-lookup"><span data-stu-id="b23a2-1560">Az.EventGrid</span></span>
+* <span data-ttu-id="b23a2-1561">Oluşturma/güncelleştirme etkinliği için abonelik cmdlet’lerini kullanmadan önce kaynakların oluşturulmasının gerektiğini belirten yardım metni güncelleştirildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1561">Updated the help text for endpoint to indicate that resources should be created before using the create/update event subscription cmdlets.</span></span>
+
+#### <a name="azeventhub"></a><span data-ttu-id="b23a2-1562">Az.EventHub</span><span class="sxs-lookup"><span data-stu-id="b23a2-1562">Az.EventHub</span></span>
+* <span data-ttu-id="b23a2-1563">Ad alanının NetworkRuleSet’i için yeni cmdlet’ler eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1563">Added new cmdlets for NetworkRuleSet of Namespace</span></span>
+
+#### <a name="azhdinsight"></a><span data-ttu-id="b23a2-1564">Az.HDInsight</span><span class="sxs-lookup"><span data-stu-id="b23a2-1564">Az.HDInsight</span></span>
+* <span data-ttu-id="b23a2-1565">Çoğul isimli cmdlet’ler tekil isimli olarak güncelleştirildi ve çoğul isimler kullanım dışı bırakıldı.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1565">Updated cmdlets with plural nouns to singular, and deprecated plural names.</span></span>
+
+#### <a name="aziothub"></a><span data-ttu-id="b23a2-1566">Az.IotHub</span><span class="sxs-lookup"><span data-stu-id="b23a2-1566">Az.IotHub</span></span>
+* <span data-ttu-id="b23a2-1567">Çoğul isimli cmdlet’ler tekil isimli olarak güncelleştirildi ve çoğul isimler kullanım dışı bırakıldı.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1567">Updated cmdlets with plural nouns to singular, and deprecated plural names.</span></span>
+
+#### <a name="azkeyvault"></a><span data-ttu-id="b23a2-1568">Az.KeyVault</span><span class="sxs-lookup"><span data-stu-id="b23a2-1568">Az.KeyVault</span></span>
+* <span data-ttu-id="b23a2-1569">Çoğul isimli cmdlet’ler tekil isimli olarak güncelleştirildi ve çoğul isimler kullanım dışı bırakıldı.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1569">Updated cmdlets with plural nouns to singular, and deprecated plural names.</span></span>
+* <span data-ttu-id="b23a2-1570">Joker karakterlere ilişkin belgeler düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1570">Fix documentation for wildcards</span></span>
+
+#### <a name="azmachinelearning"></a><span data-ttu-id="b23a2-1571">Az.MachineLearning</span><span class="sxs-lookup"><span data-stu-id="b23a2-1571">Az.MachineLearning</span></span>
+* <span data-ttu-id="b23a2-1572">Çoğul isimli cmdlet’ler tekil isimli olarak güncelleştirildi ve çoğul isimler kullanım dışı bırakıldı.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1572">Updated cmdlets with plural nouns to singular, and deprecated plural names.</span></span>
+
+#### <a name="azmedia"></a><span data-ttu-id="b23a2-1573">Az.Media</span><span class="sxs-lookup"><span data-stu-id="b23a2-1573">Az.Media</span></span>
+* <span data-ttu-id="b23a2-1574">Çoğul isimli cmdlet’ler tekil isimli olarak güncelleştirildi ve çoğul isimler kullanım dışı bırakıldı.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1574">Updated cmdlets with plural nouns to singular, and deprecated plural names.</span></span>
+
+#### <a name="azmonitor"></a><span data-ttu-id="b23a2-1575">Az.Monitor</span><span class="sxs-lookup"><span data-stu-id="b23a2-1575">Az.Monitor</span></span>
+  * <span data-ttu-id="b23a2-1576">GenV2 (klasik olmayan) ölçüm tabanlı uyarı kuralı için yeni cmdlet'ler</span><span class="sxs-lookup"><span data-stu-id="b23a2-1576">New cmdlets for GenV2(non classic) metric-based alert rule</span></span>
+      - <span data-ttu-id="b23a2-1577">New-AzMetricAlertRuleV2DimensionSelection</span><span class="sxs-lookup"><span data-stu-id="b23a2-1577">New-AzMetricAlertRuleV2DimensionSelection</span></span>
+      - <span data-ttu-id="b23a2-1578">New-AzMetricAlertRuleV2Criteria</span><span class="sxs-lookup"><span data-stu-id="b23a2-1578">New-AzMetricAlertRuleV2Criteria</span></span>
+      - <span data-ttu-id="b23a2-1579">Remove-AzMetricAlertRuleV2</span><span class="sxs-lookup"><span data-stu-id="b23a2-1579">Remove-AzMetricAlertRuleV2</span></span>
+      - <span data-ttu-id="b23a2-1580">Get-AzMetricAlertRuleV2</span><span class="sxs-lookup"><span data-stu-id="b23a2-1580">Get-AzMetricAlertRuleV2</span></span>
+      - <span data-ttu-id="b23a2-1581">Add-AzMetricAlertRuleV2</span><span class="sxs-lookup"><span data-stu-id="b23a2-1581">Add-AzMetricAlertRuleV2</span></span>
+  * <span data-ttu-id="b23a2-1582">İzleyici SDK’sı 0.22.0-önizleme sürümüne güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1582">Updated Monitor SDK to version 0.22.0-preview</span></span>
+
+#### <a name="aznetwork"></a><span data-ttu-id="b23a2-1583">Az.Network</span><span class="sxs-lookup"><span data-stu-id="b23a2-1583">Az.Network</span></span>
+* <span data-ttu-id="b23a2-1584">Çoğul isimli cmdlet’ler tekil isimli olarak güncelleştirildi ve çoğul isimler kullanım dışı bırakıldı.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1584">Updated cmdlets with plural nouns to singular, and deprecated plural names.</span></span>
+* <span data-ttu-id="b23a2-1585">Joker karakterlere ilişkin belgeler düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1585">Fix documentation for wildcards</span></span>
+
+#### <a name="aznotificationhubs"></a><span data-ttu-id="b23a2-1586">Az.NotificationHubs</span><span class="sxs-lookup"><span data-stu-id="b23a2-1586">Az.NotificationHubs</span></span>
+* <span data-ttu-id="b23a2-1587">Çoğul isimli cmdlet’ler tekil isimli olarak güncelleştirildi ve çoğul isimler kullanım dışı bırakıldı.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1587">Updated cmdlets with plural nouns to singular, and deprecated plural names.</span></span>
+
+#### <a name="azoperationalinsights"></a><span data-ttu-id="b23a2-1588">Az.OperationalInsights</span><span class="sxs-lookup"><span data-stu-id="b23a2-1588">Az.OperationalInsights</span></span>
+* <span data-ttu-id="b23a2-1589">Çoğul isimli cmdlet’ler tekil isimli olarak güncelleştirildi ve çoğul isimler kullanım dışı bırakıldı.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1589">Updated cmdlets with plural nouns to singular, and deprecated plural names.</span></span>
+
+#### <a name="azpowerbiembedded"></a><span data-ttu-id="b23a2-1590">Az.PowerBIEmbedded</span><span class="sxs-lookup"><span data-stu-id="b23a2-1590">Az.PowerBIEmbedded</span></span>
+* <span data-ttu-id="b23a2-1591">Çoğul isimli cmdlet’ler tekil isimli olarak güncelleştirildi ve çoğul isimler kullanım dışı bırakıldı.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1591">Updated cmdlets with plural nouns to singular, and deprecated plural names.</span></span>
+
+#### <a name="azrecoveryservices"></a><span data-ttu-id="b23a2-1592">Az.RecoveryServices</span><span class="sxs-lookup"><span data-stu-id="b23a2-1592">Az.RecoveryServices</span></span>
+* <span data-ttu-id="b23a2-1593">Çoğul isimli cmdlet’ler tekil isimli olarak güncelleştirildi ve çoğul isimler kullanım dışı bırakıldı.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1593">Updated cmdlets with plural nouns to singular, and deprecated plural names.</span></span>
+* <span data-ttu-id="b23a2-1594">Azure VM'de SQL için güncelleştirilmiş tablo biçimi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1594">Updated table format for SQL in azure VM</span></span>
+* <span data-ttu-id="b23a2-1595">AzureFileShare’de konumu getirmeye yönelik alternatif yöntem eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1595">Added alternate method to fetch location in AzureFileShare</span></span>
+* <span data-ttu-id="b23a2-1596">SchedulePolicy nesnesindeki ScheduleRunDays saat dilimine göre güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1596">Updated ScheduleRunDays in SchedulePolicy object according to timezone</span></span>
+
+#### <a name="azrediscache"></a><span data-ttu-id="b23a2-1597">Az.RedisCache</span><span class="sxs-lookup"><span data-stu-id="b23a2-1597">Az.RedisCache</span></span>
+* <span data-ttu-id="b23a2-1598">Çoğul isimli cmdlet’ler tekil isimli olarak güncelleştirildi ve çoğul isimler kullanım dışı bırakıldı.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1598">Updated cmdlets with plural nouns to singular, and deprecated plural names.</span></span>
+
+#### <a name="azresources"></a><span data-ttu-id="b23a2-1599">Az.Resources</span><span class="sxs-lookup"><span data-stu-id="b23a2-1599">Az.Resources</span></span>
+* <span data-ttu-id="b23a2-1600">Joker karakterlere ilişkin belgeler düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1600">Fix documentation for wildcards</span></span>
+
+#### <a name="azsql"></a><span data-ttu-id="b23a2-1601">Az.Sql</span><span class="sxs-lookup"><span data-stu-id="b23a2-1601">Az.Sql</span></span>
+* <span data-ttu-id="b23a2-1602">İzleyici SDK’sının bağımlılığı ortak kod ile değiştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1602">Replace dependency on Monitor SDK with common code</span></span>
+* <span data-ttu-id="b23a2-1603">Çoğul isimli cmdlet’ler tekil isimli olarak güncelleştirildi ve çoğul isimler kullanım dışı bırakıldı.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1603">Updated cmdlets with plural nouns to singular, and deprecated plural names.</span></span>
+* <span data-ttu-id="b23a2-1604">Birden fazla sütun sınıflandırma işlemi geliştirildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1604">Enhanced process of multiple columns classification.</span></span>
+* <span data-ttu-id="b23a2-1605">Get-AzSqlServerServiceObjective’den alınan yanıta SKU özellikleri (SKU adı, ailesi, kapasitesi) dahil edildi ve bunlar varsayılan olarak tablo şeklinde biçimlendirildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1605">Include sku properties (sku name, family, capacity) in response from Get-AzSqlServerServiceObjective and format as table by default.</span></span>
+* <span data-ttu-id="b23a2-1606">Bölgede önceden var olan bir sunucuya ihtiyaç duymadan, konuma göre Get-AzSqlServerServiceObjective yapabilme olanağı eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1606">Ability to Get-AzSqlServerServiceObjective by location without needing a preexisting server in the region.</span></span>
+* <span data-ttu-id="b23a2-1607">Yönetilen Örnek oluşturmadaki saat dilimi parametresi desteği.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1607">Support for time zone parameter in Managed Instance create.</span></span>
+* <span data-ttu-id="b23a2-1608">Joker karakterlere ilişkin belgeler düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1608">Fix documentation for wildcards</span></span>
+
+#### <a name="azwebsites"></a><span data-ttu-id="b23a2-1609">Az.Websites</span><span class="sxs-lookup"><span data-stu-id="b23a2-1609">Az.Websites</span></span>
+* <span data-ttu-id="b23a2-1610">Set-AzWebApp ve Set-AzWebAppSlot çalıştırılırken etiketlerin kaldırılmaması sorunu düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1610">fixes the Set-AzWebApp and Set-AzWebAppSlot to not remove the tags on execution</span></span>
+* <span data-ttu-id="b23a2-1611">Çoğul isimli cmdlet’ler tekil isimli olarak güncelleştirildi ve çoğul isimler kullanım dışı bırakıldı.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1611">Updated cmdlets with plural nouns to singular, and deprecated plural names.</span></span>
+* <span data-ttu-id="b23a2-1612">Web siteleri SDK'sı güncelleştirildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1612">Updated the WebSites SDK.</span></span>
+* <span data-ttu-id="b23a2-1613">PSAppServicePlan’den AdminSiteName özelliği kaldırıldı.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1613">Removed the AdminSiteName property from PSAppServicePlan.</span></span>
+
+## <a name="170---april-2019"></a><span data-ttu-id="b23a2-1614">1.7.0 - Nisan 2019</span><span class="sxs-lookup"><span data-stu-id="b23a2-1614">1.7.0 - April 2019</span></span>
+### <a name="highlights-since-the-last-major-release"></a><span data-ttu-id="b23a2-1615">Son ana sürümden bu yana öne çıkanlar</span><span class="sxs-lookup"><span data-stu-id="b23a2-1615">Highlights since the last major release</span></span>
+* <span data-ttu-id="b23a2-1616">`Az` modülünü genel kullanıma sunuldu</span><span class="sxs-lookup"><span data-stu-id="b23a2-1616">General availability of `Az` module</span></span>
+* <span data-ttu-id="b23a2-1617">`Az` modülü hakkında daha fazla bilgi için şu bağlantıyı ziyaret edin: https://aka.ms/azps-announce</span><span class="sxs-lookup"><span data-stu-id="b23a2-1617">For more information about the `Az` module, please visit the following: https://aka.ms/azps-announce</span></span>
+* <span data-ttu-id="b23a2-1618">Location, ResourceGroup ve ResourceName tamamlayıcıları eklendi: https://azure.microsoft.com/blog/completers-in-azure-powershell/</span><span class="sxs-lookup"><span data-stu-id="b23a2-1618">Added Location, ResourceGroup, and ResourceName completers: https://azure.microsoft.com/blog/completers-in-azure-powershell/</span></span>
+* <span data-ttu-id="b23a2-1619">Az.Compute ve Az.Network için Get cmdlet'lerine joker karakter desteği eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1619">Added wildcard support to Get cmdlets for Az.Compute and Az.Network</span></span>
+* <span data-ttu-id="b23a2-1620">Yalnızca Windows PowerShell 5.1 için etkileşim ve kullanıcı adı/parola kimlik doğrulaması eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1620">Added interactive and username/password authentication for Windows PowerShell 5.1 only</span></span>
+* <span data-ttu-id="b23a2-1621">Az.Automation'da Python 2 runbook'ları için destek eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1621">Added support for Python 2 runbooks in Az.Automation</span></span>
+* <span data-ttu-id="b23a2-1622">Az.LogicApp: Tümleştirme Hesabı Derlemeleri ve Toplu Yapılandırması için yeni cmdlet’ler</span><span class="sxs-lookup"><span data-stu-id="b23a2-1622">Az.LogicApp: New cmdlets for Integration Account Assemblies and Batch Configuration</span></span>
+
+#### <a name="azaccounts"></a><span data-ttu-id="b23a2-1623">Az.Accounts</span><span class="sxs-lookup"><span data-stu-id="b23a2-1623">Az.Accounts</span></span>
+* <span data-ttu-id="b23a2-1624">Add-AzEnvironment ve Set-AzEnvironment, AzureAnalysisServicesEndpointResourceId parametresini kabul edecek biçimde güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1624">Updated Add-AzEnvironment and Set-AzEnvironment to accept parameter AzureAnalysisServicesEndpointResourceId</span></span>
+
+#### <a name="azanalysisservices"></a><span data-ttu-id="b23a2-1625">Az.AnalysisServices</span><span class="sxs-lookup"><span data-stu-id="b23a2-1625">Az.AnalysisServices</span></span>
+* <span data-ttu-id="b23a2-1626">Veri düzlemi cmdlet’lerinde ServiceClient kullanma ve orijinal kimlik doğrulaması mantığını kaldırma</span><span class="sxs-lookup"><span data-stu-id="b23a2-1626">Using ServiceClient in dataplane cmdlets and removing the original authentication logic</span></span>
+* <span data-ttu-id="b23a2-1627">Hataya neden olan değişikliklerden kaçınmak için Add-AzureASAccount’ı Connect-AzAccount’ın sarmalayıcısı yapma</span><span class="sxs-lookup"><span data-stu-id="b23a2-1627">Making Add-AzureASAccount a wrapper of Connect-AzAccount to avoid a breaking change</span></span>
+
+#### <a name="azautomation"></a><span data-ttu-id="b23a2-1628">Az.Automation</span><span class="sxs-lookup"><span data-stu-id="b23a2-1628">Az.Automation</span></span>
+* <span data-ttu-id="b23a2-1629">Eklemeler için New-AzAutomationSoftwareUpdateConfiguration cmdlet hatası düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1629">Fixed New-AzAutomationSoftwareUpdateConfiguration cmdlet bug for Inclusions.</span></span> <span data-ttu-id="b23a2-1630">IncludedKbNumber ve IncludedPackageNameMask parametrelerinin artık çalışması bekleniyor.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1630">Now parameter IncludedKbNumber and IncludedPackageNameMask should work.</span></span>
+* <span data-ttu-id="b23a2-1631">Azure otomasyonu güncelleştirmesi yönetim dinamik grubu için hata düzeltmesi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1631">Bug fix for azure automation update management dynamic group</span></span>
+
+#### <a name="azcompute"></a><span data-ttu-id="b23a2-1632">Az.Compute</span><span class="sxs-lookup"><span data-stu-id="b23a2-1632">Az.Compute</span></span>
+* <span data-ttu-id="b23a2-1633">New-AzDiskConfig ve New-AzSnapshotConfig’e HyperVGeneration parametresi eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1633">Add HyperVGeneration parameter to New-AzDiskConfig and New-AzSnapshotConfig</span></span>
+* <span data-ttu-id="b23a2-1634">Diğer kiracıların karakter görüntüleriyle VM oluşturmaya izin verildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1634">Allow VM creation with galley image from other tenants.</span></span>
+
+#### <a name="azcontainerinstance"></a><span data-ttu-id="b23a2-1635">Az.ContainerInstance</span><span class="sxs-lookup"><span data-stu-id="b23a2-1635">Az.ContainerInstance</span></span>
+* <span data-ttu-id="b23a2-1636">New-AzContainerGroup’un -command parametresinde bağımsız boş değişken ekleyen sorun düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1636">Fixed issue in the -Command parameter of New-AzContainerGroup which added a trailing empty argument</span></span>
+
+#### <a name="azdatafactory"></a><span data-ttu-id="b23a2-1637">Az.DataFactory</span><span class="sxs-lookup"><span data-stu-id="b23a2-1637">Az.DataFactory</span></span>
+* <span data-ttu-id="b23a2-1638">ADF .Net SDK’sı 3.0.2 sürümüne güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1638">Updated ADF .Net SDK version to 3.0.2</span></span>
+* <span data-ttu-id="b23a2-1639">Set-AzDataFactoryV2 cmdlet’i RepoConfiguration ile ilgili ayarların ek parametreleriyle güncelleştirildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1639">Updated Set-AzDataFactoryV2 cmdlet with extra parameters for RepoConfiguration related settings.</span></span>
+
+#### <a name="azresources"></a><span data-ttu-id="b23a2-1640">Az.Resources</span><span class="sxs-lookup"><span data-stu-id="b23a2-1640">Az.Resources</span></span>
+* <span data-ttu-id="b23a2-1641">'-ResourceId' veya '-ResourceGroupName', '-Name' ve '-ResourceType' parametreleri sağlanırken ‘Get-AzResource’ için sağlayıcıların işlenmesi geliştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1641">Improve handling of providers for 'Get-AzResource' when providing '-ResourceId' or '-ResourceGroupName', '-Name' and '-ResourceType' parameters</span></span>
+* <span data-ttu-id="b23a2-1642">‘Test-AzDeployment’ ve ‘Test-AzResourceGroupDeployment’ için hata işleme geliştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1642">Improve error handling for 'Test-AzDeployment' and 'Test-AzResourceGroupDeployment'</span></span>
+    - <span data-ttu-id="b23a2-1643">İşleme hataları dağıtım doğrulamasının dışında tutuldu ve komut çıkışına dahil edildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1643">Handle errors thrown outside of deployment validation and include them in output of command instead</span></span>
+    - <span data-ttu-id="b23a2-1644">Burada daha fazla bilgi bulunabilir: https://github.com/Azure/azure-powershell/issues/6856</span><span class="sxs-lookup"><span data-stu-id="b23a2-1644">More information here: https://github.com/Azure/azure-powershell/issues/6856</span></span>
+* <span data-ttu-id="b23a2-1645">Betik ve iş senaryolarında istemi atlamak için bir dizi dağıtım cmdlet’lerine ‘-IgnoreDynamicParameters’ anahtar parametresi eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1645">Add '-IgnoreDynamicParameters' switch parameter to set of deployment cmdlets to skip prompt in script and job scenarios</span></span>
+    - <span data-ttu-id="b23a2-1646">Burada daha fazla bilgi bulunabilir: https://github.com/Azure/azure-powershell/issues/6856</span><span class="sxs-lookup"><span data-stu-id="b23a2-1646">More information here: https://github.com/Azure/azure-powershell/issues/6856</span></span>
+
+#### <a name="azsql"></a><span data-ttu-id="b23a2-1647">Az.Sql</span><span class="sxs-lookup"><span data-stu-id="b23a2-1647">Az.Sql</span></span>
+* <span data-ttu-id="b23a2-1648">Veritabanı Verileri Sınıflandırması Desteği.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1648">Support Database Data Classification.</span></span>
+
+#### <a name="azstorage"></a><span data-ttu-id="b23a2-1649">Az.Storage</span><span class="sxs-lookup"><span data-stu-id="b23a2-1649">Az.Storage</span></span>
+* <span data-ttu-id="b23a2-1650">-UseConnectedAccount parametresi ile depolama bağlamı oluştururken ayrıntı hatası raporlama</span><span class="sxs-lookup"><span data-stu-id="b23a2-1650">Report detail error when create Storage context with parameter -UseConnectedAccount, but without login Azure account</span></span>
+    - <span data-ttu-id="b23a2-1651">New-AzStorageContext</span><span class="sxs-lookup"><span data-stu-id="b23a2-1651">New-AzStorageContext</span></span>
+* <span data-ttu-id="b23a2-1652">Belirtilen depolama hesabının Yönetim düzlemi API’si ile Blob Hizmeti Özellikleri için Yönetim Desteği</span><span class="sxs-lookup"><span data-stu-id="b23a2-1652">Support Manage Blob Service Properties of a specified Storage account with Management plane API</span></span>
+    - <span data-ttu-id="b23a2-1653">Update-AzStorageBlobServiceProperty</span><span class="sxs-lookup"><span data-stu-id="b23a2-1653">Update-AzStorageBlobServiceProperty</span></span>
+    - <span data-ttu-id="b23a2-1654">Get-AzStorageBlobServiceProperty</span><span class="sxs-lookup"><span data-stu-id="b23a2-1654">Get-AzStorageBlobServiceProperty</span></span>
+    - <span data-ttu-id="b23a2-1655">Enable-AzStorageBlobDeleteRetentionPolicy</span><span class="sxs-lookup"><span data-stu-id="b23a2-1655">Enable-AzStorageBlobDeleteRetentionPolicy</span></span>
+    - <span data-ttu-id="b23a2-1656">Disable-AzStorageBlobDeleteRetentionPolicy</span><span class="sxs-lookup"><span data-stu-id="b23a2-1656">Disable-AzStorageBlobDeleteRetentionPolicy</span></span>
+* <span data-ttu-id="b23a2-1657">Blob ve dosya karşıya yükleme ve indirme cmdlet’leri için -Asjob desteği</span><span class="sxs-lookup"><span data-stu-id="b23a2-1657">-AsJob support for Blob and file upload and download cmdlets</span></span>
+    - <span data-ttu-id="b23a2-1658">Get-AzStorageBlobContent</span><span class="sxs-lookup"><span data-stu-id="b23a2-1658">Get-AzStorageBlobContent</span></span>
+    - <span data-ttu-id="b23a2-1659">Set-AzStorageBlobContent</span><span class="sxs-lookup"><span data-stu-id="b23a2-1659">Set-AzStorageBlobContent</span></span>
+    - <span data-ttu-id="b23a2-1660">Get-AzStorageFileContent</span><span class="sxs-lookup"><span data-stu-id="b23a2-1660">Get-AzStorageFileContent</span></span>
+    - <span data-ttu-id="b23a2-1661">Set-AzStorageFileContent</span><span class="sxs-lookup"><span data-stu-id="b23a2-1661">Set-AzStorageFileContent</span></span>
+
+## <a name="160---march-2019"></a><span data-ttu-id="b23a2-1662">1.6.0 - Mart 2019</span><span class="sxs-lookup"><span data-stu-id="b23a2-1662">1.6.0 - March 2019</span></span>
+### <a name="highlights-since-the-last-major-release"></a><span data-ttu-id="b23a2-1663">Son ana sürümden bu yana öne çıkanlar</span><span class="sxs-lookup"><span data-stu-id="b23a2-1663">Highlights since the last major release</span></span>
+* <span data-ttu-id="b23a2-1664">`Az` modülünü genel kullanıma sunuldu</span><span class="sxs-lookup"><span data-stu-id="b23a2-1664">General availability of `Az` module</span></span>
+* <span data-ttu-id="b23a2-1665">`Az` modülü hakkında daha fazla bilgi için şu bağlantıyı ziyaret edin: https://aka.ms/azps-announce</span><span class="sxs-lookup"><span data-stu-id="b23a2-1665">For more information about the `Az` module, please visit the following: https://aka.ms/azps-announce</span></span>
+* <span data-ttu-id="b23a2-1666">Location, ResourceGroup ve ResourceName tamamlayıcıları eklendi: https://azure.microsoft.com/blog/completers-in-azure-powershell/</span><span class="sxs-lookup"><span data-stu-id="b23a2-1666">Added Location, ResourceGroup, and ResourceName completers: https://azure.microsoft.com/blog/completers-in-azure-powershell/</span></span>
+* <span data-ttu-id="b23a2-1667">Az.Compute ve Az.Network için Get cmdlet'lerine joker karakter desteği eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1667">Added wildcard support to Get cmdlets for Az.Compute and Az.Network</span></span>
+* <span data-ttu-id="b23a2-1668">Yalnızca Windows PowerShell 5.1 için etkileşim ve kullanıcı adı/parola kimlik doğrulaması eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1668">Added interactive and username/password authentication for Windows PowerShell 5.1 only</span></span>
+* <span data-ttu-id="b23a2-1669">Az.Automation'da Python 2 runbook'ları için destek eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1669">Added support for Python 2 runbooks in Az.Automation</span></span>
+* <span data-ttu-id="b23a2-1670">Az.LogicApp: Tümleştirme Hesabı Derlemeleri ve Toplu Yapılandırması için yeni cmdlet’ler</span><span class="sxs-lookup"><span data-stu-id="b23a2-1670">Az.LogicApp: New cmdlets for Integration Account Assemblies and Batch Configuration</span></span>
+
+#### <a name="azautomation"></a><span data-ttu-id="b23a2-1671">Az.Automation</span><span class="sxs-lookup"><span data-stu-id="b23a2-1671">Az.Automation</span></span>
+* <span data-ttu-id="b23a2-1672">Aşağıdaki yeni özellikleri desteklemek için Azure otomasyonu güncelleştirme yönetimi değişikliği:</span><span class="sxs-lookup"><span data-stu-id="b23a2-1672">Azure automation update management change to support the following new features :</span></span>
+    * <span data-ttu-id="b23a2-1673">Dinamik gruplandırma</span><span class="sxs-lookup"><span data-stu-id="b23a2-1673">Dynamic grouping</span></span>
+    * <span data-ttu-id="b23a2-1674">Ön-Son betik</span><span class="sxs-lookup"><span data-stu-id="b23a2-1674">Pre-Post script</span></span>
+    * <span data-ttu-id="b23a2-1675">Yeniden Başlatma Ayarı</span><span class="sxs-lookup"><span data-stu-id="b23a2-1675">Reboot Setting</span></span>
+
+#### <a name="azcompute"></a><span data-ttu-id="b23a2-1676">Az.Compute</span><span class="sxs-lookup"><span data-stu-id="b23a2-1676">Az.Compute</span></span>
+* <span data-ttu-id="b23a2-1677">Get-AzVmBootDiagnosticsData içinde yol çözümleme sorunu çözüldü</span><span class="sxs-lookup"><span data-stu-id="b23a2-1677">Fix issue with path resolution in Get-AzVmBootDiagnosticsData</span></span>
+* <span data-ttu-id="b23a2-1678">İşlem istemci kitaplığı 25.0.0'a güncelleştirildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1678">Update Compute client library to 25.0.0.</span></span>
+
+#### <a name="azkeyvault"></a><span data-ttu-id="b23a2-1679">Az.KeyVault</span><span class="sxs-lookup"><span data-stu-id="b23a2-1679">Az.KeyVault</span></span>
+* <span data-ttu-id="b23a2-1680">KeyVault cmdlet'lerine joker karakter desteği eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1680">Added wildcard support to KeyVault cmdlets</span></span>
+
+#### <a name="aznetwork"></a><span data-ttu-id="b23a2-1681">Az.Network</span><span class="sxs-lookup"><span data-stu-id="b23a2-1681">Az.Network</span></span>
+* <span data-ttu-id="b23a2-1682">Azure Güvenlik Duvarı için Tehdit Bilgileri desteği eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1682">Add Threat Intelligence support for Azure Firewall</span></span>
+* <span data-ttu-id="b23a2-1683">Application Gateway Güvenlik Duvarı İlkesi üst düzey kaynağı ve Özel Kurallar eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1683">Add Application Gateway Firewall Policy top level resource and Custom Rules</span></span>
+
+#### <a name="azrecoveryservices"></a><span data-ttu-id="b23a2-1684">Az.RecoveryServices</span><span class="sxs-lookup"><span data-stu-id="b23a2-1684">Az.RecoveryServices</span></span>
+* <span data-ttu-id="b23a2-1685">Anında RP desteği için Azure VM ilkesine SnapshotRetentionInDays eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1685">Added SnapshotRetentionInDays in Azure VM policy to support Instant RP</span></span>
+* <span data-ttu-id="b23a2-1686">Kapsayıcı kaydını kaldırmak için kanal desteği eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1686">Added pipe support for unregister container</span></span>
+
+#### <a name="azresources"></a><span data-ttu-id="b23a2-1687">Az.Resources</span><span class="sxs-lookup"><span data-stu-id="b23a2-1687">Az.Resources</span></span>
+* <span data-ttu-id="b23a2-1688">Get-AzResource ve Get-AzResourceGroup için joker karakter desteği güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1688">Update wildcard support for Get-AzResource and Get-AzResourceGroup</span></span>
+* <span data-ttu-id="b23a2-1689">ARM'ye genel çağrı yapılırken kullanılan kimlik bilgileri güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1689">Update credentials used when making generic calls to ARM</span></span>
+
+#### <a name="azsql"></a><span data-ttu-id="b23a2-1690">Az.Sql</span><span class="sxs-lookup"><span data-stu-id="b23a2-1690">Az.Sql</span></span>
+* <span data-ttu-id="b23a2-1691">Yeni DetectionType'lar eklendiğinde gelecekte kullanılabilmesini sağlamak ve otomatik tamamlamayı da desteklemek için Tehdit Algılama cmdlet'lerinin DetectionType olan parametresi (ExcludeDetectionType) string[] olarak değiştirildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1691">changed Threat Detection's cmdlets param (ExcludeDetectionType) from DetectionType to string[] to make it future proof when new DetectionTypes are added and to support autocomplete as well.</span></span>
+
+#### <a name="azstorage"></a><span data-ttu-id="b23a2-1692">Az.Storage</span><span class="sxs-lookup"><span data-stu-id="b23a2-1692">Az.Storage</span></span>
+* <span data-ttu-id="b23a2-1693">Depolama hesabında Yönetim İlkesini Alma/Ayarlama/Kaldırma desteği</span><span class="sxs-lookup"><span data-stu-id="b23a2-1693">Support Get/Set/Remove Management Policy on a Storage account</span></span>
+    - <span data-ttu-id="b23a2-1694">Set-AzStorageAccountManagementPolicy</span><span class="sxs-lookup"><span data-stu-id="b23a2-1694">Set-AzStorageAccountManagementPolicy</span></span>
+    - <span data-ttu-id="b23a2-1695">Get-AzStorageAccountManagementPolicy</span><span class="sxs-lookup"><span data-stu-id="b23a2-1695">Get-AzStorageAccountManagementPolicy</span></span>
+    - <span data-ttu-id="b23a2-1696">Remove-AzStorageAccountManagementPolicy</span><span class="sxs-lookup"><span data-stu-id="b23a2-1696">Remove-AzStorageAccountManagementPolicy</span></span>
+    - <span data-ttu-id="b23a2-1697">Add-AzStorageAccountManagementPolicyAction</span><span class="sxs-lookup"><span data-stu-id="b23a2-1697">Add-AzStorageAccountManagementPolicyAction</span></span>
+    - <span data-ttu-id="b23a2-1698">New-AzStorageAccountManagementPolicyFilter</span><span class="sxs-lookup"><span data-stu-id="b23a2-1698">New-AzStorageAccountManagementPolicyFilter</span></span>
+    - <span data-ttu-id="b23a2-1699">New-AzStorageAccountManagementPolicyRule</span><span class="sxs-lookup"><span data-stu-id="b23a2-1699">New-AzStorageAccountManagementPolicyRule</span></span>
+
+#### <a name="azwebsites"></a><span data-ttu-id="b23a2-1700">Az.Websites</span><span class="sxs-lookup"><span data-stu-id="b23a2-1700">Az.Websites</span></span>
+* <span data-ttu-id="b23a2-1701">'New-AzWebApp -IncludeSourceWebAppSlots' kullanarak tüm yuvaların kopyalanmasını kesintiye uğratan ARM şablon hatası düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1701">Fix ARM template bug that breaks cloning all slots using 'New-AzWebApp -IncludeSourceWebAppSlots'</span></span>
+
+## <a name="150---march-2019"></a><span data-ttu-id="b23a2-1702">1.5.0 - Mart 2019</span><span class="sxs-lookup"><span data-stu-id="b23a2-1702">1.5.0 - March 2019</span></span>
+#### <a name="azaccounts"></a><span data-ttu-id="b23a2-1703">Az.Accounts</span><span class="sxs-lookup"><span data-stu-id="b23a2-1703">Az.Accounts</span></span>
+* <span data-ttu-id="b23a2-1704">AutoRest tarafından oluşturulan cmdlet’leri desteklemek için 'Register-AzModule' komutu eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1704">Add 'Register-AzModule' command to support AutoRest generated cmdlets</span></span>
+* <span data-ttu-id="b23a2-1705">Connect-AzAccount örnekleri güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1705">Update examples for Connect-AzAccount</span></span>
+
+#### <a name="azautomation"></a><span data-ttu-id="b23a2-1706">Az.Automation</span><span class="sxs-lookup"><span data-stu-id="b23a2-1706">Az.Automation</span></span>
+* <span data-ttu-id="b23a2-1707">Birden fazla Azure Otomasyonu cmdlet’inde belirli aylık zamanlamalar alınırken yaşanan sorun düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1707">Fixed issue when retreiving certain monthly schedules in several Azure Automation cmdlets</span></span>
+* <span data-ttu-id="b23a2-1708">Yalnızca ilk 20 düğümü döndüren Get-AzAutomationDscNode düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1708">Fix Get-AzAutomationDscNode returning just top 20 nodes.</span></span> <span data-ttu-id="b23a2-1709">Artık tüm düğümleri döndürür</span><span class="sxs-lookup"><span data-stu-id="b23a2-1709">Now it returns all nodes</span></span>
+
+#### <a name="azcdn"></a><span data-ttu-id="b23a2-1710">Az.Cdn</span><span class="sxs-lookup"><span data-stu-id="b23a2-1710">Az.Cdn</span></span>
+* <span data-ttu-id="b23a2-1711">Özel Etki Alanı Https Etkinleştirmesi/Devre Dışı Bırakması için yeni PowerShell cmdlet’leri eklendi ve eskiler kullanım dışı bırakıldı</span><span class="sxs-lookup"><span data-stu-id="b23a2-1711">Added new Powershell cmdlets for Enable/Disable Custom Domain Https and deprecated the old ones</span></span>
+
+#### <a name="azcompute"></a><span data-ttu-id="b23a2-1712">Az.Compute</span><span class="sxs-lookup"><span data-stu-id="b23a2-1712">Az.Compute</span></span>
+* <span data-ttu-id="b23a2-1713">Get cmdlet’lerine joker karakter desteği eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1713">Add wildcard support to Get cmdlets</span></span>
+
+#### <a name="azdatafactory"></a><span data-ttu-id="b23a2-1714">Az.DataFactory</span><span class="sxs-lookup"><span data-stu-id="b23a2-1714">Az.DataFactory</span></span>
+* <span data-ttu-id="b23a2-1715">ADF .Net SDK sürümü 3.0.1'e güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1715">Updated ADF .Net SDK version to 3.0.1</span></span>
+
+#### <a name="azlogicapp"></a><span data-ttu-id="b23a2-1716">Az.LogicApp</span><span class="sxs-lookup"><span data-stu-id="b23a2-1716">Az.LogicApp</span></span>
+* <span data-ttu-id="b23a2-1717">Yalnızca ilk sonuç sayfasını getiren ListWorkflows için düzeltme</span><span class="sxs-lookup"><span data-stu-id="b23a2-1717">Fix for ListWorkflows only retrieving the first page of results</span></span>
+
+#### <a name="aznetwork"></a><span data-ttu-id="b23a2-1718">Az.Network</span><span class="sxs-lookup"><span data-stu-id="b23a2-1718">Az.Network</span></span>
+* <span data-ttu-id="b23a2-1719">Network cmdlet’lerine joker karakter desteği eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1719">Add wildcard support to Network cmdlets</span></span>
+
+#### <a name="azrecoveryservices"></a><span data-ttu-id="b23a2-1720">Az.RecoveryServices</span><span class="sxs-lookup"><span data-stu-id="b23a2-1720">Az.RecoveryServices</span></span>
+* <span data-ttu-id="b23a2-1721">Azure VM desteğine SQL Server eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1721">Added Sql server in Azure VM support</span></span>
+* <span data-ttu-id="b23a2-1722">SDK Güncelleştirmesi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1722">SDK Update</span></span>
+* <span data-ttu-id="b23a2-1723">Get-ProtectableItem içindeki Removed VMappContainer denetimi kaldırıldı</span><span class="sxs-lookup"><span data-stu-id="b23a2-1723">Removed VMappContainer check in Get-ProtectableItem</span></span>
+* <span data-ttu-id="b23a2-1724">Get-ProtectableItem için Name ve ServerName parametreleri eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1724">Added Name and ServerName as parameters for Get-ProtectableItem</span></span>
+
+#### <a name="azresources"></a><span data-ttu-id="b23a2-1725">Az.Resources</span><span class="sxs-lookup"><span data-stu-id="b23a2-1725">Az.Resources</span></span>
+* <span data-ttu-id="b23a2-1726">Dağıtım cmdlet’lerine `-TemplateObject` parametresi eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1726">Add `-TemplateObject` parameter to deployment cmdlets</span></span>
+    - <span data-ttu-id="b23a2-1727">Burada daha fazla bilgi bulunabilir: https://github.com/Azure/azure-powershell/issues/2933</span><span class="sxs-lookup"><span data-stu-id="b23a2-1727">More information here: https://github.com/Azure/azure-powershell/issues/2933</span></span>
+* <span data-ttu-id="b23a2-1728">`Get-AzResource` sonucu `Set-AzResource` üzerine aktarılırken oluşan sorun düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1728">Fix issue when piping the result of `Get-AzResource` to `Set-AzResource`</span></span>
+    - <span data-ttu-id="b23a2-1729">Burada daha fazla bilgi bulunabilir: https://github.com/Azure/azure-powershell/issues/8240</span><span class="sxs-lookup"><span data-stu-id="b23a2-1729">More information here: https://github.com/Azure/azure-powershell/issues/8240</span></span>
+* <span data-ttu-id="b23a2-1730">`Set-AzResource` çalıştırılırken JSON veri türü değişikliğine neden olan sorun düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1730">Fix issue with JSON data type change when running `Set-AzResource`</span></span>
+    - <span data-ttu-id="b23a2-1731">Burada daha fazla bilgi bulunabilir: https://github.com/Azure/azure-powershell/issues/7930</span><span class="sxs-lookup"><span data-stu-id="b23a2-1731">More information here: https://github.com/Azure/azure-powershell/issues/7930</span></span>
+
+#### <a name="azsql"></a><span data-ttu-id="b23a2-1732">Az.Sql</span><span class="sxs-lookup"><span data-stu-id="b23a2-1732">Az.Sql</span></span>
+* <span data-ttu-id="b23a2-1733">AuditingEndpointsCommunicator güncelleştiriliyor.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1733">Updating AuditingEndpointsCommunicator.</span></span>
+    - <span data-ttu-id="b23a2-1734">Yeni tanılama ayarları oluşturulurken kenar durumunun davranışı düzeltiliyor.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1734">Fixing the behavior of an edge case while creating new diagnostic settings.</span></span>
+
+#### <a name="azstorage"></a><span data-ttu-id="b23a2-1735">Az.Storage</span><span class="sxs-lookup"><span data-stu-id="b23a2-1735">Az.Storage</span></span>
+* <span data-ttu-id="b23a2-1736">Depolama hesabı oluşturulurken Support Kind BlockBlobStorage desteği sağlandı      - New-AzStorageAccount</span><span class="sxs-lookup"><span data-stu-id="b23a2-1736">Support Kind BlockBlobStorage when create Storage account      - New-AzStorageAccount</span></span>
+
+## <a name="140---february-2019"></a><span data-ttu-id="b23a2-1737">1.4.0 - Şubat 2019</span><span class="sxs-lookup"><span data-stu-id="b23a2-1737">1.4.0 - February 2019</span></span>
+#### <a name="azanalysisservices"></a><span data-ttu-id="b23a2-1738">Az.AnalysisServices</span><span class="sxs-lookup"><span data-stu-id="b23a2-1738">Az.AnalysisServices</span></span>
+* <span data-ttu-id="b23a2-1739">AddAzureASAccount cmdlet'i kullanım dışı bırakıldı</span><span class="sxs-lookup"><span data-stu-id="b23a2-1739">Deprecated AddAzureASAccount cmdlet</span></span>
+
+#### <a name="azautomation"></a><span data-ttu-id="b23a2-1740">Az.Automation</span><span class="sxs-lookup"><span data-stu-id="b23a2-1740">Az.Automation</span></span>
+* <span data-ttu-id="b23a2-1741">Import-AzAutomationDscNodeConfiguration için yardım güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1741">Update help for Import-AzAutomationDscNodeConfiguration</span></span>
+* <span data-ttu-id="b23a2-1742">Import-AzAutomationDscConfiguration cmdlet'ine yapılandırma adı doğrulaması eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1742">Added configuration name validation to Import-AzAutomationDscConfiguration cmdlet</span></span>
+* <span data-ttu-id="b23a2-1743">Import-AzAutomationDscConfiguration cmdlet'i için hata işleme iyileştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1743">Improved error handling for Import-AzAutomationDscConfiguration cmdlet</span></span>
+
+#### <a name="azcognitiveservices"></a><span data-ttu-id="b23a2-1744">Az.CognitiveServices</span><span class="sxs-lookup"><span data-stu-id="b23a2-1744">Az.CognitiveServices</span></span>
+* <span data-ttu-id="b23a2-1745">Kaynağın alt etki alanını belirtmek amacıyla kullanılan New-AzCognitiveServicesAccount için CustomSubdomainName adlı, isteğe bağlı, yeni bir parametre eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1745">Added CustomSubdomainName as a new optional parameter for New-AzCognitiveServicesAccount which is used to specify subdomain for the resource.</span></span>
+
+#### <a name="azcompute"></a><span data-ttu-id="b23a2-1746">Az.Compute</span><span class="sxs-lookup"><span data-stu-id="b23a2-1746">Az.Compute</span></span>
+* <span data-ttu-id="b23a2-1747">Kimlik parametresi kümeleriyle ilgili sorun düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1747">Fix issue with ID parameter sets</span></span>
+* <span data-ttu-id="b23a2-1748">Get-AzVMExtension, Name parametresi sağlanmadığında yüklü tüm uzantıları listeleyecek şekilde güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1748">Update Get-AzVMExtension to list all installed extension if Name parameter is not provided</span></span>
+* <span data-ttu-id="b23a2-1749">Update-AzImage cmdlet’ine Tag ve ResourceId parametreleri eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1749">Add Tag and ResourceId parameters to Update-AzImage cmdlet</span></span>
+* <span data-ttu-id="b23a2-1750">Get-AzVmssVM, örnek kimliği olmadan ve InstanceView ile, örnek görünümüne sahip VMSS VM’lerini listeleyebilir.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1750">Get-AzVmssVM without instance ID and with InstanceView can list VMSS VMs with instance view.</span></span>
+
+#### <a name="azdatalakestore"></a><span data-ttu-id="b23a2-1751">Az.DataLakeStore</span><span class="sxs-lookup"><span data-stu-id="b23a2-1751">Az.DataLakeStore</span></span>
+* <span data-ttu-id="b23a2-1752">ADL silinmiş öğe listeleme ve geri yükleme cmdlet’leri eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1752">Add cmdlets for ADL deleted item enumerate and restore</span></span>
+
+#### <a name="azeventhub"></a><span data-ttu-id="b23a2-1753">Az.EventHub</span><span class="sxs-lookup"><span data-stu-id="b23a2-1753">Az.EventHub</span></span>
+* <span data-ttu-id="b23a2-1754">EventHub’ın CaptureDescription sınıfında Boş Arşivleri Atlamak için SkipEmptyArchives adlı yeni Boole özelliği eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1754">Added new boolean property SkipEmptyArchives to Skip Empty Archives in CaptureDescription class of Eventhub</span></span>
+
+#### <a name="azkeyvault"></a><span data-ttu-id="b23a2-1755">Az.KeyVault</span><span class="sxs-lookup"><span data-stu-id="b23a2-1755">Az.KeyVault</span></span>
+* <span data-ttu-id="b23a2-1756">Set-AzKeyVaultSecret’daki etiketleme düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1756">Fix tagging on Set-AzKeyVaultSecret</span></span>
+
+#### <a name="azlogicapp"></a><span data-ttu-id="b23a2-1757">Az.LogicApp</span><span class="sxs-lookup"><span data-stu-id="b23a2-1757">Az.LogicApp</span></span>
+* <span data-ttu-id="b23a2-1758">Tümleştirme Hesapları için Temel SKU eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1758">Add in Basic sku for Integration Accounts</span></span>
+* <span data-ttu-id="b23a2-1759">XSLT 2.0, XSLT 3.0 ve Liquid Eşleşme Türleri eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1759">Add in XSLT 2.0, XSLT 3.0 and Liquid Map Types</span></span>
+* <span data-ttu-id="b23a2-1760">Tümleştirme Hesabı Bütünleştirilmiş Kodları için yeni cmdlet’ler</span><span class="sxs-lookup"><span data-stu-id="b23a2-1760">New cmdlets for Integration Account Assemblies</span></span>
+    - <span data-ttu-id="b23a2-1761">Get-AzIntegrationAccountAssembly</span><span class="sxs-lookup"><span data-stu-id="b23a2-1761">Get-AzIntegrationAccountAssembly</span></span>
+    - <span data-ttu-id="b23a2-1762">New-AzIntegrationAccountAssembly</span><span class="sxs-lookup"><span data-stu-id="b23a2-1762">New-AzIntegrationAccountAssembly</span></span>
+    - <span data-ttu-id="b23a2-1763">Remove-AzIntegrationAccountAssembly</span><span class="sxs-lookup"><span data-stu-id="b23a2-1763">Remove-AzIntegrationAccountAssembly</span></span>
+    - <span data-ttu-id="b23a2-1764">Set-AzIntegrationAccountAssembly</span><span class="sxs-lookup"><span data-stu-id="b23a2-1764">Set-AzIntegrationAccountAssembly</span></span>
+* <span data-ttu-id="b23a2-1765">Tümleştirme Hesabı Toplu Yapılandırması için yeni cmdlet’ler</span><span class="sxs-lookup"><span data-stu-id="b23a2-1765">New cmdlets for Integration Account Batch Configuration</span></span>
+    - <span data-ttu-id="b23a2-1766">Get-AzIntegrationAccountBatchConfiguration</span><span class="sxs-lookup"><span data-stu-id="b23a2-1766">Get-AzIntegrationAccountBatchConfiguration</span></span>
+    - <span data-ttu-id="b23a2-1767">New-AzIntegrationAccountBatchConfiguration</span><span class="sxs-lookup"><span data-stu-id="b23a2-1767">New-AzIntegrationAccountBatchConfiguration</span></span>
+    - <span data-ttu-id="b23a2-1768">Remove-AzIntegrationAccountBatchConfiguration</span><span class="sxs-lookup"><span data-stu-id="b23a2-1768">Remove-AzIntegrationAccountBatchConfiguration</span></span>
+    - <span data-ttu-id="b23a2-1769">Set-AzIntegrationAccountBatchConfiguration</span><span class="sxs-lookup"><span data-stu-id="b23a2-1769">Set-AzIntegrationAccountBatchConfiguration</span></span>
+* <span data-ttu-id="b23a2-1770">Logic Apps SDK sürüm 4.1.0’a güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1770">Update Logic App SDK to version 4.1.0</span></span>
+
+#### <a name="azmonitor"></a><span data-ttu-id="b23a2-1771">Az.Monitor</span><span class="sxs-lookup"><span data-stu-id="b23a2-1771">Az.Monitor</span></span>
+* <span data-ttu-id="b23a2-1772">Get-AzMetric için yardım güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1772">Update help for Get-AzMetric</span></span>
+
+#### <a name="aznetwork"></a><span data-ttu-id="b23a2-1773">Az.Network</span><span class="sxs-lookup"><span data-stu-id="b23a2-1773">Az.Network</span></span>
+* <span data-ttu-id="b23a2-1774">Add-AzApplicationGatewayCustomError için yardım örneği güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1774">Update help example for Add-AzApplicationGatewayCustomError</span></span>
+
+#### <a name="azoperationalinsights"></a><span data-ttu-id="b23a2-1775">Az.OperationalInsights</span><span class="sxs-lookup"><span data-stu-id="b23a2-1775">Az.OperationalInsights</span></span>
+* <span data-ttu-id="b23a2-1776">New ve Get ApplicationInsights veri kaynağı için ek destek sunuldu.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1776">Additional support for New and Get ApplicationInsights data source.</span></span>
+    - <span data-ttu-id="b23a2-1777">Belirli bir çalışma alanı için belirli ve tüm Get ApplicationInsights veri kaynaklarını desteklemek için yeni ‘ApplicationInsights’ türü eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1777">Added new 'ApplicationInsights' kind to support Get specific and Get all ApplicationInsights data sources for given workspace.</span></span>
+    - <span data-ttu-id="b23a2-1778">Belirli Application-Insights kaynak parametrelerine (abonelik kimliği, resourceGroupName ve ad) göre veri kaynağı oluşturmak için New-AzOperationalInsightsApplicationInsightsDataSource cmdlet’i eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1778">Added New-AzOperationalInsightsApplicationInsightsDataSource cmdlet for creating data source by given Application-Insights resource parameters: subscription Id, resourceGroupName and name.</span></span>
+
+#### <a name="azresources"></a><span data-ttu-id="b23a2-1779">Az.Resources</span><span class="sxs-lookup"><span data-stu-id="b23a2-1779">Az.Resources</span></span>
+* <span data-ttu-id="b23a2-1780">[https://github.com/Azure/azure-powershell/issues/8166](https://github.com/Azure/azure-powershell/issues/8166 ) sorunu düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1780">Fix for issue https://github.com/Azure/azure-powershell/issues/8166</span></span>
+* <span data-ttu-id="b23a2-1781">[https://github.com/Azure/azure-powershell/issues/8235](https://github.com/Azure/azure-powershell/issues/8235 ) sorunu düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1781">Fix for issue https://github.com/Azure/azure-powershell/issues/8235</span></span>
+* <span data-ttu-id="b23a2-1782">[https://github.com/Azure/azure-powershell/issues/6219](https://github.com/Azure/azure-powershell/issues/6219 ) sorunu düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1782">Fix for issue https://github.com/Azure/azure-powershell/issues/6219</span></span>
+* <span data-ttu-id="b23a2-1783">KeyCredentials’ın tekrar oluşturmasını engelleyen hata düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1783">Fix bug preventing repeat creation of KeyCredentials</span></span>
+
+#### <a name="azsql"></a><span data-ttu-id="b23a2-1784">Az.Sql</span><span class="sxs-lookup"><span data-stu-id="b23a2-1784">Az.Sql</span></span>
+* <span data-ttu-id="b23a2-1785">SQL DB Hiper Ölçek katmanı için destek eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1785">Add support for SQL DB Hyperscale tier</span></span>
+* <span data-ttu-id="b23a2-1786">Geri yükleme isteğinde gereksiz özellikler ayarlandığı için geri yüklemenin başarısız olmasına yol açan hata düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1786">Fixed bug where restore could fail due to setting unnecessary properties in restore request</span></span>
+
+#### <a name="azwebsites"></a><span data-ttu-id="b23a2-1787">Az.Websites</span><span class="sxs-lookup"><span data-stu-id="b23a2-1787">Az.Websites</span></span>
+* <span data-ttu-id="b23a2-1788">Get-AzWebAppSlotMetrics örneği düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1788">Correct example in Get-AzWebAppSlotMetrics</span></span>
+
+## <a name="130---february-2019"></a><span data-ttu-id="b23a2-1789">1.3.0 - Şubat 2019</span><span class="sxs-lookup"><span data-stu-id="b23a2-1789">1.3.0 - February 2019</span></span>
+#### <a name="azaccounts"></a><span data-ttu-id="b23a2-1790">Az.Accounts</span><span class="sxs-lookup"><span data-stu-id="b23a2-1790">Az.Accounts</span></span>
+* <span data-ttu-id="b23a2-1791">En son ClientRuntime sürümüne güncelleştirme</span><span class="sxs-lookup"><span data-stu-id="b23a2-1791">Update to latest version of ClientRuntime</span></span>
+
+#### <a name="azanalysisservices"></a><span data-ttu-id="b23a2-1792">Az.AnalysisServices</span><span class="sxs-lookup"><span data-stu-id="b23a2-1792">Az.AnalysisServices</span></span>
+<span data-ttu-id="b23a2-1793">Az.AnalysisServices modülü için genel kullanılabilirlik.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1793">General availability for Az.AnalysisServices module.</span></span>
+
+#### <a name="azcompute"></a><span data-ttu-id="b23a2-1794">Az.Compute</span><span class="sxs-lookup"><span data-stu-id="b23a2-1794">Az.Compute</span></span>
+* <span data-ttu-id="b23a2-1795">AEM uzantısı: UltraSSD ile P60,P70 ve P80 diskleri için destek eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1795">AEM extension: Add support for UltraSSD and P60,P70 and P80 disks</span></span>
+* <span data-ttu-id="b23a2-1796">Set-AzVMBootDiagnostics yardım açıklaması güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1796">Update help description for Set-AzVMBootDiagnostics</span></span>
+* <span data-ttu-id="b23a2-1797">Update-AzImage için yardım açıklaması ve örnek güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1797">Update help description and example for Update-AzImage</span></span>
+
+#### <a name="azrecoveryservices"></a><span data-ttu-id="b23a2-1798">Az.RecoveryServices</span><span class="sxs-lookup"><span data-stu-id="b23a2-1798">Az.RecoveryServices</span></span>
+<span data-ttu-id="b23a2-1799">Az.RecoveryServices modülü için genel kullanılabilirlik.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1799">General availability for Az.RecoveryServices module.</span></span>
+
+#### <a name="azresources"></a><span data-ttu-id="b23a2-1800">Az.Resources</span><span class="sxs-lookup"><span data-stu-id="b23a2-1800">Az.Resources</span></span>
+* <span data-ttu-id="b23a2-1801">Kaynak grupları için etiketleme düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1801">Fix tagging for resource groups</span></span>
+    - <span data-ttu-id="b23a2-1802">Burada daha fazla bilgi bulunabilir: https://github.com/Azure/azure-powershell/issues/8166</span><span class="sxs-lookup"><span data-stu-id="b23a2-1802">More information here: https://github.com/Azure/azure-powershell/issues/8166</span></span>
+* <span data-ttu-id="b23a2-1803">`Get-AzureRmRoleAssignment` komutunun -ErrorAction'a uymama sorunu düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1803">Fix issue where `Get-AzureRmRoleAssignment` doesn't respect -ErrorAction</span></span>
+    - <span data-ttu-id="b23a2-1804">Burada daha fazla bilgi bulunabilir: https://github.com/Azure/azure-powershell/issues/8235</span><span class="sxs-lookup"><span data-stu-id="b23a2-1804">More information here: https://github.com/Azure/azure-powershell/issues/8235</span></span>
+
+#### <a name="azsql"></a><span data-ttu-id="b23a2-1805">Az.Sql</span><span class="sxs-lookup"><span data-stu-id="b23a2-1805">Az.Sql</span></span>
+* <span data-ttu-id="b23a2-1806">Add Get/Set AzSqlDatabaseBackupShortTermRetentionPolicy</span><span class="sxs-lookup"><span data-stu-id="b23a2-1806">Add Get/Set AzSqlDatabaseBackupShortTermRetentionPolicy</span></span>
+* <span data-ttu-id="b23a2-1807">Azure hesabında oturum açılmamasının SQL cmdlet'leri yürütülürken nullref özel durumuna yol açması sorunu düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1807">Fix issue where not being logged into Azure account would result in nullref exception when executing SQL cmdlets</span></span>
+* <span data-ttu-id="b23a2-1808">Get-AzSqlCapability'de null başvuru özel durumu düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1808">Fixed null ref exception in Get-AzSqlCapability</span></span>
+
+## <a name="121---january-2019"></a><span data-ttu-id="b23a2-1809">1.2.1 - Ocak 2019</span><span class="sxs-lookup"><span data-stu-id="b23a2-1809">1.2.1 - January 2019</span></span>
+#### <a name="azaccounts"></a><span data-ttu-id="b23a2-1810">Az.Accounts</span><span class="sxs-lookup"><span data-stu-id="b23a2-1810">Az.Accounts</span></span>
+* <span data-ttu-id="b23a2-1811">Kimlik Doğrulaması'nın doğru yayınını içeren sürümü</span><span class="sxs-lookup"><span data-stu-id="b23a2-1811">Release with correct version of Authentication</span></span>
+
+#### <a name="azanalysisservices"></a><span data-ttu-id="b23a2-1812">Az.AnalysisServices</span><span class="sxs-lookup"><span data-stu-id="b23a2-1812">Az.AnalysisServices</span></span>
+* <span data-ttu-id="b23a2-1813">Güncelleştirilmiş Kimlik Doğrulaması bağımlılığını içeren sürüm</span><span class="sxs-lookup"><span data-stu-id="b23a2-1813">Release with updated Authentication dependency</span></span>
+
+#### <a name="azrecoveryservices"></a><span data-ttu-id="b23a2-1814">Az.RecoveryServices</span><span class="sxs-lookup"><span data-stu-id="b23a2-1814">Az.RecoveryServices</span></span>
+* <span data-ttu-id="b23a2-1815">Güncelleştirilmiş Kimlik Doğrulaması bağımlılığını içeren sürüm</span><span class="sxs-lookup"><span data-stu-id="b23a2-1815">Release with updated Authentication dependency</span></span>
+
+## <a name="120---january-2019"></a><span data-ttu-id="b23a2-1816">1.2.0 - Ocak 2019</span><span class="sxs-lookup"><span data-stu-id="b23a2-1816">1.2.0 - January 2019</span></span>
+#### <a name="azaccounts"></a><span data-ttu-id="b23a2-1817">Az.Accounts</span><span class="sxs-lookup"><span data-stu-id="b23a2-1817">Az.Accounts</span></span>
+* <span data-ttu-id="b23a2-1818">Yalnızca Windows PowerShell 5.1 için etkileşim ve kullanıcı adı/parola kimlik doğrulaması eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1818">Add interactive and username/password authentication for Windows PowerShell 5.1 only</span></span>
+* <span data-ttu-id="b23a2-1819">Hatalı çevrimiçi yardım URL'leri güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1819">Update incorrect online help URLs</span></span>
+* <span data-ttu-id="b23a2-1820">Uninstall-AzureRm için PC Çekirdeğine uyarı iletisi eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1820">Add warning message in PS Core for Uninstall-AzureRm</span></span>
+
+#### <a name="azaks"></a><span data-ttu-id="b23a2-1821">Az.Aks</span><span class="sxs-lookup"><span data-stu-id="b23a2-1821">Az.Aks</span></span>
+* <span data-ttu-id="b23a2-1822">Hatalı çevrimiçi yardım URL'leri güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1822">Update incorrect online help URLs</span></span>
+
+#### <a name="azautomation"></a><span data-ttu-id="b23a2-1823">Az.Automation</span><span class="sxs-lookup"><span data-stu-id="b23a2-1823">Az.Automation</span></span>
+* <span data-ttu-id="b23a2-1824">Python 2 runbook'ları için destek eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1824">Added support for Python 2 runbooks</span></span>
+* <span data-ttu-id="b23a2-1825">Hatalı çevrimiçi yardım URL'leri güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1825">Update incorrect online help URLs</span></span>
+
+#### <a name="azcdn"></a><span data-ttu-id="b23a2-1826">Az.Cdn</span><span class="sxs-lookup"><span data-stu-id="b23a2-1826">Az.Cdn</span></span>
+* <span data-ttu-id="b23a2-1827">Hatalı çevrimiçi yardım URL'leri güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1827">Update incorrect online help URLs</span></span>
+
+#### <a name="azcompute"></a><span data-ttu-id="b23a2-1828">Az.Compute</span><span class="sxs-lookup"><span data-stu-id="b23a2-1828">Az.Compute</span></span>
+* <span data-ttu-id="b23a2-1829">Invoke-AzVMReimage cmdlet'i eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1829">Add Invoke-AzVMReimage cmdlet</span></span>
+* <span data-ttu-id="b23a2-1830">Set-AzVmss'ye TempDisk parametresi eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1830">Add TempDisk parameter to Set-AzVmss</span></span>
+* <span data-ttu-id="b23a2-1831">New-AzVM'nin uyarı iletisi düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1831">Fix the warning message of New-AzVM</span></span>
+
+#### <a name="azcontainerregistry"></a><span data-ttu-id="b23a2-1832">Az.ContainerRegistry</span><span class="sxs-lookup"><span data-stu-id="b23a2-1832">Az.ContainerRegistry</span></span>
+* <span data-ttu-id="b23a2-1833">Hatalı çevrimiçi yardım URL'leri güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1833">Update incorrect online help URLs</span></span>
+
+#### <a name="azdatafactory"></a><span data-ttu-id="b23a2-1834">Az.DataFactory</span><span class="sxs-lookup"><span data-stu-id="b23a2-1834">Az.DataFactory</span></span>
+* <span data-ttu-id="b23a2-1835">ADF .Net SDK sürümü 3.0.0'a güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1835">Updated ADF .Net SDK version to 3.0.0</span></span>
+
+#### <a name="azdatalakestore"></a><span data-ttu-id="b23a2-1836">Az.DataLakeStore</span><span class="sxs-lookup"><span data-stu-id="b23a2-1836">Az.DataLakeStore</span></span>
+* <span data-ttu-id="b23a2-1837">MSI kullanırken ADLS uç noktasındaki sorun düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1837">Fix issue with ADLS endpoint when using MSI</span></span>
+    - <span data-ttu-id="b23a2-1838">Burada daha fazla bilgi bulunabilir: https://github.com/Azure/azure-powershell/issues/7462</span><span class="sxs-lookup"><span data-stu-id="b23a2-1838">More information here: https://github.com/Azure/azure-powershell/issues/7462</span></span>
+* <span data-ttu-id="b23a2-1839">Hatalı çevrimiçi yardım URL'leri güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1839">Update incorrect online help URLs</span></span>
+
+#### <a name="aziothub"></a><span data-ttu-id="b23a2-1840">Az.IotHub</span><span class="sxs-lookup"><span data-stu-id="b23a2-1840">Az.IotHub</span></span>
+* <span data-ttu-id="b23a2-1841">Add-IotHubRoutingEndpoint cmdlet'ine Kodlama biçimi eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1841">Add Encoding format to Add-IotHubRoutingEndpoint cmdlet.</span></span>
+
+#### <a name="azkeyvault"></a><span data-ttu-id="b23a2-1842">Az.KeyVault</span><span class="sxs-lookup"><span data-stu-id="b23a2-1842">Az.KeyVault</span></span>
+* <span data-ttu-id="b23a2-1843">Hatalı çevrimiçi yardım URL'leri güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1843">Update incorrect online help URLs</span></span>
+
+#### <a name="aznetwork"></a><span data-ttu-id="b23a2-1844">Az.Network</span><span class="sxs-lookup"><span data-stu-id="b23a2-1844">Az.Network</span></span>
+* <span data-ttu-id="b23a2-1845">Hatalı çevrimiçi yardım URL'leri güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1845">Update incorrect online help URLs</span></span>
+
+#### <a name="azresources"></a><span data-ttu-id="b23a2-1846">Az.Resources</span><span class="sxs-lookup"><span data-stu-id="b23a2-1846">Az.Resources</span></span>
+* <span data-ttu-id="b23a2-1847">'New-AzADAppCredential' ve 'New-AzADSpCredential' başvuru belgelerindeki hatalı örnekler düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1847">Fix incorrect examples in 'New-AzADAppCredential' and 'New-AzADSpCredential' reference documentation</span></span>
+* <span data-ttu-id="b23a2-1848">Kaynak grubu dağıtım cmdlet'lerini yürütmeden önce '-TemplateFile' parametresi yolunun çözülmemesi sorunu düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1848">Fix issue where path for '-TemplateFile' parameter was not being resolved before executing resource group deployment cmdlets</span></span>
+* <span data-ttu-id="b23a2-1849">Az.Resources: Belgede New-AzureRmPolicyDefinition -Mode varsayılan değeri düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1849">Az.Resources: Correct documentation for New-AzureRmPolicyDefinition -Mode default value</span></span>
+* <span data-ttu-id="b23a2-1850">Az.Resources: [https://github.com/Azure/azure-powershell/issues/9351](https://github.com/Azure/azure-powershell/issues/7522 ) sorunu düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1850">Az.Resources: Fix for issue https://github.com/Azure/azure-powershell/issues/7522</span></span>
+* <span data-ttu-id="b23a2-1851">Az.Resources: https://github.com/Azure/azure-powershell/issues/5747 sorunu düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1851">Az.Resources: Fix for issue https://github.com/Azure/azure-powershell/issues/5747</span></span>
+* <span data-ttu-id="b23a2-1852">'PSResourceGroupDeployment' nesnesinin biçimlendirme sorunu düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1852">Fix formatting issue with 'PSResourceGroupDeployment' object</span></span>
+    - <span data-ttu-id="b23a2-1853">Burada daha fazla bilgi bulunabilir: https://github.com/Azure/azure-powershell/issues/2123</span><span class="sxs-lookup"><span data-stu-id="b23a2-1853">More information here: https://github.com/Azure/azure-powershell/issues/2123</span></span>
+
+#### <a name="azservicefabric"></a><span data-ttu-id="b23a2-1854">Az.ServiceFabric</span><span class="sxs-lookup"><span data-stu-id="b23a2-1854">Az.ServiceFabric</span></span>
+* <span data-ttu-id="b23a2-1855">VMSS modeline sertifika eklendiğinde ama özel durum oluştuğunda geri alma için hata düzeltmesi: https://github.com/Azure/service-fabric-issues/issues/932</span><span class="sxs-lookup"><span data-stu-id="b23a2-1855">Rollback when a certificate is added to VMSS model but an exception is thrown this is to fix bug: https://github.com/Azure/service-fabric-issues/issues/932</span></span>
+* <span data-ttu-id="b23a2-1856">Bazı hata iletileri düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1856">Fix some error messages.</span></span>
+* <span data-ttu-id="b23a2-1857">Az geçişinde çalışmayan New-AzServiceFabriCluster için varsayılan ARM şablonuyla küme oluşturma sorunu düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1857">Fix create cluster with default ARM template for New-AzServiceFabriCluster which was not working with migration to Az.</span></span>
+* <span data-ttu-id="b23a2-1858">Uzantıda küme kimliği denetlenerek küme/uygulama sertifikasının yalnızca kümeye karşılık gelen VM Ölçek Kümelerine eklenmesi düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1858">Fix add cluster/application certificate to only add to VM Scale Sets that correspond to the cluster by checking cluster id in the extension.</span></span>
+
+#### <a name="azsignalr"></a><span data-ttu-id="b23a2-1859">Az.SignalR</span><span class="sxs-lookup"><span data-stu-id="b23a2-1859">Az.SignalR</span></span>
+* <span data-ttu-id="b23a2-1860">Hatalı çevrimiçi yardım URL'leri güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1860">Update incorrect online help URLs</span></span>
+
+#### <a name="azsql"></a><span data-ttu-id="b23a2-1861">Az.Sql</span><span class="sxs-lookup"><span data-stu-id="b23a2-1861">Az.Sql</span></span>
+* <span data-ttu-id="b23a2-1862">Hatalı çevrimiçi yardım URL'leri güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1862">Update incorrect online help URLs</span></span>
+* <span data-ttu-id="b23a2-1863">LicenseType parametresinin parametre açıklaması olası değerlerle güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1863">Updated parameter description for LicenseType parameter with possible values</span></span>
+* <span data-ttu-id="b23a2-1864">Yönetilen örnek kimliği güncelleştirmesinin, güncelleştirilen tek özellik bu olduğunda çalışmaması sorunu düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1864">Fix for updating managed instance identity not working when it is the only updated property</span></span>
+* <span data-ttu-id="b23a2-1865">Yönetilen örnekte özel harmanlama desteği</span><span class="sxs-lookup"><span data-stu-id="b23a2-1865">Support for custom collation on managed instance</span></span>
+
+#### <a name="azstorage"></a><span data-ttu-id="b23a2-1866">Az.Storage</span><span class="sxs-lookup"><span data-stu-id="b23a2-1866">Az.Storage</span></span>
+* <span data-ttu-id="b23a2-1867">Hatalı çevrimiçi yardım URL'leri güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1867">Update incorrect online help URLs</span></span>
+* <span data-ttu-id="b23a2-1868">Premium Depolama Hesabı klasik Günlük/Ölçüm desteği sağlamadığından, Premium Depolama Hesabında klasik Günlük/Ölçüm için get/set komutları kullanıldığında ayrıntılı hata iletisi veriliyor.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1868">Give detail error message when get/set classic Logging/Metric on Premium Storage Account, since Premium Storage Account not supoort classic Logging/Metric.</span></span>
+    - <span data-ttu-id="b23a2-1869">Get/Set-AzStorageServiceLoggingProperty</span><span class="sxs-lookup"><span data-stu-id="b23a2-1869">Get/Set-AzStorageServiceLoggingProperty</span></span>
+    - <span data-ttu-id="b23a2-1870">Get/Set-AzStorageServiceMetricsProperty</span><span class="sxs-lookup"><span data-stu-id="b23a2-1870">Get/Set-AzStorageServiceMetricsProperty</span></span>
+
+#### <a name="aztrafficmanager"></a><span data-ttu-id="b23a2-1871">Az.TrafficManager</span><span class="sxs-lookup"><span data-stu-id="b23a2-1871">Az.TrafficManager</span></span>
+* <span data-ttu-id="b23a2-1872">Hatalı çevrimiçi yardım URL'leri güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1872">Update incorrect online help URLs</span></span>
+
+#### <a name="azwebsites"></a><span data-ttu-id="b23a2-1873">Az.Websites</span><span class="sxs-lookup"><span data-stu-id="b23a2-1873">Az.Websites</span></span>
+* <span data-ttu-id="b23a2-1874">Hatalı çevrimiçi yardım URL'leri güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1874">Update incorrect online help URLs</span></span>
+* <span data-ttu-id="b23a2-1875">Uygulama ASE'de barındırılıyorsa, sertifikayı doğru kaynak grubuna ve konuma yüklemek için 'New-AzWebAppSSLBinding' düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1875">Fixes 'New-AzWebAppSSLBinding' to upload the certificate to the correct resourcegroup+location if the app is hosted on an ASE.</span></span>
+* <span data-ttu-id="b23a2-1876">SSL sertifikası bir uygulamaya bağlanırken etiketlerin üzerine yazılmaması için 'New-AzWebAppSSLBinding' düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1876">Fixes 'New-AzWebAppSSLBinding' to not overwrite the tags on binding an SSL certificate to an app</span></span>
+
+## <a name="110---january-2019"></a><span data-ttu-id="b23a2-1877">1.1.0 - Ocak 2019</span><span class="sxs-lookup"><span data-stu-id="b23a2-1877">1.1.0 - January 2019</span></span>
+#### <a name="azaccounts"></a><span data-ttu-id="b23a2-1878">Az.Accounts</span><span class="sxs-lookup"><span data-stu-id="b23a2-1878">Az.Accounts</span></span>
+* <span data-ttu-id="b23a2-1879">Enable-AzureRmAlias cmdlet'ine 'Local' Kapsamı eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1879">Add 'Local' Scope to Enable-AzureRmAlias</span></span>
+
+#### <a name="azcompute"></a><span data-ttu-id="b23a2-1880">Az.Compute</span><span class="sxs-lookup"><span data-stu-id="b23a2-1880">Az.Compute</span></span>
+* <span data-ttu-id="b23a2-1881">Restart/Start/Stop/Remove/Set-AzVM ve Save-AzVMImage için ayarlanan ID parametresinde ad artık isteğe bağlı</span><span class="sxs-lookup"><span data-stu-id="b23a2-1881">Name is now optional in ID parameter set for Restart/Start/Stop/Remove/Set-AzVM and Save-AzVMImage</span></span>
+* <span data-ttu-id="b23a2-1882">Yardım dosyalarında ID parametresinin açıklaması güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1882">Updated the description of ID in help files</span></span>
+* <span data-ttu-id="b23a2-1883">Az.Accounts modülündeki geriye dönük uyumluluk sorunu çözüldü</span><span class="sxs-lookup"><span data-stu-id="b23a2-1883">Fix backward compatibility issue with Az.Accounts module</span></span>
+
+#### <a name="azdatalakestore"></a><span data-ttu-id="b23a2-1884">Az.DataLakeStore</span><span class="sxs-lookup"><span data-stu-id="b23a2-1884">Az.DataLakeStore</span></span>
+* <span data-ttu-id="b23a2-1885">SDK düzeltmeleri için veri düzleminin SDK sürümü 1.1.14 olarak güncelleştirildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1885">Update the sdk version of dataplane to 1.1.14 for SDK fixes.</span></span>
+    - <span data-ttu-id="b23a2-1886">getfilestatus ve liststatus için negatif acesstime ve modificationtime değerlerini işleme yöntemi düzeltildi, async iptal belirteci düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1886">Fix handling of negative acesstime and modificationtime for getfilestatus and liststatus, Fix async cancellation token</span></span>
+
+#### <a name="azeventgrid"></a><span data-ttu-id="b23a2-1887">Az.EventGrid</span><span class="sxs-lookup"><span data-stu-id="b23a2-1887">Az.EventGrid</span></span>
+* <span data-ttu-id="b23a2-1888">2019-01-01 API sürümünü kullanmak için güncelleştirildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1888">Updated to use the 2019-01-01 API version.</span></span>
+* <span data-ttu-id="b23a2-1889">Aşağıdaki cmdlet'ler 2019-01-01 API sürümünde yeni senaryoyu destekleyecek şekilde güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1889">Update the following cmdlets to support new scenario in 2019-01-01 API version</span></span>
+    - <span data-ttu-id="b23a2-1890">New-AzureRmEventGridSubscription: Şunları belirtmek için yeni isteğe bağlı parametreler eklendi:</span><span class="sxs-lookup"><span data-stu-id="b23a2-1890">New-AzureRmEventGridSubscription: Add new optional parameters for specifying:</span></span>
+        - <span data-ttu-id="b23a2-1891">Olay Yaşam Süresi,</span><span class="sxs-lookup"><span data-stu-id="b23a2-1891">Event Time-To-Live,</span></span>
+        - <span data-ttu-id="b23a2-1892">Olaylar için teslim girişimleri sayısı üst sınırı,</span><span class="sxs-lookup"><span data-stu-id="b23a2-1892">Maximum number of delivery attempts for the events,</span></span>
+        - <span data-ttu-id="b23a2-1893">Teslim edilemeyen ileti uç noktası.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1893">Dead letter endpoint.</span></span>
+    - <span data-ttu-id="b23a2-1894">Update-AzureRmEventGridSubscription: Şunları belirtmek için yeni isteğe bağlı parametreler eklendi:</span><span class="sxs-lookup"><span data-stu-id="b23a2-1894">Update-AzureRmEventGridSubscription: Add new optional parameters for specifying:</span></span>
+        - <span data-ttu-id="b23a2-1895">Olay Yaşam Süresi,</span><span class="sxs-lookup"><span data-stu-id="b23a2-1895">Event Time-To-Live,</span></span>
+        - <span data-ttu-id="b23a2-1896">Olaylar için teslim girişimleri sayısı üst sınırı,</span><span class="sxs-lookup"><span data-stu-id="b23a2-1896">Maximum number of delivery attempts for the events,</span></span>
+        - <span data-ttu-id="b23a2-1897">Teslim edilemeyen ileti uç noktası.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1897">Dead letter endpoint.</span></span>
+* <span data-ttu-id="b23a2-1898">New-AzureRmEventGridSubscription ve Update-AzureRmEventGridSubscription cmdlet'lerinde EndpointType seçeneği için yeni enum değerleri (storageQueue ve hybridConnection) eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1898">Add new enum values (namely, storageQueue and hybridConnection) for EndpointType option in New-AzureRmEventGridSubscription and Update-AzureRmEventGridSubscription cmdlets.</span></span>
+* <span data-ttu-id="b23a2-1899">Olay aboneliğini oluşturma veya güncelleştirme işleminde kullanıcının el ile bir eylem yapması beklendiğinde uyarı iletisi gösteriliyor.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1899">Show warning message if creating or updating the event subscription is expected to entail manual action from user.</span></span>
+
+#### <a name="aziothub"></a><span data-ttu-id="b23a2-1900">Az.IotHub</span><span class="sxs-lookup"><span data-stu-id="b23a2-1900">Az.IotHub</span></span>
+* <span data-ttu-id="b23a2-1901">IotHub SDK'sı en son sürümüne güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1901">Updated to the latest version of the IotHub SDK</span></span>
+
+#### <a name="azlogicapp"></a><span data-ttu-id="b23a2-1902">Az.LogicApp</span><span class="sxs-lookup"><span data-stu-id="b23a2-1902">Az.LogicApp</span></span>
+* <span data-ttu-id="b23a2-1903">Get-AzLogicApp, Name değeri belirtilmemiş olanların tümünü listeliyor</span><span class="sxs-lookup"><span data-stu-id="b23a2-1903">Get-AzLogicApp lists all without specified Name</span></span>
+
+#### <a name="azresources"></a><span data-ttu-id="b23a2-1904">Az.Resources</span><span class="sxs-lookup"><span data-stu-id="b23a2-1904">Az.Resources</span></span>
+* <span data-ttu-id="b23a2-1905">'Get-AzResource' için '-ODataQuery' ve '-ResourceId' parametreleri sağlanırken ortaya çıkan parametre ayarlama sorunu düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1905">Fix parameter set issue when providing '-ODataQuery' and '-ResourceId' parameters for 'Get-AzResource'</span></span>
+    - <span data-ttu-id="b23a2-1906">Burada daha fazla bilgi bulunabilir: https://github.com/Azure/azure-powershell/issues/7875</span><span class="sxs-lookup"><span data-stu-id="b23a2-1906">More information here: https://github.com/Azure/azure-powershell/issues/7875</span></span>
+* <span data-ttu-id="b23a2-1907">New/Set-AzPolicyDefinition cmdlet'lerinde -Custom parametresinin işlenmesi düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1907">Fix handling of the -Custom parameter in New/Set-AzPolicyDefinition</span></span>
+* <span data-ttu-id="b23a2-1908">New-AzDeployment belgelerindeki yazım hatası düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1908">Fix typo in New-AzDeployment documentation</span></span>
+* <span data-ttu-id="b23a2-1909">'New-AzADUser' için '-MailNickname' parametresi zorunlu hale getirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1909">Made '-MailNickname' parameter mandatory for 'New-AzADUser'</span></span>
+    - <span data-ttu-id="b23a2-1910">Burada daha fazla bilgi bulunabilir: https://github.com/Azure/azure-powershell/issues/8220</span><span class="sxs-lookup"><span data-stu-id="b23a2-1910">More information here: https://github.com/Azure/azure-powershell/issues/8220</span></span>
+
+#### <a name="azsignalr"></a><span data-ttu-id="b23a2-1911">Az.SignalR</span><span class="sxs-lookup"><span data-stu-id="b23a2-1911">Az.SignalR</span></span>
+* <span data-ttu-id="b23a2-1912">Az.Accounts modülündeki geriye dönük uyumluluk sorunu çözüldü</span><span class="sxs-lookup"><span data-stu-id="b23a2-1912">Fix backward compatibility issue with Az.Accounts module</span></span>
+
+#### <a name="azsql"></a><span data-ttu-id="b23a2-1913">Az.Sql</span><span class="sxs-lookup"><span data-stu-id="b23a2-1913">Az.Sql</span></span>
+* <span data-ttu-id="b23a2-1914">Depolama yönetimi istemci bağımlılığı ortak SDK uygulamasına dönüştürüldü.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1914">Converted the Storage management client dependency to the common SDK implementation.</span></span>
+
+#### <a name="azstorage"></a><span data-ttu-id="b23a2-1915">Az.Storage</span><span class="sxs-lookup"><span data-stu-id="b23a2-1915">Az.Storage</span></span>
+* <span data-ttu-id="b23a2-1916">Sas Token, OAuth veya Anonymous ile oluşturulduğunda Storage bağlamının StorageAccountName değeri gerçek Depolama Hesabı Adına ayarlanıyor</span><span class="sxs-lookup"><span data-stu-id="b23a2-1916">Set the StorageAccountName of Storage context as the real Storage Account Name, when it's created with Sas Token, OAuth or Anonymous</span></span>
+    - <span data-ttu-id="b23a2-1917">New-AzStorageContext</span><span class="sxs-lookup"><span data-stu-id="b23a2-1917">New-AzStorageContext</span></span>
+* <span data-ttu-id="b23a2-1918">Blob Anlık Görüntü Nesnesinin Sas Belirteci '-FullUri' parametresiyle oluşturulduğunda, döndürülen Uri anlık görüntü Uri'si olacak şekilde düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1918">Create Sas Token of Blob Snapshot Object with '-FullUri' parameter, fix the returned Uri to be the sanpshot Uri</span></span>
+    - <span data-ttu-id="b23a2-1919">New-AzStorageBlobSASToken</span><span class="sxs-lookup"><span data-stu-id="b23a2-1919">New-AzStorageBlobSASToken</span></span>
+
+#### <a name="azwebsites"></a><span data-ttu-id="b23a2-1920">Az.Websites</span><span class="sxs-lookup"><span data-stu-id="b23a2-1920">Az.Websites</span></span>
+* <span data-ttu-id="b23a2-1921">'Get-AzDeletedWebApp' cmdlet'indeki tarih ayrıştırma hatası düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1921">Fixed a date parsing bug in 'Get-AzDeletedWebApp'</span></span>
+* <span data-ttu-id="b23a2-1922">Az.Accounts modülündeki geriye dönük uyumluluk sorunu çözüldü</span><span class="sxs-lookup"><span data-stu-id="b23a2-1922">Fix backward compatibility issue with Az.Accounts module</span></span>
+
+## <a name="100---december-2018"></a><span data-ttu-id="b23a2-1923">1.0.0 - Aralık 2018</span><span class="sxs-lookup"><span data-stu-id="b23a2-1923">1.0.0 - December 2018</span></span>
+### <a name="general"></a><span data-ttu-id="b23a2-1924">Genel</span><span class="sxs-lookup"><span data-stu-id="b23a2-1924">General</span></span>
+
+- <span data-ttu-id="b23a2-1925">Az Modülü Genel Kullanıma Sunuldu</span><span class="sxs-lookup"><span data-stu-id="b23a2-1925">General Availability of Az Module</span></span>
+- <span data-ttu-id="b23a2-1926">Her modül için çevrimiçi yardım</span><span class="sxs-lookup"><span data-stu-id="b23a2-1926">Online help for each module</span></span>
+- <span data-ttu-id="b23a2-1927">Diğer ayrıntılar ve yol haritası için bkz. [Az Duyuru Sayfası](https://aka.ms/azps-announce)</span><span class="sxs-lookup"><span data-stu-id="b23a2-1927">For more details and a roadmap, see the [Az Announcement page](https://aka.ms/azps-announce)</span></span>
+- <span data-ttu-id="b23a2-1928">AzureRM’den geçiş hakkında bilgi edinmek için bkz. [Geçiş Kılavuzu](https://aka.ms/azps-migration-guide)</span><span class="sxs-lookup"><span data-stu-id="b23a2-1928">See the [Migration Guide](https://aka.ms/azps-migration-guide) for information on migrating from AzureRM</span></span>
+
+### <a name="azaccounts"></a><span data-ttu-id="b23a2-1929">Az.Accounts</span><span class="sxs-lookup"><span data-stu-id="b23a2-1929">Az.Accounts</span></span>
+- <span data-ttu-id="b23a2-1930">Önceki adı: Az.Profile</span><span class="sxs-lookup"><span data-stu-id="b23a2-1930">Changed from Az.Profile</span></span>
+- <span data-ttu-id="b23a2-1931">Profil ve bağlam türleri için tablo biçimleri düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1931">Fixed table formats for profile and context types</span></span>
+
+### <a name="azapimanagement"></a><span data-ttu-id="b23a2-1932">Az.ApiManagement</span><span class="sxs-lookup"><span data-stu-id="b23a2-1932">Az.ApiManagement</span></span>
+- <span data-ttu-id="b23a2-1933">#7002 düzeltmeleri</span><span class="sxs-lookup"><span data-stu-id="b23a2-1933">Fixes for #7002</span></span>
+- <span data-ttu-id="b23a2-1934">Küçük yeni değişiklikler, ayrıntılar için bkz. [Geçiş Kılavuzu](https://aka.ms/azps-migration-guide)</span><span class="sxs-lookup"><span data-stu-id="b23a2-1934">Minor breaking changes, see the [Migration Guide](https://aka.ms/azps-migration-guide)  for details</span></span>
+
+### <a name="azbatch"></a><span data-ttu-id="b23a2-1935">Az.Batch</span><span class="sxs-lookup"><span data-stu-id="b23a2-1935">Az.Batch</span></span>
+- <span data-ttu-id="b23a2-1936">`PSComputeNode` üzerinde yeni `NodeAgentInformation` aracılığıyla bir havuzdaki her bir VM’de Azure Batch Düğüm Aracısı’nın hangi sürümünün çalıştığını görme olanağı eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1936">Added the ability to see what version of the Azure Batch Node Agent is running on each of the VMs in a pool, via the new `NodeAgentInformation` property on `PSComputeNode`.</span></span>
+- <span data-ttu-id="b23a2-1937">`PSDataDisk` için `Caching` varsayılan ayarı artık `None` yerine `ReadWrite`.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1937">The `Caching` default for `PSDataDisk` is now `ReadWrite` instead of `None`.</span></span>
+- <span data-ttu-id="b23a2-1938">Küçük yeni değişiklikler, ayrıntılar için bkz. [Geçiş Kılavuzu](https://aka.ms/azps-migration-guide)</span><span class="sxs-lookup"><span data-stu-id="b23a2-1938">Minor breaking changes, see the [Migration Guide](https://aka.ms/azps-migration-guide)  for details</span></span>
+
+### <a name="azbilling"></a><span data-ttu-id="b23a2-1939">Az.Billing</span><span class="sxs-lookup"><span data-stu-id="b23a2-1939">Az.Billing</span></span>
+- <span data-ttu-id="b23a2-1940">Billing, Consumption ve UsageAggregates cmdlet’lerini birleştirir, ayrıntılar için bkz. [Geçiş Kılavuzu](https://aka.ms/azps-migration-guide)</span><span class="sxs-lookup"><span data-stu-id="b23a2-1940">Combines Billing, Consumption, and UsageAggregates cmdlets, see the [Migration Guide](https://aka.ms/azps-migration-guide)  for details</span></span>
+
+### <a name="azcognitivservices"></a><span data-ttu-id="b23a2-1941">Az.CognitivServices</span><span class="sxs-lookup"><span data-stu-id="b23a2-1941">Az.CognitivServices</span></span>
+- <span data-ttu-id="b23a2-1942">New-AzureRmCognitiveServicesAccount işleminde kullanılabilen SkuName ve Typem için tamamlayıcılar eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1942">Add completers for SkuName and Typem available on New-AzureRmCognitiveServicesAccount operation</span></span>
+- <span data-ttu-id="b23a2-1943">Get-AzCognitiveServicesAccountSkus cmdlet’inden GetSkusWithAccountParamSetName parametresi kaldırıldı</span><span class="sxs-lookup"><span data-stu-id="b23a2-1943">Removed GetSkusWithAccountParamSetName parameter set from Get-AzCognitiveServicesAccountSkus</span></span>
+
+### <a name="azcontainerinstance"></a><span data-ttu-id="b23a2-1944">Az.ContainerInstance</span><span class="sxs-lookup"><span data-stu-id="b23a2-1944">Az.ContainerInstance</span></span>
+- <span data-ttu-id="b23a2-1945">ManagedIdentity desteği eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1945">Added ManagedIdentity support</span></span>
+
+### <a name="azdatalakeanalytics"></a><span data-ttu-id="b23a2-1946">Az.DataLakeAnalytics</span><span class="sxs-lookup"><span data-stu-id="b23a2-1946">Az.DataLakeAnalytics</span></span>
+- <span data-ttu-id="b23a2-1947">Küçük yeni değişiklikler, ayrıntılar için bkz. [Geçiş Kılavuzu](https://aka.ms/azps-migration-guide)</span><span class="sxs-lookup"><span data-stu-id="b23a2-1947">Minor breaking changes, see the [Migration Guide](https://aka.ms/azps-migration-guide)  for details</span></span>
+
+### <a name="azdatalakestore"></a><span data-ttu-id="b23a2-1948">Az.DataLakeStore</span><span class="sxs-lookup"><span data-stu-id="b23a2-1948">Az.DataLakeStore</span></span>
+- <span data-ttu-id="b23a2-1949">Küçük yeni değişiklikler, ayrıntılar için bkz. [Geçiş Kılavuzu](https://aka.ms/azps-migration-guide)</span><span class="sxs-lookup"><span data-stu-id="b23a2-1949">Minor breaking changes, see the [Migration Guide](https://aka.ms/azps-migration-guide)  for details</span></span>
+
+### <a name="azmonitor"></a><span data-ttu-id="b23a2-1950">Az.Monitor</span><span class="sxs-lookup"><span data-stu-id="b23a2-1950">Az.Monitor</span></span>
+- <span data-ttu-id="b23a2-1951">Az.Insights cmdlet’inin adı Az.Monitor olarak değiştirildi ve başka yeni değişiklikler yapıldı, ayrıntılar için bkz. [Geçiş Kılavuzu](https://aka.ms/azps-migration-guide)</span><span class="sxs-lookup"><span data-stu-id="b23a2-1951">Renamed Az.Insights to Az.Monitor and other minor breaking changes, see the [Migration Guide](https://aka.ms/azps-migration-guide)  for details</span></span>
+
+### <a name="azkeyvault"></a><span data-ttu-id="b23a2-1952">Az.KeyVault</span><span class="sxs-lookup"><span data-stu-id="b23a2-1952">Az.KeyVault</span></span>
+- <span data-ttu-id="b23a2-1953">Çıkış türlerinden kullanım dışı 'PurgeDisabled' özelliği kaldırıldı</span><span class="sxs-lookup"><span data-stu-id="b23a2-1953">Removed the deprecated 'PurgeDisabled' property from output types</span></span>
+
+### <a name="azmachinelearning"></a><span data-ttu-id="b23a2-1954">Az.MachineLearning</span><span class="sxs-lookup"><span data-stu-id="b23a2-1954">Az.MachineLearning</span></span>
+- <span data-ttu-id="b23a2-1955">Az.MachineLearningCompute modülünden cmdlet’ler eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1955">Included cmdlets from Az.MachineLearningCompute module</span></span>
+
+### <a name="azmedia"></a><span data-ttu-id="b23a2-1956">Az.Media</span><span class="sxs-lookup"><span data-stu-id="b23a2-1956">Az.Media</span></span>
+- <span data-ttu-id="b23a2-1957">New-AzMediaService cmdlet’inden kullanım dışı -Tags diğer adı kaldırıldı</span><span class="sxs-lookup"><span data-stu-id="b23a2-1957">Remove deprecated -Tags alias from New-AzMediaService</span></span>
+
+### <a name="aznetwork"></a><span data-ttu-id="b23a2-1958">Az.Network</span><span class="sxs-lookup"><span data-stu-id="b23a2-1958">Az.Network</span></span>
+<span data-ttu-id="b23a2-1959">Application Gateway’de RewriteRuleSets parametresini yapılandırma desteği eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1959">Added support for the configuring RewriteRuleSets in the Application Gateway</span></span>
+    - <span data-ttu-id="b23a2-1960">Yeni cmdlet'ler eklendi:</span><span class="sxs-lookup"><span data-stu-id="b23a2-1960">New cmdlets added:</span></span>
+        - <span data-ttu-id="b23a2-1961">Add-AzureRmApplicationGatewayRewriteRuleSet</span><span class="sxs-lookup"><span data-stu-id="b23a2-1961">Add-AzureRmApplicationGatewayRewriteRuleSet</span></span>
+        - <span data-ttu-id="b23a2-1962">Get-AzureRmApplicationGatewayRewriteRuleSet</span><span class="sxs-lookup"><span data-stu-id="b23a2-1962">Get-AzureRmApplicationGatewayRewriteRuleSet</span></span>
+        - <span data-ttu-id="b23a2-1963">New-AzureRmApplicationGatewayRewriteRuleSet</span><span class="sxs-lookup"><span data-stu-id="b23a2-1963">New-AzureRmApplicationGatewayRewriteRuleSet</span></span>
+        - <span data-ttu-id="b23a2-1964">Remove-AzureRmApplicationGatewayRewriteRuleSet</span><span class="sxs-lookup"><span data-stu-id="b23a2-1964">Remove-AzureRmApplicationGatewayRewriteRuleSet</span></span>
+        - <span data-ttu-id="b23a2-1965">Set-AzureRmApplicationGatewayRewriteRuleSet</span><span class="sxs-lookup"><span data-stu-id="b23a2-1965">Set-AzureRmApplicationGatewayRewriteRuleSet</span></span>
+        - <span data-ttu-id="b23a2-1966">New-AzureRmApplicationGatewayRewriteRule</span><span class="sxs-lookup"><span data-stu-id="b23a2-1966">New-AzureRmApplicationGatewayRewriteRule</span></span>
+        - <span data-ttu-id="b23a2-1967">New-AzureRmApplicationGatewayRewriteRuleActionSet</span><span class="sxs-lookup"><span data-stu-id="b23a2-1967">New-AzureRmApplicationGatewayRewriteRuleActionSet</span></span>
+        - <span data-ttu-id="b23a2-1968">New-AzureRmApplicationGatewayRewriteRuleHeaderConfiguration</span><span class="sxs-lookup"><span data-stu-id="b23a2-1968">New-AzureRmApplicationGatewayRewriteRuleHeaderConfiguration</span></span>
+    - <span data-ttu-id="b23a2-1969">Cmdlet’ler isteğe bağlı -RewriteRuleSet parametresiyle güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1969">Cmdlets updated with optional parameter -RewriteRuleSet</span></span>
+        - <span data-ttu-id="b23a2-1970">New-AzureRmApplicationGateway</span><span class="sxs-lookup"><span data-stu-id="b23a2-1970">New-AzureRmApplicationGateway</span></span>
+        - <span data-ttu-id="b23a2-1971">New-AzureRmApplicationGatewayRequestRoutingRule</span><span class="sxs-lookup"><span data-stu-id="b23a2-1971">New-AzureRmApplicationGatewayRequestRoutingRule</span></span>
+        - <span data-ttu-id="b23a2-1972">Add-AzureRmApplicationGatewayRequestRoutingRule</span><span class="sxs-lookup"><span data-stu-id="b23a2-1972">Add-AzureRmApplicationGatewayRequestRoutingRule</span></span>
+        - <span data-ttu-id="b23a2-1973">New-AzureRmApplicationGatewayPathRuleConfig</span><span class="sxs-lookup"><span data-stu-id="b23a2-1973">New-AzureRmApplicationGatewayPathRuleConfig</span></span>
+        - <span data-ttu-id="b23a2-1974">Add-AzureRmApplicationGatewayUrlPathMapConfig</span><span class="sxs-lookup"><span data-stu-id="b23a2-1974">Add-AzureRmApplicationGatewayUrlPathMapConfig</span></span>
+        - <span data-ttu-id="b23a2-1975">New-AzureRmApplicationGatewayUrlPathMapConfig, Kimlik kullanarak Application Gateway’e KeyVault Desteği ekledi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-1975">New-AzureRmApplicationGatewayUrlPathMapConfig Added KeyVault Support to Application Gateway using Identity.</span></span>
+    - <span data-ttu-id="b23a2-1976">Cmdlet’ler isteğe bağlı -KeyVaultSecretId, -KeyVaultSecret parametresiyle güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1976">Cmdlets updated with optonal parameter -KeyVaultSecretId, -KeyVaultSecret</span></span>
+        - <span data-ttu-id="b23a2-1977">Add-AzApplicationGatewaySslCertificate</span><span class="sxs-lookup"><span data-stu-id="b23a2-1977">Add-AzApplicationGatewaySslCertificate</span></span>
+        - <span data-ttu-id="b23a2-1978">New-AzApplicationGatewaySslCertificate</span><span class="sxs-lookup"><span data-stu-id="b23a2-1978">New-AzApplicationGatewaySslCertificate</span></span>
+        - <span data-ttu-id="b23a2-1979">Set-AzApplicationGatewaySslCertificate</span><span class="sxs-lookup"><span data-stu-id="b23a2-1979">Set-AzApplicationGatewaySslCertificate</span></span>
+    - <span data-ttu-id="b23a2-1980">New-AzApplicationGateway cmdlet’i isteğe bağlı -UserAssignedIdentity parametresiyle güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1980">New-AzApplicationGateway cmdlet updated with optional parameter -UserAssignedIdentity</span></span>
+- <span data-ttu-id="b23a2-1981">Küçük yeni değişiklikler, ayrıntılar için bkz. [Geçiş Kılavuzu](https://aka.ms/azps-migration-guide)</span><span class="sxs-lookup"><span data-stu-id="b23a2-1981">Minor breaking changes, see the [Migration Guide](https://aka.ms/azps-migration-guide)  for details</span></span>
+
+### <a name="azoperationalinsights"></a><span data-ttu-id="b23a2-1982">Az.OperationalInsights</span><span class="sxs-lookup"><span data-stu-id="b23a2-1982">Az.OperationalInsights</span></span>
+- <span data-ttu-id="b23a2-1983">Küçük yeni değişiklikler, ayrıntılar için bkz. [Geçiş Kılavuzu](https://aka.ms/azps-migration-guide)</span><span class="sxs-lookup"><span data-stu-id="b23a2-1983">Minor breaking changes, see the [Migration Guide](https://aka.ms/azps-migration-guide)  for details</span></span>
+
+### <a name="azprofile"></a><span data-ttu-id="b23a2-1984">Az.Profile</span><span class="sxs-lookup"><span data-stu-id="b23a2-1984">Az.Profile</span></span>
+- <span data-ttu-id="b23a2-1985">Modül adı Az.Accounts olarak değiştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1985">Changed module name to Az.Accounts</span></span>
+
+### <a name="azrecoveryservices"></a><span data-ttu-id="b23a2-1986">Az.RecoveryServices</span><span class="sxs-lookup"><span data-stu-id="b23a2-1986">Az.RecoveryServices</span></span>
+- <span data-ttu-id="b23a2-1987">Küçük yeni değişiklikler, ayrıntılar için bkz. [Geçiş Kılavuzu](https://aka.ms/azps-migration-guide)</span><span class="sxs-lookup"><span data-stu-id="b23a2-1987">Minor breaking changes, see the [Migration Guide](https://aka.ms/azps-migration-guide)  for details</span></span>
+
+### <a name="azresources"></a><span data-ttu-id="b23a2-1988">Az.Resources</span><span class="sxs-lookup"><span data-stu-id="b23a2-1988">Az.Resources</span></span>
+- <span data-ttu-id="b23a2-1989">Küçük yeni değişiklikler, ayrıntılar için bkz. [Geçiş Kılavuzu](https://aka.ms/azps-migration-guide)</span><span class="sxs-lookup"><span data-stu-id="b23a2-1989">Minor breaking changes, see the [Migration Guide](https://aka.ms/azps-migration-guide)  for details</span></span>
+
+### <a name="azservicefabric"></a><span data-ttu-id="b23a2-1990">Az.ServiceFabric</span><span class="sxs-lookup"><span data-stu-id="b23a2-1990">Az.ServiceFabric</span></span>
+- <span data-ttu-id="b23a2-1991">Sertifikayı ortak ad ve parmak iziyle belirtme desteği</span><span class="sxs-lookup"><span data-stu-id="b23a2-1991">Support specfying certificate by common name and thumbprint</span></span>
+- <span data-ttu-id="b23a2-1992">Küçük yeni değişiklikler, ayrıntılar için bkz. [Geçiş Kılavuzu](https://aka.ms/azps-migration-guide)</span><span class="sxs-lookup"><span data-stu-id="b23a2-1992">Mnor breaking changes, see the [Migration Guide](https://aka.ms/azps-migration-guide)  for details</span></span>
+
+### <a name="azsignalr"></a><span data-ttu-id="b23a2-1993">Az.SIgnalR</span><span class="sxs-lookup"><span data-stu-id="b23a2-1993">Az.SIgnalR</span></span>
+- <span data-ttu-id="b23a2-1994">SIgnalR için PowerShell cmdlet'leri Genel Kullanıma sunuldu</span><span class="sxs-lookup"><span data-stu-id="b23a2-1994">General Availability for PowerShell cmdlets for SIgnalR</span></span>
+
+### <a name="azsql"></a><span data-ttu-id="b23a2-1995">Az.Sql</span><span class="sxs-lookup"><span data-stu-id="b23a2-1995">Az.Sql</span></span>
+- <span data-ttu-id="b23a2-1996">Tehdit Algılama cmdlet’lerine yeni Data_Exfiltration ve Unsafe_Action algılama türleri eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1996">Added new Data_Exfiltration and Unsafe_Action detection types to Threat Detection's cmdlets</span></span>
+- <span data-ttu-id="b23a2-1997">Sql Denetimi cmdlet'leri için belge örnekleri güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-1997">Updated documentation examples for Sql Auditing cmdlets</span></span>
+- <span data-ttu-id="b23a2-1998">Küçük yeni değişiklikler, ayrıntılar için bkz. [Geçiş Kılavuzu](https://aka.ms/azps-migration-guide)</span><span class="sxs-lookup"><span data-stu-id="b23a2-1998">Minor breaking changes, see the [Migration Guide](https://aka.ms/azps-migration-guide)  for details</span></span>
+
+### <a name="azstorage"></a><span data-ttu-id="b23a2-1999">Az.Storage</span><span class="sxs-lookup"><span data-stu-id="b23a2-1999">Az.Storage</span></span>
+- <span data-ttu-id="b23a2-2000">Küçük yeni değişiklikler, ayrıntılar için bkz. [Geçiş Kılavuzu](https://aka.ms/azps-migration-guide)</span><span class="sxs-lookup"><span data-stu-id="b23a2-2000">Minor breaking changes, see the [Migration Guide](https://aka.ms/azps-migration-guide)  for details</span></span>
+
+### <a name="azwebsites"></a><span data-ttu-id="b23a2-2001">Az.Websites</span><span class="sxs-lookup"><span data-stu-id="b23a2-2001">Az.Websites</span></span>
+- <span data-ttu-id="b23a2-2002">Küçük yeni değişiklikler, ayrıntılar için bkz. [Geçiş Kılavuzu](https://aka.ms/azps-migration-guide)</span><span class="sxs-lookup"><span data-stu-id="b23a2-2002">Minor breaking changes, see the [Migration Guide](https://aka.ms/azps-migration-guide)  for details</span></span>
+
+## <a name="070---december-2018"></a><span data-ttu-id="b23a2-2003">0.7.0 - Aralık 2018</span><span class="sxs-lookup"><span data-stu-id="b23a2-2003">0.7.0 - December 2018</span></span>
+
+### <a name="general"></a><span data-ttu-id="b23a2-2004">Genel</span><span class="sxs-lookup"><span data-stu-id="b23a2-2004">General</span></span>
+
+* <span data-ttu-id="b23a2-2005">Yakında gerçekleşecek AzureRM’den Az’ye geçiş süreci için küçük değişiklikler</span><span class="sxs-lookup"><span data-stu-id="b23a2-2005">Minor changes for upcoming AzureRM to Az transition</span></span>
+
+### <a name="azcompute"></a><span data-ttu-id="b23a2-2006">Az.Compute</span><span class="sxs-lookup"><span data-stu-id="b23a2-2006">Az.Compute</span></span>
+
+* <span data-ttu-id="b23a2-2007">`New-AzVm(ss)` cmdlet’leri için basit parametre kümelerinde UltraSSD ve Galeri Görüntüleri desteği eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-2007">Add support for UltraSSD and Gallery Images in the simple param sets for `New-AzVm(ss)` cmdlets.</span></span>
+
+### <a name="azdatalakestore"></a><span data-ttu-id="b23a2-2008">Az.DataLakeStore</span><span class="sxs-lookup"><span data-stu-id="b23a2-2008">Az.DataLakeStore</span></span>
+
+* <span data-ttu-id="b23a2-2009">Adls hesabı etki alanının sonundaki eğik çizgi düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-2009">Fix the trailing slash of the domain of adls account</span></span>
+
+### <a name="azfrontdoor"></a><span data-ttu-id="b23a2-2010">Az.FrontDoor</span><span class="sxs-lookup"><span data-stu-id="b23a2-2010">Az.FrontDoor</span></span>
+
+* <span data-ttu-id="b23a2-2011">Bazı bozuk bağlantılar düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-2011">Fixed some broken links</span></span>
+    - <span data-ttu-id="b23a2-2012">New-AzureRmFrontDoor ve Set-AzureRmFrontDoor makalelerinde, New-AzureRmFrontDoorHealthProbeSettingObject cmdlet’i makalesinin bağlantısı düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-2012">In the New-AzureRmFrontDoor and Set-AzureRmFrontDoor articles, fixed the link to the New-AzureRmFrontDoorHealthProbeSettingObject cmdlet article.</span></span>
+    - <span data-ttu-id="b23a2-2013">New-AzureRmFrontDoorManagedRuleObject makalesinde, New-AzureRmFrontDoorRuleGroupOverrideObject cmdlet’i makalesinin bağlantısı düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-2013">In the New-AzureRmFrontDoorManagedRuleObject article, fixed the link to the New-AzureRmFrontDoorRuleGroupOverrideObject cmdlet article.</span></span>
+
+### <a name="azrecoveryservices"></a><span data-ttu-id="b23a2-2014">Az.RecoveryServices</span><span class="sxs-lookup"><span data-stu-id="b23a2-2014">Az.RecoveryServices</span></span>
+
+* <span data-ttu-id="b23a2-2015">Azure Dosya Paylaşımı geri yükleme işlemleri için istemci tarafı doğrulamalar eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-2015">Added client side validations for Azure File Share restore operations.</span></span>
+* <span data-ttu-id="b23a2-2016">Afs geri yükleme işlemi için storageAccountName ve storageAccountResourceGroupName isteğe bağlı hale getirildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-2016">Made storageAccountName and storageAccountResourceGroupName optional for afs restore.</span></span>
+
+### <a name="azresources"></a><span data-ttu-id="b23a2-2017">Az.Resources</span><span class="sxs-lookup"><span data-stu-id="b23a2-2017">Az.Resources</span></span>
+
+* <span data-ttu-id="b23a2-2018">https://github.com/Azure/azure-powershell/issues/7679 düzeltmesi</span><span class="sxs-lookup"><span data-stu-id="b23a2-2018">Fix for https://github.com/Azure/azure-powershell/issues/7679</span></span>
+    - <span data-ttu-id="b23a2-2019">Get-AzureRmRoleAssignment, klasik yöneticiler istenirken sağlanmışsa abonelik kapsamını kullanacak şekilde güncelleştirildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-2019">Update Get-AzureRmRoleAssignment to use the subscription scope if it is provided when requesting classic administrators.</span></span>
+
+### <a name="azsql"></a><span data-ttu-id="b23a2-2020">Az.Sql</span><span class="sxs-lookup"><span data-stu-id="b23a2-2020">Az.Sql</span></span>
+
+* <span data-ttu-id="b23a2-2021">Yakında gerçekleşecek AzureRM’den Az’ye geçiş süreci için küçük değişiklikler</span><span class="sxs-lookup"><span data-stu-id="b23a2-2021">Minor changes for upcoming AzureRM to Az transition</span></span>
+* <span data-ttu-id="b23a2-2022">Get-AzureRmSqlDatabaseVulnerabilityAssessment cmdlet’inin DotNet core ile kullanılması konusundaki bir sorun düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-2022">Fixed issue with using Get-AzureRmSqlDatabaseVulnerabilityAssessment with DotNet core</span></span>
+* <span data-ttu-id="b23a2-2023">SQL Denetimi cmdlet’leriyle ilgili yardım iletilerinin belgeleri değiştirildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-2023">Modified documentation of help messages related to SQL Auditing cmdlets.</span></span>
+
+### <a name="azstorage"></a><span data-ttu-id="b23a2-2024">Az.Storage</span><span class="sxs-lookup"><span data-stu-id="b23a2-2024">Az.Storage</span></span>
+
+* <span data-ttu-id="b23a2-2025">New-AzureRmStorageAccount cmdlet’ine -EnableHierarchicalNamespace eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-2025">Add -EnableHierarchicalNamespace to New-AzureRmStorageAccount</span></span>
+* <span data-ttu-id="b23a2-2026">-DestContext girilmediğinde Dosya Kopyalama cmdlet’inin hedefte kaynak bağlamını yeniden kullanamamasına yol açan sorun düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-2026">Fix issue that Copy File cmdlet can't reuse source context in destination when not input -DestContext</span></span>
+    - <span data-ttu-id="b23a2-2027">Start-AzureStorageFileCopy</span><span class="sxs-lookup"><span data-stu-id="b23a2-2027">Start-AzureStorageFileCopy</span></span>
+* <span data-ttu-id="b23a2-2028">Statik Web Sitesi yapılandırması için destek eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-2028">Support Static Website configuration</span></span>
+    - <span data-ttu-id="b23a2-2029">Enable-AzureStorageStaticWebsite</span><span class="sxs-lookup"><span data-stu-id="b23a2-2029">Enable-AzureStorageStaticWebsite</span></span>
+    - <span data-ttu-id="b23a2-2030">Disable-AzureStorageStaticWebsite</span><span class="sxs-lookup"><span data-stu-id="b23a2-2030">Disable-AzureStorageStaticWebsite</span></span>
+
+### <a name="azwebsites"></a><span data-ttu-id="b23a2-2031">Az.Websites</span><span class="sxs-lookup"><span data-stu-id="b23a2-2031">Az.Websites</span></span>
+
+* <span data-ttu-id="b23a2-2032">Set-AzureRmWebApp ve Set-AzureRmWebAppSlot</span><span class="sxs-lookup"><span data-stu-id="b23a2-2032">Set-AzureRmWebApp and Set-AzureRmWebAppSlot</span></span>
+    - <span data-ttu-id="b23a2-2033">Windows ve Linux kapsayıcı uygulamalarında bağlanacak Azure Depolama yollarının belirtilmesi için yeni parametre (-AzureStoragePath) eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-2033">New parameter (-AzureStoragePath) added to specify Azure Storage paths to be mounted in Windows and Linux container apps.</span></span> <span data-ttu-id="b23a2-2034">Azure Depolama yollarını ayarlamak için yeni New-AzureRmWebAppAzureStoragePath cmdlet’inin çıktısını bir parametre olarak kullanın.</span><span class="sxs-lookup"><span data-stu-id="b23a2-2034">Use the output of the new cmdlet New-AzureRmWebAppAzureStoragePath as a parameter to set the Azure Storage paths.</span></span>
+
+## <a name="061---november-2018"></a><span data-ttu-id="b23a2-2035">0.6.1 - Kasım 2018</span><span class="sxs-lookup"><span data-stu-id="b23a2-2035">0.6.1 - November 2018</span></span>
+
+### <a name="azapimanagement"></a><span data-ttu-id="b23a2-2036">Az.ApiManagement</span><span class="sxs-lookup"><span data-stu-id="b23a2-2036">Az.ApiManagement</span></span>
+* <span data-ttu-id="b23a2-2037">Tür eşlemesinde güncelleştirme bağımlılıkları sorunu</span><span class="sxs-lookup"><span data-stu-id="b23a2-2037">Update dependencies for type mapping issue</span></span>
+
+### <a name="azautomation"></a><span data-ttu-id="b23a2-2038">Az.Automation</span><span class="sxs-lookup"><span data-stu-id="b23a2-2038">Az.Automation</span></span>
+* <span data-ttu-id="b23a2-2039">Swagger tabanlı Azure Otomasyon cmdlet'leri</span><span class="sxs-lookup"><span data-stu-id="b23a2-2039">Swagger based Azure Automation cmdlets</span></span>
+* <span data-ttu-id="b23a2-2040">Güncelleştirme Yönetimi cmdlet'leri eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-2040">Added Update Management cmdlets</span></span>
+* <span data-ttu-id="b23a2-2041">Kaynak Denetimi cmdlet'leri eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-2041">Added Source Control cmdlets</span></span>
+* <span data-ttu-id="b23a2-2042">Remove-AzureRmAutomationHybridWorkerGroup cmdlet'i eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-2042">Added Remove-AzureRmAutomationHybridWorkerGroup cmdlet</span></span>
+* <span data-ttu-id="b23a2-2043">DSC Kayıt Düğümü komutu düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-2043">Fixed the DSC Register Node command</span></span>
+
+### <a name="azcompute"></a><span data-ttu-id="b23a2-2044">Az.Compute</span><span class="sxs-lookup"><span data-stu-id="b23a2-2044">Az.Compute</span></span>
+* <span data-ttu-id="b23a2-2045">SystemAssigned kimliği için kimlik sorunu düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-2045">Fixed identity issue for SystemAssigned identity</span></span>
+* <span data-ttu-id="b23a2-2046">Tür eşlemesinde güncelleştirme bağımlılıkları sorunu</span><span class="sxs-lookup"><span data-stu-id="b23a2-2046">Update dependencies for type mapping issue</span></span>
+
+### <a name="azcontainerinstance"></a><span data-ttu-id="b23a2-2047">Az.ContainerInstance</span><span class="sxs-lookup"><span data-stu-id="b23a2-2047">Az.ContainerInstance</span></span>
+* <span data-ttu-id="b23a2-2048">Tür eşlemesinde güncelleştirme bağımlılıkları sorunu</span><span class="sxs-lookup"><span data-stu-id="b23a2-2048">Update dependencies for type mapping issue</span></span>
+
+### <a name="azmarketplaceordering"></a><span data-ttu-id="b23a2-2049">Az.MarketplaceOrdering</span><span class="sxs-lookup"><span data-stu-id="b23a2-2049">Az.MarketplaceOrdering</span></span>
+* <span data-ttu-id="b23a2-2050">Market cmdlet'leri için örnekler açıklaması güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-2050">update the examples description for marketplace cmdlets</span></span>
+
+### <a name="aznetwork"></a><span data-ttu-id="b23a2-2051">Az.Network</span><span class="sxs-lookup"><span data-stu-id="b23a2-2051">Az.Network</span></span>
+* <span data-ttu-id="b23a2-2052">New-AzureRmApplicationGatewayCustomError, Add-AzureRmApplicationGatewayCustomError, Get-AzureRmApplicationGatewayCustomError, Set-AzureRmApplicationGatewayCustomError, Remove-AzureRmApplicationGatewayCustomError, Add-AzureRmApplicationGatewayHttpListenerCustomError, Get-AzureRmApplicationGatewayHttpListenerCustomError, Set-AzureRmApplicationGatewayHttpListenerCustomError, Remove-AzureRmApplicationGatewayHttpListenerCustomError cmdlet'leri eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-2052">Added cmdlet New-AzureRmApplicationGatewayCustomError, Add-AzureRmApplicationGatewayCustomError, Get-AzureRmApplicationGatewayCustomError, Set-AzureRmApplicationGatewayCustomError, Remove-AzureRmApplicationGatewayCustomError, Add-AzureRmApplicationGatewayHttpListenerCustomError, Get-AzureRmApplicationGatewayHttpListenerCustomError, Set-AzureRmApplicationGatewayHttpListenerCustomError, Remove-AzureRmApplicationGatewayHttpListenerCustomError</span></span>
+* <span data-ttu-id="b23a2-2053">Desteklenen AzureFirewall Ağ Protokollerine yeniden ICMP eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-2053">Added ICMP back to supported AzureFirewall Network Protocols</span></span>
+* <span data-ttu-id="b23a2-2054">Test-AzureRmNetworkWatcherConnectivity cmdlet'i güncelleştirildi; hedef kimlik, adres ve bağlantı noktasında doğrulama eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-2054">Update cmdlet Test-AzureRmNetworkWatcherConnectivity, add validation on destination id, address and port.</span></span>
+* <span data-ttu-id="b23a2-2055">VirtualNetwork eşlemesinde bellek kullanımıyla ilgili sorunlar düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-2055">Fix issues with memory usage in VirtualNetwork map</span></span>
+
+### <a name="azrecoveryservicesbackup"></a><span data-ttu-id="b23a2-2056">Az.RecoveryServices.Backup</span><span class="sxs-lookup"><span data-stu-id="b23a2-2056">Az.RecoveryServices.Backup</span></span>
+* <span data-ttu-id="b23a2-2057">Korumalı dosya paylaşımı için ilke değiştirme sorunu düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-2057">Fix for modifying policy for a protected file share.</span></span>
+* <span data-ttu-id="b23a2-2058">İlke saat dilimi büyük harfe dönüştürüldü.</span><span class="sxs-lookup"><span data-stu-id="b23a2-2058">Converted policy timezone to uppercase.</span></span>
+
+### <a name="azrecoveryservicessiterecovery"></a><span data-ttu-id="b23a2-2059">Az.RecoveryServices.SiteRecovery</span><span class="sxs-lookup"><span data-stu-id="b23a2-2059">Az.RecoveryServices.SiteRecovery</span></span>
+* <span data-ttu-id="b23a2-2060">New-AzureRmRecoveryServicesAsrProtectableItem cmdlet'indeki örnek düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-2060">Corrected example in New-AzureRmRecoveryServicesAsrProtectableItem</span></span>
+* <span data-ttu-id="b23a2-2061">Tür eşlemesinde güncelleştirme bağımlılıkları sorunu</span><span class="sxs-lookup"><span data-stu-id="b23a2-2061">Update dependencies for type mapping issue</span></span>
+
+### <a name="azrelay"></a><span data-ttu-id="b23a2-2062">Az.Relay</span><span class="sxs-lookup"><span data-stu-id="b23a2-2062">Az.Relay</span></span>
+* <span data-ttu-id="b23a2-2063">Kullanıcının New-AzureRmRelayKey cmdlet'ine KeyValue sağlamasına olanak tanıyan isteğe bağlı -KeyValue parametresi eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-2063">Added optional Parameter -KeyValue to New-AzureRmRelayKey cmdlet, which enables user to provide KeyValue.</span></span>
+
+### <a name="azresources"></a><span data-ttu-id="b23a2-2064">Az.Resources</span><span class="sxs-lookup"><span data-stu-id="b23a2-2064">Az.Resources</span></span>
+* <span data-ttu-id="b23a2-2065">`New-AzureRmPolicyAssignment` ve `Set-AzureRmPolicyAssignment` cmdlet'lerindeki kaynak kimliğiyle ilgili parametrelerin yardım belgeleri güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-2065">Update help documentation for resource identity related parameters in `New-AzureRmPolicyAssignment` and `Set-AzureRmPolicyAssignment`</span></span>
+* <span data-ttu-id="b23a2-2066">New-AzureRmPolicyDefinition cmdlet'ine -Metadata kullanan bir örnek eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-2066">Add an example for New-AzureRmPolicyDefinition that uses -Metadata</span></span>
+* <span data-ttu-id="b23a2-2067">NetStandard'da Tag anahtarında büyük/küçük harf kullanımının korunmasına yönelik düzeltme yapıldı: #7678 #7703</span><span class="sxs-lookup"><span data-stu-id="b23a2-2067">Fix to allow case preservation in Tag keys in NetStandard: #7678 #7703</span></span>
+
+### <a name="azservicefabric"></a><span data-ttu-id="b23a2-2068">Az.ServiceFabric</span><span class="sxs-lookup"><span data-stu-id="b23a2-2068">Az.ServiceFabric</span></span>
+* <span data-ttu-id="b23a2-2069">Hataya neden olan değişiklikler yayınlanacağından kullanımdan kaldırılacak özellikleri belirten iletiler eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-2069">Add deprecation messages for upcoming breaking changes</span></span>
+
+### <a name="azsql"></a><span data-ttu-id="b23a2-2070">Az.Sql</span><span class="sxs-lookup"><span data-stu-id="b23a2-2070">Az.Sql</span></span>
+* <span data-ttu-id="b23a2-2071">Azure Sql Veritabanı Yönetilen Örneği ve Azure Sql Yönetilen Veritabanı'nındaki CRUD işlemleri için yeni cmdlet'ler eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-2071">Added new cmdlets for CRUD operations on Azure Sql Database Managed Instance and Azure Sql Managed Database</span></span>
+    - <span data-ttu-id="b23a2-2072">Get-AzureRmSqlInstance</span><span class="sxs-lookup"><span data-stu-id="b23a2-2072">Get-AzureRmSqlInstance</span></span>
+    - <span data-ttu-id="b23a2-2073">New-AzureRmSqlInstance</span><span class="sxs-lookup"><span data-stu-id="b23a2-2073">New-AzureRmSqlInstance</span></span>
+    - <span data-ttu-id="b23a2-2074">Set-AzureRmSqlInstance</span><span class="sxs-lookup"><span data-stu-id="b23a2-2074">Set-AzureRmSqlInstance</span></span>
+    - <span data-ttu-id="b23a2-2075">Remove-AzureRmSqlInstance</span><span class="sxs-lookup"><span data-stu-id="b23a2-2075">Remove-AzureRmSqlInstance</span></span>
+    - <span data-ttu-id="b23a2-2076">Get-AzureRmSqlInstanceDatabase</span><span class="sxs-lookup"><span data-stu-id="b23a2-2076">Get-AzureRmSqlInstanceDatabase</span></span>
+    - <span data-ttu-id="b23a2-2077">New-AzureRmSqlInstanceDatabase</span><span class="sxs-lookup"><span data-stu-id="b23a2-2077">New-AzureRmSqlInstanceDatabase</span></span>
+    - <span data-ttu-id="b23a2-2078">Restore-AzureRmSqlInstanceDatabase</span><span class="sxs-lookup"><span data-stu-id="b23a2-2078">Restore-AzureRmSqlInstanceDatabase</span></span>
+    - <span data-ttu-id="b23a2-2079">Remove-AzureRmSqlInstanceDatabase</span><span class="sxs-lookup"><span data-stu-id="b23a2-2079">Remove-AzureRmSqlInstanceDatabase</span></span>
+* <span data-ttu-id="b23a2-2080">Sunucuda veya veritabanında Genişletilmiş Denetim İlkesi yönetimi etkinleştirildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-2080">Enabled Extended Auditing Policy management on a server or a database.</span></span>
+    - <span data-ttu-id="b23a2-2081">Denetim günlüklerinde filtrelemeyi etkinleştirmek için yeni parametre (PredicateExpression) eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-2081">New parameter (PredicateExpression) was added to enable filtering of audit logs.</span></span>
+    - <span data-ttu-id="b23a2-2082">Cmdlet'ler, SQL istemcileri yerine Eski istemcileri kullanacak şekilde değiştirildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-2082">Cmdlets were modified to use SQL clients instead of Legacy clients.</span></span>
+    - <span data-ttu-id="b23a2-2083">Set-AzureRmSqlServerAuditing.</span><span class="sxs-lookup"><span data-stu-id="b23a2-2083">Set-AzureRmSqlServerAuditing.</span></span>
+    - <span data-ttu-id="b23a2-2084">Get-AzureRmSqlServerAuditing.</span><span class="sxs-lookup"><span data-stu-id="b23a2-2084">Get-AzureRmSqlServerAuditing.</span></span>
+    - <span data-ttu-id="b23a2-2085">Set-AzureRmSqlDatabaseAuditing.</span><span class="sxs-lookup"><span data-stu-id="b23a2-2085">Set-AzureRmSqlDatabaseAuditing.</span></span>
+    - <span data-ttu-id="b23a2-2086">Get-AzureRmSqlDatabaseAuditing.</span><span class="sxs-lookup"><span data-stu-id="b23a2-2086">Get-AzureRmSqlDatabaseAuditing.</span></span>
+* <span data-ttu-id="b23a2-2087">Update-AzureRmSqlDatabaseVulnerabilityAssessmentSettings cmdlet'inin depolama hesabı ad parametre kümesiyle kullanılmasıyla ilgili sorun düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-2087">Fixed issue with using Update-AzureRmSqlDatabaseVulnerabilityAssessmentSettings with storage account name parameter set</span></span>
+
+## <a name="050---november-2018"></a><span data-ttu-id="b23a2-2088">0.5.0 - Kasım 2018</span><span class="sxs-lookup"><span data-stu-id="b23a2-2088">0.5.0 - November 2018</span></span>
+#### <a name="general"></a><span data-ttu-id="b23a2-2089">Genel</span><span class="sxs-lookup"><span data-stu-id="b23a2-2089">General</span></span>
+* <span data-ttu-id="b23a2-2090">Birçok temel cmdlet’e Kaynak Tamamlayıcıları eklendi - bunlar cmdlet’leri etkileşimli olarak çağırırken mevcut kaynak adları arasında gezinmenize olanak tanır</span><span class="sxs-lookup"><span data-stu-id="b23a2-2090">Added Resource Completers to many core cmdlets - these alloow you to tab through existing resource names when invoking cmdlets interactively</span></span>
+
+#### <a name="azprofile"></a><span data-ttu-id="b23a2-2091">Az.Profile</span><span class="sxs-lookup"><span data-stu-id="b23a2-2091">Az.Profile</span></span>
+* <span data-ttu-id="b23a2-2092">ClientRuntime’ın en son sürümünü kullanacak şekilde ortak kod güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-2092">Update common code to use latest version of ClientRuntime</span></span>
+* <span data-ttu-id="b23a2-2093">Connect-AzAccount cmdlet'indeki TenantId parametresi Tenant olarak yeniden adlandırıldı ve TenantId için diğer ad eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-2093">Rename param TenantId in cmdlet Connect-AzAccount to Tenant and add an alias for TenantId</span></span>
+* <span data-ttu-id="b23a2-2094">Connect-AzAccount için TenantId açıklaması güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-2094">Updated TenantId description for Connect-AzAccount</span></span>
+* <span data-ttu-id="b23a2-2095">Kiracı etki alanı sağlanırken başarısız oturum açma durumunda gösterilen hata iletisi düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-2095">Fix error message for failed login when providing tenant domain</span></span>
     - https://github.com/Azure/azure-powershell/issues/6936
-* <span data-ttu-id="de109-2096">Kiracıda abonelikleri olmayan hesaplar için bağlam adı çakışmasıyla ilgili sorun düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-2096">Fix issue with context name clashing for accounts with no subscriptions in tenant</span></span>
+* <span data-ttu-id="b23a2-2096">Kiracıda abonelikleri olmayan hesaplar için bağlam adı çakışmasıyla ilgili sorun düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-2096">Fix issue with context name clashing for accounts with no subscriptions in tenant</span></span>
     - https://github.com/Azure/azure-powershell/issues/7453
-* <span data-ttu-id="de109-2097">MSI kullanırken DataLake uç noktalarıyla ilgili sorun düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-2097">Fix issue with DataLake endpoints when using MSI</span></span>
+* <span data-ttu-id="b23a2-2097">MSI kullanırken DataLake uç noktalarıyla ilgili sorun düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-2097">Fix issue with DataLake endpoints when using MSI</span></span>
     - https://github.com/Azure/azure-powershell/issues/7462
-* <span data-ttu-id="de109-2098">Bağlantı olmadığında 'Disconnect-AzAccount' oluşturulmasına neden olan sorun düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-2098">Fix issue where 'Disconnect-AzAccount' would throw if not connected</span></span>
+* <span data-ttu-id="b23a2-2098">Bağlantı olmadığında 'Disconnect-AzAccount' oluşturulmasına neden olan sorun düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-2098">Fix issue where 'Disconnect-AzAccount' would throw if not connected</span></span>
     - https://github.com/Azure/azure-powershell/issues/7167
 
-#### <a name="azcognitiveservices"></a><span data-ttu-id="de109-2099">Az.CognitiveServices</span><span class="sxs-lookup"><span data-stu-id="de109-2099">Az.CognitiveServices</span></span>
-* <span data-ttu-id="de109-2100">Get-AzCognitiveServicesAccountSkus işlemi eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-2100">Add Get-AzCognitiveServicesAccountSkus operation.</span></span>
+#### <a name="azcognitiveservices"></a><span data-ttu-id="b23a2-2099">Az.CognitiveServices</span><span class="sxs-lookup"><span data-stu-id="b23a2-2099">Az.CognitiveServices</span></span>
+* <span data-ttu-id="b23a2-2100">Get-AzCognitiveServicesAccountSkus işlemi eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-2100">Add Get-AzCognitiveServicesAccountSkus operation.</span></span>
 
-#### <a name="azcompute"></a><span data-ttu-id="de109-2101">Az.Compute</span><span class="sxs-lookup"><span data-stu-id="de109-2101">Az.Compute</span></span>
-* <span data-ttu-id="de109-2102">Add-AzVmssVMDataDisk ve Remove-AzVmssVMDataDisk cmdlet'leri eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-2102">Add Add-AzVmssVMDataDisk and Remove-AzVmssVMDataDisk cmdlets</span></span>
-* <span data-ttu-id="de109-2103">Get-AzVMImage, AutomaticOSUpgradeProperties gösteriyor</span><span class="sxs-lookup"><span data-stu-id="de109-2103">Get-AzVMImage shows AutomaticOSUpgradeProperties</span></span>
-* <span data-ttu-id="de109-2104">SetAzVMChefExtension -BootstrapOptions ve -JsonAttribute seçeneği değerlerinin Json biçiminde ayarlanmamasıyla ilgili hata düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="de109-2104">Fixed SetAzVMChefExtension -BootstrapOptions and -JsonAttribute option values are not setting in json format.</span></span>
+#### <a name="azcompute"></a><span data-ttu-id="b23a2-2101">Az.Compute</span><span class="sxs-lookup"><span data-stu-id="b23a2-2101">Az.Compute</span></span>
+* <span data-ttu-id="b23a2-2102">Add-AzVmssVMDataDisk ve Remove-AzVmssVMDataDisk cmdlet'leri eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-2102">Add Add-AzVmssVMDataDisk and Remove-AzVmssVMDataDisk cmdlets</span></span>
+* <span data-ttu-id="b23a2-2103">Get-AzVMImage, AutomaticOSUpgradeProperties gösteriyor</span><span class="sxs-lookup"><span data-stu-id="b23a2-2103">Get-AzVMImage shows AutomaticOSUpgradeProperties</span></span>
+* <span data-ttu-id="b23a2-2104">SetAzVMChefExtension -BootstrapOptions ve -JsonAttribute seçeneği değerlerinin Json biçiminde ayarlanmamasıyla ilgili hata düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-2104">Fixed SetAzVMChefExtension -BootstrapOptions and -JsonAttribute option values are not setting in json format.</span></span>
 
-#### <a name="azdatalakestore"></a><span data-ttu-id="de109-2105">Az.DataLakeStore</span><span class="sxs-lookup"><span data-stu-id="de109-2105">Az.DataLakeStore</span></span>
-* <span data-ttu-id="de109-2106">DataLake paketi 1.1.10'a güncelleştirildi.</span><span class="sxs-lookup"><span data-stu-id="de109-2106">Update the DataLake package to 1.1.10.</span></span>
-* <span data-ttu-id="de109-2107">Çok iş parçacıklı işlemlere varsayılan Concurrency değeri eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-2107">Add default Concurrency to multithreaded operations.</span></span>
+#### <a name="azdatalakestore"></a><span data-ttu-id="b23a2-2105">Az.DataLakeStore</span><span class="sxs-lookup"><span data-stu-id="b23a2-2105">Az.DataLakeStore</span></span>
+* <span data-ttu-id="b23a2-2106">DataLake paketi 1.1.10'a güncelleştirildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-2106">Update the DataLake package to 1.1.10.</span></span>
+* <span data-ttu-id="b23a2-2107">Çok iş parçacıklı işlemlere varsayılan Concurrency değeri eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-2107">Add default Concurrency to multithreaded operations.</span></span>
 
-#### <a name="azinsights"></a><span data-ttu-id="de109-2108">Az.Insights</span><span class="sxs-lookup"><span data-stu-id="de109-2108">Az.Insights</span></span>
-* <span data-ttu-id="de109-2109">7267 numaralı (Otomatik ölçeklendirme alanı) sorun düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-2109">Fixed issue #7267 (Autoscale area)</span></span>
-    - <span data-ttu-id="de109-2110">Yeni otomatik ölçeklendirme kuralı oluşturma sırasında numaralandırılmış parametrelerin düzgün ayarlanmamasıyla ilgili sorunlar (bunlar her zaman varsayılan değere ayarlanıyordu).</span><span class="sxs-lookup"><span data-stu-id="de109-2110">Issues with creating a new autoscale rule not properly setting enumerated parameters (would always set them to the default value).</span></span>
-* <span data-ttu-id="de109-2111">Set-AzDiagnosticSetting'in ayar oluşturma sırasında kategorilerin açıkça belirtilmesini gerektirmesiyle ilgili 7513 numaralı [Insights] sorun düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-2111">Fixed issue #7513 [Insights] Set-AzDiagnosticSetting requires explicit specification of categories during creation of setting</span></span>
-    - <span data-ttu-id="de109-2112">Artık cmdlet oluşturma sırasında açık kategori gösteriminin etkinleştirilmesini gerektirmiyor; başka bir deyişle belgelerinde belirtildiği gibi çalışıyor</span><span class="sxs-lookup"><span data-stu-id="de109-2112">Now the cmdlet does not require explicit indication of the categories to enable during creation, i.e. it works as it is documented</span></span>
+#### <a name="azinsights"></a><span data-ttu-id="b23a2-2108">Az.Insights</span><span class="sxs-lookup"><span data-stu-id="b23a2-2108">Az.Insights</span></span>
+* <span data-ttu-id="b23a2-2109">7267 numaralı (Otomatik ölçeklendirme alanı) sorun düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-2109">Fixed issue #7267 (Autoscale area)</span></span>
+    - <span data-ttu-id="b23a2-2110">Yeni otomatik ölçeklendirme kuralı oluşturma sırasında numaralandırılmış parametrelerin düzgün ayarlanmamasıyla ilgili sorunlar (bunlar her zaman varsayılan değere ayarlanıyordu).</span><span class="sxs-lookup"><span data-stu-id="b23a2-2110">Issues with creating a new autoscale rule not properly setting enumerated parameters (would always set them to the default value).</span></span>
+* <span data-ttu-id="b23a2-2111">Set-AzDiagnosticSetting'in ayar oluşturma sırasında kategorilerin açıkça belirtilmesini gerektirmesiyle ilgili 7513 numaralı [Insights] sorun düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-2111">Fixed issue #7513 [Insights] Set-AzDiagnosticSetting requires explicit specification of categories during creation of setting</span></span>
+    - <span data-ttu-id="b23a2-2112">Artık cmdlet oluşturma sırasında açık kategori gösteriminin etkinleştirilmesini gerektirmiyor; başka bir deyişle belgelerinde belirtildiği gibi çalışıyor</span><span class="sxs-lookup"><span data-stu-id="b23a2-2112">Now the cmdlet does not require explicit indication of the categories to enable during creation, i.e. it works as it is documented</span></span>
 
-#### <a name="aznetwork"></a><span data-ttu-id="de109-2113">Az.Network</span><span class="sxs-lookup"><span data-stu-id="de109-2113">Az.Network</span></span>
-* <span data-ttu-id="de109-2114">Aşağıdaki parametrelerde PeeringType parametresi zorunlu parametre olarak değiştirildi:-</span><span class="sxs-lookup"><span data-stu-id="de109-2114">Changed PeeringType to be a mandatory parameter for the following cmdlets:-</span></span>
-    - <span data-ttu-id="de109-2115">Get-AzExpressRouteCircuitRouteTable</span><span class="sxs-lookup"><span data-stu-id="de109-2115">Get-AzExpressRouteCircuitRouteTable</span></span>
-    - <span data-ttu-id="de109-2116">Get-AzExpressRouteCircuitARPTable</span><span class="sxs-lookup"><span data-stu-id="de109-2116">Get-AzExpressRouteCircuitARPTable</span></span>
-    - <span data-ttu-id="de109-2117">Get-AzExpressRouteCircuitRouteTableSummary</span><span class="sxs-lookup"><span data-stu-id="de109-2117">Get-AzExpressRouteCircuitRouteTableSummary</span></span>
-    - <span data-ttu-id="de109-2118">Get-AzExpressRouteCrossConnectionArpTable</span><span class="sxs-lookup"><span data-stu-id="de109-2118">Get-AzExpressRouteCrossConnectionArpTable</span></span>
-    - <span data-ttu-id="de109-2119">Get-AzExpressRouteCrossConnectionRouteTable</span><span class="sxs-lookup"><span data-stu-id="de109-2119">Get-AzExpressRouteCrossConnectionRouteTable</span></span>
-    - <span data-ttu-id="de109-2120">Get-AzExpressRouteCrossConnectionRouteTableSummary</span><span class="sxs-lookup"><span data-stu-id="de109-2120">Get-AzExpressRouteCrossConnectionRouteTableSummary</span></span>
+#### <a name="aznetwork"></a><span data-ttu-id="b23a2-2113">Az.Network</span><span class="sxs-lookup"><span data-stu-id="b23a2-2113">Az.Network</span></span>
+* <span data-ttu-id="b23a2-2114">Aşağıdaki parametrelerde PeeringType parametresi zorunlu parametre olarak değiştirildi:-</span><span class="sxs-lookup"><span data-stu-id="b23a2-2114">Changed PeeringType to be a mandatory parameter for the following cmdlets:-</span></span>
+    - <span data-ttu-id="b23a2-2115">Get-AzExpressRouteCircuitRouteTable</span><span class="sxs-lookup"><span data-stu-id="b23a2-2115">Get-AzExpressRouteCircuitRouteTable</span></span>
+    - <span data-ttu-id="b23a2-2116">Get-AzExpressRouteCircuitARPTable</span><span class="sxs-lookup"><span data-stu-id="b23a2-2116">Get-AzExpressRouteCircuitARPTable</span></span>
+    - <span data-ttu-id="b23a2-2117">Get-AzExpressRouteCircuitRouteTableSummary</span><span class="sxs-lookup"><span data-stu-id="b23a2-2117">Get-AzExpressRouteCircuitRouteTableSummary</span></span>
+    - <span data-ttu-id="b23a2-2118">Get-AzExpressRouteCrossConnectionArpTable</span><span class="sxs-lookup"><span data-stu-id="b23a2-2118">Get-AzExpressRouteCrossConnectionArpTable</span></span>
+    - <span data-ttu-id="b23a2-2119">Get-AzExpressRouteCrossConnectionRouteTable</span><span class="sxs-lookup"><span data-stu-id="b23a2-2119">Get-AzExpressRouteCrossConnectionRouteTable</span></span>
+    - <span data-ttu-id="b23a2-2120">Get-AzExpressRouteCrossConnectionRouteTableSummary</span><span class="sxs-lookup"><span data-stu-id="b23a2-2120">Get-AzExpressRouteCrossConnectionRouteTableSummary</span></span>
 
-#### <a name="azpolicyinsights"></a><span data-ttu-id="de109-2121">Az.PolicyInsights</span><span class="sxs-lookup"><span data-stu-id="de109-2121">Az.PolicyInsights</span></span>
-* <span data-ttu-id="de109-2122">İlke düzeltme cmdlet'leri eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-2122">Added policy remediation cmdlets</span></span>
+#### <a name="azpolicyinsights"></a><span data-ttu-id="b23a2-2121">Az.PolicyInsights</span><span class="sxs-lookup"><span data-stu-id="b23a2-2121">Az.PolicyInsights</span></span>
+* <span data-ttu-id="b23a2-2122">İlke düzeltme cmdlet'leri eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-2122">Added policy remediation cmdlets</span></span>
 
-#### <a name="azresources"></a><span data-ttu-id="de109-2123">Az.Resources</span><span class="sxs-lookup"><span data-stu-id="de109-2123">Az.Resources</span></span>
-* <span data-ttu-id="de109-2124">https://github.com/Azure/azure-powershell/issues/7402 düzeltmesi</span><span class="sxs-lookup"><span data-stu-id="de109-2124">Fix for https://github.com/Azure/azure-powershell/issues/7402</span></span>
-    - <span data-ttu-id="de109-2125">'Get-AzResource' için '-ResourceId' parametresi kullanılarak kaynakların listelenmesine olanak tanındı</span><span class="sxs-lookup"><span data-stu-id="de109-2125">Allow listing resources using the '-ResourceId' parameter for 'Get-AzResource'</span></span>
+#### <a name="azresources"></a><span data-ttu-id="b23a2-2123">Az.Resources</span><span class="sxs-lookup"><span data-stu-id="b23a2-2123">Az.Resources</span></span>
+* <span data-ttu-id="b23a2-2124">https://github.com/Azure/azure-powershell/issues/7402 düzeltmesi</span><span class="sxs-lookup"><span data-stu-id="b23a2-2124">Fix for https://github.com/Azure/azure-powershell/issues/7402</span></span>
+    - <span data-ttu-id="b23a2-2125">'Get-AzResource' için '-ResourceId' parametresi kullanılarak kaynakların listelenmesine olanak tanındı</span><span class="sxs-lookup"><span data-stu-id="b23a2-2125">Allow listing resources using the '-ResourceId' parameter for 'Get-AzResource'</span></span>
 
-#### <a name="azservicebus"></a><span data-ttu-id="de109-2126">Az.ServiceBus</span><span class="sxs-lookup"><span data-stu-id="de109-2126">Az.ServiceBus</span></span>
-* <span data-ttu-id="de109-2127">PSServiceBusMigrationConfigurationAttributes'e Geçiş durumunun bilinmesine yardımcı olacak salt okunur MigrationState özelliği eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-2127">Added MigrationState read-only property to PSServiceBusMigrationConfigurationAttributes which will help to know the Migration state.</span></span>
+#### <a name="azservicebus"></a><span data-ttu-id="b23a2-2126">Az.ServiceBus</span><span class="sxs-lookup"><span data-stu-id="b23a2-2126">Az.ServiceBus</span></span>
+* <span data-ttu-id="b23a2-2127">PSServiceBusMigrationConfigurationAttributes'e Geçiş durumunun bilinmesine yardımcı olacak salt okunur MigrationState özelliği eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-2127">Added MigrationState read-only property to PSServiceBusMigrationConfigurationAttributes which will help to know the Migration state.</span></span>
 
-#### <a name="azservicefabric"></a><span data-ttu-id="de109-2128">Az.ServiceFabric</span><span class="sxs-lookup"><span data-stu-id="de109-2128">Az.ServiceFabric</span></span>
-* <span data-ttu-id="de109-2129">Linux Vmss'ye sertifika ekleme sorunu düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="de109-2129">Fix add certificate to Linux Vmss.</span></span>
-* <span data-ttu-id="de109-2130">'Add-AzServiceFabricClusterCertificate' düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-2130">Fix 'Add-AzServiceFabricClusterCertificate'</span></span>
-    - <span data-ttu-id="de109-2131">Yeni sertifikadan doğru parmak izi kullanıyor (Azure/service-fabric-issues#932).</span><span class="sxs-lookup"><span data-stu-id="de109-2131">Using correct thumbprint from new certificate (Azure/service-fabric-issues#932).</span></span>
-    - <span data-ttu-id="de109-2132">Özel durum doğru görüntüleniyor (Azure/service-fabric-issues#1054).</span><span class="sxs-lookup"><span data-stu-id="de109-2132">Display exception correctly (Azure/service-fabric-issues#1054).</span></span>
-* <span data-ttu-id="de109-2133">'Update-AzServiceFabricDurability', Vmss CreateOrUpdate işlemini başlatmadan önce küme yapılandırmasını güncelleştirecek şekilde düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="de109-2133">Fix 'Update-AzServiceFabricDurability' to update cluster configuration before starting Vmss CreateOrUpdate operation.</span></span>
+#### <a name="azservicefabric"></a><span data-ttu-id="b23a2-2128">Az.ServiceFabric</span><span class="sxs-lookup"><span data-stu-id="b23a2-2128">Az.ServiceFabric</span></span>
+* <span data-ttu-id="b23a2-2129">Linux Vmss'ye sertifika ekleme sorunu düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-2129">Fix add certificate to Linux Vmss.</span></span>
+* <span data-ttu-id="b23a2-2130">'Add-AzServiceFabricClusterCertificate' düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-2130">Fix 'Add-AzServiceFabricClusterCertificate'</span></span>
+    - <span data-ttu-id="b23a2-2131">Yeni sertifikadan doğru parmak izi kullanıyor (Azure/service-fabric-issues#932).</span><span class="sxs-lookup"><span data-stu-id="b23a2-2131">Using correct thumbprint from new certificate (Azure/service-fabric-issues#932).</span></span>
+    - <span data-ttu-id="b23a2-2132">Özel durum doğru görüntüleniyor (Azure/service-fabric-issues#1054).</span><span class="sxs-lookup"><span data-stu-id="b23a2-2132">Display exception correctly (Azure/service-fabric-issues#1054).</span></span>
+* <span data-ttu-id="b23a2-2133">'Update-AzServiceFabricDurability', Vmss CreateOrUpdate işlemini başlatmadan önce küme yapılandırmasını güncelleştirecek şekilde düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-2133">Fix 'Update-AzServiceFabricDurability' to update cluster configuration before starting Vmss CreateOrUpdate operation.</span></span>
 
-## <a name="040---october-2018"></a><span data-ttu-id="de109-2134">0.4.0 - Ekim 2018</span><span class="sxs-lookup"><span data-stu-id="de109-2134">0.4.0 - October 2018</span></span>
-#### <a name="azprofile"></a><span data-ttu-id="de109-2135">Az.Profile</span><span class="sxs-lookup"><span data-stu-id="de109-2135">Az.Profile</span></span>
-* <span data-ttu-id="de109-2136">CloudShell’de Get-AzSubscription sorunu çözüldü</span><span class="sxs-lookup"><span data-stu-id="de109-2136">Fix issue with Get-AzSubscription in CloudShell</span></span>
-* <span data-ttu-id="de109-2137">ClientRuntime’ın en son sürümünü kullanacak şekilde ortak kod güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="de109-2137">Update common code to use latest version of ClientRuntime</span></span>
+## <a name="040---october-2018"></a><span data-ttu-id="b23a2-2134">0.4.0 - Ekim 2018</span><span class="sxs-lookup"><span data-stu-id="b23a2-2134">0.4.0 - October 2018</span></span>
+#### <a name="azprofile"></a><span data-ttu-id="b23a2-2135">Az.Profile</span><span class="sxs-lookup"><span data-stu-id="b23a2-2135">Az.Profile</span></span>
+* <span data-ttu-id="b23a2-2136">CloudShell’de Get-AzSubscription sorunu çözüldü</span><span class="sxs-lookup"><span data-stu-id="b23a2-2136">Fix issue with Get-AzSubscription in CloudShell</span></span>
+* <span data-ttu-id="b23a2-2137">ClientRuntime’ın en son sürümünü kullanacak şekilde ortak kod güncelleştirildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-2137">Update common code to use latest version of ClientRuntime</span></span>
 
-#### <a name="azcompute"></a><span data-ttu-id="de109-2138">Az.Compute</span><span class="sxs-lookup"><span data-stu-id="de109-2138">Az.Compute</span></span>
-* <span data-ttu-id="de109-2139">'New-AzVm' için basit parametre kümesi kullanıldığında hızlandırılmış ağların açılacağı VM boyutları beyaz listesine yeni boyutlar eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-2139">Added new sizes to the whitelist of VM sizes for which accelerated networking will be turned on when using the simple param set for 'New-AzVm'</span></span>
-* <span data-ttu-id="de109-2140">Tüm cmdlet'lere ResourceName bağımsız değişken tamamlayıcısı eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-2140">Added ResourceName argument completer to all cmdlets.</span></span>
+#### <a name="azcompute"></a><span data-ttu-id="b23a2-2138">Az.Compute</span><span class="sxs-lookup"><span data-stu-id="b23a2-2138">Az.Compute</span></span>
+* <span data-ttu-id="b23a2-2139">'New-AzVm' için basit parametre kümesi kullanıldığında hızlandırılmış ağların açılacağı VM boyutları beyaz listesine yeni boyutlar eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-2139">Added new sizes to the whitelist of VM sizes for which accelerated networking will be turned on when using the simple param set for 'New-AzVm'</span></span>
+* <span data-ttu-id="b23a2-2140">Tüm cmdlet'lere ResourceName bağımsız değişken tamamlayıcısı eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-2140">Added ResourceName argument completer to all cmdlets.</span></span>
 
-#### <a name="azdatalakestore"></a><span data-ttu-id="de109-2141">Az.DataLakeStore</span><span class="sxs-lookup"><span data-stu-id="de109-2141">Az.DataLakeStore</span></span>
-* <span data-ttu-id="de109-2142">Sanal Ağ Kuralları desteği ekleme</span><span class="sxs-lookup"><span data-stu-id="de109-2142">Adding support for Virtual Network Rules</span></span>
-    - <span data-ttu-id="de109-2143">Get-AzDataLakeStoreVirtualNetworkRule: Azure Data Lake Store sanal ağ kuralını alır veya listeler.</span><span class="sxs-lookup"><span data-stu-id="de109-2143">Get-AzDataLakeStoreVirtualNetworkRule: Gets or Lists Azure Data Lake Store virtual network rule.</span></span>
-    - <span data-ttu-id="de109-2144">Add-AzDataLakeStoreVirtualNetworkRule: Belirtilen Data Lake Store hesabına sanal ağ kuralı ekler.</span><span class="sxs-lookup"><span data-stu-id="de109-2144">Add-AzDataLakeStoreVirtualNetworkRule: Adds a virtual network rule to the specified Data Lake Store account.</span></span>
-    - <span data-ttu-id="de109-2145">Set-AzDataLakeStoreVirtualNetworkRule: Belirtilen Data Lake Store hesabındaki belirtilen sanal ağ kuralını değiştirir.</span><span class="sxs-lookup"><span data-stu-id="de109-2145">Set-AzDataLakeStoreVirtualNetworkRule: Modifies the specified virtual network rule in the specified Data Lake Store account.</span></span>
-    - <span data-ttu-id="de109-2146">Remove-AzDataLakeStoreVirtualNetworkRule: Bir Azure Data Lake Store sanal ağ kuralını siler.</span><span class="sxs-lookup"><span data-stu-id="de109-2146">Remove-AzDataLakeStoreVirtualNetworkRule: Deletes an Azure Data Lake Store virtual network rule.</span></span>
+#### <a name="azdatalakestore"></a><span data-ttu-id="b23a2-2141">Az.DataLakeStore</span><span class="sxs-lookup"><span data-stu-id="b23a2-2141">Az.DataLakeStore</span></span>
+* <span data-ttu-id="b23a2-2142">Sanal Ağ Kuralları desteği ekleme</span><span class="sxs-lookup"><span data-stu-id="b23a2-2142">Adding support for Virtual Network Rules</span></span>
+    - <span data-ttu-id="b23a2-2143">Get-AzDataLakeStoreVirtualNetworkRule: Azure Data Lake Store sanal ağ kuralını alır veya listeler.</span><span class="sxs-lookup"><span data-stu-id="b23a2-2143">Get-AzDataLakeStoreVirtualNetworkRule: Gets or Lists Azure Data Lake Store virtual network rule.</span></span>
+    - <span data-ttu-id="b23a2-2144">Add-AzDataLakeStoreVirtualNetworkRule: Belirtilen Data Lake Store hesabına sanal ağ kuralı ekler.</span><span class="sxs-lookup"><span data-stu-id="b23a2-2144">Add-AzDataLakeStoreVirtualNetworkRule: Adds a virtual network rule to the specified Data Lake Store account.</span></span>
+    - <span data-ttu-id="b23a2-2145">Set-AzDataLakeStoreVirtualNetworkRule: Belirtilen Data Lake Store hesabındaki belirtilen sanal ağ kuralını değiştirir.</span><span class="sxs-lookup"><span data-stu-id="b23a2-2145">Set-AzDataLakeStoreVirtualNetworkRule: Modifies the specified virtual network rule in the specified Data Lake Store account.</span></span>
+    - <span data-ttu-id="b23a2-2146">Remove-AzDataLakeStoreVirtualNetworkRule: Bir Azure Data Lake Store sanal ağ kuralını siler.</span><span class="sxs-lookup"><span data-stu-id="b23a2-2146">Remove-AzDataLakeStoreVirtualNetworkRule: Deletes an Azure Data Lake Store virtual network rule.</span></span>
 
-#### <a name="aznetwork"></a><span data-ttu-id="de109-2147">Az.Network</span><span class="sxs-lookup"><span data-stu-id="de109-2147">Az.Network</span></span>
-* <span data-ttu-id="de109-2148">Test-AzNetworkWatcherConnectivity cmdlet'i güncelleştirildi, arka uca protokol değerini geçiriyor.</span><span class="sxs-lookup"><span data-stu-id="de109-2148">Update cmdlet Test-AzNetworkWatcherConnectivity, pass the protocol value to backend.</span></span>
-* <span data-ttu-id="de109-2149">Tüm cmdlet'lere ResourceName bağımsız değişken tamamlayıcısı eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-2149">Added ResourceName argument completer to all cmdlets.</span></span>
+#### <a name="aznetwork"></a><span data-ttu-id="b23a2-2147">Az.Network</span><span class="sxs-lookup"><span data-stu-id="b23a2-2147">Az.Network</span></span>
+* <span data-ttu-id="b23a2-2148">Test-AzNetworkWatcherConnectivity cmdlet'i güncelleştirildi, arka uca protokol değerini geçiriyor.</span><span class="sxs-lookup"><span data-stu-id="b23a2-2148">Update cmdlet Test-AzNetworkWatcherConnectivity, pass the protocol value to backend.</span></span>
+* <span data-ttu-id="b23a2-2149">Tüm cmdlet'lere ResourceName bağımsız değişken tamamlayıcısı eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-2149">Added ResourceName argument completer to all cmdlets.</span></span>
 
-#### <a name="azresources"></a><span data-ttu-id="de109-2150">Az.Resources</span><span class="sxs-lookup"><span data-stu-id="de109-2150">Az.Resources</span></span>
-* <span data-ttu-id="de109-2151">Get-AzRoleDefinition cmdlet'inin anlaşılmaz bir özel durum oluşturmasına neden olan hata (varsayılan profilin içinde abonelik olmadığında ve hiçbir kapsam belirtilmediğinde), senaryoya anlamlı bir özel durum eklenerek düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="de109-2151">Fix isssue where Get-AzRoleDefinition throws an unintelligible exception (when the default profile has no subscription in it and no scope is specified) by adding a meaningful exception in the scenario.</span></span> <span data-ttu-id="de109-2152">Ayrıca varsayılan parametre kümesi 'RoleDefinitionNameParameterSet' olarak ayarlandı.</span><span class="sxs-lookup"><span data-stu-id="de109-2152">Also set the default param set to 'RoleDefinitionNameParameterSet'.</span></span>
+#### <a name="azresources"></a><span data-ttu-id="b23a2-2150">Az.Resources</span><span class="sxs-lookup"><span data-stu-id="b23a2-2150">Az.Resources</span></span>
+* <span data-ttu-id="b23a2-2151">Get-AzRoleDefinition cmdlet'inin anlaşılmaz bir özel durum oluşturmasına neden olan hata (varsayılan profilin içinde abonelik olmadığında ve hiçbir kapsam belirtilmediğinde), senaryoya anlamlı bir özel durum eklenerek düzeltildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-2151">Fix isssue where Get-AzRoleDefinition throws an unintelligible exception (when the default profile has no subscription in it and no scope is specified) by adding a meaningful exception in the scenario.</span></span> <span data-ttu-id="b23a2-2152">Ayrıca varsayılan parametre kümesi 'RoleDefinitionNameParameterSet' olarak ayarlandı.</span><span class="sxs-lookup"><span data-stu-id="b23a2-2152">Also set the default param set to 'RoleDefinitionNameParameterSet'.</span></span>
 
-## <a name="030---october-2018"></a><span data-ttu-id="de109-2153">0.3.0 - Ekim 2018</span><span class="sxs-lookup"><span data-stu-id="de109-2153">0.3.0 - October 2018</span></span>
-#### <a name="azurestorage"></a><span data-ttu-id="de109-2154">Azure Depolama</span><span class="sxs-lookup"><span data-stu-id="de109-2154">Azure.Storage</span></span>
-* <span data-ttu-id="de109-2155">Hedefte meta veri sorunu olduğunda Fix Copy Blob/File meta verileri kopyalamayacak</span><span class="sxs-lookup"><span data-stu-id="de109-2155">Fix Copy Blob/File won't copy metadata when destination has metadata issue</span></span>
-    - <span data-ttu-id="de109-2156">Start-AzureStorageBlobCopy</span><span class="sxs-lookup"><span data-stu-id="de109-2156">Start-AzureStorageBlobCopy</span></span>
-    - <span data-ttu-id="de109-2157">Start-AzureStorageFileCopy</span><span class="sxs-lookup"><span data-stu-id="de109-2157">Start-AzureStorageFileCopy</span></span>
-* <span data-ttu-id="de109-2158">Belirli bir konumunun Depolama kaynağı kullanımını alma desteği ve genel Depolama kayrağı kullanımını almak için uyarı iletisi ekleme kullanımdan kalktı.</span><span class="sxs-lookup"><span data-stu-id="de109-2158">Support get the Storage resource usage of a specific location, and add warning message for get global Storage resource usage is obsolete.</span></span>
-    - <span data-ttu-id="de109-2159">Get-AzStorageUsage</span><span class="sxs-lookup"><span data-stu-id="de109-2159">Get-AzStorageUsage</span></span>
+## <a name="030---october-2018"></a><span data-ttu-id="b23a2-2153">0.3.0 - Ekim 2018</span><span class="sxs-lookup"><span data-stu-id="b23a2-2153">0.3.0 - October 2018</span></span>
+#### <a name="azurestorage"></a><span data-ttu-id="b23a2-2154">Azure Depolama</span><span class="sxs-lookup"><span data-stu-id="b23a2-2154">Azure.Storage</span></span>
+* <span data-ttu-id="b23a2-2155">Hedefte meta veri sorunu olduğunda Fix Copy Blob/File meta verileri kopyalamayacak</span><span class="sxs-lookup"><span data-stu-id="b23a2-2155">Fix Copy Blob/File won't copy metadata when destination has metadata issue</span></span>
+    - <span data-ttu-id="b23a2-2156">Start-AzureStorageBlobCopy</span><span class="sxs-lookup"><span data-stu-id="b23a2-2156">Start-AzureStorageBlobCopy</span></span>
+    - <span data-ttu-id="b23a2-2157">Start-AzureStorageFileCopy</span><span class="sxs-lookup"><span data-stu-id="b23a2-2157">Start-AzureStorageFileCopy</span></span>
+* <span data-ttu-id="b23a2-2158">Belirli bir konumunun Depolama kaynağı kullanımını alma desteği ve genel Depolama kayrağı kullanımını almak için uyarı iletisi ekleme kullanımdan kalktı.</span><span class="sxs-lookup"><span data-stu-id="b23a2-2158">Support get the Storage resource usage of a specific location, and add warning message for get global Storage resource usage is obsolete.</span></span>
+    - <span data-ttu-id="b23a2-2159">Get-AzStorageUsage</span><span class="sxs-lookup"><span data-stu-id="b23a2-2159">Get-AzStorageUsage</span></span>
 
-#### <a name="azcognitiveservices"></a><span data-ttu-id="de109-2160">Az.CognitiveServices</span><span class="sxs-lookup"><span data-stu-id="de109-2160">Az.CognitiveServices</span></span>
-* <span data-ttu-id="de109-2161">Mevcut hesap olmadan Get-AzCognitiveServicesAccountSkus desteği.</span><span class="sxs-lookup"><span data-stu-id="de109-2161">Support Get-AzCognitiveServicesAccountSkus without an existing account.</span></span>
+#### <a name="azcognitiveservices"></a><span data-ttu-id="b23a2-2160">Az.CognitiveServices</span><span class="sxs-lookup"><span data-stu-id="b23a2-2160">Az.CognitiveServices</span></span>
+* <span data-ttu-id="b23a2-2161">Mevcut hesap olmadan Get-AzCognitiveServicesAccountSkus desteği.</span><span class="sxs-lookup"><span data-stu-id="b23a2-2161">Support Get-AzCognitiveServicesAccountSkus without an existing account.</span></span>
 
-#### <a name="azcompute"></a><span data-ttu-id="de109-2162">Az.Compute</span><span class="sxs-lookup"><span data-stu-id="de109-2162">Az.Compute</span></span>
-* <span data-ttu-id="de109-2163">Get-AzVM -ResourceGroupName <rg> gerektiğinde 50'den fazla sonuç döndürecek şekilde düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-2163">Fix Get-AzVM -ResourceGroupName <rg> to return more than 50 results if needed</span></span>
-* <span data-ttu-id="de109-2164">New-AzVmss cmdlet'inin yardımına 'SimpleParameterSet' örneği eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-2164">Added an example of the 'SimpleParameterSet' to New-AzVmss cmdlet help.</span></span>
-* <span data-ttu-id="de109-2165">Azure Disk Şifrelemesi ilerleme durumu iletisindeki yazım hatası düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-2165">Fixed a typo in the Azure Disk Encryption progress message</span></span>
+#### <a name="azcompute"></a><span data-ttu-id="b23a2-2162">Az.Compute</span><span class="sxs-lookup"><span data-stu-id="b23a2-2162">Az.Compute</span></span>
+* <span data-ttu-id="b23a2-2163">Get-AzVM -ResourceGroupName <rg> gerektiğinde 50'den fazla sonuç döndürecek şekilde düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-2163">Fix Get-AzVM -ResourceGroupName <rg> to return more than 50 results if needed</span></span>
+* <span data-ttu-id="b23a2-2164">New-AzVmss cmdlet'inin yardımına 'SimpleParameterSet' örneği eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-2164">Added an example of the 'SimpleParameterSet' to New-AzVmss cmdlet help.</span></span>
+* <span data-ttu-id="b23a2-2165">Azure Disk Şifrelemesi ilerleme durumu iletisindeki yazım hatası düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-2165">Fixed a typo in the Azure Disk Encryption progress message</span></span>
 
-#### <a name="azdatafactoryv2"></a><span data-ttu-id="de109-2166">Az.DataFactoryV2</span><span class="sxs-lookup"><span data-stu-id="de109-2166">Az.DataFactoryV2</span></span>
-* <span data-ttu-id="de109-2167">ADF .Net SDK sürümü 2.3.0'a güncelleştirildi.</span><span class="sxs-lookup"><span data-stu-id="de109-2167">Updated the ADF .Net SDK version to 2.3.0.</span></span>
+#### <a name="azdatafactoryv2"></a><span data-ttu-id="b23a2-2166">Az.DataFactoryV2</span><span class="sxs-lookup"><span data-stu-id="b23a2-2166">Az.DataFactoryV2</span></span>
+* <span data-ttu-id="b23a2-2167">ADF .Net SDK sürümü 2.3.0'a güncelleştirildi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-2167">Updated the ADF .Net SDK version to 2.3.0.</span></span>
 
-#### <a name="aznetwork"></a><span data-ttu-id="de109-2168">Az.Network</span><span class="sxs-lookup"><span data-stu-id="de109-2168">Az.Network</span></span>
-* <span data-ttu-id="de109-2169">NetworkProfile işlevselliği eklendi.</span><span class="sxs-lookup"><span data-stu-id="de109-2169">Added NetworkProfile functionality.</span></span> <span data-ttu-id="de109-2170">yeni cmdlet'ler eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-2170">new cmdlets added</span></span>
-    - <span data-ttu-id="de109-2171">Get-AzNetworkProfile</span><span class="sxs-lookup"><span data-stu-id="de109-2171">Get-AzNetworkProfile</span></span>
-    - <span data-ttu-id="de109-2172">New-AzNetworkProfile</span><span class="sxs-lookup"><span data-stu-id="de109-2172">New-AzNetworkProfile</span></span>
-    - <span data-ttu-id="de109-2173">Remove-AzNetworkProfile</span><span class="sxs-lookup"><span data-stu-id="de109-2173">Remove-AzNetworkProfile</span></span>
-    - <span data-ttu-id="de109-2174">Set-AzNetworkProfile</span><span class="sxs-lookup"><span data-stu-id="de109-2174">Set-AzNetworkProfile</span></span>
-    - <span data-ttu-id="de109-2175">New-AzContainerNicConfig</span><span class="sxs-lookup"><span data-stu-id="de109-2175">New-AzContainerNicConfig</span></span>
-    - <span data-ttu-id="de109-2176">New-AzContainerNicConfigIpConfig</span><span class="sxs-lookup"><span data-stu-id="de109-2176">New-AzContainerNicConfigIpConfig</span></span>
-* <span data-ttu-id="de109-2177">Alt Ağ Modeline hizmet ilişki bağlantısı eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-2177">Added service association link on Subnet Model</span></span>
-* <span data-ttu-id="de109-2178">New-AzVirtualNetworkTap, Get-AzVirtualNetworkTap, Set-AzVirtualNetworkTap, Remove-AzVirtualNetworkTap cmdlet'leri eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-2178">Added cmdlet New-AzVirtualNetworkTap, Get-AzVirtualNetworkTap, Set-AzVirtualNetworkTap, Remove-AzVirtualNetworkTap</span></span>
-* <span data-ttu-id="de109-2179">Set-AzNEtworkInterfaceTapConfig, Get-AzNEtworkInterfaceTapConfig, Remove-AzNEtworkInterfaceTapConfig cmdlet'leri eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-2179">Added cmdlet Set-AzNEtworkInterfaceTapConfig, Get-AzNEtworkInterfaceTapConfig, Remove-AzNEtworkInterfaceTapConfig</span></span>
+#### <a name="aznetwork"></a><span data-ttu-id="b23a2-2168">Az.Network</span><span class="sxs-lookup"><span data-stu-id="b23a2-2168">Az.Network</span></span>
+* <span data-ttu-id="b23a2-2169">NetworkProfile işlevselliği eklendi.</span><span class="sxs-lookup"><span data-stu-id="b23a2-2169">Added NetworkProfile functionality.</span></span> <span data-ttu-id="b23a2-2170">yeni cmdlet'ler eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-2170">new cmdlets added</span></span>
+    - <span data-ttu-id="b23a2-2171">Get-AzNetworkProfile</span><span class="sxs-lookup"><span data-stu-id="b23a2-2171">Get-AzNetworkProfile</span></span>
+    - <span data-ttu-id="b23a2-2172">New-AzNetworkProfile</span><span class="sxs-lookup"><span data-stu-id="b23a2-2172">New-AzNetworkProfile</span></span>
+    - <span data-ttu-id="b23a2-2173">Remove-AzNetworkProfile</span><span class="sxs-lookup"><span data-stu-id="b23a2-2173">Remove-AzNetworkProfile</span></span>
+    - <span data-ttu-id="b23a2-2174">Set-AzNetworkProfile</span><span class="sxs-lookup"><span data-stu-id="b23a2-2174">Set-AzNetworkProfile</span></span>
+    - <span data-ttu-id="b23a2-2175">New-AzContainerNicConfig</span><span class="sxs-lookup"><span data-stu-id="b23a2-2175">New-AzContainerNicConfig</span></span>
+    - <span data-ttu-id="b23a2-2176">New-AzContainerNicConfigIpConfig</span><span class="sxs-lookup"><span data-stu-id="b23a2-2176">New-AzContainerNicConfigIpConfig</span></span>
+* <span data-ttu-id="b23a2-2177">Alt Ağ Modeline hizmet ilişki bağlantısı eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-2177">Added service association link on Subnet Model</span></span>
+* <span data-ttu-id="b23a2-2178">New-AzVirtualNetworkTap, Get-AzVirtualNetworkTap, Set-AzVirtualNetworkTap, Remove-AzVirtualNetworkTap cmdlet'leri eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-2178">Added cmdlet New-AzVirtualNetworkTap, Get-AzVirtualNetworkTap, Set-AzVirtualNetworkTap, Remove-AzVirtualNetworkTap</span></span>
+* <span data-ttu-id="b23a2-2179">Set-AzNEtworkInterfaceTapConfig, Get-AzNEtworkInterfaceTapConfig, Remove-AzNEtworkInterfaceTapConfig cmdlet'leri eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-2179">Added cmdlet Set-AzNEtworkInterfaceTapConfig, Get-AzNEtworkInterfaceTapConfig, Remove-AzNEtworkInterfaceTapConfig</span></span>
 
-#### <a name="azrediscache"></a><span data-ttu-id="de109-2180">Az.RedisCache</span><span class="sxs-lookup"><span data-stu-id="de109-2180">Az.RedisCache</span></span>
-* <span data-ttu-id="de109-2181">Bundan sonra Size parametresi olarak her dizeye izin veriliyor.</span><span class="sxs-lookup"><span data-stu-id="de109-2181">Allow any string as Size parameter going forward.</span></span> <span data-ttu-id="de109-2182">PSArgumentCompleter açılan listesine P5 eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-2182">Add P5 in PSArgumentCompleter popup</span></span>
+#### <a name="azrediscache"></a><span data-ttu-id="b23a2-2180">Az.RedisCache</span><span class="sxs-lookup"><span data-stu-id="b23a2-2180">Az.RedisCache</span></span>
+* <span data-ttu-id="b23a2-2181">Bundan sonra Size parametresi olarak her dizeye izin veriliyor.</span><span class="sxs-lookup"><span data-stu-id="b23a2-2181">Allow any string as Size parameter going forward.</span></span> <span data-ttu-id="b23a2-2182">PSArgumentCompleter açılan listesine P5 eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-2182">Add P5 in PSArgumentCompleter popup</span></span>
 
-#### <a name="azresources"></a><span data-ttu-id="de109-2183">Az.Resources</span><span class="sxs-lookup"><span data-stu-id="de109-2183">Az.Resources</span></span>
-* <span data-ttu-id="de109-2184">Set-AzPolicyDefinition'a eksik -Mode parametresi eklendi</span><span class="sxs-lookup"><span data-stu-id="de109-2184">Add missing -Mode parameter to Set-AzPolicyDefinition</span></span>
-* <span data-ttu-id="de109-2185">Origin öğesi User içeren işlemler için Get-AzProviderOperation commandlet hatası düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-2185">Fix Get-AzProviderOperation commandlet bug for operations with Origin containing User</span></span>
+#### <a name="azresources"></a><span data-ttu-id="b23a2-2183">Az.Resources</span><span class="sxs-lookup"><span data-stu-id="b23a2-2183">Az.Resources</span></span>
+* <span data-ttu-id="b23a2-2184">Set-AzPolicyDefinition'a eksik -Mode parametresi eklendi</span><span class="sxs-lookup"><span data-stu-id="b23a2-2184">Add missing -Mode parameter to Set-AzPolicyDefinition</span></span>
+* <span data-ttu-id="b23a2-2185">Origin öğesi User içeren işlemler için Get-AzProviderOperation commandlet hatası düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-2185">Fix Get-AzProviderOperation commandlet bug for operations with Origin containing User</span></span>
 
-#### <a name="azsql"></a><span data-ttu-id="de109-2186">Az.Sql</span><span class="sxs-lookup"><span data-stu-id="de109-2186">Az.Sql</span></span>
-* <span data-ttu-id="de109-2187">Bazı yedekleme cmdlet'lerinin geçerli Azure aboneliğini tanıyamamasına neden olan sorun düzeltildi</span><span class="sxs-lookup"><span data-stu-id="de109-2187">Fixed issue where some backup cmdlets would not recognize the current azure subscription</span></span>
+#### <a name="azsql"></a><span data-ttu-id="b23a2-2186">Az.Sql</span><span class="sxs-lookup"><span data-stu-id="b23a2-2186">Az.Sql</span></span>
+* <span data-ttu-id="b23a2-2187">Bazı yedekleme cmdlet'lerinin geçerli Azure aboneliğini tanıyamamasına neden olan sorun düzeltildi</span><span class="sxs-lookup"><span data-stu-id="b23a2-2187">Fixed issue where some backup cmdlets would not recognize the current azure subscription</span></span>
 
-#### <a name="azwebsites"></a><span data-ttu-id="de109-2188">Az.Websites</span><span class="sxs-lookup"><span data-stu-id="de109-2188">Az.Websites</span></span>
-* <span data-ttu-id="de109-2189">Yeni Get-AzWebAppContainerContinuousDeploymentUrl Cmdlet'i - Kapsayıcı Sürekli Dağıtım Web Kancası URL'sini alıyor</span><span class="sxs-lookup"><span data-stu-id="de109-2189">New Cmdlet Get-AzWebAppContainerContinuousDeploymentUrl - Gets the Container Continuous Deployment Webhook URL</span></span>
-* <span data-ttu-id="de109-2190">Yeni New-AzWebAppContainerPSSession ve Enter-WebAppContainerPSSession Cmdlet'leri - Windows kapsayıcı uygulamasında PowerShell uzak oturumunu başlatıyor</span><span class="sxs-lookup"><span data-stu-id="de109-2190">New Cmdlets New-AzWebAppContainerPSSession and Enter-WebAppContainerPSSession  - Initiates a PowerShell remote session into a windows container app</span></span>
+#### <a name="azwebsites"></a><span data-ttu-id="b23a2-2188">Az.Websites</span><span class="sxs-lookup"><span data-stu-id="b23a2-2188">Az.Websites</span></span>
+* <span data-ttu-id="b23a2-2189">Yeni Get-AzWebAppContainerContinuousDeploymentUrl Cmdlet'i - Kapsayıcı Sürekli Dağıtım Web Kancası URL'sini alıyor</span><span class="sxs-lookup"><span data-stu-id="b23a2-2189">New Cmdlet Get-AzWebAppContainerContinuousDeploymentUrl - Gets the Container Continuous Deployment Webhook URL</span></span>
+* <span data-ttu-id="b23a2-2190">Yeni New-AzWebAppContainerPSSession ve Enter-WebAppContainerPSSession Cmdlet'leri - Windows kapsayıcı uygulamasında PowerShell uzak oturumunu başlatıyor</span><span class="sxs-lookup"><span data-stu-id="b23a2-2190">New Cmdlets New-AzWebAppContainerPSSession and Enter-WebAppContainerPSSession  - Initiates a PowerShell remote session into a windows container app</span></span>
 
-## <a name="020---september-2018"></a><span data-ttu-id="de109-2191">0.2.0 - Eylül 2018</span><span class="sxs-lookup"><span data-stu-id="de109-2191">0.2.0 - September 2018</span></span>
- <span data-ttu-id="de109-2192">İlk Yayın</span><span class="sxs-lookup"><span data-stu-id="de109-2192">Initial Release</span></span>
+## <a name="020---september-2018"></a><span data-ttu-id="b23a2-2191">0.2.0 - Eylül 2018</span><span class="sxs-lookup"><span data-stu-id="b23a2-2191">0.2.0 - September 2018</span></span>
+ <span data-ttu-id="b23a2-2192">İlk Yayın</span><span class="sxs-lookup"><span data-stu-id="b23a2-2192">Initial Release</span></span>

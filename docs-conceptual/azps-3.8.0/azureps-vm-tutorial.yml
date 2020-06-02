@@ -8,20 +8,20 @@ metadata:
   displayType: two-column
   interactive: azurepowershell
   ms.date: 12/13/2018
-  ms.author: sttramer
-  author: sptramer
-  manager: carmonm
+  ms.author: mirobb
+  author: mikefrobbins
+  manager: barbkess
   ms.devlang: azure-powershell
   ms.prod: powershell
   ms.technology: azure-powershell
   ms.topic: tutorial
   clicktale: true
-  ms.openlocfilehash: 71f250c0578e46888845f7a9a1ae4b74f7a38fab
-  ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+  ms.openlocfilehash: 92422fbee6e09123cd6e4f0cad722aa9f496759d
+  ms.sourcegitcommit: 9f5c7d231b069ad501729bf015a829f3fe89bc6a
   ms.translationtype: HT
   ms.contentlocale: tr-TR
-  ms.lasthandoff: 05/05/2020
-  ms.locfileid: "81740465"
+  ms.lasthandoff: 05/28/2020
+  ms.locfileid: "84122122"
 items:
 - durationInMinutes: 1
   content: >-
@@ -31,7 +31,7 @@ items:
     Bu öğreticiyi Azure Cloud Shell üzerinden sunulan etkileşimli deneyimle tamamlayabilir veya [Azure PowerShell’i yerel olarak yükleyebilirsiniz](install-az-ps.md).
 
 
-    Öğretici metnini Azure Cloud Shell’e yapıştırmak için __Ctrl+Shift+V__ (macOS’ta __Cmd+Shift+V__) tuşlarını kullanın.
+    Öğretici metnini Azure Cloud Shell’e yapıştırmak için **Ctrl+Shift+V** (macOS’ta **Cmd+Shift+V**) tuşlarını kullanın.
 - durationInMinutes: 1
   title: Oturum aç
   content: >-
@@ -373,4 +373,4 @@ items:
     Temizleme tamamlandığında öğretici sona erer. Öğrendiklerinizin özeti üzerinden geçmek ve sonraki adımlar konusunda size yardımcı olacak kaynakların bağlantılarını görüntülemek için devam edin.
 - durationInMinutes: 1
   title: Özet
-  content: "\nTebrikler! Yeni veya mevcut kaynaklarla VM oluşturmayı öğrendiniz, kabuk değişkenlerinde depolanacak verileri yakalamak için ifadeleri ve diğer Azure PowerShell komutlarını kullandınız, Azure VM’leri için oluşturulan bazı kaynaklara göz attınız.\n\nBu noktadan itibaren izleyeceğiniz rota Azure PowerShell’i nasıl kullanmayı planladığınıza bağlıdır. Bu öğreticide ele alınan özelliklerin daha kapsamlı olarak incelendiği çok sayıda kaynak mevcuttur.\n\n### <a name=\"in-depth-azure-powershell-documentation\"></a>Ayrıntılı Azure PowerShell belgeleri\n\nBiraz zaman ayırıp [Azure PowerShell belgelerinin](overview.md) tamamını isteyebilirsiniz.\n\nBu öğreticide kullanılan komutlar hakkında daha fazla bilgi için aşağıdaki makalelere bakın.\n\n- [New-AzResourceGroup](/powershell/module/Az.resources/new-Azresourcegroup)\n- [Get-Credential](/powershell/module/microsoft.powershell.security/get-credential)\n- [New-AzVM](/powershell/module/Az.compute/new-Azvm)\n- [Select-Object](/powershell/module/microsoft.powershell.utility/select-object)\n- [Get-AzPublicIpAddress](/powershell/module/Az.network/get-AzPublicIpAddress)\n- [Remove-AzResourceGroup](/powershell/module/Az.resources/Remove-AzResourceGroup)\n- [Wait-Job](/powershell/module/microsoft.powershell.core/wait-job)\n\nÖğreticide gösterilen özelliklerin ayrıntılarının incelendiği makaleler de mevcuttur.\n\n- [PowerShell topluca geçirme](/powershell/module/microsoft.powershell.core/about/about_splatting)\n- [Sorgular](queries-azureps.md)\n- [Biçimlendirme](formatting-output.md)\n- [PowerShell işlerini kullanma](using-psjobs.md)\n\n### <a name=\"sample-scripts\"></a>Örnek betikler\n\nBelirli görevlerle hızlı bir başlangıç yapmak istiyorsanız bazı örnek betiklere göz atın.\n\n- [Linux Sanal Makineleri](/azure/virtual-machines/linux/powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json)\n- [Windows Sanal Makineleri](/azure/virtual-machines/windows/powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json)\n- [Web Apps](/azure/app-service-web/app-service-powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json)\n- [SQL Veritabanları](/azure/sql-database/sql-database-powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json)\n- [Cosmos DB](/azure/cosmos-db/powershell-samples?toc=%2fpowershell%2fmodules%2ftoc.json)\n\n### <a name=\"feedback\"></a>Geri Bildirim\n\nGeri bildirim vermek, öneride bulunmak veya soru sormak istiyorsanız çeşitli şekillerde iletişime geçebilirsiniz.\n\n* `Send-Feedback`, Azure PowerShell için takıma serbest biçimli geri bildirim sağlamanıza olanak tanıyan yerleşik bir komuttur.\n* [Azure PowerShell deposuna](https://github.com/Azure/azure-powershell/issues) bir özellik isteği veya hata raporu kaydedin.\n* [Azure PowerShell belge deposuna](https://github.com/MicrosoftDocs/azure-docs-powershell/issues) bir sorun kaydederek soru sorun veya açıklama alın.\n\nAzure PowerShell’i keyifle kullandığınızı umuyoruz!"
+  content: "\nTebrikler! Yeni veya mevcut kaynaklarla VM oluşturmayı öğrendiniz, kabuk değişkenlerinde depolanacak verileri yakalamak için ifadeleri ve diğer Azure PowerShell komutlarını kullandınız, Azure VM’leri için oluşturulan bazı kaynaklara göz attınız.\n\nBu noktadan itibaren izleyeceğiniz rota Azure PowerShell’i nasıl kullanmayı planladığınıza bağlıdır. Bu öğreticide ele alınan özelliklerin daha kapsamlı olarak incelendiği çok sayıda kaynak mevcuttur.\n\n### <a name=\"in-depth-azure-powershell-documentation\"></a>Ayrıntılı Azure PowerShell belgeleri\n\nBiraz zaman ayırıp [Azure PowerShell belgelerinin](/powershell/azure/new-azureps-module-az?view=azps-3.8.0) tamamını isteyebilirsiniz.\n\nBu öğreticide kullanılan komutlar hakkında daha fazla bilgi için aşağıdaki makalelere bakın.\n\n- [New-AzResourceGroup](/powershell/module/Az.resources/new-Azresourcegroup)\n- [Get-Credential](/powershell/module/microsoft.powershell.security/get-credential)\n- [New-AzVM](/powershell/module/Az.compute/new-Azvm)\n- [Select-Object](/powershell/module/microsoft.powershell.utility/select-object)\n- [Get-AzPublicIpAddress](/powershell/module/Az.network/get-AzPublicIpAddress)\n- [Remove-AzResourceGroup](/powershell/module/Az.resources/Remove-AzResourceGroup)\n- [Wait-Job](/powershell/module/microsoft.powershell.core/wait-job)\n\nÖğreticide gösterilen özelliklerin ayrıntılarının incelendiği makaleler de mevcuttur.\n\n- [PowerShell topluca geçirme](/powershell/module/microsoft.powershell.core/about/about_splatting)\n- [Sorgular](queries-azureps.md)\n- [Biçimlendirme](formatting-output.md)\n- [PowerShell işlerini kullanma](using-psjobs.md)\n\n### <a name=\"sample-scripts\"></a>Örnek betikler\n\nBelirli görevlerle hızlı bir başlangıç yapmak istiyorsanız bazı örnek betiklere göz atın.\n\n- [Linux Sanal Makineleri](/azure/virtual-machines/linux/powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json)\n- [Windows Sanal Makineleri](/azure/virtual-machines/windows/powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json)\n- [Web Apps](/azure/app-service-web/app-service-powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json)\n- [SQL Veritabanları](/azure/sql-database/sql-database-powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json)\n- [Cosmos DB](/azure/cosmos-db/powershell-samples?toc=%2fpowershell%2fmodules%2ftoc.json)\n\n### <a name=\"feedback\"></a>Geri Bildirim\n\nGeri bildirim vermek, öneride bulunmak veya soru sormak istiyorsanız çeşitli şekillerde iletişime geçebilirsiniz.\n\n* `Send-Feedback`, Azure PowerShell için takıma serbest biçimli geri bildirim sağlamanıza olanak tanıyan yerleşik bir komuttur.\n* [Azure PowerShell deposuna](https://github.com/Azure/azure-powershell/issues) bir özellik isteği veya hata raporu kaydedin.\n* [Azure PowerShell belge deposuna](https://github.com/MicrosoftDocs/azure-docs-powershell/issues) bir sorun kaydederek soru sorun veya açıklama alın.\n\nAzure PowerShell’i keyifle kullandığınızı umuyoruz!"
