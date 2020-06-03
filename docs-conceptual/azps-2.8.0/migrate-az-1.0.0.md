@@ -1,18 +1,15 @@
 ---
 title: AzureRM'den Azure PowerShell Az 1.0.0’a tüm değişiklikler
 description: Bu geçiş kılavuzu, Azure PowerShell Az sürüm 1 yayınında yapılan yeni değişikliklerin listesini içerir.
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/15/2019
-ms.openlocfilehash: e5121d61b0f5f68ff3e1f33d774e3533adfeb64f
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: 6c2d681144fe561e734a247c44046e3dadb78083
+ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "75035787"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83387454"
 ---
 # <a name="breaking-changes-for-az-100"></a>Az 1.0.0 için yeni değişiklikler
 
@@ -58,7 +55,7 @@ Bu bölümde, Az modülünün yeniden tasarımının bir parçası olan, hataya 
 
 ### <a name="cmdlet-noun-prefix-changes"></a>Cmdlet İsim Öneki Değişiklikleri
 
-AzureRM modülünde cmdlet’ler isim ön eki olarak `AzureRM` veya `Azure` kullanılır.  Az ile birlikte cmdlet adları basitleştirilip normalleştirilerek tüm cmdlet’lerin isim ön eki olarak 'Az' kullanılacak. Örnek:
+AzureRM modülünde cmdlet’ler isim ön eki olarak `AzureRM` veya `Azure` kullanılır.  Az ile birlikte cmdlet adları basitleştirilip normalleştirilerek tüm cmdlet’lerin isim ön eki olarak 'Az' kullanılacak. Örneğin:
 
 ```azurepowershell-interactive
 Get-AzureRMVM
@@ -125,7 +122,7 @@ Modül adlarındaki değişiklikler nedeniyle, belirli modülleri yüklemek içi
 
 #### <a name="migrating-requires-and-import-module-statements"></a>#Requires ve Import-Module Deyimlerini Geçirme
 
-AzureRM modüllerine bağımlılığı bildirmek için `#Requires` veya `Import-Module` deyimini kullanan betikler yeni modül adlarını kullanacak şekilde güncelleştirilmelidir. Örnek:
+AzureRM modüllerine bağımlılığı bildirmek için `#Requires` veya `Import-Module` deyimini kullanan betikler yeni modül adlarını kullanacak şekilde güncelleştirilmelidir. Örneğin:
 
 ```azurepowershell-interactive
 #Requires -Module AzureRM.Compute

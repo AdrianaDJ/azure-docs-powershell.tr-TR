@@ -1,18 +1,15 @@
 ---
 title: Microsoft Azure PowerShell 4.0.0 için bozucu değişiklikler
 description: Bu geçiş kılavuzu, Azure PowerShell sürüm 4 yayınında yapılan ve hataya neden olan değişikliklerin listesini içerir.
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/01/2018
-ms.openlocfilehash: 2f61e41b701dfc263df18064f6ac2cc4c6e4021e
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: 47d7ab67a6b1d092bb07405e7dc925d844cac5ab
+ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "67863549"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83386723"
 ---
 # <a name="breaking-changes-for-microsoft-azure-powershell-400"></a>Microsoft Azure PowerShell 4.0.0 için bozucu değişiklikler
 
@@ -56,7 +53,7 @@ $vm.NetworkProfile.NetworkInterfaces | Select -Property Id
 
 ## <a name="breaking-changes-to-eventhub-cmdlets"></a>EventHub cmdlet’lerinde bozucu değişiklikler
 
-Bu sürümden aşağıdaki cmdlet’ler etkilenir:
+Bu sürümden aşağıdaki cmdlet’ler etkilenmiştir:
 
 ### <a name="get-azurermeventhubnamespace"></a>Get-AzureRmEventHubNamespace
 - `ResourceGroupName` özelliği `NamespaceAttributes` çıktı türünden kaldırıldı
@@ -66,7 +63,7 @@ Bu sürümden aşağıdaki cmdlet’ler etkilenir:
 
 ## <a name="breaking-changes-to-insights-cmdlets"></a>Insights cmdlet’lerinde bozucu değişiklikler
 
-Bu sürümden aşağıdaki cmdlet’ler etkilenir:
+Bu sürümden aşağıdaki cmdlet’ler etkilenmiştir:
     
 ### <a name="get-azurermusage"></a>Get-AzureRmUsage
 - Bu cmdlet kullanım dışı bırakıldı.
@@ -192,7 +189,7 @@ Update-AzureRmDiagnosticSettings
 
 ## <a name="breaking-changes-to-network-cmdlets"></a>Ağ cmdlet’lerinde bozucu değişiklikler
 
-Bu sürümden aşağıdaki cmdlet’ler etkilenir:
+Bu sürümden aşağıdaki cmdlet’ler etkilenmiştir:
 
 ### <a name="new-azurermvirtualnetworkgatewayconnection"></a>New-AzureRmVirtualNetworkGatewayConnection
 - `EnableBgp`parametresi, `boolean` yerine `string` alacak şekilde değiştirildi
@@ -207,7 +204,7 @@ New-AzureRmVirtualNetworkGatewayConnection -ResourceGroupName "RG" -name "conn1"
 
 ## <a name="breaking-changes-to-servicebus-cmdlets"></a>ServiceBus cmdlet’lerinde bozucu değişiklikler
 
-Bu sürümden aşağıdaki cmdlet’ler etkilenir:
+Bu sürümden aşağıdaki cmdlet’ler etkilenmiştir:
 
 ### <a name="get-azurermservicebusnamespace"></a>Get-AzureRmServiceBusNamespace
 - `ResourceGroupName` özelliği `NamespaceAttributes` çıktı türünden kaldırıldı
@@ -218,7 +215,7 @@ Bu sürümden aşağıdaki cmdlet’ler etkilenir:
 
 ## <a name="breaking-changes-to-sql-cmdlets"></a>Sql cmdlet’lerinde bozucu değişiklikler
 
-Bu sürümden aşağıdaki cmdlet’ler etkilenir:
+Bu sürümden aşağıdaki cmdlet’ler etkilenmiştir:
 
 ### <a name="new-azurermsqldatabasefailovergroup"></a>New-AzureRmSqlDatabaseFailoverGroup
 - `Tag` parametresi kaldırıldı
