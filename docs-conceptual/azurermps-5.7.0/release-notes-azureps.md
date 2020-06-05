@@ -1,21 +1,18 @@
 ---
-title: Azure PowerShell Değişiklik Günlüğü | Microsoft Docs
+title: Azure PowerShell Değişiklik Günlüğü
 description: Azure PowerShell'in en son sürümünde yapılan değişikliklerin geçmişi aşağıda verilmiştir.
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.workload: ''
 ms.date: 2/20/2018
-ms.openlocfilehash: 61ab0f91c3d6fffdbffd336fa0d6ed9b0ab8f6ec
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: cf8d1fc76feb07e075339255de63e09f59187dc6
+ms.sourcegitcommit: 9f5c7d231b069ad501729bf015a829f3fe89bc6a
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "68863287"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84122051"
 ---
-# <a name="release-notes"></a>Sürüm notları
+# <a name="azure-powershell-release-notes"></a>Azure PowerShell Sürüm notları
 
 [!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
 
@@ -23,7 +20,7 @@ Azure PowerShell'in bu sürümünde yapılan değişikliklerin listesi aşağıd
 
 ---
 
-# <a name="azure-powershell-570"></a>Azure PowerShell 5.7.0
+## <a name="azure-powershell-570"></a>Azure PowerShell 5.7.0
 
 Azure PowerShell 5.7.0 Yükleyicisi: [bağlantı](https://github.com/Azure/azure-powershell/releases/download/v5.7.0-April2018/azure-powershell.5.7.0.msi)
 
@@ -41,7 +38,7 @@ Install-Module -Name AzureRM -Repository PSGallery -Force
 Update-Module -Name AzureRM
 ```
 
-## <a name="changes-since-last-release"></a>Son Sürümden Sonraki Değişiklikler
+### <a name="changes-since-last-release"></a>Son Sürümden Sonraki Değişiklikler
 
 #### <a name="general"></a>Genel
 * Azure ClientRuntime’ın en son sürüme güncelleştirildi
@@ -149,7 +146,7 @@ Son sürümden sonraki değişiklikler: https://github.com/Azure/azure-powershel
     - Update-AzureRmRecoveryServicesAsrProtectionDirection
 
 #### <a name="azurermstorage"></a>AzureRM.Storage
-* New ve Set StorageAccount cmdlet’lerindeki EnableEncryptionService ve DisableEncryptionService parametreleri, Bekleyen Şifreleme varsayılan olarak etkinleştirildiğinden ve devre dışı bırakılamadığından artık kullanılmıyor.
+* Yeni ve ayarlanan Depolama Hesabı cmdlet’lerindeki EnableEncryptionService ve DisableEncryptionService parametreleri, Bekleyen Şifreleme varsayılan olarak etkinleştirildiğinden ve devre dışı bırakılamadığından artık kullanılmıyor.
     - New-AzureRmStorageAccount
     - Set-AzureRmStorageAccount
 
@@ -184,9 +181,9 @@ Son sürümden sonraki değişiklikler: https://github.com/Azure/azure-powershel
 * 'New-AzureRmVMSS', bağlantı dizelerini ayrıntılı modda yazdırır.
 * 'New-AzureRmVmss', genel IP adresini, yük dengeleme kurallarını, gelen NAT kurallarını destekler.
 * WriteAccelerator özelliği
-    - Şu cmdlet’lere WriteAccelerator anahtar parametresi eklendi: Set-AzureRmVMOSDisk Set-AzureRmVMDataDisk Add-AzureRmVMDataDisk Add-AzureRmVmssDataDisk
-    - Şu cmdlet’e OsDiskWriteAccelerator anahtar parametresi eklendi:     Set-AzureRmVmssStorageProfile.
-    - Şu cmdlet’lere OsDiskWriteAccelerator Boole parametresi eklendi:     Update-AzureRmVM     Update-AzureRmVmss
+    - Aşağıdaki cmdlet’lere WriteAccelerator anahtar parametresi eklendi: Set-AzureRmVMOSDisk Set-AzureRmVMDataDisk Add-AzureRmVMDataDisk Add-AzureRmVmssDataDisk
+    - Aşağıdaki cmdlet’lere OsDiskWriteAccelerator anahtar parametresi eklendi:     Set-AzureRmVmssStorageProfile.
+    - Aşağıdaki cmdlet’lere OsDiskWriteAccelerator Boole parametresi eklendi:     Update-AzureRmVM     Update-AzureRmVmss
 
 #### <a name="azurermdatafactories"></a>AzureRM.DataFactories
 * Bazı şifreleme işlemleri için anlamlı bir hataya yol açmayan kimlik bilgileri şifreleme sorunu düzeltildi
@@ -282,11 +279,11 @@ Son sürümden sonraki değişiklikler: https://github.com/Azure/azure-powershel
 * RouteTable ve effectiveRoute’a DisableBgpRoutePropagation özelliği eklendi.
 
 #### <a name="azurermresources"></a>AzureRM.Resources
-* Register-AzureRmProviderFeature: Belgelerdeki eksik örnekler eklendi
-* Register-AzureRmResourceProvider: Belgelerdeki eksik örnekler eklendi
+* Register-AzureRmProviderFeature: Eksik örnek belgelere eklendi
+* Register-AzureRmResourceProvider: Eksik örnek belgelere eklendi
 
 #### <a name="azurermstorage"></a>AzureRM.Storage
-* New ve Set StorageAccount cmdlet’lerindeki EnableEncryptionService ve DisableEncryptionService parametreleri, Bekleyen Şifreleme varsayılan olarak etkinleştirildiğinden ve devre dışı bırakılamadığından artık kullanılmıyor.
+* Yeni ve ayarlanan Depolama Hesabı cmdlet’lerindeki EnableEncryptionService ve DisableEncryptionService parametreleri, Bekleyen Şifreleme varsayılan olarak etkinleştirildiğinden ve devre dışı bırakılamadığından artık kullanılmıyor.
     - New-AzureRmStorageAccount
     - Set-AzureRmStorageAccount
 
@@ -625,7 +622,7 @@ Son sürümden sonraki değişiklikler: https://github.com/Azure/azure-powershel
   - Get-AzureRmComputeResourceSku, bölge bilgilerini gösterir.
   - [https://github.com/Azure/azure-powershell/issues/5038](https://github.com/Azure/azure-powershell/issues/5038 ) sorununu düzeltmek için Disable-AzureRmVmssDiskEncryption öğesini güncelleştirin
   - Uzun süre çalışan İşlem cmdlet’leri için -AsJob desteği eklendi. Seçilen cmdlet’lerin arka planda çalışmasını ve ilerlemeyi izleyip denetlemek için bir iş döndürmesini sağlar.
-    - Etkilenen cmdlet’ler şunları içerir: Sanal Makineler ve Sanal Makine Ölçek Kümeleri için New-, Update-, Set-, Remove-, Start-, Restart-, Stop- cmdlet’leri
+    - Etkilenen cmdlet’ler şunlardır: Sanal Makineler ve Sanal Makine Ölçek Kümeleri için New-, Update-, Set-, Remove-, Start-, Restart-, Stop- cmdlet’leri
     - New-AzureRmVM cmdlet’ine akıllı varsayılanları kullanarak bir Sanal Makine ve tüm gerekli kaynakları oluşturan basitleştirilmiş parametre kümesi eklendi
 * ContainerInstance
   - Azure Container Instance SDK’sı uygulama 2017-10-01
@@ -692,7 +689,7 @@ Son sürümden sonraki değişiklikler: https://github.com/Azure/azure-powershel
     - Cmdlet’lerinizi AzureRM’den geçirme hakkında daha fazla bilgi için yakında sunulacak olan büyük değişikliklere ilişkin kılavuza bakın.
 * Sql
   - Set-AzureRmSqlDatabase kullanarak veritabanını yeniden adlandırma özelliği eklendi
-  - [https://github.com/Azure/azure-powershell/issues/5046](https://github.com/Azure/azure-powershell/issues/4974 ) sorunu düzeltildi
+  - [https://github.com/Azure/azure-powershell/issues/4974](https://github.com/Azure/azure-powershell/issues/4974 ) sorunu düzeltildi
     - Denetim cmdlet’leri için geçersiz AUDIT_CHANGED_GROUP değeri sağlamak artık hata oluşturmuyor ve gelecek bir sürümde kaldırılacak.
   - [https://github.com/Azure/azure-powershell/issues/5046](https://github.com/Azure/azure-powershell/issues/5046 ) sorunu düzeltildi
     - Denetim cmdlet’lerinde AuditAction parametresi artık yok sayılmıyor
@@ -723,7 +720,7 @@ Son sürümden sonraki değişiklikler: https://github.com/Azure/azure-powershel
   - AzureRM.StreamAnalytics
 
 ## <a name="2017118---version-500"></a>2017.11.8 - Sürüm 5.0.0
-* Not: Bu bir önemli değişiklik yayınıdır. Sunulan önemli değişikliklerin tam listesi için lütfen geçiş kılavuzuna (https://aka.ms/azps-migration-guide) ) bakın.
+* NOT: Bu bir hataya neden olan değişiklik yayınıdır. Sunulan önemli değişikliklerin tam listesi için lütfen geçiş kılavuzuna (https://aka.ms/azps-migration-guide) ) bakın.
 * AzureRM’deki tüm cmdlet'ler artık çevrimiçi yardımı destekler
   - Çevrimiçi yardımı varsayılan İnternet tarayıcınızda açmak için Get-Help komutunu -Online parametresiyle birlikte çalıştırın
 * AnalysisServices
@@ -793,17 +790,17 @@ Son sürümden sonraki değişiklikler: https://github.com/Azure/azure-powershel
 * DataLakeAnalytics
   * Bu yayında DataLakeAnalytics’te yapılan önemli değişiklikler için lütfen geçiş kılavuzuna bakın
   * İki Get-AzureRmDataLakeAnalyticsAccount OutputTypes seçeneğinden biri değiştirildi
-    - List\<DataLakeAnalyticsAccount> - List\<PSDataLakeAnalyticsAccountBasic>
+    - Liste\<DataLakeAnalyticsAccount> - Liste\<PSDataLakeAnalyticsAccountBasic>
     - PSDataLakeAnalyticsAccountBasic özellikleri, DataLakeAnalyticsAccount özelliklerinin katı bir alt kümesidir
     - DataLakeAnalyticsAccount içindeki ek özellikler hizmet tarafından döndürülmez.  Bu nedenle, bu değişiklik bu durumu doğru şekilde yansıtmalıdır. Bu ek özellikler hala PSDataLakeAnalyticsAccountBasic içindedir, ancak Eski olarak etiketlenir.
   * İki Get-AzureRmDataLakeAnalyticsJob OutputTypes seçeneğinden biri değiştirildi
-    - List\<JobInformation> - List\<PSJobInformationBasic>
+    - Liste\<JobInformation> - Liste\<PSJobInformationBasic>
     - PSJobInformationBasic özellikleri, JobInformation özelliklerinin katı bir alt kümesidir
     - JobInformation içindeki ek özellikler hizmet tarafından döndürülmez.  Bu nedenle, bu değişiklik bu durumu doğru şekilde yansıtmalıdır. Bu ek özellikler hala PSJobInformationBasic içindedir, ancak Eski olarak etiketlenir.
 * DataLakeStore
   * Bu yayında DataLakeStore’da yapılan önemli değişiklikler için lütfen geçiş kılavuzuna bakın
   * İki Get-AzureRmDataLakeStoreAccount OutputTypes seçeneğinden biri değiştirildi
-    - List\<PSDataLakeStoreAccount> - List\<PSDataLakeStoreAccountBasic>
+    - Liste\<PSDataLakeStoreAccount> - Liste\<PSDataLakeStoreAccountBasic>
     - PSDataLakeStoreAccountBasic özellikleri, PSDataLakeStoreAccount özelliklerinin katı bir alt kümesidir
     - PSDataLakeStoreAccount içindeki ek özellikler hizmet tarafından döndürülmez.  Bu nedenle, bu değişiklik bu durumu doğru şekilde yansıtmalıdır. Bu ek özellikler hala PSDataLakeStoreAccountBasic içindedir, ancak Eski olarak etiketlenir.
 * Dns
@@ -838,7 +835,7 @@ Son sürümden sonraki değişiklikler: https://github.com/Azure/azure-powershel
     - Disable-AzureRmRecoveryServicesBackupRPMountScript
   * RecoveryServices.Backup SDK’sı en son sürüme güncelleştirildi
   * Azure VM iş yüküne yönelik testler, test çalıştırmaları için gereken tüm ayarlar testler tarafından yapılacak şekilde güncelleştirildi.
-  * https://github.com/Azure/azure-powershell/issues/3164 sorununu düzeltir
+  * [https://github.com/Azure/azure-powershell/issues/3164](https://github.com/Azure/azure-powershell/issues/3164 ) sorununu düzeltir
 * RecoveryServices.SiteRecovery
   * ASR VMware için Azure Site Recovery’de yapılan değişiklikler (cmdlet’ler şu anda Enterprise-Enterprise, Enterprise-Azure, HyperV-Azure arasındaki işlemleri desteklemektedir)
     - New-AzureRmRecoveryServicesAsrPolicy

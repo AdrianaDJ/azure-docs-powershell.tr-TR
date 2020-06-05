@@ -4,12 +4,12 @@ description: Azure PowerShell'in AzureRM modülünün yerini alan yeni Az modül
 ms.date: 05/20/2020
 ms.devlang: powershell
 ms.topic: conceptual
-ms.openlocfilehash: a50592c65c52eab005a6531572dbbfc144a0e43a
-ms.sourcegitcommit: 308ebca475d1c37624d7a10a2c02047594f44cdf
+ms.openlocfilehash: 1626bb4bee775ac173d078cf67934ee5a22632c4
+ms.sourcegitcommit: 9f5c7d231b069ad501729bf015a829f3fe89bc6a
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83778142"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84122134"
 ---
 # <a name="introducing-the-new-azure-powershell-az-module"></a>Yeni Azure PowerShell Az modülüne giriş
 
@@ -26,8 +26,8 @@ Az yeni bir modül olduğundan, sürüm 1.0.0 olarak sıfırlanmıştır.
 
 Büyük güncelleştirmelerle çalışmak zor olabilir. Bu nedenle PowerShell'den Azure'la etkileşim kurmak için yeni cmdlet'ler içeren yeni bir modül kümesi hazırlama kararımızın nedenlerini size açıklamak istiyoruz.
 
-En büyük ve en önemli değişiklik PowerShell'in .NET Standard kitaplığını temel alan [PowerShell 6.x](/powershell/scripting/overview)'in kullanıma sunulmasından bu yana platformlar arası bir ürün olmasıdır. Azure desteğini tüm platformlara getirmek için çalışıyoruz. Bu, Azure PowerShell modüllerinin .NET Standard kullanacak ve PowerShell 6.x ve üzeri sürümlerle uyumlu olacak şekilde güncelleştirilmesi gerektiği anlamına gelir.
-Mevcut AzureRM modülünü alıp bu desteği eklemek üzere karmaşık değişiklikler yapmak yerine Az modülü oluşturuldu.
+En büyük ve en önemli değişiklik PowerShell'in .NET Standard kitaplığını temel alan [PowerShell](/powershell/scripting/overview)'in kullanıma sunulmasından bu yana platformlar arası bir ürün olmasıdır.
+Tüm platformlara Azure desteği getirmeye kararlı olduğumuzdan, Azure PowerShell modüllerinin .NET Standard kullanacak şekilde güncelleştirilmesi ve PowerShell Core ile uyumlu olması gerekiyordu. Mevcut AzureRM modülünü alıp bu desteği eklemek üzere karmaşık değişiklikler yapmak yerine Az modülü oluşturuldu.
 
 Yeni modül oluşturmak, mühendislerimize cmdlet'lerin ve modüllerin tasarımı ile adlandırmasını tutarlı hale getirme fırsatı da verdi. Artık tüm modüller `Az.` ön ekiyle başlıyor ve cmdlet'lerin tümünde _Fiil_-`Az`_İsim_ biçimi kullanılıyor. Daha önce cmdlet adları hem daha uzundu hem de cmdlet adları arasında tutarsızlıklar vardı.
 
@@ -46,12 +46,12 @@ Mevcut AzureRM yüklemesinden yükseltmek için:
 
 1. [Azure PowerShell AzureRM modülünü kaldırın](/powershell/azure/uninstall-az-ps#uninstall-the-azurerm-module)
 2. [Azure PowerShell Az modülünü yükleyin](install-az-ps.md)
-3. __İSTEĞE BAĞLI__: Yeni komut kümesine alışırken [Enable-AzureRMAlias](/powershell/module/az.accounts/enable-azurermalias) ile AzureRM cmdlet’lerine yönelik diğer adları eklemek için uyumluluk modunu etkinleştirin. Daha fazla bilgi için sonraki bölüme veya [AzureRM'den Az modülüne geçişi başlatma](migrate-from-azurerm-to-az.md) konusuna bakın.
+3. **İSTEĞE BAĞLI**: Yeni komut kümesine alışırken [Enable-AzureRMAlias](/powershell/module/az.accounts/enable-azurermalias) ile AzureRM cmdlet’lerine yönelik diğer adları eklemek için uyumluluk modunu etkinleştirin. Diğer ayrıntılar için sonraki bölüme veya [AzureRM'den Az modülüne geçişi başlatma](migrate-from-azurerm-to-az.md) konusuna bakın.
 
 ## <a name="migrate-existing-scripts-to-az"></a>Mevcut betikleri için Az modülüne geçirme
 
 Yeni cmdlet adları kolay öğrenilecek şekilde tasarlanmıştır. Cmdlet adlarında `AzureRm` veya `Azure` kullanmak yerine `Az` kullanın. Örneğin, eski `New-AzureRMVm` komutu `New-AzVm` komutuna dönüştürülmüştür.
-Öte yandan, geçiş süreci yalnızca yeni cmdlet adlarına alışmaktan ibaret değildir. Yeniden adlandırılmış modüller, parametreler ve başka önemli değişiklikler vardır.
+Öte yandan, geçiş süreci yalnızca yeni cmdlet adlarına alışmaktan ibaret değildir: Yeniden adlandırılmış modüller, parametreler ve başka önemli değişiklikler vardır.
 
 AzureRM'den Az modülüne geçiş sürecinizde size yardımcı olmak için bir dizi kaynak sağladık:
 

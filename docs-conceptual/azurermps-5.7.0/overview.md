@@ -4,12 +4,12 @@ description: Yükleme ve yapılandırma bağlantılarıyla birlikte Azure PowerS
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 08/31/2017
-ms.openlocfilehash: 97afd1d9f7792540e94d79023c0450b192cb2fb8
-ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
+ms.openlocfilehash: 09980972f913bbfd822df38f23f92b35ee64e458
+ms.sourcegitcommit: 9f5c7d231b069ad501729bf015a829f3fe89bc6a
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83384888"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84122084"
 ---
 # <a name="overview-of-azure-powershell"></a>Azure PowerShell’e Genel Bakış
 
@@ -21,23 +21,23 @@ Azure PowerShell, Azure kaynaklarınızı yönetmek için [Azure Resource Manage
 
 Aşağıdaki örnekler, yaygın senaryoları Azure PowerShell ile nasıl gerçekleştireceğinizi öğrenmenize yardımcı olabilir:
 
-* [Linux Sanal Makineleri](/azure/virtual-machines/virtual-machines-linux-powershell-samples?toc=/powershell/azure/toc.json)
-* [Windows Sanal Makineleri](/azure/virtual-machines/virtual-machines-windows-powershell-samples?toc=/powershell/azure/toc.json)
-* [Web Apps](/azure/app-service-web/app-service-powershell-samples?toc=/powershell/azure/toc.json)
-* [SQL Veritabanları](/azure/sql-database/sql-database-powershell-samples?toc=/powershell/azure/toc.json)
+- [Linux Sanal Makineleri](/azure/virtual-machines/virtual-machines-linux-powershell-samples?toc=/powershell/azure/toc.json)
+- [Windows Sanal Makineleri](/azure/virtual-machines/virtual-machines-windows-powershell-samples?toc=/powershell/azure/toc.json)
+- [Web Apps](/azure/app-service-web/app-service-powershell-samples?toc=/powershell/azure/toc.json)
+- [SQL Veritabanları](/azure/sql-database/sql-database-powershell-samples?toc=/powershell/azure/toc.json)
 
 ## <a name="learn-powershell-basics"></a>PowerShell temel bilgilerini öğrenme
 
 PowerShell'i tanımıyorsanız, PowerShell'e giriş makalesi size yardımcı olabilir.
 
-* [PowerShell’i yükleme](/powershell/scripting/installing-windows-powershell)
-* [PowerShell ile betik oluşturma](/powershell/scripting/scripting-with-windows-powershell)
+- [PowerShell’i yükleme](/powershell/scripting/install/installing-powershell)
+- [PowerShell öğrenme kaynakları](/powershell/scripting/learn/more-powershell-learning)
 
 Ayrıca şu videoyu izleyebilirsiniz: [PowerShell Temel Bilgileri: (Bölüm 1) PowerShell'i Kullanmaya Başlama](https://channel9.msdn.com/Blogs/Taste-of-Premier/PowerShellBasicsPart1).
 
 ## <a name="other-azure-powershell-modules"></a>Diğer Azure PowerShell modülleri
 
-* [Azure Active Directory](/powershell/azure/active-directory/)
-* [Azure Information Protection](/powershell/azure/aip/)
-* [Azure Service Fabric](/powershell/azure/service-fabric/)
-* [Azure Elastik DB](/powershell/azure/elasticdbjobs/)
+- [Azure Active Directory](/powershell/azure/active-directory/)
+- [Azure Information Protection](/powershell/azure/aip/)
+- [Azure Service Fabric](/powershell/azure/service-fabric/)
+- [Azure Elastik DB](/powershell/azure/elasticdbjobs/)
