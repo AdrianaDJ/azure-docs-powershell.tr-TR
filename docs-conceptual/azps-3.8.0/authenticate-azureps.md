@@ -1,89 +1,97 @@
 ---
 title: Azure PowerShell ile oturum açma
 description: Kullanıcı olarak, hizmet sorumlusu olarak veya Azure kaynakları için yönetilen kimlikleri kullanarak Azure PowerShell oturumu açma.
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 09/04/2019
-ms.openlocfilehash: 0de487cc34593ceac05aa2077358d692470dc23e
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.date: 06/18/2020
+ms.openlocfilehash: f82a9e373806f2f071ae59f6aee7e0a0bd4ea13d
+ms.sourcegitcommit: e8dc404c9c09b9f6531ea4f85187598e32060014
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81740618"
+ms.lasthandoff: 06/20/2020
+ms.locfileid: "85119972"
 ---
-# <a name="sign-in-with-azure-powershell"></a><span data-ttu-id="7b2f7-103">Azure PowerShell ile oturum açma</span><span class="sxs-lookup"><span data-stu-id="7b2f7-103">Sign in with Azure PowerShell</span></span>
+# <a name="sign-in-with-azure-powershell"></a><span data-ttu-id="c0c0e-103">Azure PowerShell ile oturum açma</span><span class="sxs-lookup"><span data-stu-id="c0c0e-103">Sign in with Azure PowerShell</span></span>
 
-<span data-ttu-id="7b2f7-104">Azure PowerShell, çeşitli kimlik doğrulama yöntemlerini destekler.</span><span class="sxs-lookup"><span data-stu-id="7b2f7-104">Azure PowerShell supports several authentication methods.</span></span> <span data-ttu-id="7b2f7-105">Başlangıç yapmanın en kolay yolu, oturumunuzu otomatik olarak açan [Azure Cloud Shell](/azure/cloud-shell/overview)'i kullanmaktır.</span><span class="sxs-lookup"><span data-stu-id="7b2f7-105">The easiest way to get started is with [Azure Cloud Shell](/azure/cloud-shell/overview), which automatically logs you in.</span></span> <span data-ttu-id="7b2f7-106">Yerel yüklemeyle, tarayıcınızdan etkileşimli oturum açabilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="7b2f7-106">With a local install, you can sign in interactively through your browser.</span></span> <span data-ttu-id="7b2f7-107">Otomasyon betikleri yazarken önerilen yaklaşım, gerekli izinlere sahip bir [hizmet sorumlusu](create-azure-service-principal-azureps.md) kullanmaktır.</span><span class="sxs-lookup"><span data-stu-id="7b2f7-107">When writing scripts for automation, the recommended approach is to use a [service principal](create-azure-service-principal-azureps.md) with the necessary permissions.</span></span> <span data-ttu-id="7b2f7-108">Kendi kullanım örneğinizde oturum açma izinlerini olabildiğince kısıtladığınızda, Azure kaynaklarınızın güvenliğini korumaya yardım etmiş olursunuz.</span><span class="sxs-lookup"><span data-stu-id="7b2f7-108">When you restrict sign-in permissions as much as possible for your use case, you help keep your Azure resources secure.</span></span>
+<span data-ttu-id="c0c0e-104">Azure PowerShell, çeşitli kimlik doğrulama yöntemlerini destekler.</span><span class="sxs-lookup"><span data-stu-id="c0c0e-104">Azure PowerShell supports several authentication methods.</span></span> <span data-ttu-id="c0c0e-105">Başlangıç yapmanın en kolay yolu, oturumunuzu otomatik olarak açan [Azure Cloud Shell](/azure/cloud-shell/overview)'i kullanmaktır.</span><span class="sxs-lookup"><span data-stu-id="c0c0e-105">The easiest way to get started is with [Azure Cloud Shell](/azure/cloud-shell/overview), which automatically logs you in.</span></span> <span data-ttu-id="c0c0e-106">Yerel yüklemeyle, tarayıcınızdan etkileşimli oturum açabilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="c0c0e-106">With a local install, you can sign in interactively through your browser.</span></span> <span data-ttu-id="c0c0e-107">Otomasyon betikleri yazarken önerilen yaklaşım, gerekli izinlere sahip bir [hizmet sorumlusu](create-azure-service-principal-azureps.md) kullanmaktır.</span><span class="sxs-lookup"><span data-stu-id="c0c0e-107">When writing scripts for automation, the recommended approach is to use a [service principal](create-azure-service-principal-azureps.md) with the necessary permissions.</span></span> <span data-ttu-id="c0c0e-108">Kendi kullanım örneğinizde oturum açma izinlerini olabildiğince kısıtladığınızda, Azure kaynaklarınızın güvenliğini korumaya yardım etmiş olursunuz.</span><span class="sxs-lookup"><span data-stu-id="c0c0e-108">When you restrict sign-in permissions as much as possible for your use case, you help keep your Azure resources secure.</span></span>
 
-<span data-ttu-id="7b2f7-109">Oturum açtıktan sonra, komutlar varsayılan aboneliğinizde çalıştırılır.</span><span class="sxs-lookup"><span data-stu-id="7b2f7-109">After signing in, commands are run against your default subscription.</span></span> <span data-ttu-id="7b2f7-110">Bir oturumda etkin aboneliğinizi değiştirmek için [Set-AzContext](/powershell/module/az.accounts/set-azcontext) cmdlet'ini kullanın.</span><span class="sxs-lookup"><span data-stu-id="7b2f7-110">To change your active subscription for a session, use the [Set-AzContext](/powershell/module/az.accounts/set-azcontext) cmdlet.</span></span> <span data-ttu-id="7b2f7-111">Azure PowerShell'de oturum açarken kullanılan varsayılan aboneliği değiştirmek için [Set-AzDefault](/powershell/module/az.accounts/set-azdefault) kullanın.</span><span class="sxs-lookup"><span data-stu-id="7b2f7-111">To change the default subscription used when logging in with Azure PowerShell, use [Set-AzDefault](/powershell/module/az.accounts/set-azdefault).</span></span>
+<span data-ttu-id="c0c0e-109">Oturum açtıktan sonra, komutlar varsayılan aboneliğinizde çalıştırılır.</span><span class="sxs-lookup"><span data-stu-id="c0c0e-109">After signing in, commands are run against your default subscription.</span></span> <span data-ttu-id="c0c0e-110">Bir oturumda etkin aboneliğinizi değiştirmek için [Set-AzContext](/powershell/module/az.accounts/set-azcontext) cmdlet'ini kullanın.</span><span class="sxs-lookup"><span data-stu-id="c0c0e-110">To change your active subscription for a session, use the [Set-AzContext](/powershell/module/az.accounts/set-azcontext) cmdlet.</span></span> <span data-ttu-id="c0c0e-111">Azure PowerShell'de oturum açarken kullanılan varsayılan aboneliği değiştirmek için [Set-AzDefault](/powershell/module/az.accounts/set-azdefault) kullanın.</span><span class="sxs-lookup"><span data-stu-id="c0c0e-111">To change the default subscription used when logging in with Azure PowerShell, use [Set-AzDefault](/powershell/module/az.accounts/set-azdefault).</span></span>
 
 > [!IMPORTANT]
->
-> <span data-ttu-id="7b2f7-112">Oturumunuz açık kaldığı sürece kimlik bilgileriniz birden çok PowerShell oturumu arasında paylaşılır.</span><span class="sxs-lookup"><span data-stu-id="7b2f7-112">Your credentials are shared among multiple PowerShell sessions as long as you remain signed in.</span></span>
-> <span data-ttu-id="7b2f7-113">Daha fazla bilgi için, [Kalıcı Kimlik Bilgileri](context-persistence.md) makalesine bakın.</span><span class="sxs-lookup"><span data-stu-id="7b2f7-113">For more information, see the article on [Persistent Credentials](context-persistence.md).</span></span>
+> <span data-ttu-id="c0c0e-112">Oturumunuz açık kaldığı sürece kimlik bilgileriniz birden çok PowerShell oturumu arasında paylaşılır.</span><span class="sxs-lookup"><span data-stu-id="c0c0e-112">Your credentials are shared among multiple PowerShell sessions as long as you remain signed in.</span></span>
+> <span data-ttu-id="c0c0e-113">Daha fazla bilgi için, [Kalıcı Kimlik Bilgileri](context-persistence.md) makalesine bakın.</span><span class="sxs-lookup"><span data-stu-id="c0c0e-113">For more information, see the article on [Persistent Credentials](context-persistence.md).</span></span>
 
-## <a name="sign-in-interactively"></a><span data-ttu-id="7b2f7-114">Etkileşimli olarak oturum açma</span><span class="sxs-lookup"><span data-stu-id="7b2f7-114">Sign in interactively</span></span>
+## <a name="sign-in-interactively"></a><span data-ttu-id="c0c0e-114">Etkileşimli olarak oturum açma</span><span class="sxs-lookup"><span data-stu-id="c0c0e-114">Sign in interactively</span></span>
 
-<span data-ttu-id="7b2f7-115">Etkileşimli olarak oturum açmak için [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount) cmdlet'ini kullanın.</span><span class="sxs-lookup"><span data-stu-id="7b2f7-115">To sign in interactively, use the [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount) cmdlet.</span></span>
+<span data-ttu-id="c0c0e-115">Etkileşimli olarak oturum açmak için [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount) cmdlet'ini kullanın.</span><span class="sxs-lookup"><span data-stu-id="c0c0e-115">To sign in interactively, use the [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount) cmdlet.</span></span>
 
 ```azurepowershell-interactive
 Connect-AzAccount
 ```
 
-<span data-ttu-id="7b2f7-116">Bu cmdlet çalıştırıldığında bir belirteç dizesi sunar.</span><span class="sxs-lookup"><span data-stu-id="7b2f7-116">When run, this cmdlet will present a token string.</span></span> <span data-ttu-id="7b2f7-117">Oturum açmak için bu dizeyi kopyalayıp bir tarayıcıda https://microsoft.com/devicelogin sayfasına yapıştırın.</span><span class="sxs-lookup"><span data-stu-id="7b2f7-117">To sign in, copy this string and paste it into https://microsoft.com/devicelogin in a browser.</span></span> <span data-ttu-id="7b2f7-118">Azure’a bağlanmak için PowerShell oturumunuzun kimliği doğrulanır.</span><span class="sxs-lookup"><span data-stu-id="7b2f7-118">Your PowerShell session will be authenticated to connect to Azure.</span></span>
+<span data-ttu-id="c0c0e-116">Bu cmdlet PowerShell sürüm 6 veya üzerinde çalıştırıldığında bir belirteç dizesi gösterir.</span><span class="sxs-lookup"><span data-stu-id="c0c0e-116">When run from PowerShell version 6 and higher, this cmdlet presents a token string.</span></span> <span data-ttu-id="c0c0e-117">Oturum açmak için bu dizeyi kopyalayıp bir web tarayıcısında [microsoft.com/devicelogin](https://microsoft.com/devicelogin) sayfasına yapıştırın.</span><span class="sxs-lookup"><span data-stu-id="c0c0e-117">To sign in, copy this string and paste it into [microsoft.com/devicelogin](https://microsoft.com/devicelogin) in a web browser.</span></span> <span data-ttu-id="c0c0e-118">Azure’a bağlanmak için PowerShell oturumunuzun kimliği doğrulanır.</span><span class="sxs-lookup"><span data-stu-id="c0c0e-118">Your PowerShell session will be authenticated to connect to Azure.</span></span> <span data-ttu-id="c0c0e-119">Windows PowerShell’de belirteç dizesi almak için `UseDeviceAuthentication` parametresini belirtebilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="c0c0e-119">You can specify the `UseDeviceAuthentication` parameter to receive a token string on Windows PowerShell.</span></span>
 
 > [!IMPORTANT]
->
-> <span data-ttu-id="7b2f7-119">Active Directory yetkilendirme uygulamalarında yapılan değişiklikler ve güvenlik kaygıları nedeniyle, kullanıcı adı/parola kimlik bilgisi yetkilendirmesi Azure PowerShell’den kaldırıldı.</span><span class="sxs-lookup"><span data-stu-id="7b2f7-119">Username/password credential authorization has been removed in Azure PowerShell due to changes in Active Directory authorization implementations and security concerns.</span></span>
-> <span data-ttu-id="7b2f7-120">Kimlik bilgisi yetkilendirmesini otomasyon amacıyla kullanıyorsanız, bunun yerine [hizmet sorumlusu oluşturun](create-azure-service-principal-azureps.md).</span><span class="sxs-lookup"><span data-stu-id="7b2f7-120">If you use credential authorization for automation purposes, instead [create a service principal](create-azure-service-principal-azureps.md).</span></span>
+> <span data-ttu-id="c0c0e-120">Active Directory yetkilendirme uygulamalarında yapılan değişiklikler ve güvenlik kaygıları nedeniyle, kullanıcı adı/parola kimlik bilgisi yetkilendirmesi Azure PowerShell’den kaldırıldı.</span><span class="sxs-lookup"><span data-stu-id="c0c0e-120">Username/password credential authorization has been removed in Azure PowerShell due to changes in Active Directory authorization implementations and security concerns.</span></span> <span data-ttu-id="c0c0e-121">Kimlik bilgisi yetkilendirmesini otomasyon amacıyla kullanıyorsanız, bunun yerine [hizmet sorumlusu oluşturun](create-azure-service-principal-azureps.md).</span><span class="sxs-lookup"><span data-stu-id="c0c0e-121">If you use credential authorization for automation purposes, instead [create a service principal](create-azure-service-principal-azureps.md).</span></span>
 
-## <a name="sign-in-with-a-service-principal"></a><span data-ttu-id="7b2f7-121">Hizmet sorumlusu ile oturum açma <a name="sp-signin"/></span><span class="sxs-lookup"><span data-stu-id="7b2f7-121">Sign in with a service principal <a name="sp-signin"/></span></span>
-
-<span data-ttu-id="7b2f7-122">Hizmet sorumluları etkileşimli olmayan Azure hesaplarıdır.</span><span class="sxs-lookup"><span data-stu-id="7b2f7-122">Service principals are non-interactive Azure accounts.</span></span> <span data-ttu-id="7b2f7-123">Diğer kullanıcı hesapları gibi onların izinleri de Azure Active Directory ile yönetilir.</span><span class="sxs-lookup"><span data-stu-id="7b2f7-123">Like other user accounts, their permissions are managed with Azure Active Directory.</span></span> <span data-ttu-id="7b2f7-124">Otomasyon betikleriniz hizmet sorumlusuna yalnızca ihtiyacı olan izinleri vererek güvenliğini korur.</span><span class="sxs-lookup"><span data-stu-id="7b2f7-124">By granting a service principal only the permissions it needs, your automation scripts stay secure.</span></span>
-
-<span data-ttu-id="7b2f7-125">Azure PowerShell'le kullanmak üzere hizmet sorumlusu oluşturmayı öğrenmek için, bkz. [Azure PowerShell ile Azure hizmet sorumlusu oluşturma](create-azure-service-principal-azureps.md).</span><span class="sxs-lookup"><span data-stu-id="7b2f7-125">To learn how to create a service principal for use with Azure PowerShell, see [Create an Azure service principal with Azure PowerShell](create-azure-service-principal-azureps.md).</span></span>
-
-<span data-ttu-id="7b2f7-126">Hizmet sorumlusuyla oturum açmak için `Connect-AzAccount` cmdlet'iyle `-ServicePrincipal` bağımsız değişkenini kullanın.</span><span class="sxs-lookup"><span data-stu-id="7b2f7-126">To sign in with a service principal, use the `-ServicePrincipal` argument with the `Connect-AzAccount` cmdlet.</span></span> <span data-ttu-id="7b2f7-127">Hizmet sorumlusunun uygulama kimliğine, oturum açma kimlik bilgilerine ve hizmet sorumlusuyla ilişkilendirilmiş kiracı kimliğine de ihtiyacınız vardır.</span><span class="sxs-lookup"><span data-stu-id="7b2f7-127">You'll also need the service principal's application ID, sign-in credentials, and the tenant ID associate with the service principal.</span></span> <span data-ttu-id="7b2f7-128">Hizmet sorumlusu ile nasıl oturum açacağınız, parola tabanlı veya sertifika tabanlı kimlik doğrulaması yöntemlerinden hangisini kullandığına bağlıdır.</span><span class="sxs-lookup"><span data-stu-id="7b2f7-128">How you sign in with a service principal will depend on whether it's configured for password-based or certificate-based authentication.</span></span>
-
-### <a name="password-based-authentication"></a><span data-ttu-id="7b2f7-129">Parola tabanlı kimlik doğrulaması</span><span class="sxs-lookup"><span data-stu-id="7b2f7-129">Password-based authentication</span></span>
-
-<span data-ttu-id="7b2f7-130">Hizmet sorumlusunun kimlik bilgilerini uygun bir nesne olarak almak için [Get-Credential](/powershell/module/microsoft.powershell.security/get-credential) cmdlet'ini kullanın.</span><span class="sxs-lookup"><span data-stu-id="7b2f7-130">To get the service principal's credentials as the appropriate object, use the [Get-Credential](/powershell/module/microsoft.powershell.security/get-credential) cmdlet.</span></span> <span data-ttu-id="7b2f7-131">Bu cmdlet, bir kullanıcı adı ve parola için istem sunacaktır.</span><span class="sxs-lookup"><span data-stu-id="7b2f7-131">This cmdlet will present a prompt for a username and password.</span></span> <span data-ttu-id="7b2f7-132">Kullanıcı adı olarak hizmet sorumlusu kimliğini kullanın.</span><span class="sxs-lookup"><span data-stu-id="7b2f7-132">Use the service principal ID for the username.</span></span>
+<span data-ttu-id="c0c0e-122">Kiracı kimliğinizi bu makalenin sonraki iki bölümünde kullanılacak bir değişkende depolamak için [Get-AzContext](/powershell/module/az.accounts/get-azcontext) cmdlet’ini kullanın.</span><span class="sxs-lookup"><span data-stu-id="c0c0e-122">Use the [Get-AzContext](/powershell/module/az.accounts/get-azcontext) cmdlet to store your tenant ID in a variable to be used in the next two sections of this article.</span></span>
 
 ```azurepowershell-interactive
-$pscredential = Get-Credential
+$tenantId = (Get-AzContext).Tenant.Id
+```
+
+## <a name="sign-in-with-a-service-principal"></a><span data-ttu-id="c0c0e-123">Hizmet sorumlusu ile oturum açma <a name="sp-signin"/></span><span class="sxs-lookup"><span data-stu-id="c0c0e-123">Sign in with a service principal <a name="sp-signin"/></span></span>
+
+<span data-ttu-id="c0c0e-124">Hizmet sorumluları etkileşimli olmayan Azure hesaplarıdır.</span><span class="sxs-lookup"><span data-stu-id="c0c0e-124">Service principals are non-interactive Azure accounts.</span></span> <span data-ttu-id="c0c0e-125">Diğer kullanıcı hesapları gibi onların izinleri de Azure Active Directory ile yönetilir.</span><span class="sxs-lookup"><span data-stu-id="c0c0e-125">Like other user accounts, their permissions are managed with Azure Active Directory.</span></span> <span data-ttu-id="c0c0e-126">Otomasyon betikleriniz hizmet sorumlusuna yalnızca ihtiyacı olan izinleri vererek güvenliğini korur.</span><span class="sxs-lookup"><span data-stu-id="c0c0e-126">By granting a service principal only the permissions it needs, your automation scripts stay secure.</span></span>
+
+<span data-ttu-id="c0c0e-127">Azure PowerShell'le kullanmak üzere hizmet sorumlusu oluşturmayı öğrenmek için, bkz. [Azure PowerShell ile Azure hizmet sorumlusu oluşturma](create-azure-service-principal-azureps.md).</span><span class="sxs-lookup"><span data-stu-id="c0c0e-127">To learn how to create a service principal for use with Azure PowerShell, see [Create an Azure service principal with Azure PowerShell](create-azure-service-principal-azureps.md).</span></span>
+
+<span data-ttu-id="c0c0e-128">Hizmet sorumlusuyla oturum açmak için `Connect-AzAccount` cmdlet'iyle `-ServicePrincipal` bağımsız değişkenini kullanın.</span><span class="sxs-lookup"><span data-stu-id="c0c0e-128">To sign in with a service principal, use the `-ServicePrincipal` argument with the `Connect-AzAccount` cmdlet.</span></span> <span data-ttu-id="c0c0e-129">Hizmet sorumlusunun uygulama kimliğine, oturum açma kimlik bilgilerine ve hizmet sorumlusuyla ilişkilendirilmiş kiracı kimliğine de ihtiyacınız vardır.</span><span class="sxs-lookup"><span data-stu-id="c0c0e-129">You'll also need the service principal's application ID, sign-in credentials, and the tenant ID associate with the service principal.</span></span> <span data-ttu-id="c0c0e-130">Hizmet sorumlusu ile nasıl oturum açacağınız, parola tabanlı veya sertifika tabanlı kimlik doğrulaması yöntemlerinden hangisini kullandığına bağlıdır.</span><span class="sxs-lookup"><span data-stu-id="c0c0e-130">How you sign in with a service principal depends on whether it's configured for password-based or certificate-based authentication.</span></span>
+
+### <a name="password-based-authentication"></a><span data-ttu-id="c0c0e-131">Parola tabanlı kimlik doğrulaması</span><span class="sxs-lookup"><span data-stu-id="c0c0e-131">Password-based authentication</span></span>
+
+<span data-ttu-id="c0c0e-132">Bu bölümdeki örneklerde kullanılmak üzere bir hizmet sorumlusu oluşturun.</span><span class="sxs-lookup"><span data-stu-id="c0c0e-132">Create a service principal to be used in the examples in this section.</span></span> <span data-ttu-id="c0c0e-133">Hizmet sorumluları oluşturma hakkında daha fazla bilgi için bkz. [Azure PowerShell ile Azure hizmet sorumlusu oluşturma](/powershell/azure/create-azure-service-principal-azureps).</span><span class="sxs-lookup"><span data-stu-id="c0c0e-133">For more information on creating service principals, see [Create an Azure service principal with Azure PowerShell](/powershell/azure/create-azure-service-principal-azureps).</span></span>
+
+```azurepowershell-interactive
+$sp = New-AzADServicePrincipal -DisplayName ServicePrincipalName
+```
+
+<span data-ttu-id="c0c0e-134">Hizmet sorumlusunun kimlik bilgilerini uygun bir nesne olarak almak için [Get-Credential](/powershell/module/microsoft.powershell.security/get-credential) cmdlet'ini kullanın.</span><span class="sxs-lookup"><span data-stu-id="c0c0e-134">To get the service principal's credentials as the appropriate object, use the [Get-Credential](/powershell/module/microsoft.powershell.security/get-credential) cmdlet.</span></span> <span data-ttu-id="c0c0e-135">Bu cmdlet bir kullanıcı adı ve parola için istem gösterir.</span><span class="sxs-lookup"><span data-stu-id="c0c0e-135">This cmdlet presents a prompt for a username and password.</span></span> <span data-ttu-id="c0c0e-136">Kullanıcı adı için hizmet sorumlusunun `applicationID` kimliğini kullanın ve parola için `secret` gizli dizisini düz metne dönüştürün.</span><span class="sxs-lookup"><span data-stu-id="c0c0e-136">Use the service principal's `applicationID` for the username and convert its `secret` to plain text for the password.</span></span>
+
+```azurepowershell-interactive
+# Retrieve the plain text password for use with `Get-Credential` in the next command.
+$sp.secret | ConvertFrom-SecureString -AsPlainText
+
+$pscredential = Get-Credential -UserName $sp.ApplicationId
 Connect-AzAccount -ServicePrincipal -Credential $pscredential -Tenant $tenantId
 ```
 
-<span data-ttu-id="7b2f7-133">Otomasyon senaryoları için, bir kullanıcı adı ve güvenli dizeden kimlik bilgileri oluşturmanız gerekir:</span><span class="sxs-lookup"><span data-stu-id="7b2f7-133">For automation scenarios, you need to create credentials from a user name and secure string:</span></span>
+<span data-ttu-id="c0c0e-137">Otomasyon senaryoları için, hizmet sorumlusunun `applicationId` kimliğinden ve `secret` gizli dizisinden kimlik bilgileri oluşturmanız gerekir:</span><span class="sxs-lookup"><span data-stu-id="c0c0e-137">For automation scenarios, you need to create credentials from a service principal's `applicationId` and `secret`:</span></span>
 
 ```azurepowershell-interactive
-$passwd = ConvertTo-SecureString <use a secure password here> -AsPlainText -Force
-$pscredential = New-Object System.Management.Automation.PSCredential('service principal name/id', $passwd)
+$pscredential = New-Object -TypeName System.Management.Automation.PSCredential($sp.ApplicationId, $sp.Secret)
 Connect-AzAccount -ServicePrincipal -Credential $pscredential -Tenant $tenantId
 ```
 
-<span data-ttu-id="7b2f7-134">Hizmet sorumlusu bağlantılarını otomatikleştirirken, iyi parola depolama yöntemlerini kullandığınızdan emin olun.</span><span class="sxs-lookup"><span data-stu-id="7b2f7-134">Make sure that you use good password storage practices when automating service principal connections.</span></span>
+<span data-ttu-id="c0c0e-138">Hizmet sorumlusu bağlantılarını otomatikleştirirken, iyi parola depolama yöntemlerini kullandığınızdan emin olun.</span><span class="sxs-lookup"><span data-stu-id="c0c0e-138">Make sure that you use good password storage practices when automating service principal connections.</span></span>
 
-### <a name="certificate-based-authentication"></a><span data-ttu-id="7b2f7-135">Sertifika tabanlı kimlik doğrulaması</span><span class="sxs-lookup"><span data-stu-id="7b2f7-135">Certificate-based authentication</span></span>
+### <a name="certificate-based-authentication"></a><span data-ttu-id="c0c0e-139">Sertifika tabanlı kimlik doğrulaması</span><span class="sxs-lookup"><span data-stu-id="c0c0e-139">Certificate-based authentication</span></span>
 
-<span data-ttu-id="7b2f7-136">Sertifika tabanlı kimlik doğrulaması, Azure PowerShell’in sertifika parmak izini temel alarak bir yerel sertifika deposundan bilgi alabilir olmasını gerektirir.</span><span class="sxs-lookup"><span data-stu-id="7b2f7-136">Certificate-based authentication requires that Azure PowerShell can retrieve information from a local certificate store based on a certificate thumbprint.</span></span>
+<span data-ttu-id="c0c0e-140">Sertifika tabanlı kimlik doğrulaması, Azure PowerShell’in sertifika parmak izini temel alarak bir yerel sertifika deposundan bilgi alabilir olmasını gerektirir.</span><span class="sxs-lookup"><span data-stu-id="c0c0e-140">Certificate-based authentication requires that Azure PowerShell can retrieve information from a local certificate store based on a certificate thumbprint.</span></span>
 
 ```azurepowershell-interactive
 Connect-AzAccount -ApplicationId $appId -Tenant $tenantId -CertificateThumbprint <thumbprint>
 ```
 
-<span data-ttu-id="7b2f7-137">Kayıtlı uygulama yerine hizmet sorumlusu kullanırken `-ServicePrincipal` bağımsız değişkenini ekleyin ve `-ApplicationId` parametresinin değeri olarak hizmet sorumlusunun Uygulama kimliğini sağlayın.</span><span class="sxs-lookup"><span data-stu-id="7b2f7-137">When using a service principal instead of a registered application, add the `-ServicePrincipal` argument and provide the service principal's Application ID as the `-ApplicationId` parameter's value.</span></span>
+<span data-ttu-id="c0c0e-141">Kayıtlı uygulama yerine hizmet sorumlusu kullanırken `-ServicePrincipal` bağımsız değişkenini ekleyin ve `-ApplicationId` parametresinin değeri olarak hizmet sorumlusunun Uygulama kimliğini sağlayın.</span><span class="sxs-lookup"><span data-stu-id="c0c0e-141">When using a service principal instead of a registered application, add the `-ServicePrincipal` argument and provide the service principal's Application ID as the `-ApplicationId` parameter's value.</span></span>
 
 ```azurepowershell-interactive
 Connect-AzAccount -ServicePrincipal -ApplicationId $servicePrincipalId -Tenant $tenantId -CertificateThumbprint <thumbprint>
 ```
 
-<span data-ttu-id="7b2f7-138">PowerShell 5.1'de, sertifika deposu [PKI](/powershell/module/pkiclient) modülü ile yönetilebilir ve denetlenebilir.</span><span class="sxs-lookup"><span data-stu-id="7b2f7-138">In PowerShell 5.1, the certificate store can be managed and inspected with the [PKI](/powershell/module/pkiclient) module.</span></span> <span data-ttu-id="7b2f7-139">PowerShell Core 6.x ve sonraki sürümleri için işlem daha karmaşıktır.</span><span class="sxs-lookup"><span data-stu-id="7b2f7-139">For PowerShell Core 6.x and later, the process is more complicated.</span></span> <span data-ttu-id="7b2f7-140">Aşağıdaki betikler, mevcut sertifikayı PowerShell tarafından erişilebilir sertifika deposuna nasıl aktarabileceğinizi gösterir.</span><span class="sxs-lookup"><span data-stu-id="7b2f7-140">The following scripts show you how to import an existing certificate into the certificate store accessible by PowerShell.</span></span>
+<span data-ttu-id="c0c0e-142">PowerShell 5.1'de, sertifika deposu [PKI](/powershell/module/pkiclient) modülü ile yönetilebilir ve denetlenebilir.</span><span class="sxs-lookup"><span data-stu-id="c0c0e-142">In PowerShell 5.1, the certificate store can be managed and inspected with the [PKI](/powershell/module/pkiclient) module.</span></span> <span data-ttu-id="c0c0e-143">PowerShell Core 6.x ve sonraki sürümleri için işlem daha karmaşıktır.</span><span class="sxs-lookup"><span data-stu-id="c0c0e-143">For PowerShell Core 6.x and later, the process is more complicated.</span></span> <span data-ttu-id="c0c0e-144">Aşağıdaki betikler, mevcut sertifikayı PowerShell tarafından erişilebilir sertifika deposuna nasıl aktarabileceğinizi gösterir.</span><span class="sxs-lookup"><span data-stu-id="c0c0e-144">The following scripts show you how to import an existing certificate into the certificate store accessible by PowerShell.</span></span>
 
-#### <a name="import-a-certificate-in-powershell-51"></a><span data-ttu-id="7b2f7-141">PowerShell 5.1'de sertifikayı içeri aktarma</span><span class="sxs-lookup"><span data-stu-id="7b2f7-141">Import a certificate in PowerShell 5.1</span></span>
+#### <a name="import-a-certificate-in-powershell-51"></a><span data-ttu-id="c0c0e-145">PowerShell 5.1'de sertifikayı içeri aktarma</span><span class="sxs-lookup"><span data-stu-id="c0c0e-145">Import a certificate in PowerShell 5.1</span></span>
 
 ```azurepowershell-interactive
 # Import a PFX
@@ -91,54 +99,52 @@ $credentials = Get-Credential -Message "Provide PFX private key password"
 Import-PfxCertificate -FilePath <path to certificate> -Password $credentials.Password -CertStoreLocation cert:\CurrentUser\My
 ```
 
-#### <a name="import-a-certificate-in-powershell-core-6x-and-later"></a><span data-ttu-id="7b2f7-142">PowerShell Core 6.x ve sonraki sürümlerinde sertifikayı içeri aktarma</span><span class="sxs-lookup"><span data-stu-id="7b2f7-142">Import a certificate in PowerShell Core 6.x and later</span></span>
+#### <a name="import-a-certificate-in-powershell-core-6x-and-later"></a><span data-ttu-id="c0c0e-146">PowerShell Core 6.x ve sonraki sürümlerinde sertifikayı içeri aktarma</span><span class="sxs-lookup"><span data-stu-id="c0c0e-146">Import a certificate in PowerShell Core 6.x and later</span></span>
 
 ```azurepowershell-interactive
 # Import a PFX
-$storeName = [System.Security.Cryptography.X509Certificates.StoreName]::My 
-$storeLocation = [System.Security.Cryptography.X509Certificates.StoreLocation]::CurrentUser 
-$store = [System.Security.Cryptography.X509Certificates.X509Store]::new($storeName, $storeLocation) 
+$storeName = [System.Security.Cryptography.X509Certificates.StoreName]::My
+$storeLocation = [System.Security.Cryptography.X509Certificates.StoreLocation]::CurrentUser
+$store = [System.Security.Cryptography.X509Certificates.X509Store]::new($storeName, $storeLocation)
 $certPath = <path to certificate>
 $credentials = Get-Credential -Message "Provide PFX private key password"
-$flag = [System.Security.Cryptography.X509Certificates.X509KeyStorageFlags]::Exportable 
-$certificate = [System.Security.Cryptography.X509Certificates.X509Certificate2]::new($certPath, $credentials.Password, $flag) 
-$store.Open([System.Security.Cryptography.X509Certificates.OpenFlags]::ReadWrite) 
-$store.Add($Certificate) 
+$flag = [System.Security.Cryptography.X509Certificates.X509KeyStorageFlags]::Exportable
+$certificate = [System.Security.Cryptography.X509Certificates.X509Certificate2]::new($certPath, $credentials.Password, $flag)
+$store.Open([System.Security.Cryptography.X509Certificates.OpenFlags]::ReadWrite)
+$store.Add($Certificate)
 $store.Close()
 ```
 
-## <a name="sign-in-using-a-managed-identity"></a><span data-ttu-id="7b2f7-143">Yönetilen kimlik kullanarak oturum açma</span><span class="sxs-lookup"><span data-stu-id="7b2f7-143">Sign in using a managed identity</span></span>
+## <a name="sign-in-using-a-managed-identity"></a><span data-ttu-id="c0c0e-147">Yönetilen kimlik kullanarak oturum açma</span><span class="sxs-lookup"><span data-stu-id="c0c0e-147">Sign in using a managed identity</span></span>
 
-<span data-ttu-id="7b2f7-144">Yönetilen kimlikler Azure Active Directory’nin bir özelliğidir.</span><span class="sxs-lookup"><span data-stu-id="7b2f7-144">Managed identities are a feature of Azure Active Directory.</span></span> <span data-ttu-id="7b2f7-145">Yönetilen kimlikler, Azure'da çalıştırılan kaynaklara atanmış hizmet sorumlularıdır.</span><span class="sxs-lookup"><span data-stu-id="7b2f7-145">Managed identities are service principals assigned to resources that run in Azure.</span></span> <span data-ttu-id="7b2f7-146">Oturum açmak için bir yönetilen kimlik hizmet sorumlusu kullanabilir ve diğer kaynaklara erişmek için yalnızca uygulamaya yönelik bir erişim belirteci alabilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="7b2f7-146">You can use a managed identity service principal for sign-in, and acquire an app-only access token to access other resources.</span></span> <span data-ttu-id="7b2f7-147">Yönetilen kimlikler yalnızca Azure bulutunda çalıştırılan kaynaklarda kullanılabilir.</span><span class="sxs-lookup"><span data-stu-id="7b2f7-147">Managed identities are only available on resources running in an Azure cloud.</span></span>
+<span data-ttu-id="c0c0e-148">Yönetilen kimlikler Azure Active Directory’nin bir özelliğidir.</span><span class="sxs-lookup"><span data-stu-id="c0c0e-148">Managed identities are a feature of Azure Active Directory.</span></span> <span data-ttu-id="c0c0e-149">Yönetilen kimlikler, Azure'da çalıştırılan kaynaklara atanmış hizmet sorumlularıdır.</span><span class="sxs-lookup"><span data-stu-id="c0c0e-149">Managed identities are service principals assigned to resources that run in Azure.</span></span> <span data-ttu-id="c0c0e-150">Oturum açmak için bir yönetilen kimlik hizmet sorumlusu kullanabilir ve diğer kaynaklara erişmek için yalnızca uygulamaya yönelik bir erişim belirteci alabilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="c0c0e-150">You can use a managed identity service principal for sign-in, and acquire an app-only access token to access other resources.</span></span> <span data-ttu-id="c0c0e-151">Yönetilen kimlikler yalnızca Azure bulutunda çalıştırılan kaynaklarda kullanılabilir.</span><span class="sxs-lookup"><span data-stu-id="c0c0e-151">Managed identities are only available on resources running in an Azure cloud.</span></span>
 
-<span data-ttu-id="7b2f7-148">Bu komut, barındırma ortamının yönetilen kimliğini kullanarak bağlanır.</span><span class="sxs-lookup"><span data-stu-id="7b2f7-148">This command connects using the managed identity of the host environment.</span></span> <span data-ttu-id="7b2f7-149">Örneğin, atanmış bir Yönetilen Hizmet Kimliğine sahip bir Sanal Makine üzerinde yürütülürse, kodun bu atanmış kimliği kullanarak oturum açmasını sağlar.</span><span class="sxs-lookup"><span data-stu-id="7b2f7-149">For example, if executed on a VirtualMachine with an assigned Managed Service Identity, this allows the code to sign in using that assigned identity.</span></span>
+<span data-ttu-id="c0c0e-152">Bu örnekte, barındırma ortamının yönetilen kimliği kullanılarak bağlanılır.</span><span class="sxs-lookup"><span data-stu-id="c0c0e-152">This example connects using the managed identity of the host environment.</span></span> <span data-ttu-id="c0c0e-153">Örneğin, atanmış bir Yönetilen Hizmet Kimliğine sahip bir Sanal Makine üzerinde yürütülürse, kodun bu atanmış kimliği kullanarak oturum açmasını sağlar.</span><span class="sxs-lookup"><span data-stu-id="c0c0e-153">For example, if executed on a VirtualMachine with an assigned Managed Service Identity, this allows the code to sign in using that assigned identity.</span></span>
 
 ```azurepowershell-interactive
- Connect-AzAccount -Identity 
+ Connect-AzAccount -Identity
 ```
 
-## <a name="sign-in-with-a-non-default-tenant-or-as-a-cloud-solution-provider-csp"></a><span data-ttu-id="7b2f7-150">Varsayılan olmayan bir kiracıyla veya Bulut Çözümü Sağlayıcısı (CSP) olarak oturum açma</span><span class="sxs-lookup"><span data-stu-id="7b2f7-150">Sign in with a non-default tenant or as a Cloud Solution Provider (CSP)</span></span>
+## <a name="sign-in-with-a-non-default-tenant-or-as-a-cloud-solution-provider-csp"></a><span data-ttu-id="c0c0e-154">Varsayılan olmayan bir kiracıyla veya Bulut Çözümü Sağlayıcısı (CSP) olarak oturum açma</span><span class="sxs-lookup"><span data-stu-id="c0c0e-154">Sign in with a non-default tenant or as a Cloud Solution Provider (CSP)</span></span>
 
-<span data-ttu-id="7b2f7-151">Hesabınız birden fazla kiracıyla ilişkilendirildiyse, bağlantı kurarken oturum açmak için `-Tenant` parametresinin kullanılması gerekir.</span><span class="sxs-lookup"><span data-stu-id="7b2f7-151">If your account is associated with more than one tenant, sign-in requires the use of the `-Tenant` parameter when connecting.</span></span> <span data-ttu-id="7b2f7-152">Bu parametre tüm oturum açma yöntemleriyle çalışır.</span><span class="sxs-lookup"><span data-stu-id="7b2f7-152">This parameter will work with any sign-in method.</span></span> <span data-ttu-id="7b2f7-153">Oturum açılırken, bu parametre değeri kiracının Azure nesne kimliği (Kiracı Kimliği) veya kiracının tam etki alanı adı olabilir.</span><span class="sxs-lookup"><span data-stu-id="7b2f7-153">When logging in, this parameter value can either be the Azure object ID of the tenant (Tenant ID) or the fully qualified domain name of the tenant.</span></span>
+<span data-ttu-id="c0c0e-155">Hesabınız birden fazla kiracıyla ilişkilendirildiyse bağlantı kurarken oturum açmak için `-Tenant` parametresinin belirtilmesi gerekir.</span><span class="sxs-lookup"><span data-stu-id="c0c0e-155">If your account is associated with more than one tenant, sign-in requires the `-Tenant` parameter to be specified when connecting.</span></span> <span data-ttu-id="c0c0e-156">Bu parametre tüm oturum açma yöntemleriyle çalışır.</span><span class="sxs-lookup"><span data-stu-id="c0c0e-156">This parameter works with any sign-in method.</span></span> <span data-ttu-id="c0c0e-157">Oturum açılırken, bu parametre değeri kiracının Azure nesne kimliği (Kiracı Kimliği) veya kiracının tam etki alanı adı olabilir.</span><span class="sxs-lookup"><span data-stu-id="c0c0e-157">When logging in, this parameter value can either be the Azure object ID of the tenant (Tenant ID) or the fully qualified domain name of the tenant.</span></span>
 
-<span data-ttu-id="7b2f7-154">[Bulut Çözümü Sağlayıcısıysanız (CSP)](https://azure.microsoft.com/offers/ms-azr-0145p/), `-Tenant` değerin kiracı kimliği olması **gerekir**.</span><span class="sxs-lookup"><span data-stu-id="7b2f7-154">If you're a [Cloud Solution Provider (CSP)](https://azure.microsoft.com/offers/ms-azr-0145p/), the `-Tenant` value **must** be a tenant ID.</span></span>
+<span data-ttu-id="c0c0e-158">[Bulut Çözümü Sağlayıcısıysanız (CSP)](https://azure.microsoft.com/offers/ms-azr-0145p/), `-Tenant` değerin kiracı kimliği olması **gerekir**.</span><span class="sxs-lookup"><span data-stu-id="c0c0e-158">If you're a [Cloud Solution Provider (CSP)](https://azure.microsoft.com/offers/ms-azr-0145p/), the `-Tenant` value **must** be a tenant ID.</span></span>
 
 ```azurepowershell-interactive
 Connect-AzAccount -Tenant 'xxxx-xxxx-xxxx-xxxx'
 ```
 
-## <a name="sign-in-to-another-cloud"></a><span data-ttu-id="7b2f7-155">Başka bir bulut oturumu açma</span><span class="sxs-lookup"><span data-stu-id="7b2f7-155">Sign in to another Cloud</span></span>
+## <a name="sign-in-to-another-cloud"></a><span data-ttu-id="c0c0e-159">Başka bir bulut oturumu açma</span><span class="sxs-lookup"><span data-stu-id="c0c0e-159">Sign in to another Cloud</span></span>
 
-<span data-ttu-id="7b2f7-156">Azure bulut hizmetleri, bölgesel veri işlemeyle ilgili yasalara uygun ortamlar sunar.</span><span class="sxs-lookup"><span data-stu-id="7b2f7-156">Azure cloud services offer environments compliant with regional data-handling laws.</span></span>
-<span data-ttu-id="7b2f7-157">Bölgesel buluttaki hesaplar için, oturum açarken `-Environment` bağımsız değişkeniyle ortamı ayarlayın.</span><span class="sxs-lookup"><span data-stu-id="7b2f7-157">For accounts in a regional cloud, set the environment when you sign in with the `-Environment` argument.</span></span>
-<span data-ttu-id="7b2f7-158">Bu parametre tüm oturum açma yöntemleriyle çalışır.</span><span class="sxs-lookup"><span data-stu-id="7b2f7-158">This parameter will work with any sign-in method.</span></span> <span data-ttu-id="7b2f7-159">Örneğin, hesabınız Çin bulutundaysa:</span><span class="sxs-lookup"><span data-stu-id="7b2f7-159">For example, if your account is in the China cloud:</span></span>
+<span data-ttu-id="c0c0e-160">Azure bulut hizmetleri, bölgesel veri işlemeyle ilgili yasalara uygun ortamlar sunar.</span><span class="sxs-lookup"><span data-stu-id="c0c0e-160">Azure cloud services offer environments compliant with regional data-handling laws.</span></span> <span data-ttu-id="c0c0e-161">Bölgesel buluttaki hesaplar için, oturum açarken `-Environment` bağımsız değişkeniyle ortamı ayarlayın.</span><span class="sxs-lookup"><span data-stu-id="c0c0e-161">For accounts in a regional cloud, set the environment when you sign in with the `-Environment` argument.</span></span> <span data-ttu-id="c0c0e-162">Bu parametre tüm oturum açma yöntemleriyle çalışır.</span><span class="sxs-lookup"><span data-stu-id="c0c0e-162">This parameter works with any sign-in method.</span></span> <span data-ttu-id="c0c0e-163">Örneğin, hesabınız Çin bulutundaysa:</span><span class="sxs-lookup"><span data-stu-id="c0c0e-163">For example, if your account is in the China cloud:</span></span>
 
 ```azurepowershell-interactive
 Connect-AzAccount -Environment AzureChinaCloud
 ```
 
-<span data-ttu-id="7b2f7-160">Aşağıdaki komut, kullanılabilir ortamların listesini alır:</span><span class="sxs-lookup"><span data-stu-id="7b2f7-160">The following command gets a list of available environments:</span></span>
+<span data-ttu-id="c0c0e-164">Aşağıdaki komut, kullanılabilir ortamların listesini alır:</span><span class="sxs-lookup"><span data-stu-id="c0c0e-164">The following command gets a list of available environments:</span></span>
 
 ```azurepowershell-interactive
-Get-AzEnvironment | Select-Object Name
+Get-AzEnvironment | Select-Object -Property Name
 ```
