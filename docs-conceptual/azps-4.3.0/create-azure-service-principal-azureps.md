@@ -4,12 +4,12 @@ description: Azure PowerShell ile hizmet sorumluları oluşturmayı ve kullanmay
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 06/17/2020
-ms.openlocfilehash: ebdc0783c43ccecbbeb315de5b5baebc9539b40e
-ms.sourcegitcommit: 747769a143ddebff39e78c2cc62a182401adddb9
+ms.openlocfilehash: 9d1f0e3be894a592bdf105c2070e9db0cf882921
+ms.sourcegitcommit: e324ad44921c9d8228ec7b91f3f8b333d2c520d4
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85268354"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86127772"
 ---
 # <a name="create-an-azure-service-principal-with-azure-powershell"></a>Azure PowerShell ile bir Azure hizmet sorumlusu oluşturma
 
@@ -149,7 +149,7 @@ Connect-AzAccount -ServicePrincipal -Credential $credentials -Tenant <tenant ID>
 Sertifika tabanlı kimlik doğrulaması, Azure PowerShell’in sertifika parmak izini temel alarak bir yerel sertifika deposundan bilgi alabilir olmasını gerektirir.
 
 ```azurepowershell-interactive
-Connect-AzAccount -ServicePrincipal -Tenant <tenant ID> -CertificateThumbprint <thumbprint>
+Connect-AzAccount -ServicePrincipal -Tenant <TenantId> -CertificateThumbprint <Thumbprint> -ApplicationId <ApplicationId>
 ```
 
 Bir sertifikayı, PowerShell tarafından erişilebilir olan bir kimlik bilgileri deposundan içeri aktarmak için bkz. [Azure PowerShell ile Oturum Açma](authenticate-azureps.md#sp-signin)
