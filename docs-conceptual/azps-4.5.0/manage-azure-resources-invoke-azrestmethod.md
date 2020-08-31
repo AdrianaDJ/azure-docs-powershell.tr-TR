@@ -3,13 +3,13 @@ title: Invoke-AzRestMethod ile Azure kaynaklarını yönetme
 description: Invoke-AzRestMethod cmdlet’iyle kaynakları yönetmek için Azure PowerShell’i kullanma.
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 08/17/2020
-ms.openlocfilehash: 380fd818a3af2474ce192c7a1da8a6798795cf21
-ms.sourcegitcommit: bd7edc4d48b6a8a8bec864edc876e16af0a49505
+ms.date: 08/24/2020
+ms.openlocfilehash: 6a267e28ec8e2540ce7d6431ffd9aab0b2090c6a
+ms.sourcegitcommit: b94a3f00c147144b0ef7f8cf8d0f151e04674b89
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88513008"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88821372"
 ---
 # <a name="manage-azure-resources-with-invoke-azrestmethod"></a>Invoke-AzRestMethod ile Azure kaynaklarını yönetme
 
@@ -19,8 +19,7 @@ Henüz Az PowerShell modülünde kullanıma sunulmamış özellikler için Azure
 
 ## <a name="how-to-use-invoke-azrestmethod"></a>Invoke-AzRestMethod metodunu kullanma
 
-Örneğin, Azure Container Registry’ye (ACR) yalnızca belirli ağlar için erişim izni verebilir veya genel erişimi reddedebilirsiniz. Bu özellik henüz [Az.ContainerRegistry PowerShell modülünde](/powershell/module/Az.ContainerRegistry/) kullanıma sunulmamıştır.
-Ancak, geçici olarak `Invoke-AzRestMethod` metoduyla yönetilebilir.
+Örneğin, Azure Container Registry’ye (ACR) yalnızca belirli ağlar için erişim izni verebilir veya genel erişimi reddedebilirsiniz. Az PowerShell modülü 4.5.0 sürümü itibarıyla bu özellik henüz [Az.ContainerRegistry PowerShell modülünde](/powershell/module/Az.ContainerRegistry/) kullanıma sunulmamıştır. Ancak, geçici olarak `Invoke-AzRestMethod` metoduyla yönetilebilir.
 
 ## <a name="using-invoke-azrestmethod-with-get-operations"></a>GET işlemleriyle Invoke-AzRestMethod yöntemini kullanma
 
@@ -51,7 +50,7 @@ ACR’nin 2019-12-01-preview version sürümüne ilişkin tanımı şu konumda b
 
 ## <a name="using-invoke-azrestmethod-with-patch-operations"></a>PATCH işlemleriyle Invoke-AzRestMethod yöntemini kullanma
 
-Invoke-AzRestMethod cmdlet’ini kullanarak `myresourcegroup` kaynak grubundaki `myacr` adlı mevcut ACR’ye yönelik genel erişimi devre dışı bırakabilirsiniz.
+`Invoke-AzRestMethod` cmdlet’ini kullanarak `myresourcegroup` kaynak grubundaki `myacr` adlı mevcut ACR’ye yönelik genel erişimi devre dışı bırakabilirsiniz.
 
 Genel ağ erişimini devre dışı bırakmak için, aşağıdaki resimde gösterildiği şekilde `publicNetwokAccess` parametresinin değerini değiştiren API’ye bir **PATCH** çağrısı yapmanız gerekir:
 
@@ -100,11 +99,11 @@ Invoke-AzRestMethod @specificIpParams
 
 ## <a name="comparison-to-get-azresource-new-azresource-and-remove-azresource"></a>Get-AzResource, New-AzResource ve Remove-AzResource karşılaştırması
 
-`*-AzResource` cmdlet’leri kaynak türünü, API sürümünü ve güncelleştirilecek özellikleri belirterek Azure’a yapılan REST API çağrısını özelleştirmenize olanak verir. Ancak, özelliklerin oluşturulması kolayca karmaşık hale gelebilen bir `PSObject` olması gerekir.
+`*-AzResource` cmdlet’leri kaynak türünü, API sürümünü ve güncelleştirilecek özellikleri belirterek Azure’a yapılan REST API çağrısını özelleştirmenize olanak verir. Ancak, özelliklerin önce `PSObject` olarak oluşturulması gerekir. Bu işlem, bir karmaşıklık düzeyi daha ekler ve kolayca karmaşık hale gelebilir.
 
-`Invoke-AzRestMethod`, Azure kaynaklarını yönetmek için daha basit bir yöntem sunar. Önceki örnekte, yükün bir JSON dizesi olduğunu görebilirsiniz. JSON ve `PSObjects` arasındaki dönüşüm için çaba harcamanız gerekmez.
+`Invoke-AzRestMethod`, Azure kaynaklarını yönetmek için basit bir yöntem sunar. Önceki örnekte gösterildiği gibi, bir JSON dizesi oluşturabilir ve herhangi bir `PSObjects` nesnesini önceden oluşturmak zorunda kalmadan REST API çağrısını özelleştirmek için bu dizeyi kullanabilirsiniz.
 
-`*-AzResource` cmdlet’lerini zaten biliyorsanız kullanmaya devam edebilirsiniz. Bu cmdlet’lere yönelik desteği durdurmayı planlamıyoruz. `Invoke-AzRestMethod` sayesinde aileye yeni bir cmdlet ekledik.
+`*-AzResource` cmdlet’lerini zaten biliyorsanız kullanmaya devam edebilirsiniz. Bu cmdlet’lere yönelik desteği durdurmayı planlamıyoruz. `Invoke-AzRestMethod` ile araç setinize yeni bir cmdlet ekledik.
 
 ## <a name="see-also"></a>Ayrıca Bkz.
 
