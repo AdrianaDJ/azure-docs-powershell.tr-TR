@@ -3,20 +3,20 @@ title: Azure PowerShell ile oturum açma
 description: Kullanıcı olarak, hizmet sorumlusu olarak veya Azure kaynakları için yönetilen kimlikleri kullanarak Azure PowerShell oturumu açma.
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 06/18/2020
+ms.date: 7/7/2020
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 10deb367456574a29b5b9c301e0e1a6b10d95c14
+ms.openlocfilehash: 8f18af8ed67ecf2aefd353208c07bf812df732d9
 ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 09/01/2020
-ms.locfileid: "89241483"
+ms.locfileid: "89242180"
 ---
 # <a name="sign-in-with-azure-powershell"></a>Azure PowerShell ile oturum açma
 
 Azure PowerShell, çeşitli kimlik doğrulama yöntemlerini destekler. Başlangıç yapmanın en kolay yolu, oturumunuzu otomatik olarak açan [Azure Cloud Shell](/azure/cloud-shell/overview)'i kullanmaktır. Yerel yüklemeyle, tarayıcınızdan etkileşimli oturum açabilirsiniz. Otomasyon betikleri yazarken önerilen yaklaşım, gerekli izinlere sahip bir [hizmet sorumlusu](create-azure-service-principal-azureps.md) kullanmaktır. Kendi kullanım örneğinizde oturum açma izinlerini olabildiğince kısıtladığınızda, Azure kaynaklarınızın güvenliğini korumaya yardım etmiş olursunuz.
 
-Oturum açtıktan sonra, komutlar varsayılan aboneliğinizde çalıştırılır. Bir oturumda etkin aboneliğinizi değiştirmek için [Set-AzContext](/powershell/module/az.accounts/set-azcontext) cmdlet'ini kullanın. Azure PowerShell'de oturum açarken kullanılan varsayılan aboneliği değiştirmek için [Set-AzDefault](/powershell/module/az.accounts/set-azdefault) kullanın.
+Birden fazla aboneliğe erişiminiz varsa başlangıçta Azure’ın ilk döndürdüğü abonelikte oturumunuz açılır. Komutlar varsayılan olarak bu abonelikte çalıştırılır. Bir oturumda etkin aboneliğinizi değiştirmek için [Set-AzContext](/powershell/module/az.accounts/set-azcontext) cmdlet'ini kullanın. Etkin aboneliğinizi değiştirmek ve aynı sistemde oturum değiştirdiğinizde bu değişikliğin geçerliliğini korumasını sağlamak için [Select-AzContext](/powershell/module/az.accounts/select-azcontext) cmdlet’ini kullanın.
 
 > [!IMPORTANT]
 > Oturumunuz açık kaldığı sürece kimlik bilgileriniz birden çok PowerShell oturumu arasında paylaşılır.

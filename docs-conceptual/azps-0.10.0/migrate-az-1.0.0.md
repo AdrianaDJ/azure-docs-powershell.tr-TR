@@ -1,18 +1,16 @@
 ---
 title: AzureRM'den Azure PowerShell Az 1.0.0’a tüm değişiklikler
 description: Bu geçiş kılavuzu, Azure PowerShell Az sürüm 1 yayınında yapılan yeni değişikliklerin listesini içerir.
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/15/2019
-ms.openlocfilehash: e5121d61b0f5f68ff3e1f33d774e3533adfeb64f
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: ae2539a09b93fb482ed3f8a363c7a0a66e02a412
+ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81445552"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89241857"
 ---
 # <a name="breaking-changes-for-az-100"></a>Az 1.0.0 için yeni değişiklikler
 
@@ -58,7 +56,7 @@ Bu bölümde, Az modülünün yeniden tasarımının bir parçası olan, hataya 
 
 ### <a name="cmdlet-noun-prefix-changes"></a>Cmdlet İsim Öneki Değişiklikleri
 
-AzureRM modülünde cmdlet’ler isim ön eki olarak `AzureRM` veya `Azure` kullanılır.  Az ile birlikte cmdlet adları basitleştirilip normalleştirilerek tüm cmdlet’lerin isim ön eki olarak 'Az' kullanılacak. Örnek:
+AzureRM modülünde cmdlet’ler isim ön eki olarak `AzureRM` veya `Azure` kullanılır.  Az ile birlikte cmdlet adları basitleştirilip normalleştirilerek tüm cmdlet’lerin isim ön eki olarak 'Az' kullanılacak. Örneğin:
 
 ```azurepowershell-interactive
 Get-AzureRMVM
@@ -125,7 +123,7 @@ Modül adlarındaki değişiklikler nedeniyle, belirli modülleri yüklemek içi
 
 #### <a name="migrating-requires-and-import-module-statements"></a>#Requires ve Import-Module Deyimlerini Geçirme
 
-AzureRM modüllerine bağımlılığı bildirmek için `#Requires` veya `Import-Module` deyimini kullanan betikler yeni modül adlarını kullanacak şekilde güncelleştirilmelidir. Örnek:
+AzureRM modüllerine bağımlılığı bildirmek için `#Requires` veya `Import-Module` deyimini kullanan betikler yeni modül adlarını kullanacak şekilde güncelleştirilmelidir. Örneğin:
 
 ```azurepowershell-interactive
 #Requires -Module AzureRM.Compute

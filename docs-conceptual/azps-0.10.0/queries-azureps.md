@@ -1,18 +1,16 @@
 ---
 title: Azure PowerShell cmdlet'lerinin çıkışını sorgulama
 description: Azure’daki kaynakları sorgulama ve sonuçları biçimlendirme.
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 01/10/2019
-ms.openlocfilehash: 9141f5640467722608cb7748f425ce3942668fb8
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 2754df5132ca9d528217fa5caad95b7f59cc8215
+ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81445467"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89241704"
 ---
 # <a name="query-output-of-azure-powershell"></a>Azure PowerShell'in çıkışını sorgulama 
 

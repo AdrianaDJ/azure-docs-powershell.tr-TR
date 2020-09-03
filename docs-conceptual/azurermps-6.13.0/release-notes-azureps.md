@@ -5,16 +5,17 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.workload: ''
 ms.date: 08/28/2018
-ms.openlocfilehash: 8aa0462af97877e0d20fe898ddd927a6d2850dea
-ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 189b360f8825b7de93b67b0b2cbe670d00187327
+ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83387335"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89241364"
 ---
 # <a name="release-notes"></a>Sürüm notları
 
-[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
+[!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
 
 Azure PowerShell'in bu sürümünde yapılan değişikliklerin listesi aşağıda verilmiştir.
 
@@ -46,7 +47,7 @@ Azure PowerShell'in bu sürümünde yapılan değişikliklerin listesi aşağıd
 #### <a name="azurermnetwork"></a>AzureRM.Network
 * New-AzureRmApplicationGatewayCustomError, Add-AzureRmApplicationGatewayCustomError, Get-AzureRmApplicationGatewayCustomError, Set-AzureRmApplicationGatewayCustomError, Remove-AzureRmApplicationGatewayCustomError, Add-AzureRmApplicationGatewayHttpListenerCustomError, Get-AzureRmApplicationGatewayHttpListenerCustomError, Set-AzureRmApplicationGatewayHttpListenerCustomError, Remove-AzureRmApplicationGatewayHttpListenerCustomError cmdlet'leri eklendi
 * Desteklenen AzureFirewall Ağ Protokollerine yeniden ICMP eklendi
-* Test-AzureRmNetworkWatcherConnectivity cmdlet'i güncelleştirildi; hedef kimlik, adres ve bağlantı noktasında doğrulama eklendi. 
+* Test-AzureRmNetworkWatcherConnectivity cmdlet'i güncelleştirildi; hedef kimlik, adres ve bağlantı noktasında doğrulama eklendi.
 * VirtualNetwork eşlemesinde bellek kullanımıyla ilgili sorunlar düzeltildi
 
 #### <a name="azurermrecoveryservicesbackup"></a>AzureRM.RecoveryServices.Backup
@@ -231,14 +232,14 @@ Azure PowerShell'in bu sürümünde yapılan değişikliklerin listesi aşağıd
 #### <a name="azurermprofile"></a>AzureRM.Profile
 * Depolama ortak kodunda küçük değişiklikler yapıldı
 * Yardım dosyaları tüm parametre türlerini içerecek şekilde güncelleştirildi.
-* ServicePrincipalCertificateWithSubscriptionId parametre kümesindeki -ServicePrincipal parametresi zorunlu olmaktan çıkarıldı 
+* ServicePrincipalCertificateWithSubscriptionId parametre kümesindeki -ServicePrincipal parametresi zorunlu olmaktan çıkarıldı
 
 #### <a name="azurestorage"></a>Azure Depolama
-* OAuth ile Depolama Bağlamı oluşturma desteği eklendi. 
+* OAuth ile Depolama Bağlamı oluşturma desteği eklendi.
     - New-AzureStorageContext
 
 #### <a name="azurermcdn"></a>AzureRM.Cdn
-* CDN fiyatlandırma SKU'suna Standard_Microsoft eklendi. 
+* CDN fiyatlandırma SKU'suna Standard_Microsoft eklendi.
 
 #### <a name="azurermcompute"></a>AzureRM.Compute
 * Keyvault ve Storage bağımlılıkları ortak bağımlılıklara taşındı
@@ -349,7 +350,7 @@ Azure PowerShell'in bu sürümünde yapılan değişikliklerin listesi aşağıd
 * PSSignalRResource nesnesine sürüm alanı, PSSignalRKeys nesnesine de bağlantı dizesi eklendi.
 
 #### <a name="azurermstorage"></a>AzureRM.Storage
-* AzureRm.Storage için Değiştirilemezlik İlkesi desteği eklendi 
+* AzureRm.Storage için Değiştirilemezlik İlkesi desteği eklendi
     - Remove-AzureRmStorageAccountNetworkRule
     - Get-AzureRmStorageContainer
     - Update-AzureRmStorageContainer
@@ -685,7 +686,7 @@ Azure PowerShell'in bu sürümünde yapılan değişikliklerin listesi aşağıd
 * New-AzureRmDisk örneği güncelleştirildi
 * 'New-AzureRmVM' için örnek eklendi
 * Set-AzureRmVMOSDisk açıklaması güncelleştirildi
-* Yazımı ve ön eki düzeltmek amacıyla Set-AzureRmVMBginfoExtension için Örnek 1 güncelleştirildi. 
+* Yazımı ve ön eki düzeltmek amacıyla Set-AzureRmVMBginfoExtension için Örnek 1 güncelleştirildi.
 
 #### <a name="azurermdatafactoryv2"></a>AzureRM.DataFactoryV2
 * ADF .Net SDK sürümü 1.1.0'a güncelleştirildi.
@@ -897,7 +898,7 @@ Azure PowerShell'in bu sürümünde yapılan değişikliklerin listesi aşağıd
 * Yardım dosyalarına -Permissions parametresi hakkında daha fazla bilgi eklendi.
 
 #### <a name="azurermcompute"></a>AzureRM.Compute
-* 'Get-AzureRmVmDiskEncryptionStatus' için veri diski bulunmayan VM'lerde karşılaşılan bir sorun düzeltildi 
+* 'Get-AzureRmVmDiskEncryptionStatus' için veri diski bulunmayan VM'lerde karşılaşılan bir sorun düzeltildi
 * Aşağıdaki cmdlet'leri düzeltmek için bilgisayar istemci kitaplığı sürümü güncelleştirildi
     - Grant-AzureRmDiskAccess
     - Grant-AzureRmSnapshotAccess
@@ -1020,8 +1021,8 @@ Azure PowerShell'in bu sürümünde yapılan değişikliklerin listesi aşağıd
 
 #### <a name="azurermdatalakestore"></a>AzureRM.DataLakeStore
 * Export-AzureRmDataLakeStoreChildItemProperties için düzeltme örneği
-* Set-AzureRmDataLakeStoreItemAclEntry komutunda Özyineleme durumu için null parametresi özel durumunu düzeltme 
-* Set-AzureRmDataLakeStoreItemAclEntry, Set-AzureRmDataLakeStoreItemAcl, Remove-AzureRmDataLakeStoreItemAclEntry’ye yönelik yardım dosyalarını düzeltme 
+* Set-AzureRmDataLakeStoreItemAclEntry komutunda Özyineleme durumu için null parametresi özel durumunu düzeltme
+* Set-AzureRmDataLakeStoreItemAclEntry, Set-AzureRmDataLakeStoreItemAcl, Remove-AzureRmDataLakeStoreItemAclEntry’ye yönelik yardım dosyalarını düzeltme
 
 #### <a name="azurermnetwork"></a>AzureRM.Network
 * Ağ SDK sürümünü 18.0.0-önizleme’den 19.0.0-önizlemeye yükseltme
@@ -1041,7 +1042,7 @@ Azure PowerShell'in bu sürümünde yapılan değişikliklerin listesi aşağıd
 * AuditActions veya AuditActionGroups’un kaldırılmasını sağlamak üzere Denetim cmdlet’leri güncelleştirildi
 * Yeni bir esnek saklama ilkesi ayarlarken komutun ‘Azure kurtarma hizmeti kasası ve ilkesiyle uzun süreli saklama ilkesini yapılandırma artık desteklenmiyor. Lütfen yeni esnek saklama ilkesi ile istek gönderin’ hatasını verdiği Set-AzureRmSqlDatabaseBackupLongTermRetentionPolicy komutuna ilişkin sorun düzeltildi.
 * Ölçek ve katman ilişkili özelliklere yönelik Sku özelliğini destekleyen yeni Veritabanı API’sini kullanmak için tüm Azure SQL Veritabanı/ElasticPool Creation/Update cmdlet’lerini güncelleştirin.
-* Güncelleştirilen cmlet’ler arasında şunlar yer almaktadır: 
+* Güncelleştirilen cmlet’ler arasında şunlar yer almaktadır:
     - New-AzureRmSqlDatabase; Set-AzureRmSqlDatabase
     - New-AzureRmSqlElasticPool; Set-AzureRmSqlElasticPool
     - New-AzureRmSqlDatabaseCopy

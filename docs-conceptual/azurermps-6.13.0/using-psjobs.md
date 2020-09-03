@@ -1,22 +1,20 @@
 ---
 title: PowerShell işlerini kullanarak cmdlet’leri paralel olarak çalıştırma
 description: -AsJob parametresini kullanarak cmdlet’leri paralel olarak çalıştırma yönergeleri.
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/11/2018
-ms.openlocfilehash: beb7f0a89d2e254b348b79daf4f8d3bfdc562de5
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 8a05d8ff8344870e2daac130135b921b192f0f5d
+ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "65534199"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89241347"
 ---
 # <a name="running-cmdlets-in-parallel-using-powershell-jobs"></a>PowerShell işlerini kullanarak cmdlet’leri paralel olarak çalıştırma
 
-[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
+[!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
 
 PowerShell, [PowerShell İşleri](/powershell/module/microsoft.powershell.core/about/about_jobs) ile zaman uyumsuz eylemi destekler.
 Azure PowerShell, Azure’a ağ çağrıları yapma ve bunlar için bekleme açısından yüksek bir bağımlılığa sahiptir. Sık sık engelleyici olmayan çağrılar yapmanız gerektiğini fark edebilirsiniz. Bu gereksinimi karşılamak için Azure PowerShell birinci sınıf [PSJob](/powershell/module/microsoft.powershell.core/about/about_jobs) desteği sağlar.

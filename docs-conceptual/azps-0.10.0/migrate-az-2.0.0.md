@@ -4,12 +4,13 @@ description: Bu geçiş kılavuzu, Azure PowerShell Az sürüm 2.0'da yapılan y
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/24/2019
-ms.openlocfilehash: 91362f3cc6b35e96a543c1304fb55acbf373d291
-ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 2d8a3c04388bfc5028811f6d1b6caf2c6fce4147
+ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83387692"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89241840"
 ---
 # <a name="migration-guide-for-az-200"></a>Az 2.0.0 için Geçiş Kılavuzu
 
