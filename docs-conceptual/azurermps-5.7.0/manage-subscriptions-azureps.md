@@ -4,20 +4,21 @@ description: Azure PowerShell ile Azure aboneliklerini yönetme
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/30/2017
-ms.openlocfilehash: 757d908de765d60428a3df17ba7c827f50360f3b
-ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: e6a327528b0add9b6ca3cb7d35825376ff8c37aa
+ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83387896"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89243778"
 ---
-# <a name="manage-multiple-azure-subscriptions"></a><span data-ttu-id="49e57-103">Birden çok Azure aboneliğini yönetme</span><span class="sxs-lookup"><span data-stu-id="49e57-103">Manage multiple Azure subscriptions</span></span>
+# <a name="manage-multiple-azure-subscriptions"></a><span data-ttu-id="ce84a-103">Birden çok Azure aboneliğini yönetme</span><span class="sxs-lookup"><span data-stu-id="ce84a-103">Manage multiple Azure subscriptions</span></span>
 
-[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
+[!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
 
-<span data-ttu-id="49e57-104">Azure ile ilk kez tanışıyorsanız, muhtemelen yalnızca bir aboneliğiniz vardır.</span><span class="sxs-lookup"><span data-stu-id="49e57-104">If you are brand new to Azure, you probably only have a single subscription.</span></span> <span data-ttu-id="49e57-105">Bununla birlikte, Azure’u bir süredir kullanıyorsanız birden çok Azure aboneliği oluşturmuş olabilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="49e57-105">But if you have been using Azure for a while, you may have created multiple Azure subscriptions.</span></span> <span data-ttu-id="49e57-106">Azure PowerShell’i, komutları belirli bir abonelikte yürütecek şekilde yapılandırabilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="49e57-106">You can configure Azure PowerShell to execute commands against a particular subscription.</span></span>
+<span data-ttu-id="ce84a-104">Azure ile ilk kez tanışıyorsanız, muhtemelen yalnızca bir aboneliğiniz vardır.</span><span class="sxs-lookup"><span data-stu-id="ce84a-104">If you are brand new to Azure, you probably only have a single subscription.</span></span> <span data-ttu-id="ce84a-105">Bununla birlikte, Azure’u bir süredir kullanıyorsanız birden çok Azure aboneliği oluşturmuş olabilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="ce84a-105">But if you have been using Azure for a while, you may have created multiple Azure subscriptions.</span></span> <span data-ttu-id="ce84a-106">Azure PowerShell’i, komutları belirli bir abonelikte yürütecek şekilde yapılandırabilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="ce84a-106">You can configure Azure PowerShell to execute commands against a particular subscription.</span></span>
 
-1. <span data-ttu-id="49e57-107">Hesabınızdaki tüm aboneliklerin listesini edinin.</span><span class="sxs-lookup"><span data-stu-id="49e57-107">Get a list of all subscriptions in your account.</span></span>
+1. <span data-ttu-id="ce84a-107">Hesabınızdaki tüm aboneliklerin listesini edinin.</span><span class="sxs-lookup"><span data-stu-id="ce84a-107">Get a list of all subscriptions in your account.</span></span>
 
     ```azurepowershell-interactive
     Get-AzureRmSubscription
@@ -46,13 +47,13 @@ ms.locfileid: "83387896"
     CurrentStorageAccount :
     ```
 
-2. <span data-ttu-id="49e57-108">Varsayılanı ayarlayın.</span><span class="sxs-lookup"><span data-stu-id="49e57-108">Set the default.</span></span>
+2. <span data-ttu-id="ce84a-108">Varsayılanı ayarlayın.</span><span class="sxs-lookup"><span data-stu-id="ce84a-108">Set the default.</span></span>
 
     ```azurepowershell-interactive
     Select-AzureRmSubscription -SubscriptionName "My Demos"
     ```
 
-3. <span data-ttu-id="49e57-109">`Get-AzureRmContext` cmdlet’ini çalıştırarak değişikliği doğrulayın.</span><span class="sxs-lookup"><span data-stu-id="49e57-109">Verify the change by running the `Get-AzureRmContext` cmdlet.</span></span>
+3. <span data-ttu-id="ce84a-109">`Get-AzureRmContext` cmdlet’ini çalıştırarak değişikliği doğrulayın.</span><span class="sxs-lookup"><span data-stu-id="ce84a-109">Verify the change by running the `Get-AzureRmContext` cmdlet.</span></span>
 
     ```azurepowershell-interactive
     Get-AzureRmContext
@@ -67,4 +68,4 @@ ms.locfileid: "83387896"
     CurrentStorageAccount :
     ```
 
-<span data-ttu-id="49e57-110">Varsayılan aboneliğinizi ayarladığınızda, sonraki tüm Azure PowerShell komutları bu aboneliğe göre çalıştırılır.</span><span class="sxs-lookup"><span data-stu-id="49e57-110">Once you set your default subscription, all subsequent Azure PowerShell commands run against this subscription.</span></span>
+<span data-ttu-id="ce84a-110">Varsayılan aboneliğinizi ayarladığınızda, sonraki tüm Azure PowerShell komutları bu aboneliğe göre çalıştırılır.</span><span class="sxs-lookup"><span data-stu-id="ce84a-110">Once you set your default subscription, all subsequent Azure PowerShell commands run against this subscription.</span></span>
