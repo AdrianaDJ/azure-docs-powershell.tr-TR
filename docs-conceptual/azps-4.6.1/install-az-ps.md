@@ -10,7 +10,7 @@ ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 09/01/2020
-ms.locfileid: "89239681"
+ms.locfileid: "89240327"
 ---
 # <a name="install-azure-powershell"></a>Azure PowerShell'i yükleme
 

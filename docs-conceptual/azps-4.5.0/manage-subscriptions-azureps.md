@@ -4,12 +4,13 @@ description: Azure PowerShell ile Azure aboneliklerini yönetme
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 02/04/2019
-ms.openlocfilehash: 4947435259f78c10e4f67434eb62ec8d4c3c6013
-ms.sourcegitcommit: edfe63c6949cd59127028ac8a13bb4a8827d555c
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 96b94ffcb5075764eb5d2dcaec7b13c5933b83da
+ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87566544"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89239613"
 ---
 # <a name="use-multiple-azure-subscriptions"></a>Birden çok Azure aboneliği kullanma
 

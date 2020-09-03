@@ -3,14 +3,14 @@ title: MSI ile Azure PowerShell'i yükleme
 description: Azure PowerShell'i PowerShellGet olmadan MSI kullanarak yükleme
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 10/22/2019
+ms.date: 03/10/2020
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 157031cc827f2abfa947013821bd5db5bb84c3d3
+ms.openlocfilehash: 33d9214544ddb126b717685f9e7986bed926b149
 ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 09/01/2020
-ms.locfileid: "89244118"
+ms.locfileid: "89240361"
 ---
 # <a name="install-azure-powershell-on-windows-with-msi"></a>MSI ile Windows'a Azure PowerShell yükleme
 
@@ -31,7 +31,7 @@ PowerShell 5.1'de Azure PowerShell'i kullanmak için şunları yapmalısınız:
 
 ## <a name="install-or-update-on-windows-using-the-msi-package"></a>MSI Paketini kullanarak Windows'a yükleme veya güncelleştirme
 
-Azure PowerShell için MSI paketini [GitHub](https://github.com/Azure/azure-powershell/releases/tag/v2.8.0-October2019)’dan edinebilirsiniz. Azure PowerShell’in önceki sürümlerini MSI kullanarak yüklediyseniz, bunlar yükleyici tarafından otomatik olarak kaldırılır. MSI paketi, modülleri `${env:ProgramFiles}\WindowsPowerShell\Modules` içine yükler.
+Azure PowerShell için MSI paketini [GitHub](https://github.com/Azure/azure-powershell/releases/latest)’dan edinebilirsiniz. Azure PowerShell’in önceki sürümlerini MSI kullanarak yüklediyseniz, bunlar yükleyici tarafından otomatik olarak kaldırılır. MSI paketi, modülleri `${env:ProgramFiles}\WindowsPowerShell\Modules` içine yükler.
 
 Azure PowerShell ile çalışmaya başlamak için, Azure kimlik bilgilerinizle oturum açın.
 
