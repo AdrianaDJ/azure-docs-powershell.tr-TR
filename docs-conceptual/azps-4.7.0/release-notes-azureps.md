@@ -5,14 +5,176 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/10/2020
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 52129f31202a8ae04bf80988b5aa07b12fe081b8
+ms.openlocfilehash: 98bae70dbd61c74aa92e69cb67afc89ebae23f70
 ms.sourcegitcommit: 15f21c40dcb7610e2fbaaabf264ad925e4224500
 ms.translationtype: HT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 09/22/2020
-ms.locfileid: "90913384"
+ms.locfileid: "90928618"
 ---
 # <a name="azure-powershell-release-notes"></a>Azure PowerShell sürüm notları
+
+## <a name="470---september-2020"></a>4.7.0 - Eylül 2020
+#### <a name="azaccounts"></a>Az.Accounts
+* Yaklaşan yeni değişiklik iletileri biçimlendirildi
+* Azure.Core 1.4.1 sürümüne güncelleştirildi
+
+#### <a name="azaks"></a>Az.Aks
+* 'New-AzAksCluster', 'Set-AzAksCluster' ve 'New-AzAksNodePool' için istemci tarafı parametre doğrulama mantığı eklendi. [#12372]
+* 'New-AzAksCluster' cmdlet’inde eklentilere yönelik destek eklendi. [#11239]
+* Eklentiler için 'Enable-AzAksAddOn' ve 'Disable-AzAksAddOn' cmdlet’leri eklendi. [#11239]
+* 'New-AzAksCluster' için 'GenerateSshKey' parametresi eklendi. [#12371]
+* API sürümü 2020-06-01 olarak güncelleştirildi.
+
+#### <a name="azcognitiveservices"></a>Az.CognitiveServices
+* Belirli API’ler için ek yasal koşullar gösterildi.
+
+#### <a name="azcompute"></a>Az.Compute
+* 'New-AzVmDiskEncryptionSetConfig' için isteğe bağlı '-EncryptionType' parametresi eklendi
+* Yeni kaynak türü için yeni cmdlet’ler: DiskAccess 'Get-AzDiskAccess', 'New-AzDiskAccess', 'Get-AzDiskAccess'
+* 'New-AzSnapshotConfig' cmdlet’ine isteğe bağlı '-DiskAccessId' ve '-NetworkAccessPolicy' parametreleri eklendi
+* 'New-AzDiskConfig' cmdlet’ine isteğe bağlı '-DiskAccessId' ve '-NetworkAccessPolicy' parametreleri eklendi
+* VirtualMachine Örnek Görünümüne 'PatchStatus' özelliği eklendi
+* 'Get-AzVm' cmdlet’i '-Status' ile çağrıldığında döndürülen nesne olan 'VMHealth' özelliği, sanal makinenin örnek görünümüne eklendi
+* 'Get-AzVM' ve 'Get-AzVmss' örnek görünümlerine 'AssignedHost' alanı eklendi. Alan, sanal makine örneğinin kaynak kimliğini gösterir
+* 'New-AzHostGroup' cmdlet’ine isteğe bağlı '-SupportAutomaticPlacement' parametresi eklendi 
+* 'New-AzVm' ve 'New-AzVmss' cmdlet’lerine '-HostGroupId' parametresi eklendi
+
+#### <a name="azdatafactory"></a>Az.DataFactory
+* ADF .NET SDK’sı 4.11.0 sürümüne güncelleştirildi
+
+#### <a name="azeventhub"></a>Az.EventHub
+* Yeni 'New-AzEventHubCluster', 'Set-AzEventHubCluster', 'Get-AzEventHubCluster', 'Remove-AzEventHubCluster', 'Get-AzEventHubClustersAvailableRegions' Cluster cmdlet’leri eklendi.
+* #10722 numaralı soruna yönelik aşağıdaki düzeltmeler yapıldı: AuthorizationRule haklarına yalnızca 'Listen' atanabilecek şekilde düzeltildi.
+
+#### <a name="azfunctions"></a>Az.Functions
+* Desteklemeyen bölgelerde v2 İşlevleri oluşturma özelliği kaldırıldı.
+* PowerShell 6.2 sürümü kullanımdan kaldırıldı. Kullanıcı PowerShell 6.2 işlev uygulaması oluşturduğunda, bunun yerine PowerShell 7.0 işlev uygulaması oluşturmasını öneren bir uyarı eklendi.
+
+#### <a name="azhdinsight"></a>Az.HDInsight
+* Otomatik ölçeklendirme yapılandırmasıyla küme oluşturma desteği eklendi
+    - 'New-AzHDInsightCluster' cmdlet’ine yeni 'AutoscaleConfiguration' parametresi eklendi
+* Kümenin Otomatik ölçeklendirme yapılandırmasını çalıştırma desteği eklendi
+    - Yeni 'Get-AzHDInsihgtClusterAutoscaleConfiguration' cmdlet’i eklendi
+    - Yeni 'New-AzHDInsihgtClusterAutoscaleConfiguration' cmdlet’i eklendi
+    - Yeni 'Set-AzHDInsihgtClusterAutoscaleConfiguration' cmdlet’i eklendi
+    - Yeni 'Remove-AzHDInsihgtClusterAutoscaleConfiguration' cmdlet’i eklendi
+    - Yeni 'New-AzHDInsihgtClusterAutoscaleScheduleCondition' cmdlet’i eklendi
+
+#### <a name="azkeyvault"></a>Az.KeyVault
+* RBAC yetkilendirmesi desteği eklendi [#10557]
+* 'Set-AzKeyVaultAccessPolicy' cmdlet’indeki hata işleme özelliği iyileştirildi [#4007]
+
+#### <a name="azkusto"></a>Az.Kusto
+* 'Az.Kusto' modülü genel kullanıma sunuldu
+
+#### <a name="aznetwork"></a>Az.Network
+* [Yeni Değişiklik] Aşağıdaki cmdlet’ler, kaynak sanal yönlendiricisini ve sanal merkezi uyumlu hale getirecek şekilde güncelleştirildi
+    - 'New-AzVirtualRouter': 
+        - IP yapılandırması alt kaynağını desteklemek için -HostedSubnet parametresi eklendi
+        - -HostedGateway ve -HostedGatewayId parametreleri silindi
+    - 'Get-AzVirtualRouter':
+        - Abonelik düzeyi parametre kümesi eklendi
+    - 'Remove-AzVirtualRouter'
+    - 'Add-AzVirtualRouterPeer'
+    - 'Get-AzVirtualRouterPeer'
+    - 'Remove-AzVirtualRouterPeer'
+* Azure ExpressRoute Bağlantı Noktası için yeni cmdlet eklendi
+    - 'New-AzExpressRoutePortLOA'
+* VirtualNetwork Eşleme Kaynağına RemoteBgpCommunities özelliği eklendi
+* 'New-AzLoadBalancerFrontendIpConfig', 'New-AzPublicIpAddress' ve 'New-AzPublicIpPrefix' uyarı iletisi değiştirildi.
+* 'Get-AzVpnGateway' çıkışına VpnGatewayIpConfigurations eklendi
+* 'Set-AzApplicationGatewaySslCertificate' ile ilgili hata düzeltildi [#9488]
+* 'AzureFirewall' öğesine 'AllowActiveFTP' parametresi eklendi
+* Özellik için aşağıdaki komutlar güncelleştirildi: VirtualWan P2SVpnGateway üzerinde internet güvenliğini ayarlama/kaldırma özelliği etkinleştirildi.
+- 'New-AzP2sVpnGateway' güncelleştirildi: Müşterilerin P2SVpnGateway üzerinde internet güvenliğini etkinleştirmek için true olarak ayarlayacakları, Noktadan siteye istemcilere uygulanacak olan isteğe bağlı 'EnableInternetSecurityFlag' anahtar parametresi eklendi.
+- 'Update-AzP2sVpnGateway' güncelleştirildi: Müşterilerin P2SVpnGateway üzerinde internet güvenliğini etkinleştirip devre dışı bırakmak için true/false olarak ayarlayacakları, Noktadan siteye istemcilere uygulanacak olan isteğe bağlı 'EnableInternetSecurityFlag' veya 'DisableInternetSecurityFlag' anahtar parametresi eklendi.
+* Müşterilerin sorun giderme amacıyla VirtualWan P2SVpnGateway’lerini sıfırlamalarını/yeniden başlatmalarını sağlayan yeni 'Reset-AzP2sVpnGateway' cmdlet’i eklendi.
+* Müşterilerin sorun giderme amacıyla VirtualWan VpnGateway’lerini sıfırlamalarını/yeniden başlatmalarını sağlayan yeni 'Reset-AzVpnGateway' cmdlet’i eklendi.
+* 'Set-AzVirtualNetworkSubnetConfig' güncelleştirildi
+    - Parametrelerde açıkça ayarlanmışsa alt ağın NSG ve Yönlendirme Tablosu özelliklerinin null olarak ayarlanması [#1548][#9718]
+
+#### <a name="azrecoveryservices"></a>Az.RecoveryServices
+* İş yükü Yedekleme Öğeleri için Silme Durumu düzeltildi.
+
+#### <a name="azresources"></a>Az.Resources
+* Eksik olan denetim Set-AzRoleAssignment cmdlet’ine eklendi
+* 'Get-AzResourceGroupDeploymentOperation' cmdlet’inin 'SubscriptionId' parametresine hataya neden olan değişiklik özniteliği eklendi
+* ARM şablonu What-If cmdlet’leri 'Ignore' kaynak değişiklikleri son olarak gösterülecek şekilde güncelleştirildi
+* Dağıtım cmdlet’lerindeki güvenlik ve dizi parametresi serileştirme sorunları düzeltildi [#12773]
+
+#### <a name="azservicefabric"></a>Az.ServiceFabric
+* Yönetilen kümeler ve düğüm türleri için yeni cmdlet’ler eklendi:
+    - 'New-AzServiceFabricManagedCluster'
+    - 'Get-AzServiceFabricManagedCluster'
+    - 'Set-AzServiceFabricManagedCluster'
+    - 'Remove-AzServiceFabricManagedCluster'
+    - 'Add-AzServiceFabricManagedClusterClientCertificate'
+    - 'Remove-AzServiceFabricManagedClusterClientCertificate'
+    - 'New-AzServiceFabricManagedNodeType'
+    - 'Get-AzServiceFabricManagedNodeType'
+    - 'Set-AzServiceFabricManagedNodeType'
+    - 'Remove-AzServiceFabricManagedNodeType'
+    - 'Add-AzServiceFabricManagedNodeTypeVMExtension'
+    - 'Add-AzServiceFabricManagedNodeTypeVMSecret'
+    - 'Remove-AzServiceFabricManagedNodeTypeVMExtension'
+    - 'Restart-AzServiceFabricManagedNodeTyp'
+* Service Fabric SDK’sı, geçerli model için Service Fabric kaynak sağlayıcısı 2020-03-01 API sürümünü kullanan 1.2.0 sürümüne, yönetilen kümeler için 2020-01-01-preview sürümüne yükseltildi.
+
+#### <a name="azsql"></a>Az.Sql
+* 'New-AzSqlInstance' ve 'Get-AzSqlInstance' cmdlet’lerine BackupStorageRedundancy eklendi
+* 'Get-AzSqlServerActiveDirectoryOnlyAuthentication' cmdlet’i eklendi
+* 'Enable-AzSqlServerActiveDirectoryOnlyAuthentication' cmdlet’i eklendi
+* 'New-AzSqlInstance' cmdlet’ine Force parametresi eklendi
+* Yönetilen Veritabanı Günlük Yeniden Oynatma hizmetine cmdlet’ler eklendi
+    - 'Start-AzSqlInstanceDatabaseLogReplay'
+    - 'Get-AzSqlInstanceDatabaseLogReplay'
+    - 'Complete-AzSqlInstanceDatabaseLogReplay'
+    - 'Stop-AzSqlInstanceDatabaseLogReplay'
+* 'Get-AzSqlInstanceActiveDirectoryOnlyAuthentication' cmdlet’i eklendi
+* 'Enable-AzSqlInstanceActiveDirectoryOnlyAuthentication' cmdlet’i eklendi
+* 'Disable-AzSqlInstanceActiveDirectoryOnlyAuthentication' cmdlet’i eklendi
+* Ağ yalıtım işlevselliğini desteklemek için 'New-AzSqlDatabaseImport' ve 'New-AzSqlDatabaseExport' cmdlet’leri eklendi
+* 'New-AzSqlDatabaseImportExisting' cmdlet’i eklendi
+* Database cmdlet’leri yedekleme alanı tür belirtimini destekleyecek şekilde güncelleştirildi
+* 'New-AzSqlDatabase' cmdlet’ine Force parametresi eklendi
+* 'New-AzSqlDatabase' cmdlet’indeki seçili bölgelerde yer alan BackupStorageRedundancy yapılandırmasına yönelik uyarı eklendi
+* Sunucu ve örneğe yönelik ActiveDirectoryOnlyAuthentication cmdlet’leri, ResourceId ve InputObject’i içerek şekilde güncelleştirildi
+
+#### <a name="azstorage"></a>Az.Storage
+* Microsoft.Azure.Storage.DataMovement 2.0.0 sürümüne yükseltme sırasında blob karşıya yüklenirken oluşan hata düzeltildi [#12220]
+* Belirli Bir Noktaya Geri Yükleme Desteği Eklendi
+    - 'Enable-AzStorageBlobRestorePolicy'
+    - 'Disable-AzStorageBlobRestorePolicy'
+    - 'New-AzStorageBlobRangeToRestore'
+    - 'Restore-AzStorageBlobRange'
+* get-AzureRMStorageAccount cmdlet’ini -IncludeBlobRestoreStatus parametresiyle çalıştırarak Depolama hesabının blobu geri yükleme durumunu almaya yönelik destek eklendi 
+    - 'Get-AzureRMStorageAccount'
+* Yaklaşan cmdlet çıkış değişikliği için hataya neden olan değişiklik uyarı iletisi eklendi
+    - 'Get-AzStorageContainerStoredAccessPolicy'
+    - 'Set-AzStorageContainerStoredAccessPolicy'
+    - 'Set-AzStorageAccountManagementPolicy'
+    - 'Get-AzStorageAccountManagementPolicy'
+    - 'Add-AzStorageAccountManagementPolicyAction'
+    - 'New-AzStorageAccountManagementPolicyRule'
+* Microsoft.Azure.Cosmos.Table SDK 1.0.8 sürümüne yükseltildi
+
+### <a name="thanks-to-our-community-contributors"></a>Topluluğumuzdan katkıda bulunanlara teşekkür ederiz
+* Thomas Van Laere (@ThomVanL), Dockerfile-alpine-3.10’u ekledi (#12911) 
+* Lohith Chowdary Chilukuri (@Lochiluk), Remove-AzNetworkInterfaceIpConfig.md dosyasını güncelleştirdi (#12807) 
+* Roberth Strand (@roberthstrand), Get-AzResourceGroup-New örneği ve temizleme (#12828) 
+* Ravi Mishra (@inmishrar), Azure Web App çalışma zamanı yığınını DOTNETCORE’a güncelleştirdi (#12833) 
+* @jack-education, Set-AzVirtualNetworkSubnetConfig cmdlet’i NSG ve Rota Tablosunu alt ağdan kaldıracak şekilde güncelleştirdi (#12351) 
+* @hagop-globanet, Add-AzApplicationGatewayCustomError.md dosyasını güncelleştirdi (#12784) 
+* Joshua Van Daalen (@greenSacrifice)
+  * Özellikten Özelliğe yazımını güncelleştirdi (#12821) 
+  * New-AzResourceLock.md örneklerini güncelleştirdi (#12806)
+* Eragon Riddle (@eragonriddle), örnekteki parametre alanı adını düzeltti (#12825) 
+* @rossifumax, New-AzConfigurationAssignment.md dosyasındaki yazım hatasını düzeltti (#12701)
+
+## <a name="461---august-2020"></a>4.6.1 - Ağustos 2020
+#### <a name="azcompute"></a>Az.Compute
+* False değerinin varsayılan değerini kaldırmak için 'New-AzVm' içindeki '-EncryptionAtHost' parametresine yama uygulandı [#12776]
 
 ## <a name="460---august-2020"></a>4.6.0 - Ağustos 2020
 #### <a name="azaccounts"></a>Az.Accounts
@@ -55,7 +217,7 @@ ms.locfileid: "90913384"
 * Yönetim grubu kapsamındaki ARM şablonu Durum sonuçlarını almak için 'Get-AzDeploymentManagementGroupWhatIfResult' cmdlet’i eklendi
 * Kiracı kapsamındaki ARM şablonu Durum sonuçlarını almaya yönelik yeni 'Get-AzTenantWhatIfResult' cmdlet’i eklendi
 * 'New-AzManagementGroupDeployment' ve 'New-AzTenantDeployment' için '-WhatIf' ve '-Confirm' parametreleri, ARM şablonu Durum sonuçlarını kullanacak şekilde geçersiz kılındı
-* Yeni dağıtım cmdlet’lerindeki '-WhatIf' ve '-Confirm' parametrelerinin davranışları $WhatIfPreference ve $ConfirmPreference ile uyumlu olacak şekilde düzeltildi.
+* Yeni dağıtım cmdlet’lerindeki '-WhatIf' ve '-Confirm' parametrelerinin davranışları False ile uyumlu olacak şekilde düzeltildi 
 * '-TemplateObject' ve 'TemplateParameterObject' için serileştirme hatası düzeltildi [#1528] [#6292]
 * 'Get-AzResourceGroupDeploymentOperation' cmdlet’ine, yaklaşan çıkış türü değişikliğine yönelik hataya neden olan değişiklik özniteliği eklendi
 
