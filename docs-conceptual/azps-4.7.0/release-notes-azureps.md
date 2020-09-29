@@ -100,7 +100,7 @@ ms.locfileid: "90928618"
 #### <a name="azresources"></a>Az.Resources
 * Eksik olan denetim Set-AzRoleAssignment cmdlet’ine eklendi
 * 'Get-AzResourceGroupDeploymentOperation' cmdlet’inin 'SubscriptionId' parametresine hataya neden olan değişiklik özniteliği eklendi
-* ARM şablonu What-If cmdlet’leri 'Ignore' kaynak değişiklikleri son olarak gösterülecek şekilde güncelleştirildi
+* ARM şablonu What-If cmdlet’leri 'Ignore' kaynak değişiklikleri son olarak gösterilecek şekilde güncelleştirildi
 * Dağıtım cmdlet’lerindeki güvenlik ve dizi parametresi serileştirme sorunları düzeltildi [#12773]
 
 #### <a name="azservicefabric"></a>Az.ServiceFabric
