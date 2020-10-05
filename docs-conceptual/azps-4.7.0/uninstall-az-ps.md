@@ -5,18 +5,22 @@ ms.date: 09/15/2020
 ms.devlang: powershell
 ms.topic: conceptual
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 20859d6135676a3a4fb1e9f5d66909d157b38ac6
-ms.sourcegitcommit: 15f21c40dcb7610e2fbaaabf264ad925e4224500
+ms.openlocfilehash: 7f831bdf6d6144640e036d72900958847283acf1
+ms.sourcegitcommit: 5fcf17330d6f335561640a5ee3d98c59f7baab94
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90928597"
+ms.lasthandoff: 09/26/2020
+ms.locfileid: "91381505"
 ---
-# <a name="uninstall-the-azure-powershell-module"></a>Azure PowerShell modülünü kaldırma
+# <a name="how-to-uninstall-azure-powershell-modules"></a>Azure PowerShell modüllerini yükleme
 
 Bu makalede Azure PowerShell'in eski bir sürümünü veya tamamını sisteminizden kaldırmayı öğreneceksiniz. Azure PowerShell'i tamamen kaldırmaya karar verdiyseniz [Send-Feedback](/powershell/module/az.accounts/send-feedback) cmdlet'ini kullanarak geri bildirimlerinizi bizimle paylaşın. Bir hatayla karşılaştıysanız, bunun düzeltilebilmesi için [bir GitHub sorunu kaydederek](https://github.com/azure/azure-powershell/issues) bize bildirirseniz seviniriz.
 
-## <a name="uninstall-the-az-powershell-module-from-msi"></a>Az PowerShell modülünü MSI’dan kaldırma
+## <a name="uninstall-the-az-module"></a>Az modülünü kaldırma
+
+Sisteminizde Az modülü yüklüyse ve bunu kaldırmak istiyorsanız iki seçenek vardır. Hangi yöntemi kullanacağınız, Az modülünü nasıl yüklediğinize bağlıdır. Özgün yükleme yönteminizden emin değilseniz önce MSI kaldırma adımlarını izleyin.
+
+### <a name="option-1-uninstall-the-az-powershell-module-from-msi"></a>1\. Seçenek: Az PowerShell modülünü MSI’dan kaldırma
 
 Az PowerShell modülünü MSI paketini kullanarak yüklediyseniz kaldırma işlemini PowerShell yerine Windows sisteminden gerçekleştirmeniz gerekir.
 
@@ -27,7 +31,7 @@ Az PowerShell modülünü MSI paketini kullanarak yüklediyseniz kaldırma işle
 
 Bu ekrandaki program listesinde **Azure PowerShell**'i görebilmelisiniz. Kaldırılacak olan uygulama budur. Listede bu programı görmüyorsanız, PowerShellGet aracılığıyla yüklemiş olmalısınız ve sonraki yönergeleri izlemelisiniz.
 
-## <a name="uninstall-the-az-powershell-module-from-powershellget"></a>Az PowerShell modülünü PowerShellGet’ten kaldırma
+### <a name="option-2-uninstall-the-az-powershell-module-from-powershellget"></a>2\. Seçenek: Az PowerShell modülünü PowerShellGet’ten kaldırma
 
 Az modüllerini kaldırmak için [Uninstall-Module](/powershell/module/powershellget/uninstall-module) cmdlet’ini kullanabilirsiniz. Ancak `Uninstall-Module` yalnızca bir modülü kaldırır. Az PowerShell modülünü tamamen kaldırmak için her modülü tek tek kaldırmanız gerekir. Birden çok Azure PowerShell sürümü yüklediyseniz kaldırma işlemi karmaşık hale gelebilir.
 
@@ -176,7 +180,7 @@ $Modules | ForEach-Object {Uninstall-AzModule -Name $_.Name -Version $_.Version}
 
 Sisteminizde Az modülü yüklüyse ve AzureRM’yi kaldırmak istiyorsanız iki seçenek vardır. Hangi yöntemi kullanacağınız, AzureRM modülünü nasıl yüklediğinize bağlıdır. Özgün yükleme yönteminizden emin değilseniz önce MSI kaldırma adımlarını izleyin.
 
-### <a name="uninstall-the-azurerm-powershell-module-from-msi"></a>AzureRM PowerShell modülünü MSI’dan kaldırma
+### <a name="option-1-uninstall-the-azurerm-powershell-module-from-msi"></a>1\. Seçenek: AzureRM PowerShell modülünü MSI’dan kaldırma
 
 AzureRM PowerShell modülünü MSI paketini kullanarak yüklediyseniz kaldırma işlemini PowerShell yerine Windows sisteminden gerçekleştirmeniz gerekir.
 
@@ -187,9 +191,17 @@ AzureRM PowerShell modülünü MSI paketini kullanarak yüklediyseniz kaldırma 
 
 Bu ekrandaki program listesinde **Azure PowerShell**'i veya **Microsoft Azure PowerShell - Ay Yıl**'ı görebilmelisiniz. Kaldırılacak olan uygulama budur. Listede bu programı görmüyorsanız, PowerShellGet aracılığıyla yüklemiş olmalısınız ve sonraki yönergeleri izlemelisiniz.
 
-### <a name="uninstall-the-azurerm-powershell-module-from-powershellget"></a>AzureRM PowerShell modülünü PowerShellGet’ten kaldırma
+### <a name="option-2-uninstall-the-azurerm-powershell-module-from-powershellget"></a>2\. Seçenek: AzureRM PowerShell modülünü PowerShellGet’ten kaldırma
 
-AzureRM'yi PowerShellGet ile yüklediyseniz modülleri `Az.Accounts` modülünün bir parçası olan [Uninstall-AzureRM](/powershell/module/az.accounts/uninstall-azurerm) cmdlet’iyle kaldırabilirsiniz. Aşağıdaki örnek _tüm_ AzureRM modüllerini makinenizden kaldırır. Bunun için yönetici ayrıcalıkları gerekir.
+AzureRM'yi PowerShellGet ile yüklediyseniz modülleri `Az.Accounts` modülünün bir parçası olan [Uninstall-AzureRM](/powershell/module/az.accounts/uninstall-azurerm) cmdlet’iyle kaldırabilirsiniz.
+
+`Az.Accounts` modülünü kullanmak için Az modülünün yüklü olması gerekir.  Aynı anda AzureRM ve Az modüllerinin yüklü olması desteklenmez, ancak Az modülü AzureRM modülünün anında yüklenmesi için kullanılabilir.  Az modülünü daha önce yüklemediyseniz aşağıdaki komutla bunu yükleyip AzureRM modülüne yönelik uyarıyı geçebilirsiniz:
+
+```powershell-interactive
+Install-Module -Name Az -AllowClobber -Scope CurrentUser
+```
+
+Az modülü yüklendiğinde aşağıdaki komut _tüm_ AzureRM modüllerini makinenizden kaldırır. Bunun için yönetici ayrıcalıkları gerekir.
 
 ```powershell-interactive
 Uninstall-AzureRm
