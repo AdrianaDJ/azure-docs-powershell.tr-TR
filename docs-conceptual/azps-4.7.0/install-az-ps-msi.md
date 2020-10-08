@@ -5,12 +5,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/10/2020
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 33d9214544ddb126b717685f9e7986bed926b149
-ms.sourcegitcommit: 15f21c40dcb7610e2fbaaabf264ad925e4224500
+ms.openlocfilehash: 193e8c5d14f1bf2fe9c84a9da2defac50be97ec7
+ms.sourcegitcommit: 3d16496984a0b9fd7631aa043726060ddae3624d
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90928483"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91833270"
 ---
 # <a name="install-azure-powershell-on-windows-with-msi"></a>MSI ile Windows'a Azure PowerShell yükleme
 
@@ -31,7 +31,14 @@ PowerShell 5.1'de Azure PowerShell'i kullanmak için şunları yapmalısınız:
 
 ## <a name="install-or-update-on-windows-using-the-msi-package"></a>MSI Paketini kullanarak Windows'a yükleme veya güncelleştirme
 
-Azure PowerShell için MSI paketini [GitHub](https://github.com/Azure/azure-powershell/releases/latest)’dan edinebilirsiniz. Azure PowerShell’in önceki sürümlerini MSI kullanarak yüklediyseniz, bunlar yükleyici tarafından otomatik olarak kaldırılır. MSI paketi, modülleri `${env:ProgramFiles}\WindowsPowerShell\Modules` içine yükler.
+Azure PowerShell için MSI paketini [GitHub](https://github.com/Azure/azure-powershell/releases)’dan edinebilirsiniz:
+
+1. https://github.com/Azure/azure-powershell/releases öğesine gidin.
+2. Azure PowerShell için en son Galeri Modülünü arayın. (Bunlar kronolojik olarak listelenir ve genellikle adı olmadan yalnızca "4.7.0" gibi bir yayın sürümüdür).
+3. Düzeltme eki notlarının en altına kaydırın ve MSI seçeneklerini göstermek için "Varlıklar" seçeneğinin yanındaki oka tıklayın.
+4. İndirmeyi başlatmak için tercih ettiğiniz Az-Cmdlets MSI'ya tıklayın.
+
+Azure PowerShell’in önceki sürümlerini MSI kullanarak yüklediyseniz, bunlar yükleyici tarafından otomatik olarak kaldırılır. MSI paketi, modülleri `${env:ProgramFiles}\WindowsPowerShell\Modules` içine yükler.
 
 Azure PowerShell ile çalışmaya başlamak için, Azure kimlik bilgilerinizle oturum açın.
 
