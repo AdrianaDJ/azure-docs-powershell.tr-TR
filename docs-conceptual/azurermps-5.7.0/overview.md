@@ -5,12 +5,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 08/31/2017
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 7d220266bd6e36fd083f56290cb6cee8f2e80d3e
-ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
+ms.openlocfilehash: 5bd3e788f84bad171e13f43fb9c97d922a1e5222
+ms.sourcegitcommit: 038cb42a3bd8c009bc57c8c1c252e66fa170c84b
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89243710"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92523426"
 ---
 # <a name="overview-of-azure-powershell"></a>Azure PowerShell’e Genel Bakış
 
@@ -22,8 +22,8 @@ Azure PowerShell, Azure kaynaklarınızı yönetmek için [Azure Resource Manage
 
 Aşağıdaki örnekler, yaygın senaryoları Azure PowerShell ile nasıl gerçekleştireceğinizi öğrenmenize yardımcı olabilir:
 
-- [Linux Sanal Makineleri](/azure/virtual-machines/virtual-machines-linux-powershell-samples?toc=/powershell/azure/toc.json)
-- [Windows Sanal Makineleri](/azure/virtual-machines/virtual-machines-windows-powershell-samples?toc=/powershell/azure/toc.json)
+- [Linux Sanal Makineleri](/azure/virtual-machines/linux/powershell-samples?toc=/powershell/azure/toc.json)
+- [Windows Sanal Makineleri](/azure/virtual-machines/windows/powershell-samples?toc=/powershell/azure/toc.json)
 - [Web Apps](/azure/app-service-web/app-service-powershell-samples?toc=/powershell/azure/toc.json)
 - [SQL Veritabanları](/azure/sql-database/sql-database-powershell-samples?toc=/powershell/azure/toc.json)
 
@@ -38,7 +38,5 @@ Ayrıca şu videoyu izleyebilirsiniz: [PowerShell Temel Bilgileri: (Bölüm 1) P
 
 ## <a name="other-azure-powershell-modules"></a>Diğer Azure PowerShell modülleri
 
-- [Azure Active Directory](/powershell/azure/active-directory/)
-- [Azure Information Protection](/powershell/azure/aip/)
-- [Azure Service Fabric](/powershell/azure/service-fabric/)
-- [Azure Elastik DB](/powershell/azure/elasticdbjobs/)
+- [Azure Active Directory](/powershell/module/activedirectory/)
+- [Azure Service Fabric](/powershell/module/AzureRM.ServiceFabric/)
