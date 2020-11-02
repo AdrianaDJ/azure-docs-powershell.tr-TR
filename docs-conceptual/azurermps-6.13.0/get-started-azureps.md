@@ -5,12 +5,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/11/2018
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: d8479b24b2c890999c5620d2031a6605e98c0730
-ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
+ms.openlocfilehash: cbb07ce6711616c1cabe5ab2108015ea78fd28e9
+ms.sourcegitcommit: 038cb42a3bd8c009bc57c8c1c252e66fa170c84b
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89243387"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92523181"
 ---
 # <a name="get-started-with-azure-powershell"></a>Azure PowerShell’i kullanmaya başlama
 
@@ -363,14 +363,14 @@ Kaynakların sayısına ve türüne bağlı olarak bu görevin tamamlanması bir
 
 ## <a name="get-samples"></a>Örnekleri alın
 
-Azure PowerShell’i kullanmanın yolları hakkında daha fazla bilgi edinmek için [Linux VM’ler](/azure/virtual-machines/virtual-machines-linux-powershell-samples?toc=%2fpowershell%2fazure%%2ftoc.json), [Windows VM’ler](/azure/virtual-machines/virtual-machines-windows-powershell-samples?toc=%2fpowershell%2fazure%%2ftoc.json), [Web Apps](/azure/app-service-web/app-service-powershell-samples?toc=%2fpowershell%2fazure%%2ftoc.json) ve [SQL Veritabanları](/azure/sql-database/sql-database-powershell-samples?toc=%2fpowershell%2fazure%%2ftoc.json)’na yönelik en yaygın betiklerimizi inceleyin.
+Azure PowerShell’i kullanmanın yolları hakkında daha fazla bilgi edinmek için [Linux VM’ler](/azure/virtual-machines/linux/powershell-samples?toc=%2fpowershell%2fazure%%2ftoc.json), [Windows VM’ler](/azure/virtual-machines/windows/powershell-samples?toc=%2fpowershell%2fazure%%2ftoc.json), [Web Apps](/azure/app-service-web/app-service-powershell-samples?toc=%2fpowershell%2fazure%%2ftoc.json) ve [SQL Veritabanları](/azure/sql-database/sql-database-powershell-samples?toc=%2fpowershell%2fazure%%2ftoc.json)’na yönelik en yaygın betiklerimizi inceleyin.
 
 ## <a name="next-steps"></a>Sonraki adımlar
 
 * [Azure PowerShell ile oturum açma](authenticate-azureps.md)
 * [Azure PowerShell ile Azure aboneliklerini yönetme](manage-subscriptions-azureps.md)
 * [Azure PowerShell’i kullanarak Azure’da hizmet sorumluları oluşturma](create-azure-service-principal-azureps.md)
-* Eski bir sürümden geçişle ilgili olarak sürüm notlarını okuyun: [https://github.com/Azure/azure-powershell/tree/dev/documentation/release-notes](https://github.com/Azure/azure-powershell/tree/dev/documentation/release-notes).
+* Eski bir sürümden geçiş hakkındaki [Sürüm notlarını](./release-notes-azureps.md) okuyun.
 * Topluluktan yardım alın:
   * [MSDN'deki Azure forumu](https://go.microsoft.com/fwlink/p/?LinkId=320212)
   * [stackoverflow](https://go.microsoft.com/fwlink/?LinkId=320213)
