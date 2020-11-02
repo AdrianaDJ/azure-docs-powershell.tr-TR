@@ -5,12 +5,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 08/31/2017
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 9c9d6a028d3a28f99320aef5a574d868b2fd9bc1
-ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
+ms.openlocfilehash: 77f5bcc478228a9d860039983640ff0e7ff31ab2
+ms.sourcegitcommit: 038cb42a3bd8c009bc57c8c1c252e66fa170c84b
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89244611"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92523198"
 ---
 # <a name="persisting-user-credentials-across-powershell-sessions"></a>Kullanıcı kimlik bilgilerini PowerShell oturumlarında kalıcı hale getirme
 
@@ -25,7 +25,7 @@ Azure PowerShell aşağıdaki özellikleri getiren **Azure Context Autosave** ad
 
 ## <a name="azure-contexts-defined"></a>Tanımlanan Azure bağlamları
 
-*Azure bağlamı*, Azure PowerShell cmdlet’lerinin hedefini tanımlayan bilgiler kümesidir. Bağlam beş bölümden oluşur:
+*Azure bağlamı* , Azure PowerShell cmdlet’lerinin hedefini tanımlayan bilgiler kümesidir. Bağlam beş bölümden oluşur:
 
 - *Hesap* - Azure ile iletişimin kimliğini doğrulamak için kullanılan UserName veya Hizmet Sorumlusu
 - *Abonelik* - Üzerinde işlem yapılan Kaynakları içeren Azure Aboneliği.
@@ -61,7 +61,7 @@ Azure bağlamlarını yönetmenizi sağlayan cmdlet’ler, hassas denetime de ol
 
 - Otomatik kaydetme etkinken varsayılan bağlamı kullanma
 
-  **Bağlam Otomatik Kaydı**’nı etkinleştirdiyseniz, arka plan işlerinde otomatik olarak kayıtlı varsayılan bağlam kullanılır.
+  **Bağlam Otomatik Kaydı** ’nı etkinleştirdiyseniz, arka plan işlerinde otomatik olarak kayıtlı varsayılan bağlam kullanılır.
 
   ```powershell-interactive
   PS C:\> $job = Start-Job { New-AzureRmVm [... Additional parameters ...]}
@@ -141,7 +141,7 @@ Mevcut profil cmdlet'lerinde yapılan değişiklikler
 
 - [Add-AzureRmAccount][login]: Oturum açma kapsamının işlem veya mevcut kullanıcı olarak ayarlanmasına izin verir.
   Kimlik doğrulamasından sonra varsayılan bağlamı adlandırmaya olanak tanır.
-- [Import-AzureRmContext][import]: Oturum açma kapsamının işlem veya mevcut kullanıcı olarak ayarlanmasına izin verir.
+- [Import-AzureRmContext][import]: Oturum açma kapsamının işlem veya geçerli kullanıcı olarak ayarlanmasına izin verir.
 - [Set-AzureRmContext][set-context]: Mevcut adlandırılmış bağlamların seçilmesine ve kapsamın işlem ya da mevcut kullanıcı olarak değiştirilmesine olanak tanır.
 
 <!-- Hyperlinks -->
@@ -154,5 +154,4 @@ Mevcut profil cmdlet'lerinde yapılan değişiklikler
 
 <!-- Updated cmdlets -->
 [login]: /powershell/module/azurerm.profile/Add-AzureRmAccount
-[import]: /powershell/module/azurerm.profile/Import-AzureRmAccount
 [set-context]: /powershell/module/azurerm.profile/Import-AzureRmContext
