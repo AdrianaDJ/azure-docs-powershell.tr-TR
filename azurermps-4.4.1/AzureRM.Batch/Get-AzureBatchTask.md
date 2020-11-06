@@ -1,0 +1,300 @@
+---
+external help file: Microsoft.Azure.Commands.Batch.dll-Help.xml
+Module Name: AzureRM.Batch
+ms.assetid: 4B5FE41A-090B-4859-B021-05CF0A8B7882
+online version: ''
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/ResourceManager/AzureBatch/Commands.Batch/help/Get-AzureBatchTask.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/ResourceManager/AzureBatch/Commands.Batch/help/Get-AzureBatchTask.md
+ms.openlocfilehash: fb01af87d28323e3e25c46868f94e892b835afc7
+ms.sourcegitcommit: f599b50d5e980197d1fca769378df90a842b42a1
+ms.translationtype: MT
+ms.contentlocale: tr-TR
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "93593589"
+---
+# Get-AzureBatchTask
+
+## SYNOPSIS
+İş için toplu Iş görevlerini alır.
+
+[!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
+
+## INDEKI
+
+### ODataFilter (varsayılan)
+```
+Get-AzureBatchTask [-JobId] <String> [-Filter <String>] [-MaxCount <Int32>] [-Select <String>]
+ [-Expand <String>] -BatchContext <BatchAccountContext> [-DefaultProfile <IAzureContextContainer>]
+ [<CommonParameters>]
+```
+
+### Kimliğe
+```
+Get-AzureBatchTask [-JobId] <String> [[-Id] <String>] [-Select <String>] [-Expand <String>]
+ -BatchContext <BatchAccountContext> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+### ParentObject
+```
+Get-AzureBatchTask [[-Job] <PSCloudJob>] [-Filter <String>] [-MaxCount <Int32>] [-Select <String>]
+ [-Expand <String>] -BatchContext <BatchAccountContext> [-DefaultProfile <IAzureContextContainer>]
+ [<CommonParameters>]
+```
+
+## Tanım
+**Get-AzureBatchTask** cmdlet 'ı bir toplu Iş Için Azure toplu iş görevlerini alır.
+İş veya *iş* *parametresinden bir* iş belirtin.
+Tek bir görev almak için *ID* parametresini belirtin.
+Açık bir veri Protokolü (OData) filtresi ile eşleşen görevleri almak için *filtre* parametresini belirtebilirsiniz.
+
+## ÖRNEKLERDEN
+
+### Örnek 1: KIMLIĞE göre görev alma
+```
+PS C:\>Get-AzureBatchTask -JobId "Job01" -Id "Task03" -BatchContext $Context
+AffinityInformation         : 
+CommandLine                 : cmd /c dir /s
+ComputeNodeInformation      : Microsoft.Azure.Commands.Batch.Models.PSComputeNodeInformation
+Constraints                 : Microsoft.Azure.Commands.Batch.Models.PSTaskConstraints
+CreationTime                : 7/25/2015 11:24:52 PM
+DisplayName                 : 
+EnvironmentSettings         : 
+ETag                        : 0x8D295483E08BD9D
+ExecutionInformation        : Microsoft.Azure.Commands.Batch.Models.PSTaskExecutionInformation
+Id                          : Task03
+LastModified                : 7/25/2015 11:24:52 PM
+PreviousState               : Running
+PreviousStateTransitionTime : 7/25/2015 11:24:59 PM
+ResourceFiles               : 
+RunElevated                 : False
+State                       : Completed
+StateTransitionTime         : 7/25/2015 11:24:59 PM
+Statistics                  : 
+Url                         : https://pfuller.westus.batch.azure.com/jobs/Job01/tasks/Task03
+```
+
+Bu komut, iş Job01 altında KIMLIĞI Task03 olan görevi alır.
+$Context değişkenine bağlam atamak için Get-AzureRmBatchAccountKeys cmdlet 'ini kullanın.
+
+### Örnek 2: belirtilen işten tüm tamamlanmış görevleri alma
+```
+PS C:\>Get-AzureBatchTask -JobId "Job02" -Filter "state eq 'completed'" -BatchContext $Context
+AffinityInformation         : 
+CommandLine                 : cmd /c dir /s
+ComputeNodeInformation      : Microsoft.Azure.Commands.Batch.Models.PSComputeNodeInformation
+Constraints                 : Microsoft.Azure.Commands.Batch.Models.PSTaskConstraints
+CreationTime                : 3/24/2015 10:21:51 PM
+EnvironmentSettings         : 
+ETag                        : 0x8D295483E08BD9D
+ExecutionInformation        : Microsoft.Azure.Commands.Batch.Models.PSTaskExecutionInformation
+Id                          : Task17
+LastModified                : 3/24/2015 10:21:51 PM
+PreviousState               : Running
+PreviousStateTransitionTime : 3/24/2015 10:22:00 PM
+ResourceFiles               : 
+RunElevated                 : False
+State                       : Completed
+StateTransitionTime         : 3/24/2015 10:22:00 PM
+Statistics                  : 
+Url                         : https://pfuller.westus.batch.azure.com/jobs/Job02/tasks/Task17
+
+AffinityInformation         : 
+CommandLine                 : cmd /c echo hello > newFile.txt
+ComputeNodeInformation      : Microsoft.Azure.Commands.Batch.Models.PSComputeNodeInformation
+Constraints                 : Microsoft.Azure.Commands.Batch.Models.PSTaskConstraints
+CreationTime                : 3/24/2015 10:21:51 PM
+EnvironmentSettings         : 
+ETag                        : 0x8D295483E08BD9D
+ExecutionInformation        : Microsoft.Azure.Commands.Batch.Models.PSTaskExecutionInformation
+Id                          : Task27
+LastModified                : 3/24/2015 10:23:35 PM
+PreviousState               : Running
+PreviousStateTransitionTime : 3/24/2015 10:23:37 PM
+ResourceFiles               : 
+RunElevated                 : True
+State                       : Completed
+StateTransitionTime         : 3/24/2015 10:23:37 PM
+Statistics                  : 
+Url                         : https://pfuller.westus.batch.azure.com/jobs/Job02/tasks/Task27
+```
+
+Bu komut, Job02 KIMLIĞINE sahip olan işten tamamlanmış görevleri alır.
+
+## PARAMETRELERINE
+
+### -BatchContext
+Bu cmdlet 'in toplu Iş hizmetiyle etkileşimli çalışmak için kullandığı **Batchaccountcontext** örneğini belirtir.
+Aboneliğinizin erişim tuşlarını içeren bir **Batchaccountcontext** nesnesi edinmek için Get-AzureRmBatchAccountKeys cmdlet 'ini kullanın.
+
+```yaml
+Type: Microsoft.Azure.Commands.Batch.BatchAccountContext
+Parameter Sets: (All)
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -Genişletme
+Bir OData genişletme yan tümcesi belirtir.
+Ana varlığın ilişkili varlıklarını almak için bu parametre için bir değer belirtin.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Filtre
+Görevler için bir OData filtresi yan tümcesi belirtir.
+Filtre belirtmezseniz, bu cmdlet toplu hesap veya işe yönelik tüm görevleri döndürür.
+
+```yaml
+Type: System.String
+Parameter Sets: ODataFilter, ParentObject
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ID
+Bu cmdlet 'in aldığı görevin KIMLIĞINI belirtir.
+Joker karakterler belirtemezsiniz.
+
+```yaml
+Type: System.String
+Parameter Sets: Id
+Aliases: 
+
+Required: False
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Job
+Bu cmdlet 'in aldığı görevleri içeren işi belirtir.
+Bir **Ince iş** nesnesi edinmek için Get-AzureBatchJob cmdlet 'ini kullanın.
+
+```yaml
+Type: Microsoft.Azure.Commands.Batch.Models.PSCloudJob
+Parameter Sets: ParentObject
+Aliases: 
+
+Required: False
+Position: 0
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -JobId
+Bu cmdlet 'in aldığı görevleri içeren işin KIMLIĞINI belirtir.
+
+```yaml
+Type: System.String
+Parameter Sets: ODataFilter, Id
+Aliases: 
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -MaxCount
+Döndürülecek en fazla görev sayısını belirtir.
+Sıfır (0) veya daha kısa bir değer belirtirseniz cmdlet üst sınırı kullanmaz.
+Varsayılan değer 1000 ' dır.
+
+```yaml
+Type: System.Int32
+Parameter Sets: ODataFilter, ParentObject
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Select
+Bir OData select yan tümcesi belirtir.
+Tüm nesne özellikleri yerine belirli özellikleri almak için bu parametre için bir değer belirtin.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DefaultProfile
+Azure ile iletişim için kullanılan kimlik bilgileri, hesap, kiracı ve abonelik.
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+Bu cmdlet ortak parametreleri destekler:-Debug,-ErrorAction,-ErrorVariable,-ınformationaction,-ınformationvariable,-OutVariable,-OutBuffer,-Pipelinedeğişken,-verbose,-WarningAction ve-Warningdeğişken. Daha fazla bilgi için bkz about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+
+## GÖLGELENDIRICI
+
+### BatchAccountContext
+' BatchContext ' parametresi ardışık düzenin ' BatchAccountContext ' türünün değerini kabul eder
+
+### Pschoparlör Işi
+Parametre ' Iş ', ardışık düzen
+
+## ÇıKıŞLAR
+
+### Ince görev
+
+## NOTLARıNDA
+
+## ILGILI BAĞLANTıLAR
+
+[Get-AzureRmBatchAccountKeys](./Get-AzureRmBatchAccountKeys.md)
+
+[Get-AzureBatchJob](./Get-AzureBatchJob.md)
+
+[New-AzureBatchTask](./New-AzureBatchTask.md)
+
+[Remove-AzureBatchTask](./Remove-AzureBatchTask.md)
+
+[Stop-AzureBatchTask](./Stop-AzureBatchTask.md)
+
+[Azure toplu Iş cmdlet 'Leri](./AzureRM.Batch.md)
+
+
