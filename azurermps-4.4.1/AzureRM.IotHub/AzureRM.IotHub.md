@@ -1,0 +1,73 @@
+---
+Module Name: AzureRM.IotHub
+Module Guid: 51a3a993-fe39-4f8f-a437-2cb751584af5
+Download Help Link:
+  object Object: 
+Help Version:
+  object Object: 
+Locale: en-US
+content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/ResourceManager/IotHub/Commands.IotHub/help/AzureRM.IotHub.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/ResourceManager/IotHub/Commands.IotHub/help/AzureRM.IotHub.md
+ms.openlocfilehash: 7b68802bb82cf97db0397d8dcfdafc163e126ae6
+ms.sourcegitcommit: 43f4bdf2a59dd82fd881512aa9761bf72eb5703c
+ms.translationtype: MT
+ms.contentlocale: tr-TR
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "93570761"
+---
+# <span data-ttu-id="817a0-101">AzureRM. IotHub modülü</span><span class="sxs-lookup"><span data-stu-id="817a0-101">AzureRM.IotHub Module</span></span>
+## <span data-ttu-id="817a0-102">Tanım</span><span class="sxs-lookup"><span data-stu-id="817a0-102">Description</span></span>
+<span data-ttu-id="817a0-103">Azure ıothon yönetimi için komutlar</span><span class="sxs-lookup"><span data-stu-id="817a0-103">Commands for Managing Azure IotHubs</span></span>
+
+## <span data-ttu-id="817a0-104">AzureRM. IotHub cmdlet 'Leri</span><span class="sxs-lookup"><span data-stu-id="817a0-104">AzureRM.IotHub Cmdlets</span></span>
+### [<span data-ttu-id="817a0-105">Add-Azurermiotubeventhubconsumergroup</span><span class="sxs-lookup"><span data-stu-id="817a0-105">Add-AzureRmIotHubEventHubConsumerGroup</span></span>](Add-AzureRmIotHubEventHubConsumerGroup.md)
+<span data-ttu-id="817a0-106">Bir eventhub Tüketici grubu oluşturur.</span><span class="sxs-lookup"><span data-stu-id="817a0-106">Creates an eventhub consumer group.</span></span>
+
+### [<span data-ttu-id="817a0-107">Add-Azurermiist Ubkey</span><span class="sxs-lookup"><span data-stu-id="817a0-107">Add-AzureRmIotHubKey</span></span>](Add-AzureRmIotHubKey.md)
+<span data-ttu-id="817a0-108">IotHub anahtarı oluşturur.</span><span class="sxs-lookup"><span data-stu-id="817a0-108">Creates an IotHub Key.</span></span>
+
+### [<span data-ttu-id="817a0-109">Get-Azurermies UB</span><span class="sxs-lookup"><span data-stu-id="817a0-109">Get-AzureRmIotHub</span></span>](Get-AzureRmIotHub.md)
+<span data-ttu-id="817a0-110">Bir abonelikteki ıothubs hakkında bilgi alır.</span><span class="sxs-lookup"><span data-stu-id="817a0-110">Gets information about the IotHubs in a subscription.</span></span>
+
+### [<span data-ttu-id="817a0-111">Get-Azurermiotubconnectionstring</span><span class="sxs-lookup"><span data-stu-id="817a0-111">Get-AzureRmIotHubConnectionString</span></span>](Get-AzureRmIotHubConnectionString.md)
+<span data-ttu-id="817a0-112">IotHub ConnectionString 'i alır.</span><span class="sxs-lookup"><span data-stu-id="817a0-112">Gets the IotHub connectionstrings.</span></span>
+
+### [<span data-ttu-id="817a0-113">Get-Azurermiotubeventhubconsumergroup</span><span class="sxs-lookup"><span data-stu-id="817a0-113">Get-AzureRmIotHubEventHubConsumerGroup</span></span>](Get-AzureRmIotHubEventHubConsumerGroup.md)
+<span data-ttu-id="817a0-114">Tüm eventhub consumergroups 'ı alır.</span><span class="sxs-lookup"><span data-stu-id="817a0-114">Gets all the eventhub consumergroups.</span></span>
+
+### [<span data-ttu-id="817a0-115">Get-Azurermıist Ubjob</span><span class="sxs-lookup"><span data-stu-id="817a0-115">Get-AzureRmIotHubJob</span></span>](Get-AzureRmIotHubJob.md)
+<span data-ttu-id="817a0-116">Bir IotHub işi hakkında bilgi alır.</span><span class="sxs-lookup"><span data-stu-id="817a0-116">Gets the information about an IotHub job.</span></span>
+
+### [<span data-ttu-id="817a0-117">Get-Azurermiotubkey</span><span class="sxs-lookup"><span data-stu-id="817a0-117">Get-AzureRmIotHubKey</span></span>](Get-AzureRmIotHubKey.md)
+<span data-ttu-id="817a0-118">Bir IotHub anahtarını alır.</span><span class="sxs-lookup"><span data-stu-id="817a0-118">Gets an IotHub Key.</span></span>
+
+### [<span data-ttu-id="817a0-119">Get-Azurermiotubquotametric</span><span class="sxs-lookup"><span data-stu-id="817a0-119">Get-AzureRmIotHubQuotaMetric</span></span>](Get-AzureRmIotHubQuotaMetric.md)
+<span data-ttu-id="817a0-120">Bir IotHub için kota ölçümlerini alır.</span><span class="sxs-lookup"><span data-stu-id="817a0-120">Gets the Quota Metrics for an IotHub.</span></span>
+
+### [<span data-ttu-id="817a0-121">Get-Azurermiotubregistryistatistiğini</span><span class="sxs-lookup"><span data-stu-id="817a0-121">Get-AzureRmIotHubRegistryStatistic</span></span>](Get-AzureRmIotHubRegistryStatistic.md)
+<span data-ttu-id="817a0-122">Bir IotHub için RegistryStatistics 'i alır.</span><span class="sxs-lookup"><span data-stu-id="817a0-122">Gets the RegistryStatistics for an IotHub.</span></span>
+
+### [<span data-ttu-id="817a0-123">Get-Azurermiotubvalidsku</span><span class="sxs-lookup"><span data-stu-id="817a0-123">Get-AzureRmIotHubValidSku</span></span>](Get-AzureRmIotHubValidSku.md)
+<span data-ttu-id="817a0-124">Bu IotHub 'in taşıyabileceği tüm geçerli SKU 'ları alır.</span><span class="sxs-lookup"><span data-stu-id="817a0-124">Gets all valid skus that this IotHub can transition to.</span></span>
+
+### [<span data-ttu-id="817a0-125">Yeni-Azurermiks UB</span><span class="sxs-lookup"><span data-stu-id="817a0-125">New-AzureRmIotHub</span></span>](New-AzureRmIotHub.md)
+<span data-ttu-id="817a0-126">Yeni bir IotHub.</span><span class="sxs-lookup"><span data-stu-id="817a0-126">Creates a new IotHub.</span></span>
+
+### [<span data-ttu-id="817a0-127">Yeni-Azurermiotubexportdevices</span><span class="sxs-lookup"><span data-stu-id="817a0-127">New-AzureRmIotHubExportDevices</span></span>](New-AzureRmIotHubExportDevices.md)
+<span data-ttu-id="817a0-128">Yeni bir dışarı aktarma cihazları işi oluşturur.</span><span class="sxs-lookup"><span data-stu-id="817a0-128">Creates a new export devices job.</span></span>
+
+### [<span data-ttu-id="817a0-129">Yeni-Azurermiotubımportdevices</span><span class="sxs-lookup"><span data-stu-id="817a0-129">New-AzureRmIotHubImportDevices</span></span>](New-AzureRmIotHubImportDevices.md)
+<span data-ttu-id="817a0-130">Yeni bir cihaz içeri aktarma işi oluşturur.</span><span class="sxs-lookup"><span data-stu-id="817a0-130">Creates a new import devices job.</span></span>
+
+### [<span data-ttu-id="817a0-131">Remove-Azurermies UB</span><span class="sxs-lookup"><span data-stu-id="817a0-131">Remove-AzureRmIotHub</span></span>](Remove-AzureRmIotHub.md)
+<span data-ttu-id="817a0-132">Bir IotHub siler.</span><span class="sxs-lookup"><span data-stu-id="817a0-132">Deletes an IotHub.</span></span>
+
+### [<span data-ttu-id="817a0-133">Remove-Azurermisuubconsumergroup</span><span class="sxs-lookup"><span data-stu-id="817a0-133">Remove-AzureRmIotHubEventHubConsumerGroup</span></span>](Remove-AzureRmIotHubEventHubConsumerGroup.md)
+<span data-ttu-id="817a0-134">Bir eventhub consumergroup öğesini siler.</span><span class="sxs-lookup"><span data-stu-id="817a0-134">Deletes an eventhub consumergroup.</span></span>
+
+### [<span data-ttu-id="817a0-135">Remove-Azurermiotubkey</span><span class="sxs-lookup"><span data-stu-id="817a0-135">Remove-AzureRmIotHubKey</span></span>](Remove-AzureRmIotHubKey.md)
+<span data-ttu-id="817a0-136">IotHub anahtarını kaldırır.</span><span class="sxs-lookup"><span data-stu-id="817a0-136">Removes an IotHub Key.</span></span>
+
+### [<span data-ttu-id="817a0-137">Set-Azurermies UB</span><span class="sxs-lookup"><span data-stu-id="817a0-137">Set-AzureRmIotHub</span></span>](Set-AzureRmIotHub.md)
+<span data-ttu-id="817a0-138">Bir IotHub özelliklerini güncelleştirir.</span><span class="sxs-lookup"><span data-stu-id="817a0-138">Updates the properties of an IotHub.</span></span>
+
