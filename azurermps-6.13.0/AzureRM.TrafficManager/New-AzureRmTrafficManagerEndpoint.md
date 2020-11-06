@@ -1,0 +1,351 @@
+---
+external help file: Microsoft.Azure.Commands.TrafficManager.dll-Help.xml
+Module Name: AzureRM.TrafficManager
+ms.assetid: A7A908A1-7326-4725-A3F9-4D05E40C5F73
+online version: https://docs.microsoft.com/en-us/powershell/module/azurerm.trafficmanager/new-azurermtrafficmanagerendpoint
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/ResourceManager/TrafficManager/Commands.TrafficManager2/help/New-AzureRmTrafficManagerEndpoint.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/ResourceManager/TrafficManager/Commands.TrafficManager2/help/New-AzureRmTrafficManagerEndpoint.md
+ms.openlocfilehash: 79b3b6bc1097e28a0d11c7c5a44a5b0b80b4718b
+ms.sourcegitcommit: f599b50d5e980197d1fca769378df90a842b42a1
+ms.translationtype: MT
+ms.contentlocale: tr-TR
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "93587106"
+---
+# <span data-ttu-id="fc426-101">New-AzureRmTrafficManagerEndpoint</span><span class="sxs-lookup"><span data-stu-id="fc426-101">New-AzureRmTrafficManagerEndpoint</span></span>
+
+## <span data-ttu-id="fc426-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="fc426-102">SYNOPSIS</span></span>
+<span data-ttu-id="fc426-103">Traffic Manager profilinde uç nokta oluşturur.</span><span class="sxs-lookup"><span data-stu-id="fc426-103">Creates an endpoint in a Traffic Manager profile.</span></span>
+
+[!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
+
+## <span data-ttu-id="fc426-104">INDEKI</span><span class="sxs-lookup"><span data-stu-id="fc426-104">SYNTAX</span></span>
+
+```
+New-AzureRmTrafficManagerEndpoint -Name <String> -ProfileName <String> -ResourceGroupName <String>
+ -Type <String> [-TargetResourceId <String>] [-Target <String>] -EndpointStatus <String> [-Weight <UInt32>]
+ [-Priority <UInt32>] [-EndpointLocation <String>] [-MinChildEndpoints <UInt32>]
+ [-GeoMapping <System.Collections.Generic.List`1[System.String]>]
+ [-SubnetMapping <System.Collections.Generic.List`1[Microsoft.Azure.Commands.TrafficManager.Models.TrafficManagerIpAddressRange]>]
+ [-CustomHeader <System.Collections.Generic.List`1[Microsoft.Azure.Commands.TrafficManager.Models.TrafficManagerCustomHeader]>]
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+## <span data-ttu-id="fc426-105">Tanım</span><span class="sxs-lookup"><span data-stu-id="fc426-105">DESCRIPTION</span></span>
+<span data-ttu-id="fc426-106">**New-AzureRmTrafficManagerEndpoint** cmdlet 'ı bir Azure Traffic Manager profilinde uç nokta oluşturur.</span><span class="sxs-lookup"><span data-stu-id="fc426-106">The **New-AzureRmTrafficManagerEndpoint** cmdlet creates an endpoint in an Azure Traffic Manager profile.</span></span>
+
+<span data-ttu-id="fc426-107">Bu cmdlet, her yeni uç noktayı Traffic Manager hizmetine kaydeder.</span><span class="sxs-lookup"><span data-stu-id="fc426-107">This cmdlet commits each new endpoint to the Traffic Manager service.</span></span>
+<span data-ttu-id="fc426-108">Yerel bir Traffic Manager profil nesnesine birden çok uç nokta eklemek ve değişiklikleri tek bir işlemde uygulamak için Add-AzureRmTrafficManagerEndpointConfig cmdlet 'ini kullanın.</span><span class="sxs-lookup"><span data-stu-id="fc426-108">To add multiple endpoints to a local Traffic Manager profile object and commit changes in a single operation, use the Add-AzureRmTrafficManagerEndpointConfig cmdlet.</span></span>
+
+## <span data-ttu-id="fc426-109">ÖRNEKLERDEN</span><span class="sxs-lookup"><span data-stu-id="fc426-109">EXAMPLES</span></span>
+
+### <span data-ttu-id="fc426-110">Örnek 1: bir profil için dış uç nokta oluşturma</span><span class="sxs-lookup"><span data-stu-id="fc426-110">Example 1: Create an external endpoint for a profile</span></span>
+```
+PS C:\>New-AzureRmTrafficManagerEndpoint -EndpointStatus Enabled -Name "contoso" -ProfileName "ContosoProfile" -ResourceGroupName "ResourceGroup11" -Type ExternalEndpoints -EndpointLocation "North Europe" -Priority 1 -Target "www.contoso.com" -Weight 10
+```
+
+<span data-ttu-id="fc426-111">Bu komut, ResourceGroup11 adlı kaynak grubundaki ContosoProfile adlı profildeki contoso adlı bir dış uç nokta oluşturur.</span><span class="sxs-lookup"><span data-stu-id="fc426-111">This command creates an external endpoint named contoso in the profile named ContosoProfile in the resource group named ResourceGroup11.</span></span>
+
+### <span data-ttu-id="fc426-112">Örnek 2: bir profil için Azure uç noktası oluşturma</span><span class="sxs-lookup"><span data-stu-id="fc426-112">Example 2: Create an Azure endpoint for a profile</span></span>
+```
+PS C:\>New-AzureRmTrafficManagerEndpoint -EndpointStatus Enabled -Name "contoso" -ProfileName "ContosoProfile" -ResourceGroupName "ResourceGroup11" -Type AzureEndpoints -Priority 1 -TargetResourceId "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/Default-Web-CentralUS/providers/Microsoft.Web/sites/contoso-web-app" -Weight 10
+```
+
+<span data-ttu-id="fc426-113">Bu komut, kaynak grup ResouceGroup11 ' nde ContosoProfile adlı profildeki contoso adlı bir Azure uç noktası oluşturur.</span><span class="sxs-lookup"><span data-stu-id="fc426-113">This command creates an Azure endpoint named contoso in the profile named ContosoProfile in resource group ResouceGroup11.</span></span>
+<span data-ttu-id="fc426-114">Azure Endpoint, Azure Resource Manager KIMLIĞI 'nin *Targetresourceıd* içindeki URI yolundan verildiği Azure Web App 'e işaret ediyor.</span><span class="sxs-lookup"><span data-stu-id="fc426-114">The Azure endpoint points to the Azure Web App whose Azure Resource Manager ID is given by the URI path in *TargetResourceId*.</span></span>
+<span data-ttu-id="fc426-115">Web App kaynağı bu konumu sağladığı için, komut, *Endpointlocation* parametresini belirtmez.</span><span class="sxs-lookup"><span data-stu-id="fc426-115">The command does not specify the *EndpointLocation* parameter because the Web App resource supplies the location.</span></span>
+
+## <span data-ttu-id="fc426-116">PARAMETRELERINE</span><span class="sxs-lookup"><span data-stu-id="fc426-116">PARAMETERS</span></span>
+
+### <span data-ttu-id="fc426-117">-CustomHeader</span><span class="sxs-lookup"><span data-stu-id="fc426-117">-CustomHeader</span></span>
+<span data-ttu-id="fc426-118">Yoklama istekleri için özel üstbilgi adı ve değer çiftleri listesi.</span><span class="sxs-lookup"><span data-stu-id="fc426-118">List of custom header name and value pairs for probe requests.</span></span>
+
+```yaml
+Type: System.Collections.Generic.List`1[Microsoft.Azure.Commands.TrafficManager.Models.TrafficManagerCustomHeader]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="fc426-119">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="fc426-119">-DefaultProfile</span></span>
+<span data-ttu-id="fc426-120">Azure ile iletişim için kullanılan kimlik bilgileri, hesap, kiracı ve abonelik.</span><span class="sxs-lookup"><span data-stu-id="fc426-120">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="fc426-121">-EndpointLocation</span><span class="sxs-lookup"><span data-stu-id="fc426-121">-EndpointLocation</span></span>
+<span data-ttu-id="fc426-122">Performans trafiği yönlendirme yönteminde kullanılacak uç noktasının konumunu belirtir.</span><span class="sxs-lookup"><span data-stu-id="fc426-122">Specifies the location of the endpoint to use in the Performance traffic-routing method.</span></span>
+<span data-ttu-id="fc426-123">Bu parametre yalnızca ExternalEndpoints veya Nestedenvseçpoints türünün uç noktalarına uygulanabilir.</span><span class="sxs-lookup"><span data-stu-id="fc426-123">This parameter is only applicable to endpoints of the ExternalEndpoints or NestedEndpoints type.</span></span>
+<span data-ttu-id="fc426-124">Performans trafiği yönlendirme yöntemi kullanıldığında bu parametreyi belirtmeniz gerekir.</span><span class="sxs-lookup"><span data-stu-id="fc426-124">You must specify this parameter when the Performance traffic-routing method is used.</span></span>
+
+<span data-ttu-id="fc426-125">Azure bölgesi adı belirtin.</span><span class="sxs-lookup"><span data-stu-id="fc426-125">Specify an Azure region name.</span></span>
+<span data-ttu-id="fc426-126">Azure bölgelerinin tam listesi için bkz: Azure bölgeleri https://azure.microsoft.com/regions/ ( https://azure.microsoft.com/regions/) .</span><span class="sxs-lookup"><span data-stu-id="fc426-126">For a full list of Azure regions, see Azure Regionshttps://azure.microsoft.com/regions/ (https://azure.microsoft.com/regions/).</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="fc426-127">-EndpointStatus</span><span class="sxs-lookup"><span data-stu-id="fc426-127">-EndpointStatus</span></span>
+<span data-ttu-id="fc426-128">Uç noktasının durumunu belirtir.</span><span class="sxs-lookup"><span data-stu-id="fc426-128">Specifies the status of the endpoint.</span></span>
+<span data-ttu-id="fc426-129">Geçerli değerler:</span><span class="sxs-lookup"><span data-stu-id="fc426-129">Valid values are:</span></span> 
+
+- <span data-ttu-id="fc426-130">Etkin</span><span class="sxs-lookup"><span data-stu-id="fc426-130">Enabled</span></span> 
+- <span data-ttu-id="fc426-131">DISABLED</span><span class="sxs-lookup"><span data-stu-id="fc426-131">Disabled</span></span> 
+
+<span data-ttu-id="fc426-132">Durum etkinleştirilirse, uç nokta uç durumu için araştırılan ve trafik yönlendirme yöntemine dahil edilmiştir.</span><span class="sxs-lookup"><span data-stu-id="fc426-132">If the status is Enabled, the endpoint is probed for endpoint health and is included in the traffic-routing method.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+Accepted values: Enabled, Disabled
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="fc426-133">-GeoMapping</span><span class="sxs-lookup"><span data-stu-id="fc426-133">-GeoMapping</span></span>
+<span data-ttu-id="fc426-134">' Coğrafi ' trafik yönlendirme yöntemi kullanılırken bu uç noktaya eşlenmiş bölgelerin listesi.</span><span class="sxs-lookup"><span data-stu-id="fc426-134">The list of regions mapped to this endpoint when using the 'Geographic' traffic routing method.</span></span> <span data-ttu-id="fc426-135">Lütfen kabul edilen değerlerin tam listesi için lütfen Traffic Manager belgelerine başvurun.</span><span class="sxs-lookup"><span data-stu-id="fc426-135">Please consult Traffic Manager documentation for a full list of accepted values.</span></span>
+
+```yaml
+Type: System.Collections.Generic.List`1[System.String]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="fc426-136">-MinChildEndpoints</span><span class="sxs-lookup"><span data-stu-id="fc426-136">-MinChildEndpoints</span></span>
+<span data-ttu-id="fc426-137">Azure bölgesi adı belirtin.</span><span class="sxs-lookup"><span data-stu-id="fc426-137">Specify an Azure region name.</span></span>
+<span data-ttu-id="fc426-138">Azure bölgelerinin tam listesi için bkz: Azure bölgeleri https://azure.microsoft.com/regions/ ( https://azure.microsoft.com/regions/) .</span><span class="sxs-lookup"><span data-stu-id="fc426-138">For a full list of Azure regions, see Azure Regionshttps://azure.microsoft.com/regions/ (https://azure.microsoft.com/regions/).</span></span>
+
+```yaml
+Type: System.Nullable`1[System.UInt32]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="fc426-139">-Ad</span><span class="sxs-lookup"><span data-stu-id="fc426-139">-Name</span></span>
+<span data-ttu-id="fc426-140">Bu cmdlet 'in oluşturduğu Traffic Manager uç noktasının adını belirtir.</span><span class="sxs-lookup"><span data-stu-id="fc426-140">Specifies the name of the Traffic Manager endpoint that this cmdlet creates.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="fc426-141">-Öncelik</span><span class="sxs-lookup"><span data-stu-id="fc426-141">-Priority</span></span>
+<span data-ttu-id="fc426-142">Traffic Manager 'ın uç noktaya atadığı önceliği belirtir.</span><span class="sxs-lookup"><span data-stu-id="fc426-142">Specifies the priority that Traffic Manager assigns to the endpoint.</span></span>
+<span data-ttu-id="fc426-143">Bu parametre, yalnızca Traffic Manager profili öncelik için öncelik için öncelik için yapılandırılmışsa kullanılır.</span><span class="sxs-lookup"><span data-stu-id="fc426-143">This parameter is used only if the Traffic Manager profile is configured with the for Priority traffic-routing method.</span></span>
+<span data-ttu-id="fc426-144">Geçerli değerler 1 ile 1000 arasındaki tamsayılardır.</span><span class="sxs-lookup"><span data-stu-id="fc426-144">Valid values are integers from 1 through 1000.</span></span>
+<span data-ttu-id="fc426-145">Düşük değerler daha yüksek öncelikleri temsil eder.</span><span class="sxs-lookup"><span data-stu-id="fc426-145">Lower values represent higher priority.</span></span>
+
+<span data-ttu-id="fc426-146">Öncelik belirtirseniz, profildeki tüm uç noktalarda öncelikleri belirtmeniz gerekir ve iki uç nokta aynı öncelik değerini paylaşabilir.</span><span class="sxs-lookup"><span data-stu-id="fc426-146">If you specify a priority, you must specify priorities on all endpoints in the profile, and no two endpoints can share the same priority value.</span></span>
+<span data-ttu-id="fc426-147">Öncelikler belirtmezseniz, Traffic Manager uç noktalara, bir (1) başlayarak, profilin uç noktalarını listelerse, varsayılan öncelik değerlerini uç noktalara atar.</span><span class="sxs-lookup"><span data-stu-id="fc426-147">If you do not specify priorities, Traffic Manager assigns default priority values to the endpoints, starting with one (1), in the order the profile lists the endpoints.</span></span>
+
+```yaml
+Type: System.Nullable`1[System.UInt32]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="fc426-148">-ProfileName</span><span class="sxs-lookup"><span data-stu-id="fc426-148">-ProfileName</span></span>
+<span data-ttu-id="fc426-149">Bu cmdlet 'in uç nokta eklediği bir Traffic Manager profilinin adını belirtir.</span><span class="sxs-lookup"><span data-stu-id="fc426-149">Specifies the name of a Traffic Manager profile to which this cmdlet adds an endpoint.</span></span>
+<span data-ttu-id="fc426-150">Profil edinmek için New-AzureRmTrafficManagerProfile veya Get-AzureRmTrafficManagerProfile cmdlet 'lerini kullanın.</span><span class="sxs-lookup"><span data-stu-id="fc426-150">To obtain a profile, use the New-AzureRmTrafficManagerProfile or Get-AzureRmTrafficManagerProfile cmdlets.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="fc426-151">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="fc426-151">-ResourceGroupName</span></span>
+<span data-ttu-id="fc426-152">Kaynak grubunun adını belirtir.</span><span class="sxs-lookup"><span data-stu-id="fc426-152">Specifies the name of a resource group.</span></span>
+<span data-ttu-id="fc426-153">Bu cmdlet, bu parametrenin belirttiği grupta bir Traffic Manager uç noktası oluşturur.</span><span class="sxs-lookup"><span data-stu-id="fc426-153">This cmdlet creates a Traffic Manager endpoint in the group that this parameter specifies.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="fc426-154">-SubnetMapping</span><span class="sxs-lookup"><span data-stu-id="fc426-154">-SubnetMapping</span></span>
+<span data-ttu-id="fc426-155">Â € ̃Subnetâ €™ trafiği yönlendirme yöntemi kullanılırken bu uç noktaya eşlenen adres aralıklarının veya alt ağların listesi.</span><span class="sxs-lookup"><span data-stu-id="fc426-155">The list of address ranges or subnets mapped to this endpoint when using the â€˜Subnetâ€™ traffic routing method.</span></span>
+
+```yaml
+Type: System.Collections.Generic.List`1[Microsoft.Azure.Commands.TrafficManager.Models.TrafficManagerIpAddressRange]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="fc426-156">-Hedef</span><span class="sxs-lookup"><span data-stu-id="fc426-156">-Target</span></span>
+<span data-ttu-id="fc426-157">Uç noktanın tam DNS adını belirtir.</span><span class="sxs-lookup"><span data-stu-id="fc426-157">Specifies the fully qualified DNS name of the endpoint.</span></span>
+<span data-ttu-id="fc426-158">Traffic Manager trafiği bu uç noktaya yönlendirirse DNS yanıtlarında bu değeri döndürür.</span><span class="sxs-lookup"><span data-stu-id="fc426-158">Traffic Manager returns this value in DNS responses when it directs traffic to this endpoint.</span></span>
+<span data-ttu-id="fc426-159">Bu parametreyi yalnızca ExternalEndpoints uç noktası türü için belirtin.</span><span class="sxs-lookup"><span data-stu-id="fc426-159">Specify this parameter only for the ExternalEndpoints endpoint type.</span></span>
+<span data-ttu-id="fc426-160">Diğer uç nokta türleri için bunun yerine *Targetresourceıd* parametresini belirtin.</span><span class="sxs-lookup"><span data-stu-id="fc426-160">For other endpoint types, specify the *TargetResourceId* parameter instead.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="fc426-161">-Targetresourceıd</span><span class="sxs-lookup"><span data-stu-id="fc426-161">-TargetResourceId</span></span>
+<span data-ttu-id="fc426-162">Hedefin kaynak KIMLIĞINI belirtir.</span><span class="sxs-lookup"><span data-stu-id="fc426-162">Specifies resource ID of the target.</span></span>
+<span data-ttu-id="fc426-163">Bu parametreyi yalnızca AzureEndpoints ve Nestedenvseçpoints uç noktası türleri için belirtin.</span><span class="sxs-lookup"><span data-stu-id="fc426-163">Specify this parameter only for the AzureEndpoints and NestedEndpoints endpoint types.</span></span>
+<span data-ttu-id="fc426-164">ExternalEndpoints uç noktası türü için bunun yerine *target* parametresini belirtin.</span><span class="sxs-lookup"><span data-stu-id="fc426-164">For the ExternalEndpoints endpoint type, specify the *Target* parameter instead.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="fc426-165">-Tür</span><span class="sxs-lookup"><span data-stu-id="fc426-165">-Type</span></span>
+<span data-ttu-id="fc426-166">Bu cmdlet 'in Traffic Manager profiline eklediği uç nokta türünü belirtir.</span><span class="sxs-lookup"><span data-stu-id="fc426-166">Specifies the type of endpoint that this cmdlet adds to the Traffic Manager profile.</span></span>
+<span data-ttu-id="fc426-167">Geçerli değerler:</span><span class="sxs-lookup"><span data-stu-id="fc426-167">Valid values are:</span></span> 
+
+- <span data-ttu-id="fc426-168">AzureEndpoints</span><span class="sxs-lookup"><span data-stu-id="fc426-168">AzureEndpoints</span></span>
+- <span data-ttu-id="fc426-169">ExternalEndpoints</span><span class="sxs-lookup"><span data-stu-id="fc426-169">ExternalEndpoints</span></span>
+- <span data-ttu-id="fc426-170">Nestedenvseçpuanlar</span><span class="sxs-lookup"><span data-stu-id="fc426-170">NestedEndpoints</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+Accepted values: AzureEndpoints, ExternalEndpoints, NestedEndpoints
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="fc426-171">-Kalınlık</span><span class="sxs-lookup"><span data-stu-id="fc426-171">-Weight</span></span>
+<span data-ttu-id="fc426-172">Traffic Manager 'ın uç noktaya atadığı ağırlığı belirtir.</span><span class="sxs-lookup"><span data-stu-id="fc426-172">Specifies the weight that Traffic Manager assigns to the endpoint.</span></span>
+<span data-ttu-id="fc426-173">Geçerli değerler 1 ile 1000 arasındaki tamsayılardır.</span><span class="sxs-lookup"><span data-stu-id="fc426-173">Valid values are integers from 1 through 1000.</span></span>
+<span data-ttu-id="fc426-174">Varsayılan değer bir (1) olur.</span><span class="sxs-lookup"><span data-stu-id="fc426-174">The default value is one (1).</span></span>
+<span data-ttu-id="fc426-175">Bu parametre yalnızca, Traffic Manager profili ağırlıklı trafik yönlendirme yöntemiyle yapılandırılmışsa kullanılır.</span><span class="sxs-lookup"><span data-stu-id="fc426-175">This parameter is used only if the Traffic Manager profile is configured with the Weighted traffic-routing method.</span></span>
+
+```yaml
+Type: System.Nullable`1[System.UInt32]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="fc426-176">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="fc426-176">CommonParameters</span></span>
+<span data-ttu-id="fc426-177">Bu cmdlet ortak parametreleri destekler:-Debug,-ErrorAction,-ErrorVariable,-ınformationaction,-ınformationvariable,-OutVariable,-OutBuffer,-Pipelinedeğişken,-verbose,-WarningAction ve-Warningdeğişken.</span><span class="sxs-lookup"><span data-stu-id="fc426-177">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="fc426-178">Daha fazla bilgi için bkz about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="fc426-178">For more information, see about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="fc426-179">GÖLGELENDIRICI</span><span class="sxs-lookup"><span data-stu-id="fc426-179">INPUTS</span></span>
+
+### <span data-ttu-id="fc426-180">Yabilirsiniz</span><span class="sxs-lookup"><span data-stu-id="fc426-180">None</span></span>
+<span data-ttu-id="fc426-181">Bu cmdlet hiçbir girişi kabul etmez.</span><span class="sxs-lookup"><span data-stu-id="fc426-181">This cmdlet does not accept any input.</span></span>
+
+## <span data-ttu-id="fc426-182">ÇıKıŞLAR</span><span class="sxs-lookup"><span data-stu-id="fc426-182">OUTPUTS</span></span>
+
+### <span data-ttu-id="fc426-183">Microsoft. Azure. Commands. TrafficManager. modeller. TrafficManagerEndpoint</span><span class="sxs-lookup"><span data-stu-id="fc426-183">Microsoft.Azure.Commands.TrafficManager.Models.TrafficManagerEndpoint</span></span>
+
+## <span data-ttu-id="fc426-184">NOTLARıNDA</span><span class="sxs-lookup"><span data-stu-id="fc426-184">NOTES</span></span>
+
+## <span data-ttu-id="fc426-185">ILGILI BAĞLANTıLAR</span><span class="sxs-lookup"><span data-stu-id="fc426-185">RELATED LINKS</span></span>
+
+[<span data-ttu-id="fc426-186">Disable-AzureRmTrafficManagerEndpoint</span><span class="sxs-lookup"><span data-stu-id="fc426-186">Disable-AzureRmTrafficManagerEndpoint</span></span>](./Disable-AzureRmTrafficManagerEndpoint.md)
+
+[<span data-ttu-id="fc426-187">Enable-AzureRmTrafficManagerEndpoint</span><span class="sxs-lookup"><span data-stu-id="fc426-187">Enable-AzureRmTrafficManagerEndpoint</span></span>](./Enable-AzureRmTrafficManagerEndpoint.md)
+
+[<span data-ttu-id="fc426-188">Get-AzureRmTrafficManagerEndpoint</span><span class="sxs-lookup"><span data-stu-id="fc426-188">Get-AzureRmTrafficManagerEndpoint</span></span>](./Get-AzureRmTrafficManagerEndpoint.md)
+
+[<span data-ttu-id="fc426-189">Get-AzureRmTrafficManagerProfile</span><span class="sxs-lookup"><span data-stu-id="fc426-189">Get-AzureRmTrafficManagerProfile</span></span>](./Get-AzureRmTrafficManagerProfile.md)
+
+[<span data-ttu-id="fc426-190">New-AzureRmTrafficManagerProfile</span><span class="sxs-lookup"><span data-stu-id="fc426-190">New-AzureRmTrafficManagerProfile</span></span>](./New-AzureRmTrafficManagerProfile.md)
+
+[<span data-ttu-id="fc426-191">Remove-AzureRmTrafficManagerEndpoint</span><span class="sxs-lookup"><span data-stu-id="fc426-191">Remove-AzureRmTrafficManagerEndpoint</span></span>](./Remove-AzureRmTrafficManagerEndpoint.md)
+
+[<span data-ttu-id="fc426-192">Set-AzureRmTrafficManagerProfile</span><span class="sxs-lookup"><span data-stu-id="fc426-192">Set-AzureRmTrafficManagerProfile</span></span>](./Set-AzureRmTrafficManagerProfile.md)
+
+

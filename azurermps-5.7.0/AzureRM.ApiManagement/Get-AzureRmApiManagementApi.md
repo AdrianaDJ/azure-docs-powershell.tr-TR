@@ -1,0 +1,185 @@
+---
+external help file: Microsoft.Azure.Commands.ApiManagement.ServiceManagement.dll-Help.xml
+Module Name: AzureRM.ApiManagement
+ms.assetid: B80389B9-E143-4E24-A222-E95F691DA2E9
+online version: https://docs.microsoft.com/en-us/powershell/module/azurerm.apimanagement/get-azurermapimanagementapi
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/ResourceManager/ApiManagement/Commands.ApiManagement/help/Get-AzureRmApiManagementApi.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/ResourceManager/ApiManagement/Commands.ApiManagement/help/Get-AzureRmApiManagementApi.md
+ms.openlocfilehash: 435e167b713934962daf0cf27fc0d844caee8dcc
+ms.sourcegitcommit: f599b50d5e980197d1fca769378df90a842b42a1
+ms.translationtype: MT
+ms.contentlocale: tr-TR
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "93587719"
+---
+# <span data-ttu-id="b3998-101">Get-AzureRmApiManagementApi</span><span class="sxs-lookup"><span data-stu-id="b3998-101">Get-AzureRmApiManagementApi</span></span>
+
+## <span data-ttu-id="b3998-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="b3998-102">SYNOPSIS</span></span>
+<span data-ttu-id="b3998-103">Bir API alır.</span><span class="sxs-lookup"><span data-stu-id="b3998-103">Gets an API.</span></span>
+
+[!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
+
+## <span data-ttu-id="b3998-104">INDEKI</span><span class="sxs-lookup"><span data-stu-id="b3998-104">SYNTAX</span></span>
+
+### <span data-ttu-id="b3998-105">GetAllApis (varsayılan)</span><span class="sxs-lookup"><span data-stu-id="b3998-105">GetAllApis (Default)</span></span>
+```
+Get-AzureRmApiManagementApi -Context <PsApiManagementContext> [-DefaultProfile <IAzureContextContainer>]
+ [<CommonParameters>]
+```
+
+### <span data-ttu-id="b3998-106">Getbyapııd</span><span class="sxs-lookup"><span data-stu-id="b3998-106">GetByApiId</span></span>
+```
+Get-AzureRmApiManagementApi -Context <PsApiManagementContext> -ApiId <String>
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+### <span data-ttu-id="b3998-107">GetByName</span><span class="sxs-lookup"><span data-stu-id="b3998-107">GetByName</span></span>
+```
+Get-AzureRmApiManagementApi -Context <PsApiManagementContext> -Name <String>
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+### <span data-ttu-id="b3998-108">Getbyproductıd</span><span class="sxs-lookup"><span data-stu-id="b3998-108">GetByProductId</span></span>
+```
+Get-AzureRmApiManagementApi -Context <PsApiManagementContext> -ProductId <String>
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+## <span data-ttu-id="b3998-109">Tanım</span><span class="sxs-lookup"><span data-stu-id="b3998-109">DESCRIPTION</span></span>
+<span data-ttu-id="b3998-110">**Get-Azurermapımanagementapı** cmdlet 'i bir veya daha çok Azure API yönetim API 'sini alır.</span><span class="sxs-lookup"><span data-stu-id="b3998-110">The **Get-AzureRmApiManagementApi** cmdlet gets one or more Azure API Management APIs.</span></span>
+
+## <span data-ttu-id="b3998-111">ÖRNEKLERDEN</span><span class="sxs-lookup"><span data-stu-id="b3998-111">EXAMPLES</span></span>
+
+### <span data-ttu-id="b3998-112">Örnek 1: tüm yönetim API 'Lerini alma</span><span class="sxs-lookup"><span data-stu-id="b3998-112">Example 1: Get all management APIs</span></span>
+```
+PS C:\>$ApiMgmtContext = New-AzureRmApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
+PS C:\>Get-AzureRmApiManagementApi -Context $ApiMgmtContext
+```
+
+<span data-ttu-id="b3998-113">Bu komut belirtilen bağlam için tüm API 'Leri alır.</span><span class="sxs-lookup"><span data-stu-id="b3998-113">This command gets all of the APIs for the specified context.</span></span>
+
+### <span data-ttu-id="b3998-114">Örnek 2: KIMLIĞE göre bir yönetim API 'SI alma</span><span class="sxs-lookup"><span data-stu-id="b3998-114">Example 2: Get a management API by ID</span></span>
+```
+PS C:\>$ApiMgmtContext = New-AzureRmApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
+PS C:\>Get-AzureRmApiManagementApi -Context $ApiMgmtContext -ApiId $ApiId
+```
+
+<span data-ttu-id="b3998-115">Bu komut belirtilen KIMLIĞE sahip API 'YI alır.</span><span class="sxs-lookup"><span data-stu-id="b3998-115">This command gets the API with the specified ID.</span></span>
+
+### <span data-ttu-id="b3998-116">Örnek 3: ada göre bir yönetim API 'SI alma</span><span class="sxs-lookup"><span data-stu-id="b3998-116">Example 3: Get a management API by name</span></span>
+```
+PS C:\>$ApiMgmtContext = New-AzureRmApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
+PS C:\>Get-AzureRmApiManagementApi -Context $ApiMgmtContext -Name "EchoApi"
+```
+
+<span data-ttu-id="b3998-117">Bu komut, belirtilen ada sahip API 'YI alır.</span><span class="sxs-lookup"><span data-stu-id="b3998-117">This command gets the API with the specified name.</span></span>
+
+## <span data-ttu-id="b3998-118">PARAMETRELERINE</span><span class="sxs-lookup"><span data-stu-id="b3998-118">PARAMETERS</span></span>
+
+### <span data-ttu-id="b3998-119">-Apııd</span><span class="sxs-lookup"><span data-stu-id="b3998-119">-ApiId</span></span>
+<span data-ttu-id="b3998-120">Alınacak API 'nin KIMLIĞINI belirtir.</span><span class="sxs-lookup"><span data-stu-id="b3998-120">Specifies the ID of the API to get.</span></span>
+
+```yaml
+Type: String
+Parameter Sets: GetByApiId
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="b3998-121">-Context</span><span class="sxs-lookup"><span data-stu-id="b3998-121">-Context</span></span>
+<span data-ttu-id="b3998-122">**Psapsananagementcontext** nesnesini belirtir.</span><span class="sxs-lookup"><span data-stu-id="b3998-122">Specifies a **PsApiManagementContext** object.</span></span>
+
+```yaml
+Type: PsApiManagementContext
+Parameter Sets: (All)
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="b3998-123">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="b3998-123">-DefaultProfile</span></span>
+<span data-ttu-id="b3998-124">Azure ile iletişim için kullanılan kimlik bilgileri, hesap, kiracı ve abonelik.</span><span class="sxs-lookup"><span data-stu-id="b3998-124">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
+ 
+```yaml
+Type: IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="b3998-125">-Ad</span><span class="sxs-lookup"><span data-stu-id="b3998-125">-Name</span></span>
+<span data-ttu-id="b3998-126">Alınacak API 'nin adını belirtir.</span><span class="sxs-lookup"><span data-stu-id="b3998-126">Specifies the name of the API to get.</span></span>
+
+```yaml
+Type: String
+Parameter Sets: GetByName
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="b3998-127">-ÜrünKimliği</span><span class="sxs-lookup"><span data-stu-id="b3998-127">-ProductId</span></span>
+<span data-ttu-id="b3998-128">API alınacak ürünün KIMLIĞINI belirtir.</span><span class="sxs-lookup"><span data-stu-id="b3998-128">Specifies the ID of the product for which to get the API.</span></span>
+
+```yaml
+Type: String
+Parameter Sets: GetByProductId
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="b3998-129">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="b3998-129">CommonParameters</span></span>
+<span data-ttu-id="b3998-130">Bu cmdlet ortak parametreleri destekler:-Debug,-ErrorAction,-ErrorVariable,-ınformationaction,-ınformationvariable,-OutVariable,-OutBuffer,-Pipelinedeğişken,-verbose,-WarningAction ve-Warningdeğişken.</span><span class="sxs-lookup"><span data-stu-id="b3998-130">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="b3998-131">Daha fazla bilgi için bkz about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="b3998-131">For more information, see about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="b3998-132">GÖLGELENDIRICI</span><span class="sxs-lookup"><span data-stu-id="b3998-132">INPUTS</span></span>
+
+### <span data-ttu-id="b3998-133">Yabilirsiniz</span><span class="sxs-lookup"><span data-stu-id="b3998-133">None</span></span>
+<span data-ttu-id="b3998-134">Bu cmdlet hiçbir girişi kabul etmez.</span><span class="sxs-lookup"><span data-stu-id="b3998-134">This cmdlet does not accept any input.</span></span>
+
+## <span data-ttu-id="b3998-135">ÇıKıŞLAR</span><span class="sxs-lookup"><span data-stu-id="b3998-135">OUTPUTS</span></span>
+
+### <span data-ttu-id="b3998-136">Microsoft. Azure. Commands. Apsananad. ServiceManagement. modeller. Psapsananagementapı</span><span class="sxs-lookup"><span data-stu-id="b3998-136">Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementApi</span></span>
+<span data-ttu-id="b3998-137">Belirli bir anlık hizmetin API 'Si ile ilgili ayrıntılar</span><span class="sxs-lookup"><span data-stu-id="b3998-137">The details of the Api in a given ApiManagement service</span></span>
+
+### <span data-ttu-id="b3998-138">IList<Microsoft. Azure. Commands. Apsananad. ServiceManagement. modeller. Psapsananagementapı></span><span class="sxs-lookup"><span data-stu-id="b3998-138">IList<Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementApi></span></span>
+<span data-ttu-id="b3998-139">Belirli bir hizmet 'daki API 'lerin listesi</span><span class="sxs-lookup"><span data-stu-id="b3998-139">The list of Apis in a given ApiManagement service</span></span>
+
+## <span data-ttu-id="b3998-140">NOTLARıNDA</span><span class="sxs-lookup"><span data-stu-id="b3998-140">NOTES</span></span>
+
+## <span data-ttu-id="b3998-141">ILGILI BAĞLANTıLAR</span><span class="sxs-lookup"><span data-stu-id="b3998-141">RELATED LINKS</span></span>
+
+[<span data-ttu-id="b3998-142">Dışarı aktarma-Azurermapımanagementapı</span><span class="sxs-lookup"><span data-stu-id="b3998-142">Export-AzureRmApiManagementApi</span></span>](./Export-AzureRmApiManagementApi.md)
+
+[<span data-ttu-id="b3998-143">Import-Azurermapımanagementapı</span><span class="sxs-lookup"><span data-stu-id="b3998-143">Import-AzureRmApiManagementApi</span></span>](./Import-AzureRmApiManagementApi.md)
+
+[<span data-ttu-id="b3998-144">Yeni-Azurermapımanagementapı</span><span class="sxs-lookup"><span data-stu-id="b3998-144">New-AzureRmApiManagementApi</span></span>](./New-AzureRmApiManagementApi.md)
+
+[<span data-ttu-id="b3998-145">Remove-Azurermapımanagementapı</span><span class="sxs-lookup"><span data-stu-id="b3998-145">Remove-AzureRmApiManagementApi</span></span>](./Remove-AzureRmApiManagementApi.md)
+
+[<span data-ttu-id="b3998-146">Set-Azurermapımanagementapı</span><span class="sxs-lookup"><span data-stu-id="b3998-146">Set-AzureRmApiManagementApi</span></span>](./Set-AzureRmApiManagementApi.md)
+
+
