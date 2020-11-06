@@ -1,0 +1,273 @@
+---
+external help file: Microsoft.Azure.Commands.HDInsight.dll-Help.xml
+Module Name: AzureRM.HDInsight
+ms.assetid: 3C6DCC81-82F7-4044-AFBC-4EE1BCC306F2
+online version: https://docs.microsoft.com/en-us/powershell/module/azurerm.hdinsight/invoke-azurermhdinsighthivejob
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/ResourceManager/HDInsight/Commands.HDInsight/help/Invoke-AzureRmHDInsightHiveJob.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/ResourceManager/HDInsight/Commands.HDInsight/help/Invoke-AzureRmHDInsightHiveJob.md
+ms.openlocfilehash: 36def3904621991bee4d3f0f8ad5d3590a4c097b
+ms.sourcegitcommit: f599b50d5e980197d1fca769378df90a842b42a1
+ms.translationtype: MT
+ms.contentlocale: tr-TR
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "93590267"
+---
+# <span data-ttu-id="cd756-101">Invoke-AzureRmHDInsightHiveJob</span><span class="sxs-lookup"><span data-stu-id="cd756-101">Invoke-AzureRmHDInsightHiveJob</span></span>
+
+## <span data-ttu-id="cd756-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="cd756-102">SYNOPSIS</span></span>
+<span data-ttu-id="cd756-103">Bir HDInsight kümesine kovan sorgusu gönderir ve sorgu sonuçlarını tek bir işlemde alır.</span><span class="sxs-lookup"><span data-stu-id="cd756-103">Submits a Hive query to an HDInsight cluster and retrieves query results in one operation.</span></span>
+
+[!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
+
+## <span data-ttu-id="cd756-104">INDEKI</span><span class="sxs-lookup"><span data-stu-id="cd756-104">SYNTAX</span></span>
+
+```
+Invoke-AzureRmHDInsightHiveJob [-Arguments <String[]>] [-Files <String[]>] [-StatusFolder <String>]
+ [-Defines <Hashtable>] [-File <String>] [-JobName <String>] [-Query <String>] [-RunAsFileJob]
+ [-DefaultContainer <String>] [-DefaultStorageAccountName <String>] [-DefaultStorageAccountKey <String>]
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+## <span data-ttu-id="cd756-105">Tanım</span><span class="sxs-lookup"><span data-stu-id="cd756-105">DESCRIPTION</span></span>
+<span data-ttu-id="cd756-106">**Invoke-AzureRmHDInsightHiveJob** cmdlet 'ı bir Azure HDInsight kümesine kovan sorgusu gönderir ve sorgu sonuçlarını tek bir işlemde alır.</span><span class="sxs-lookup"><span data-stu-id="cd756-106">The **Invoke-AzureRmHDInsightHiveJob** cmdlet submits a Hive query to an Azure HDInsight cluster and retrieves query results in one operation.</span></span>
+<span data-ttu-id="cd756-107">Sorgu için kullanılacak kümeyi belirtmek üzere **Invoke-AzureRmHDInsightHiveJob** ' i çağırmadan önce Use-AzureRmHDInsightCluster cmdlet 'ini kullanın.</span><span class="sxs-lookup"><span data-stu-id="cd756-107">Use the Use-AzureRmHDInsightCluster cmdlet before calling **Invoke-AzureRmHDInsightHiveJob** to specify which cluster will be used for the query.</span></span>
+
+## <span data-ttu-id="cd756-108">ÖRNEKLERDEN</span><span class="sxs-lookup"><span data-stu-id="cd756-108">EXAMPLES</span></span>
+
+### <span data-ttu-id="cd756-109">Örnek 1: bir Azure HDInsight kümesine yığın sorgusu gönderme</span><span class="sxs-lookup"><span data-stu-id="cd756-109">Example 1: Submit a Hive query to an Azure HDInsight cluster</span></span>
+```
+PS C:\># Primary storage account info
+PS C:\> $storageAccountResourceGroupName = "Group"
+PS C:\> $storageAccountName = "yourstorageacct001"
+PS C:\> $storageAccountKey = (Get-AzureRmStorageAccountKey -ResourceGroupName $storageAccountResourceGroupName -Name $storageAccountName)[0].value
+
+
+PS C:\> $storageContainer = "container001"
+
+# Cluster info
+PS C:\> $clusterName = "your-hadoop-001"
+PS C:\> $clusterCreds = Get-Credential
+
+# Hive job details
+PS C:\> $statusFolder = "tempStatusFolder/"
+PS C:\> $query = "SHOW TABLES"
+
+PS C:\> Use-AzureRmHDInsightCluster `
+            -ClusterCredential $clusterCreds `
+            -ClusterName $clusterName
+
+PS C:\> Invoke-AzureRmHDInsightHiveJob -StatusFolder $statusFolder `
+            -Query $query `
+            -DefaultContainer $storageAccountContainer `
+            -DefaultStorageAccountName "$storageAccountName.blob.core.windows.net" `
+            -DefaultStorageAccountKey $storageAccountKey
+```
+
+<span data-ttu-id="cd756-110">Bu komut, TABLOLARı-Hadoop-001 adlı kümeye gönderir.</span><span class="sxs-lookup"><span data-stu-id="cd756-110">This command submits the query SHOW TABLES to the cluster named your-hadoop-001.</span></span>
+
+## <span data-ttu-id="cd756-111">PARAMETRELERINE</span><span class="sxs-lookup"><span data-stu-id="cd756-111">PARAMETERS</span></span>
+
+### <span data-ttu-id="cd756-112">-Bağımsız değişkenler</span><span class="sxs-lookup"><span data-stu-id="cd756-112">-Arguments</span></span>
+<span data-ttu-id="cd756-113">İş için bağımsız değişken dizisi belirtir.</span><span class="sxs-lookup"><span data-stu-id="cd756-113">Specifies an array of arguments for the job.</span></span>
+<span data-ttu-id="cd756-114">Bağımsız değişkenler her göreve komut satırı bağımsız değişkenleri olarak geçirilir.</span><span class="sxs-lookup"><span data-stu-id="cd756-114">The arguments are passed as command-line arguments to each task.</span></span>
+
+```yaml
+Type: System.String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="cd756-115">-DefaultContainer</span><span class="sxs-lookup"><span data-stu-id="cd756-115">-DefaultContainer</span></span>
+<span data-ttu-id="cd756-116">Varsayılan Azure depolama hesabında HDInsight kümesinin kullandığı varsayılan kapsayıcının adını belirtir.</span><span class="sxs-lookup"><span data-stu-id="cd756-116">Specifies the name of the default container in the default Azure Storage account that an HDInsight cluster uses.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="cd756-117">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="cd756-117">-DefaultProfile</span></span>
+<span data-ttu-id="cd756-118">Azure ile iletişim için kullanılan kimlik bilgileri, hesap, kiracı ve abonelik</span><span class="sxs-lookup"><span data-stu-id="cd756-118">The credentials, account, tenant, and subscription used for communication with azure</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="cd756-119">-DefaultStorageAccountKey</span><span class="sxs-lookup"><span data-stu-id="cd756-119">-DefaultStorageAccountKey</span></span>
+<span data-ttu-id="cd756-120">HDInsight kümesinin kullandığı varsayılan depolama hesabının hesap anahtarını belirtir.</span><span class="sxs-lookup"><span data-stu-id="cd756-120">Specifies the account key for the default storage account that the HDInsight cluster uses.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="cd756-121">-DefaultStorageAccountName</span><span class="sxs-lookup"><span data-stu-id="cd756-121">-DefaultStorageAccountName</span></span>
+<span data-ttu-id="cd756-122">HDInsight kümesinin kullandığı varsayılan depolama hesabının adını belirtir.</span><span class="sxs-lookup"><span data-stu-id="cd756-122">Specifies the name of the default storage account that the HDInsight cluster uses.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="cd756-123">-Tanımlar</span><span class="sxs-lookup"><span data-stu-id="cd756-123">-Defines</span></span>
+<span data-ttu-id="cd756-124">Bir iş çalıştığında ayarlanacak Hadoop yapılandırma değerlerini belirtir.</span><span class="sxs-lookup"><span data-stu-id="cd756-124">Specifies Hadoop configuration values to set when a job runs.</span></span>
+
+```yaml
+Type: System.Collections.Hashtable
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="cd756-125">-Dosya</span><span class="sxs-lookup"><span data-stu-id="cd756-125">-File</span></span>
+<span data-ttu-id="cd756-126">Çalıştırılacak sorguyu içeren Azure depolama 'da bir dosyanın yolunu belirtir.</span><span class="sxs-lookup"><span data-stu-id="cd756-126">Specifies the path to a file in Azure Storage that contains the query to run.</span></span>
+<span data-ttu-id="cd756-127">*Sorgu* parametresi yerine bu parametreyi kullanabilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="cd756-127">You can use this parameter instead of the *Query* parameter.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="cd756-128">-Dosyalar</span><span class="sxs-lookup"><span data-stu-id="cd756-128">-Files</span></span>
+<span data-ttu-id="cd756-129">Bir kovan işi için gereken dosyalar koleksiyonunu belirtir.</span><span class="sxs-lookup"><span data-stu-id="cd756-129">Specifies a collection of files that are required for a Hive job.</span></span>
+
+```yaml
+Type: System.String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="cd756-130">-JobName</span><span class="sxs-lookup"><span data-stu-id="cd756-130">-JobName</span></span>
+<span data-ttu-id="cd756-131">Bir kovan işinin adını belirtir.</span><span class="sxs-lookup"><span data-stu-id="cd756-131">Specifies the name of a Hive job.</span></span>
+<span data-ttu-id="cd756-132">Bu parametreyi belirtmezseniz, bu cmdlet varsayılan değeri kullanır: "kovan: \<first 100 characters of Query\> ".</span><span class="sxs-lookup"><span data-stu-id="cd756-132">If you do not specify this parameter, this cmdlet uses the default value: "Hive: \<first 100 characters of Query\>".</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="cd756-133">-Sorgu</span><span class="sxs-lookup"><span data-stu-id="cd756-133">-Query</span></span>
+<span data-ttu-id="cd756-134">Kovan sorgusunu belirtir.</span><span class="sxs-lookup"><span data-stu-id="cd756-134">Specifies the Hive query.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="cd756-135">-RunAsFileJob</span><span class="sxs-lookup"><span data-stu-id="cd756-135">-RunAsFileJob</span></span>
+<span data-ttu-id="cd756-136">Bu cmdlet 'in, sorgunun depolanacağı varsayılan Azure depolama hesabında bir dosya oluşturacağını gösterir.</span><span class="sxs-lookup"><span data-stu-id="cd756-136">Indicates that this cmdlet creates a file in the default Azure storage account in which to store a query.</span></span>
+<span data-ttu-id="cd756-137">Bu cmdlet, bu dosyaya bir komut dosyası olarak başvuruda bulunan işi gönderir.</span><span class="sxs-lookup"><span data-stu-id="cd756-137">This cmdlet submits the job that references this file as a script to run.</span></span>
+<span data-ttu-id="cd756-138">Bu işlevi yüzde işareti (%) gibi özel karakterleri işlemek için kullanabilirsiniz Bu, Templeton aracılığıyla bir iş gönderimi için başarısız olacak, çünkü Templeton yüzde işaretiyle bir sorguyu URL parametresi olarak yorumlar.</span><span class="sxs-lookup"><span data-stu-id="cd756-138">You can use this functionality to handle special characters such as percent sign (%) that would fail on a job submission through Templeton, because Templeton interprets a query with a percent sign as a URL parameter.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="cd756-139">-StatusFolder</span><span class="sxs-lookup"><span data-stu-id="cd756-139">-StatusFolder</span></span>
+<span data-ttu-id="cd756-140">İş için standart çıktıları ve hata çıktılarını içeren klasörün konumunu belirtir.</span><span class="sxs-lookup"><span data-stu-id="cd756-140">Specifies the location of the folder that contains standard outputs and error outputs for a job.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="cd756-141">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="cd756-141">CommonParameters</span></span>
+<span data-ttu-id="cd756-142">Bu cmdlet ortak parametreleri destekler:-Debug,-ErrorAction,-ErrorVariable,-ınformationaction,-ınformationvariable,-OutVariable,-OutBuffer,-Pipelinedeğişken,-verbose,-WarningAction ve-Warningdeğişken.</span><span class="sxs-lookup"><span data-stu-id="cd756-142">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="cd756-143">Daha fazla bilgi için bkz about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="cd756-143">For more information, see about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="cd756-144">GÖLGELENDIRICI</span><span class="sxs-lookup"><span data-stu-id="cd756-144">INPUTS</span></span>
+
+### <span data-ttu-id="cd756-145">Yabilirsiniz</span><span class="sxs-lookup"><span data-stu-id="cd756-145">None</span></span>
+
+## <span data-ttu-id="cd756-146">ÇıKıŞLAR</span><span class="sxs-lookup"><span data-stu-id="cd756-146">OUTPUTS</span></span>
+
+### <span data-ttu-id="cd756-147">System. String</span><span class="sxs-lookup"><span data-stu-id="cd756-147">System.String</span></span>
+
+## <span data-ttu-id="cd756-148">NOTLARıNDA</span><span class="sxs-lookup"><span data-stu-id="cd756-148">NOTES</span></span>
+
+## <span data-ttu-id="cd756-149">ILGILI BAĞLANTıLAR</span><span class="sxs-lookup"><span data-stu-id="cd756-149">RELATED LINKS</span></span>
+
+[<span data-ttu-id="cd756-150">Use-AzureRmHDInsightCluster</span><span class="sxs-lookup"><span data-stu-id="cd756-150">Use-AzureRmHDInsightCluster</span></span>](./Use-AzureRmHDInsightCluster.md)
+
+
