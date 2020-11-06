@@ -1,0 +1,153 @@
+---
+external help file: Azs.InfrastructureInsights.Admin-help.xml
+Module Name: Azs.InfrastructureInsights.Admin
+online version: ''
+schema: 2.0.0
+ms.openlocfilehash: b6713b912f962a7a85627ca2280d6195cc5c5d88
+ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.translationtype: MT
+ms.contentlocale: tr-TR
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "93571953"
+---
+# Get-AzsRegionHealth
+
+## SYNOPSIS
+Bölgenin uygunluk durumu listesini döndürür.
+
+## INDEKI
+
+### Liste (varsayılan)
+```
+Get-AzsRegionHealth [-ResourceGroupName <String>] [-Filter <String>] [-Top <Int32>] [-Skip <Int32>]
+ [<CommonParameters>]
+```
+
+### Al
+```
+Get-AzsRegionHealth [-Location] <String> [-ResourceGroupName <String>] [<CommonParameters>]
+```
+
+### Içermiyor
+```
+Get-AzsRegionHealth -ResourceId <String> [<CommonParameters>]
+```
+
+## Tanım
+Bölgenin uygunluk durumu listesini döndürür.
+
+## ÖRNEKLERDEN
+
+### --------------------------ÖRNEK 1--------------------------
+```
+Get-AzsRegionHealth
+```
+
+Bölgenin uygunluk durumu listesini döndürür.
+
+## PARAMETRELERINE
+
+### -Filtre
+OData filtre parametresi.
+
+```yaml
+Type: String
+Parameter Sets: List
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Konum
+Bölgenin adı
+
+```yaml
+Type: String
+Parameter Sets: Get
+Aliases: 
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ResourceGroupName
+Kaynağın bulunduğu kaynak grubu adı.
+
+```yaml
+Type: String
+Parameter Sets: List, Get
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -RESOURCEID
+Kaynak kimliği.
+
+```yaml
+Type: String
+Parameter Sets: ResourceId
+Aliases: id
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Atla
+Parametre değerinde belirtilen ilk N öğeyi atlayın.
+
+```yaml
+Type: Int32
+Parameter Sets: List
+Aliases: 
+
+Required: False
+Position: Named
+Default value: -1
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Üst
+Parametre değerinde belirtildiği gibi ilk N öğeyi döndürün.
+-Skip parametresinden sonra uygulanır.
+
+```yaml
+Type: Int32
+Parameter Sets: List
+Aliases: 
+
+Required: False
+Position: Named
+Default value: -1
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+Bu cmdlet ortak parametreleri destekler:-Debug,-ErrorAction,-ErrorVariable,-ınformationaction,-ınformationvariable,-OutVariable,-OutBuffer,-Pipelinedeğişken,-verbose,-WarningAction ve-Warningdeğişken. Daha fazla bilgi için bkz about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+
+## GÖLGELENDIRICI
+
+## ÇıKıŞLAR
+
+### Microsoft. AzureStack. Management. InfrastructureInsights. admin. modeller. RegionHealth
+
+## NOTLARıNDA
+
+## ILGILI BAĞLANTıLAR
+
