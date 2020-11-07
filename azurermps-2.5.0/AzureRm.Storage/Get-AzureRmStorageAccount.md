@@ -1,0 +1,141 @@
+---
+external help file: Microsoft.Azure.Commands.Management.Storage.dll-Help.xml
+Module Name: AzureRM.Storage
+ms.assetid: E53D5040-C1E8-4DC1-8371-F41C00B666E3
+online version: https://docs.microsoft.com/en-us/powershell/module/azurerm.storage/get-azurermstorageaccount
+schema: 2.0.0
+ms.openlocfilehash: dafceede3c3732af423052d33ba125c4ad292d20
+ms.sourcegitcommit: b9b2dea3441d1532a5564ddca3dced45424fe2d6
+ms.translationtype: MT
+ms.contentlocale: tr-TR
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "93939226"
+---
+# Get-AzureRmStorageAccount
+
+## SYNOPSIS
+Depolama hesabını alır.
+
+[!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
+
+## INDEKI
+
+### ResourceGroupParameterSet
+```
+Get-AzureRmStorageAccount [[-ResourceGroupName] <String>] [-DefaultProfile <IAzureContextContainer>]
+ [<CommonParameters>]
+```
+
+### AccountNameParameterSet
+```
+Get-AzureRmStorageAccount [-ResourceGroupName] <String> [-Name] <String>
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+## Tanım
+**Get-AzureRmStorageAccount** cmdlet 'i, belirli bir depolama hesabını veya bir kaynak grubundaki veya abonelikteki tüm depolama hesaplarını alır.
+
+## ÖRNEKLERDEN
+
+### Örnek 1: belirtilen depolama hesabını edinme
+```
+PS C:\>Get-AzureRmStorageAccount -ResourceGroupName "RG01" -AccountName "mystorageaccount"
+```
+
+Bu komut belirtilen depolama hesabını alır.
+
+### Örnek 2: kaynak grubundaki tüm depolama hesaplarını alma
+```
+PS C:\>Get-AzureRmStorageAccount -ResourceGroupName "RG01"
+```
+
+Bu komut, kaynak grubundaki tüm depolama hesaplarını alır.
+
+### Örnek 3: abonelikteki tüm depolama hesaplarını alma
+```
+PS C:\>Get-AzureRmStorageAccount
+```
+
+Bu komut, abonelikteki tüm depolama hesaplarını alır.
+
+## PARAMETRELERINE
+
+### -DefaultProfile
+Azure ile iletişim için kullanılan kimlik bilgileri, hesap, kiracı ve abonelik.
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Ad
+Alınacak depolama hesabının adını belirtir.
+
+```yaml
+Type: System.String
+Parameter Sets: AccountNameParameterSet
+Aliases: StorageAccountName, AccountName
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -ResourceGroupName
+Alınacak depolama hesabını içeren kaynak grubunun adını belirtir.
+
+```yaml
+Type: System.String
+Parameter Sets: ResourceGroupParameterSet
+Aliases:
+
+Required: False
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+```yaml
+Type: System.String
+Parameter Sets: AccountNameParameterSet
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### CommonParameters
+Bu cmdlet ortak parametreleri destekler:-Debug,-ErrorAction,-ErrorVariable,-ınformationaction,-ınformationvariable,-OutVariable,-OutBuffer,-Pipelinedeğişken,-verbose,-WarningAction ve-Warningdeğişken. Daha fazla bilgi için bkz about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+
+## GÖLGELENDIRICI
+
+### System. String
+
+## ÇıKıŞLAR
+
+### Microsoft. Azure. Commands. Management. Storage. model. PSStorageAccount
+
+## NOTLARıNDA
+
+## ILGILI BAĞLANTıLAR
+
+[Yeni-AzureRmStorageAccount](./New-AzureRmStorageAccount.md)
+
+[Remove-AzureRmStorageAccount](./Remove-AzureRmStorageAccount.md)
+
+[Set-AzureRmStorageAccount](./Set-AzureRmStorageAccount.md)
+
+
