@@ -1,0 +1,399 @@
+---
+external help file: Microsoft.Azure.Commands.IotHub.dll-Help.xml
+Module Name: AzureRM.IotHub
+online version: https://docs.microsoft.com/en-us/powershell/module/azurerm.iothub/set-azurermiothub
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/ResourceManager/IotHub/Commands.IotHub/help/Set-AzureRmIotHub.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/ResourceManager/IotHub/Commands.IotHub/help/Set-AzureRmIotHub.md
+ms.openlocfilehash: a9005819bb78e5393f3a617dd18886309d3defc1
+ms.sourcegitcommit: f599b50d5e980197d1fca769378df90a842b42a1
+ms.translationtype: MT
+ms.contentlocale: tr-TR
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "93765005"
+---
+# Set-AzureRmIotHub
+
+## SYNOPSIS
+Bir IotHub özelliklerini güncelleştirir.
+
+[!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
+
+## INDEKI
+
+### UpdateSku (varsayılan)
+```
+Set-AzureRmIotHub -ResourceGroupName <String> -Name <String> -SkuName <PSIotHubSku> [-Units <Int64>]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### UpdateEventHubEndpointProperties
+```
+Set-AzureRmIotHub -ResourceGroupName <String> -Name <String> -EventHubRetentionTimeInDays <Int64>
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### UpdateFileUploadProperties
+```
+Set-AzureRmIotHub -ResourceGroupName <String> -Name <String> [-FileUploadStorageConnectionString <String>]
+ [-FileUploadContainerName <String>] [-FileUploadSasUriTtl <TimeSpan>] [-FileUploadNotificationTtl <TimeSpan>]
+ [-FileUploadNotificationMaxDeliveryCount <Int32>] -EnableFileUploadNotifications <Boolean>
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### UpdateCloudToDeviceProperties
+```
+Set-AzureRmIotHub -ResourceGroupName <String> -Name <String> -CloudToDevice <PSCloudToDeviceProperties>
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### Updateoperationsmenıtoringproperties
+```
+Set-AzureRmIotHub -ResourceGroupName <String> -Name <String>
+ -OperationsMonitoringProperties <PSOperationsMonitoringProperties> [-DefaultProfile <IAzureContextContainer>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### UpdateRoutingProperties
+```
+Set-AzureRmIotHub -ResourceGroupName <String> -Name <String> [-RoutingProperties <PSRoutingProperties>]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### UpdateRouteProperties
+```
+Set-AzureRmIotHub -ResourceGroupName <String> -Name <String>
+ [-Routes <System.Collections.Generic.List`1[Microsoft.Azure.Commands.Management.IotHub.Models.PSRouteMetadata]>]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### UpdateFallbackRouteProperty
+```
+Set-AzureRmIotHub -ResourceGroupName <String> -Name <String> [-FallbackRoute <PSFallbackRouteMetadata>]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## Tanım
+Bir IotHub özelliklerini güncelleştirir.
+
+## ÖRNEKLERDEN
+
+### Örnek 1 STB 'yi güncelleyin
+```
+PS C:\> Set-AzureRmIotHub -ResourceGroupName "myresourcegroup" -Name "myiothub" -SkuName S1 -Units 5
+```
+
+"Myiothub" adlı IotHub için STB 'yi S1 ve birimler 'i 5 olarak güncelleştirme
+
+### Örnek 2 eventhub özelliklerini güncelleyin
+```
+PS C:\> Set-AzureRmIotHub -ResourceGroupName "myresourcegroup" -Name "myiothub" -EventHubRetentionTimeInDays 4
+```
+
+"Myiothub" adlı IotHub için hem telemetri hem de operationsmon ""
+
+## PARAMETRELERINE
+
+### -CloudToDevice
+Cihaza bulut için komut sırası özellikleri. 
+
+```yaml
+Type: PSCloudToDeviceProperties
+Parameter Sets: UpdateCloudToDeviceProperties
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DefaultProfile
+Azure ile iletişim için kullanılan kimlik bilgileri, hesap, kiracı ve abonelik
+
+```yaml
+Type: IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -EnableFileUploadNotifications
+Dosyanın karşıya yüklenmesi için bildirimlerin etkinleştirilip etkinleştirilmeyeceğini belirten bayrak. 
+
+```yaml
+Type: Boolean
+Parameter Sets: UpdateFileUploadProperties
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -EventHubRetentionTimeInDays
+Gün içinde bekletme süresi. 
+
+```yaml
+Type: Int64
+Parameter Sets: UpdateEventHubEndpointProperties
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -FallbackRoute
+Yönlendirme için geri dönüş rotası
+
+```yaml
+Type: PSFallbackRouteMetadata
+Parameter Sets: UpdateFallbackRouteProperty
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -FileUploadContainerName
+Dosyaların yükleneceği kapsayıcının adı.
+
+```yaml
+Type: String
+Parameter Sets: UpdateFileUploadProperties
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -FileUploadNotificationMaxDeliveryCount
+Karşıya yükleme bildirimlerinin en yüksek teslim sayısı.  
+
+```yaml
+Type: Int32
+Parameter Sets: UpdateFileUploadProperties
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -FileUploadNotificationTtl
+Dosya karşıya yükleme bildirim sırasındaki iletilerin yaşam süresi. 
+
+```yaml
+Type: TimeSpan
+Parameter Sets: UpdateFileUploadProperties
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -FileUploadSasUriTtl
+Dosya karşıya yükleme için oluşturulan SAS URI 'Si için yaşam süresi. 
+
+```yaml
+Type: TimeSpan
+Parameter Sets: UpdateFileUploadProperties
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -FileUploadStorageConnectionString
+Dosyaların karşıya yükleneceği depolama bağlantı dizesi. 
+
+```yaml
+Type: String
+Parameter Sets: UpdateFileUploadProperties
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Ad
+IotHub adı
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Operationsmenıtoringproperties
+İşlem izleme ile ilgili özellikler. 
+
+```yaml
+Type: PSOperationsMonitoringProperties
+Parameter Sets: UpdateOperationsMonitoringProperties
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ResourceGroupName
+Kaynak grubu adı
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Rotalar
+Yönlendirme için eklenecek yollar
+
+```yaml
+Type: System.Collections.Generic.List`1[Microsoft.Azure.Commands.Management.IotHub.Models.PSRouteMetadata]
+Parameter Sets: UpdateRouteProperties
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -RoutingProperties
+İletileri dış uç noktalara yönlendirmek için yönlendirme özellikleri 
+
+```yaml
+Type: PSRoutingProperties
+Parameter Sets: UpdateRoutingProperties
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SkuName
+SKU 'nun adı.
+
+```yaml
+Type: PSIotHubSku
+Parameter Sets: UpdateSku
+Aliases: 
+Accepted values: F1, S1, S2, S3
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Birimler
+Birim sayısı
+
+```yaml
+Type: Int64
+Parameter Sets: UpdateSku
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Onay
+Cmdlet 'i çalıştırmadan önce onaylamanızı ister.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WhatIf
+Cmdlet çalışırsa ne olacağını gösterir.
+Cmdlet çalışmaz.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+Bu cmdlet ortak parametreleri destekler:-Debug,-ErrorAction,-ErrorVariable,-ınformationaction,-ınformationvariable,-OutVariable,-OutBuffer,-Pipelinedeğişken,-verbose,-WarningAction ve-Warningdeğişken. Daha fazla bilgi için bkz about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+
+## GÖLGELENDIRICI
+
+### System. String
+Microsoft. Azure. Commands. Management. IotHub. modeller. Pscmontodeviceproperties Microsoft. Azure. Commands. Management. IotHub. modeller. Psoperationsmenıtoringproperties
+
+## ÇıKıŞLAR
+
+### Microsoft. Azure. Commands. Management. IotHub. modeller. Psiçotub
+
+## NOTLARıNDA
+
+## ILGILI BAĞLANTıLAR
+
