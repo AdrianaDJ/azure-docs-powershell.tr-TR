@@ -1,0 +1,325 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.MachineLearningCompute.dll-Help.xml
+Module Name: Az.MachineLearning
+online version: https://docs.microsoft.com/en-us/powershell/module/az.machinelearning/set-azmlopcluster
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/MachineLearning/MachineLearning/help/Set-AzMlOpCluster.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/MachineLearning/MachineLearning/help/Set-AzMlOpCluster.md
+ms.openlocfilehash: 833b3456cd39e4589ceaf37e0c86fd654c250ddc
+ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.translationtype: MT
+ms.contentlocale: tr-TR
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "93915848"
+---
+# <span data-ttu-id="6c808-101">Set-AzMlOpCluster</span><span class="sxs-lookup"><span data-stu-id="6c808-101">Set-AzMlOpCluster</span></span>
+
+## <span data-ttu-id="6c808-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="6c808-102">SYNOPSIS</span></span>
+<span data-ttu-id="6c808-103">Bir operationalization kümesinin özelliklerini ayarlar.</span><span class="sxs-lookup"><span data-stu-id="6c808-103">Sets the properties of an operationalization cluster.</span></span>
+
+## <span data-ttu-id="6c808-104">INDEKI</span><span class="sxs-lookup"><span data-stu-id="6c808-104">SYNTAX</span></span>
+
+### <span data-ttu-id="6c808-105">Setbybireyalparameters (varsayılan)</span><span class="sxs-lookup"><span data-stu-id="6c808-105">SetByIndividualParameters (Default)</span></span>
+```
+Set-AzMlOpCluster -ResourceGroupName <String> -Name <String> [-AgentCount <Int32>] [-SslStatus <String>]
+ [-SslCertificate <String>] [-SslKey <String>] [-SslCName <String>] [-DefaultProfile <IAzureContextContainer>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### <span data-ttu-id="6c808-106">SetByInputObject</span><span class="sxs-lookup"><span data-stu-id="6c808-106">SetByInputObject</span></span>
+```
+Set-AzMlOpCluster -InputObject <PSOperationalizationCluster> [-AgentCount <Int32>] [-SslStatus <String>]
+ [-SslCertificate <String>] [-SslKey <String>] [-SslCName <String>] [-DefaultProfile <IAzureContextContainer>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### <span data-ttu-id="6c808-107">Setbyresourceıd</span><span class="sxs-lookup"><span data-stu-id="6c808-107">SetByResourceId</span></span>
+```
+Set-AzMlOpCluster -ResourceId <String> [-AgentCount <Int32>] [-SslStatus <String>] [-SslCertificate <String>]
+ [-SslKey <String>] [-SslCName <String>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
+```
+
+## <span data-ttu-id="6c808-108">Tanım</span><span class="sxs-lookup"><span data-stu-id="6c808-108">DESCRIPTION</span></span>
+<span data-ttu-id="6c808-109">Bir operationalization kümesinin tüm özelliklerini ayarlar.</span><span class="sxs-lookup"><span data-stu-id="6c808-109">Sets all the properties of an operationalization cluster.</span></span> <span data-ttu-id="6c808-110">Küme nesnesini kullanırken tüm özellikleri ayarlarken tam olarak geçerli bir giriş nesnesi iletilmelidir.</span><span class="sxs-lookup"><span data-stu-id="6c808-110">Since it sets all the properties when using a cluster object a fully valid input object must be passed.</span></span> <span data-ttu-id="6c808-111">Salt okunur özellikler yoksayılacak.</span><span class="sxs-lookup"><span data-stu-id="6c808-111">Read-only properties will be ignored.</span></span> <span data-ttu-id="6c808-112">Parametre kümelerinde gösterildiği gibi, şu anda yalnızca bazı özellikler güncelleştirilebilir.</span><span class="sxs-lookup"><span data-stu-id="6c808-112">Only some properties are currently updatable, as shown in the parameter sets.</span></span>
+
+## <span data-ttu-id="6c808-113">ÖRNEKLERDEN</span><span class="sxs-lookup"><span data-stu-id="6c808-113">EXAMPLES</span></span>
+
+### <span data-ttu-id="6c808-114">Örnek 1</span><span class="sxs-lookup"><span data-stu-id="6c808-114">Example 1</span></span>
+<span data-ttu-id="6c808-115">Tek tek parametreleri kullanarak kümeyi güncelleyin.</span><span class="sxs-lookup"><span data-stu-id="6c808-115">Update a cluster using individual parameters.</span></span>
+
+```
+PS C:\> Set-AzMlOpCluster -ResourceGroupName my-rg -ClusterName my-cluster -AgentCount 5
+```
+
+### <span data-ttu-id="6c808-116">Örnek 2</span><span class="sxs-lookup"><span data-stu-id="6c808-116">Example 2</span></span>
+<span data-ttu-id="6c808-117">Giriş nesnesini kullanarak kümeyi güncelleştirme.</span><span class="sxs-lookup"><span data-stu-id="6c808-117">Update a cluster using an input object.</span></span>
+
+```
+PS C:\> $cluster = Get-AzMlOpCluster -ResourceGroupName my-rg -ClusterName my-cluster
+PS C:\> $cluster.ContainerService.AgentCount = 5
+PS C:\> Set-AzMlOpCluster -InputObject $cluster
+```
+
+## <span data-ttu-id="6c808-118">PARAMETRELERINE</span><span class="sxs-lookup"><span data-stu-id="6c808-118">PARAMETERS</span></span>
+
+### <span data-ttu-id="6c808-119">-AgentCount</span><span class="sxs-lookup"><span data-stu-id="6c808-119">-AgentCount</span></span>
+<span data-ttu-id="6c808-120">ACS kümesindeki aracı düğümlerinin sayısı.</span><span class="sxs-lookup"><span data-stu-id="6c808-120">The number of agent nodes in the ACS cluster.</span></span>
+
+```yaml
+Type: System.Nullable`1[System.Int32]
+Parameter Sets: SetByIndividualParameters, SetByResourceId
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+```yaml
+Type: System.Nullable`1[System.Int32]
+Parameter Sets: SetByInputObject
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="6c808-121">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="6c808-121">-DefaultProfile</span></span>
+<span data-ttu-id="6c808-122">Azure ile iletişim için kullanılan kimlik bilgileri, hesap, kiracı ve abonelik.</span><span class="sxs-lookup"><span data-stu-id="6c808-122">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="6c808-123">-InputObject</span><span class="sxs-lookup"><span data-stu-id="6c808-123">-InputObject</span></span>
+<span data-ttu-id="6c808-124">Operationalization kümesi özellikleri.</span><span class="sxs-lookup"><span data-stu-id="6c808-124">The operationalization cluster properties.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.MachineLearningCompute.Models.PSOperationalizationCluster
+Parameter Sets: SetByInputObject
+Aliases: Cluster
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="6c808-125">-Ad</span><span class="sxs-lookup"><span data-stu-id="6c808-125">-Name</span></span>
+<span data-ttu-id="6c808-126">Operationalization kümesi adı.</span><span class="sxs-lookup"><span data-stu-id="6c808-126">The name of the operationalization cluster.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: SetByIndividualParameters
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="6c808-127">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="6c808-127">-ResourceGroupName</span></span>
+<span data-ttu-id="6c808-128">Operationalization kümesi için kaynak grubunun adı.</span><span class="sxs-lookup"><span data-stu-id="6c808-128">The name of the resource group for the operationalization cluster.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: SetByIndividualParameters
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="6c808-129">-RESOURCEID</span><span class="sxs-lookup"><span data-stu-id="6c808-129">-ResourceId</span></span>
+<span data-ttu-id="6c808-130">Operationalization kümesi için Azure Resource ID.</span><span class="sxs-lookup"><span data-stu-id="6c808-130">The Azure resource id for the operationalization cluster.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: SetByResourceId
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="6c808-131">-SslCertificate</span><span class="sxs-lookup"><span data-stu-id="6c808-131">-SslCertificate</span></span>
+<span data-ttu-id="6c808-132">PEM biçimindeki SSL sertifikası verileri.</span><span class="sxs-lookup"><span data-stu-id="6c808-132">The SSL certificate data in PEM format.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: SetByIndividualParameters, SetByResourceId
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+```yaml
+Type: System.String
+Parameter Sets: SetByInputObject
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="6c808-133">-SslCName</span><span class="sxs-lookup"><span data-stu-id="6c808-133">-SslCName</span></span>
+<span data-ttu-id="6c808-134">SSL sertifikası için CName.</span><span class="sxs-lookup"><span data-stu-id="6c808-134">The CName for the SSL certificate.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: SetByIndividualParameters, SetByResourceId
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+```yaml
+Type: System.String
+Parameter Sets: SetByInputObject
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="6c808-135">-SslKey</span><span class="sxs-lookup"><span data-stu-id="6c808-135">-SslKey</span></span>
+<span data-ttu-id="6c808-136">PEM biçimindeki SSL anahtar verileri.</span><span class="sxs-lookup"><span data-stu-id="6c808-136">The SSL key data in PEM format.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: SetByIndividualParameters, SetByResourceId
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+```yaml
+Type: System.String
+Parameter Sets: SetByInputObject
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="6c808-137">-SslStatus</span><span class="sxs-lookup"><span data-stu-id="6c808-137">-SslStatus</span></span>
+<span data-ttu-id="6c808-138">SSL durumu.</span><span class="sxs-lookup"><span data-stu-id="6c808-138">SSL status.</span></span>
+<span data-ttu-id="6c808-139">Olası değerler ' Enabled ' ve ' Disabled ' değerleridir.</span><span class="sxs-lookup"><span data-stu-id="6c808-139">Possible values are 'Enabled' and 'Disabled'.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: SetByIndividualParameters, SetByResourceId
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+```yaml
+Type: System.String
+Parameter Sets: SetByInputObject
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="6c808-140">-Onay</span><span class="sxs-lookup"><span data-stu-id="6c808-140">-Confirm</span></span>
+<span data-ttu-id="6c808-141">Cmdlet 'i çalıştırmadan önce onaylamanızı ister.</span><span class="sxs-lookup"><span data-stu-id="6c808-141">Prompts you for confirmation before running the cmdlet.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="6c808-142">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="6c808-142">-WhatIf</span></span>
+<span data-ttu-id="6c808-143">Cmdlet çalışırsa ne olacağını gösterir.</span><span class="sxs-lookup"><span data-stu-id="6c808-143">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="6c808-144">Cmdlet çalışmaz.</span><span class="sxs-lookup"><span data-stu-id="6c808-144">The cmdlet is not run.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="6c808-145">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="6c808-145">CommonParameters</span></span>
+<span data-ttu-id="6c808-146">Bu cmdlet ortak parametreleri destekler:-Debug,-ErrorAction,-ErrorVariable,-ınformationaction,-ınformationvariable,-OutVariable,-OutBuffer,-Pipelinedeğişken,-verbose,-WarningAction ve-Warningdeğişken.</span><span class="sxs-lookup"><span data-stu-id="6c808-146">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="6c808-147">Daha fazla bilgi için bkz about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="6c808-147">For more information, see about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="6c808-148">GÖLGELENDIRICI</span><span class="sxs-lookup"><span data-stu-id="6c808-148">INPUTS</span></span>
+
+### <span data-ttu-id="6c808-149">Microsoft. Azure. Commands. Machinon Arningcompute. model. PSOperationalizationCluster</span><span class="sxs-lookup"><span data-stu-id="6c808-149">Microsoft.Azure.Commands.MachineLearningCompute.Models.PSOperationalizationCluster</span></span>
+
+### <span data-ttu-id="6c808-150">System. String</span><span class="sxs-lookup"><span data-stu-id="6c808-150">System.String</span></span>
+
+### <span data-ttu-id="6c808-151">System. Nullable ' 1 [[System. Int32, System. Private. CoreLib, Version = 4.0.0.0, Culture = neutral, PublicKeyToken = 7cec85vseç7val 7798e]]</span><span class="sxs-lookup"><span data-stu-id="6c808-151">System.Nullable\`1[[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]</span></span>
+
+## <span data-ttu-id="6c808-152">ÇıKıŞLAR</span><span class="sxs-lookup"><span data-stu-id="6c808-152">OUTPUTS</span></span>
+
+### <span data-ttu-id="6c808-153">Microsoft. Azure. Commands. Machinon Arningcompute. model. PSOperationalizationCluster</span><span class="sxs-lookup"><span data-stu-id="6c808-153">Microsoft.Azure.Commands.MachineLearningCompute.Models.PSOperationalizationCluster</span></span>
+
+## <span data-ttu-id="6c808-154">NOTLARıNDA</span><span class="sxs-lookup"><span data-stu-id="6c808-154">NOTES</span></span>
+
+## <span data-ttu-id="6c808-155">ILGILI BAĞLANTıLAR</span><span class="sxs-lookup"><span data-stu-id="6c808-155">RELATED LINKS</span></span>
