@@ -1,0 +1,204 @@
+---
+external help file: Microsoft.Azure.Commands.OperationalInsights.dll-Help.xml
+Module Name: AzureRM.OperationalInsights
+ms.assetid: 010328F9-C878-4F16-AFD7-2135465A1968
+online version: ''
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/ResourceManager/OperationalInsights/Commands.OperationalInsights/help/Set-AzureRmOperationalInsightsStorageInsight.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/ResourceManager/OperationalInsights/Commands.OperationalInsights/help/Set-AzureRmOperationalInsightsStorageInsight.md
+ms.openlocfilehash: 85c85be195df2dfa393cbd4d91ae62d8731dbf93
+ms.sourcegitcommit: f599b50d5e980197d1fca769378df90a842b42a1
+ms.translationtype: MT
+ms.contentlocale: tr-TR
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "93764254"
+---
+# <span data-ttu-id="b9530-101">Set-AzureRmOperationalInsightsStorageInsight</span><span class="sxs-lookup"><span data-stu-id="b9530-101">Set-AzureRmOperationalInsightsStorageInsight</span></span>
+
+## <span data-ttu-id="b9530-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="b9530-102">SYNOPSIS</span></span>
+<span data-ttu-id="b9530-103">Bir depolama Insight güncelleştirir.</span><span class="sxs-lookup"><span data-stu-id="b9530-103">Updates a Storage Insight.</span></span>
+
+[!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
+
+## <span data-ttu-id="b9530-104">INDEKI</span><span class="sxs-lookup"><span data-stu-id="b9530-104">SYNTAX</span></span>
+
+### <span data-ttu-id="b9530-105">Byçalışmaalanıadı (varsayılan)</span><span class="sxs-lookup"><span data-stu-id="b9530-105">ByWorkspaceName (Default)</span></span>
+```
+Set-AzureRmOperationalInsightsStorageInsight [-ResourceGroupName] <String> [-WorkspaceName] <String>
+ [-Name] <String> [[-StorageAccountKey] <String>] [[-Tables] <String[]>] [[-Containers] <String[]>]
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+### <span data-ttu-id="b9530-106">Byworkspace nesnesi</span><span class="sxs-lookup"><span data-stu-id="b9530-106">ByWorkspaceObject</span></span>
+```
+Set-AzureRmOperationalInsightsStorageInsight [-Workspace] <PSWorkspace> [-Name] <String>
+ [[-StorageAccountKey] <String>] [[-Tables] <String[]>] [[-Containers] <String[]>]
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+## <span data-ttu-id="b9530-107">Tanım</span><span class="sxs-lookup"><span data-stu-id="b9530-107">DESCRIPTION</span></span>
+<span data-ttu-id="b9530-108">**Set-Azurermoperationalınsightsstorageınsight** cmdlet 'ı bir depolama Insight yapılandırmasını değiştirir.</span><span class="sxs-lookup"><span data-stu-id="b9530-108">The **Set-AzureRmOperationalInsightsStorageInsight** cmdlet changes the configuration of a Storage Insight.</span></span>
+
+## <span data-ttu-id="b9530-109">ÖRNEKLERDEN</span><span class="sxs-lookup"><span data-stu-id="b9530-109">EXAMPLES</span></span>
+
+### <span data-ttu-id="b9530-110">Örnek 1: adla bir depolama kavramı değiştirme</span><span class="sxs-lookup"><span data-stu-id="b9530-110">Example 1: Modify a Storage Insight by name</span></span>
+```
+PS C:\>Set-AzureRmOperationalInsightsStorageInsight -ResourceGroupName "ContosoResourceGroup" -WorkspaceName "MyWorkspace" -Name "MyStorageInsight" -Tables @("WADWindowsEventLogsTable")
+```
+
+<span data-ttu-id="b9530-111">Bu komut Mystorageınsight adındaki depolama kavramasındaki tabloları değiştirir.</span><span class="sxs-lookup"><span data-stu-id="b9530-111">This command modifies the tables from which the Storage Insight named MyStorageInsight reads.</span></span>
+
+### <span data-ttu-id="b9530-112">Örnek 2: çalışma alanı nesnesi kullanarak bir depolama anlayış değiştirme</span><span class="sxs-lookup"><span data-stu-id="b9530-112">Example 2: Modify a Storage Insight by using a workspace object</span></span>
+```
+PS C:\>$Workspace = Get-AzureRmOperationalInsightsWorkspace -ResourceGroupName "ContosoResourceGroup" -Name "MyWorkspace"
+
+PS C:\>Set-AzureRmOperationalInsightsStorageInsight -Workspace $Workspace -Name "MyStorageInsight" -Containers @("wad-iis-logfiles")
+```
+
+<span data-ttu-id="b9530-113">İlk komut MyWorkspace adlı çalışma alanını almak için Get-AzureRmOperationalInsightsWorkspace cmdlet 'ini kullanır ve $Workspace değişkeninde depolar.</span><span class="sxs-lookup"><span data-stu-id="b9530-113">The first command uses the Get-AzureRmOperationalInsightsWorkspace cmdlet to get the workspace named MyWorkspace, and then stores it in the $Workspace variable.</span></span>
+
+<span data-ttu-id="b9530-114">İkinci komut Mystorageınsight adındaki depolama kavramasındaki kapsayıcıları değiştirir.</span><span class="sxs-lookup"><span data-stu-id="b9530-114">The second command modifies the containers from which the Storage Insight named MyStorageInsight reads.</span></span>
+
+## <span data-ttu-id="b9530-115">PARAMETRELERINE</span><span class="sxs-lookup"><span data-stu-id="b9530-115">PARAMETERS</span></span>
+
+### <span data-ttu-id="b9530-116">-Kapsayıcılar</span><span class="sxs-lookup"><span data-stu-id="b9530-116">-Containers</span></span>
+<span data-ttu-id="b9530-117">Verileri sağlayan kapsayıcıların listesini belirtir.</span><span class="sxs-lookup"><span data-stu-id="b9530-117">Specifies the list of containers that provide the data.</span></span>
+
+```yaml
+Type: System.String[]
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: 6
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="b9530-118">-Ad</span><span class="sxs-lookup"><span data-stu-id="b9530-118">-Name</span></span>
+<span data-ttu-id="b9530-119">Bir depolama anlayış adını belirtir.</span><span class="sxs-lookup"><span data-stu-id="b9530-119">Specifies the name of a Storage Insight.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: 
+
+Required: True
+Position: 3
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="b9530-120">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="b9530-120">-ResourceGroupName</span></span>
+<span data-ttu-id="b9530-121">Çalışma alanı içeren bir Azure Kaynak grubunun adını belirtir.</span><span class="sxs-lookup"><span data-stu-id="b9530-121">Specifies the name of an Azure resource group that contains a workspace.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ByWorkspaceName
+Aliases: 
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="b9530-122">-StorageAccountKey</span><span class="sxs-lookup"><span data-stu-id="b9530-122">-StorageAccountKey</span></span>
+<span data-ttu-id="b9530-123">Depolama hesabı için erişim anahtarını belirtir.</span><span class="sxs-lookup"><span data-stu-id="b9530-123">Specifies the access key for the storage account.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: 4
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="b9530-124">-Tablolar</span><span class="sxs-lookup"><span data-stu-id="b9530-124">-Tables</span></span>
+<span data-ttu-id="b9530-125">Verileri içeren tabloların listesini belirtir.</span><span class="sxs-lookup"><span data-stu-id="b9530-125">Specifies the list of tables that contain the data.</span></span>
+
+```yaml
+Type: System.String[]
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: 5
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="b9530-126">-Çalışma alanı</span><span class="sxs-lookup"><span data-stu-id="b9530-126">-Workspace</span></span>
+<span data-ttu-id="b9530-127">Depolama kavramı içeren çalışma alanını belirtir.</span><span class="sxs-lookup"><span data-stu-id="b9530-127">Specifies the workspace that contains the Storage Insight.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.OperationalInsights.Models.PSWorkspace
+Parameter Sets: ByWorkspaceObject
+Aliases: 
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="b9530-128">-Çalışmaalanıadı</span><span class="sxs-lookup"><span data-stu-id="b9530-128">-WorkspaceName</span></span>
+<span data-ttu-id="b9530-129">Çalışma alanının adını belirtir.</span><span class="sxs-lookup"><span data-stu-id="b9530-129">Specifies the name of a workspace.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ByWorkspaceName
+Aliases: 
+
+Required: True
+Position: 2
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="b9530-130">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="b9530-130">-DefaultProfile</span></span>
+<span data-ttu-id="b9530-131">Azure ile iletişim için kullanılan kimlik bilgileri, hesap, kiracı ve abonelik.</span><span class="sxs-lookup"><span data-stu-id="b9530-131">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="b9530-132">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="b9530-132">CommonParameters</span></span>
+<span data-ttu-id="b9530-133">Bu cmdlet ortak parametreleri destekler:-Debug,-ErrorAction,-ErrorVariable,-ınformationaction,-ınformationvariable,-OutVariable,-OutBuffer,-Pipelinedeğişken,-verbose,-WarningAction ve-Warningdeğişken.</span><span class="sxs-lookup"><span data-stu-id="b9530-133">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="b9530-134">Daha fazla bilgi için bkz about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="b9530-134">For more information, see about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="b9530-135">GÖLGELENDIRICI</span><span class="sxs-lookup"><span data-stu-id="b9530-135">INPUTS</span></span>
+
+### <span data-ttu-id="b9530-136">PSWorkspace</span><span class="sxs-lookup"><span data-stu-id="b9530-136">PSWorkspace</span></span>
+<span data-ttu-id="b9530-137">Parametre ' çalışma alanı ', ardışık düzenin ' PSWorkspace ' türünün değerini kabul eder</span><span class="sxs-lookup"><span data-stu-id="b9530-137">Parameter 'Workspace' accepts value of type 'PSWorkspace' from the pipeline</span></span>
+
+## <span data-ttu-id="b9530-138">ÇıKıŞLAR</span><span class="sxs-lookup"><span data-stu-id="b9530-138">OUTPUTS</span></span>
+
+### <span data-ttu-id="b9530-139">Microsoft. Azure. Commands. Operationalınsights. modeller. Psstorageınsight</span><span class="sxs-lookup"><span data-stu-id="b9530-139">Microsoft.Azure.Commands.OperationalInsights.Models.PSStorageInsight</span></span>
+
+## <span data-ttu-id="b9530-140">NOTLARıNDA</span><span class="sxs-lookup"><span data-stu-id="b9530-140">NOTES</span></span>
+
+## <span data-ttu-id="b9530-141">ILGILI BAĞLANTıLAR</span><span class="sxs-lookup"><span data-stu-id="b9530-141">RELATED LINKS</span></span>
+
+[<span data-ttu-id="b9530-142">Azure Operasyonel Öngörüler cmdlet 'Leri</span><span class="sxs-lookup"><span data-stu-id="b9530-142">Azure Operational Insights Cmdlets</span></span>](./AzureRM.OperationalInsights.md)
+
+[<span data-ttu-id="b9530-143">Get-Azurermoperationalınsightsworkspace</span><span class="sxs-lookup"><span data-stu-id="b9530-143">Get-AzureRmOperationalInsightsWorkspace</span></span>](./Get-AzureRmOperationalInsightsWorkspace.md)
+
+
