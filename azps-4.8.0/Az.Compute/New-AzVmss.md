@@ -1,0 +1,841 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.Compute.dll-Help.xml
+Module Name: Az.Compute
+ms.assetid: 1A2C843C-6962-4B0E-ACBF-A5EFF609A5BE
+online version: https://docs.microsoft.com/en-us/powershell/module/az.compute/new-azvmss
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/New-AzVmss.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/New-AzVmss.md
+ms.openlocfilehash: deb33c8e26dcedd96a6cdb3073b9c71f26750abf
+ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.translationtype: MT
+ms.contentlocale: tr-TR
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "94109813"
+---
+# <span data-ttu-id="d3963-101">New-AzVmss</span><span class="sxs-lookup"><span data-stu-id="d3963-101">New-AzVmss</span></span>
+
+## <span data-ttu-id="d3963-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="d3963-102">SYNOPSIS</span></span>
+<span data-ttu-id="d3963-103">Bir VMSS oluşturur.</span><span class="sxs-lookup"><span data-stu-id="d3963-103">Creates a VMSS.</span></span>
+
+## <span data-ttu-id="d3963-104">INDEKI</span><span class="sxs-lookup"><span data-stu-id="d3963-104">SYNTAX</span></span>
+
+### <span data-ttu-id="d3963-105">DefaultParameter (varsayılan)</span><span class="sxs-lookup"><span data-stu-id="d3963-105">DefaultParameter (Default)</span></span>
+```
+New-AzVmss [-ResourceGroupName] <String> [-VMScaleSetName] <String>
+ [-VirtualMachineScaleSet] <PSVirtualMachineScaleSet> [-AsJob] [-DefaultProfile <IAzureContextContainer>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### <span data-ttu-id="d3963-106">SimpleParameterSet</span><span class="sxs-lookup"><span data-stu-id="d3963-106">SimpleParameterSet</span></span>
+```
+New-AzVmss [[-ResourceGroupName] <String>] [-VMScaleSetName] <String> [-AsJob] [-ImageName <String>]
+ -Credential <PSCredential> [-InstanceCount <Int32>] [-VirtualNetworkName <String>] [-SubnetName <String>]
+ [-PublicIpAddressName <String>] [-DomainNameLabel <String>] [-SecurityGroupName <String>]
+ [-LoadBalancerName <String>] [-BackendPort <Int32[]>] [-Location <String>] [-VmSize <String>]
+ [-UpgradePolicyMode <UpgradeMode>] [-AllocationMethod <String>] [-VnetAddressPrefix <String>]
+ [-SubnetAddressPrefix <String>] [-FrontendPoolName <String>] [-BackendPoolName <String>]
+ [-SystemAssignedIdentity] [-UserAssignedIdentity <String>] [-EnableUltraSSD]
+ [-Zone <System.Collections.Generic.List`1[System.String]>] [-NatBackendPort <Int32[]>]
+ [-DataDiskSizeInGb <Int32[]>] [-ProximityPlacementGroupId <String>] [-HostGroupId <String>] 
+ [-Priority <String>] [-EvictionPolicy <String>] [-MaxPrice <Double>] [-ScaleInPolicy <String[]>]
+ [-SkipExtensionsOnOverprovisionedVMs] [-EncryptionAtHost] [-DefaultProfile <IAzureContextContainer>]
+ [-SinglePlacementGroup] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## <span data-ttu-id="d3963-107">Tanım</span><span class="sxs-lookup"><span data-stu-id="d3963-107">DESCRIPTION</span></span>
+<span data-ttu-id="d3963-108">**New-AzVmss** cmdlet 'i Azure 'Da sanal makine ölçek KÜMESI (VMSS) oluşturur.</span><span class="sxs-lookup"><span data-stu-id="d3963-108">The **New-AzVmss** cmdlet creates a Virtual Machine Scale Set (VMSS) in Azure.</span></span>
+<span data-ttu-id="d3963-109">`SimpleParameterSet`Önceden ayarlanmış BIR VMSS ve ilişkili kaynakları hızlı şekilde oluşturmak için basit parametre kümesi () kullanın.</span><span class="sxs-lookup"><span data-stu-id="d3963-109">Use the simple parameter set (`SimpleParameterSet`) to quickly create a pre-set VMSS and associated resources.</span></span> <span data-ttu-id="d3963-110">`DefaultParameter`Vmsubnet 'in her bileşenini ve oluşturmadan önce her ilişkili kaynağı tam olarak yapılandırmanız gerektiğinde daha gelişmiş senaryolar için varsayılan parametre kümesi 'ni () kullanın.</span><span class="sxs-lookup"><span data-stu-id="d3963-110">Use the default parameter set (`DefaultParameter`) for more advanced scenarios when you need to precisely configure each component of the VMSS and each associated resource before creation.</span></span>
+
+## <span data-ttu-id="d3963-111">ÖRNEKLERDEN</span><span class="sxs-lookup"><span data-stu-id="d3963-111">EXAMPLES</span></span>
+
+### <span data-ttu-id="d3963-112">Örnek 1: **`SimpleParameterSet`**</span><span class="sxs-lookup"><span data-stu-id="d3963-112">Example 1: Create a VMSS using the **`SimpleParameterSet`**</span></span>
+```powershell
+$vmssName = <VMSSNAME>
+# Create credentials, I am using one way to create credentials, there are others as well. 
+# Pick one that makes the most sense according to your use case.
+$vmPassword = ConvertTo-SecureString <PASSWORD_HERE> -AsPlainText -Force
+$vmCred = New-Object System.Management.Automation.PSCredential(<USERNAME_HERE>, $vmPassword)
+
+#Create a VMSS using the default settings
+New-AzVmss -Credential $vmCred -VMScaleSetName $vmssName
+```
+
+<span data-ttu-id="d3963-113">Yukarıdaki komut, adla aşağıdakileri oluşturur `$vmssName` :</span><span class="sxs-lookup"><span data-stu-id="d3963-113">The command above creates the following with the name `$vmssName` :</span></span>
+* <span data-ttu-id="d3963-114">Kaynak grubu</span><span class="sxs-lookup"><span data-stu-id="d3963-114">A Resource Group</span></span>
+* <span data-ttu-id="d3963-115">Sanal ağ</span><span class="sxs-lookup"><span data-stu-id="d3963-115">A virtual network</span></span>
+* <span data-ttu-id="d3963-116">Bir yük dengeleyici</span><span class="sxs-lookup"><span data-stu-id="d3963-116">A load balancer</span></span>
+* <span data-ttu-id="d3963-117">Genel bir IP</span><span class="sxs-lookup"><span data-stu-id="d3963-117">A public IP</span></span>
+* <span data-ttu-id="d3963-118">2 örnek içeren VMSS</span><span class="sxs-lookup"><span data-stu-id="d3963-118">the VMSS with 2 instances</span></span>
+
+<span data-ttu-id="d3963-119">VMSS 'deki VM 'Ler için seçilen varsayılan görüntü `2016-Datacenter Windows Server``Standard_DS1_v2`</span><span class="sxs-lookup"><span data-stu-id="d3963-119">The default image chosen for the VMs in the VMSS is `2016-Datacenter Windows Server` and the SKU is `Standard_DS1_v2`</span></span>
+
+### <span data-ttu-id="d3963-120">Örnek 2: **`DefaultParameterSet`**</span><span class="sxs-lookup"><span data-stu-id="d3963-120">Example 2: Create a VMSS using the **`DefaultParameterSet`**</span></span>
+```powershell
+# Common
+$LOC = "WestUs";
+$RGName = "rgkyvms";
+
+New-AzResourceGroup -Name $RGName -Location $LOC -Force;
+
+# SRP
+$STOName = "STO" + $RGName;
+$STOType = "Standard_GRS";
+New-AzStorageAccount -ResourceGroupName $RGName -Name $STOName -Location $LOC -Type $STOType;
+$STOAccount = Get-AzStorageAccount -ResourceGroupName $RGName -Name $STOName; 
+
+# NRP
+$SubNet = New-AzVirtualNetworkSubnetConfig -Name ("subnet" + $RGName) -AddressPrefix "10.0.0.0/24";
+$VNet = New-AzVirtualNetwork -Force -Name ("vnet" + $RGName) -ResourceGroupName $RGName -Location $LOC -AddressPrefix "10.0.0.0/16" -DnsServer "10.1.1.1" -Subnet $SubNet;
+$VNet = Get-AzVirtualNetwork -Name ('vnet' + $RGName) -ResourceGroupName $RGName;
+$SubNetId = $VNet.Subnets[0].Id;
+
+$PubIP = New-AzPublicIpAddress -Force -Name ("PubIP" + $RGName) -ResourceGroupName $RGName -Location $LOC -AllocationMethod Dynamic -DomainNameLabel ("PubIP" + $RGName);
+$PubIP = Get-AzPublicIpAddress -Name ("PubIP"  + $RGName) -ResourceGroupName $RGName;
+
+# Create LoadBalancer
+$FrontendName = "fe" + $RGName
+$BackendAddressPoolName = "bepool" + $RGName
+$ProbeName = "vmssprobe" + $RGName
+$InboundNatPoolName  = "innatpool" + $RGName
+$LBRuleName = "lbrule" + $RGName
+$LBName = "vmsslb" + $RGName
+
+$Frontend = New-AzLoadBalancerFrontendIpConfig -Name $FrontendName -PublicIpAddress $PubIP
+$BackendAddressPool = New-AzLoadBalancerBackendAddressPoolConfig -Name $BackendAddressPoolName
+$Probe = New-AzLoadBalancerProbeConfig -Name $ProbeName -RequestPath healthcheck.aspx -Protocol http -Port 80 -IntervalInSeconds 15 -ProbeCount 2
+$InboundNatPool = New-AzLoadBalancerInboundNatPoolConfig -Name $InboundNatPoolName  -FrontendIPConfigurationId `
+    $Frontend.Id -Protocol Tcp -FrontendPortRangeStart 3360 -FrontendPortRangeEnd 3362 -BackendPort 3370;
+$LBRule = New-AzLoadBalancerRuleConfig -Name $LBRuleName `
+    -FrontendIPConfiguration $Frontend -BackendAddressPool $BackendAddressPool `
+    -Probe $Probe -Protocol Tcp -FrontendPort 80 -BackendPort 80 `
+    -IdleTimeoutInMinutes 15 -EnableFloatingIP -LoadDistribution SourceIP;
+$ActualLb = New-AzLoadBalancer -Name $LBName -ResourceGroupName $RGName -Location $LOC `
+    -FrontendIpConfiguration $Frontend -BackendAddressPool $BackendAddressPool `
+    -Probe $Probe -LoadBalancingRule $LBRule -InboundNatPool $InboundNatPool;
+$ExpectedLb = Get-AzLoadBalancer -Name $LBName -ResourceGroupName $RGName
+
+# New VMSS Parameters
+$VMSSName = "VMSS" + $RGName;
+
+$AdminUsername = "Admin01";
+$AdminPassword = "p4ssw0rd@123" + $RGName;
+
+$PublisherName = "MicrosoftWindowsServer" 
+$Offer         = "WindowsServer" 
+$Sku           = "2012-R2-Datacenter" 
+$Version       = "latest"
+        
+$VHDContainer = "https://" + $STOName + ".blob.core.contoso.net/" + $VMSSName;
+
+$ExtName = "CSETest";
+$Publisher = "Microsoft.Compute";
+$ExtType = "BGInfo";
+$ExtVer = "2.1";
+
+#IP Config for the NIC
+$IPCfg = New-AzVmssIPConfig -Name "Test" `
+    -LoadBalancerInboundNatPoolsId $ExpectedLb.InboundNatPools[0].Id `
+    -LoadBalancerBackendAddressPoolsId $ExpectedLb.BackendAddressPools[0].Id `
+    -SubnetId $SubNetId;
+            
+#VMSS Config
+$VMSS = New-AzVmssConfig -Location $LOC -SkuCapacity 2 -SkuName "Standard_E4-2ds_v4" -UpgradePolicyMode "Automatic" `
+    | Add-AzVmssNetworkInterfaceConfiguration -Name "Test" -Primary $True -IPConfiguration $IPCfg `
+    | Add-AzVmssNetworkInterfaceConfiguration -Name "Test2"  -IPConfiguration $IPCfg `
+    | Set-AzVmssOSProfile -ComputerNamePrefix "Test"  -AdminUsername $AdminUsername -AdminPassword $AdminPassword `
+    | Set-AzVmssStorageProfile -Name "Test"  -OsDiskCreateOption 'FromImage' -OsDiskCaching "None" `
+    -ImageReferenceOffer $Offer -ImageReferenceSku $Sku -ImageReferenceVersion $Version `
+    -ImageReferencePublisher $PublisherName -VhdContainer $VHDContainer `
+    | Add-AzVmssExtension -Name $ExtName -Publisher $Publisher -Type $ExtType -TypeHandlerVersion $ExtVer -AutoUpgradeMinorVersion $True
+
+#Create the VMSS
+New-AzVmss -ResourceGroupName $RGName -Name $VMSSName -VirtualMachineScaleSet $VMSS;
+```
+
+<span data-ttu-id="d3963-121">Yukarıdaki karmaşık örnek bir VMSS oluşturur, bunun anlamı aşağıda verilmiştir:</span><span class="sxs-lookup"><span data-stu-id="d3963-121">The complex example above creates a VMSS, following is an explanation of what is happening:</span></span>
+* <span data-ttu-id="d3963-122">İlk komut belirtilen ad ve konuma sahip bir kaynak grubu oluşturur.</span><span class="sxs-lookup"><span data-stu-id="d3963-122">The first command creates a resource group with the specified name and location.</span></span>
+* <span data-ttu-id="d3963-123">İkinci komut, depolama hesabı oluşturmak için **New-AzStorageAccount** cmdlet 'ini kullanır.</span><span class="sxs-lookup"><span data-stu-id="d3963-123">The second command uses the **New-AzStorageAccount** cmdlet to create a storage account.</span></span>
+* <span data-ttu-id="d3963-124">Üçüncü komut, **Get-AzStorageAccount** cmdlet 'ini kullanarak ikinci komutta oluşturulmuş depolama hesabını alır ve sonucu $STOAccount değişkeninde depolar.</span><span class="sxs-lookup"><span data-stu-id="d3963-124">The third command then uses the **Get-AzStorageAccount** cmdlet to get the storage account created in the second command and stores the result in the $STOAccount variable.</span></span>
+* <span data-ttu-id="d3963-125">Beşinci komut, bir alt ağ oluşturmak için **New-AzVirtualNetworkSubnetConfig** cmdlet 'ini kullanır ve sonucu $SubNet adlı değişkende depolar.</span><span class="sxs-lookup"><span data-stu-id="d3963-125">The fifth command uses the **New-AzVirtualNetworkSubnetConfig** cmdlet to create a subnet and stores the result in the variable named $SubNet.</span></span>
+* <span data-ttu-id="d3963-126">Altıncı komut, sanal bir ağ oluşturmak için **New-AzVirtualNetwork** cmdlet 'ini kullanır ve sonucu $VNET adlı değişkende depolar.</span><span class="sxs-lookup"><span data-stu-id="d3963-126">The sixth command uses the **New-AzVirtualNetwork** cmdlet to create a virtual network and stores the result in the variable named $VNet.</span></span>
+* <span data-ttu-id="d3963-127">Yedinci komutu, altıncı komutta oluşturulan sanal ağ hakkında bilgi almak için **Get-AzVirtualNetwork** kullanır ve $VNET adlı değişkende bu bilgileri depolar.</span><span class="sxs-lookup"><span data-stu-id="d3963-127">The seventh command uses the **Get-AzVirtualNetwork** to get information about the virtual network created in the sixth command and stores the information in the variable named $VNet.</span></span>
+* <span data-ttu-id="d3963-128">Sekizinci ve dokuzuncu komutu, bu genel IP adresinden bilgi oluşturmak ve bu adresten bilgi almak için **New-Azpublicıpaddress** ve **Get-Azurermpublicıpaddress** kullanır.</span><span class="sxs-lookup"><span data-stu-id="d3963-128">The eighth and ninth command uses the **New-AzPublicIpAddress** and **Get- AzureRmPublicIpAddress** to create and get information from that public IP address.</span></span>
+* <span data-ttu-id="d3963-129">Komutlar $PubIP adlı değişkende bilgileri depolar.</span><span class="sxs-lookup"><span data-stu-id="d3963-129">The commands store the information in the variable named $PubIP.</span></span>
+* <span data-ttu-id="d3963-130">Onuncu komutu, ön uç yük dengeleyicisi oluşturmak için **New-Azurermloadbalancerfrontendıconfıg** cmdlet 'ini kullanır ve sonucu $frontend adlı değişkende depolar.</span><span class="sxs-lookup"><span data-stu-id="d3963-130">The tenth command uses the **New- AzureRmLoadBalancerFrontendIpConfig** cmdlet to create a frontend load balancer and stores the result in the variable named $Frontend.</span></span>
+* <span data-ttu-id="d3963-131">Onventh komutu, **Yeni-AzLoadBalancerBackendAddressPoolConfig** öğesini kullanarak arka uç adres havuzu yapılandırması oluşturur ve sonucu $BackendAddressPool değişkeninde depolar.</span><span class="sxs-lookup"><span data-stu-id="d3963-131">The eleventh command uses the **New-AzLoadBalancerBackendAddressPoolConfig** to create a backend address pool configuration and stores the result in the variable named $BackendAddressPool.</span></span>
+* <span data-ttu-id="d3963-132">On ikinci komut, bir yoklama oluşturmak için **New-AzLoadBalancerProbeConfig** öğesini kullanır ve yoklama bilgilerini $Probe adlı değişkende depolar.</span><span class="sxs-lookup"><span data-stu-id="d3963-132">The twelfth command uses the **New-AzLoadBalancerProbeConfig** to create a probe and stores the probe information in the variable named $Probe.</span></span>
+* <span data-ttu-id="d3963-133">Üçüncü on komutu, yük dengeleyici gelen ağ adresi çevirisi (NAT) havuz yapılandırması oluşturmak için **New-Azloadbalancerınboundnatpoolconfig** cmdlet 'ini kullanır.</span><span class="sxs-lookup"><span data-stu-id="d3963-133">The thirteenth command uses the **New-AzLoadBalancerInboundNatPoolConfig** cmdlet to create a load balancer inbound network address translation (NAT) pool configuration.</span></span>
+* <span data-ttu-id="d3963-134">On on komutu, yük dengeleyici kural yapılandırması oluşturmak için **New-AzLoadBalancerRuleConfig** 'i kullanır ve sonucu $LBRule adlı değişkende depolar.</span><span class="sxs-lookup"><span data-stu-id="d3963-134">The fourteenth command uses the **New-AzLoadBalancerRuleConfig** to create a load balancer rule configuration and stores the result in the variable named $LBRule.</span></span>
+* <span data-ttu-id="d3963-135">On beşinci komut, yük dengeleyici oluşturmak için **New-AzLoadBalancer** cmdlet 'ini kullanır ve sonucu $ActualLb adlı değişkende depolar.</span><span class="sxs-lookup"><span data-stu-id="d3963-135">The fifteenth command uses the **New-AzLoadBalancer** cmdlet to create a load balancer and stores the result in the variable named $ActualLb.</span></span>
+* <span data-ttu-id="d3963-136">Altıncı komut **Get-AzLoadBalancer** 'yi kullanarak on beşinci komutta oluşturulmuş yük dengeleyici hakkında bilgi alır ve $ExpectedLb adlı değişkende bu bilgileri depolar.</span><span class="sxs-lookup"><span data-stu-id="d3963-136">The sixteenth command uses the **Get-AzLoadBalancer** to get information about the load balancer that was created in the fifteenth command and stores the information in the variable named $ExpectedLb.</span></span>
+* <span data-ttu-id="d3963-137">On on \* komutu, bir VMSS IP yapılandırması oluşturmak için **New-AzVmssIPConfig** cmdlet 'ini kullanır ve bu bilgileri $IPCfg adlı değişkende depolar.</span><span class="sxs-lookup"><span data-stu-id="d3963-137">The seventeenth command uses the **New-AzVmssIPConfig** cmdlet to create a VMSS IP configuration and stores the information in the variable named $IPCfg.</span></span>
+* <span data-ttu-id="d3963-138">Sekizinci on komutu, bir VMSS yapılandırma nesnesi oluşturmak için **New-AzVmssConfig** cmdlet 'ini kullanır ve sonucu $VMSS adlı değişkende depolar.</span><span class="sxs-lookup"><span data-stu-id="d3963-138">The eighteenth command uses the **New-AzVmssConfig** cmdlet to create a VMSS configuration object and stores the result in the variable named $VMSS.</span></span>
+* <span data-ttu-id="d3963-139">Nıneon komutu, VMSS 'yi oluşturmak için **New-AzVmss** cmdlet 'ini kullanır.</span><span class="sxs-lookup"><span data-stu-id="d3963-139">The nineteenth command uses the **New-AzVmss** cmdlet to create the VMSS.</span></span>
+
+## <span data-ttu-id="d3963-140">PARAMETRELERINE</span><span class="sxs-lookup"><span data-stu-id="d3963-140">PARAMETERS</span></span>
+
+### <span data-ttu-id="d3963-141">-AllocationMethod</span><span class="sxs-lookup"><span data-stu-id="d3963-141">-AllocationMethod</span></span>
+<span data-ttu-id="d3963-142">Ölçek kümesinin genel IP adresi için ayırma yöntemi (statik veya dinamik).</span><span class="sxs-lookup"><span data-stu-id="d3963-142">Allocation method for the Public IP Address of the Scale Set (Static or Dynamic).</span></span>  <span data-ttu-id="d3963-143">Değer sağlanmadıysa, ayırma statik olur.</span><span class="sxs-lookup"><span data-stu-id="d3963-143">If no value is supplied, allocation will be static.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: SimpleParameterSet
+Aliases:
+Accepted values: Static, Dynamic
+
+Required: False
+Position: Named
+Default value: Static
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="d3963-144">-Iş</span><span class="sxs-lookup"><span data-stu-id="d3963-144">-AsJob</span></span>
+<span data-ttu-id="d3963-145">Arka planda cmdlet 'i çalıştırın ve ilerlemeyi izlemek için bir Iş dönün.</span><span class="sxs-lookup"><span data-stu-id="d3963-145">Run cmdlet in the background and return a Job to track progress.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="d3963-146">-BackendPoolName</span><span class="sxs-lookup"><span data-stu-id="d3963-146">-BackendPoolName</span></span>
+<span data-ttu-id="d3963-147">Bu ölçek kümesi için yük dengeleyicide kullanılacak arka uç adres havuzunun adı.</span><span class="sxs-lookup"><span data-stu-id="d3963-147">The name of the backend address pool to use in the load balancer for this Scale Set.</span></span>  <span data-ttu-id="d3963-148">Değer sağlanmazsa, ölçek kümesiyle aynı ada sahip yeni bir arka uç havuzu oluşturulur.</span><span class="sxs-lookup"><span data-stu-id="d3963-148">If no value is provided, a new backend pool will be created, with the same name as the Scale Set.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: SimpleParameterSet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="d3963-149">-Backendbağlantınoktası</span><span class="sxs-lookup"><span data-stu-id="d3963-149">-BackendPort</span></span>
+<span data-ttu-id="d3963-150">Ölçek kümesi yük dengeleyici tarafından ölçek kümesindeki VM 'lerle iletişim kurmak için kullanılan arka uç bağlantı noktası numaraları.</span><span class="sxs-lookup"><span data-stu-id="d3963-150">Backend port numbers used by the Scale Set load balancer to communicate with VMs in the Scale Set.</span></span>  <span data-ttu-id="d3963-151">Değer belirtilmezse, 3389 ve 5985 bağlantı noktaları Windows VM 'ler için kullanılır ve Linux VM 'Ler için bağlantı noktası 22 kullanılır.</span><span class="sxs-lookup"><span data-stu-id="d3963-151">If no values are specified, ports 3389 and 5985 will be used for Windows VMS, and port 22 will be used for Linux VMs.</span></span>
+
+```yaml
+Type: System.Int32[]
+Parameter Sets: SimpleParameterSet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="d3963-152">-Credential</span><span class="sxs-lookup"><span data-stu-id="d3963-152">-Credential</span></span>
+<span data-ttu-id="d3963-153">Bu ölçek kümesindeki VM 'Ler için yönetici kimlik bilgileri (Kullanıcı adı ve parola).</span><span class="sxs-lookup"><span data-stu-id="d3963-153">The administrator credentials (username and password) for VMs in this Scale Set.</span></span>
+
+```yaml
+Type: System.Management.Automation.PSCredential
+Parameter Sets: SimpleParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="d3963-154">-DataDiskSizeInGb</span><span class="sxs-lookup"><span data-stu-id="d3963-154">-DataDiskSizeInGb</span></span>
+<span data-ttu-id="d3963-155">Veri disklerinin boyutunu GB cinsinden belirtir.</span><span class="sxs-lookup"><span data-stu-id="d3963-155">Specifies the sizes of data disks in GB.</span></span>
+
+```yaml
+Type: System.Int32[]
+Parameter Sets: SimpleParameterSet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="d3963-156">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="d3963-156">-DefaultProfile</span></span>
+<span data-ttu-id="d3963-157">Azure ile iletişim için kullanılan kimlik bilgileri, hesap, kiracı ve abonelik.</span><span class="sxs-lookup"><span data-stu-id="d3963-157">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="d3963-158">-DomainNameLabel</span><span class="sxs-lookup"><span data-stu-id="d3963-158">-DomainNameLabel</span></span>
+<span data-ttu-id="d3963-159">Bu ölçek kümesi için genel Fully-Qualified etki alanı adı (FQDN) için etki alanı adı etiketi.</span><span class="sxs-lookup"><span data-stu-id="d3963-159">The domain name label for the public Fully-Qualified domain name (FQDN) for this Scale Set.</span></span> <span data-ttu-id="d3963-160">Bu, etki alanı adının ölçek kümesine otomatik olarak atandığı ilk bileşenidir.</span><span class="sxs-lookup"><span data-stu-id="d3963-160">This is the first component of the domain name that is automatically assigned to the Scale Set.</span></span> <span data-ttu-id="d3963-161">Otomatik olarak atanan etki alanı adları formu ( <DomainNameLabel> . <Location> . cloudapp.azure.com).</span><span class="sxs-lookup"><span data-stu-id="d3963-161">Automatically assigned Domain names use the form (<DomainNameLabel>.<Location>.cloudapp.azure.com).</span></span> <span data-ttu-id="d3963-162">Değer sağlanmadıysa, varsayılan etki alanı adı etiketi <ScaleSetName> ve <ResourceGroupName> .</span><span class="sxs-lookup"><span data-stu-id="d3963-162">If no value is supplied, the default domain name label will be the concatenation of <ScaleSetName> and <ResourceGroupName>.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: SimpleParameterSet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="d3963-163">-EnableUltraSSD</span><span class="sxs-lookup"><span data-stu-id="d3963-163">-EnableUltraSSD</span></span>
+<span data-ttu-id="d3963-164">Ölçek kümesindeki VM 'Ler için UltraSSD diskleri kullanın.</span><span class="sxs-lookup"><span data-stu-id="d3963-164">Use UltraSSD disks for the VMs in the scale set.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: SimpleParameterSet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="d3963-165">-EncryptionAtHost</span><span class="sxs-lookup"><span data-stu-id="d3963-165">-EncryptionAtHost</span></span>
+<span data-ttu-id="d3963-166">Bu parametre, konaktaki kaynak/Temp diski dahil tüm disklerde şifrelemeyi etkinleştirir.</span><span class="sxs-lookup"><span data-stu-id="d3963-166">This parameter will enable the encryption for all the disks including Resource/Temp disk at host itself.</span></span> <span data-ttu-id="d3963-167">Varsayılan: Bu özellik kaynak için doğru olarak ayarlanmadıkça konaktaki şifreleme devre dışı bırakılır.</span><span class="sxs-lookup"><span data-stu-id="d3963-167">Default: The Encryption at host will be disabled unless this property is set to true for the resource.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: SimpleParameterSet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="d3963-168">-Çıkarma Ilkesi</span><span class="sxs-lookup"><span data-stu-id="d3963-168">-EvictionPolicy</span></span>
+<span data-ttu-id="d3963-169">Düşük öncelikli sanal makine ölçek kümesi çıkarma ilkesi.</span><span class="sxs-lookup"><span data-stu-id="d3963-169">The eviction policy for the low priority virtual machine scale set.</span></span>  <span data-ttu-id="d3963-170">Yalnızca desteklenen değerler ' ayırması ' ve ' Sil ' değerleridir.</span><span class="sxs-lookup"><span data-stu-id="d3963-170">Only supported values are 'Deallocate' and 'Delete'.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: SimpleParameterSet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="d3963-171">-Frontenvseçpoolname</span><span class="sxs-lookup"><span data-stu-id="d3963-171">-FrontendPoolName</span></span>
+<span data-ttu-id="d3963-172">Ölçek kümesi yük dengeleyicisinde kullanılacak ön uç adres havuzunun adı.</span><span class="sxs-lookup"><span data-stu-id="d3963-172">The name of the frontend address pool to use in the Scale Set load balancer.</span></span>  <span data-ttu-id="d3963-173">Değer sağlanmadıysa, ölçek kümesiyle aynı ada sahip yeni bir ön uç adres havuzu oluşturulur.</span><span class="sxs-lookup"><span data-stu-id="d3963-173">If no value is supplied, a new Frontend Address Pool will be created, with the same name as the scale set.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: SimpleParameterSet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="d3963-174">-Hostgroupıd</span><span class="sxs-lookup"><span data-stu-id="d3963-174">-HostGroupId</span></span>
+<span data-ttu-id="d3963-175">Sanal makine ölçek kümesinin bulunacağı adanmış konak grubunu belirtir.</span><span class="sxs-lookup"><span data-stu-id="d3963-175">Specifies the dedicated host group the virtual machine scale set will reside in.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: SimpleParameterSet
+Aliases: HostGroup
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="d3963-176">-GörüntüAdı</span><span class="sxs-lookup"><span data-stu-id="d3963-176">-ImageName</span></span>
+<span data-ttu-id="d3963-177">Bu ölçek kümesindeki VM 'Lerin adı.</span><span class="sxs-lookup"><span data-stu-id="d3963-177">The name of the image for VMs in this Scale Set.</span></span> <span data-ttu-id="d3963-178">Değer sağlanmazsa, "Windows Server 2016 DataCenter" resmi kullanılır.</span><span class="sxs-lookup"><span data-stu-id="d3963-178">If no value is provided, the "Windows Server 2016 DataCenter" image will be used.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: SimpleParameterSet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="d3963-179">-InstanceCount</span><span class="sxs-lookup"><span data-stu-id="d3963-179">-InstanceCount</span></span>
+<span data-ttu-id="d3963-180">Ölçek kümesindeki VM görüntülerinin sayısı.</span><span class="sxs-lookup"><span data-stu-id="d3963-180">The number of VM images in the Scale Set.</span></span>  <span data-ttu-id="d3963-181">Değer sağlanmazsa, 2 örnek oluşturulacaktır.</span><span class="sxs-lookup"><span data-stu-id="d3963-181">If no value is provided, 2 instances will be created.</span></span>
+
+```yaml
+Type: System.Int32
+Parameter Sets: SimpleParameterSet
+Aliases:
+
+Required: False
+Position: Named
+Default value: 2
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="d3963-182">-LoadBalancerName</span><span class="sxs-lookup"><span data-stu-id="d3963-182">-LoadBalancerName</span></span>
+<span data-ttu-id="d3963-183">Bu ölçek kümesiyle kullanılacak yük dengeleyicinin adı.</span><span class="sxs-lookup"><span data-stu-id="d3963-183">The name of the load balancer to use with this Scale Set.</span></span>  <span data-ttu-id="d3963-184">Değer belirtilmemişse, ölçek kümesiyle aynı adı kullanan yeni bir yük dengeleyici oluşturulur.</span><span class="sxs-lookup"><span data-stu-id="d3963-184">A new load balancer using the same name as the Scale Set will be created if no value is specified.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: SimpleParameterSet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="d3963-185">-Konum</span><span class="sxs-lookup"><span data-stu-id="d3963-185">-Location</span></span>
+<span data-ttu-id="d3963-186">Bu ölçek kümesinin oluşturulacağı Azure konumu.</span><span class="sxs-lookup"><span data-stu-id="d3963-186">The Azure location where this Scale Set will be created.</span></span>  <span data-ttu-id="d3963-187">Değer belirtilmemişse, konum, parametrelerde başvurulan diğer kaynakların konumundan çıkarılacaktır.</span><span class="sxs-lookup"><span data-stu-id="d3963-187">If no value is specified, the location will be inferred from the location of other resources referenced in the parameters.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: SimpleParameterSet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="d3963-188">-MaxPrice</span><span class="sxs-lookup"><span data-stu-id="d3963-188">-MaxPrice</span></span>
+<span data-ttu-id="d3963-189">Düşük öncelikli sanal makine ölçeği kümesi faturalandırmanın maks.</span><span class="sxs-lookup"><span data-stu-id="d3963-189">The max price of the billing of a low priority virtual machine scale set.</span></span>
+
+```yaml
+Type: System.Double
+Parameter Sets: SimpleParameterSet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="d3963-190">-Natbackendbağlantınoktası</span><span class="sxs-lookup"><span data-stu-id="d3963-190">-NatBackendPort</span></span>
+<span data-ttu-id="d3963-191">Gelen ağ adresi çevirisi için arka uç bağlantı noktası.</span><span class="sxs-lookup"><span data-stu-id="d3963-191">Backend port for inbound network address translation.</span></span>
+
+```yaml
+Type: System.Int32[]
+Parameter Sets: SimpleParameterSet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="d3963-192">-Öncelik</span><span class="sxs-lookup"><span data-stu-id="d3963-192">-Priority</span></span>
+<span data-ttu-id="d3963-193">Ölçek kümesindeki sanal makinenin önceliği.</span><span class="sxs-lookup"><span data-stu-id="d3963-193">The priority for the virtual machine in the scale set.</span></span>  <span data-ttu-id="d3963-194">Yalnızca desteklenen değerler ' Regular ', ' nokta ' ve ' düşük ' değerleridir.</span><span class="sxs-lookup"><span data-stu-id="d3963-194">Only supported values are 'Regular', 'Spot' and 'Low'.</span></span>
+<span data-ttu-id="d3963-195">' Regular ' normal sanal makine içindir.</span><span class="sxs-lookup"><span data-stu-id="d3963-195">'Regular' is for regular virtual machine.</span></span>
+<span data-ttu-id="d3963-196">' Spot ', spot sanal makine içindir.</span><span class="sxs-lookup"><span data-stu-id="d3963-196">'Spot' is for spot virtual machine.</span></span>
+<span data-ttu-id="d3963-197">' Low ', spot sanal makine için de, ancak ' nokta ' ile değiştirilmiştir.</span><span class="sxs-lookup"><span data-stu-id="d3963-197">'Low' is also for spot virtual machine but is replaced by 'Spot'.</span></span> <span data-ttu-id="d3963-198">Lütfen ' düşük ' yerine ' nokta ' kullanın.</span><span class="sxs-lookup"><span data-stu-id="d3963-198">Please use 'Spot' instead of 'Low'.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: SimpleParameterSet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="d3963-199">-ProximityPlacementGroupId</span><span class="sxs-lookup"><span data-stu-id="d3963-199">-ProximityPlacementGroupId</span></span>
+<span data-ttu-id="d3963-200">Bu ölçek kümesiyle kullanılacak yakınlık Yerleşim grubunun kaynak kimliği.</span><span class="sxs-lookup"><span data-stu-id="d3963-200">The resource id of the Proximity Placement Group to use with this scale set.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: SimpleParameterSet
+Aliases: ProximityPlacementGroup
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="d3963-201">-Publicıpaddressname</span><span class="sxs-lookup"><span data-stu-id="d3963-201">-PublicIpAddressName</span></span>
+<span data-ttu-id="d3963-202">Bu ölçek kümesiyle kullanılacak ortak IP adresi adı.</span><span class="sxs-lookup"><span data-stu-id="d3963-202">The name of the public IP Address to use with this scale set.</span></span>  <span data-ttu-id="d3963-203">Değer sağlanmadıysa ölçek kümesiyle aynı ada sahip yeni bir genel IPAddress oluşturulur.</span><span class="sxs-lookup"><span data-stu-id="d3963-203">A new Public IPAddress with the same name as the Scale Set will be created if no value is provided.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: SimpleParameterSet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="d3963-204">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="d3963-204">-ResourceGroupName</span></span>
+<span data-ttu-id="d3963-205">VMSS 'nin kaynak grubunun adını belirtir.</span><span class="sxs-lookup"><span data-stu-id="d3963-205">Specifies the name of the resource group of the VMSS.</span></span>  <span data-ttu-id="d3963-206">Değer belirtilmemişse, ölçek kümesiyle aynı ad kullanılarak yeni bir ResourceGroup oluşturulur.</span><span class="sxs-lookup"><span data-stu-id="d3963-206">If no value is specified, a new ResourceGroup will be created using the same name as the Scale Set.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: DefaultParameter
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+```yaml
+Type: System.String
+Parameter Sets: SimpleParameterSet
+Aliases:
+
+Required: False
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="d3963-207">-Scaleınpolicy</span><span class="sxs-lookup"><span data-stu-id="d3963-207">-ScaleInPolicy</span></span>
+<span data-ttu-id="d3963-208">Sanal makine ölçeği kümesinde ölçeklendirme yapılırken izlenen kurallar.</span><span class="sxs-lookup"><span data-stu-id="d3963-208">The rules to be followed when scaling-in a virtual machine scale set.</span></span>  <span data-ttu-id="d3963-209">Olası değerler: ' default ', ' OldestVM ' ve ' NewestVM '.</span><span class="sxs-lookup"><span data-stu-id="d3963-209">Possible values are: 'Default', 'OldestVM' and 'NewestVM'.</span></span>  <span data-ttu-id="d3963-210">' Varsayılan ' sanal makine ölçeği kümesi içinde ölçeklendirildiyse, ölçek kümesi ilk olarak bölgeler genelinde dengelenebilir ve bu bir zonal ölçeği kümesidir.</span><span class="sxs-lookup"><span data-stu-id="d3963-210">'Default' when a virtual machine scale set is scaled in, the scale set will first be balanced across zones if it is a zonal scale set.</span></span>  <span data-ttu-id="d3963-211">Ardından, hata etki alanları genelinde mümkün olduğunca dengeli olacaktır.</span><span class="sxs-lookup"><span data-stu-id="d3963-211">Then, it will be balanced across Fault Domains as far as possible.</span></span>  <span data-ttu-id="d3963-212">Her hata etki alanı içinde, kaldırılmak üzere seçilen sanal makineler, ölçek ile korunmayan en yeni değerler olacaktır.</span><span class="sxs-lookup"><span data-stu-id="d3963-212">Within each Fault Domain, the virtual machines chosen for removal will be the newest ones that are not protected from scale-in.</span></span>  <span data-ttu-id="d3963-213">' OldestVM ' sanal makine ölçeği kümesi ölçeklendiğinde, ölçeğe korunmayan en eski sanal makineler kaldırılmak üzere seçilir.</span><span class="sxs-lookup"><span data-stu-id="d3963-213">'OldestVM' when a virtual machine scale set is being scaled-in, the oldest virtual machines that are not protected from scale-in will be chosen for removal.</span></span>  <span data-ttu-id="d3963-214">Zonal sanal makine ölçek kümeleri için, ölçek kümesi önce bölgeler arasında dengelenecek.</span><span class="sxs-lookup"><span data-stu-id="d3963-214">For zonal virtual machine scale sets, the scale set will first be balanced across zones.</span></span>  <span data-ttu-id="d3963-215">Her bir bölgede, korunmayan en eski sanal makineler kaldırılmak üzere seçilir.</span><span class="sxs-lookup"><span data-stu-id="d3963-215">Within each zone, the oldest virtual machines that are not protected will be chosen for removal.</span></span>  <span data-ttu-id="d3963-216">' NewestVM ' sanal makine ölçeği kümesi ölçeklendiğinde, ölçeğe korunmayan en yeni sanal makineler kaldırılmak üzere seçilir.</span><span class="sxs-lookup"><span data-stu-id="d3963-216">'NewestVM' when a virtual machine scale set is being scaled-in, the newest virtual machines that are not protected from scale-in will be chosen for removal.</span></span>  <span data-ttu-id="d3963-217">Zonal sanal makine ölçek kümeleri için, ölçek kümesi önce bölgeler arasında dengelenecek.</span><span class="sxs-lookup"><span data-stu-id="d3963-217">For zonal virtual machine scale sets, the scale set will first be balanced across zones.</span></span>  <span data-ttu-id="d3963-218">Her bir bölgede, korunmayan en yeni sanal makineler kaldırılmak üzere seçilir.</span><span class="sxs-lookup"><span data-stu-id="d3963-218">Within each zone, the newest virtual machines that are not protected will be chosen for removal.</span></span>
+
+```yaml
+Type: System.String[]
+Parameter Sets: SimpleParameterSet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="d3963-219">-SecurityGroupName</span><span class="sxs-lookup"><span data-stu-id="d3963-219">-SecurityGroupName</span></span>
+<span data-ttu-id="d3963-220">Bu ölçek kümesine uygulanacak ağ güvenlik grubunun adı.</span><span class="sxs-lookup"><span data-stu-id="d3963-220">The name of the network security group to apply to this Scale Set.</span></span>  <span data-ttu-id="d3963-221">Değer sağlanmazsa, ölçek kümesiyle aynı ada sahip bir varsayılan ağ güvenlik grubu oluşturulur ve ölçek kümesine uygulanır.</span><span class="sxs-lookup"><span data-stu-id="d3963-221">If no value is provided, a default network security group with the same name as the Scale Set will be created and applied to the Scale Set.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: SimpleParameterSet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="d3963-222">-SinglePlacementGroup</span><span class="sxs-lookup"><span data-stu-id="d3963-222">-SinglePlacementGroup</span></span>
+<span data-ttu-id="d3963-223">Tek bir yerleştirme grubunda ölçek kümesi oluşturmak için bunu kullanın; varsayılan, birden çok gruptur</span><span class="sxs-lookup"><span data-stu-id="d3963-223">Use this to create the Scale set in a single placement group, default is multiple groups</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: SimpleParameterSet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="d3963-224">-SkipExtensionsOnOverprovisionedVMs</span><span class="sxs-lookup"><span data-stu-id="d3963-224">-SkipExtensionsOnOverprovisionedVMs</span></span>
+<span data-ttu-id="d3963-225">Uzantıların fazladan sağlanan diğer VM 'lerde çalıştırılmamıştır.</span><span class="sxs-lookup"><span data-stu-id="d3963-225">Specifies that the extensions do not run on the extra overprovisioned VMs.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: SimpleParameterSet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="d3963-226">-SubnetAddressPrefix</span><span class="sxs-lookup"><span data-stu-id="d3963-226">-SubnetAddressPrefix</span></span>
+<span data-ttu-id="d3963-227">Bu ScaleSet 'in kullanacağı alt ağın adres öneki.</span><span class="sxs-lookup"><span data-stu-id="d3963-227">The address prefix of the Subnet this ScaleSet will use.</span></span> <span data-ttu-id="d3963-228">Değer sağlanmazsa varsayılan alt ağ ayarları (192.168.1.0/24) uygulanacaktır.</span><span class="sxs-lookup"><span data-stu-id="d3963-228">Default Subnet settings (192.168.1.0/24) will be applied if no value is provided.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: SimpleParameterSet
+Aliases:
+
+Required: False
+Position: Named
+Default value: 192.168.1.0/24
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="d3963-229">-SubnetName</span><span class="sxs-lookup"><span data-stu-id="d3963-229">-SubnetName</span></span>
+<span data-ttu-id="d3963-230">Bu ölçek kümesiyle kullanılacak alt ağın adı.</span><span class="sxs-lookup"><span data-stu-id="d3963-230">The name of the subnet to use with this Scale Set.</span></span>  <span data-ttu-id="d3963-231">Değer sağlanmadıysa, ölçek kümesiyle aynı adla yeni bir alt ağ oluşturulur.</span><span class="sxs-lookup"><span data-stu-id="d3963-231">A new Subnet will be created with the same name as the Scale Set if no value is provided.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: SimpleParameterSet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="d3963-232">-SystemAssignedIdentity</span><span class="sxs-lookup"><span data-stu-id="d3963-232">-SystemAssignedIdentity</span></span>
+<span data-ttu-id="d3963-233">Parametre varsa, ölçek kümesindeki VM 'ler (lar) otomatik olarak oluşturulan bir yönetilen sistem kimliğine atanır.</span><span class="sxs-lookup"><span data-stu-id="d3963-233">If the parameter is present then the VM(s) in the scale set is(are) assigned a managed system identity that is auto generated.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: SimpleParameterSet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="d3963-234">-UpgradePolicyMode</span><span class="sxs-lookup"><span data-stu-id="d3963-234">-UpgradePolicyMode</span></span>
+<span data-ttu-id="d3963-235">Bu ölçek kümesindeki VM örnekleri için yükseltme ilkesi modu.</span><span class="sxs-lookup"><span data-stu-id="d3963-235">The upgrade policy mode for VM instances in this Scale Set.</span></span>  <span data-ttu-id="d3963-236">Yükseltme ilkesi otomatik, El Ile veya çalışırken yükseltme belirleyebilir.</span><span class="sxs-lookup"><span data-stu-id="d3963-236">Upgrade policy could specify Automatic, Manual, or Rolling upgrades.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Management.Compute.Models.UpgradeMode
+Parameter Sets: SimpleParameterSet
+Aliases:
+Accepted values: Automatic, Manual, Rolling
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="d3963-237">-Useratandidentity</span><span class="sxs-lookup"><span data-stu-id="d3963-237">-UserAssignedIdentity</span></span>
+<span data-ttu-id="d3963-238">Ölçek kümesindeki VM 'ler 'e atanması gereken yönetilen hizmet kimliğinin adı.</span><span class="sxs-lookup"><span data-stu-id="d3963-238">The name of a managed service identity that should be assigned to the VM(s) in the scale set.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: SimpleParameterSet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="d3963-239">-VirtualMachineScaleSet</span><span class="sxs-lookup"><span data-stu-id="d3963-239">-VirtualMachineScaleSet</span></span>
+<span data-ttu-id="d3963-240">Bu cmdlet 'in oluşturduğu VMSS 'in özelliklerini içeren **VirtualMachineScaleSet** nesnesini belirtir.</span><span class="sxs-lookup"><span data-stu-id="d3963-240">Specifies the **VirtualMachineScaleSet** object that contains the properties of the VMSS that this cmdlet creates.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Compute.Automation.Models.PSVirtualMachineScaleSet
+Parameter Sets: DefaultParameter
+Aliases:
+
+Required: True
+Position: 2
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="d3963-241">-VirtualNetworkName</span><span class="sxs-lookup"><span data-stu-id="d3963-241">-VirtualNetworkName</span></span>
+<span data-ttu-id="d3963-242">Bu ölçek kümesiyle birlikte kullanılacak sanal ağın adı.</span><span class="sxs-lookup"><span data-stu-id="d3963-242">The name fo the Virtual Network to use with this scale set.</span></span>  <span data-ttu-id="d3963-243">Değer sağlanmadıysa, ölçek kümesiyle aynı ada sahip yeni bir sanal ağ oluşturulur.</span><span class="sxs-lookup"><span data-stu-id="d3963-243">If no value is supplied, a new virtual network with the same name as the Scale Set will be created.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: SimpleParameterSet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="d3963-244">-VMScaleSetName</span><span class="sxs-lookup"><span data-stu-id="d3963-244">-VMScaleSetName</span></span>
+<span data-ttu-id="d3963-245">Bu cmdlet 'in oluşturduğu VMSS 'nin adını belirtir.</span><span class="sxs-lookup"><span data-stu-id="d3963-245">Specifies the name of the VMSS that this cmdlet creates.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: DefaultParameter
+Aliases: Name
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+```yaml
+Type: System.String
+Parameter Sets: SimpleParameterSet
+Aliases: Name
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="d3963-246">-VmSize</span><span class="sxs-lookup"><span data-stu-id="d3963-246">-VmSize</span></span>
+<span data-ttu-id="d3963-247">Bu ölçek kümesindeki VM örneklerinin boyutu.</span><span class="sxs-lookup"><span data-stu-id="d3963-247">The size of the VM instances in this scale set.</span></span>  <span data-ttu-id="d3963-248">Boyut belirtilmemişse varsayılan boyut (Standard_DS1_v2) kullanılır.</span><span class="sxs-lookup"><span data-stu-id="d3963-248">A default size (Standard_DS1_v2) will be used if no Size is specified.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: SimpleParameterSet
+Aliases:
+
+Required: False
+Position: Named
+Default value: Standard_DS1_v2
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="d3963-249">-VnetAddressPrefix</span><span class="sxs-lookup"><span data-stu-id="d3963-249">-VnetAddressPrefix</span></span>
+<span data-ttu-id="d3963-250">Bu ölçek kümesiyle kullanılan sanal ağın adres öneki.</span><span class="sxs-lookup"><span data-stu-id="d3963-250">The address prefix for the virtual network used with this Scale Set.</span></span>  <span data-ttu-id="d3963-251">Değer sağlanmadıysa varsayılan sanal ağ adresi önek ayarları (192.168.0.0/16) kullanılacaktır.</span><span class="sxs-lookup"><span data-stu-id="d3963-251">Default virtual network address prefix settings (192.168.0.0/16) will be used if no value is supplied.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: SimpleParameterSet
+Aliases:
+
+Required: False
+Position: Named
+Default value: 192.168.0.0/16
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="d3963-252">-Bölge</span><span class="sxs-lookup"><span data-stu-id="d3963-252">-Zone</span></span>
+<span data-ttu-id="d3963-253">Kaynağın gelmesi gerektiğini belirten kullanılabilirlik bölgelerinin listesi.</span><span class="sxs-lookup"><span data-stu-id="d3963-253">A list of availability zones denoting the IP allocated for the resource needs to come from.</span></span>
+
+```yaml
+Type: System.Collections.Generic.List`1[System.String]
+Parameter Sets: SimpleParameterSet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="d3963-254">-Onay</span><span class="sxs-lookup"><span data-stu-id="d3963-254">-Confirm</span></span>
+<span data-ttu-id="d3963-255">Cmdlet 'i çalıştırmadan önce onaylamanızı ister.</span><span class="sxs-lookup"><span data-stu-id="d3963-255">Prompts you for confirmation before running the cmdlet.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="d3963-256">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="d3963-256">-WhatIf</span></span>
+<span data-ttu-id="d3963-257">Cmdlet çalışırsa ne olacağını gösterir.</span><span class="sxs-lookup"><span data-stu-id="d3963-257">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="d3963-258">Cmdlet çalışmaz.</span><span class="sxs-lookup"><span data-stu-id="d3963-258">The cmdlet is not run.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="d3963-259">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="d3963-259">CommonParameters</span></span>
+<span data-ttu-id="d3963-260">Bu cmdlet ortak parametreleri destekler:-Debug,-ErrorAction,-ErrorVariable,-ınformationaction,-ınformationvariable,-OutVariable,-OutBuffer,-Pipelinedeğişken,-verbose,-WarningAction ve-Warningdeğişken.</span><span class="sxs-lookup"><span data-stu-id="d3963-260">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="d3963-261">Daha fazla bilgi için [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)bakın.</span><span class="sxs-lookup"><span data-stu-id="d3963-261">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="d3963-262">GÖLGELENDIRICI</span><span class="sxs-lookup"><span data-stu-id="d3963-262">INPUTS</span></span>
+
+### <span data-ttu-id="d3963-263">System. String</span><span class="sxs-lookup"><span data-stu-id="d3963-263">System.String</span></span>
+
+### <span data-ttu-id="d3963-264">Microsoft. Azure. Commands. COMPUTE. Automation. modeller. PSVirtualMachineScaleSet</span><span class="sxs-lookup"><span data-stu-id="d3963-264">Microsoft.Azure.Commands.Compute.Automation.Models.PSVirtualMachineScaleSet</span></span>
+
+### <span data-ttu-id="d3963-265">System. Koleksiyonlar. Generic. LIST ' 1 [[System. String, System. Private. CoreLib, Version = 4.0.0.0</span><span class="sxs-lookup"><span data-stu-id="d3963-265">System.Collections.Generic.List\`1[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]</span></span>
+
+## <span data-ttu-id="d3963-266">ÇıKıŞLAR</span><span class="sxs-lookup"><span data-stu-id="d3963-266">OUTPUTS</span></span>
+
+### <span data-ttu-id="d3963-267">Microsoft. Azure. Commands. COMPUTE. Automation. modeller. PSVirtualMachineScaleSet</span><span class="sxs-lookup"><span data-stu-id="d3963-267">Microsoft.Azure.Commands.Compute.Automation.Models.PSVirtualMachineScaleSet</span></span>
+
+## <span data-ttu-id="d3963-268">NOTLARıNDA</span><span class="sxs-lookup"><span data-stu-id="d3963-268">NOTES</span></span>
+
+## <span data-ttu-id="d3963-269">ILGILI BAĞLANTıLAR</span><span class="sxs-lookup"><span data-stu-id="d3963-269">RELATED LINKS</span></span>
+
+[<span data-ttu-id="d3963-270">Get-AzVmss</span><span class="sxs-lookup"><span data-stu-id="d3963-270">Get-AzVmss</span></span>](./Get-AzVmss.md)
+
+[<span data-ttu-id="d3963-271">Remove-AzVmss</span><span class="sxs-lookup"><span data-stu-id="d3963-271">Remove-AzVmss</span></span>](./Remove-AzVmss.md)
+
+[<span data-ttu-id="d3963-272">Restart-AzVmss</span><span class="sxs-lookup"><span data-stu-id="d3963-272">Restart-AzVmss</span></span>](./Restart-AzVmss.md)
+
+[<span data-ttu-id="d3963-273">Set-AzVmss</span><span class="sxs-lookup"><span data-stu-id="d3963-273">Set-AzVmss</span></span>](./Set-AzVmss.md)
+
+[<span data-ttu-id="d3963-274">Başlangıç-AzVmss</span><span class="sxs-lookup"><span data-stu-id="d3963-274">Start-AzVmss</span></span>](./Start-AzVmss.md)
+
+[<span data-ttu-id="d3963-275">Dur-AzVmss</span><span class="sxs-lookup"><span data-stu-id="d3963-275">Stop-AzVmss</span></span>](./Stop-AzVmss.md)
+
+[<span data-ttu-id="d3963-276">Güncelleştirme-AzVmss</span><span class="sxs-lookup"><span data-stu-id="d3963-276">Update-AzVmss</span></span>](./Update-AzVmss.md)
+
+
