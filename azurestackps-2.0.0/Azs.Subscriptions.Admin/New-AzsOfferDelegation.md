@@ -1,0 +1,240 @@
+---
+external help file: ''
+Module Name: Azs.Subscriptions.Admin
+online version: https://docs.microsoft.com/en-us/powershell/module/azs.subscriptions.admin/new-azsofferdelegation
+schema: 2.0.0
+ms.openlocfilehash: 8a3797006bb5006b1b4e715b45c5e12763c49f32
+ms.sourcegitcommit: 308ebca475d1c37624d7a10a2c02047594f44cdf
+ms.translationtype: MT
+ms.contentlocale: tr-TR
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "94105097"
+---
+# <span data-ttu-id="f12d2-101">New-AzsOfferDelegation</span><span class="sxs-lookup"><span data-stu-id="f12d2-101">New-AzsOfferDelegation</span></span>
+
+## <span data-ttu-id="f12d2-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="f12d2-102">SYNOPSIS</span></span>
+<span data-ttu-id="f12d2-103">Teklif temsilcisi oluşturun veya güncelleştirin.</span><span class="sxs-lookup"><span data-stu-id="f12d2-103">Create or update the offer delegation.</span></span>
+
+## <span data-ttu-id="f12d2-104">INDEKI</span><span class="sxs-lookup"><span data-stu-id="f12d2-104">SYNTAX</span></span>
+
+### <span data-ttu-id="f12d2-105">Genişletilmiş (varsayılan)</span><span class="sxs-lookup"><span data-stu-id="f12d2-105">CreateExpanded (Default)</span></span>
+```
+New-AzsOfferDelegation -Name <String> -OfferName <String> -ResourceGroupName <String>
+ [-SubscriptionId <String>] [-Location <String>] [-TargetSubscriptionId <String>] [-DefaultProfile <PSObject>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### <span data-ttu-id="f12d2-106">Oluturmak</span><span class="sxs-lookup"><span data-stu-id="f12d2-106">Create</span></span>
+```
+New-AzsOfferDelegation -Name <String> -OfferName <String> -ResourceGroupName <String>
+ -OfferDelegationDefinition <IOfferDelegation> [-SubscriptionId <String>] [-DefaultProfile <PSObject>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+## <span data-ttu-id="f12d2-107">Tanım</span><span class="sxs-lookup"><span data-stu-id="f12d2-107">DESCRIPTION</span></span>
+<span data-ttu-id="f12d2-108">Teklif temsilcisi oluşturun veya güncelleştirin.</span><span class="sxs-lookup"><span data-stu-id="f12d2-108">Create or update the offer delegation.</span></span>
+
+## <span data-ttu-id="f12d2-109">ÖRNEKLERDEN</span><span class="sxs-lookup"><span data-stu-id="f12d2-109">EXAMPLES</span></span>
+
+### <span data-ttu-id="f12d2-110">Örnek 1</span><span class="sxs-lookup"><span data-stu-id="f12d2-110">Example 1</span></span>
+```powershell
+PS C:\> New-AzsOfferDelegation -Name "testofferdelegation" -OfferName "testoffer" -ResourceGroupName "testrg" -TargetSubscriptionId "dbc27112-f67a-4690-ba12-730f71cba018"
+
+Id             : /subscriptions/d77ed1d7-cb62-4658-a777-386a8ae523dd/resourceGroups/testrg/providers/Microsoft.Subscriptions.Admin/offers/testoffer/offerDelegations/testofferdel
+                 egation
+Location       : redmond
+Name           : testoffer/testofferdelegation
+SubscriptionId : dbc27112-f67a-4690-ba12-730f71cba018
+Tags           : Microsoft.Azure.PowerShell.Cmdlets.SubscriptionsAdmin.Models.Api20151101.ResourceTags
+Type           : Microsoft.Subscriptions.Admin/offers/offerDelegations
+```
+
+<span data-ttu-id="f12d2-111">Yeni bir teklif temsilcisi oluşturun.</span><span class="sxs-lookup"><span data-stu-id="f12d2-111">Create a new offer delegation.</span></span>
+
+## <span data-ttu-id="f12d2-112">PARAMETRELERINE</span><span class="sxs-lookup"><span data-stu-id="f12d2-112">PARAMETERS</span></span>
+
+### <span data-ttu-id="f12d2-113">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="f12d2-113">-DefaultProfile</span></span>
+<span data-ttu-id="f12d2-114">Azure ile iletişim için kullanılan kimlik bilgileri, hesap, kiracı ve abonelik.</span><span class="sxs-lookup"><span data-stu-id="f12d2-114">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
+
+```yaml
+Type: System.Management.Automation.PSObject
+Parameter Sets: (All)
+Aliases: AzureRMContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+
+```
+
+### <span data-ttu-id="f12d2-115">-Konum</span><span class="sxs-lookup"><span data-stu-id="f12d2-115">-Location</span></span>
+<span data-ttu-id="f12d2-116">Kaynağın konumu</span><span class="sxs-lookup"><span data-stu-id="f12d2-116">Location of the resource</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: (Get-AzLocation)[0].Location
+Accept pipeline input: False
+Accept wildcard characters: False
+
+```
+
+### <span data-ttu-id="f12d2-117">-Ad</span><span class="sxs-lookup"><span data-stu-id="f12d2-117">-Name</span></span>
+<span data-ttu-id="f12d2-118">Teklifin adı.</span><span class="sxs-lookup"><span data-stu-id="f12d2-118">Name of a offer delegation.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+
+```
+
+### <span data-ttu-id="f12d2-119">-OfferDelegationDefinition</span><span class="sxs-lookup"><span data-stu-id="f12d2-119">-OfferDelegationDefinition</span></span>
+<span data-ttu-id="f12d2-120">Temsilci seçme.</span><span class="sxs-lookup"><span data-stu-id="f12d2-120">Offer delegation.</span></span>
+<span data-ttu-id="f12d2-121">Oluşturmak için, OFFERDELEGATIONDEFINITION özelliklerinin Notlar bölümüne bakın ve karma tablo oluşturun.</span><span class="sxs-lookup"><span data-stu-id="f12d2-121">To construct, see NOTES section for OFFERDELEGATIONDEFINITION properties and create a hash table.</span></span>
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.SubscriptionsAdmin.Models.Api20151101.IOfferDelegation
+Parameter Sets: Create
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+
+```
+
+### <span data-ttu-id="f12d2-122">-OfferName</span><span class="sxs-lookup"><span data-stu-id="f12d2-122">-OfferName</span></span>
+<span data-ttu-id="f12d2-123">Teklifin adı.</span><span class="sxs-lookup"><span data-stu-id="f12d2-123">Name of an offer.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+
+```
+
+### <span data-ttu-id="f12d2-124">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="f12d2-124">-ResourceGroupName</span></span>
+<span data-ttu-id="f12d2-125">Kaynağın altında bulunduğu kaynak grubu.</span><span class="sxs-lookup"><span data-stu-id="f12d2-125">The resource group the resource is located under.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+
+```
+
+### <span data-ttu-id="f12d2-126">-SubscriptionID</span><span class="sxs-lookup"><span data-stu-id="f12d2-126">-SubscriptionId</span></span>
+<span data-ttu-id="f12d2-127">Microsoft Azure aboneliğini benzersiz bir şekilde tanımlayan abonelik kimlik bilgileri. Her hizmet çağrısı için URI 'nin bir parçası olan abonelik KIMLIĞI.</span><span class="sxs-lookup"><span data-stu-id="f12d2-127">Subscription credentials which uniquely identify Microsoft Azure subscription.The subscription ID forms part of the URI for every service call.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: (Get-AzContext).Subscription.Id
+Accept pipeline input: False
+Accept wildcard characters: False
+
+```
+
+### <span data-ttu-id="f12d2-128">-Targetsubscriptionıd</span><span class="sxs-lookup"><span data-stu-id="f12d2-128">-TargetSubscriptionId</span></span>
+<span data-ttu-id="f12d2-129">Temsilci teklif alma aboneliğinin tanıtıcısı.</span><span class="sxs-lookup"><span data-stu-id="f12d2-129">Identifier of the subscription receiving the delegated offer.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+
+```
+
+### <span data-ttu-id="f12d2-130">-Onay</span><span class="sxs-lookup"><span data-stu-id="f12d2-130">-Confirm</span></span>
+<span data-ttu-id="f12d2-131">Cmdlet 'i çalıştırmadan önce onaylamanızı ister.</span><span class="sxs-lookup"><span data-stu-id="f12d2-131">Prompts you for confirmation before running the cmdlet.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+
+```
+
+### <span data-ttu-id="f12d2-132">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="f12d2-132">-WhatIf</span></span>
+<span data-ttu-id="f12d2-133">Cmdlet çalışırsa ne olacağını gösterir.</span><span class="sxs-lookup"><span data-stu-id="f12d2-133">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="f12d2-134">Cmdlet çalışmaz.</span><span class="sxs-lookup"><span data-stu-id="f12d2-134">The cmdlet is not run.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+
+```
+
+### <span data-ttu-id="f12d2-135">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="f12d2-135">CommonParameters</span></span>
+<span data-ttu-id="f12d2-136">Bu cmdlet ortak parametreleri destekler:-Debug,-ErrorAction,-ErrorVariable,-ınformationaction,-ınformationvariable,-OutVariable,-OutBuffer,-Pipelinedeğişken,-verbose,-WarningAction ve-Warningdeğişken.</span><span class="sxs-lookup"><span data-stu-id="f12d2-136">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="f12d2-137">Daha fazla bilgi için [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)bakın.</span><span class="sxs-lookup"><span data-stu-id="f12d2-137">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="f12d2-138">GÖLGELENDIRICI</span><span class="sxs-lookup"><span data-stu-id="f12d2-138">INPUTS</span></span>
+
+### <span data-ttu-id="f12d2-139">Microsoft. Azure. PowerShell. cmdlet. SubscriptionsAdmin. modeller. Api20151101. ıoffertemsilci</span><span class="sxs-lookup"><span data-stu-id="f12d2-139">Microsoft.Azure.PowerShell.Cmdlets.SubscriptionsAdmin.Models.Api20151101.IOfferDelegation</span></span>
+
+## <span data-ttu-id="f12d2-140">ÇıKıŞLAR</span><span class="sxs-lookup"><span data-stu-id="f12d2-140">OUTPUTS</span></span>
+
+### <span data-ttu-id="f12d2-141">Microsoft. Azure. PowerShell. cmdlet. SubscriptionsAdmin. modeller. Api20151101. ıoffertemsilci</span><span class="sxs-lookup"><span data-stu-id="f12d2-141">Microsoft.Azure.PowerShell.Cmdlets.SubscriptionsAdmin.Models.Api20151101.IOfferDelegation</span></span>
+
+<span data-ttu-id="f12d2-142">DIĞER adları</span><span class="sxs-lookup"><span data-stu-id="f12d2-142">ALIASES</span></span>
+
+## <span data-ttu-id="f12d2-143">NOTLARıNDA</span><span class="sxs-lookup"><span data-stu-id="f12d2-143">NOTES</span></span>
+
+<span data-ttu-id="f12d2-144">KARMAŞıK parametre ÖZELLIKLERI aşağıda açıklanan parametreleri oluşturmak Için uygun özellikleri içeren karma bir tablo oluşturun.</span><span class="sxs-lookup"><span data-stu-id="f12d2-144">COMPLEX PARAMETER PROPERTIES To create the parameters described below, construct a hash table containing the appropriate properties.</span></span> <span data-ttu-id="f12d2-145">Karma tablolar hakkında bilgi için Get-Help about_Hash_Tables.</span><span class="sxs-lookup"><span data-stu-id="f12d2-145">For information on hash tables, run Get-Help about_Hash_Tables.</span></span>
+
+<span data-ttu-id="f12d2-146">OFFERDELEGATIONDEFINITION <IOfferDelegation> : temsilci seçimi.</span><span class="sxs-lookup"><span data-stu-id="f12d2-146">OFFERDELEGATIONDEFINITION <IOfferDelegation>: Offer delegation.</span></span>
+  - <span data-ttu-id="f12d2-147">`[Location <String>]`: Kaynağın konumu</span><span class="sxs-lookup"><span data-stu-id="f12d2-147">`[Location <String>]`: Location of the resource</span></span>
+  - <span data-ttu-id="f12d2-148">`[SubscriptionId <String>]`: Temsilci seçilen teklifi alan aboneliğin tanıtıcısı.</span><span class="sxs-lookup"><span data-stu-id="f12d2-148">`[SubscriptionId <String>]`: Identifier of the subscription receiving the delegated offer.</span></span>
+
+## <span data-ttu-id="f12d2-149">ILGILI BAĞLANTıLAR</span><span class="sxs-lookup"><span data-stu-id="f12d2-149">RELATED LINKS</span></span>
+

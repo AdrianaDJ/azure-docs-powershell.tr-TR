@@ -1,0 +1,156 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.Automation.dll-Help.xml
+Module Name: Az.Automation
+online version: https://docs.microsoft.com/en-us/powershell/module/az.automation/get-azautomationsourcecontrolsyncjob
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Automation/Automation/help/Get-AzAutomationSourceControlSyncJob.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Automation/Automation/help/Get-AzAutomationSourceControlSyncJob.md
+ms.openlocfilehash: 5284f2ae8825f801e18752e21a5fe9b8cf43ac32
+ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.translationtype: MT
+ms.contentlocale: tr-TR
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "94104993"
+---
+# <span data-ttu-id="2c705-101">Get-AzAutomationSourceControlSyncJob</span><span class="sxs-lookup"><span data-stu-id="2c705-101">Get-AzAutomationSourceControlSyncJob</span></span>
+
+## <span data-ttu-id="2c705-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="2c705-102">SYNOPSIS</span></span>
+<span data-ttu-id="2c705-103">Azure Otomasyonu kaynak denetimi eşitleme işlerini alır.</span><span class="sxs-lookup"><span data-stu-id="2c705-103">Gets Azure Automation source control sync jobs.</span></span>
+
+## <span data-ttu-id="2c705-104">INDEKI</span><span class="sxs-lookup"><span data-stu-id="2c705-104">SYNTAX</span></span>
+
+```
+Get-AzAutomationSourceControlSyncJob -SourceControlName <String> [-JobId <Guid>] [-ResourceGroupName] <String>
+ [-AutomationAccountName] <String> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+## <span data-ttu-id="2c705-105">Tanım</span><span class="sxs-lookup"><span data-stu-id="2c705-105">DESCRIPTION</span></span>
+<span data-ttu-id="2c705-106">Get-AzAutomationSourceControlSyncJob cmdlet 'i Azure Otomasyonu kaynak denetimi eşitleme işlerini alır.</span><span class="sxs-lookup"><span data-stu-id="2c705-106">The Get-AzAutomationSourceControlSyncJob cmdlet gets Azure Automation source control sync jobs.</span></span> <span data-ttu-id="2c705-107">Belirli bir kaynak denetimi eşitleme işine ulaşmak için, kimliğini belirtin.</span><span class="sxs-lookup"><span data-stu-id="2c705-107">To get a specific source control sync job, specify its id.</span></span>
+
+## <span data-ttu-id="2c705-108">ÖRNEKLERDEN</span><span class="sxs-lookup"><span data-stu-id="2c705-108">EXAMPLES</span></span>
+
+### <span data-ttu-id="2c705-109">Örnek 1</span><span class="sxs-lookup"><span data-stu-id="2c705-109">Example 1</span></span>
+<span data-ttu-id="2c705-110">Bu komut, kaynak denetimi için tüm otomasyon kaynak denetimi eşitleme işlerini VSTSNative ile alır.</span><span class="sxs-lookup"><span data-stu-id="2c705-110">This command gets all the Automation source control sync jobs for the source control VSTSNative.</span></span>
+
+
+```powershell
+PS C:\> Get-AzAutomationSourceControlSyncJob -ResourceGroupName "rg1" `
+                                                  -AutomationAccountName "devAccount" `
+                                                  -Name "VSTSNative"
+
+SourceControlSyncJobId               SyncType Status StartTime           EndTime
+----------------------               -------- ------ ---------           -------
+08d6d266-27b6-463c-beea-bc48a67ace15 FullSync Failed 08/15/2018 09:17 AM 08/15/2018 09:18 AM
+b566d564-878a-4641-8c44-25bf7850531e FullSync Failed 08/15/2018 09:09 AM 08/15/2018 09:10 AM
+```
+
+### <span data-ttu-id="2c705-111">Örnek 2</span><span class="sxs-lookup"><span data-stu-id="2c705-111">Example 2</span></span>
+<span data-ttu-id="2c705-112">Bu komut, kaynak denetimi için kimlik 08d6vseç/66-27b6-463C-beea-bc48a67asetat 15 ile kaynak denetimi eşitleme işini alır.</span><span class="sxs-lookup"><span data-stu-id="2c705-112">This command gets the source control sync job with id 08d6d266-27b6-463c-beea-bc48a67ace15 for the source control VSTSNative.</span></span> 
+
+
+```powershell
+PS C:\> Get-AzAutomationSourceControlSyncJob -ResourceGroupName "rg1" `
+                                                  -AutomationAccountName "devAccount" `
+                                                  -Name "VSTSNative"
+                                                  -Id "08d6d266-27b6-463c-beea-bc48a67ace15"
+
+Status SyncType Exception
+------ -------- ---------
+Failed FullSync There were errors while syncing the user runbooks. Please see error streams for more information. (T...
+```
+
+## <span data-ttu-id="2c705-113">PARAMETRELERINE</span><span class="sxs-lookup"><span data-stu-id="2c705-113">PARAMETERS</span></span>
+
+### <span data-ttu-id="2c705-114">-AutomationAccountName</span><span class="sxs-lookup"><span data-stu-id="2c705-114">-AutomationAccountName</span></span>
+<span data-ttu-id="2c705-115">Otomasyon hesap adı.</span><span class="sxs-lookup"><span data-stu-id="2c705-115">The automation account name.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="2c705-116">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="2c705-116">-DefaultProfile</span></span>
+<span data-ttu-id="2c705-117">Azure ile iletişim için kullanılan kimlik bilgileri, hesap, kiracı ve abonelik.</span><span class="sxs-lookup"><span data-stu-id="2c705-117">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="2c705-118">-JobId</span><span class="sxs-lookup"><span data-stu-id="2c705-118">-JobId</span></span>
+<span data-ttu-id="2c705-119">Kaynak denetimi eşitleme iş kimliği.</span><span class="sxs-lookup"><span data-stu-id="2c705-119">The source control sync job id.</span></span>
+
+```yaml
+Type: System.Guid
+Parameter Sets: (All)
+Aliases: SourceControlSyncJobId
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName, ByValue)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="2c705-120">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="2c705-120">-ResourceGroupName</span></span>
+<span data-ttu-id="2c705-121">Kaynak grubu adı.</span><span class="sxs-lookup"><span data-stu-id="2c705-121">The resource group name.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="2c705-122">-Sourcedenetimadı</span><span class="sxs-lookup"><span data-stu-id="2c705-122">-SourceControlName</span></span>
+<span data-ttu-id="2c705-123">İşin kaynak denetimi adı.</span><span class="sxs-lookup"><span data-stu-id="2c705-123">The source control name of the job.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: Name
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="2c705-124">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="2c705-124">CommonParameters</span></span>
+<span data-ttu-id="2c705-125">Bu cmdlet ortak parametreleri destekler:-Debug,-ErrorAction,-ErrorVariable,-ınformationaction,-ınformationvariable,-OutVariable,-OutBuffer,-Pipelinedeğişken,-verbose,-WarningAction ve-Warningdeğişken.</span><span class="sxs-lookup"><span data-stu-id="2c705-125">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="2c705-126">Daha fazla bilgi için bkz about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="2c705-126">For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="2c705-127">GÖLGELENDIRICI</span><span class="sxs-lookup"><span data-stu-id="2c705-127">INPUTS</span></span>
+
+### <span data-ttu-id="2c705-128">System. String</span><span class="sxs-lookup"><span data-stu-id="2c705-128">System.String</span></span>
+
+### <span data-ttu-id="2c705-129">System. Guid</span><span class="sxs-lookup"><span data-stu-id="2c705-129">System.Guid</span></span>
+
+## <span data-ttu-id="2c705-130">ÇıKıŞLAR</span><span class="sxs-lookup"><span data-stu-id="2c705-130">OUTPUTS</span></span>
+
+### <span data-ttu-id="2c705-131">Microsoft. Azure. Commands. Automation. model. SourceControlSyncJob</span><span class="sxs-lookup"><span data-stu-id="2c705-131">Microsoft.Azure.Commands.Automation.Model.SourceControlSyncJob</span></span>
+
+### <span data-ttu-id="2c705-132">Microsoft. Azure. Commands. Automation. model. SourceControlSyncJobRecord</span><span class="sxs-lookup"><span data-stu-id="2c705-132">Microsoft.Azure.Commands.Automation.Model.SourceControlSyncJobRecord</span></span>
+
+## <span data-ttu-id="2c705-133">NOTLARıNDA</span><span class="sxs-lookup"><span data-stu-id="2c705-133">NOTES</span></span>
+
+## <span data-ttu-id="2c705-134">ILGILI BAĞLANTıLAR</span><span class="sxs-lookup"><span data-stu-id="2c705-134">RELATED LINKS</span></span>
