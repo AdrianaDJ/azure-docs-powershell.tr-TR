@@ -1,0 +1,167 @@
+---
+external help file: ''
+Module Name: Azs.Network.Admin
+online version: https://docs.microsoft.com/powershell/module/azs.network.admin/get-azsvirtualnetwork
+schema: 2.0.0
+ms.openlocfilehash: 2f03d0599a7bfaf2b083b4a6c335b1de98b3fa73
+ms.sourcegitcommit: 09eb4dbfcad6fce303b793dafe9bebdef589db03
+ms.translationtype: MT
+ms.contentlocale: tr-TR
+ms.lasthandoff: 08/08/2020
+ms.locfileid: "94106964"
+---
+# <span data-ttu-id="039fb-101">Get-AzsVirtualNetwork</span><span class="sxs-lookup"><span data-stu-id="039fb-101">Get-AzsVirtualNetwork</span></span>
+
+## <span data-ttu-id="039fb-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="039fb-102">SYNOPSIS</span></span>
+<span data-ttu-id="039fb-103">Tüm sanal ağların bir listesini edinin.</span><span class="sxs-lookup"><span data-stu-id="039fb-103">Get a list of all virtual networks.</span></span>
+
+## <span data-ttu-id="039fb-104">INDEKI</span><span class="sxs-lookup"><span data-stu-id="039fb-104">SYNTAX</span></span>
+
+```
+Get-AzsVirtualNetwork [-SubscriptionId <String[]>] [-Filter <String>] [-InlineCount <String>]
+ [-OrderBy <String>] [-Skip <String>] [-Top <String>] [-DefaultProfile <PSObject>] [<CommonParameters>]
+```
+
+## <span data-ttu-id="039fb-105">Tanım</span><span class="sxs-lookup"><span data-stu-id="039fb-105">DESCRIPTION</span></span>
+<span data-ttu-id="039fb-106">Tüm sanal ağların bir listesini edinin.</span><span class="sxs-lookup"><span data-stu-id="039fb-106">Get a list of all virtual networks.</span></span>
+
+## <span data-ttu-id="039fb-107">ÖRNEKLERDEN</span><span class="sxs-lookup"><span data-stu-id="039fb-107">EXAMPLES</span></span>
+
+### <span data-ttu-id="039fb-108">--------------------------ÖRNEK 1--------------------------</span><span class="sxs-lookup"><span data-stu-id="039fb-108">-------------------------- EXAMPLE 1 --------------------------</span></span>
+```powershell
+Get-AzsVirtualNetwork
+To view examples, please use the -Online parameter with Get-Help or navigate to: https://docs.microsoft.com/powershell/module/azs.network.admin/get-azsvirtualnetwork
+```
+
+<span data-ttu-id="039fb-109">Azure yığın damgası için sanal ağların listesini döndürme.</span><span class="sxs-lookup"><span data-stu-id="039fb-109">Return a list of virtual networks for the Azure Stack stamp.</span></span>
+
+## <span data-ttu-id="039fb-110">PARAMETRELERINE</span><span class="sxs-lookup"><span data-stu-id="039fb-110">PARAMETERS</span></span>
+
+### <span data-ttu-id="039fb-111">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="039fb-111">-DefaultProfile</span></span>
+<span data-ttu-id="039fb-112">Azure ile iletişim için kullanılan kimlik bilgileri, hesap, kiracı ve abonelik.</span><span class="sxs-lookup"><span data-stu-id="039fb-112">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
+
+```yaml
+Type: System.Management.Automation.PSObject
+Parameter Sets: (All)
+Aliases: AzureRMContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+
+```
+
+### <span data-ttu-id="039fb-113">-Filtre</span><span class="sxs-lookup"><span data-stu-id="039fb-113">-Filter</span></span>
+<span data-ttu-id="039fb-114">OData filtre parametresi.</span><span class="sxs-lookup"><span data-stu-id="039fb-114">OData filter parameter.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+
+```
+
+### <span data-ttu-id="039fb-115">-InlineCount</span><span class="sxs-lookup"><span data-stu-id="039fb-115">-InlineCount</span></span>
+<span data-ttu-id="039fb-116">OData satır içi sayısı parametresi.</span><span class="sxs-lookup"><span data-stu-id="039fb-116">OData inline count parameter.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+
+```
+
+### <span data-ttu-id="039fb-117">-OrderBy</span><span class="sxs-lookup"><span data-stu-id="039fb-117">-OrderBy</span></span>
+<span data-ttu-id="039fb-118">OData orderBy parametresi.</span><span class="sxs-lookup"><span data-stu-id="039fb-118">OData orderBy parameter.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+
+```
+
+### <span data-ttu-id="039fb-119">-Atla</span><span class="sxs-lookup"><span data-stu-id="039fb-119">-Skip</span></span>
+<span data-ttu-id="039fb-120">OData Skip parametresi.</span><span class="sxs-lookup"><span data-stu-id="039fb-120">OData skip parameter.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+
+```
+
+### <span data-ttu-id="039fb-121">-SubscriptionID</span><span class="sxs-lookup"><span data-stu-id="039fb-121">-SubscriptionId</span></span>
+<span data-ttu-id="039fb-122">Microsoft Azure aboneliğini benzersiz bir şekilde tanımlayan abonelik kimlik bilgileri.</span><span class="sxs-lookup"><span data-stu-id="039fb-122">Subscription credentials which uniquely identify Microsoft Azure subscription.</span></span>
+<span data-ttu-id="039fb-123">Her hizmet çağrısı için URI 'nin bir parçası olan abonelik KIMLIĞI.</span><span class="sxs-lookup"><span data-stu-id="039fb-123">The subscription ID forms part of the URI for every service call.</span></span>
+
+```yaml
+Type: System.String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: (Get-AzContext).Subscription.Id
+Accept pipeline input: False
+Accept wildcard characters: False
+
+```
+
+### <span data-ttu-id="039fb-124">-Üst</span><span class="sxs-lookup"><span data-stu-id="039fb-124">-Top</span></span>
+<span data-ttu-id="039fb-125">OData üst parametresi.</span><span class="sxs-lookup"><span data-stu-id="039fb-125">OData top parameter.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+
+```
+
+### <span data-ttu-id="039fb-126">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="039fb-126">CommonParameters</span></span>
+<span data-ttu-id="039fb-127">Bu cmdlet ortak parametreleri destekler:-Debug,-ErrorAction,-ErrorVariable,-ınformationaction,-ınformationvariable,-OutVariable,-OutBuffer,-Pipelinedeğişken,-verbose,-WarningAction ve-Warningdeğişken.</span><span class="sxs-lookup"><span data-stu-id="039fb-127">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="039fb-128">Daha fazla bilgi için [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)bakın.</span><span class="sxs-lookup"><span data-stu-id="039fb-128">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="039fb-129">GÖLGELENDIRICI</span><span class="sxs-lookup"><span data-stu-id="039fb-129">INPUTS</span></span>
+
+## <span data-ttu-id="039fb-130">ÇıKıŞLAR</span><span class="sxs-lookup"><span data-stu-id="039fb-130">OUTPUTS</span></span>
+
+### <span data-ttu-id="039fb-131">Microsoft. Azure. PowerShell. cmdlet. NetworkAdmin. modeller. Api20150615. IVirtualNetwork</span><span class="sxs-lookup"><span data-stu-id="039fb-131">Microsoft.Azure.PowerShell.Cmdlets.NetworkAdmin.Models.Api20150615.IVirtualNetwork</span></span>
+
+
+
+## <span data-ttu-id="039fb-132">NOTLARıNDA</span><span class="sxs-lookup"><span data-stu-id="039fb-132">NOTES</span></span>
+
+## <span data-ttu-id="039fb-133">ILGILI BAĞLANTıLAR</span><span class="sxs-lookup"><span data-stu-id="039fb-133">RELATED LINKS</span></span>
+

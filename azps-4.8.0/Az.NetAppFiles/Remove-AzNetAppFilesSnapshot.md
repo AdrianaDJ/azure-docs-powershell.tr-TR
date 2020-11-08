@@ -1,0 +1,259 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.NetAppFiles.dll-Help.xml
+Module Name: Az.NetAppFiles
+online version: https://docs.microsoft.com/en-us/powershell/module/az.netappfiles/remove-aznetappfilessnapshot
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/NetAppFiles/NetAppFiles/help/Remove-AzNetAppFilesSnapshot.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/NetAppFiles/NetAppFiles/help/Remove-AzNetAppFilesSnapshot.md
+ms.openlocfilehash: 1d28420e9457826f7c851eb0d3013f36de9edbc2
+ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.translationtype: MT
+ms.contentlocale: tr-TR
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "94108167"
+---
+# <span data-ttu-id="017ab-101">Remove-AzNetAppFilesSnapshot</span><span class="sxs-lookup"><span data-stu-id="017ab-101">Remove-AzNetAppFilesSnapshot</span></span>
+
+## <span data-ttu-id="017ab-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="017ab-102">SYNOPSIS</span></span>
+<span data-ttu-id="017ab-103">Azure NetApp dosyaları (ANF) anlık görüntüsünü siler.</span><span class="sxs-lookup"><span data-stu-id="017ab-103">Deletes an Azure NetApp Files (ANF) snapshot.</span></span>
+
+## <span data-ttu-id="017ab-104">INDEKI</span><span class="sxs-lookup"><span data-stu-id="017ab-104">SYNTAX</span></span>
+
+### <span data-ttu-id="017ab-105">ByFieldsParameterSet (varsayılan)</span><span class="sxs-lookup"><span data-stu-id="017ab-105">ByFieldsParameterSet (Default)</span></span>
+```
+Remove-AzNetAppFilesSnapshot -ResourceGroupName <String> -AccountName <String> -PoolName <String>
+ -VolumeName <String> -Name <String> [-PassThru] [-DefaultProfile <IAzureContextContainer>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
+```
+
+### <span data-ttu-id="017ab-106">Byresourceıdparameterset</span><span class="sxs-lookup"><span data-stu-id="017ab-106">ByResourceIdParameterSet</span></span>
+```
+Remove-AzNetAppFilesSnapshot -ResourceId <String> [-PassThru] [-DefaultProfile <IAzureContextContainer>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### <span data-ttu-id="017ab-107">ByParentObjectParameterSet</span><span class="sxs-lookup"><span data-stu-id="017ab-107">ByParentObjectParameterSet</span></span>
+```
+Remove-AzNetAppFilesSnapshot -VolumeObject <PSNetAppFilesVolume> [-PassThru]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### <span data-ttu-id="017ab-108">ByObjectParameterSet</span><span class="sxs-lookup"><span data-stu-id="017ab-108">ByObjectParameterSet</span></span>
+```
+Remove-AzNetAppFilesSnapshot -InputObject <PSNetAppFilesSnapshot> [-PassThru]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## <span data-ttu-id="017ab-109">Tanım</span><span class="sxs-lookup"><span data-stu-id="017ab-109">DESCRIPTION</span></span>
+<span data-ttu-id="017ab-110">**Remove-AzNetAppFilesSnapshot** cmdlet 'i ANF anlık görüntüsünü siler.</span><span class="sxs-lookup"><span data-stu-id="017ab-110">The **Remove-AzNetAppFilesSnapshot** cmdlet deletes an ANF snapshot.</span></span>
+
+## <span data-ttu-id="017ab-111">ÖRNEKLERDEN</span><span class="sxs-lookup"><span data-stu-id="017ab-111">EXAMPLES</span></span>
+
+### <span data-ttu-id="017ab-112">Örnek 1</span><span class="sxs-lookup"><span data-stu-id="017ab-112">Example 1</span></span>
+```
+PS C:\>Remove-AzNetAppFilesSnapshot -ResourceGroupName "MyRG" -AccountName "MyAnfAccount" -PoolName "MyAnfPool" -VolumeName "MyAnfVolume" -Name "MyAnfSnapshot"
+```
+
+<span data-ttu-id="017ab-113">Bu komut, ANF anlık görüntüsünü "MyAnfSnapshot" siler.</span><span class="sxs-lookup"><span data-stu-id="017ab-113">This command deletes the ANF snapshot "MyAnfSnapshot".</span></span>
+
+## <span data-ttu-id="017ab-114">PARAMETRELERINE</span><span class="sxs-lookup"><span data-stu-id="017ab-114">PARAMETERS</span></span>
+
+### <span data-ttu-id="017ab-115">-AccountName</span><span class="sxs-lookup"><span data-stu-id="017ab-115">-AccountName</span></span>
+<span data-ttu-id="017ab-116">ANF hesabının adı</span><span class="sxs-lookup"><span data-stu-id="017ab-116">The name of the ANF account</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ByFieldsParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="017ab-117">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="017ab-117">-DefaultProfile</span></span>
+<span data-ttu-id="017ab-118">Azure ile iletişim için kullanılan kimlik bilgileri, hesap, kiracı ve abonelik.</span><span class="sxs-lookup"><span data-stu-id="017ab-118">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="017ab-119">-InputObject</span><span class="sxs-lookup"><span data-stu-id="017ab-119">-InputObject</span></span>
+<span data-ttu-id="017ab-120">Kaldırılacak anlık görüntü nesnesi</span><span class="sxs-lookup"><span data-stu-id="017ab-120">The snapshot object to remove</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.NetAppFiles.Models.PSNetAppFilesSnapshot
+Parameter Sets: ByObjectParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="017ab-121">-Ad</span><span class="sxs-lookup"><span data-stu-id="017ab-121">-Name</span></span>
+<span data-ttu-id="017ab-122">ANF anlık görüntüsünün adı</span><span class="sxs-lookup"><span data-stu-id="017ab-122">The name of the ANF snapshot</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ByFieldsParameterSet
+Aliases: SnapshotName
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="017ab-123">-Geçiş</span><span class="sxs-lookup"><span data-stu-id="017ab-123">-PassThru</span></span>
+<span data-ttu-id="017ab-124">Belirtilen birimin başarıyla kaldırılıp kaldırılmadığını döndürme</span><span class="sxs-lookup"><span data-stu-id="017ab-124">Return whether the specified volume was successfully removed</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="017ab-125">-PoolName</span><span class="sxs-lookup"><span data-stu-id="017ab-125">-PoolName</span></span>
+<span data-ttu-id="017ab-126">ANF havuzunun adı</span><span class="sxs-lookup"><span data-stu-id="017ab-126">The name of the ANF pool</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ByFieldsParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="017ab-127">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="017ab-127">-ResourceGroupName</span></span>
+<span data-ttu-id="017ab-128">ANF anlık görüntüsünün kaynak grubu</span><span class="sxs-lookup"><span data-stu-id="017ab-128">The resource group of the ANF snapshot</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ByFieldsParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="017ab-129">-RESOURCEID</span><span class="sxs-lookup"><span data-stu-id="017ab-129">-ResourceId</span></span>
+<span data-ttu-id="017ab-130">ANF anlık görüntüsünün kaynak kimliği</span><span class="sxs-lookup"><span data-stu-id="017ab-130">The resource id of the ANF snapshot</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ByResourceIdParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="017ab-131">-BirimAdı</span><span class="sxs-lookup"><span data-stu-id="017ab-131">-VolumeName</span></span>
+<span data-ttu-id="017ab-132">ANF biriminin adı</span><span class="sxs-lookup"><span data-stu-id="017ab-132">The name of the ANF volume</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ByFieldsParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="017ab-133">-VolumeObject</span><span class="sxs-lookup"><span data-stu-id="017ab-133">-VolumeObject</span></span>
+<span data-ttu-id="017ab-134">Kaldırılacak anlık görüntüyü içeren birim nesnesi</span><span class="sxs-lookup"><span data-stu-id="017ab-134">The volume object containing the snapshot to remove</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.NetAppFiles.Models.PSNetAppFilesVolume
+Parameter Sets: ByParentObjectParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="017ab-135">-Onay</span><span class="sxs-lookup"><span data-stu-id="017ab-135">-Confirm</span></span>
+<span data-ttu-id="017ab-136">Cmdlet 'i çalıştırmadan önce onaylamanızı ister.</span><span class="sxs-lookup"><span data-stu-id="017ab-136">Prompts you for confirmation before running the cmdlet.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="017ab-137">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="017ab-137">-WhatIf</span></span>
+<span data-ttu-id="017ab-138">Cmdlet çalışırsa ne olacağını gösterir.</span><span class="sxs-lookup"><span data-stu-id="017ab-138">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="017ab-139">Cmdlet çalışmaz.</span><span class="sxs-lookup"><span data-stu-id="017ab-139">The cmdlet is not run.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="017ab-140">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="017ab-140">CommonParameters</span></span>
+<span data-ttu-id="017ab-141">Bu cmdlet ortak parametreleri destekler:-Debug,-ErrorAction,-ErrorVariable,-ınformationaction,-ınformationvariable,-OutVariable,-OutBuffer,-Pipelinedeğişken,-verbose,-WarningAction ve-Warningdeğişken.</span><span class="sxs-lookup"><span data-stu-id="017ab-141">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="017ab-142">Daha fazla bilgi için [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)bakın.</span><span class="sxs-lookup"><span data-stu-id="017ab-142">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="017ab-143">GÖLGELENDIRICI</span><span class="sxs-lookup"><span data-stu-id="017ab-143">INPUTS</span></span>
+
+### <span data-ttu-id="017ab-144">System. String</span><span class="sxs-lookup"><span data-stu-id="017ab-144">System.String</span></span>
+
+### <span data-ttu-id="017ab-145">Microsoft. Azure. Commands. NetAppFiles. modeller. PSNetAppFilesVolume</span><span class="sxs-lookup"><span data-stu-id="017ab-145">Microsoft.Azure.Commands.NetAppFiles.Models.PSNetAppFilesVolume</span></span>
+
+### <span data-ttu-id="017ab-146">Microsoft. Azure. Commands. NetAppFiles. modeller. PSNetAppFilesSnapshot</span><span class="sxs-lookup"><span data-stu-id="017ab-146">Microsoft.Azure.Commands.NetAppFiles.Models.PSNetAppFilesSnapshot</span></span>
+
+## <span data-ttu-id="017ab-147">ÇıKıŞLAR</span><span class="sxs-lookup"><span data-stu-id="017ab-147">OUTPUTS</span></span>
+
+### <span data-ttu-id="017ab-148">System. Boolean</span><span class="sxs-lookup"><span data-stu-id="017ab-148">System.Boolean</span></span>
+
+## <span data-ttu-id="017ab-149">NOTLARıNDA</span><span class="sxs-lookup"><span data-stu-id="017ab-149">NOTES</span></span>
+
+## <span data-ttu-id="017ab-150">ILGILI BAĞLANTıLAR</span><span class="sxs-lookup"><span data-stu-id="017ab-150">RELATED LINKS</span></span>
