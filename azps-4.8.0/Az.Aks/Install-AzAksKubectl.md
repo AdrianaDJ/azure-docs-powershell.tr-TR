@@ -1,0 +1,190 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.Aks.dll-Help.xml
+Module Name: Az.Aks
+online version: https://docs.microsoft.com/en-us/powershell/module/az.aks/install-azakskubectl
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Aks/Aks/help/Install-AzAksKubectl.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Aks/Aks/help/Install-AzAksKubectl.md
+ms.openlocfilehash: 746efc579e1977e54a1898bbe183d951c3d9c21f
+ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.translationtype: MT
+ms.contentlocale: tr-TR
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "94266175"
+---
+# <span data-ttu-id="f9842-101">Install-AzAksKubectl</span><span class="sxs-lookup"><span data-stu-id="f9842-101">Install-AzAksKubectl</span></span>
+
+## <span data-ttu-id="f9842-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="f9842-102">SYNOPSIS</span></span>
+<span data-ttu-id="f9842-103">Kubectl, Kubernetes komut satırı aracını indirin ve yükleyin.</span><span class="sxs-lookup"><span data-stu-id="f9842-103">Download and install kubectl, the Kubernetes command-line tool.</span></span>
+
+## <span data-ttu-id="f9842-104">INDEKI</span><span class="sxs-lookup"><span data-stu-id="f9842-104">SYNTAX</span></span>
+
+```
+Install-AzAksKubectl [-Destination <String>] [-Version <String>] [-DownloadFromMirror] [-PassThru] [-AsJob]
+ [-Force] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## <span data-ttu-id="f9842-105">Tanım</span><span class="sxs-lookup"><span data-stu-id="f9842-105">DESCRIPTION</span></span>
+<span data-ttu-id="f9842-106">Kubectl, Kubernetes komut satırı aracını indirin ve yükleyin.</span><span class="sxs-lookup"><span data-stu-id="f9842-106">Download and install kubectl, the Kubernetes command-line tool.</span></span>
+
+## <span data-ttu-id="f9842-107">ÖRNEKLERDEN</span><span class="sxs-lookup"><span data-stu-id="f9842-107">EXAMPLES</span></span>
+
+### <span data-ttu-id="f9842-108">Kubectl 'nin en son sürümünü indirin ve yükleyin</span><span class="sxs-lookup"><span data-stu-id="f9842-108">Download and install latest version of kubectl</span></span>
+```powershell
+PS C:\> Install-AzAksKubectl -Version latest
+```
+
+## <span data-ttu-id="f9842-109">PARAMETRELERINE</span><span class="sxs-lookup"><span data-stu-id="f9842-109">PARAMETERS</span></span>
+
+### <span data-ttu-id="f9842-110">-Iş</span><span class="sxs-lookup"><span data-stu-id="f9842-110">-AsJob</span></span>
+<span data-ttu-id="f9842-111">Arka planda cmdlet 'i çalıştırın</span><span class="sxs-lookup"><span data-stu-id="f9842-111">Run cmdlet in the background</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="f9842-112">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="f9842-112">-DefaultProfile</span></span>
+<span data-ttu-id="f9842-113">Azure ile iletişim için kullanılan kimlik bilgileri, hesap, kiracı ve abonelik.</span><span class="sxs-lookup"><span data-stu-id="f9842-113">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="f9842-114">-Hedef</span><span class="sxs-lookup"><span data-stu-id="f9842-114">-Destination</span></span>
+<span data-ttu-id="f9842-115">Kubectl 'nin yükleneceği yol.</span><span class="sxs-lookup"><span data-stu-id="f9842-115">Path at which to install kubectl.</span></span>
+<span data-ttu-id="f9842-116">Varsayılan olarak ~/.Azure-kubectl/uygulamasına yüklenecek</span><span class="sxs-lookup"><span data-stu-id="f9842-116">Default to install into ~/.azure-kubectl/</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="f9842-117">-DownloadFromMirror</span><span class="sxs-lookup"><span data-stu-id="f9842-117">-DownloadFromMirror</span></span>
+<span data-ttu-id="f9842-118">Yansıtma sitesinden indirin: https://mirror.azure.cn/kubernetes/kubectl/</span><span class="sxs-lookup"><span data-stu-id="f9842-118">Download from mirror site : https://mirror.azure.cn/kubernetes/kubectl/</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="f9842-119">-Force</span><span class="sxs-lookup"><span data-stu-id="f9842-119">-Force</span></span>
+<span data-ttu-id="f9842-120">Sormadan mevcut kubectl 'nin üzerine yaz</span><span class="sxs-lookup"><span data-stu-id="f9842-120">Overwrite existing kubectl without prompt</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="f9842-121">-Geçiş</span><span class="sxs-lookup"><span data-stu-id="f9842-121">-PassThru</span></span>
+<span data-ttu-id="f9842-122">{{Dolgu geçiş açıklaması}}</span><span class="sxs-lookup"><span data-stu-id="f9842-122">{{ Fill PassThru Description }}</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="f9842-123">-Version</span><span class="sxs-lookup"><span data-stu-id="f9842-123">-Version</span></span>
+<span data-ttu-id="f9842-124">' V 1.17.2 ' gibi bir yüklenecek kubectl sürümü.</span><span class="sxs-lookup"><span data-stu-id="f9842-124">Version of kubectl to install, e.g. 'v1.17.2'.</span></span>
+<span data-ttu-id="f9842-125">Varsayılan değer: en son</span><span class="sxs-lookup"><span data-stu-id="f9842-125">Default value: Latest</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="f9842-126">-Onay</span><span class="sxs-lookup"><span data-stu-id="f9842-126">-Confirm</span></span>
+<span data-ttu-id="f9842-127">Cmdlet 'i çalıştırmadan önce onaylamanızı ister.</span><span class="sxs-lookup"><span data-stu-id="f9842-127">Prompts you for confirmation before running the cmdlet.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="f9842-128">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="f9842-128">-WhatIf</span></span>
+<span data-ttu-id="f9842-129">Cmdlet çalışırsa ne olacağını gösterir.</span><span class="sxs-lookup"><span data-stu-id="f9842-129">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="f9842-130">Cmdlet çalışmaz.</span><span class="sxs-lookup"><span data-stu-id="f9842-130">The cmdlet is not run.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="f9842-131">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="f9842-131">CommonParameters</span></span>
+<span data-ttu-id="f9842-132">Bu cmdlet ortak parametreleri destekler:-Debug,-ErrorAction,-ErrorVariable,-ınformationaction,-ınformationvariable,-OutVariable,-OutBuffer,-Pipelinedeğişken,-verbose,-WarningAction ve-Warningdeğişken.</span><span class="sxs-lookup"><span data-stu-id="f9842-132">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="f9842-133">Daha fazla bilgi için [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)bakın.</span><span class="sxs-lookup"><span data-stu-id="f9842-133">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="f9842-134">GÖLGELENDIRICI</span><span class="sxs-lookup"><span data-stu-id="f9842-134">INPUTS</span></span>
+
+### <span data-ttu-id="f9842-135">Yabilirsiniz</span><span class="sxs-lookup"><span data-stu-id="f9842-135">None</span></span>
+
+## <span data-ttu-id="f9842-136">ÇıKıŞLAR</span><span class="sxs-lookup"><span data-stu-id="f9842-136">OUTPUTS</span></span>
+
+### <span data-ttu-id="f9842-137">System. Boolean</span><span class="sxs-lookup"><span data-stu-id="f9842-137">System.Boolean</span></span>
+
+## <span data-ttu-id="f9842-138">NOTLARıNDA</span><span class="sxs-lookup"><span data-stu-id="f9842-138">NOTES</span></span>
+
+## <span data-ttu-id="f9842-139">ILGILI BAĞLANTıLAR</span><span class="sxs-lookup"><span data-stu-id="f9842-139">RELATED LINKS</span></span>

@@ -1,0 +1,161 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.ServiceBus.dll-Help.xml
+Module Name: Az.ServiceBus
+online version: https://docs.microsoft.com/en-us/powershell/module/az.servicebus/test-azservicebusnameavailability
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ServiceBus/ServiceBus/help/Test-AzServiceBusNameAvailability.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ServiceBus/ServiceBus/help/Test-AzServiceBusNameAvailability.md
+ms.openlocfilehash: adaf7485b0af16821a1f4adec7919422bef07f90
+ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.translationtype: MT
+ms.contentlocale: tr-TR
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "94266337"
+---
+# <span data-ttu-id="c0f4f-101">Test-AzServiceBusNameAvailability</span><span class="sxs-lookup"><span data-stu-id="c0f4f-101">Test-AzServiceBusNameAvailability</span></span>
+
+## <span data-ttu-id="c0f4f-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="c0f4f-102">SYNOPSIS</span></span>
+<span data-ttu-id="c0f4f-103">Verilen sıra veya konu adının uygunluk durumunu denetler</span><span class="sxs-lookup"><span data-stu-id="c0f4f-103">Checks the Availability of the given Queue or Topic name</span></span>
+
+## <span data-ttu-id="c0f4f-104">INDEKI</span><span class="sxs-lookup"><span data-stu-id="c0f4f-104">SYNTAX</span></span>
+
+### <span data-ttu-id="c0f4f-105">Queuechecknamekullanılabilirlik (varsayılan)</span><span class="sxs-lookup"><span data-stu-id="c0f4f-105">QueueCheckNameAvailabilitySet (Default)</span></span>
+```
+Test-AzServiceBusNameAvailability [-ResourceGroupName] <String> [-Namespace] <String> [-Name] <String> [-Queue]
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+### <span data-ttu-id="c0f4f-106">Topicchecknamekullanılabilirliği Bilityset</span><span class="sxs-lookup"><span data-stu-id="c0f4f-106">TopicCheckNameAvailabilitySet</span></span>
+```
+Test-AzServiceBusNameAvailability [-ResourceGroupName] <String> [-Namespace] <String> [-Name] <String> [-Topic]
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+## <span data-ttu-id="c0f4f-107">Tanım</span><span class="sxs-lookup"><span data-stu-id="c0f4f-107">DESCRIPTION</span></span>
+<span data-ttu-id="c0f4f-108">**Test-Azhizmetibusnameuygunluk** cmdlet 'i</span><span class="sxs-lookup"><span data-stu-id="c0f4f-108">The **Test-AzServiceBusNameAvailability** Cmdlet Check Availability of the provided Name of Queue or Topic</span></span>
+
+## <span data-ttu-id="c0f4f-109">ÖRNEKLERDEN</span><span class="sxs-lookup"><span data-stu-id="c0f4f-109">EXAMPLES</span></span>
+
+### <span data-ttu-id="c0f4f-110">Örnek 1</span><span class="sxs-lookup"><span data-stu-id="c0f4f-110">Example 1</span></span>
+```powershell
+Test-AzServiceBusNameAvailability -ResourceGroupName $resourceGroupName -Namespace $namespaceName -Name $nameQueue -Queue
+True
+```
+
+<span data-ttu-id="c0f4f-111">Sağlanan $nameQueue adı availabile veya sağlanan $nameQueue adı sağlanmadıysa yanlış değerini döndürür</span><span class="sxs-lookup"><span data-stu-id="c0f4f-111">Returns True if the Provided $nameQueue name is Availabile or returns False if Provided $nameQueue name in not available</span></span>
+
+### <span data-ttu-id="c0f4f-112">Örnek 2</span><span class="sxs-lookup"><span data-stu-id="c0f4f-112">Example 2</span></span>
+```powershell
+Test-AzServiceBusNameAvailability -ResourceGroupName $resourceGroupName -Namespace $namespaceName -Name $nameTopic -Topic
+True
+```
+
+<span data-ttu-id="c0f4f-113">Sağlanan $nameTopic adı availabile veya sağlanan $nameTopic adı sağlanmadıysa yanlış değerini döndürür</span><span class="sxs-lookup"><span data-stu-id="c0f4f-113">Returns True if the Provided $nameTopic name is Availabile or returns False if Provided $nameTopic name in not available</span></span>
+
+## <span data-ttu-id="c0f4f-114">PARAMETRELERINE</span><span class="sxs-lookup"><span data-stu-id="c0f4f-114">PARAMETERS</span></span>
+
+### <span data-ttu-id="c0f4f-115">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="c0f4f-115">-DefaultProfile</span></span>
+<span data-ttu-id="c0f4f-116">Azure ile iletişim için kullanılan kimlik bilgileri, hesap, kiracı ve abonelik.</span><span class="sxs-lookup"><span data-stu-id="c0f4f-116">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="c0f4f-117">-Ad</span><span class="sxs-lookup"><span data-stu-id="c0f4f-117">-Name</span></span>
+<span data-ttu-id="c0f4f-118">Ad kullanılabilirliğini denetlemek için sıra adı</span><span class="sxs-lookup"><span data-stu-id="c0f4f-118">Queue Name to check the Name Availability</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 2
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="c0f4f-119">-Namespace</span><span class="sxs-lookup"><span data-stu-id="c0f4f-119">-Namespace</span></span>
+<span data-ttu-id="c0f4f-120">ServiceBus ad alanı adı</span><span class="sxs-lookup"><span data-stu-id="c0f4f-120">Servicebus Namespace Name</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: NamespaceName
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="c0f4f-121">-Sıra</span><span class="sxs-lookup"><span data-stu-id="c0f4f-121">-Queue</span></span>
+<span data-ttu-id="c0f4f-122">Sıra adının adını denetleme</span><span class="sxs-lookup"><span data-stu-id="c0f4f-122">To Check Name Availability for Queue Name</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: QueueCheckNameAvailabilitySet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="c0f4f-123">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="c0f4f-123">-ResourceGroupName</span></span>
+<span data-ttu-id="c0f4f-124">Kaynak grubu adı</span><span class="sxs-lookup"><span data-stu-id="c0f4f-124">Resource Group Name</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: ResourceGroup
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="c0f4f-125">-Konu</span><span class="sxs-lookup"><span data-stu-id="c0f4f-125">-Topic</span></span>
+<span data-ttu-id="c0f4f-126">Konu adının adını denetleme</span><span class="sxs-lookup"><span data-stu-id="c0f4f-126">To Check Name Availability for Topic Name</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: TopicCheckNameAvailabilitySet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="c0f4f-127">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="c0f4f-127">CommonParameters</span></span>
+<span data-ttu-id="c0f4f-128">Bu cmdlet ortak parametreleri destekler:-Debug,-ErrorAction,-ErrorVariable,-ınformationaction,-ınformationvariable,-OutVariable,-OutBuffer,-Pipelinedeğişken,-verbose,-WarningAction ve-Warningdeğişken.</span><span class="sxs-lookup"><span data-stu-id="c0f4f-128">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span>
+<span data-ttu-id="c0f4f-129">Daha fazla bilgi için bkz about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="c0f4f-129">For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="c0f4f-130">GÖLGELENDIRICI</span><span class="sxs-lookup"><span data-stu-id="c0f4f-130">INPUTS</span></span>
+
+### <span data-ttu-id="c0f4f-131">System. String</span><span class="sxs-lookup"><span data-stu-id="c0f4f-131">System.String</span></span>
+
+## <span data-ttu-id="c0f4f-132">ÇıKıŞLAR</span><span class="sxs-lookup"><span data-stu-id="c0f4f-132">OUTPUTS</span></span>
+
+### <span data-ttu-id="c0f4f-133">System. Boolean</span><span class="sxs-lookup"><span data-stu-id="c0f4f-133">System.Boolean</span></span>
+
+## <span data-ttu-id="c0f4f-134">NOTLARıNDA</span><span class="sxs-lookup"><span data-stu-id="c0f4f-134">NOTES</span></span>
+
+## <span data-ttu-id="c0f4f-135">ILGILI BAĞLANTıLAR</span><span class="sxs-lookup"><span data-stu-id="c0f4f-135">RELATED LINKS</span></span>

@@ -1,0 +1,184 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.Sql.dll-Help.xml
+Module Name: Az.Sql
+online version: https://docs.microsoft.com/en-us/powershell/module/az.sql/enable-azsqlinstanceactivedirectoryonlyauthentication
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Enable-AzSqlInstanceActiveDirectoryOnlyAuthentication.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Enable-AzSqlInstanceActiveDirectoryOnlyAuthentication.md
+ms.openlocfilehash: 16390d5100892c3fcbc2607e55a33bdce9385579
+ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.translationtype: MT
+ms.contentlocale: tr-TR
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "94266319"
+---
+# <span data-ttu-id="c358f-101">Enable-AzSqlInstanceActiveDirectoryOnlyAuthentication</span><span class="sxs-lookup"><span data-stu-id="c358f-101">Enable-AzSqlInstanceActiveDirectoryOnlyAuthentication</span></span>
+
+## <span data-ttu-id="c358f-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="c358f-102">SYNOPSIS</span></span>
+<span data-ttu-id="c358f-103">Belirli bir SQL yönetilen örneği için Azure AD only kimlik doğrulamasını etkinleştirmektedir.</span><span class="sxs-lookup"><span data-stu-id="c358f-103">Enables Azure AD only authentication for a specific SQL Managed Instance.</span></span>
+
+## <span data-ttu-id="c358f-104">INDEKI</span><span class="sxs-lookup"><span data-stu-id="c358f-104">SYNTAX</span></span>
+
+### <span data-ttu-id="c358f-105">Useresourcegroupandınstancenameparameterset (varsayılan)</span><span class="sxs-lookup"><span data-stu-id="c358f-105">UseResourceGroupAndInstanceNameParameterSet (Default)</span></span>
+```
+Enable-AzSqlInstanceActiveDirectoryOnlyAuthentication [-ResourceGroupName] <String> [-InstanceName] <String>
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### <span data-ttu-id="c358f-106">UseInputObjectParameterSet</span><span class="sxs-lookup"><span data-stu-id="c358f-106">UseInputObjectParameterSet</span></span>
+```
+Enable-AzSqlInstanceActiveDirectoryOnlyAuthentication -InputObject <AzureSqlManagedInstanceModel>
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### <span data-ttu-id="c358f-107">Userresourceıdparameterset</span><span class="sxs-lookup"><span data-stu-id="c358f-107">UserResourceIdParameterSet</span></span>
+```
+Enable-AzSqlInstanceActiveDirectoryOnlyAuthentication [-ResourceId] <String>
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## <span data-ttu-id="c358f-108">Tanım</span><span class="sxs-lookup"><span data-stu-id="c358f-108">DESCRIPTION</span></span>
+<span data-ttu-id="c358f-109">**Enable-Azsqlınstanceactivedirectoryonlyauthentication** cmdlet 'i geçerli abonelikteki bir AzureSQL yönetilen örneği Için Azure Active Directory (Azure AD) kimlik doğrulama gereksinimini etkinleştirir.</span><span class="sxs-lookup"><span data-stu-id="c358f-109">The **Enable-AzSqlInstanceActiveDirectoryOnlyAuthentication** cmdlet enables Azure Active Directory (Azure AD) only authentication requirement for an AzureSQL Managed Instance in the current subscription.</span></span>
+
+## <span data-ttu-id="c358f-110">ÖRNEKLERDEN</span><span class="sxs-lookup"><span data-stu-id="c358f-110">EXAMPLES</span></span>
+
+### <span data-ttu-id="c358f-111">Örnek 1</span><span class="sxs-lookup"><span data-stu-id="c358f-111">Example 1</span></span>
+```powershell
+PS C:\>Enable-AzSqlInstanceActiveDirectoryOnlyAuthentication -ResourceGroupName "ResourceGroup01" -InstanceName "ManagedInstance01"
+ResourceGroupName InstanceName        AzureADOnlyAuthentication
+----------------- ---------- ----------- -------- -----------
+ResourceGroup01   ManagedInstance01   True
+```
+
+<span data-ttu-id="c358f-112">Bu komut, ResourceGroup01 adlı bir kaynak grubuyla ilişkili ManagedInstance01 adındaki bir AzureSQL yönetilen örneği için Azure Active Directory (Azure AD) kimlik doğrulama gereksinimini etkinleştirmektedir.</span><span class="sxs-lookup"><span data-stu-id="c358f-112">This command enables Azure Active Directory (Azure AD) only authentication requirement for an AzureSQL Managed Instance named ManagedInstance01 that is associated with a resource group named ResourceGroup01.</span></span>
+
+## <span data-ttu-id="c358f-113">PARAMETRELERINE</span><span class="sxs-lookup"><span data-stu-id="c358f-113">PARAMETERS</span></span>
+
+### <span data-ttu-id="c358f-114">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="c358f-114">-DefaultProfile</span></span>
+<span data-ttu-id="c358f-115">Azure ile iletişim için kullanılan kimlik bilgileri, hesap, kiracı ve abonelik.</span><span class="sxs-lookup"><span data-stu-id="c358f-115">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="c358f-116">-InputObject</span><span class="sxs-lookup"><span data-stu-id="c358f-116">-InputObject</span></span>
+<span data-ttu-id="c358f-117">Kullanılacak yönetilen örnek nesnesi.</span><span class="sxs-lookup"><span data-stu-id="c358f-117">The managed instance object to use.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Sql.ManagedInstance.Model.AzureSqlManagedInstanceModel
+Parameter Sets: UseInputObjectParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="c358f-118">-InstanceName</span><span class="sxs-lookup"><span data-stu-id="c358f-118">-InstanceName</span></span>
+<span data-ttu-id="c358f-119">Azure SQL yönetilen örneğinin adı Azure Active Directory 'de yalnızca kimlik doğrulaması içinde.</span><span class="sxs-lookup"><span data-stu-id="c358f-119">The name of the Azure SQL Managed Instance the Azure Active Directory only authentication is in.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: UseResourceGroupAndInstanceNameParameterSet
+Aliases:
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="c358f-120">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="c358f-120">-ResourceGroupName</span></span>
+<span data-ttu-id="c358f-121">Kaynak grubunun adı.</span><span class="sxs-lookup"><span data-stu-id="c358f-121">The name of the resource group.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: UseResourceGroupAndInstanceNameParameterSet
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="c358f-122">-RESOURCEID</span><span class="sxs-lookup"><span data-stu-id="c358f-122">-ResourceId</span></span>
+<span data-ttu-id="c358f-123">Kullanılacak örneğinin kaynak kimliği</span><span class="sxs-lookup"><span data-stu-id="c358f-123">The resource id of instance to use</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: UserResourceIdParameterSet
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="c358f-124">-Onay</span><span class="sxs-lookup"><span data-stu-id="c358f-124">-Confirm</span></span>
+<span data-ttu-id="c358f-125">Cmdlet 'i çalıştırmadan önce onaylamanızı ister.</span><span class="sxs-lookup"><span data-stu-id="c358f-125">Prompts you for confirmation before running the cmdlet.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="c358f-126">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="c358f-126">-WhatIf</span></span>
+<span data-ttu-id="c358f-127">Cmdlet çalışırsa ne olacağını gösterir.</span><span class="sxs-lookup"><span data-stu-id="c358f-127">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="c358f-128">Cmdlet çalışmaz.</span><span class="sxs-lookup"><span data-stu-id="c358f-128">The cmdlet is not run.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="c358f-129">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="c358f-129">CommonParameters</span></span>
+<span data-ttu-id="c358f-130">Bu cmdlet ortak parametreleri destekler:-Debug,-ErrorAction,-ErrorVariable,-ınformationaction,-ınformationvariable,-OutVariable,-OutBuffer,-Pipelinedeğişken,-verbose,-WarningAction ve-Warningdeğişken.</span><span class="sxs-lookup"><span data-stu-id="c358f-130">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="c358f-131">Daha fazla bilgi için [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)bakın.</span><span class="sxs-lookup"><span data-stu-id="c358f-131">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="c358f-132">GÖLGELENDIRICI</span><span class="sxs-lookup"><span data-stu-id="c358f-132">INPUTS</span></span>
+
+### <span data-ttu-id="c358f-133">System. String</span><span class="sxs-lookup"><span data-stu-id="c358f-133">System.String</span></span>
+
+## <span data-ttu-id="c358f-134">ÇıKıŞLAR</span><span class="sxs-lookup"><span data-stu-id="c358f-134">OUTPUTS</span></span>
+
+### <span data-ttu-id="c358f-135">Microsoft. Azure. Commands. Sql. ınstanceactivedirectoryonlyauthentication. model. azures, ınstanceactivedirectoryonlyauthenticationmodel</span><span class="sxs-lookup"><span data-stu-id="c358f-135">Microsoft.Azure.Commands.Sql.InstanceActiveDirectoryOnlyAuthentication.Model.AzureSqlInstanceActiveDirectoryOnlyAuthenticationModel</span></span>
+
+## <span data-ttu-id="c358f-136">NOTLARıNDA</span><span class="sxs-lookup"><span data-stu-id="c358f-136">NOTES</span></span>
+
+## <span data-ttu-id="c358f-137">ILGILI BAĞLANTıLAR</span><span class="sxs-lookup"><span data-stu-id="c358f-137">RELATED LINKS</span></span>
+
+[<span data-ttu-id="c358f-138">Disable-Azsqlınstanceactivedirectoryonlyauthentication</span><span class="sxs-lookup"><span data-stu-id="c358f-138">Disable-AzSqlInstanceActiveDirectoryOnlyAuthentication</span></span>](./Disable-AzSqlInstanceActiveDirectoryOnlyAuthentication.md)
+
+[<span data-ttu-id="c358f-139">Get-Azsqlınstanceactivedirectoryonlyauthentication</span><span class="sxs-lookup"><span data-stu-id="c358f-139">Get-AzSqlInstanceActiveDirectoryOnlyAuthentication</span></span>](./Get-AzSqlInstanceActiveDirectoryOnlyAuthentication.md)
+
+[<span data-ttu-id="c358f-140">Set-Azsqlınstanceactivedirectoryadministrator</span><span class="sxs-lookup"><span data-stu-id="c358f-140">Set-AzSqlInstanceActiveDirectoryAdministrator</span></span>](./Set-AzSqlInstanceActiveDirectoryAdministrator.md)
+
+[<span data-ttu-id="c358f-141">Get-Azsqlınstanceactivedirectoryadministrator</span><span class="sxs-lookup"><span data-stu-id="c358f-141">Get-AzSqlInstanceActiveDirectoryAdministrator</span></span>](./Get-AzSqlInstanceActiveDirectoryAdministrator.md)
