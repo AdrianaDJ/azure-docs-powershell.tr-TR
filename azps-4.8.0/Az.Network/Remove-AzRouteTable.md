@@ -1,0 +1,189 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.Network.dll-Help.xml
+Module Name: Az.Network
+ms.assetid: FDA33633-EB2E-4095-8498-DF8910F1D434
+online version: https://docs.microsoft.com/en-us/powershell/module/az.network/remove-azroutetable
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzRouteTable.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzRouteTable.md
+ms.openlocfilehash: 8c899d975669404045aa40bee45ad287a26f8749
+ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.translationtype: MT
+ms.contentlocale: tr-TR
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "94267005"
+---
+# <span data-ttu-id="747c8-101">Remove-AzRouteTable</span><span class="sxs-lookup"><span data-stu-id="747c8-101">Remove-AzRouteTable</span></span>
+
+## <span data-ttu-id="747c8-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="747c8-102">SYNOPSIS</span></span>
+<span data-ttu-id="747c8-103">Yol tablosunu kaldırır.</span><span class="sxs-lookup"><span data-stu-id="747c8-103">Removes a route table.</span></span>
+
+## <span data-ttu-id="747c8-104">INDEKI</span><span class="sxs-lookup"><span data-stu-id="747c8-104">SYNTAX</span></span>
+
+```
+Remove-AzRouteTable -ResourceGroupName <String> -Name <String> [-Force] [-AsJob] [-PassThru]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## <span data-ttu-id="747c8-105">Tanım</span><span class="sxs-lookup"><span data-stu-id="747c8-105">DESCRIPTION</span></span>
+<span data-ttu-id="747c8-106">**Remove-AzRouteTable** cmdlet 'ı bir Azure yol tablosunu kaldırır.</span><span class="sxs-lookup"><span data-stu-id="747c8-106">The **Remove-AzRouteTable** cmdlet removes an Azure route table.</span></span>
+
+## <span data-ttu-id="747c8-107">ÖRNEKLERDEN</span><span class="sxs-lookup"><span data-stu-id="747c8-107">EXAMPLES</span></span>
+
+### <span data-ttu-id="747c8-108">Örnek 1: yol tablosunu kaldırma</span><span class="sxs-lookup"><span data-stu-id="747c8-108">Example 1: Remove a route table</span></span>
+```
+PS C:\>Remove-AzRouteTable -ResourceGroupName "ResourceGroup11 -Name "RouteTable01"
+Confirm
+Are you sure you want to remove resource 'RouteTable01'
+[Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): y
+```
+
+<span data-ttu-id="747c8-109">Bu komut, ResourceGroup11 adındaki kaynak grubundaki RouteTable01 adındaki yol tablosunu kaldırır.</span><span class="sxs-lookup"><span data-stu-id="747c8-109">This command removes the route table named RouteTable01 in the resource group named ResourceGroup11.</span></span>
+<span data-ttu-id="747c8-110">Cmdlet tabloyu kaldırmadan önce onayınızı sorar.</span><span class="sxs-lookup"><span data-stu-id="747c8-110">The cmdlet prompts you for confirmation before it removes the table.</span></span>
+
+## <span data-ttu-id="747c8-111">PARAMETRELERINE</span><span class="sxs-lookup"><span data-stu-id="747c8-111">PARAMETERS</span></span>
+
+### <span data-ttu-id="747c8-112">-Iş</span><span class="sxs-lookup"><span data-stu-id="747c8-112">-AsJob</span></span>
+<span data-ttu-id="747c8-113">Arka planda cmdlet 'i çalıştırın</span><span class="sxs-lookup"><span data-stu-id="747c8-113">Run cmdlet in the background</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="747c8-114">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="747c8-114">-DefaultProfile</span></span>
+<span data-ttu-id="747c8-115">Azure ile iletişim için kullanılan kimlik bilgileri, hesap, kiracı ve abonelik.</span><span class="sxs-lookup"><span data-stu-id="747c8-115">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="747c8-116">-Force</span><span class="sxs-lookup"><span data-stu-id="747c8-116">-Force</span></span>
+<span data-ttu-id="747c8-117">Komutu Kullanıcı onayını istemeden çalıştırmaya zorlar.</span><span class="sxs-lookup"><span data-stu-id="747c8-117">Forces the command to run without asking for user confirmation.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="747c8-118">-Ad</span><span class="sxs-lookup"><span data-stu-id="747c8-118">-Name</span></span>
+<span data-ttu-id="747c8-119">Bu cmdlet 'in kaldırıldığı yol tablosunun adını belirtir.</span><span class="sxs-lookup"><span data-stu-id="747c8-119">Specifies the name of the route table that this cmdlet removes.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: ResourceName
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="747c8-120">-Geçiş</span><span class="sxs-lookup"><span data-stu-id="747c8-120">-PassThru</span></span>
+<span data-ttu-id="747c8-121">Çalıştığınız öğeyi temsil eden bir nesne döndürür.</span><span class="sxs-lookup"><span data-stu-id="747c8-121">Returns an object representing the item with which you are working.</span></span>
+<span data-ttu-id="747c8-122">Varsayılan olarak, bu cmdlet hiçbir çıkış üretmez.</span><span class="sxs-lookup"><span data-stu-id="747c8-122">By default, this cmdlet does not generate any output.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="747c8-123">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="747c8-123">-ResourceGroupName</span></span>
+<span data-ttu-id="747c8-124">Bu cmdlet 'in kaldırdığı yol tablosunu içeren kaynak grubunun adını belirtir.</span><span class="sxs-lookup"><span data-stu-id="747c8-124">Specifies the name of the resource group that contains the route table that this cmdlet removes.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="747c8-125">-Onay</span><span class="sxs-lookup"><span data-stu-id="747c8-125">-Confirm</span></span>
+<span data-ttu-id="747c8-126">Cmdlet 'i çalıştırmadan önce onaylamanızı ister.</span><span class="sxs-lookup"><span data-stu-id="747c8-126">Prompts you for confirmation before running the cmdlet.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="747c8-127">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="747c8-127">-WhatIf</span></span>
+<span data-ttu-id="747c8-128">Cmdlet çalışırsa ne olacağını gösterir.</span><span class="sxs-lookup"><span data-stu-id="747c8-128">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="747c8-129">Cmdlet çalışmaz.</span><span class="sxs-lookup"><span data-stu-id="747c8-129">The cmdlet is not run.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="747c8-130">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="747c8-130">CommonParameters</span></span>
+<span data-ttu-id="747c8-131">Bu cmdlet ortak parametreleri destekler:-Debug,-ErrorAction,-ErrorVariable,-ınformationaction,-ınformationvariable,-OutVariable,-OutBuffer,-Pipelinedeğişken,-verbose,-WarningAction ve-Warningdeğişken.</span><span class="sxs-lookup"><span data-stu-id="747c8-131">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="747c8-132">Daha fazla bilgi için bkz about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="747c8-132">For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="747c8-133">GÖLGELENDIRICI</span><span class="sxs-lookup"><span data-stu-id="747c8-133">INPUTS</span></span>
+
+### <span data-ttu-id="747c8-134">System. String</span><span class="sxs-lookup"><span data-stu-id="747c8-134">System.String</span></span>
+
+## <span data-ttu-id="747c8-135">ÇıKıŞLAR</span><span class="sxs-lookup"><span data-stu-id="747c8-135">OUTPUTS</span></span>
+
+### <span data-ttu-id="747c8-136">System. Boolean</span><span class="sxs-lookup"><span data-stu-id="747c8-136">System.Boolean</span></span>
+
+## <span data-ttu-id="747c8-137">NOTLARıNDA</span><span class="sxs-lookup"><span data-stu-id="747c8-137">NOTES</span></span>
+
+## <span data-ttu-id="747c8-138">ILGILI BAĞLANTıLAR</span><span class="sxs-lookup"><span data-stu-id="747c8-138">RELATED LINKS</span></span>
+
+[<span data-ttu-id="747c8-139">Get-AzRouteTable</span><span class="sxs-lookup"><span data-stu-id="747c8-139">Get-AzRouteTable</span></span>](./Get-AzRouteTable.md)
+
+[<span data-ttu-id="747c8-140">Yeni-AzRouteTable</span><span class="sxs-lookup"><span data-stu-id="747c8-140">New-AzRouteTable</span></span>](./New-AzRouteTable.md)
+
+[<span data-ttu-id="747c8-141">Set-AzRouteTable</span><span class="sxs-lookup"><span data-stu-id="747c8-141">Set-AzRouteTable</span></span>](./Set-AzRouteTable.md)
+
+

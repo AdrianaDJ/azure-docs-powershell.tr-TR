@@ -1,0 +1,238 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.Network.dll-Help.xml
+Module Name: Az.Network
+online version: https://docs.microsoft.com/en-us/powershell/module/az.network/remove-azprivateendpointconnection
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzPrivateEndpointConnection.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzPrivateEndpointConnection.md
+ms.openlocfilehash: 2b7b6755b15c5dcaf0442557eb32b563f0c1af6e
+ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.translationtype: MT
+ms.contentlocale: tr-TR
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "94267023"
+---
+# <span data-ttu-id="ef41c-101">Remove-AzPrivateEndpointConnection</span><span class="sxs-lookup"><span data-stu-id="ef41c-101">Remove-AzPrivateEndpointConnection</span></span>
+
+## <span data-ttu-id="ef41c-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="ef41c-102">SYNOPSIS</span></span>
+<span data-ttu-id="ef41c-103">Özel uç nokta bağlantısını kaldırır.</span><span class="sxs-lookup"><span data-stu-id="ef41c-103">Removes a private endpoint connection.</span></span>
+
+## <span data-ttu-id="ef41c-104">INDEKI</span><span class="sxs-lookup"><span data-stu-id="ef41c-104">SYNTAX</span></span>
+
+### <span data-ttu-id="ef41c-105">Byresourceıd (varsayılan)</span><span class="sxs-lookup"><span data-stu-id="ef41c-105">ByResourceId (Default)</span></span>
+```
+Remove-AzPrivateEndpointConnection -ResourceId <String>
+ [-Force] [-AsJob] [-PassThru]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### <span data-ttu-id="ef41c-106">ByResource</span><span class="sxs-lookup"><span data-stu-id="ef41c-106">ByResource</span></span>
+```
+Remove-AzPrivateEndpointConnection -Name <String> -ServiceName <String> -ResourceGroupName <String>
+ [-PrivateLinkResourceType <String>] [-Force] [-AsJob] [-PassThru]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## <span data-ttu-id="ef41c-107">Tanım</span><span class="sxs-lookup"><span data-stu-id="ef41c-107">DESCRIPTION</span></span>
+<span data-ttu-id="ef41c-108">**Remove-AzPrivateEndpointConnection** cmdlet 'i özel uç nokta bağlantısını kaldırır.</span><span class="sxs-lookup"><span data-stu-id="ef41c-108">The **Remove-AzPrivateEndpointConnection** cmdlet removes a private endpoint connection.</span></span>
+
+## <span data-ttu-id="ef41c-109">ÖRNEKLERDEN</span><span class="sxs-lookup"><span data-stu-id="ef41c-109">EXAMPLES</span></span>
+
+### <span data-ttu-id="ef41c-110">Örnek 1</span><span class="sxs-lookup"><span data-stu-id="ef41c-110">Example 1</span></span>
+```
+Remove-AzPrivateEndpointConnection -Name MyPrivateEndpointConnection1 -ResourceGroupName TestResourceGroup -ServiceName MyPrivateLinkServiceName
+```
+
+<span data-ttu-id="ef41c-111">Bu örnekte MyPrivateEndpointConnection1 adlı özel bir uç nokta bağlantısı kaldırılsın</span><span class="sxs-lookup"><span data-stu-id="ef41c-111">This example remove a private endpoint connection named MyPrivateEndpointConnection1</span></span>
+
+## <span data-ttu-id="ef41c-112">PARAMETRELERINE</span><span class="sxs-lookup"><span data-stu-id="ef41c-112">PARAMETERS</span></span>
+
+### <span data-ttu-id="ef41c-113">-Iş</span><span class="sxs-lookup"><span data-stu-id="ef41c-113">-AsJob</span></span>
+<span data-ttu-id="ef41c-114">Arka planda cmdlet 'i çalıştırın</span><span class="sxs-lookup"><span data-stu-id="ef41c-114">Run cmdlet in the background</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="ef41c-115">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="ef41c-115">-DefaultProfile</span></span>
+<span data-ttu-id="ef41c-116">Azure ile iletişim için kullanılan kimlik bilgileri, hesap, kiracı ve abonelik.</span><span class="sxs-lookup"><span data-stu-id="ef41c-116">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="ef41c-117">-Force</span><span class="sxs-lookup"><span data-stu-id="ef41c-117">-Force</span></span>
+<span data-ttu-id="ef41c-118">Kaynağı silmek istiyorsanız onay sorma</span><span class="sxs-lookup"><span data-stu-id="ef41c-118">Do not ask for confirmation if you want to delete resource</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="ef41c-119">-Ad</span><span class="sxs-lookup"><span data-stu-id="ef41c-119">-Name</span></span>
+<span data-ttu-id="ef41c-120">Özel uç noktası bağlantısının adı.</span><span class="sxs-lookup"><span data-stu-id="ef41c-120">The name of the private endpoint connection.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ByResource
+Aliases: ResourceName
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="ef41c-121">-Geçiş</span><span class="sxs-lookup"><span data-stu-id="ef41c-121">-PassThru</span></span>
+<span data-ttu-id="ef41c-122">Çalıştığınız öğeyi temsil eden bir nesne döndürür.</span><span class="sxs-lookup"><span data-stu-id="ef41c-122">Returns an object representing the item with which you are working.</span></span>
+<span data-ttu-id="ef41c-123">Varsayılan olarak, bu cmdlet hiçbir çıkış üretmez.</span><span class="sxs-lookup"><span data-stu-id="ef41c-123">By default, this cmdlet does not generate any output.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="ef41c-124">-PrivateLinkResourceType</span><span class="sxs-lookup"><span data-stu-id="ef41c-124">-PrivateLinkResourceType</span></span>
+<span data-ttu-id="ef41c-125">Özel bağlantı kaynağı türü.</span><span class="sxs-lookup"><span data-stu-id="ef41c-125">The private link resource type.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ByResource
+Aliases:
+
+Required: False
+Position: Named
+Default value: 'Microsoft.Network/privateLinkServices'
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="ef41c-126">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="ef41c-126">-ResourceGroupName</span></span>
+<span data-ttu-id="ef41c-127">Özel uç noktası bağlantısının kaynak grubu adı.</span><span class="sxs-lookup"><span data-stu-id="ef41c-127">The resource group name of the private endpoint connection.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ByResource
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="ef41c-128">-RESOURCEID</span><span class="sxs-lookup"><span data-stu-id="ef41c-128">-ResourceId</span></span>
+<span data-ttu-id="ef41c-129">Özel uç noktası bağlantısının Azure Resource Manager kimliği.</span><span class="sxs-lookup"><span data-stu-id="ef41c-129">The Azure resource manager id of the private endpoint connection.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ByResourceId
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="ef41c-130">-HizmetAdı</span><span class="sxs-lookup"><span data-stu-id="ef41c-130">-ServiceName</span></span>
+<span data-ttu-id="ef41c-131">Özel uç noktası bağlantısının ait olduğu hizmetin adı.</span><span class="sxs-lookup"><span data-stu-id="ef41c-131">The name of service that the private endpoint connection belong to.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ByResource
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="ef41c-132">-Onay</span><span class="sxs-lookup"><span data-stu-id="ef41c-132">-Confirm</span></span>
+<span data-ttu-id="ef41c-133">Cmdlet 'i çalıştırmadan önce onaylamanızı ister.</span><span class="sxs-lookup"><span data-stu-id="ef41c-133">Prompts you for confirmation before running the cmdlet.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="ef41c-134">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="ef41c-134">-WhatIf</span></span>
+<span data-ttu-id="ef41c-135">Cmdlet çalışırsa ne olacağını gösterir.</span><span class="sxs-lookup"><span data-stu-id="ef41c-135">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="ef41c-136">Cmdlet çalışmaz.</span><span class="sxs-lookup"><span data-stu-id="ef41c-136">The cmdlet is not run.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="ef41c-137">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="ef41c-137">CommonParameters</span></span>
+<span data-ttu-id="ef41c-138">Bu cmdlet ortak parametreleri destekler:-Debug,-ErrorAction,-ErrorVariable,-ınformationaction,-ınformationvariable,-OutVariable,-OutBuffer,-Pipelinedeğişken,-verbose,-WarningAction ve-Warningdeğişken.</span><span class="sxs-lookup"><span data-stu-id="ef41c-138">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="ef41c-139">Daha fazla bilgi için [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)bakın.</span><span class="sxs-lookup"><span data-stu-id="ef41c-139">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="ef41c-140">GÖLGELENDIRICI</span><span class="sxs-lookup"><span data-stu-id="ef41c-140">INPUTS</span></span>
+
+### <span data-ttu-id="ef41c-141">System. String</span><span class="sxs-lookup"><span data-stu-id="ef41c-141">System.String</span></span>
+
+## <span data-ttu-id="ef41c-142">ÇıKıŞLAR</span><span class="sxs-lookup"><span data-stu-id="ef41c-142">OUTPUTS</span></span>
+
+### <span data-ttu-id="ef41c-143">System. Boolean</span><span class="sxs-lookup"><span data-stu-id="ef41c-143">System.Boolean</span></span>
+
+## <span data-ttu-id="ef41c-144">NOTLARıNDA</span><span class="sxs-lookup"><span data-stu-id="ef41c-144">NOTES</span></span>
+
+## <span data-ttu-id="ef41c-145">ILGILI BAĞLANTıLAR</span><span class="sxs-lookup"><span data-stu-id="ef41c-145">RELATED LINKS</span></span>
+
+[<span data-ttu-id="ef41c-146">Onay-AzPrivateEndpointConnection</span><span class="sxs-lookup"><span data-stu-id="ef41c-146">Approve-AzPrivateEndpointConnection</span></span>](./Approve-AzPrivateEndpointConnection.md)
+
+[<span data-ttu-id="ef41c-147">Deny-AzPrivateEndpointConnection</span><span class="sxs-lookup"><span data-stu-id="ef41c-147">Deny-AzPrivateEndpointConnection</span></span>](./Deny-AzPrivateEndpointConnection.md)
+
+[<span data-ttu-id="ef41c-148">Get-AzPrivateEndpointConnection</span><span class="sxs-lookup"><span data-stu-id="ef41c-148">Get-AzPrivateEndpointConnection</span></span>](./Get-AzPrivateEndpointConnection.md)
+
+[<span data-ttu-id="ef41c-149">Set-AzPrivateEndpointConnection</span><span class="sxs-lookup"><span data-stu-id="ef41c-149">Set-AzPrivateEndpointConnection</span></span>](./Set-AzPrivateEndpointConnection.md)
