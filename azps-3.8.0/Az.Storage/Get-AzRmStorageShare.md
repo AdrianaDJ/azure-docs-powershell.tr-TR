@@ -1,0 +1,186 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.Storage.Management.dll-Help.xml
+Module Name: Az.Storage
+online version: https://docs.microsoft.com/en-us/powershell/module/az.storage/get-azrmstorageshare
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Storage/Storage.Management/help/Get-AzRmStorageShare.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Storage/Storage.Management/help/Get-AzRmStorageShare.md
+ms.openlocfilehash: 2ef5ddb4a260f4749d6ccca6fa964f5e205c4b4e
+ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.translationtype: MT
+ms.contentlocale: tr-TR
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "94097780"
+---
+# Get-AzRmStorageShare
+
+## SYNOPSIS
+Depolama dosya paylaşımlarını alır veya listeler.
+
+## INDEKI
+
+### AccountName (varsayılan)
+```
+Get-AzRmStorageShare [-ResourceGroupName] <String> [-StorageAccountName] <String> [-Name <String>]
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+### AccountObject
+```
+Get-AzRmStorageShare -StorageAccount <PSStorageAccount> [-Name <String>]
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+### ShareResourceId
+```
+Get-AzRmStorageShare [-ResourceId] <String> [-Name <String>] [-DefaultProfile <IAzureContextContainer>]
+ [<CommonParameters>]
+```
+
+## Tanım
+**Get-Azrmstoragesshares** cmdlet 'ı, depolama dosya paylaşımlarını alır veya listeler.
+
+## ÖRNEKLERDEN
+
+### Örnek 1: depolama hesabı adı ve paylaşım adıyla bir depolama dosya paylaşımı alın
+```
+PS C:\>Get-AzRmStorageShare -ResourceGroupName "myResourceGroup" -StorageAccountName "myStorageAccount" -Name "myshare"
+
+Name     StorageAccountName ResourceGroupName Etag                QuotaGiB LastModifiedTime    
+----     ------------------ ----------------- ----                -------- ----------------    
+myshare  myStorageAccount   myResourceGroup   "0x8D71F03028DDDC9" 5120     2019-08-12 08:56:48Z
+```
+
+Bu komut, depolama hesabı adı ve paylaşım adıyla bir depolama dosya paylaşımı alır.
+
+### Örnek 2: depolama hesabının tüm depolama dosyası paylaşımlarını listeler
+```
+PS C:\>Get-AzRmStorageShare -ResourceGroupName "myResourceGroup" -StorageAccountName "myStorageAccount"
+
+Name     StorageAccountName ResourceGroupName Etag                QuotaGiB LastModifiedTime    
+----     ------------------ ----------------- ----                -------- ----------------    
+share1   myStorageAccount   myResourceGroup   "0x8D71F03028DDDC9" 5120     2019-08-12 08:56:48Z
+share2   myStorageAccount   myResourceGroup   "0x8D6FF862774FE57" 5120     2019-07-03 07:14:57Z
+```
+
+Bu komut, depolama hesabı adı olan depolama hesabının tüm depolama dosyası paylaşımlarını listeler.
+
+### Örnek 3: depolama hesabı nesnesi ve kapsayıcı adı içeren bir depolama blob kapsayıcısı edinin.
+```
+Get-AzStorageAccount -ResourceGroupName "myResourceGroup" -StorageAccountName "myStorageAccount" | Get-AzRmStorageShare -Name "myshare"
+
+Name     StorageAccountName ResourceGroupName Etag                QuotaGiB LastModifiedTime    
+----     ------------------ ----------------- ----                -------- ----------------    
+myshare  myStorageAccount   myResourceGroup   "0x8D71F03028DDDC9" 5120     2019-08-12 08:56:48Z
+```
+
+Bu komut, depolama hesabı nesnesi ve kapsayıcı adı olan bir depolama blob kapsayıcısını alır.
+
+## PARAMETRELERINE
+
+### -DefaultProfile
+Azure ile iletişim için kullanılan kimlik bilgileri, hesap, kiracı ve abonelik.
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Ad
+Paylaşım adı
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: N, ShareName
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ResourceGroupName
+Kaynak grubu adı.
+
+```yaml
+Type: System.String
+Parameter Sets: AccountName
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -RESOURCEID
+Dosya Paylaşımı kaynak kimliği girin.
+
+```yaml
+Type: System.String
+Parameter Sets: ShareResourceId
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -StorageAccount
+Depolama hesabı nesnesi
+
+```yaml
+Type: Microsoft.Azure.Commands.Management.Storage.Models.PSStorageAccount
+Parameter Sets: AccountObject
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -StorageAccountName
+Depolama hesabı adı.
+
+```yaml
+Type: System.String
+Parameter Sets: AccountName
+Aliases: AccountName
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+Bu cmdlet ortak parametreleri destekler:-Debug,-ErrorAction,-ErrorVariable,-ınformationaction,-ınformationvariable,-OutVariable,-OutBuffer,-Pipelinedeğişken,-verbose,-WarningAction ve-Warningdeğişken. Daha fazla bilgi için bkz about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
+
+## GÖLGELENDIRICI
+
+### System. String
+
+### Microsoft. Azure. Commands. Management. Storage. model. PSStorageAccount
+
+## ÇıKıŞLAR
+
+### Microsoft. Azure. Commands. Management. Storage. model. PSShare
+
+## NOTLARıNDA
+
+## ILGILI BAĞLANTıLAR
