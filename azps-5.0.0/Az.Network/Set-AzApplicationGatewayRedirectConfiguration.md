@@ -1,0 +1,227 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.Network.dll-Help.xml
+Module Name: Az.Network
+online version: https://docs.microsoft.com/en-us/powershell/module/az.network/set-azapplicationgatewayredirectconfiguration
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Set-AzApplicationGatewayRedirectConfiguration.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Set-AzApplicationGatewayRedirectConfiguration.md
+ms.openlocfilehash: 87013db1f8bdff42fd34f28d45d5998d056aab40
+ms.sourcegitcommit: b4a38bcb0501a9016a4998efd377aa75d3ef9ce8
+ms.translationtype: MT
+ms.contentlocale: tr-TR
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "94278516"
+---
+# <span data-ttu-id="19eab-101">Set-AzApplicationGatewayRedirectConfiguration</span><span class="sxs-lookup"><span data-stu-id="19eab-101">Set-AzApplicationGatewayRedirectConfiguration</span></span>
+
+## <span data-ttu-id="19eab-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="19eab-102">SYNOPSIS</span></span>
+<span data-ttu-id="19eab-103">Varolan bir uygulama ağ geçidinde yeniden yönlendirme yapılandırmasını ayarlar.</span><span class="sxs-lookup"><span data-stu-id="19eab-103">Sets the redirect configuration on an existing Application Gateway.</span></span>
+
+## <span data-ttu-id="19eab-104">INDEKI</span><span class="sxs-lookup"><span data-stu-id="19eab-104">SYNTAX</span></span>
+
+### <span data-ttu-id="19eab-105">Setbyresourceıd</span><span class="sxs-lookup"><span data-stu-id="19eab-105">SetByResourceId</span></span>
+```
+Set-AzApplicationGatewayRedirectConfiguration -ApplicationGateway <PSApplicationGateway> -Name <String>
+ -RedirectType <String> [-TargetListenerID <String>] [-IncludePath <Boolean>] [-IncludeQueryString <Boolean>]
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+### <span data-ttu-id="19eab-106">SetByResource</span><span class="sxs-lookup"><span data-stu-id="19eab-106">SetByResource</span></span>
+```
+Set-AzApplicationGatewayRedirectConfiguration -ApplicationGateway <PSApplicationGateway> -Name <String>
+ -RedirectType <String> [-TargetListener <PSApplicationGatewayHttpListener>] [-IncludePath <Boolean>]
+ [-IncludeQueryString <Boolean>] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+### <span data-ttu-id="19eab-107">SetByURL</span><span class="sxs-lookup"><span data-stu-id="19eab-107">SetByURL</span></span>
+```
+Set-AzApplicationGatewayRedirectConfiguration -ApplicationGateway <PSApplicationGateway> -Name <String>
+ -RedirectType <String> [-TargetUrl <String>] [-IncludePath <Boolean>] [-IncludeQueryString <Boolean>]
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+## <span data-ttu-id="19eab-108">Tanım</span><span class="sxs-lookup"><span data-stu-id="19eab-108">DESCRIPTION</span></span>
+<span data-ttu-id="19eab-109">**Set-AzApplicationGatewayRequestRoutingRule** cmdlet 'i yeniden yönlendirme yapılandırmasını değiştirir.</span><span class="sxs-lookup"><span data-stu-id="19eab-109">**The Set-AzApplicationGatewayRequestRoutingRule** cmdlet modifies a redirect configuration.</span></span>
+
+## <span data-ttu-id="19eab-110">ÖRNEKLERDEN</span><span class="sxs-lookup"><span data-stu-id="19eab-110">EXAMPLES</span></span>
+
+### <span data-ttu-id="19eab-111">Örnek 1</span><span class="sxs-lookup"><span data-stu-id="19eab-111">Example 1</span></span>
+```powershell
+PS C:\>$AppGw = Get-AzApplicationGateway -Name "ApplicationGateway01" -ResourceGroupName "ResourceGroup01"
+PS C:\> $AppGw =  Set-AzApplicationGatewayRedirectConfiguration -ApplicationGateway $appgw -Name "RedirectConfig01" -RedirectType Permanent -TargetUrl "https://www.contoso.com"
+```
+
+<span data-ttu-id="19eab-112">İlk komut ApplicationGateway01 adındaki uygulama ağ geçidini alır ve $AppGw değişkeninde depolar.</span><span class="sxs-lookup"><span data-stu-id="19eab-112">The first command gets the application gateway named ApplicationGateway01 and stores it in the $AppGw variable.</span></span>
+<span data-ttu-id="19eab-113">İkinci komut, uygulama ağ geçidinin yeniden yönlendirme yapılandırmasını kalıcı olarak yeniden yönlendirmek ve hedef URL 'yi kullanır.</span><span class="sxs-lookup"><span data-stu-id="19eab-113">The second command modifies the redirect configuration for the application gateway to redirect type Permanent and use a target url.</span></span>
+
+### <span data-ttu-id="19eab-114">Örnek 2</span><span class="sxs-lookup"><span data-stu-id="19eab-114">Example 2</span></span>
+
+<span data-ttu-id="19eab-115">Varolan bir uygulama ağ geçidinde yeniden yönlendirme yapılandırmasını ayarlar.</span><span class="sxs-lookup"><span data-stu-id="19eab-115">Sets the redirect configuration on an existing Application Gateway.</span></span> <span data-ttu-id="19eab-116">oluşturulmuş</span><span class="sxs-lookup"><span data-stu-id="19eab-116">(autogenerated)</span></span>
+
+<!-- Aladdin Generated Example -->
+```powershell
+Set-AzApplicationGatewayRedirectConfiguration -ApplicationGateway <PSApplicationGateway> -IncludePath $false -IncludeQueryString $false -Name 'RedirectConfig01' -RedirectType Permanent -TargetListener <PSApplicationGatewayHttpListener>
+```
+
+## <span data-ttu-id="19eab-117">PARAMETRELERINE</span><span class="sxs-lookup"><span data-stu-id="19eab-117">PARAMETERS</span></span>
+
+### <span data-ttu-id="19eab-118">-ApplicationGateway</span><span class="sxs-lookup"><span data-stu-id="19eab-118">-ApplicationGateway</span></span>
+<span data-ttu-id="19eab-119">ApplicationGateway</span><span class="sxs-lookup"><span data-stu-id="19eab-119">The applicationGateway</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGateway
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="19eab-120">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="19eab-120">-DefaultProfile</span></span>
+<span data-ttu-id="19eab-121">Azure ile iletişim için kullanılan kimlik bilgileri, hesap, kiracı ve abonelik.</span><span class="sxs-lookup"><span data-stu-id="19eab-121">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="19eab-122">-IncludePath</span><span class="sxs-lookup"><span data-stu-id="19eab-122">-IncludePath</span></span>
+<span data-ttu-id="19eab-123">Yeniden yönlendirilen URL 'ye yol ekleyin.</span><span class="sxs-lookup"><span data-stu-id="19eab-123">Include path in the redirected url.</span></span>
+<span data-ttu-id="19eab-124">Varsayılan doğrudur.</span><span class="sxs-lookup"><span data-stu-id="19eab-124">Default is true.</span></span>
+
+```yaml
+Type: System.Nullable`1[System.Boolean]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="19eab-125">-Includequerystring</span><span class="sxs-lookup"><span data-stu-id="19eab-125">-IncludeQueryString</span></span>
+<span data-ttu-id="19eab-126">Yeniden yönlendirilen URL 'ye sorgu dizesi ekleyin.</span><span class="sxs-lookup"><span data-stu-id="19eab-126">Include query string in the redirected url.</span></span>
+<span data-ttu-id="19eab-127">Varsayılan doğrudur.</span><span class="sxs-lookup"><span data-stu-id="19eab-127">Default is true.</span></span>
+
+```yaml
+Type: System.Nullable`1[System.Boolean]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="19eab-128">-Ad</span><span class="sxs-lookup"><span data-stu-id="19eab-128">-Name</span></span>
+<span data-ttu-id="19eab-129">Yönlendirme yapılandırmasının adı</span><span class="sxs-lookup"><span data-stu-id="19eab-129">The name of the Redirect Configuration</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="19eab-130">-RedirectType</span><span class="sxs-lookup"><span data-stu-id="19eab-130">-RedirectType</span></span>
+<span data-ttu-id="19eab-131">Yönlendirme türü</span><span class="sxs-lookup"><span data-stu-id="19eab-131">The type of redirect</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+Accepted values: Permanent, Found, SeeOther, Temporary
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="19eab-132">-TargetListener</span><span class="sxs-lookup"><span data-stu-id="19eab-132">-TargetListener</span></span>
+<span data-ttu-id="19eab-133">İsteğin yönlendirileceği HTTP dinleyicisi</span><span class="sxs-lookup"><span data-stu-id="19eab-133">HTTP listener to redirect the request to</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayHttpListener
+Parameter Sets: SetByResource
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="19eab-134">-Targetlistenerıd</span><span class="sxs-lookup"><span data-stu-id="19eab-134">-TargetListenerID</span></span>
+<span data-ttu-id="19eab-135">İsteğin yönlendirileceği HTTP dinleyicisinin KIMLIĞI</span><span class="sxs-lookup"><span data-stu-id="19eab-135">ID of HTTP listener to redirect the request to</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: SetByResourceId
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="19eab-136">-TargetUrl</span><span class="sxs-lookup"><span data-stu-id="19eab-136">-TargetUrl</span></span>
+<span data-ttu-id="19eab-137">Hedef URL fo yeniden yönlendirmesi</span><span class="sxs-lookup"><span data-stu-id="19eab-137">Target URL fo redirection</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: SetByURL
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="19eab-138">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="19eab-138">CommonParameters</span></span>
+<span data-ttu-id="19eab-139">Bu cmdlet ortak parametreleri destekler:-Debug,-ErrorAction,-ErrorVariable,-ınformationaction,-ınformationvariable,-OutVariable,-OutBuffer,-Pipelinedeğişken,-verbose,-WarningAction ve-Warningdeğişken.</span><span class="sxs-lookup"><span data-stu-id="19eab-139">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="19eab-140">Daha fazla bilgi için bkz about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="19eab-140">For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="19eab-141">GÖLGELENDIRICI</span><span class="sxs-lookup"><span data-stu-id="19eab-141">INPUTS</span></span>
+
+### <span data-ttu-id="19eab-142">Microsoft. Azure. Commands. Network. modeller. PSApplicationGateway</span><span class="sxs-lookup"><span data-stu-id="19eab-142">Microsoft.Azure.Commands.Network.Models.PSApplicationGateway</span></span>
+
+## <span data-ttu-id="19eab-143">ÇıKıŞLAR</span><span class="sxs-lookup"><span data-stu-id="19eab-143">OUTPUTS</span></span>
+
+### <span data-ttu-id="19eab-144">Microsoft. Azure. Commands. Network. modeller. PSApplicationGateway</span><span class="sxs-lookup"><span data-stu-id="19eab-144">Microsoft.Azure.Commands.Network.Models.PSApplicationGateway</span></span>
+
+## <span data-ttu-id="19eab-145">NOTLARıNDA</span><span class="sxs-lookup"><span data-stu-id="19eab-145">NOTES</span></span>
+
+## <span data-ttu-id="19eab-146">ILGILI BAĞLANTıLAR</span><span class="sxs-lookup"><span data-stu-id="19eab-146">RELATED LINKS</span></span>
+
+[<span data-ttu-id="19eab-147">Add-AzApplicationGatewayRedirectConfiguration</span><span class="sxs-lookup"><span data-stu-id="19eab-147">Add-AzApplicationGatewayRedirectConfiguration</span></span>](./Add-AzApplicationGatewayRedirectConfiguration.md)
+
+[<span data-ttu-id="19eab-148">Get-AzApplicationGatewayRedirectConfiguration</span><span class="sxs-lookup"><span data-stu-id="19eab-148">Get-AzApplicationGatewayRedirectConfiguration</span></span>](./Get-AzApplicationGatewayRedirectConfiguration.md)
+
+[<span data-ttu-id="19eab-149">Yeni-AzApplicationGatewayRedirectConfiguration</span><span class="sxs-lookup"><span data-stu-id="19eab-149">New-AzApplicationGatewayRedirectConfiguration</span></span>](./New-AzApplicationGatewayRedirectConfiguration.md)
+
+[<span data-ttu-id="19eab-150">Remove-AzApplicationGatewayRedirectConfiguration</span><span class="sxs-lookup"><span data-stu-id="19eab-150">Remove-AzApplicationGatewayRedirectConfiguration</span></span>](./Remove-AzApplicationGatewayRedirectConfiguration.md)

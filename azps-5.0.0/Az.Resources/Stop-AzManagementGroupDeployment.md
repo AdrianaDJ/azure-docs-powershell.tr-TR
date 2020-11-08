@@ -1,0 +1,214 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.ResourceManager.dll-Help.xml
+Module Name: Az.Resources
+online version: https://docs.microsoft.com/en-us/powershell/module/az.resources/stop-azmanagementgroupdeployment
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Stop-AzManagementGroupDeployment.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Stop-AzManagementGroupDeployment.md
+ms.openlocfilehash: 96c4f9147875198716d530ee065177472233e465
+ms.sourcegitcommit: b4a38bcb0501a9016a4998efd377aa75d3ef9ce8
+ms.translationtype: MT
+ms.contentlocale: tr-TR
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "94277028"
+---
+# <span data-ttu-id="8e2e0-101">Stop-AzManagementGroupDeployment</span><span class="sxs-lookup"><span data-stu-id="8e2e0-101">Stop-AzManagementGroupDeployment</span></span>
+
+## <span data-ttu-id="8e2e0-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="8e2e0-102">SYNOPSIS</span></span>
+<span data-ttu-id="8e2e0-103">Yönetim grubunda çalışan bir dağıtımı iptal etme</span><span class="sxs-lookup"><span data-stu-id="8e2e0-103">Cancel a running deployment at a management group</span></span>
+
+## <span data-ttu-id="8e2e0-104">INDEKI</span><span class="sxs-lookup"><span data-stu-id="8e2e0-104">SYNTAX</span></span>
+
+### <span data-ttu-id="8e2e0-105">StopByDeploymentName (varsayılan)</span><span class="sxs-lookup"><span data-stu-id="8e2e0-105">StopByDeploymentName (Default)</span></span>
+```
+Stop-AzManagementGroupDeployment [-ManagementGroupId] <String> [-Name] <String> [-PassThru] [-Pre]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### <span data-ttu-id="8e2e0-106">StopByDeploymentId</span><span class="sxs-lookup"><span data-stu-id="8e2e0-106">StopByDeploymentId</span></span>
+```
+Stop-AzManagementGroupDeployment -Id <String> [-PassThru] [-Pre] [-DefaultProfile <IAzureContextContainer>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### <span data-ttu-id="8e2e0-107">StopByInputObject</span><span class="sxs-lookup"><span data-stu-id="8e2e0-107">StopByInputObject</span></span>
+```
+Stop-AzManagementGroupDeployment -InputObject <PSDeployment> [-PassThru] [-Pre]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## <span data-ttu-id="8e2e0-108">Tanım</span><span class="sxs-lookup"><span data-stu-id="8e2e0-108">DESCRIPTION</span></span>
+<span data-ttu-id="8e2e0-109">**Stop-AzManagementGroupDeployment** cmdlet 'i, bir yönetim grubunda başlatılmış ancak tamamlanmamış bir dağıtımı iptal eder.</span><span class="sxs-lookup"><span data-stu-id="8e2e0-109">The **Stop-AzManagementGroupDeployment** cmdlet cancels a deployment that has started but not completed at a management group.</span></span>
+<span data-ttu-id="8e2e0-110">Bir dağıtımı durdurmak için dağıtımın, sağlama gibi tamamlanmamış bir sağlama durumu olmalıdır; bunun sağlanması veya başarısız gibi tamamlanmamış bir durumda olmaması gerekir.</span><span class="sxs-lookup"><span data-stu-id="8e2e0-110">To stop a deployment, the deployment must have an incomplete provisioning state, such as Provisioning, and not a completed state, such as Provisioned or Failed.</span></span>
+
+<span data-ttu-id="8e2e0-111">Yönetim grubunda dağıtım oluşturmak için New-AzManagementGroupDeployment cmdlet 'ini kullanın.</span><span class="sxs-lookup"><span data-stu-id="8e2e0-111">To create a deployment at a management group, use the New-AzManagementGroupDeployment cmdlet.</span></span>
+
+## <span data-ttu-id="8e2e0-112">ÖRNEKLERDEN</span><span class="sxs-lookup"><span data-stu-id="8e2e0-112">EXAMPLES</span></span>
+
+### <span data-ttu-id="8e2e0-113">Örnek 1</span><span class="sxs-lookup"><span data-stu-id="8e2e0-113">Example 1</span></span>
+```
+PS C:\>Stop-AzManagementGroupDeployment -ManagementGroupId "myMG" -Name "deployment01"
+```
+
+<span data-ttu-id="8e2e0-114">Bu komut, "myMG" yönetim grubundaki "deployment01" çalışan dağıtımını iptal eder.</span><span class="sxs-lookup"><span data-stu-id="8e2e0-114">This command cancels a running deployment "deployment01" at the management group "myMG".</span></span>
+
+### <span data-ttu-id="8e2e0-115">Örnek 2</span><span class="sxs-lookup"><span data-stu-id="8e2e0-115">Example 2</span></span>
+```
+PS C:\>Get-AzManagementGroupDeployment -ManagementGroupId "myMG" -Name "deployment01" | Stop-AzManagementGroupDeployment
+```
+
+<span data-ttu-id="8e2e0-116">Bu komut, "myMG" yönetim grubundaki "deployment01" dağıtımını alır ve bunu iptal eder.</span><span class="sxs-lookup"><span data-stu-id="8e2e0-116">This command gets the deployment "deployment01" at the management group "myMG" and cancels it.</span></span> 
+
+## <span data-ttu-id="8e2e0-117">PARAMETRELERINE</span><span class="sxs-lookup"><span data-stu-id="8e2e0-117">PARAMETERS</span></span>
+
+### <span data-ttu-id="8e2e0-118">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="8e2e0-118">-DefaultProfile</span></span>
+<span data-ttu-id="8e2e0-119">Azure ile iletişim için kullanılan kimlik bilgileri, hesap, kiracı ve abonelik.</span><span class="sxs-lookup"><span data-stu-id="8e2e0-119">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="8e2e0-120">-ID</span><span class="sxs-lookup"><span data-stu-id="8e2e0-120">-Id</span></span>
+<span data-ttu-id="8e2e0-121">Dağıtımın tam kaynak kimliği.</span><span class="sxs-lookup"><span data-stu-id="8e2e0-121">The fully qualified resource Id of the deployment.</span></span>
+<span data-ttu-id="8e2e0-122">Örnek:/providers/Microsoft.Management/managementGroups/{managementGroupId}/providers/Microsoft.Resources/deployments/{deploymentName}</span><span class="sxs-lookup"><span data-stu-id="8e2e0-122">example: /providers/Microsoft.Management/managementGroups/{managementGroupId}/providers/Microsoft.Resources/deployments/{deploymentName}</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: StopByDeploymentId
+Aliases: DeploymentId, ResourceId
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="8e2e0-123">-InputObject</span><span class="sxs-lookup"><span data-stu-id="8e2e0-123">-InputObject</span></span>
+<span data-ttu-id="8e2e0-124">Dağıtım nesnesi.</span><span class="sxs-lookup"><span data-stu-id="8e2e0-124">The deployment object.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.ResourceManager.Cmdlets.SdkModels.PSDeployment
+Parameter Sets: StopByInputObject
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="8e2e0-125">-ManagementGroupId</span><span class="sxs-lookup"><span data-stu-id="8e2e0-125">-ManagementGroupId</span></span>
+<span data-ttu-id="8e2e0-126">Yönetim grubu kimliği.</span><span class="sxs-lookup"><span data-stu-id="8e2e0-126">The management group id.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: StopByDeploymentName
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="8e2e0-127">-Ad</span><span class="sxs-lookup"><span data-stu-id="8e2e0-127">-Name</span></span>
+<span data-ttu-id="8e2e0-128">Dağıtımın adı.</span><span class="sxs-lookup"><span data-stu-id="8e2e0-128">The name of the deployment.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: StopByDeploymentName
+Aliases: DeploymentName
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="8e2e0-129">-Geçiş</span><span class="sxs-lookup"><span data-stu-id="8e2e0-129">-PassThru</span></span>
+<span data-ttu-id="8e2e0-130">{{Dolgu geçiş açıklaması}}</span><span class="sxs-lookup"><span data-stu-id="8e2e0-130">{{ Fill PassThru Description }}</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="8e2e0-131">-Pre-</span><span class="sxs-lookup"><span data-stu-id="8e2e0-131">-Pre</span></span>
+<span data-ttu-id="8e2e0-132">Ayarlandığında, cmdlet 'in hangi sürümü kullanacağını otomatik olarak belirlerken cmdlet 'in pre API sürümlerini kullanması gerektiğini belirtir.</span><span class="sxs-lookup"><span data-stu-id="8e2e0-132">When set, indicates that the cmdlet should use pre-release API versions when automatically determining which version to use.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="8e2e0-133">-Onay</span><span class="sxs-lookup"><span data-stu-id="8e2e0-133">-Confirm</span></span>
+<span data-ttu-id="8e2e0-134">Cmdlet 'i çalıştırmadan önce onaylamanızı ister.</span><span class="sxs-lookup"><span data-stu-id="8e2e0-134">Prompts you for confirmation before running the cmdlet.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="8e2e0-135">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="8e2e0-135">-WhatIf</span></span>
+<span data-ttu-id="8e2e0-136">Cmdlet çalışırsa ne olacağını gösterir.</span><span class="sxs-lookup"><span data-stu-id="8e2e0-136">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="8e2e0-137">Cmdlet çalışmaz.</span><span class="sxs-lookup"><span data-stu-id="8e2e0-137">The cmdlet is not run.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="8e2e0-138">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="8e2e0-138">CommonParameters</span></span>
+<span data-ttu-id="8e2e0-139">Bu cmdlet ortak parametreleri destekler:-Debug,-ErrorAction,-ErrorVariable,-ınformationaction,-ınformationvariable,-OutVariable,-OutBuffer,-Pipelinedeğişken,-verbose,-WarningAction ve-Warningdeğişken.</span><span class="sxs-lookup"><span data-stu-id="8e2e0-139">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="8e2e0-140">Daha fazla bilgi için [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)bakın.</span><span class="sxs-lookup"><span data-stu-id="8e2e0-140">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="8e2e0-141">GÖLGELENDIRICI</span><span class="sxs-lookup"><span data-stu-id="8e2e0-141">INPUTS</span></span>
+
+### <span data-ttu-id="8e2e0-142">Microsoft.Azure.Commands.ResourceManager.Cmdlets.SdkModels.PSDeplote</span><span class="sxs-lookup"><span data-stu-id="8e2e0-142">Microsoft.Azure.Commands.ResourceManager.Cmdlets.SdkModels.PSDeployment</span></span>
+
+## <span data-ttu-id="8e2e0-143">ÇıKıŞLAR</span><span class="sxs-lookup"><span data-stu-id="8e2e0-143">OUTPUTS</span></span>
+
+### <span data-ttu-id="8e2e0-144">System. Boolean</span><span class="sxs-lookup"><span data-stu-id="8e2e0-144">System.Boolean</span></span>
+
+## <span data-ttu-id="8e2e0-145">NOTLARıNDA</span><span class="sxs-lookup"><span data-stu-id="8e2e0-145">NOTES</span></span>
+
+## <span data-ttu-id="8e2e0-146">ILGILI BAĞLANTıLAR</span><span class="sxs-lookup"><span data-stu-id="8e2e0-146">RELATED LINKS</span></span>

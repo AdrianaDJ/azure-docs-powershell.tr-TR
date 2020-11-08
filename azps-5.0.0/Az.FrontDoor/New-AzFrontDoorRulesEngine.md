@@ -1,0 +1,166 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.FrontDoor.dll-Help.xml
+Module Name: Az.FrontDoor
+online version: https://docs.microsoft.com/en-us/powershell/module/az.frontdoor/new-azfrontdoorrulesengine
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/FrontDoor/FrontDoor/help/New-AzFrontDoorRulesEngine.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/FrontDoor/FrontDoor/help/New-AzFrontDoorRulesEngine.md
+ms.openlocfilehash: 9f01a17bfe9e3e499e2bac2953f1cccc2af56c41
+ms.sourcegitcommit: b4a38bcb0501a9016a4998efd377aa75d3ef9ce8
+ms.translationtype: MT
+ms.contentlocale: tr-TR
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "94277416"
+---
+# <span data-ttu-id="4a53e-101">New-AzFrontDoorRulesEngine</span><span class="sxs-lookup"><span data-stu-id="4a53e-101">New-AzFrontDoorRulesEngine</span></span>
+
+## <span data-ttu-id="4a53e-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="4a53e-102">SYNOPSIS</span></span>
+<span data-ttu-id="4a53e-103">Belirtilen ön kapı için yeni bir kural Altyapısı yapılandırması oluşturun.</span><span class="sxs-lookup"><span data-stu-id="4a53e-103">Create a new rules engine configuration for a specified front door.</span></span> 
+
+## <span data-ttu-id="4a53e-104">INDEKI</span><span class="sxs-lookup"><span data-stu-id="4a53e-104">SYNTAX</span></span>
+
+```
+New-AzFrontDoorRulesEngine -ResourceGroupName <String> -FrontDoorName <String> -Name <String>
+ [-Rule <PSRulesEngineRule[]>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
+```
+
+## <span data-ttu-id="4a53e-105">Tanım</span><span class="sxs-lookup"><span data-stu-id="4a53e-105">DESCRIPTION</span></span>
+<span data-ttu-id="4a53e-106">Belirtilen ön kapı için yeni bir kural Altyapısı yapılandırması oluşturun.</span><span class="sxs-lookup"><span data-stu-id="4a53e-106">Create a new rules engine configuration for a specified front door.</span></span> 
+
+<span data-ttu-id="4a53e-107">Bu cmdlet 'in "-Rules" parametresine geçilecek kural altyapısı kuralları oluşturmak için "New-AzFrontDoorRulesEngineRule" cmdlet 'ini kullanın.</span><span class="sxs-lookup"><span data-stu-id="4a53e-107">Use cmdlet "New-AzFrontDoorRulesEngineRule" to construct rules engine rules to pass into the "-Rules" parameter of this cmdlet.</span></span>
+
+## <span data-ttu-id="4a53e-108">ÖRNEKLERDEN</span><span class="sxs-lookup"><span data-stu-id="4a53e-108">EXAMPLES</span></span>
+
+### <span data-ttu-id="4a53e-109">Örnek 1</span><span class="sxs-lookup"><span data-stu-id="4a53e-109">Example 1</span></span>
+```powershell
+PS C:\> New-AzFrontDoorRulesEngine -ResourceGroupName $resourceGroupName -FrontDoorName $frontDoorName -Name myRulesEngine -Rule $rulesEngineRule1
+
+Name          RulesEngineRules
+----          ----------------
+myRulesEngine {rules1}
+```
+
+<span data-ttu-id="4a53e-110">Belirtilen ön kapı için yeni bir kural Altyapısı yapılandırması oluşturun.</span><span class="sxs-lookup"><span data-stu-id="4a53e-110">Create a new rules engine configuration for specified front door.</span></span>
+
+## <span data-ttu-id="4a53e-111">PARAMETRELERINE</span><span class="sxs-lookup"><span data-stu-id="4a53e-111">PARAMETERS</span></span>
+
+### <span data-ttu-id="4a53e-112">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="4a53e-112">-DefaultProfile</span></span>
+<span data-ttu-id="4a53e-113">Azure ile iletişim için kullanılan kimlik bilgileri, hesap, kiracı ve abonelik.</span><span class="sxs-lookup"><span data-stu-id="4a53e-113">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="4a53e-114">-FrontDoorName</span><span class="sxs-lookup"><span data-stu-id="4a53e-114">-FrontDoorName</span></span>
+<span data-ttu-id="4a53e-115">Ön kapı adı.</span><span class="sxs-lookup"><span data-stu-id="4a53e-115">Front Door name.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="4a53e-116">-Ad</span><span class="sxs-lookup"><span data-stu-id="4a53e-116">-Name</span></span>
+<span data-ttu-id="4a53e-117">Kural altyapısı adı.</span><span class="sxs-lookup"><span data-stu-id="4a53e-117">Rules engine name.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="4a53e-118">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="4a53e-118">-ResourceGroupName</span></span>
+<span data-ttu-id="4a53e-119">Ön kapıda oluşturulduğu kaynak grubu adı.</span><span class="sxs-lookup"><span data-stu-id="4a53e-119">The resource group name that the Front Door will be created in.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="4a53e-120">-Kural</span><span class="sxs-lookup"><span data-stu-id="4a53e-120">-Rule</span></span>
+<span data-ttu-id="4a53e-121">Belirli bir kural altyapısı yapılandırmasını tanımlayan kuralların listesi.</span><span class="sxs-lookup"><span data-stu-id="4a53e-121">A list of rules that define a particular Rules Engine Configuration.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.FrontDoor.Models.PSRulesEngineRule[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="4a53e-122">-Onay</span><span class="sxs-lookup"><span data-stu-id="4a53e-122">-Confirm</span></span>
+<span data-ttu-id="4a53e-123">Cmdlet 'i çalıştırmadan önce onaylamanızı ister.</span><span class="sxs-lookup"><span data-stu-id="4a53e-123">Prompts you for confirmation before running the cmdlet.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="4a53e-124">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="4a53e-124">-WhatIf</span></span>
+<span data-ttu-id="4a53e-125">Cmdlet çalışırsa ne olacağını gösterir.</span><span class="sxs-lookup"><span data-stu-id="4a53e-125">Shows what would happen if the cmdlet runs.</span></span> <span data-ttu-id="4a53e-126">Cmdlet çalışmaz.</span><span class="sxs-lookup"><span data-stu-id="4a53e-126">The cmdlet is not run.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="4a53e-127">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="4a53e-127">CommonParameters</span></span>
+<span data-ttu-id="4a53e-128">Bu cmdlet ortak parametreleri destekler:-Debug,-ErrorAction,-ErrorVariable,-ınformationaction,-ınformationvariable,-OutVariable,-OutBuffer,-Pipelinedeğişken,-verbose,-WarningAction ve-Warningdeğişken.</span><span class="sxs-lookup"><span data-stu-id="4a53e-128">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="4a53e-129">Daha fazla bilgi için [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)bakın.</span><span class="sxs-lookup"><span data-stu-id="4a53e-129">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="4a53e-130">GÖLGELENDIRICI</span><span class="sxs-lookup"><span data-stu-id="4a53e-130">INPUTS</span></span>
+
+### <span data-ttu-id="4a53e-131">Yabilirsiniz</span><span class="sxs-lookup"><span data-stu-id="4a53e-131">None</span></span>
+
+## <span data-ttu-id="4a53e-132">ÇıKıŞLAR</span><span class="sxs-lookup"><span data-stu-id="4a53e-132">OUTPUTS</span></span>
+
+### <span data-ttu-id="4a53e-133">Microsoft. Azure. Commands. Frontkapısı. modeller. PSRulesEngine</span><span class="sxs-lookup"><span data-stu-id="4a53e-133">Microsoft.Azure.Commands.FrontDoor.Models.PSRulesEngine</span></span>
+
+## <span data-ttu-id="4a53e-134">NOTLARıNDA</span><span class="sxs-lookup"><span data-stu-id="4a53e-134">NOTES</span></span>
+
+## <span data-ttu-id="4a53e-135">ILGILI BAĞLANTıLAR</span><span class="sxs-lookup"><span data-stu-id="4a53e-135">RELATED LINKS</span></span>
