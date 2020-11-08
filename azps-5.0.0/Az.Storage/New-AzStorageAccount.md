@@ -1,0 +1,635 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.Storage.Management.dll-Help.xml
+Module Name: Az.Storage
+ms.assetid: A3DA1205-B8FB-4B4C-9C40-AD303D038EDF
+online version: https://docs.microsoft.com/en-us/powershell/module/az.storage/new-azstorageaccount
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Storage/Storage.Management/help/New-AzStorageAccount.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Storage/Storage.Management/help/New-AzStorageAccount.md
+ms.openlocfilehash: 022c27b3eec589e395e1044f165ee9f8f17d1cad
+ms.sourcegitcommit: b4a38bcb0501a9016a4998efd377aa75d3ef9ce8
+ms.translationtype: MT
+ms.contentlocale: tr-TR
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "94277189"
+---
+# New-AzStorageAccount
+
+## SYNOPSIS
+Depolama hesabı oluşturur.
+
+## INDEKI
+
+### AzureActiveDirectoryDomainServicesForFile (varsayılan)
+```
+New-AzStorageAccount [-ResourceGroupName] <String> [-Name] <String> [-SkuName] <String> [-Location] <String>
+ [-Kind <String>] [-AccessTier <String>] [-CustomDomainName <String>] [-UseSubDomain <Boolean>]
+ [-Tag <Hashtable>] [-EnableHttpsTrafficOnly <Boolean>] [-AssignIdentity] [-NetworkRuleSet <PSNetworkRuleSet>]
+ [-EnableHierarchicalNamespace <Boolean>] [-EnableAzureActiveDirectoryDomainServicesForFile <Boolean>]
+ [-EnableLargeFileShare] [-AsJob] [-EncryptionKeyTypeForTable <String>] [-EncryptionKeyTypeForQueue <String>]
+ [-RequireInfrastructureEncryption] [-AllowBlobPublicAccess <Boolean>] [-MinimumTlsVersion <String>]
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+### ActiveDirectoryDomainServicesForFile
+```
+New-AzStorageAccount [-ResourceGroupName] <String> [-Name] <String> [-SkuName] <String> [-Location] <String>
+ [-Kind <String>] [-AccessTier <String>] [-CustomDomainName <String>] [-UseSubDomain <Boolean>]
+ [-Tag <Hashtable>] [-EnableHttpsTrafficOnly <Boolean>] [-AssignIdentity] [-NetworkRuleSet <PSNetworkRuleSet>]
+ [-EnableHierarchicalNamespace <Boolean>] [-EnableLargeFileShare]
+ [-EnableActiveDirectoryDomainServicesForFile <Boolean>] [-ActiveDirectoryDomainName <String>]
+ [-ActiveDirectoryNetBiosDomainName <String>] [-ActiveDirectoryForestName <String>]
+ [-ActiveDirectoryDomainGuid <String>] [-ActiveDirectoryDomainSid <String>]
+ [-ActiveDirectoryAzureStorageSid <String>] [-AsJob] [-EncryptionKeyTypeForTable <String>]
+ [-EncryptionKeyTypeForQueue <String>] [-RequireInfrastructureEncryption] [-AllowBlobPublicAccess <Boolean>]
+ [-MinimumTlsVersion <String>] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+## Tanım
+**New-AzStorageAccount** cmdlet 'ı bir Azure depolama hesabı oluşturur.
+
+## ÖRNEKLERDEN
+
+### Örnek 1: depolama hesabı oluşturma
+```powershell
+PS C:\>New-AzStorageAccount -ResourceGroupName MyResourceGroup -AccountName mystorageaccount -Location westus -SkuName Standard_GRS
+```
+
+Bu komut MyResourceGroup kaynak grubu adı için bir depolama hesabı oluşturur.
+
+### Örnek 2: BlobStorage türü ve Hot AccessTier ile BLOB depolama hesabı oluşturma
+```powershell
+PS C:\>New-AzStorageAccount -ResourceGroupName MyResourceGroup -AccountName mystorageaccount -Location westus -SkuName Standard_GRS -Kind BlobStorage -AccessTier Hot
+```
+
+Bu komut, BlobStorage türü ve Hot AccessTier içeren bir BLOB depolama hesabı oluşturur
+
+### Örnek 3: StorageV2 türünde bir depolama hesabı oluşturun ve Azure Keykasa için bir kimlik oluşturun ve atayın.
+```powershell
+PS C:\>New-AzStorageAccount -ResourceGroupName MyResourceGroup -AccountName mystorageaccount -Location westus -SkuName Standard_GRS -Kind StorageV2 -AssignIdentity
+```
+
+Bu komut, StorageV2 türünde bir depolama hesabı oluşturur.  Ayrıca, Azure Keykasası aracılığıyla hesap anahtarlarını yönetmek için kullanılabilecek bir kimlik oluşturur ve bunu atar.
+
+### Örnek 4: JSON 'den NetworkRuleSet ile depolama hesabı oluşturma
+```powershell
+PS C:\>New-AzStorageAccount -ResourceGroupName MyResourceGroup -AccountName mystorageaccount -Location westus -Type Standard_LRS -NetworkRuleSet (@{bypass="Logging,Metrics";
+    ipRules=(@{IPAddressOrRange="20.11.0.0/16";Action="allow"},
+            @{IPAddressOrRange="10.0.0.0/7";Action="allow"});
+    virtualNetworkRules=(@{VirtualNetworkResourceId="/subscriptions/s1/resourceGroups/g1/providers/Microsoft.Network/virtualNetworks/vnet1/subnets/subnet1";Action="allow"},
+                        @{VirtualNetworkResourceId="/subscriptions/s1/resourceGroups/g1/providers/Microsoft.Network/virtualNetworks/vnet2/subnets/subnet2";Action="allow"});
+    defaultAction="Deny"})
+```
+
+Bu komut, JSON 'den NetworkRuleSet özelliğine sahip bir depolama hesabı oluşturur
+
+### Örnek 5: hiyerarşik ad alanı etkinleştirilmiş bir depolama hesabı oluşturun.
+```powershell
+PS C:\>New-AzStorageAccount -ResourceGroupName "MyResourceGroup" -AccountName "mystorageaccount" -Location "US West" -SkuName "Standard_GRS" -Kind StorageV2  -EnableHierarchicalNamespace $true
+```
+
+Bu komut hiyerarşik ad alanı etkinleştirilmiş bir depolama hesabı oluşturur.
+
+### Örnek 6: Azure dosyaları için AAD DS kimlik doğrulaması ile depolama hesabı oluşturun ve büyük dosya paylaşımını etkinleştirin.
+```powershell
+PS C:\>New-AzStorageAccount -ResourceGroupName "MyResourceGroup" -AccountName "mystorageaccount" -Location "eastus2euap" -SkuName "Standard_LRS" -Kind StorageV2  -EnableAzureActiveDirectoryDomainServicesForFile $true -EnableLargeFileShare
+```
+
+Bu komut, Azure dosyaları AAD DS kimlik doğrulaması içeren bir depolama hesabı oluşturur ve büyük dosya paylaşımını etkinleştirir.
+
+### Örnek 7: dosyaları etkinleştir Active Directory etki alanı hizmeti kimlik doğrulaması ile depolama hesabı oluşturun.
+```
+PS C:\>New-AzStorageAccount -ResourceGroupName "MyResourceGroup" -AccountName "mystorageaccount" -Location "eastus2euap" -SkuName "Standard_LRS" -Kind StorageV2  -EnableActiveDirectoryDomainServicesForFile $true `
+        -ActiveDirectoryDomainName "mydomain.com" `
+        -ActiveDirectoryNetBiosDomainName "mydomain.com" `
+        -ActiveDirectoryForestName "mydomain.com" `
+        -ActiveDirectoryDomainGuid "12345678-1234-1234-1234-123456789012" `
+        -ActiveDirectoryDomainSid "S-1-5-21-1234567890-1234567890-1234567890" `
+        -ActiveDirectoryAzureStorageSid "S-1-5-21-1234567890-1234567890-1234567890-1234"
+```
+
+Bu komut dosyaları Active Directory etki alanı hizmeti kimlik doğrulamasını etkinleştirmek için bir depolama hesabı oluşturur.
+
+### Örnek 8: sıra ve tablo hizmetiyle depolama hesabı oluşturma hesap kapsamlı şifreleme anahtarını kullanın ve altyapı şifrelemesi gerektirir.
+```powershell
+PS C:\>New-AzStorageAccount -ResourceGroupName "MyResourceGroup" -AccountName "mystorageaccount" -Location "eastus2euap" -SkuName "Standard_LRS" -Kind StorageV2  -EncryptionKeyTypeForTable Account -EncryptionKeyTypeForQueue Account -RequireInfrastructureEncryption
+
+PS C:\>$account = get-AzStorageAccount -ResourceGroupName $rgname -StorageAccountName $accountName
+
+PS C:\>$account.Encryption.Services.Queue
+
+Enabled LastEnabledTime     KeyType
+------- ---------------     -------
+   True 1/9/2020 6:09:11 AM Account
+
+PS C:\>$account.Encryption.Services.Table
+
+Enabled LastEnabledTime     KeyType
+------- ---------------     -------
+   True 1/9/2020 6:09:11 AM Account
+
+PS C:\> $account.Encryption.RequireInfrastructureEncryption
+True
+```
+
+Bu komut, kuyruk ve tablo hizmeti olan bir depolama hesabı oluşturur hesap kapsamlı şifreleme anahtarını kullanır ve altyapı şifrelemesi gerektirir, bu nedenle sıra ve tablo, blob ve dosya hizmeti ile aynı şifreleme anahtarını kullanır
+Ardından depolama hesabı özelliklerini alın ve sıra ve tablo hizmetinin şifreleme anahtar öğesini ve RequireInfrastructureEncryption değerini görüntüleyin.
+
+### Örnek 9: hesap oluşturma MinimumTlsVersion ve AllowBlobPublicAccess
+```
+PS C:\> $account = New-AzStorageAccount -ResourceGroupName "MyResourceGroup" -AccountName "mystorageaccount" -Location "eastus2euap" -SkuName "Standard_LRS" -Kind StorageV2 -MinimumTlsVersion TLS1_1 -AllowBlobPublicAccess $false
+
+PS C:\> $account.MinimumTlsVersion
+TLS1_1
+
+PS C:\> $account.AllowBlobPublicAccess
+False
+```
+
+Command, MinimumTlsVersion ve AllowBlobPublicAccess içeren bir hesap oluşturur ve ardından oluşturulan hesabın 2 özelliklerini gösterir 
+
+## PARAMETRELERINE
+
+### -AccessTier
+Bu cmdlet 'in oluşturduğu depolama hesabının erişim katmanını belirtir.
+Bu parametre için kabul edilebilir değerler: kolay ve serin.
+*Tür* parametresi Için blobstorage değeri belirtirseniz, *accesstier* parametresi için bir değer belirtmeniz gerekir. Bu *tür* parametre Için bir depolama alanı değeri belirtirseniz, *accesstier* parametresini belirtmeyin.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+Accepted values: Hot, Cool
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ActiveDirectoryAzureStorageSid
+Azure depolama için güvenlik tanımlayıcısını (SID) belirtir. Bu parametre,-EnableActiveDirectoryDomainServicesForFile true olarak ayarlandığında ayarlanmalıdır.
+
+```yaml
+Type: System.String
+Parameter Sets: ActiveDirectoryDomainServicesForFile
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ActiveDirectoryDomainGuid
+Etki alanı GUID 'sini belirtir. Bu parametre,-EnableActiveDirectoryDomainServicesForFile true olarak ayarlandığında ayarlanmalıdır.
+
+```yaml
+Type: System.String
+Parameter Sets: ActiveDirectoryDomainServicesForFile
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Activedirectoryetkialanıadı
+AD DNS sunucusunun yetkili olduğu birincil etki alanını belirtir. Bu parametre,-EnableActiveDirectoryDomainServicesForFile true olarak ayarlandığında ayarlanmalıdır.
+
+```yaml
+Type: System.String
+Parameter Sets: ActiveDirectoryDomainServicesForFile
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ActiveDirectoryDomainSid
+Güvenlik tanımlayıcısını (SID) belirtir. Bu parametre,-EnableActiveDirectoryDomainServicesForFile true olarak ayarlandığında ayarlanmalıdır.
+
+```yaml
+Type: System.String
+Parameter Sets: ActiveDirectoryDomainServicesForFile
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ActiveDirectoryForestName
+Alınacak Active Directory ormanını belirtir. Bu parametre,-EnableActiveDirectoryDomainServicesForFile true olarak ayarlandığında ayarlanmalıdır.
+
+```yaml
+Type: System.String
+Parameter Sets: ActiveDirectoryDomainServicesForFile
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Activedirectorynetbiosetkialanıadı
+NetBIOS etki alanı adını belirtir. Bu parametre,-EnableActiveDirectoryDomainServicesForFile true olarak ayarlandığında ayarlanmalıdır.
+
+```yaml
+Type: System.String
+Parameter Sets: ActiveDirectoryDomainServicesForFile
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AllowBlobPublicAccess
+Depolama hesabındaki tüm blob veya kapsayıcılara genel erişime izin verin. Bu özellik için varsayılan yorumda doğrudur.
+
+```yaml
+Type: System.Boolean
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Iş
+Arka planda cmdlet 'i çalıştırın
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Atama kimliği
+Azure Keykasa gibi temel yönetim hizmetleriyle kullanmak üzere bu depolama hesabı için yeni bir depolama hesabı kimliği oluşturup atayın.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Custometkialanıadı
+Depolama hesabının özel etki alanı adını belirtir.
+Varsayılan değer depolama alanıdır.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DefaultProfile
+Azure ile iletişim için kullanılan kimlik bilgileri, hesap, kiracı ve abonelik.
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -EnableActiveDirectoryDomainServicesForFile
+Depolama hesabı için Azure dosyalarını etkinleştirme Active Directory etki alanı hizmeti kimlik doğrulaması.
+
+```yaml
+Type: System.Boolean
+Parameter Sets: ActiveDirectoryDomainServicesForFile
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Enableazureactivedirectorydomainservicesforfıle
+Depolama hesabı için Azure dosyalarını Azure Active Directory etki alanı hizmeti kimlik doğrulamasını etkinleştirin.
+
+```yaml
+Type: System.Boolean
+Parameter Sets: AzureActiveDirectoryDomainServicesForFile
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -EnableHierarchicalNamespace
+Depolama hesabının hiyerarşik ad alanını etkinleştirilip etkinleştirilmediğini gösterir.
+
+```yaml
+Type: System.Boolean
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -EnableHttpsTrafficOnly
+Depolama hesabının HTTPS trafiğinin yalnızca etkinleştirilip etkinleştirilmediğini gösterir.
+
+```yaml
+Type: System.Boolean
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -EnableLargeFileShare
+Depolama hesabının 5 EB kapasitesinden büyük dosya paylaşımlarını destekleyip desteklemediğini gösterir. Hesap etkinleştirildikten sonra özellik devre dışı bırakılamaz. Şu anda yalnızca LRS ve ZRS çoğaltma türlerinde desteklenir, bu nedenle coğrafi artıklık hesaplarına yönelik hesap dönüşümleri mümkün olmayacaktır. Daha fazla bilgi https://go.microsoft.com/fwlink/?linkid=2086047
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -EncryptionKeyTypeForQueue
+Sıra için şifreleme anahtar öğesini ayarlayın. Varsayılan değer hizmettir.
+-Hesap: sıra, hesap kapsamlı şifreleme anahtarıyla şifrelenir. -Hizmet: sıra Service-Managed anahtarlarıyla her zaman şifrelenir. 
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+Accepted values: Service, Account
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -EncryptionKeyTypeForTable
+Tablo için şifreleme anahtar öğesini ayarlayın. Varsayılan değer hizmettir.
+- Hesap: tablo, hesap kapsamlı şifreleme anahtarıyla şifrelenir. 
+- Hizmet: tablo daima Service-Managed anahtarlarla şifrelenir. 
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+Accepted values: Service, Account
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Tür
+Bu cmdlet 'in oluşturduğu depolama hesabı türünü belirtir.
+Bu parametre için kabul edilebilir değerler şunlardır:
+- Alanını. Blob, tablo, kuyruk, dosya ve disklerin depolanmasını destekleyen genel amaçlı depolama hesabı.
+- StorageV2. Veri katmanlama gibi gelişmiş özellikleri içeren blob, tablo, kuyruk, dosya ve diskleri destekleyen genel amaçlı sürüm 2 (GPv2) depolama hesabı.
+- BlobStorage. Yalnızca blob depolamasını destekleyen BLOB depolama hesabı.
+- BlockBlobStorage. Yalnızca blok blob 'Ları depolamayı destekleyen BLOB depolama hesabını engelle.
+- Dosya depolama. Yalnızca dosyaların depolanmasını destekleyen dosya depolama hesabı.
+Varsayılan değer StorageV2 ' dır.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+Accepted values: Storage, StorageV2, BlobStorage, BlockBlobStorage, FileStorage
+
+Required: False
+Position: Named
+Default value: StorageV2
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Konum
+Oluşturulacak depolama hesabının konumunu belirtir.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 3
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -MinimumTlsVersion
+Depolama için isteklere izin verilecek en düşük TLS sürümü. Bu özellik için varsayılan yorumlamayı TLS 1,0.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+Accepted values: TLS1_0, TLS1_1, TLS1_2
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Ad
+Oluşturulacak depolama hesabının adını belirtir.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: StorageAccountName, AccountName
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -NetworkRuleSet
+NetworkRuleSet, güvenlik duvarları ve sanal ağlar için bir dizi yapılandırma kuralı tanımlamak için kullanılır, ayrıca hizmetler gibi ağ özellikleri için değerlerin ayarlanmasını ve tanımlı kuralların hiçbiriyle eşleşmeyen isteklerin nasıl işleneceğini belirlemek için kullanılır.
+
+```yaml
+Type: Microsoft.Azure.Commands.Management.Storage.Models.PSNetworkRuleSet
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -RequireInfrastructureEncryption
+Hizmet, geri kalan veriler için platform yönetilen anahtarlarıyla ikincil bir şifreleme katmanı uygular.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ResourceGroupName
+Depolama hesabının ekleneceği kaynak grubunun adını belirtir.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -SkuName
+Bu cmdlet 'in oluşturduğu depolama hesabının SKU adını belirtir.
+Bu parametre için kabul edilebilir değerler şunlardır:
+- Standard_LRS. Yerel olarak yedekli depolama.
+- Standard_ZRS. Bölge ile yedekli depolama.
+- Standard_GRS. Coğrafi olarak yedekli depolama.
+- Standard_RAGRS. Okuma erişimi coğrafi depolama.
+- Premium_LRS. Premium yerel olarak yedekli depolama.
+- Premium_ZRS. Premium bölge-yedekli depolama.
+- Standard_GZRS-Coğrafi-Yedekli bölge-yedekli depolama.
+- Standard_RAGZRS-Access coğrafi
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: StorageAccountType, AccountType, Type
+Accepted values: Standard_LRS, Standard_ZRS, Standard_GRS, Standard_RAGRS, Premium_LRS, Premium_ZRS, Standard_GZRS, Standard_RAGZRS
+
+Required: True
+Position: 2
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### Etiketli
+Sunucuda etiket olarak ayarlanan karma tablo biçimindeki anahtar değer çiftleri. Örneğin: @ {Key0 = "value0"; anahtar = $null; anahtar2 = "değer2"}
+
+```yaml
+Type: System.Collections.Hashtable
+Parameter Sets: (All)
+Aliases: Tags
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Usealt etki alanı
+Dolaylı CName doğrulamasının etkinleştirilip etkinleştirilmeyeceğini gösterir.
+
+```yaml
+Type: System.Nullable`1[System.Boolean]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+Bu cmdlet ortak parametreleri destekler:-Debug,-ErrorAction,-ErrorVariable,-ınformationaction,-ınformationvariable,-OutVariable,-OutBuffer,-Pipelinedeğişken,-verbose,-WarningAction ve-Warningdeğişken. Daha fazla bilgi için bkz about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
+
+## GÖLGELENDIRICI
+
+### System. String
+
+## ÇıKıŞLAR
+
+### Microsoft. Azure. Commands. Management. Storage. model. PSStorageAccount
+
+## NOTLARıNDA
+
+## ILGILI BAĞLANTıLAR
+
+[Get-AzStorageAccount](./Get-AzStorageAccount.md)
+
+[Remove-AzStorageAccount](./Remove-AzStorageAccount.md)
+
+[Set-AzStorageAccount](./Set-AzStorageAccount.md)
