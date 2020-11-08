@@ -1,0 +1,210 @@
+---
+external help file: ''
+Module Name: Azs.Storage.Admin
+online version: https://docs.microsoft.com/powershell/module/azs.storage.admin/remove-azsstoragequota
+schema: 2.0.0
+ms.openlocfilehash: 258c7057b8f78ea6de1db506d23c60f679e1ca39
+ms.sourcegitcommit: 09eb4dbfcad6fce303b793dafe9bebdef589db03
+ms.translationtype: MT
+ms.contentlocale: tr-TR
+ms.lasthandoff: 08/08/2020
+ms.locfileid: "94106750"
+---
+# Remove-AzsStorageQuota
+
+## SYNOPSIS
+
+
+## INDEKI
+
+### Sil (varsayılan)
+```
+Remove-AzsStorageQuota -Name <String> [-Location <String>] [-SubscriptionId <String>]
+ [-DefaultProfile <PSObject>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### Deleteviaıdentity
+```
+Remove-AzsStorageQuota -InputObject <IStorageAdminIdentity> [-DefaultProfile <PSObject>] [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+## Tanım
+
+
+## ÖRNEKLERDEN
+
+### Örnek 1:
+```powershell
+PS C:\> Remove-AzsStorageQuota -Name 'TestQuota'
+```
+
+Depolama kotasını ada göre kaldırma.
+
+### Örnek 2:
+```powershell
+PS C:\> Get-AzsStorageQuota -Name 'TestQuota' | Remove-AzsStorageQuota
+```
+
+Bir depolama kotasını boru ile kaldırın.
+
+## PARAMETRELERINE
+
+### -DefaultProfile
+
+
+```yaml
+Type: System.Management.Automation.PSObject
+Parameter Sets: (All)
+Aliases: AzureRMContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+
+```
+
+### -InputObject
+Oluşturmak için, ıNPUTOBJECT özelliklerinin Notlar bölümüne bakın ve karma tablo oluşturun.
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.StorageAdmin.Models.IStorageAdminIdentity
+Parameter Sets: DeleteViaIdentity
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+
+```
+
+### -Konum
+
+
+```yaml
+Type: System.String
+Parameter Sets: Delete
+Aliases:
+
+Required: False
+Position: Named
+Default value: (Get-AzLocation)[0].Location
+Accept pipeline input: False
+Accept wildcard characters: False
+
+```
+
+### -Ad
+
+
+```yaml
+Type: System.String
+Parameter Sets: Delete
+Aliases: QuotaName
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+
+```
+
+### -Geçiş
+
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+
+```
+
+### -SubscriptionID
+
+
+```yaml
+Type: System.String
+Parameter Sets: Delete
+Aliases:
+
+Required: False
+Position: Named
+Default value: (Get-AzContext).Subscription.Id
+Accept pipeline input: False
+Accept wildcard characters: False
+
+```
+
+### -Onay
+Cmdlet 'i çalıştırmadan önce onaylamanızı ister.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+
+```
+
+### -WhatIf
+Cmdlet çalışırsa ne olacağını gösterir.
+Cmdlet çalışmaz.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+
+```
+
+### CommonParameters
+Bu cmdlet ortak parametreleri destekler:-Debug,-ErrorAction,-ErrorVariable,-ınformationaction,-ınformationvariable,-OutVariable,-OutBuffer,-Pipelinedeğişken,-verbose,-WarningAction ve-Warningdeğişken. Daha fazla bilgi için [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)bakın.
+
+## GÖLGELENDIRICI
+
+### Microsoft. Azure. PowerShell. cmdlet. StorageAdmin. modeller. ıstorageadminıdentity
+
+## ÇıKıŞLAR
+
+### System. Boolean
+
+
+
+## NOTLARıNDA
+
+KARMAŞıK parametre ÖZELLIKLERI aşağıda açıklanan parametreleri oluşturmak Için uygun özellikleri içeren karma bir tablo oluşturun. Karma tablolar hakkında bilgi için Get-Help about_Hash_Tables.
+
+INPUTOBJECT <IStorageAdminIdentity> : 
+  - `[AccountId <String>]`: Kiracıya görünmeyen iç depolama hesap KIMLIĞI.
+  - `[AsyncOperationId <String>]`: Zaman uyumsuz Işlem kimliği.
+  - `[Id <String>]`: Kaynak kimliği yolu
+  - `[Location <String>]`: Kaynak konumu.
+  - `[QuotaName <String>]`: Depolama alanı kotasının adı.
+  - `[ResourceGroup <String>]`: Kaynak grubu adı.
+  - `[ServiceName <String>]`: Depolama hizmeti adı.
+  - `[SubscriptionId <String>]`: Abonelik kimliği.
+
+## ILGILI BAĞLANTıLAR
+
