@@ -1,0 +1,413 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.Storage.dll-Help.xml
+Module Name: Az.Storage
+online version: https://docs.microsoft.com/en-us/powershell/module/Az.storage/get-azstorageblobqueryresult
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Storage/Storage.Management/help/Get-AzStorageBlobQueryResult.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Storage/Storage.Management/help/Get-AzStorageBlobQueryResult.md
+ms.openlocfilehash: fbb1c8e4e2a5421ea7714a0d7a82b1f1cc2567f1
+ms.sourcegitcommit: b4a38bcb0501a9016a4998efd377aa75d3ef9ce8
+ms.translationtype: MT
+ms.contentlocale: tr-TR
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "94276014"
+---
+# <span data-ttu-id="f0775-101">Get-AzStorageBlobQueryResult</span><span class="sxs-lookup"><span data-stu-id="f0775-101">Get-AzStorageBlobQueryResult</span></span>
+
+## <span data-ttu-id="f0775-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="f0775-102">SYNOPSIS</span></span>
+<span data-ttu-id="f0775-103">Blob içeriğinde basit bir yapılandırılmış sorgu dili (SQL) deyimi uygular ve verilerin yalnızca sorgulanan alt kümesini bir yerel dosyaya kaydeder.</span><span class="sxs-lookup"><span data-stu-id="f0775-103">Applies a simple Structured Query Language (SQL) statement on a blob's contents and save only the queried subset of the data to a local file.</span></span>
+
+## <span data-ttu-id="f0775-104">INDEKI</span><span class="sxs-lookup"><span data-stu-id="f0775-104">SYNTAX</span></span>
+
+### <span data-ttu-id="f0775-105">Ad boru hattı (varsayılan)</span><span class="sxs-lookup"><span data-stu-id="f0775-105">NamePipeline (Default)</span></span>
+```
+Get-AzStorageBlobQueryResult [-Blob] <String> [-Container] <String> [-SnapshotTime <DateTimeOffset>]
+ [-VersionId <String>] -QueryString <String> -ResultFile <String>
+ [-InputTextConfiguration <PSBlobQueryTextConfiguration>]
+ [-OutputTextConfiguration <PSBlobQueryTextConfiguration>] [-PassThru] [-Force] [-Context <IStorageContext>]
+ [-ServerTimeoutPerRequest <Int32>] [-ClientTimeoutPerRequest <Int32>]
+ [-DefaultProfile <IAzureContextContainer>] [-ConcurrentTaskCount <Int32>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
+```
+
+### <span data-ttu-id="f0775-106">Blobboru hattı</span><span class="sxs-lookup"><span data-stu-id="f0775-106">BlobPipeline</span></span>
+```
+Get-AzStorageBlobQueryResult -BlobBaseClient <BlobBaseClient> -QueryString <String> -ResultFile <String>
+ [-InputTextConfiguration <PSBlobQueryTextConfiguration>]
+ [-OutputTextConfiguration <PSBlobQueryTextConfiguration>] [-PassThru] [-Force] [-Context <IStorageContext>]
+ [-ServerTimeoutPerRequest <Int32>] [-ClientTimeoutPerRequest <Int32>]
+ [-DefaultProfile <IAzureContextContainer>] [-ConcurrentTaskCount <Int32>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
+```
+
+### <span data-ttu-id="f0775-107">Kapsayıcı boru hattı</span><span class="sxs-lookup"><span data-stu-id="f0775-107">ContainerPipeline</span></span>
+```
+Get-AzStorageBlobQueryResult -BlobContainerClient <BlobContainerClient> [-Blob] <String>
+ [-SnapshotTime <DateTimeOffset>] [-VersionId <String>] -QueryString <String> -ResultFile <String>
+ [-InputTextConfiguration <PSBlobQueryTextConfiguration>]
+ [-OutputTextConfiguration <PSBlobQueryTextConfiguration>] [-PassThru] [-Force] [-Context <IStorageContext>]
+ [-ServerTimeoutPerRequest <Int32>] [-ClientTimeoutPerRequest <Int32>]
+ [-DefaultProfile <IAzureContextContainer>] [-ConcurrentTaskCount <Int32>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
+```
+
+## <span data-ttu-id="f0775-108">Tanım</span><span class="sxs-lookup"><span data-stu-id="f0775-108">DESCRIPTION</span></span>
+<span data-ttu-id="f0775-109">**Get-AzStorageBlobQueryResult** cmdlet 'i, blob içeriğinde basit bir yapılandırılmış sorgu DILI (SQL) deyimi uygular ve verilerin sorgulanan alt kümesini bir yerel dosyaya kaydeder.</span><span class="sxs-lookup"><span data-stu-id="f0775-109">The **Get-AzStorageBlobQueryResult** cmdlet applies a simple Structured Query Language (SQL) statement on a blob's contents and save the queried subset of the data to a local file.</span></span>
+
+## <span data-ttu-id="f0775-110">ÖRNEKLERDEN</span><span class="sxs-lookup"><span data-stu-id="f0775-110">EXAMPLES</span></span>
+
+### <span data-ttu-id="f0775-111">Örnek 1: bir blob sorgulama</span><span class="sxs-lookup"><span data-stu-id="f0775-111">Example 1: Query a blob</span></span>
+```powershell
+PS C:\> $inputconfig = New-AzStorageBlobQueryConfig -AsCsv -HasHeader
+
+PS C:\> $outputconfig = New-AzStorageBlobQueryConfig -AsJson
+
+PS C:\> $queryString = "SELECT * FROM BlobStorage WHERE Name = 'a'"
+
+PS C:\> $result = Get-AzStorageBlobQueryResult -Container $containerName -Blob $blobName -QueryString $queryString -ResultFile "c:\resultfile.json" -InputTextConfiguration $inputconfig -OutputTextConfiguration $outputconfig -Context $ctx
+
+PS C:\> $result
+
+BytesScanned FailureCount BlobQueryError
+------------ ------------ --------------
+         449            0
+```
+
+<span data-ttu-id="f0775-112">Bu komut, giriş yapılandırmasını CSV olarak ve çıkış yapılandırması 'nı c:\resultfile.jsJSON olarak içeren bir blob succsssfully</span><span class="sxs-lookup"><span data-stu-id="f0775-112">This command querys a blob succsssfully with input config as csv, and output config as json, and save the output to local file "c:\resultfile.json".</span></span>
+
+### <span data-ttu-id="f0775-113">Örnek 2: bir blob anlık görüntüsünü sorgulama</span><span class="sxs-lookup"><span data-stu-id="f0775-113">Example 2: Query a blob snapshot</span></span>
+```powershell
+PS C:\> $blob = Get-AzStorageBlob -Container $containerName -Blob $blobName -SnapshotTime "2020-07-29T11:08:21.1097874Z" -Context $ctx
+
+PS C:\> $inputconfig = New-AzStorageBlobQueryConfig -AsCsv -ColumnSeparator "," -QuotationCharacter """" -EscapeCharacter "\" -RecordSeparator "`n" -HasHeader
+
+PS C:\> $outputconfig = New-AzStorageBlobQueryConfig -AsJson -RecordSeparator "`n" 
+
+PS C:\> $queryString = "SELECT * FROM BlobStorage WHERE _1 LIKE '1%%'"
+
+PS C:\> $result = $blob | Get-AzStorageBlobQueryResult -QueryString $queryString -ResultFile $localFilePath -InputTextConfiguration $inputconfig -OutputTextConfiguration $outputconfig
+
+PS C:\> $result
+
+BytesScanned FailureCount BlobQueryError
+------------ ------------ --------------
+   187064971            1 {ParseError}  
+
+
+
+PS C:\> $result.BlobQueryError
+
+Name       Description                                                   IsFatal Position
+----       -----------                                                   ------- --------
+ParseError Unexpected token '1' at [byte: 3077737]. Expecting token ','.    True  7270632
+```
+
+<span data-ttu-id="f0775-114">Bu komut öncelikle blob anlık görüntüsünün blob nesnesini alır, ardından blob anlık görüntüsünü sorgular ve sonucu sorgu hatasını gösterir.</span><span class="sxs-lookup"><span data-stu-id="f0775-114">This command first gets a blob object for blob snapshot, then queries the blob snapshot and show the result include query error.</span></span>
+
+## <span data-ttu-id="f0775-115">PARAMETRELERINE</span><span class="sxs-lookup"><span data-stu-id="f0775-115">PARAMETERS</span></span>
+
+### <span data-ttu-id="f0775-116">-Blob</span><span class="sxs-lookup"><span data-stu-id="f0775-116">-Blob</span></span>
+<span data-ttu-id="f0775-117">Blob adı</span><span class="sxs-lookup"><span data-stu-id="f0775-117">Blob name</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: NamePipeline, ContainerPipeline
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="f0775-118">-BlobBaseClient</span><span class="sxs-lookup"><span data-stu-id="f0775-118">-BlobBaseClient</span></span>
+<span data-ttu-id="f0775-119">BlobBaseClient nesnesi</span><span class="sxs-lookup"><span data-stu-id="f0775-119">BlobBaseClient Object</span></span>
+
+```yaml
+Type: Azure.Storage.Blobs.Specialized.BlobBaseClient
+Parameter Sets: BlobPipeline
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="f0775-120">-BlobContainerClient</span><span class="sxs-lookup"><span data-stu-id="f0775-120">-BlobContainerClient</span></span>
+<span data-ttu-id="f0775-121">BlobContainerClient nesnesi</span><span class="sxs-lookup"><span data-stu-id="f0775-121">BlobContainerClient Object</span></span>
+
+```yaml
+Type: Azure.Storage.Blobs.BlobContainerClient
+Parameter Sets: ContainerPipeline
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="f0775-122">-ClientTimeoutPerRequest</span><span class="sxs-lookup"><span data-stu-id="f0775-122">-ClientTimeoutPerRequest</span></span>
+<span data-ttu-id="f0775-123">Her isteğin saniye cinsinden istemci tarafı maksimum yürütme süresi.</span><span class="sxs-lookup"><span data-stu-id="f0775-123">The client side maximum execution time for each request in seconds.</span></span>
+
+```yaml
+Type: System.Nullable`1[System.Int32]
+Parameter Sets: (All)
+Aliases: ClientTimeoutPerRequestInSeconds
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="f0775-124">-ConcurrentTaskCount</span><span class="sxs-lookup"><span data-stu-id="f0775-124">-ConcurrentTaskCount</span></span>
+<span data-ttu-id="f0775-125">Eşzamanlı eşzamansız görevlerin toplam miktarı.</span><span class="sxs-lookup"><span data-stu-id="f0775-125">The total amount of concurrent async tasks.</span></span>
+<span data-ttu-id="f0775-126">Varsayılan değer 10 ' dır.</span><span class="sxs-lookup"><span data-stu-id="f0775-126">The default value is 10.</span></span>
+
+```yaml
+Type: System.Nullable`1[System.Int32]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="f0775-127">Kapsayıcı</span><span class="sxs-lookup"><span data-stu-id="f0775-127">-Container</span></span>
+<span data-ttu-id="f0775-128">Kapsayıcı adı</span><span class="sxs-lookup"><span data-stu-id="f0775-128">Container name</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: NamePipeline
+Aliases:
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="f0775-129">-Context</span><span class="sxs-lookup"><span data-stu-id="f0775-129">-Context</span></span>
+<span data-ttu-id="f0775-130">Azure depolama bağlamı nesnesi</span><span class="sxs-lookup"><span data-stu-id="f0775-130">Azure Storage Context Object</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IStorageContext
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName, ByValue)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="f0775-131">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="f0775-131">-DefaultProfile</span></span>
+<span data-ttu-id="f0775-132">Azure ile iletişim için kullanılan kimlik bilgileri, hesap, kiracı ve abonelik.</span><span class="sxs-lookup"><span data-stu-id="f0775-132">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="f0775-133">-Force</span><span class="sxs-lookup"><span data-stu-id="f0775-133">-Force</span></span>
+<span data-ttu-id="f0775-134">Var olan dosyanın üzerine yazmayı zorlayın.</span><span class="sxs-lookup"><span data-stu-id="f0775-134">Force to overwrite the existing file.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="f0775-135">-Inputtextconfiguration</span><span class="sxs-lookup"><span data-stu-id="f0775-135">-InputTextConfiguration</span></span>
+<span data-ttu-id="f0775-136">Sorgu giriş metnini işlenmiş olarak yapılandırma.</span><span class="sxs-lookup"><span data-stu-id="f0775-136">The configuration used to handled the query input text.</span></span> <span data-ttu-id="f0775-137">Yeni-AzStorageBlobQueryConfig ile yapılandırma nesnesi oluşturun.</span><span class="sxs-lookup"><span data-stu-id="f0775-137">Create configuration object the with New-AzStorageBlobQueryConfig.</span></span>
+
+```yaml
+Type: Microsoft.WindowsAzure.Commands.Common.Storage.ResourceModel.PSBlobQueryTextConfiguration
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="f0775-138">-OutputTextConfiguration</span><span class="sxs-lookup"><span data-stu-id="f0775-138">-OutputTextConfiguration</span></span>
+<span data-ttu-id="f0775-139">Sorgu çıktı metnini işlenmiş yapılandırma.</span><span class="sxs-lookup"><span data-stu-id="f0775-139">The configuration used to handled the query output text.</span></span> <span data-ttu-id="f0775-140">Yeni-AzStorageBlobQueryConfig ile yapılandırma nesnesi oluşturun.</span><span class="sxs-lookup"><span data-stu-id="f0775-140">Create configuration object the with New-AzStorageBlobQueryConfig.</span></span>
+
+```yaml
+Type: Microsoft.WindowsAzure.Commands.Common.Storage.ResourceModel.PSBlobQueryTextConfiguration
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="f0775-141">-Geçiş</span><span class="sxs-lookup"><span data-stu-id="f0775-141">-PassThru</span></span>
+<span data-ttu-id="f0775-142">Belirtilen Blobun başarıyla sorgulanmış olup olmadığını döndürme.</span><span class="sxs-lookup"><span data-stu-id="f0775-142">Return whether the specified blob is successfully queried.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="f0775-143">-QueryString</span><span class="sxs-lookup"><span data-stu-id="f0775-143">-QueryString</span></span>
+<span data-ttu-id="f0775-144">Sorgu dizesi, şu konuda diğer ayrıntılara bakın: https://docs.microsoft.com/en-us/azure/storage/blobs/query-acceleration-sql-reference</span><span class="sxs-lookup"><span data-stu-id="f0775-144">Query string, see more details in: https://docs.microsoft.com/en-us/azure/storage/blobs/query-acceleration-sql-reference</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="f0775-145">-ResultFile</span><span class="sxs-lookup"><span data-stu-id="f0775-145">-ResultFile</span></span>
+<span data-ttu-id="f0775-146">Sorgu sonucunu kaydetmek için yerel dosya yolu.</span><span class="sxs-lookup"><span data-stu-id="f0775-146">Local file path to save the query result.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="f0775-147">-ServerTimeoutPerRequest</span><span class="sxs-lookup"><span data-stu-id="f0775-147">-ServerTimeoutPerRequest</span></span>
+<span data-ttu-id="f0775-148">Her isteğin saniye cinsinden zaman aşımı.</span><span class="sxs-lookup"><span data-stu-id="f0775-148">The server time out for each request in seconds.</span></span>
+
+```yaml
+Type: System.Nullable`1[System.Int32]
+Parameter Sets: (All)
+Aliases: ServerTimeoutPerRequestInSeconds
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="f0775-149">-SnapshotTime</span><span class="sxs-lookup"><span data-stu-id="f0775-149">-SnapshotTime</span></span>
+<span data-ttu-id="f0775-150">Blob SnapshotTime</span><span class="sxs-lookup"><span data-stu-id="f0775-150">Blob SnapshotTime</span></span>
+
+```yaml
+Type: System.Nullable`1[System.DateTimeOffset]
+Parameter Sets: NamePipeline, ContainerPipeline
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="f0775-151">-VersionId</span><span class="sxs-lookup"><span data-stu-id="f0775-151">-VersionId</span></span>
+<span data-ttu-id="f0775-152">Blob VersionId 'Si</span><span class="sxs-lookup"><span data-stu-id="f0775-152">Blob VersionId</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: NamePipeline, ContainerPipeline
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="f0775-153">-Onay</span><span class="sxs-lookup"><span data-stu-id="f0775-153">-Confirm</span></span>
+<span data-ttu-id="f0775-154">Cmdlet 'i çalıştırmadan önce onaylamanızı ister.</span><span class="sxs-lookup"><span data-stu-id="f0775-154">Prompts you for confirmation before running the cmdlet.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="f0775-155">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="f0775-155">-WhatIf</span></span>
+<span data-ttu-id="f0775-156">Cmdlet çalışırsa ne olacağını gösterir.</span><span class="sxs-lookup"><span data-stu-id="f0775-156">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="f0775-157">Cmdlet çalışmaz.</span><span class="sxs-lookup"><span data-stu-id="f0775-157">The cmdlet is not run.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="f0775-158">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="f0775-158">CommonParameters</span></span>
+<span data-ttu-id="f0775-159">Bu cmdlet ortak parametreleri destekler:-Debug,-ErrorAction,-ErrorVariable,-ınformationaction,-ınformationvariable,-OutVariable,-OutBuffer,-Pipelinedeğişken,-verbose,-WarningAction ve-Warningdeğişken.</span><span class="sxs-lookup"><span data-stu-id="f0775-159">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="f0775-160">Daha fazla bilgi için bkz about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="f0775-160">For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="f0775-161">GÖLGELENDIRICI</span><span class="sxs-lookup"><span data-stu-id="f0775-161">INPUTS</span></span>
+
+### <span data-ttu-id="f0775-162">Azure. Storage. blob. özelleştirilmiş. BlobBaseClient</span><span class="sxs-lookup"><span data-stu-id="f0775-162">Azure.Storage.Blobs.Specialized.BlobBaseClient</span></span>
+
+### <span data-ttu-id="f0775-163">Azure. Storage. blob. BlobContainerClient</span><span class="sxs-lookup"><span data-stu-id="f0775-163">Azure.Storage.Blobs.BlobContainerClient</span></span>
+
+### <span data-ttu-id="f0775-164">Microsoft. Azure. Commands. Common. Authentication. soyutlamalar. ıstoragecontext</span><span class="sxs-lookup"><span data-stu-id="f0775-164">Microsoft.Azure.Commands.Common.Authentication.Abstractions.IStorageContext</span></span>
+
+## <span data-ttu-id="f0775-165">ÇıKıŞLAR</span><span class="sxs-lookup"><span data-stu-id="f0775-165">OUTPUTS</span></span>
+
+### <span data-ttu-id="f0775-166">System. Boolean</span><span class="sxs-lookup"><span data-stu-id="f0775-166">System.Boolean</span></span>
+
+## <span data-ttu-id="f0775-167">NOTLARıNDA</span><span class="sxs-lookup"><span data-stu-id="f0775-167">NOTES</span></span>
+
+## <span data-ttu-id="f0775-168">ILGILI BAĞLANTıLAR</span><span class="sxs-lookup"><span data-stu-id="f0775-168">RELATED LINKS</span></span>

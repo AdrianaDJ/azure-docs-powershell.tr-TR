@@ -1,0 +1,146 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.Network.dll-Help.xml
+Module Name: Az.Network
+online version: https://docs.microsoft.com/en-us/powershell/module/az.network/new-azloadbalancerbackendaddressconfig
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/New-AzLoadBalancerBackendAddressConfig.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/New-AzLoadBalancerBackendAddressConfig.md
+ms.openlocfilehash: 7d373092f850dd25abe5b6d913ddcf2572d4be94
+ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.translationtype: MT
+ms.contentlocale: tr-TR
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "94274833"
+---
+# <span data-ttu-id="2a172-101">New-AzLoadBalancerBackendAddressConfig</span><span class="sxs-lookup"><span data-stu-id="2a172-101">New-AzLoadBalancerBackendAddressConfig</span></span>
+
+## <span data-ttu-id="2a172-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="2a172-102">SYNOPSIS</span></span>
+<span data-ttu-id="2a172-103">Yük dengeleyici arka uç adres yapılandırmasını döndürür.</span><span class="sxs-lookup"><span data-stu-id="2a172-103">Returns a load balancer backend address config.</span></span> 
+
+## <span data-ttu-id="2a172-104">INDEKI</span><span class="sxs-lookup"><span data-stu-id="2a172-104">SYNTAX</span></span>
+
+```
+New-AzLoadBalancerBackendAddressConfig -IpAddress <String> -Name <String> -VirtualNetworkId <String>
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## <span data-ttu-id="2a172-105">Tanım</span><span class="sxs-lookup"><span data-stu-id="2a172-105">DESCRIPTION</span></span>
+<span data-ttu-id="2a172-106">Yük dengeleyici arka uç adres yapılandırmasını döndürür.</span><span class="sxs-lookup"><span data-stu-id="2a172-106">Returns a load balancer backend address config.</span></span> 
+
+## <span data-ttu-id="2a172-107">ÖRNEKLERDEN</span><span class="sxs-lookup"><span data-stu-id="2a172-107">EXAMPLES</span></span>
+
+### <span data-ttu-id="2a172-108">Örnek 1</span><span class="sxs-lookup"><span data-stu-id="2a172-108">Example 1</span></span>
+### <span data-ttu-id="2a172-109">Örnek 2: sanal ağ başvurusuna sahip yeni loadbalancer adresi yapılandırması</span><span class="sxs-lookup"><span data-stu-id="2a172-109">Example 2: New loadbalancer address config with virtual network reference</span></span>
+```powershell
+PS C:\> $virtualNetwork = Get-AzVirtualNetwork -Name $vnetName -ResourceGroupName $resourceGroup
+New-AzLoadBalancerBackendAddressConfig -IpAddress "10.0.0.5" -Name "TestVNetRef" -VirtualNetworkId $virtualNetwork.Id
+```
+
+## <span data-ttu-id="2a172-110">PARAMETRELERINE</span><span class="sxs-lookup"><span data-stu-id="2a172-110">PARAMETERS</span></span>
+
+### <span data-ttu-id="2a172-111">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="2a172-111">-DefaultProfile</span></span>
+<span data-ttu-id="2a172-112">Azure ile iletişim için kullanılan kimlik bilgileri, hesap, kiracı ve abonelik.</span><span class="sxs-lookup"><span data-stu-id="2a172-112">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="2a172-113">-IPAddress</span><span class="sxs-lookup"><span data-stu-id="2a172-113">-IpAddress</span></span>
+<span data-ttu-id="2a172-114">Arka uç havuzuna eklenecek IP adresi</span><span class="sxs-lookup"><span data-stu-id="2a172-114">The IPAddress to add to the backend pool</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="2a172-115">-Ad</span><span class="sxs-lookup"><span data-stu-id="2a172-115">-Name</span></span>
+<span data-ttu-id="2a172-116">Arka uç adres yapılandırmasının adı</span><span class="sxs-lookup"><span data-stu-id="2a172-116">The name of the Backend Address config</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="2a172-117">-Virtualnetworkıd</span><span class="sxs-lookup"><span data-stu-id="2a172-117">-VirtualNetworkId</span></span>
+<span data-ttu-id="2a172-118">Arka uç adres yapılandırması ile ilişkili sanal ağ</span><span class="sxs-lookup"><span data-stu-id="2a172-118">The virtual network associated with Backend Address config</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="2a172-119">-Onay</span><span class="sxs-lookup"><span data-stu-id="2a172-119">-Confirm</span></span>
+<span data-ttu-id="2a172-120">Cmdlet 'i çalıştırmadan önce onaylamanızı ister.</span><span class="sxs-lookup"><span data-stu-id="2a172-120">Prompts you for confirmation before running the cmdlet.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="2a172-121">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="2a172-121">-WhatIf</span></span>
+<span data-ttu-id="2a172-122">Cmdlet çalışırsa ne olacağını gösterir.</span><span class="sxs-lookup"><span data-stu-id="2a172-122">Shows what would happen if the cmdlet runs.</span></span> <span data-ttu-id="2a172-123">Cmdlet çalışmaz.</span><span class="sxs-lookup"><span data-stu-id="2a172-123">The cmdlet is not run.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="2a172-124">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="2a172-124">CommonParameters</span></span>
+<span data-ttu-id="2a172-125">Bu cmdlet ortak parametreleri destekler:-Debug,-ErrorAction,-ErrorVariable,-ınformationaction,-ınformationvariable,-OutVariable,-OutBuffer,-Pipelinedeğişken,-verbose,-WarningAction ve-Warningdeğişken.</span><span class="sxs-lookup"><span data-stu-id="2a172-125">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="2a172-126">Daha fazla bilgi için [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)bakın.</span><span class="sxs-lookup"><span data-stu-id="2a172-126">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="2a172-127">GÖLGELENDIRICI</span><span class="sxs-lookup"><span data-stu-id="2a172-127">INPUTS</span></span>
+
+### <span data-ttu-id="2a172-128">System. String</span><span class="sxs-lookup"><span data-stu-id="2a172-128">System.String</span></span>
+
+### <span data-ttu-id="2a172-129">Microsoft. Azure. Commands. Network. modeller. PSVirtualNetwork</span><span class="sxs-lookup"><span data-stu-id="2a172-129">Microsoft.Azure.Commands.Network.Models.PSVirtualNetwork</span></span>
+
+## <span data-ttu-id="2a172-130">ÇıKıŞLAR</span><span class="sxs-lookup"><span data-stu-id="2a172-130">OUTPUTS</span></span>
+
+### <span data-ttu-id="2a172-131">Microsoft. Azure. Commands. Network. model. PSLoadBalancerBackendAddress</span><span class="sxs-lookup"><span data-stu-id="2a172-131">Microsoft.Azure.Commands.Network.Models.PSLoadBalancerBackendAddress</span></span>
+
+## <span data-ttu-id="2a172-132">NOTLARıNDA</span><span class="sxs-lookup"><span data-stu-id="2a172-132">NOTES</span></span>
+
+## <span data-ttu-id="2a172-133">ILGILI BAĞLANTıLAR</span><span class="sxs-lookup"><span data-stu-id="2a172-133">RELATED LINKS</span></span>
