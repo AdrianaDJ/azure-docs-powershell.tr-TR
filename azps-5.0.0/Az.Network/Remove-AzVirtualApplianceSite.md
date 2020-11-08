@@ -1,0 +1,236 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.Network.dll-Help.xml
+Module Name: Az.Network
+online version: https://docs.microsoft.com/en-us/powershell/module/az.network/remove-azvirtualappliancesite
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzVirtualApplianceSite.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzVirtualApplianceSite.md
+ms.openlocfilehash: 0b29719dee8a1e69d27dd36cee2888df4575eefc
+ms.sourcegitcommit: b4a38bcb0501a9016a4998efd377aa75d3ef9ce8
+ms.translationtype: MT
+ms.contentlocale: tr-TR
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "94279630"
+---
+# <span data-ttu-id="4618f-101">Remove-AzVirtualApplianceSite</span><span class="sxs-lookup"><span data-stu-id="4618f-101">Remove-AzVirtualApplianceSite</span></span>
+
+## <span data-ttu-id="4618f-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="4618f-102">SYNOPSIS</span></span>
+<span data-ttu-id="4618f-103">Sanal bir gereç sitesini ağ sanal bir gereç kaynağından kaldırma.</span><span class="sxs-lookup"><span data-stu-id="4618f-103">Remove a virtual appliance site from a Network Virtual Appliance resource.</span></span>
+
+## <span data-ttu-id="4618f-104">INDEKI</span><span class="sxs-lookup"><span data-stu-id="4618f-104">SYNTAX</span></span>
+
+### <span data-ttu-id="4618f-105">ResourceNameParameterSet (varsayılan)</span><span class="sxs-lookup"><span data-stu-id="4618f-105">ResourceNameParameterSet (Default)</span></span>
+```
+Remove-AzVirtualApplianceSite -Name <String> -NetworkVirtualApplianceId <String> -ResourceGroupName <String>
+ [-Force] [-PassThru] [-AsJob] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
+```
+
+### <span data-ttu-id="4618f-106">Resourceıdparameterset</span><span class="sxs-lookup"><span data-stu-id="4618f-106">ResourceIdParameterSet</span></span>
+```
+Remove-AzVirtualApplianceSite -ResourceId <String> [-Force] [-PassThru] [-AsJob]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### <span data-ttu-id="4618f-107">ResourceObjectParameterSet</span><span class="sxs-lookup"><span data-stu-id="4618f-107">ResourceObjectParameterSet</span></span>
+```
+Remove-AzVirtualApplianceSite -VirtualApplianceSite <PSVirtualApplianceSite> [-Force] [-PassThru] [-AsJob]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## <span data-ttu-id="4618f-108">Tanım</span><span class="sxs-lookup"><span data-stu-id="4618f-108">DESCRIPTION</span></span>
+<span data-ttu-id="4618f-109">Remove-AzVirtualApplianceSite komutu sanal bir gereç sitesini ağ sanal bir gereç kaynağından kaldırır.</span><span class="sxs-lookup"><span data-stu-id="4618f-109">The Remove-AzVirtualApplianceSite command removes a Virtual Appliance site from a Network Virtual Appliance resource.</span></span>
+
+## <span data-ttu-id="4618f-110">ÖRNEKLERDEN</span><span class="sxs-lookup"><span data-stu-id="4618f-110">EXAMPLES</span></span>
+
+### <span data-ttu-id="4618f-111">Örnek 1</span><span class="sxs-lookup"><span data-stu-id="4618f-111">Example 1</span></span>
+```powershell
+PS C:\> Remove-AzVirtualApplianceSite -Name testsite -ResourceGroupName testrg -NetworkVirtualApplianceId $nva.Id
+```
+
+<span data-ttu-id="4618f-112">Sanal bir gereç sitesi kaynağını silme.</span><span class="sxs-lookup"><span data-stu-id="4618f-112">Delete a Virtual Appliance site resource.</span></span> 
+
+## <span data-ttu-id="4618f-113">PARAMETRELERINE</span><span class="sxs-lookup"><span data-stu-id="4618f-113">PARAMETERS</span></span>
+
+### <span data-ttu-id="4618f-114">-Iş</span><span class="sxs-lookup"><span data-stu-id="4618f-114">-AsJob</span></span>
+<span data-ttu-id="4618f-115">Arka planda cmdlet 'i çalıştırın</span><span class="sxs-lookup"><span data-stu-id="4618f-115">Run cmdlet in the background</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="4618f-116">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="4618f-116">-DefaultProfile</span></span>
+<span data-ttu-id="4618f-117">Azure ile iletişim için kullanılan kimlik bilgileri, hesap, kiracı ve abonelik.</span><span class="sxs-lookup"><span data-stu-id="4618f-117">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="4618f-118">-Force</span><span class="sxs-lookup"><span data-stu-id="4618f-118">-Force</span></span>
+<span data-ttu-id="4618f-119">Onay sorma.</span><span class="sxs-lookup"><span data-stu-id="4618f-119">Do not ask for confirmation.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="4618f-120">-Ad</span><span class="sxs-lookup"><span data-stu-id="4618f-120">-Name</span></span>
+<span data-ttu-id="4618f-121">Kaynak adı.</span><span class="sxs-lookup"><span data-stu-id="4618f-121">The resource name.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ResourceNameParameterSet
+Aliases: ResourceName
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="4618f-122">-Networkvirtualapplianceıd</span><span class="sxs-lookup"><span data-stu-id="4618f-122">-NetworkVirtualApplianceId</span></span>
+<span data-ttu-id="4618f-123">Bu siteyle ilişkilendirilmiş ağ sanal aygıtının kaynak KIMLIĞI.</span><span class="sxs-lookup"><span data-stu-id="4618f-123">The resource ID of the Network Virtual Appliance associated with this site.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ResourceNameParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="4618f-124">-Geçiş</span><span class="sxs-lookup"><span data-stu-id="4618f-124">-PassThru</span></span>
+<span data-ttu-id="4618f-125">Çalıştığınız öğeyi temsil eden bir nesne döndürür.</span><span class="sxs-lookup"><span data-stu-id="4618f-125">Returns an object representing the item with which you are working.</span></span> <span data-ttu-id="4618f-126">Varsayılan olarak, bu cmdlet hiçbir çıkış üretmez.</span><span class="sxs-lookup"><span data-stu-id="4618f-126">By default, this cmdlet does not generate any output.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="4618f-127">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="4618f-127">-ResourceGroupName</span></span>
+<span data-ttu-id="4618f-128">Kaynak grubu adı.</span><span class="sxs-lookup"><span data-stu-id="4618f-128">The resource group name.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ResourceNameParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="4618f-129">-RESOURCEID</span><span class="sxs-lookup"><span data-stu-id="4618f-129">-ResourceId</span></span>
+<span data-ttu-id="4618f-130">Kaynak kimliği.</span><span class="sxs-lookup"><span data-stu-id="4618f-130">The resource id.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ResourceIdParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="4618f-131">-VirtualApplianceSite</span><span class="sxs-lookup"><span data-stu-id="4618f-131">-VirtualApplianceSite</span></span>
+<span data-ttu-id="4618f-132">Sanal Gereç sitesi nesnesi.</span><span class="sxs-lookup"><span data-stu-id="4618f-132">The virtual appliance site object.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Network.Models.PSVirtualApplianceSite
+Parameter Sets: ResourceObjectParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="4618f-133">-Onay</span><span class="sxs-lookup"><span data-stu-id="4618f-133">-Confirm</span></span>
+<span data-ttu-id="4618f-134">Cmdlet 'i çalıştırmadan önce onaylamanızı ister.</span><span class="sxs-lookup"><span data-stu-id="4618f-134">Prompts you for confirmation before running the cmdlet.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="4618f-135">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="4618f-135">-WhatIf</span></span>
+<span data-ttu-id="4618f-136">Cmdlet çalışırsa ne olacağını gösterir.</span><span class="sxs-lookup"><span data-stu-id="4618f-136">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="4618f-137">Cmdlet çalışmaz.</span><span class="sxs-lookup"><span data-stu-id="4618f-137">The cmdlet is not run.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="4618f-138">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="4618f-138">CommonParameters</span></span>
+<span data-ttu-id="4618f-139">Bu cmdlet ortak parametreleri destekler:-Debug,-ErrorAction,-ErrorVariable,-ınformationaction,-ınformationvariable,-OutVariable,-OutBuffer,-Pipelinedeğişken,-verbose,-WarningAction ve-Warningdeğişken.</span><span class="sxs-lookup"><span data-stu-id="4618f-139">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="4618f-140">Daha fazla bilgi için [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)bakın.</span><span class="sxs-lookup"><span data-stu-id="4618f-140">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="4618f-141">GÖLGELENDIRICI</span><span class="sxs-lookup"><span data-stu-id="4618f-141">INPUTS</span></span>
+
+### <span data-ttu-id="4618f-142">System. String</span><span class="sxs-lookup"><span data-stu-id="4618f-142">System.String</span></span>
+
+### <span data-ttu-id="4618f-143">Microsoft. Azure. Commands. Network. model. PSVirtualApplianceSite</span><span class="sxs-lookup"><span data-stu-id="4618f-143">Microsoft.Azure.Commands.Network.Models.PSVirtualApplianceSite</span></span>
+
+## <span data-ttu-id="4618f-144">ÇıKıŞLAR</span><span class="sxs-lookup"><span data-stu-id="4618f-144">OUTPUTS</span></span>
+
+### <span data-ttu-id="4618f-145">System. Boolean</span><span class="sxs-lookup"><span data-stu-id="4618f-145">System.Boolean</span></span>
+
+## <span data-ttu-id="4618f-146">NOTLARıNDA</span><span class="sxs-lookup"><span data-stu-id="4618f-146">NOTES</span></span>
+
+## <span data-ttu-id="4618f-147">ILGILI BAĞLANTıLAR</span><span class="sxs-lookup"><span data-stu-id="4618f-147">RELATED LINKS</span></span>
