@@ -1,0 +1,180 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.Automation.dll-Help.xml
+Module Name: Az.Automation
+ms.assetid: 6C6C7142-31CD-4245-BC55-CB7916EA12E0
+online version: https://docs.microsoft.com/en-us/powershell/module/az.automation/remove-azautomationdscnodeconfiguration
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Automation/Automation/help/Remove-AzAutomationDscNodeConfiguration.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Automation/Automation/help/Remove-AzAutomationDscNodeConfiguration.md
+ms.openlocfilehash: 28add3b4bffe808be5391de3ddbac759c36f5820
+ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.translationtype: MT
+ms.contentlocale: tr-TR
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "94104932"
+---
+# Remove-AzAutomationDscNodeConfiguration
+
+## SYNOPSIS
+Veri kaynağı yapılandırmalarından Otomasyon 'daki meta verileri kaldırır.
+
+## INDEKI
+
+```
+Remove-AzAutomationDscNodeConfiguration [-Name] <String> [-Force] [-IgnoreNodeMappings]
+ [-ResourceGroupName] <String> [-AutomationAccountName] <String> [-DefaultProfile <IAzureContextContainer>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## Tanım
+**Remove-AzAutomationDscNodeConfiguration** cmdlet 'ı, AP 'ler
+Automation, DSC düğüm yapılandırmasını yönetilen nesne biçimi (MOF) yapılandırma belgesi olarak depolar.
+
+## ÖRNEKLERDEN
+
+## PARAMETRELERINE
+
+### -AutomationAccountName
+Bu cmdlet 'in meta verileri kaldırdığı DSC düğüm yapılandırmalarını içeren bir Otomasyon hesabının adını belirtir.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -DefaultProfile
+Azure ile iletişim için kullanılan kimlik bilgileri, hesap, kiracı ve abonelik
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Force
+ps_force
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 3
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Ignorenodemappings
+Bu cmdlet 'in düğüm eşlemelerini yoksaydiğini belirtir.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 4
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Ad
+Bu cmdlet 'in meta verileri kaldırdığı DSC düğüm yapılandırmasının adını belirtir.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: NodeConfigurationName
+
+Required: True
+Position: 2
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -ResourceGroupName
+Kaynak grubunun adını belirtir.
+Bu cmdlet, bu parametrenin belirttiği kaynak grubundaki DSC düğüm yapılandırmalarının meta verilerini kaldırır.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Onay
+Cmdlet 'i çalıştırmadan önce onaylamanızı ister.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WhatIf
+Cmdlet çalışırsa ne olacağını gösterir.
+Cmdlet çalışmaz.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+Bu cmdlet ortak parametreleri destekler:-Debug,-ErrorAction,-ErrorVariable,-ınformationaction,-ınformationvariable,-OutVariable,-OutBuffer,-Pipelinedeğişken,-verbose,-WarningAction ve-Warningdeğişken. Daha fazla bilgi için bkz about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
+
+## GÖLGELENDIRICI
+
+### System. String
+
+## ÇıKıŞLAR
+
+### System. void
+
+## NOTLARıNDA
+
+## ILGILI BAĞLANTıLAR
+
+[Get-AzAutomationDscNodeConfiguration](./Get-AzAutomationDscNodeConfiguration.md)
+
+[Import-AzAutomationDscNodeConfiguration](./Import-AzAutomationDscNodeConfiguration.md)
+
+[Azure Otomasyonu cmdlet 'Leri](./Az.Automation.md)
+
+
