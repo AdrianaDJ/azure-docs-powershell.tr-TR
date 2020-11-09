@@ -1,0 +1,230 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.CosmosDB.dll-Help.xml
+Module Name: Az.CosmosDB
+online version: https://docs.microsoft.com/en-us/powershell/module/az.cosmosdb/update-azcosmosdbsqldatabase
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/CosmosDB/CosmosDB/help/Update-AzCosmosDBSqlDatabase.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/CosmosDB/CosmosDB/help/Update-AzCosmosDBSqlDatabase.md
+ms.openlocfilehash: 1c52d1f163f5f5d23f6f282a7f00a071a38761de
+ms.sourcegitcommit: b4a38bcb0501a9016a4998efd377aa75d3ef9ce8
+ms.translationtype: MT
+ms.contentlocale: tr-TR
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "94321341"
+---
+# <span data-ttu-id="06e2b-101">Update-AzCosmosDBSqlDatabase</span><span class="sxs-lookup"><span data-stu-id="06e2b-101">Update-AzCosmosDBSqlDatabase</span></span>
+
+## <span data-ttu-id="06e2b-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="06e2b-102">SYNOPSIS</span></span>
+<span data-ttu-id="06e2b-103">CosmosDB SQL veritabanını güncelleştirir.</span><span class="sxs-lookup"><span data-stu-id="06e2b-103">Updates the CosmosDB Sql Database.</span></span> <span data-ttu-id="06e2b-104">Var olan veritabanını okuyarak bir istemci tarafı düzeltme eki işlemi gerçekleştirir.</span><span class="sxs-lookup"><span data-stu-id="06e2b-104">Performs a client side patch operation by reading the existing Database.</span></span>
+
+## <span data-ttu-id="06e2b-105">INDEKI</span><span class="sxs-lookup"><span data-stu-id="06e2b-105">SYNTAX</span></span>
+
+### <span data-ttu-id="06e2b-106">ByNameParameterSet (varsayılan)</span><span class="sxs-lookup"><span data-stu-id="06e2b-106">ByNameParameterSet (Default)</span></span>
+```
+Update-AzCosmosDBSqlDatabase -ResourceGroupName <String> -AccountName <String> [-Name <String>]
+ [-Throughput <Int32>] [-AutoscaleMaxThroughput <Int32>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
+```
+
+### <span data-ttu-id="06e2b-107">ByParentObjectParameterSet</span><span class="sxs-lookup"><span data-stu-id="06e2b-107">ByParentObjectParameterSet</span></span>
+```
+Update-AzCosmosDBSqlDatabase [-Name <String>] [-Throughput <Int32>] [-AutoscaleMaxThroughput <Int32>]
+ -ParentObject <PSDatabaseAccountGetResults> [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
+```
+
+### <span data-ttu-id="06e2b-108">ByObjectParameterSet</span><span class="sxs-lookup"><span data-stu-id="06e2b-108">ByObjectParameterSet</span></span>
+```
+Update-AzCosmosDBSqlDatabase [-Name <String>] [-Throughput <Int32>] [-AutoscaleMaxThroughput <Int32>]
+ -InputObject <PSSqlDatabaseGetResults> [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
+```
+
+## <span data-ttu-id="06e2b-109">Tanım</span><span class="sxs-lookup"><span data-stu-id="06e2b-109">DESCRIPTION</span></span>
+<span data-ttu-id="06e2b-110">CosmosDB SQL veritabanını güncelleştirir.</span><span class="sxs-lookup"><span data-stu-id="06e2b-110">Updates the CosmosDB Sql Database.</span></span> <span data-ttu-id="06e2b-111">Var olan veritabanını okuyarak bir istemci tarafı düzeltme eki işlemi gerçekleştirir.</span><span class="sxs-lookup"><span data-stu-id="06e2b-111">Performs a client side patch operation by reading the existing Database.</span></span>
+
+## <span data-ttu-id="06e2b-112">ÖRNEKLERDEN</span><span class="sxs-lookup"><span data-stu-id="06e2b-112">EXAMPLES</span></span>
+
+### <span data-ttu-id="06e2b-113">Örnek 1</span><span class="sxs-lookup"><span data-stu-id="06e2b-113">Example 1</span></span>
+```powershell
+PS C:\> Update-AzCosmosDBSqlDatabase -AccountName myAccountName -Name myDatabaseName -ResourceGroupName myResourcegroupName -Throughput 900
+
+Name     : myDatabaseName
+Id       : /subscriptions/mySubscriptionId/resourceGroups/myResourcegroupName/providers/Microsoft.DocumentDB/databaseAccounts/myAccountName/sqlDatabases/myDatabaseName
+Location :
+Tags     :
+Resource : Microsoft.Azure.Commands.CosmosDB.Models.PSSqlDatabaseGetPropertiesResource
+```
+
+## <span data-ttu-id="06e2b-114">PARAMETRELERINE</span><span class="sxs-lookup"><span data-stu-id="06e2b-114">PARAMETERS</span></span>
+
+### <span data-ttu-id="06e2b-115">-AccountName</span><span class="sxs-lookup"><span data-stu-id="06e2b-115">-AccountName</span></span>
+<span data-ttu-id="06e2b-116">Cosmos DB veritabanı hesabının adı.</span><span class="sxs-lookup"><span data-stu-id="06e2b-116">Name of the Cosmos DB database account.</span></span>
+
+```yaml
+Type: String
+Parameter Sets: ByNameParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="06e2b-117">-Otomatik ölçek Maxüretilen Iş</span><span class="sxs-lookup"><span data-stu-id="06e2b-117">-AutoscaleMaxThroughput</span></span>
+<span data-ttu-id="06e2b-118">Otomatik ölçeklendirme etkinleştirilirse maksimum üretilen Iş değeri.</span><span class="sxs-lookup"><span data-stu-id="06e2b-118">Maximum Throughput value if autoscale is enabled.</span></span>
+
+```yaml
+Type: Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="06e2b-119">-Onay</span><span class="sxs-lookup"><span data-stu-id="06e2b-119">-Confirm</span></span>
+<span data-ttu-id="06e2b-120">Cmdlet 'i çalıştırmadan önce onaylamanızı ister.</span><span class="sxs-lookup"><span data-stu-id="06e2b-120">Prompts you for confirmation before running the cmdlet.</span></span>
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="06e2b-121">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="06e2b-121">-DefaultProfile</span></span>
+<span data-ttu-id="06e2b-122">Azure ile iletişim için kullanılan kimlik bilgileri, hesap, kiracı ve abonelik.</span><span class="sxs-lookup"><span data-stu-id="06e2b-122">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
+
+```yaml
+Type: IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="06e2b-123">-InputObject</span><span class="sxs-lookup"><span data-stu-id="06e2b-123">-InputObject</span></span>
+<span data-ttu-id="06e2b-124">SQL veritabanı nesnesi.</span><span class="sxs-lookup"><span data-stu-id="06e2b-124">Sql Database object.</span></span>
+
+```yaml
+Type: PSSqlDatabaseGetResults
+Parameter Sets: ByObjectParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="06e2b-125">-Ad</span><span class="sxs-lookup"><span data-stu-id="06e2b-125">-Name</span></span>
+<span data-ttu-id="06e2b-126">Veritabanı adı.</span><span class="sxs-lookup"><span data-stu-id="06e2b-126">Database name.</span></span>
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="06e2b-127">-ParentObject</span><span class="sxs-lookup"><span data-stu-id="06e2b-127">-ParentObject</span></span>
+<span data-ttu-id="06e2b-128">CosmosDB hesap nesnesi</span><span class="sxs-lookup"><span data-stu-id="06e2b-128">CosmosDB Account object</span></span>
+
+```yaml
+Type: PSDatabaseAccountGetResults
+Parameter Sets: ByParentObjectParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="06e2b-129">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="06e2b-129">-ResourceGroupName</span></span>
+<span data-ttu-id="06e2b-130">Kaynak grubunun adı.</span><span class="sxs-lookup"><span data-stu-id="06e2b-130">Name of resource group.</span></span>
+
+```yaml
+Type: String
+Parameter Sets: ByNameParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="06e2b-131">-Üretim</span><span class="sxs-lookup"><span data-stu-id="06e2b-131">-Throughput</span></span>
+<span data-ttu-id="06e2b-132">SQL veritabanının üretimi (RU/s).</span><span class="sxs-lookup"><span data-stu-id="06e2b-132">The throughput of SQL database (RU/s).</span></span>
+<span data-ttu-id="06e2b-133">Varsayılan değer 400 ' dır.</span><span class="sxs-lookup"><span data-stu-id="06e2b-133">Default value is 400.</span></span>
+
+```yaml
+Type: Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="06e2b-134">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="06e2b-134">-WhatIf</span></span>
+<span data-ttu-id="06e2b-135">Cmdlet çalışırsa ne olacağını gösterir.</span><span class="sxs-lookup"><span data-stu-id="06e2b-135">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="06e2b-136">Cmdlet çalışmaz.</span><span class="sxs-lookup"><span data-stu-id="06e2b-136">The cmdlet is not run.</span></span>
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="06e2b-137">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="06e2b-137">CommonParameters</span></span>
+<span data-ttu-id="06e2b-138">Bu cmdlet ortak parametreleri destekler:-Debug,-ErrorAction,-ErrorVariable,-ınformationaction,-ınformationvariable,-OutVariable,-OutBuffer,-Pipelinedeğişken,-verbose,-WarningAction ve-Warningdeğişken.</span><span class="sxs-lookup"><span data-stu-id="06e2b-138">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="06e2b-139">Daha fazla bilgi için [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)bakın.</span><span class="sxs-lookup"><span data-stu-id="06e2b-139">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="06e2b-140">GÖLGELENDIRICI</span><span class="sxs-lookup"><span data-stu-id="06e2b-140">INPUTS</span></span>
+
+### <span data-ttu-id="06e2b-141">Microsoft.Azure.Commands.CosmosDB.Models.PSDatabaseAccount</span><span class="sxs-lookup"><span data-stu-id="06e2b-141">Microsoft.Azure.Commands.CosmosDB.Models.PSDatabaseAccount</span></span>
+
+### <span data-ttu-id="06e2b-142">Microsoft. Azure. Commands. CosmosDB. modeller. PSSqlDatabaseGetResults</span><span class="sxs-lookup"><span data-stu-id="06e2b-142">Microsoft.Azure.Commands.CosmosDB.Models.PSSqlDatabaseGetResults</span></span>
+
+## <span data-ttu-id="06e2b-143">ÇıKıŞLAR</span><span class="sxs-lookup"><span data-stu-id="06e2b-143">OUTPUTS</span></span>
+
+### <span data-ttu-id="06e2b-144">Microsoft. Azure. Commands. CosmosDB. modeller. PSSqlDatabaseGetResults</span><span class="sxs-lookup"><span data-stu-id="06e2b-144">Microsoft.Azure.Commands.CosmosDB.Models.PSSqlDatabaseGetResults</span></span>
+
+### <span data-ttu-id="06e2b-145">Microsoft. Azure. Commands. CosmosDB. Exceptions. ResourceNotFoundException</span><span class="sxs-lookup"><span data-stu-id="06e2b-145">Microsoft.Azure.Commands.CosmosDB.Exceptions.ResourceNotFoundException</span></span>
+
+## <span data-ttu-id="06e2b-146">NOTLARıNDA</span><span class="sxs-lookup"><span data-stu-id="06e2b-146">NOTES</span></span>
+
+## <span data-ttu-id="06e2b-147">ILGILI BAĞLANTıLAR</span><span class="sxs-lookup"><span data-stu-id="06e2b-147">RELATED LINKS</span></span>
