@@ -5,12 +5,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/10/2020
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 913532fa5a8937f7ba4cc1ce21c5879f3920fc7f
-ms.sourcegitcommit: b4a38bcb0501a9016a4998efd377aa75d3ef9ce8
+ms.openlocfilehash: 4ab5639cfb997c5f9ee1286e6eacb97ef775239a
+ms.sourcegitcommit: 63181e0af0e4468b0530fdb0495ed4d44bdfd1c8
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92753850"
+ms.lasthandoff: 10/31/2020
+ms.locfileid: "93134871"
 ---
 # <a name="azure-powershell-release-notes"></a>Azure PowerShell sürüm notları
 
@@ -46,7 +46,7 @@ ms.locfileid: "92753850"
 * 'New-AzDiskUpdateConfig' cmdlet’ine 'Tier', 'MaxSharesCount', 'DiskIOPSReadOnly' ve 'DiskMBpsReadOnly' eklendi. 
 
 #### <a name="azcontainerregistry"></a>Az.ContainerRegistry
-* [Yeni Değişiklik] API sürümü 2020-05-01 olarak güncelleştirildi
+* [Yeni Değişiklik] API sürümü 2019-05-01 olarak güncelleştirildi
 * [Yeni Değişiklik] 'New-AzContainerRegistry' cmdlet’inden 'Classic' SKU’su ve 'StorageAccountName' parametresi kaldırıldı
 * Yeni cmdlet’ler eklendi: 'Connect-AzContainerRegistry', 'Import-AzContainerRegistry', 'Get-AzContainerRegistryUsage', 'New-AzContainerRegistryNetworkRule', 'Set-AzContainerRegistryNetworkRule'
 * 'Update-AzContainerRegistry' cmdlet’ine yeni 'NetworkRuleSet' parametresi eklendi

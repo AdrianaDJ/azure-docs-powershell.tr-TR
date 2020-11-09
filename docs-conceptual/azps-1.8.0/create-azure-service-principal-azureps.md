@@ -5,12 +5,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 04/23/2019
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: cc3215640e529d59935f5170df75f90bcd5c4436
-ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
+ms.openlocfilehash: 8ae394669be960b295bd7984d20fad97b8b99386
+ms.sourcegitcommit: 375232b84336ef5e13052504deaa43f5bd4b7f65
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89242962"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93365237"
 ---
 # <a name="create-an-azure-service-principal-with-azure-powershell"></a>Azure PowerShell ile bir Azure hizmet sorumlusu oluşturma
 
@@ -19,6 +19,11 @@ Azure hizmetlerini kullanan otomatikleştirilmiş araçlar her zaman kısıtlı 
 Azure hizmet sorumlusu, Azure kaynaklarına erişen uygulamalar, barındırılan hizmetler ve otomatikleştirilmiş araçlar ile kullanılmak için oluşturulan bir kimliktir. Bu erişim, hizmet sorumlusuna atanan roller tarafından kısıtlanır ve hangi kaynaklara hangi düzeyde erişilebileceğini kontrol edebilirsiniz. Güvenlik nedeniyle, otomatikleştirilmiş araçların kullanıcı kimliği ile oturum açmalarına izin vermek yerine her zaman hizmet sorumlularını kullanmanız önerilir.
 
 Bu makale, Azure PowerShell ile hizmet sorumlusu oluşturma, sıfırlama ve hakkında bilgi alma adımlarını gösterir.
+
+> [!WARNING]
+> [New-AzADServicePrincipal](/powershell/module/Az.Resources/New-AzADServicePrincipal) komutunu kullanarak hizmet sorumlusu oluşturduğunuzda, çıkışta korumanız gereken kimlik bilgileri yer alır. Bu kimlik bilgilerini kodunuza eklemediğinizden emin olun veya kaynak denetiminizdeki kimlik bilgilerini denetleyin. Alternatif olarak, kimlik bilgilerini kullanma gereksinimini ortadan kaldırmak için [yönetilen kimlikleri](/azure/active-directory/managed-identities-azure-resources/overview) kullanabilirsiniz.
+>
+> [New-AzADServicePrincipal](/powershell/module/Az.Resources/New-AzADServicePrincipal) varsayılan olarak [Katkıda bulunan](/azure/role-based-access-control/built-in-roles#contributor) rolünü abonelik kapsamında hizmet sorumlusuna atar. Güvenliği ihlal edilmiş hizmet sorumlusu riskinizi azaltmak için daha belirli bir rol atayın ve kapsamı kaynağa ya da kaynak grubuna daraltın. Daha fazla bilgi için bkz. [Rol ataması ekleme adımları](/azure/role-based-access-control/role-assignments-steps).
 
 ## <a name="create-a-service-principal"></a>Hizmet sorumlusu oluşturma
 
@@ -107,7 +112,7 @@ Azure PowerShell, rol atamalarını yönetmek için aşağıdaki cmdlet’leri i
 * [New-AzRoleAssignment](/powershell/module/az.resources/new-azroleassignment)
 * [Remove-AzRoleAssignment](/powershell/module/az.resources/remove-azroleassignment)
 
-Bir hizmet sorumlusunun varsayılan rolü **Katkıda Bulunan**’dır. Bu rol, bir Azure hesabında okuma ve yazma için tam izne sahiptir. **Okuyucu** rolü daha kısıtlayıcıdır, yalnızca salt okunur erişime sahiptir.  Rol Tabanlı Erişim Denetimi (RBAC) ve roller hakkında daha fazla bilgi için bkz. [RBAC: Yerleşik roller](/azure/active-directory/role-based-access-built-in-roles).
+Bir hizmet sorumlusunun varsayılan rolü **Katkıda Bulunan** ’dır. Bu rol, bir Azure hesabında okuma ve yazma için tam izne sahiptir. **Okuyucu** rolü daha kısıtlayıcıdır, yalnızca salt okunur erişime sahiptir.  Rol Tabanlı Erişim Denetimi (RBAC) ve roller hakkında daha fazla bilgi için bkz. [RBAC: Yerleşik roller](/azure/active-directory/role-based-access-built-in-roles).
 
 Bu örnek, **Okuyucu** rolünü ekler ve **Katkıda Bulunan** rolünü kaldırır:
 
