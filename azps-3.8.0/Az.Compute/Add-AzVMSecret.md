@@ -6,12 +6,12 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.compute/ad
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Add-AzVMSecret.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Add-AzVMSecret.md
-ms.openlocfilehash: b2209b3e9d7c7dcf01a05af277dd5106e70fd8b2
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 059aedf6ca3b5c229092f9ce536d23a8fc602830
+ms.sourcegitcommit: 7aaa37edc9681b643946505bcbc3cc6435f1d7ca
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "94098925"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94395467"
 ---
 # Add-AzVMSecret
 
@@ -30,7 +30,7 @@ Add-AzVMSecret [-VM] <PSVirtualMachine> [[-SourceVaultId] <String>] [[-Certifica
 Bu değer, sanal makineye sertifika eklemenize olanak tanır.
 Gizli anahtar bir kasaya depolanmalıdır.
 Anahtar Kasası hakkında daha fazla bilgi için [Azure Anahtar Kasası nedir?](https://azure.microsoft.com/en-us/documentation/articles/key-vault-whatis/)konusuna bakın.
-Cmdlet 'ler hakkında daha fazla bilgi için, Microsoft Geliştirici ağ kitaplığında veya [set-Azanahtarvaultsecret](/powershell/module/az.keyvault/set-azkeyvaultsecret) cmdlet 'Inde [Azure Anahtar Kasası cmdlet 'lerini](https://msdn.microsoft.com/library/azure/dn868052.aspx) görebilirsiniz.
+Cmdlet 'ler hakkında daha fazla bilgi için [Azure Anahtar Kasası cmdlet 'lerini](/powershell/module/az.keyvault) veya [set-AzKeyVaultSecret](/powershell/module/az.keyvault/set-azkeyvaultsecret) cmdlet 'ini görün.
 
 ## ÖRNEKLERDEN
 
@@ -81,7 +81,7 @@ Accept wildcard characters: False
 
 ### -CertificateUrl 'Si
 Sertifika içeren bir Anahtar Kasası gizliliğini gösteren URL 'YI belirtir.
-Sertifika, UTF-8 ' i kodlanmış olarak kodlanan JavaScript nesne gösterimi (JSON) nesnesinin Base64 kodlamasıdır: {"Data": " \< Base64 ile kodlanmış-dosya \> ", "veri türü": " \< dosya-biçimi \> ", "parola": " \< pfx-dosya-parola \> "} Şu anda, yalnızca. pfx dosyalarını kabul eder.
+Bu sertifika, UTF-8 ile kodlanmış olan aşağıdaki JavaScript nesne gösterimi (JSON) nesnesinin Base64 kodlamasıdır: {"Data": " \<Base64-encoded-file\> ", "DataType": " \<file-format\> ", "Password": " \<pfx-file-password\> "} Şu anda yalnızca. pfx dosyalarını kabul eder.
 
 ```yaml
 Type: System.String

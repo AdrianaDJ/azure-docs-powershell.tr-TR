@@ -6,12 +6,12 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.compute/ad
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Compute/Compute/help/Add-AzVMSecret.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Compute/Compute/help/Add-AzVMSecret.md
-ms.openlocfilehash: 281b74aa14431a0bcfe0d138a78db73e28bcfeb4
-ms.sourcegitcommit: 4c61442a2df1cee633ce93cad9f6bc793803baa2
+ms.openlocfilehash: f17da705ed65484e789a803308bcaddb60e409f3
+ms.sourcegitcommit: 7aaa37edc9681b643946505bcbc3cc6435f1d7ca
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "93937094"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94395144"
 ---
 # Add-AzVMSecret
 
@@ -30,7 +30,7 @@ Add-AzVMSecret [-VM] <PSVirtualMachine> [[-SourceVaultId] <String>] [[-Certifica
 Bu değer, sanal makineye sertifika eklemenize olanak tanır.
 Gizli anahtar bir kasaya depolanmalıdır.
 Anahtar Kasası hakkında daha fazla bilgi için [Azure Anahtar Kasası nedir?](https://azure.microsoft.com/en-us/documentation/articles/key-vault-whatis/)konusuna bakın.
-Cmdlet 'ler hakkında daha fazla bilgi için, Microsoft Geliştirici ağ kitaplığında veya [set-AzureKeyVaultSecret](/powershell/module/azurerm.keyvault/set-azurekeyvaultsecret) cmdlet 'Inde [Azure Key kasa cmdlet 'lerini](https://msdn.microsoft.com/library/azure/dn868052.aspx) görebilirsiniz.
+Cmdlet 'ler hakkında daha fazla bilgi için [Azure Anahtar Kasası cmdlet 'lerini](/powershell/module/az.keyvault) veya [set-AzKeyVaultSecret](/powershell/module/az.keyvault/set-azkeyvaultsecret) cmdlet 'ini görün.
 
 ## ÖRNEKLERDEN
 
@@ -90,7 +90,7 @@ Sertifika içeren bir Anahtar Kasası gizliliğini gösteren URL 'YI belirtir.
 
 Sertifika, UTF-8 ile kodlanmış olan aşağıdaki JavaScript nesne gösterimi (JSON) nesnesinin Base64 kodlamasıdır:
 
-{"veriler": " \< Base64 kodlu dosya \> "," veri türü ":" \< dosya-biçimi \> "," parola ":" \< pfx-dosya-parola \> "}
+{"Data": " \<Base64-encoded-file\> ", "DataType": " \<file-format\> ", "Password": " \<pfx-file-password\> "}
 
 
 Şu anda, veri türü yalnızca. pfx dosyalarını kabul eder.
