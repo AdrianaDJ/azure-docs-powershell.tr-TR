@@ -5,12 +5,13 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/10/2019
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 83860dd5abfbb1c3da94de6813bceca1bbb0fca7
-ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
+ms.service: azure-powershell
+ms.openlocfilehash: a0a6fcbc0a7bdae507ff5e16dd844e8425c929d5
+ms.sourcegitcommit: 2036538797dd088728aee5ac5021472454d82eb2
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89240786"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93408964"
 ---
 # <a name="migrate-azure-powershell-from-azurerm-to-az"></a>Azure PowerShell'i AzureRM'den Az modülüne geçirme
 
@@ -29,7 +30,7 @@ AzureRM’nin hangi sürümlerini yüklediğinizi denetlemek için şu komutu ç
 Get-InstalledModule -Name AzureRM -AllVersions
 ```
 
-AzureRM'nin kullanılabilir __en son__ sürümü __6.13.1__'dir. Sizde bu sürüm yüklü değilse, mevcut betiklerinizin Az modülüyle çalışabilmesi için burada ve [hataya neden olan değişiklikler listesinde](migrate-az-1.0.0.md) açıklananların ötesinde ek değişikler yapılması gerekebilir.
+AzureRM'nin kullanılabilir __en son__ sürümü __6.13.1__ 'dir. Sizde bu sürüm yüklü değilse, mevcut betiklerinizin Az modülüyle çalışabilmesi için burada ve [hataya neden olan değişiklikler listesinde](migrate-az-1.0.0.md) açıklananların ötesinde ek değişikler yapılması gerekebilir.
 
 Betikleriniz AzureRM 6.13.1 ile çalışmıyorsa, bunları [AzureRM 5.x'ten 6.x'e geçiş kılavuzuna](/powershell/azure/azurerm/migration-guide.6.0.0) göre güncelleştirin.
 AzureRM modülünün önceki bir sürümünü kullanıyorsanız, her büyük sürüm için geçiş kılavuzları sağlanır.
@@ -85,4 +86,4 @@ Bu noktaya kadar betiklerinizde yalnızca küçük, basit değişiklikler yapmı
 Geçişinizi tamamladıktan ve diğer ad davranışlarına güvenerek çalışmayı bıraktıktan sonra, diğer adları devre dışı bırakmanız önerilir. Bu işlem [Disable-AzureRmAlias](/powershell/module/az.accounts/disable-azurermalias) cmdlet'iyle yapılır.
 
 > [!IMPORTANT]
-> Bu cmdlet'i çalıştırırken, `Enable-AzureRmAlias` cmdlet'inin çağrıldığı her `-Scope` için çağırdığınızdan __emin olun__; aksi takdirde sisteminizde diğer ad davranışına bağımlı betikler kalabilir.
+> Bu cmdlet'i çalıştırırken, `Enable-AzureRmAlias` cmdlet'inin çağrıldığı her `-Scope` için çağırdığınızdan __emin olun__ ; aksi takdirde sisteminizde diğer ad davranışına bağımlı betikler kalabilir.

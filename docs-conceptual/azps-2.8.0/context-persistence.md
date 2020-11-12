@@ -5,12 +5,13 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 10/21/2019
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 99c3d594c6d774152a4594a2eed7c7c3209bdbe9
-ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
+ms.service: azure-powershell
+ms.openlocfilehash: e428106fcc525cc8836af954897faa3f6c169990
+ms.sourcegitcommit: 2036538797dd088728aee5ac5021472454d82eb2
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89244176"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93408039"
 ---
 # <a name="azure-powershell-context-objects"></a>Azure PowerShell bağlam nesneleri
 
@@ -26,7 +27,7 @@ Azure bağlamları, üzerinde komutların çalıştırılacağı etkin aboneliğ
 * _Kiracı_ ile ilişkilendirilmiş Azure kaynaklarını oluşturmak ve çalıştırmak için Microsoft'la yapılan bir hizmet sözleşmesi olan etkin _abonelik_. Belgelerde ve Active Directory ile çalışırken kiracılardan genellikle _kuruluşlar_ olarak söz edilir.
 * Azure bulutuna erişmek için depolanan kimlik doğrulama belirteci olan _belirteç önbelleği_ başvurusu. Bu belirtecin nerede depolandığı ve ne kadar süreyle kalıcı olacağı [bağlam otomatik kaydetme ayarları](#save-azure-contexts-across-powershell-sessions) tarafından belirlenir.
 
-Bu terimlerle ilgili daha fazla bilgi için bkz. [Azure Active Directory Terminolojisi](/azure/active-directory/fundamentals/active-directory-whatis#terminology). Azure bağlamları tarafından kullanılan kimlik doğrulama belirteçleri, kalıcı bir oturumun parçası olan diğer depolanmış belirteçlerle aynıdır. 
+Bu terimlerle ilgili daha fazla bilgi için bkz. [Azure Active Directory Terminolojisi](/azure/active-directory/fundamentals/active-directory-whatis#terminology). Azure bağlamları tarafından kullanılan kimlik doğrulama belirteçleri, kalıcı bir oturumun parçası olan diğer depolanmış belirteçlerle aynıdır.
 
 `Connect-AzAccount` ile oturum açtığınızda varsayılan aboneliğiniz için en az bir Azure bağlamı oluşturulur. `Connect-AzAccount` tarafından döndürülen nesne, PowerShell oturumunun kalanında kullanılan varsayılan Azure bağlamıdır.
 
@@ -47,7 +48,7 @@ $context = Get-Context -Name "mycontext"
 Bağlam adları, ilişkili aboneliğin adından farklı olabilir.
 
 > [!IMPORTANT]
-> Kullanılabilir Azure bağlamları her zaman sizin kullanılabilir abonelikleriniz __olmayabilir__. Azure bağlamları yalnızca yerel olarak depolanmış bilgileri temsil eder. Aboneliklerinizi [Get-AzSubscription](/powershell/module/Az.Accounts/Get-AzSubscription?view=azps-1.8.0) cmdlet'iyle alabilirsiniz.
+> Kullanılabilir Azure bağlamları her zaman sizin kullanılabilir abonelikleriniz __olmayabilir__. Azure bağlamları yalnızca yerel olarak depolanmış bilgileri temsil eder. Aboneliklerinizi [Get-AzSubscription](/powershell/module/Az.Accounts/Get-AzSubscription) cmdlet'iyle alabilirsiniz.
 
 ## <a name="create-a-new-azure-context-from-subscription-information"></a>Abonelik bilgilerinden yeni Azure bağlamı oluşturma
 
@@ -134,7 +135,7 @@ Azure bağlamlarını ve kimlik bilgilerini temizlemek için:
   Hesabın oturumunu hesaba veya bağlama göre kapatabilirsiniz:
 
   ```azurepowershell-interactive
-  Disconnect-AzAccount # Disconnect active account 
+  Disconnect-AzAccount # Disconnect active account
   Disconnect-AzAccount -Username "user@contoso.com" # Disconnect by account name
 
   Disconnect-AzAccount -ContextName "subscription2" # Disconnect by context name
@@ -144,7 +145,7 @@ Azure bağlamlarını ve kimlik bilgilerini temizlemek için:
   Bağlantının kesilmesi her zaman depolanan kimlik doğrulama belirteçlerini kaldırır ve bağlantısı kesilmiş kullanıcıyla veya bağlamla ilişkili kaydedilmiş bağlamları temizler.
 * [Clear-AzContext](/powershell/module/az.accounts/Clear-AzContext) cmdlet'ini kullanın. Bu cmdlet, her zaman depolanan bağlamlarla kimlik doğrulama belirteçlerinin kaldırılmasını garanti eder, ayrıca oturumunuzu da kapatır.
 * Bağlamı [Remove-AzContext](/powershell/module/az.accounts/remove-azcontext) ile kaldırın:
-  
+
   ```azurepowershell-interactive
   Remove-AzContext -Name "mycontext" # Remove by name
   Get-AzContext -Name "mycontext" | Remove-AzContext # Remove by piping Azure context object

@@ -5,12 +5,13 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/10/2020
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 4ab5639cfb997c5f9ee1286e6eacb97ef775239a
-ms.sourcegitcommit: 63181e0af0e4468b0530fdb0495ed4d44bdfd1c8
+ms.service: azure-powershell
+ms.openlocfilehash: 27073db862b83c5b95f2364355037c1ebd34a3b5
+ms.sourcegitcommit: 2036538797dd088728aee5ac5021472454d82eb2
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 10/31/2020
-ms.locfileid: "93134871"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93407502"
 ---
 # <a name="azure-powershell-release-notes"></a>Azure PowerShell sürüm notları
 
@@ -140,7 +141,6 @@ ms.locfileid: "93134871"
 * '*-AzDeployment' cmdlet’lerinden '-ApiVersion' parametresi kaldırıldı.
 
 #### <a name="azsql"></a>Az.Sql
-* 'Set-AzSqlDatabaseBackupShortTermRetentionPolicy' cmdlet’ine DiffBackupIntervalInHours eklendi 
 * networkIsolation belirtilmediğinde New-AzSqlDatabaseExport cmdlet’inin başarısız olmasıyla ilgili sorun düzeltildi [#13097]
 * New-AzSqlDatabaseExport ve New-AzSqlDatabaseImport cmdlet’lerinin sonuç nesnesinde OperationStatusLink parametresini döndürmemesiyle ilgili sorun düzeltildi [#13097]
 * Yedekleme Alanı Yedeklilik Uyarıları’ndaki Azure Eşlenmiş Bölgeler URL’si Güncelleştirildi 
@@ -2717,7 +2717,7 @@ DatabaseName’in yerine PartnerDatabaseName’in olup olmadığını denetlemey
 #### <a name="azautomation"></a>Az.Automation
 * Get-AzAutomationJobOutputRecord, JSON ve Text kayıt değerlerini işleyecek şekilde güncelleştirildi.
     - [https://github.com/Azure/azure-powershell/issues/8347](https://github.com/Azure/azure-powershell/issues/7977 ) sorunu düzeltildi
-    - [https://github.com/Azure/azure-powershell/issues/8600](https://github.com/Azure/azure-powershell/issues/8600 ) sorunu düzeltildi
+    - [https://github.com/Azure/azure-powershell/issues/8347](https://github.com/Azure/azure-powershell/issues/8600 ) sorunu düzeltildi
 * Start-AzAutomationDscCompilationJob cmdlet'inin davranışı tamamlanmasını beklemek yerine yalnızca işi başlatacak şekilde değiştirildi.
     * [https://github.com/Azure/azure-powershell/issues/8347](https://github.com/Azure/azure-powershell/issues/8347 ) sorunu düzeltildi
 * Get-AzAutomationDscNode için -Name kullanıldığında tüm düğümlerin döndürülmesi sorunu düzeltildi. Artık yalnızca eşleşen düğüm döndürülüyor.
@@ -3165,8 +3165,8 @@ DatabaseName’in yerine PartnerDatabaseName’in olup olmadığını denetlemey
 
 #### <a name="azresources"></a>Az.Resources
 * [https://github.com/Azure/azure-powershell/issues/8166](https://github.com/Azure/azure-powershell/issues/8166 ) sorunu düzeltildi
-* [https://github.com/Azure/azure-powershell/issues/8235](https://github.com/Azure/azure-powershell/issues/8235 ) sorunu düzeltildi
-* [https://github.com/Azure/azure-powershell/issues/6219](https://github.com/Azure/azure-powershell/issues/6219 ) sorunu düzeltildi
+* [https://github.com/Azure/azure-powershell/issues/8166](https://github.com/Azure/azure-powershell/issues/8235 ) sorunu düzeltildi
+* [https://github.com/Azure/azure-powershell/issues/8235](https://github.com/Azure/azure-powershell/issues/6219 ) sorunu düzeltildi
 * KeyCredentials’ın tekrar oluşturmasını engelleyen hata düzeltildi
 
 #### <a name="azsql"></a>Az.Sql
@@ -3258,7 +3258,7 @@ Az.RecoveryServices modülü için genel kullanılabilirlik.
 * Kaynak grubu dağıtım cmdlet'lerini yürütmeden önce '-TemplateFile' parametresi yolunun çözülmemesi sorunu düzeltildi
 * Az.Resources: Belgede New-AzureRmPolicyDefinition -Mode varsayılan değeri düzeltildi
 * Az.Resources: [https://github.com/Azure/azure-powershell/issues/9351](https://github.com/Azure/azure-powershell/issues/7522 ) sorunu düzeltildi
-* Az.Resources: https://github.com/Azure/azure-powershell/issues/5747 sorunu düzeltildi
+* Az.Resources: [https://github.com/Azure/azure-powershell/issues/9351](https://github.com/Azure/azure-powershell/issues/5747 ) sorunu düzeltildi
 * 'PSResourceGroupDeployment' nesnesinin biçimlendirme sorunu düzeltildi
     - Burada daha fazla bilgi bulunabilir: https://github.com/Azure/azure-powershell/issues/2123
 
