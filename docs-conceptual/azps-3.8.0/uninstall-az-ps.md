@@ -5,12 +5,13 @@ ms.date: 09/15/2020
 ms.devlang: powershell
 ms.topic: conceptual
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 20859d6135676a3a4fb1e9f5d66909d157b38ac6
-ms.sourcegitcommit: 5fcf17330d6f335561640a5ee3d98c59f7baab94
+ms.service: azure-powershell
+ms.openlocfilehash: ff9135839b01ad9a1bf10e5969cd3226fe492145
+ms.sourcegitcommit: 2036538797dd088728aee5ac5021472454d82eb2
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 09/26/2020
-ms.locfileid: "91381386"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93410165"
 ---
 # <a name="uninstall-the-azure-powershell-module"></a>Azure PowerShell modülünü kaldırma
 
@@ -25,7 +26,7 @@ Az PowerShell modülünü MSI paketini kullanarak yüklediyseniz kaldırma işle
 | Windows 10               | Başlat > Ayarlar > Uygulamalar                                |
 | Windows 7 </br>Windows 8 | Başlat > Denetim Masası > Programlar > Program kaldır |
 
-Bu ekrandaki program listesinde **Azure PowerShell**'i görebilmelisiniz. Kaldırılacak olan uygulama budur. Listede bu programı görmüyorsanız, PowerShellGet aracılığıyla yüklemiş olmalısınız ve sonraki yönergeleri izlemelisiniz.
+Bu ekrandaki program listesinde **Azure PowerShell** 'i görebilmelisiniz. Kaldırılacak olan uygulama budur. Listede bu programı görmüyorsanız, PowerShellGet aracılığıyla yüklemiş olmalısınız ve sonraki yönergeleri izlemelisiniz.
 
 ## <a name="uninstall-the-az-powershell-module-from-powershellget"></a>Az PowerShell modülünü PowerShellGet’ten kaldırma
 
@@ -146,7 +147,7 @@ Bu işlevi kullanmak için kodu kopyalayıp PowerShell oturumunuza yapıştırı
 Uninstall-AzModule -Name Az -Version 1.8.0
 ```
 
-Betik çalışırken kaldırılan alt modüllerin **Adını**, **Sürümünü** ve **Durumunu** görüntüler. Bu işlem sonucunda nelerin silineceğini bu öğeleri silmeden öğrenmek için `-WhatIf` parametresini belirtin.
+Betik çalışırken kaldırılan alt modüllerin **Adını** , **Sürümünü** ve **Durumunu** görüntüler. Bu işlem sonucunda nelerin silineceğini bu öğeleri silmeden öğrenmek için `-WhatIf` parametresini belirtin.
 
 ```output
 ModuleName              Version  State
@@ -185,7 +186,7 @@ AzureRM PowerShell modülünü MSI paketini kullanarak yüklediyseniz kaldırma 
 | Windows 10               | Başlat > Ayarlar > Uygulamalar                                |
 | Windows 7 </br>Windows 8 | Başlat > Denetim Masası > Programlar > Program kaldır |
 
-Bu ekrandaki program listesinde **Azure PowerShell**'i veya **Microsoft Azure PowerShell - Ay Yıl**'ı görebilmelisiniz. Kaldırılacak olan uygulama budur. Listede bu programı görmüyorsanız, PowerShellGet aracılığıyla yüklemiş olmalısınız ve sonraki yönergeleri izlemelisiniz.
+Bu ekrandaki program listesinde **Azure PowerShell** 'i veya **Microsoft Azure PowerShell - Ay Yıl** 'ı görebilmelisiniz. Kaldırılacak olan uygulama budur. Listede bu programı görmüyorsanız, PowerShellGet aracılığıyla yüklemiş olmalısınız ve sonraki yönergeleri izlemelisiniz.
 
 ### <a name="uninstall-the-azurerm-powershell-module-from-powershellget"></a>AzureRM PowerShell modülünü PowerShellGet’ten kaldırma
 
