@@ -5,26 +5,27 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 10/21/2019
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 5d9028c0a433149c8f6cc346651bb8bf875bb42a
-ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
+ms.service: azure-powershell
+ms.openlocfilehash: b76e310e1677e539927ebc4746df67c1d1accc16
+ms.sourcegitcommit: 2036538797dd088728aee5ac5021472454d82eb2
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89243081"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93410137"
 ---
-# <a name="run-azure-powershell-cmdlets-in-powershell-jobs"></a><span data-ttu-id="e825d-103">PowerShell İşlerinde Azure PowerShell cmdlet'lerini çalıştırma</span><span class="sxs-lookup"><span data-stu-id="e825d-103">Run Azure PowerShell cmdlets in PowerShell Jobs</span></span>
+# <a name="run-azure-powershell-cmdlets-in-powershell-jobs"></a><span data-ttu-id="017b1-103">PowerShell İşlerinde Azure PowerShell cmdlet'lerini çalıştırma</span><span class="sxs-lookup"><span data-stu-id="017b1-103">Run Azure PowerShell cmdlets in PowerShell Jobs</span></span>
 
-<span data-ttu-id="e825d-104">Azure PowerShell, Azure bulutuna bağlanmaya ve yanıtları beklemeye dayanır; dolayısıyla bu cmdlet'lerin çoğu buluttan yanıt alana kadar PowerShell oturumunuzu engeller.</span><span class="sxs-lookup"><span data-stu-id="e825d-104">Azure PowerShell depends on connecting to an Azure cloud and waiting for responses, so most of these cmdlets block your PowerShell session until they get a response from the cloud.</span></span>
-<span data-ttu-id="e825d-105">Powershell İşleri, tek bir PowerShell oturumunun içinden cmdlet'leri arka planda çalıştırmanıza veya Azure'da aynı anda birden fazla görev gerçekleştirmenize olanak tanır.</span><span class="sxs-lookup"><span data-stu-id="e825d-105">Powershell Jobs let you run cmdlets in the background or do multiple tasks on Azure at once, from inside a single PowerShell session.</span></span>
+<span data-ttu-id="017b1-104">Azure PowerShell, Azure bulutuna bağlanmaya ve yanıtları beklemeye dayanır; dolayısıyla bu cmdlet'lerin çoğu buluttan yanıt alana kadar PowerShell oturumunuzu engeller.</span><span class="sxs-lookup"><span data-stu-id="017b1-104">Azure PowerShell depends on connecting to an Azure cloud and waiting for responses, so most of these cmdlets block your PowerShell session until they get a response from the cloud.</span></span>
+<span data-ttu-id="017b1-105">Powershell İşleri, tek bir PowerShell oturumunun içinden cmdlet'leri arka planda çalıştırmanıza veya Azure'da aynı anda birden fazla görev gerçekleştirmenize olanak tanır.</span><span class="sxs-lookup"><span data-stu-id="017b1-105">Powershell Jobs let you run cmdlets in the background or do multiple tasks on Azure at once, from inside a single PowerShell session.</span></span>
 
-<span data-ttu-id="e825d-106">Bu makalede Azure PowerShell cmdlet'lerini PowerShell İşleri olarak çalıştırma ve tamamlanıp tamamlanmadığını denetleme konusuna kısa bir genel bakış sağlanır.</span><span class="sxs-lookup"><span data-stu-id="e825d-106">This article is a brief overview of how to run Azure PowerShell cmdlets as PowerShell Jobs and check for completion.</span></span> <span data-ttu-id="e825d-107">Komutları Azure PowerShell'de çalıştırmak için Azure PowerShell bağlamları gerekir ve bunlar [Azure bağlamları ve oturum açma bilgileri](context-persistence.md) konusunda ayrıntılı olarak açıklanmıştır.</span><span class="sxs-lookup"><span data-stu-id="e825d-107">Running commands in Azure PowerShell requires the use of Azure PowerShell contexts, which are covered in detail in [Azure contexts and sign-in credentials](context-persistence.md).</span></span>
-<span data-ttu-id="e825d-108">PowerShell İşleri hakkında daha fazla bilgi edinmek için bkz. [PowerShell İşleri hakkında](/powershell/module/microsoft.powershell.core/about/about_jobs).</span><span class="sxs-lookup"><span data-stu-id="e825d-108">To learn more about PowerShell Jobs, see [About PowerShell Jobs](/powershell/module/microsoft.powershell.core/about/about_jobs).</span></span>
+<span data-ttu-id="017b1-106">Bu makalede Azure PowerShell cmdlet'lerini PowerShell İşleri olarak çalıştırma ve tamamlanıp tamamlanmadığını denetleme konusuna kısa bir genel bakış sağlanır.</span><span class="sxs-lookup"><span data-stu-id="017b1-106">This article is a brief overview of how to run Azure PowerShell cmdlets as PowerShell Jobs and check for completion.</span></span> <span data-ttu-id="017b1-107">Komutları Azure PowerShell'de çalıştırmak için Azure PowerShell bağlamları gerekir ve bunlar [Azure bağlamları ve oturum açma bilgileri](context-persistence.md) konusunda ayrıntılı olarak açıklanmıştır.</span><span class="sxs-lookup"><span data-stu-id="017b1-107">Running commands in Azure PowerShell requires the use of Azure PowerShell contexts, which are covered in detail in [Azure contexts and sign-in credentials](context-persistence.md).</span></span>
+<span data-ttu-id="017b1-108">PowerShell İşleri hakkında daha fazla bilgi edinmek için bkz. [PowerShell İşleri hakkında](/powershell/module/microsoft.powershell.core/about/about_jobs).</span><span class="sxs-lookup"><span data-stu-id="017b1-108">To learn more about PowerShell Jobs, see [About PowerShell Jobs](/powershell/module/microsoft.powershell.core/about/about_jobs).</span></span>
 
-## <a name="azure-contexts-with-powershell-jobs"></a><span data-ttu-id="e825d-109">PowerShell işleri ile Azure bağlamları</span><span class="sxs-lookup"><span data-stu-id="e825d-109">Azure contexts with PowerShell jobs</span></span>
+## <a name="azure-contexts-with-powershell-jobs"></a><span data-ttu-id="017b1-109">PowerShell işleri ile Azure bağlamları</span><span class="sxs-lookup"><span data-stu-id="017b1-109">Azure contexts with PowerShell jobs</span></span>
 
-<span data-ttu-id="e825d-110">PowerShell İşleri, ekli bir PowerShell oturumu olmadan ayrı işlemler olarak çalışır, dolayısıyla Azure kimlik bilgilerinizin onlarla paylaşılması gerekir.</span><span class="sxs-lookup"><span data-stu-id="e825d-110">PowerShell Jobs are run as separate processes without an attached PowerShell session, so your Azure credentials must be shared with them.</span></span> <span data-ttu-id="e825d-111">Kimlik bilgileri Azure bağlam nesneleri olarak şu yöntemlerden biriyle geçirilir:</span><span class="sxs-lookup"><span data-stu-id="e825d-111">Credentials are passed as Azure context objects, using one of these methods:</span></span>
+<span data-ttu-id="017b1-110">PowerShell İşleri, ekli bir PowerShell oturumu olmadan ayrı işlemler olarak çalışır, dolayısıyla Azure kimlik bilgilerinizin onlarla paylaşılması gerekir.</span><span class="sxs-lookup"><span data-stu-id="017b1-110">PowerShell Jobs are run as separate processes without an attached PowerShell session, so your Azure credentials must be shared with them.</span></span> <span data-ttu-id="017b1-111">Kimlik bilgileri Azure bağlam nesneleri olarak şu yöntemlerden biriyle geçirilir:</span><span class="sxs-lookup"><span data-stu-id="017b1-111">Credentials are passed as Azure context objects, using one of these methods:</span></span>
 
-* <span data-ttu-id="e825d-112">Otomatik bağlam kalıcılığı.</span><span class="sxs-lookup"><span data-stu-id="e825d-112">Automatic context persistence.</span></span> <span data-ttu-id="e825d-113">Bağlam kalıcılığı varsayılan olarak etkinleştirilir ve oturum açma bilgilerinizi birden çok oturum arasında korur.</span><span class="sxs-lookup"><span data-stu-id="e825d-113">Context persistence is enabled by default and preserves your sign-in information across multiple sessions.</span></span> <span data-ttu-id="e825d-114">Bağlam kalıcılığı etkinleştirildiğinde geçerli Azure bağlamı yeni işleme geçirilir:</span><span class="sxs-lookup"><span data-stu-id="e825d-114">With context persistence enabled, the current Azure context is passed to the new process:</span></span>
+* <span data-ttu-id="017b1-112">Otomatik bağlam kalıcılığı.</span><span class="sxs-lookup"><span data-stu-id="017b1-112">Automatic context persistence.</span></span> <span data-ttu-id="017b1-113">Bağlam kalıcılığı varsayılan olarak etkinleştirilir ve oturum açma bilgilerinizi birden çok oturum arasında korur.</span><span class="sxs-lookup"><span data-stu-id="017b1-113">Context persistence is enabled by default and preserves your sign-in information across multiple sessions.</span></span> <span data-ttu-id="017b1-114">Bağlam kalıcılığı etkinleştirildiğinde geçerli Azure bağlamı yeni işleme geçirilir:</span><span class="sxs-lookup"><span data-stu-id="017b1-114">With context persistence enabled, the current Azure context is passed to the new process:</span></span>
 
   ```azurepowershell-interactive
   Enable-AzContextAutosave # Enables context autosave if not already on
@@ -32,7 +33,7 @@ ms.locfileid: "89243081"
   $job = Start-Job { param($vmadmin) New-AzVM -Name MyVm -Credential $vmadmin } -ArgumentList $creds
   ```
 
-* <span data-ttu-id="e825d-115">Azure bağlam nesnesi sağlamak için Azure PowerShell cmdlet'leriyle `-AzContext` parametresini kullanın:</span><span class="sxs-lookup"><span data-stu-id="e825d-115">Use the `-AzContext` parameter with any Azure PowerShell cmdlets to provide an Azure context object:</span></span>
+* <span data-ttu-id="017b1-115">Azure bağlam nesnesi sağlamak için Azure PowerShell cmdlet'leriyle `-AzContext` parametresini kullanın:</span><span class="sxs-lookup"><span data-stu-id="017b1-115">Use the `-AzContext` parameter with any Azure PowerShell cmdlets to provide an Azure context object:</span></span>
 
   ```azurepowershell-interactive
   $context = Get-AzContext -Name 'mycontext' # Get an Azure context object
@@ -40,20 +41,20 @@ ms.locfileid: "89243081"
   $job = Start-Job { param($context, $vmadmin) New-AzVM -Name MyVm -AzContext $context -Credential $vmadmin} -ArgumentList $context,$creds }
   ```
 
-  <span data-ttu-id="e825d-116">Bağlam kalıcılığı devre dışı bırakılırsa `-AzContext` bağımsız değişkeni gereklidir.</span><span class="sxs-lookup"><span data-stu-id="e825d-116">If context persistence is disabled, the `-AzContext` argument is required.</span></span>
+  <span data-ttu-id="017b1-116">Bağlam kalıcılığı devre dışı bırakılırsa `-AzContext` bağımsız değişkeni gereklidir.</span><span class="sxs-lookup"><span data-stu-id="017b1-116">If context persistence is disabled, the `-AzContext` argument is required.</span></span>
 
-* <span data-ttu-id="e825d-117">Bazı Azure PowerShell cmdlet'leri tarafından sağlanan `-AsJob` anahtarını kullanın.</span><span class="sxs-lookup"><span data-stu-id="e825d-117">Use the `-AsJob` switch provided by some Azure PowerShell cmdlets.</span></span> <span data-ttu-id="e825d-118">Bu anahtar cmdlet'i otomatik olarak geçerli etkin Azure bağlamını kullanıp PowerShell İşi olarak başlatır:</span><span class="sxs-lookup"><span data-stu-id="e825d-118">This switch automatically starts the cmdlet as a PowerShell Job, using the currently active Azure context:</span></span>
+* <span data-ttu-id="017b1-117">Bazı Azure PowerShell cmdlet'leri tarafından sağlanan `-AsJob` anahtarını kullanın.</span><span class="sxs-lookup"><span data-stu-id="017b1-117">Use the `-AsJob` switch provided by some Azure PowerShell cmdlets.</span></span> <span data-ttu-id="017b1-118">Bu anahtar cmdlet'i otomatik olarak geçerli etkin Azure bağlamını kullanıp PowerShell İşi olarak başlatır:</span><span class="sxs-lookup"><span data-stu-id="017b1-118">This switch automatically starts the cmdlet as a PowerShell Job, using the currently active Azure context:</span></span>
 
   ```azurepowershell-interactive
   $creds = Get-Credential
   $job = New-AzVM -Name MyVm -Credential $creds -AsJob
   ```
 
-  <span data-ttu-id="e825d-119">Cmdlet'in `-AsJob` anahtarını destekleyip desteklemediğini görmek için başvuru belgelerine bakın.</span><span class="sxs-lookup"><span data-stu-id="e825d-119">To see if a cmdlet supports `-AsJob`, check its reference documentation.</span></span> <span data-ttu-id="e825d-120">`-AsJob` anahtarı bağlam otomatik kaydetme ayarının etkinleştirilmesini gerektirmez.</span><span class="sxs-lookup"><span data-stu-id="e825d-120">The `-AsJob` switch doesn't require context autosave to be enabled.</span></span>
+  <span data-ttu-id="017b1-119">Cmdlet'in `-AsJob` anahtarını destekleyip desteklemediğini görmek için başvuru belgelerine bakın.</span><span class="sxs-lookup"><span data-stu-id="017b1-119">To see if a cmdlet supports `-AsJob`, check its reference documentation.</span></span> <span data-ttu-id="017b1-120">`-AsJob` anahtarı bağlam otomatik kaydetme ayarının etkinleştirilmesini gerektirmez.</span><span class="sxs-lookup"><span data-stu-id="017b1-120">The `-AsJob` switch doesn't require context autosave to be enabled.</span></span>
 
-<span data-ttu-id="e825d-121">Çalışan işin durumunu denetlemek için [Get-Job](/powershell/module/microsoft.powershell.core/get-job) cmdlet'ini kullanabilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="e825d-121">You can check the status of a running job with the [Get-Job](/powershell/module/microsoft.powershell.core/get-job) cmdlet.</span></span> <span data-ttu-id="e825d-122">Şimdiye kadar çalışan işten çıkış almak için [Receive-Job](/powershell/module/microsoft.powershell.core/receive-job) cmdlet'ini kullanın.</span><span class="sxs-lookup"><span data-stu-id="e825d-122">To get the output from a job so far, use the [Receive-Job](/powershell/module/microsoft.powershell.core/receive-job) cmdlet.</span></span>
+<span data-ttu-id="017b1-121">Çalışan işin durumunu denetlemek için [Get-Job](/powershell/module/microsoft.powershell.core/get-job) cmdlet'ini kullanabilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="017b1-121">You can check the status of a running job with the [Get-Job](/powershell/module/microsoft.powershell.core/get-job) cmdlet.</span></span> <span data-ttu-id="017b1-122">Şimdiye kadar çalışan işten çıkış almak için [Receive-Job](/powershell/module/microsoft.powershell.core/receive-job) cmdlet'ini kullanın.</span><span class="sxs-lookup"><span data-stu-id="017b1-122">To get the output from a job so far, use the [Receive-Job](/powershell/module/microsoft.powershell.core/receive-job) cmdlet.</span></span>
 
-<span data-ttu-id="e825d-123">Azure'da bir işlemin ilerleme durumunu uzaktan denetlemek için, iş tarafından değiştirilmekte olan kaynağın türüyle ilişkilendirilmiş `Get-` cmdlet'lerini kullanın:</span><span class="sxs-lookup"><span data-stu-id="e825d-123">To check an operation's progress remotely on Azure, use the `Get-` cmdlets associated with the type of resource being modified by the job:</span></span>
+<span data-ttu-id="017b1-123">Azure'da bir işlemin ilerleme durumunu uzaktan denetlemek için, iş tarafından değiştirilmekte olan kaynağın türüyle ilişkilendirilmiş `Get-` cmdlet'lerini kullanın:</span><span class="sxs-lookup"><span data-stu-id="017b1-123">To check an operation's progress remotely on Azure, use the `Get-` cmdlets associated with the type of resource being modified by the job:</span></span>
 
 ```azurepowershell-interactive
 $creds = Get-Credential
@@ -66,9 +67,9 @@ Get-Job $job
 Get-AzVM -Name $vmName
 ```
 
-## <a name="see-also"></a><span data-ttu-id="e825d-124">Ayrıca Bkz.</span><span class="sxs-lookup"><span data-stu-id="e825d-124">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="017b1-124">Ayrıca Bkz.</span><span class="sxs-lookup"><span data-stu-id="017b1-124">See Also</span></span>
 
-* [<span data-ttu-id="e825d-125">Azure PowerShell cmdlet'leri</span><span class="sxs-lookup"><span data-stu-id="e825d-125">Azure PowerShell contexts</span></span>](context-persistence.md)
-* [<span data-ttu-id="e825d-126">PowerShell İşleri hakkında</span><span class="sxs-lookup"><span data-stu-id="e825d-126">About PowerShell Jobs</span></span>](/powershell/module/microsoft.powershell.core/about/about_jobs)
-* [<span data-ttu-id="e825d-127">Get-Job başvurusu</span><span class="sxs-lookup"><span data-stu-id="e825d-127">Get-Job reference</span></span>](/powershell/module/microsoft.powershell.core/get-job)
-* [<span data-ttu-id="e825d-128">Receive-Job başvurusu</span><span class="sxs-lookup"><span data-stu-id="e825d-128">Receive-Job reference</span></span>](/powershell/module/microsoft.powershell.core/receive-job)
+* [<span data-ttu-id="017b1-125">Azure PowerShell cmdlet'leri</span><span class="sxs-lookup"><span data-stu-id="017b1-125">Azure PowerShell contexts</span></span>](context-persistence.md)
+* [<span data-ttu-id="017b1-126">PowerShell İşleri hakkında</span><span class="sxs-lookup"><span data-stu-id="017b1-126">About PowerShell Jobs</span></span>](/powershell/module/microsoft.powershell.core/about/about_jobs)
+* [<span data-ttu-id="017b1-127">Get-Job başvurusu</span><span class="sxs-lookup"><span data-stu-id="017b1-127">Get-Job reference</span></span>](/powershell/module/microsoft.powershell.core/get-job)
+* [<span data-ttu-id="017b1-128">Receive-Job başvurusu</span><span class="sxs-lookup"><span data-stu-id="017b1-128">Receive-Job reference</span></span>](/powershell/module/microsoft.powershell.core/receive-job)
