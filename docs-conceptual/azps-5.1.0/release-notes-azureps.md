@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 03/10/2020
 ms.custom: devx-track-azurepowershell
 ms.service: azure-powershell
-ms.openlocfilehash: 280486e45dad73c935f03cedc619c0de762deb12
-ms.sourcegitcommit: d81c3b0f0f7289104be03869eb675128b61db7d3
+ms.openlocfilehash: b37d25f8efb6c0a5e590617a5ba84a5a5bf18660
+ms.sourcegitcommit: ec731e58b7de3eb14df6d3bf308df92154125bbb
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94715663"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95005832"
 ---
 # <a name="azure-powershell-release-notes"></a>Azure PowerShell sürüm notları
 
@@ -795,7 +795,7 @@ ms.locfileid: "94715663"
 * 'Connect-AzAccount' cmdlet’inin çok iş parçacıklı yürütmede başarısız olmasına neden olabilen bir sorun düzeltildi [#11201]
 
 #### <a name="azaks"></a>Az.Aks
-* Eski [AccessProfile API](https://docs.microsoft.com/rest/api/aks/managedclusters/getaccessprofile)’sinin kullanımı [ListClusterAdmin](https://docs.microsoft.com/rest/api/aks/managedclusters/listclusteradmincredentials) ve [ListClusterUser](https://docs.microsoft.com/rest/api/aks/managedclusters/listclusterusercredentials) API’lerine yönelik çağrılarla değiştirildi
+* Eski [AccessProfile API](/rest/api/aks/managedclusters/getaccessprofile)’sinin kullanımı [ListClusterAdmin](/rest/api/aks/managedclusters/listclusteradmincredentials) ve [ListClusterUser](/rest/api/aks/managedclusters/listclusterusercredentials) API’lerine yönelik çağrılarla değiştirildi
 
 #### <a name="azbatch"></a>Az.Batch
 * Az.Batch, 'Microsoft.Azure.Management.Batch' SDK sürüm 11.0.0 kullanacak şekilde güncelleştirildi
@@ -1313,7 +1313,7 @@ ms.locfileid: "94715663"
 
 ## <a name="0100-preview---april-2020"></a>0.10.0-preview - Nisan 2020
 ### <a name="general"></a>Genel
-* Az modülleri artık Azure Stack Hub’da önizlemede kullanılabilir. Bu, Linux ve macOs ile platformlar arası uyumluluk sağlar. Azure Stack Hub artık Az modülleriyle PowerShell Core’u destekliyor, daha fazla bilgiyi [burada](https://aka.ms/az4AzureStack) bulabilirsiniz
+* Az modülleri artık Azure Stack Hub’da önizlemede kullanılabilir. Bu, Linux ve macOs ile platformlar arası uyumluluk sağlar. Azure Stack Hub artık Az modülleriyle PowerShell Core’u destekliyor, daha fazla bilgiyi [burada](/azure-stack/operator/powershell-install-az-module) bulabilirsiniz
 * Az modülleri profil 2019-03-01-hybrid’i destekliyor:
   - Az.Billing
   - Az.Compute
@@ -1328,7 +1328,7 @@ ms.locfileid: "94715663"
   - Az.Websites
 * Az için Azure Stack Hub ile çalışan üç yeni PowerShell modülü (Az.Databox, Az.IotHub ve Az.EventHub) kullanıma sunuldu
 * Komutlar, AzureRM’nin Az olarak değiştirilmesi gibi küçük değişiklikler ile görece aynı kalır
-* Azure Stack Hub için PowerShell belgelerine güncelleştirilmiş bağlantı [burada](https://aka.ms/InstallASHPowerShell) bulunabilir
+* Azure Stack Hub için PowerShell belgelerine güncelleştirilmiş bağlantı [burada](/azure-stack/operator/powershell-install-az-module) bulunabilir
 
 ## <a name="370---march-2020"></a>3.7.0 - Mart 2020
 #### <a name="azaccounts"></a>Az.Accounts
@@ -2911,7 +2911,7 @@ DatabaseName’in yerine PartnerDatabaseName’in olup olmadığını denetlemey
     - Set-AzScheduledQueryRule
     - Update-AzScheduledQueryRule
     - Remove-AzScheduledQueryRule
-    - SQR API hakkında [daha fazla](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules) bilgi
+    - SQR API hakkında [daha fazla](/rest/api/monitor/scheduledqueryrules) bilgi
     - Az.Monitor.md, GenV2 (klasik olmayan) ölçüm tabanlı uyarı kuralı için cmdlet'leri içerecek şekilde güncelleştirildi
 
 #### <a name="aznetwork"></a>Az.Network
