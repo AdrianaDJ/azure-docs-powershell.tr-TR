@@ -3,38 +3,38 @@ external help file: Microsoft.WindowsAzure.Commands.dll-Help.xml
 ms.assetid: 43E2C42E-16A3-426E-A7C4-33942F06F908
 online version: ''
 schema: 2.0.0
-ms.openlocfilehash: bd94462eb89cff6b4cec97f05911e27dbb05c920
-ms.sourcegitcommit: 56ed085a868afa8263f8eb0f755b5822f5c29532
+ms.openlocfilehash: 501a164fc4470a3d4fd6163050fba495ce3d2705
+ms.sourcegitcommit: 25eca7b5f5480758aa2cd830458900cf91cf673c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "94105766"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95515101"
 ---
-# <span data-ttu-id="09382-101">Stop-AzureEmulator</span><span class="sxs-lookup"><span data-stu-id="09382-101">Stop-AzureEmulator</span></span>
+# <span data-ttu-id="eb88e-101">Stop-AzureEmulator</span><span class="sxs-lookup"><span data-stu-id="eb88e-101">Stop-AzureEmulator</span></span>
 
-## <span data-ttu-id="09382-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="09382-102">SYNOPSIS</span></span>
-<span data-ttu-id="09382-103">Compute öykünücüsünü durdurur.</span><span class="sxs-lookup"><span data-stu-id="09382-103">Stops the compute emulator.</span></span>
+## <span data-ttu-id="eb88e-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="eb88e-102">SYNOPSIS</span></span>
+<span data-ttu-id="eb88e-103">Compute öykünücüsünü durdurur.</span><span class="sxs-lookup"><span data-stu-id="eb88e-103">Stops the compute emulator.</span></span>
 
-## <span data-ttu-id="09382-104">INDEKI</span><span class="sxs-lookup"><span data-stu-id="09382-104">SYNTAX</span></span>
+## <span data-ttu-id="eb88e-104">INDEKI</span><span class="sxs-lookup"><span data-stu-id="eb88e-104">SYNTAX</span></span>
 
 ```
 Stop-AzureEmulator [-PassThru] [-Profile <AzureSMProfile>] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="09382-105">Tanım</span><span class="sxs-lookup"><span data-stu-id="09382-105">DESCRIPTION</span></span>
-<span data-ttu-id="09382-106">Bu konuda, Microsoft Azure PowerShell modülünün 0.8.10 sürümündeki cmdlet açıklanmaktadır.</span><span class="sxs-lookup"><span data-stu-id="09382-106">This topic describes the cmdlet in the 0.8.10 version of the Microsoft Azure PowerShell module.</span></span>
-<span data-ttu-id="09382-107">Kullandığınız modülün sürümünü edinmek için, Azure PowerShell konsolunda yazın `(Get-Module -Name Azure).Version` .</span><span class="sxs-lookup"><span data-stu-id="09382-107">To get the version of the module you're using, in the Azure PowerShell console, type `(Get-Module -Name Azure).Version`.</span></span>
+## <span data-ttu-id="eb88e-105">Tanım</span><span class="sxs-lookup"><span data-stu-id="eb88e-105">DESCRIPTION</span></span>
+<span data-ttu-id="eb88e-106">Bu konuda, Microsoft Azure PowerShell modülünün 0.8.10 sürümündeki cmdlet açıklanmaktadır.</span><span class="sxs-lookup"><span data-stu-id="eb88e-106">This topic describes the cmdlet in the 0.8.10 version of the Microsoft Azure PowerShell module.</span></span>
+<span data-ttu-id="eb88e-107">Kullandığınız modülün sürümünü edinmek için, Azure PowerShell konsolunda yazın `(Get-Module -Name Azure).Version` .</span><span class="sxs-lookup"><span data-stu-id="eb88e-107">To get the version of the module you're using, in the Azure PowerShell console, type `(Get-Module -Name Azure).Version`.</span></span>
 
-<span data-ttu-id="09382-108">**Stop-AzureEmulator** cmdlet 'ı, Azure compute öykünücüsünü durdurur.</span><span class="sxs-lookup"><span data-stu-id="09382-108">The **Stop-AzureEmulator** cmdlet stops the Azure compute emulator.</span></span>
-<span data-ttu-id="09382-109">Emulator 'ta çalışmakta olan tüm hizmetler kaldırılır.</span><span class="sxs-lookup"><span data-stu-id="09382-109">Any services currently running in the emulator are removed.</span></span>
+<span data-ttu-id="eb88e-108">**Stop-AzureEmulator** cmdlet 'ı, Azure compute öykünücüsünü durdurur.</span><span class="sxs-lookup"><span data-stu-id="eb88e-108">The **Stop-AzureEmulator** cmdlet stops the Azure Compute Emulator.</span></span>
+<span data-ttu-id="eb88e-109">Emulator 'ta çalışmakta olan tüm hizmetler kaldırılır.</span><span class="sxs-lookup"><span data-stu-id="eb88e-109">Any services currently running in the emulator are removed.</span></span>
 
-## <span data-ttu-id="09382-110">ÖRNEKLERDEN</span><span class="sxs-lookup"><span data-stu-id="09382-110">EXAMPLES</span></span>
+## <span data-ttu-id="eb88e-110">ÖRNEKLERDEN</span><span class="sxs-lookup"><span data-stu-id="eb88e-110">EXAMPLES</span></span>
 
-## <span data-ttu-id="09382-111">PARAMETRELERINE</span><span class="sxs-lookup"><span data-stu-id="09382-111">PARAMETERS</span></span>
+## <span data-ttu-id="eb88e-111">PARAMETRELERINE</span><span class="sxs-lookup"><span data-stu-id="eb88e-111">PARAMETERS</span></span>
 
-### <span data-ttu-id="09382-112">-Geçiş</span><span class="sxs-lookup"><span data-stu-id="09382-112">-PassThru</span></span>
-<span data-ttu-id="09382-113">Çalıştığınız öğeyi temsil eden bir nesne döndürür.</span><span class="sxs-lookup"><span data-stu-id="09382-113">Returns an object representing the item with which you are working.</span></span>
-<span data-ttu-id="09382-114">Varsayılan olarak, bu cmdlet hiçbir çıkış üretmez.</span><span class="sxs-lookup"><span data-stu-id="09382-114">By default, this cmdlet does not generate any output.</span></span>
+### <span data-ttu-id="eb88e-112">-Geçiş</span><span class="sxs-lookup"><span data-stu-id="eb88e-112">-PassThru</span></span>
+<span data-ttu-id="eb88e-113">Çalıştığınız öğeyi temsil eden bir nesne döndürür.</span><span class="sxs-lookup"><span data-stu-id="eb88e-113">Returns an object representing the item with which you are working.</span></span>
+<span data-ttu-id="eb88e-114">Varsayılan olarak, bu cmdlet hiçbir çıkış üretmez.</span><span class="sxs-lookup"><span data-stu-id="eb88e-114">By default, this cmdlet does not generate any output.</span></span>
 
 ```yaml
 Type: SwitchParameter
@@ -48,9 +48,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="09382-115">-Profil</span><span class="sxs-lookup"><span data-stu-id="09382-115">-Profile</span></span>
-<span data-ttu-id="09382-116">Bu cmdlet 'in okuduğu Azure profilini belirtir.</span><span class="sxs-lookup"><span data-stu-id="09382-116">Specifies the Azure profile from which this cmdlet reads.</span></span>
-<span data-ttu-id="09382-117">Profil belirtmezseniz, bu cmdlet yerel varsayılan profilden okur.</span><span class="sxs-lookup"><span data-stu-id="09382-117">If you do not specify a profile, this cmdlet reads from the local default profile.</span></span>
+### <span data-ttu-id="eb88e-115">-Profil</span><span class="sxs-lookup"><span data-stu-id="eb88e-115">-Profile</span></span>
+<span data-ttu-id="eb88e-116">Bu cmdlet 'in okuduğu Azure profilini belirtir.</span><span class="sxs-lookup"><span data-stu-id="eb88e-116">Specifies the Azure profile from which this cmdlet reads.</span></span>
+<span data-ttu-id="eb88e-117">Profil belirtmezseniz, bu cmdlet yerel varsayılan profilden okur.</span><span class="sxs-lookup"><span data-stu-id="eb88e-117">If you do not specify a profile, this cmdlet reads from the local default profile.</span></span>
 
 ```yaml
 Type: AzureSMProfile
@@ -64,17 +64,17 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="09382-118">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="09382-118">CommonParameters</span></span>
-<span data-ttu-id="09382-119">Bu cmdlet ortak parametreleri destekler:-Debug,-ErrorAction,-ErrorVariable,-ınformationaction,-ınformationvariable,-OutVariable,-OutBuffer,-Pipelinedeğişken,-verbose,-WarningAction ve-Warningdeğişken.</span><span class="sxs-lookup"><span data-stu-id="09382-119">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="09382-120">Daha fazla bilgi için bkz about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="09382-120">For more information, see about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="eb88e-118">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="eb88e-118">CommonParameters</span></span>
+<span data-ttu-id="eb88e-119">Bu cmdlet ortak parametreleri destekler:-Debug,-ErrorAction,-ErrorVariable,-ınformationaction,-ınformationvariable,-OutVariable,-OutBuffer,-Pipelinedeğişken,-verbose,-WarningAction ve-Warningdeğişken.</span><span class="sxs-lookup"><span data-stu-id="eb88e-119">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="eb88e-120">Daha fazla bilgi için bkz about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="eb88e-120">For more information, see about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="09382-121">GÖLGELENDIRICI</span><span class="sxs-lookup"><span data-stu-id="09382-121">INPUTS</span></span>
+## <span data-ttu-id="eb88e-121">GÖLGELENDIRICI</span><span class="sxs-lookup"><span data-stu-id="eb88e-121">INPUTS</span></span>
 
-## <span data-ttu-id="09382-122">ÇıKıŞLAR</span><span class="sxs-lookup"><span data-stu-id="09382-122">OUTPUTS</span></span>
+## <span data-ttu-id="eb88e-122">ÇıKıŞLAR</span><span class="sxs-lookup"><span data-stu-id="eb88e-122">OUTPUTS</span></span>
 
-## <span data-ttu-id="09382-123">NOTLARıNDA</span><span class="sxs-lookup"><span data-stu-id="09382-123">NOTES</span></span>
+## <span data-ttu-id="eb88e-123">NOTLARıNDA</span><span class="sxs-lookup"><span data-stu-id="eb88e-123">NOTES</span></span>
 
-## <span data-ttu-id="09382-124">ILGILI BAĞLANTıLAR</span><span class="sxs-lookup"><span data-stu-id="09382-124">RELATED LINKS</span></span>
+## <span data-ttu-id="eb88e-124">ILGILI BAĞLANTıLAR</span><span class="sxs-lookup"><span data-stu-id="eb88e-124">RELATED LINKS</span></span>
 
-[<span data-ttu-id="09382-125">Start-AzureEmulator</span><span class="sxs-lookup"><span data-stu-id="09382-125">Start-AzureEmulator</span></span>](./Start-AzureEmulator.md)
+[<span data-ttu-id="eb88e-125">Start-AzureEmulator</span><span class="sxs-lookup"><span data-stu-id="eb88e-125">Start-AzureEmulator</span></span>](./Start-AzureEmulator.md)
 
 
