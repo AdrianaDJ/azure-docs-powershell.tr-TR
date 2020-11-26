@@ -3,15 +3,15 @@ title: Azure PowerShell ile oturum açma
 description: Kullanıcı olarak, hizmet sorumlusu olarak veya Azure kaynakları için yönetilen kimlikleri kullanarak Azure PowerShell oturumu açma.
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 7/7/2020
+ms.date: 11/23/2020
 ms.custom: devx-track-azurepowershell
 ms.service: azure-powershell
-ms.openlocfilehash: 2ec432ae2823bb59f32ca7801a44a9da48db9fac
-ms.sourcegitcommit: 2036538797dd088728aee5ac5021472454d82eb2
+ms.openlocfilehash: a5bff1a5c22d5cd93cc3548a470e123daf5e129e
+ms.sourcegitcommit: 25eca7b5f5480758aa2cd830458900cf91cf673c
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93407672"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95515091"
 ---
 # <a name="sign-in-with-azure-powershell"></a>Azure PowerShell ile oturum açma
 
@@ -31,7 +31,7 @@ Etkileşimli olarak oturum açmak için [Connect-AzAccount](/powershell/module/a
 Connect-AzAccount
 ```
 
-Bu cmdlet PowerShell sürüm 6 veya üzerinde çalıştırıldığında bir belirteç dizesi gösterir. Oturum açmak için bu dizeyi kopyalayıp bir web tarayıcısında [microsoft.com/devicelogin](https://microsoft.com/devicelogin) sayfasına yapıştırın. Azure’a bağlanmak için PowerShell oturumunuzun kimliği doğrulanır. Windows PowerShell’de belirteç dizesi almak için `UseDeviceAuthentication` parametresini belirtebilirsiniz.
+Bu cmdlet, Az PowerShell modülü sürüm 5.0.0’dan itibaren varsayılan olarak, etkileşimli tarayıcı tabanlı bir oturum açma istemi sunar. Daha önce PowerShell sürümü 6 ve üzeri için varsayılan olan bir belirteç dizesi almak üzere `UseDeviceAuthentication` parametresini belirtebilirsiniz.
 
 > [!IMPORTANT]
 > Active Directory yetkilendirme uygulamalarında yapılan değişiklikler ve güvenlik kaygıları nedeniyle, kullanıcı adı/parola kimlik bilgisi yetkilendirmesi Azure PowerShell’den kaldırıldı. Kimlik bilgisi yetkilendirmesini otomasyon amacıyla kullanıyorsanız, bunun yerine [hizmet sorumlusu oluşturun](create-azure-service-principal-azureps.md).
