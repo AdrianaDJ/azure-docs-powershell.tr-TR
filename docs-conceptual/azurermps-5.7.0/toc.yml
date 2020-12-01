@@ -11,7 +11,7 @@
 - name: başlarken
   href: get-started-azureps.md
 - name: Cloud Shell
-  href: 'https://docs.microsoft.com/azure/cloud-shell/overview'
+  href: /azure/cloud-shell/overview
 - name: Oturum aç
   items:
     - name: Kimlik doğrulama yöntemleri
