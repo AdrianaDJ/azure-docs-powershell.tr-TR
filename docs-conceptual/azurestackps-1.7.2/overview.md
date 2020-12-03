@@ -8,12 +8,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.manager: knithinc
 ms.date: 02/06/2019
-ms.openlocfilehash: 1b3d707e862dd0c21e9e6b0a89f429ff21b1a99d
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: 72974ac2fec42da962513c161c506e83f047bfb6
+ms.sourcegitcommit: 071b8c40c837ed4b2d65ce778339110d9e0899ab
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "68861339"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96427386"
 ---
 # <a name="azure-stack-module-172"></a>Azure Stack Modülü 1.7.2
 
@@ -21,7 +21,7 @@ ms.locfileid: "68861339"
 
 Desteklenen en düşük Azure Stack sürümü 1904'dir.
 
-Not: Azure Stack'in önceki sürümleri için [Azure Stack PowerShell'i yükleme](https://docs.microsoft.com/azure/azure-stack/azure-stack-powershell-install#install-azure-stack-powershell) konusunu gözden geçirin
+Not: Azure Stack'in önceki sürümleri için [Azure Stack PowerShell'i yükleme](/azure/azure-stack/azure-stack-powershell-install#install-azure-stack-powershell) konusunu gözden geçirin
 
 ## <a name="install"></a>Yükleme
 

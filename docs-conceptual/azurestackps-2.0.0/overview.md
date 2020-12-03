@@ -8,12 +8,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.manager: knithinc
 ms.date: 04/16/2020
-ms.openlocfilehash: fd1f2a3778e348ba41b46acb4bdce19e18a7f4ec
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: 166c5339c95507b8a9ef1a32d46f589b8d792794
+ms.sourcegitcommit: 071b8c40c837ed4b2d65ce778339110d9e0899ab
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81524974"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96427964"
 ---
 # <a name="azure-stack-hub-module-200"></a>Azure Stack Hub Modülü 2.0.0
 
@@ -21,7 +21,7 @@ ms.locfileid: "81524974"
 
 Desteklenen en düşük Azure Stack Hub sürümü 2002’dir.
 
-Not: Azure Stack'in önceki sürümleri için [Azure Stack PowerShell'i yükleme](https://docs.microsoft.com/azure/azure-stack/azure-stack-powershell-install#install-azure-stack-powershell) konusunu gözden geçirin
+Not: Azure Stack'in önceki sürümleri için [Azure Stack PowerShell'i yükleme](/azure/azure-stack/azure-stack-powershell-install#install-azure-stack-powershell) konusunu gözden geçirin
 
 ## <a name="install"></a>Yükleme
 
@@ -45,4 +45,4 @@ Install-Module -Name AzureStack -RequiredVersion 2.0.0-preview -AllowPrerelease
 
 * 2002 güncelleştirmesiyle desteklenir.  
 
-  Azure Stack Hub 2.0.0 hataya neden olan bir değişikliktir. Modül AzureRM modülü yerine Az modülünü kullanır. [Azure Stack Hub’da AzureRM’den Azure PowerShell Az’ye geçiş](https://aka.ms/AA7qsji) bölümünde bir geçiş kılavuzu ve hataya neden olan değişikliklerin listesini bulabilirsiniz.
+  Azure Stack Hub 2.0.0 hataya neden olan bir değişikliktir. Modül AzureRM modülü yerine Az modülünü kullanır. [Azure Stack Hub’da AzureRM’den Azure PowerShell Az’ye geçiş](/azure-stack/operator/azure-stack-powershell-install) bölümünde bir geçiş kılavuzu ve hataya neden olan değişikliklerin listesini bulabilirsiniz.
