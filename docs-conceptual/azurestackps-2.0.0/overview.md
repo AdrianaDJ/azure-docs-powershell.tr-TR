@@ -8,22 +8,22 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.manager: knithinc
 ms.date: 04/16/2020
-ms.openlocfilehash: fd1f2a3778e348ba41b46acb4bdce19e18a7f4ec
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: 166c5339c95507b8a9ef1a32d46f589b8d792794
+ms.sourcegitcommit: 071b8c40c837ed4b2d65ce778339110d9e0899ab
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81524974"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96427964"
 ---
-# <a name="azure-stack-hub-module-200"></a><span data-ttu-id="2e6a7-103">Azure Stack Hub Modülü 2.0.0</span><span class="sxs-lookup"><span data-stu-id="2e6a7-103">Azure Stack Hub Module 2.0.0</span></span>
+# <a name="azure-stack-hub-module-200"></a><span data-ttu-id="75c56-103">Azure Stack Hub Modülü 2.0.0</span><span class="sxs-lookup"><span data-stu-id="75c56-103">Azure Stack Hub Module 2.0.0</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="2e6a7-104">Gereksinimler:</span><span class="sxs-lookup"><span data-stu-id="2e6a7-104">Requirements:</span></span>
+## <a name="requirements"></a><span data-ttu-id="75c56-104">Gereksinimler:</span><span class="sxs-lookup"><span data-stu-id="75c56-104">Requirements:</span></span>
 
-<span data-ttu-id="2e6a7-105">Desteklenen en düşük Azure Stack Hub sürümü 2002’dir.</span><span class="sxs-lookup"><span data-stu-id="2e6a7-105">Minimum supported Azure Stack Hub version is 2002.</span></span>
+<span data-ttu-id="75c56-105">Desteklenen en düşük Azure Stack Hub sürümü 2002’dir.</span><span class="sxs-lookup"><span data-stu-id="75c56-105">Minimum supported Azure Stack Hub version is 2002.</span></span>
 
-<span data-ttu-id="2e6a7-106">Not: Azure Stack'in önceki sürümleri için [Azure Stack PowerShell'i yükleme](https://docs.microsoft.com/azure/azure-stack/azure-stack-powershell-install#install-azure-stack-powershell) konusunu gözden geçirin</span><span class="sxs-lookup"><span data-stu-id="2e6a7-106">Note: For earlier versions of Azure Stack check [Install Azure Stack Powershell](https://docs.microsoft.com/azure/azure-stack/azure-stack-powershell-install#install-azure-stack-powershell)</span></span>
+<span data-ttu-id="75c56-106">Not: Azure Stack'in önceki sürümleri için [Azure Stack PowerShell'i yükleme](/azure/azure-stack/azure-stack-powershell-install#install-azure-stack-powershell) konusunu gözden geçirin</span><span class="sxs-lookup"><span data-stu-id="75c56-106">Note: For earlier versions of Azure Stack check [Install Azure Stack Powershell](/azure/azure-stack/azure-stack-powershell-install#install-azure-stack-powershell)</span></span>
 
-## <a name="install"></a><span data-ttu-id="2e6a7-107">Yükleme</span><span class="sxs-lookup"><span data-stu-id="2e6a7-107">Install</span></span>
+## <a name="install"></a><span data-ttu-id="75c56-107">Yükleme</span><span class="sxs-lookup"><span data-stu-id="75c56-107">Install</span></span>
 
 ```powershell
 # Remove previous versions of AzureStack and AzureRM modules
@@ -41,8 +41,8 @@ Install-Module -Name AzureStack -RequiredVersion 2.0.0-preview -AllowPrerelease
 ```
 
 
-## <a name="release-notes"></a><span data-ttu-id="2e6a7-108">Sürüm Notları</span><span class="sxs-lookup"><span data-stu-id="2e6a7-108">Release Notes</span></span>
+## <a name="release-notes"></a><span data-ttu-id="75c56-108">Sürüm Notları</span><span class="sxs-lookup"><span data-stu-id="75c56-108">Release Notes</span></span>
 
-* <span data-ttu-id="2e6a7-109">2002 güncelleştirmesiyle desteklenir.</span><span class="sxs-lookup"><span data-stu-id="2e6a7-109">Supported with 2002 update.</span></span>  
+* <span data-ttu-id="75c56-109">2002 güncelleştirmesiyle desteklenir.</span><span class="sxs-lookup"><span data-stu-id="75c56-109">Supported with 2002 update.</span></span>  
 
-  <span data-ttu-id="2e6a7-110">Azure Stack Hub 2.0.0 hataya neden olan bir değişikliktir.</span><span class="sxs-lookup"><span data-stu-id="2e6a7-110">The Azure Stack Hub 2.0.0 is a breaking change.</span></span> <span data-ttu-id="2e6a7-111">Modül AzureRM modülü yerine Az modülünü kullanır.</span><span class="sxs-lookup"><span data-stu-id="2e6a7-111">The module uses the Az module rather than the AzureRM module.</span></span> <span data-ttu-id="2e6a7-112">[Azure Stack Hub’da AzureRM’den Azure PowerShell Az’ye geçiş](https://aka.ms/AA7qsji) bölümünde bir geçiş kılavuzu ve hataya neden olan değişikliklerin listesini bulabilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="2e6a7-112">You can find a migration guide and a list of breaking changes in [Migrate from AzureRM to Azure PowerShell Az in Azure Stack Hub](https://aka.ms/AA7qsji).</span></span>
+  <span data-ttu-id="75c56-110">Azure Stack Hub 2.0.0 hataya neden olan bir değişikliktir.</span><span class="sxs-lookup"><span data-stu-id="75c56-110">The Azure Stack Hub 2.0.0 is a breaking change.</span></span> <span data-ttu-id="75c56-111">Modül AzureRM modülü yerine Az modülünü kullanır.</span><span class="sxs-lookup"><span data-stu-id="75c56-111">The module uses the Az module rather than the AzureRM module.</span></span> <span data-ttu-id="75c56-112">[Azure Stack Hub’da AzureRM’den Azure PowerShell Az’ye geçiş](/azure-stack/operator/azure-stack-powershell-install) bölümünde bir geçiş kılavuzu ve hataya neden olan değişikliklerin listesini bulabilirsiniz.</span><span class="sxs-lookup"><span data-stu-id="75c56-112">You can find a migration guide and a list of breaking changes in [Migrate from AzureRM to Azure PowerShell Az in Azure Stack Hub](/azure-stack/operator/azure-stack-powershell-install).</span></span>
