@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 10/15/2019
 ms.custom: devx-track-azurepowershell
 ms.service: azure-powershell
-ms.openlocfilehash: c6880e4c09339ec6a3e192480fde9e1f85cbca5f
-ms.sourcegitcommit: 2036538797dd088728aee5ac5021472454d82eb2
+ms.openlocfilehash: 656e61e7f208367fc7fae28f73d1b6f289831d77
+ms.sourcegitcommit: 071b8c40c837ed4b2d65ce778339110d9e0899ab
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93409508"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96427743"
 ---
 # <a name="azure-powershell-release-notes"></a>Azure PowerShell sürüm notları
 ## <a name="280---october-2019"></a>2.8.0 - Ekim 2019
@@ -137,9 +137,9 @@ ms.locfileid: "93409508"
 * En son İzleme SDK’sını, yani 0.24.1-preview sürümünü işaret eder
    - Ölçüm cmdlet’lerine hataya neden olmayan değişiklikler ekler, yani Birim sabit listesi birçok yeni değeri destekler. Bunlar salt okunur cmdlet’ler olduğundan girişlerinde değişiklik olmaz.
    - **ActionGroups** istekleri için api-version şimdi **2019-06-01** değerine sahiptir. Önceden **2018-03-01** sürümü kullanılıyordu. Senaryo testleri bu değişikliğe uyum sağlayacak şekilde güncelleştirildi.
-   - **EmailReceiver** ve **WebhookReceiver** sınıfları için oluşturuculara yeni bir zorunlu bağımsız değişken ( **useCommonAlertSchema** adlı bir Boole değeri) eklendi. Şu anda, hataya neden olan bu değişikliği cmdlet’lerden gizlemek için değer **false** olarak ayarlandı. **NOT** : Bu, Uyarılar ekibi tarafından doğrulanması gereken geçici bir değişikliktir.
-   - **Kaynak** ( **ScheduledQueryRuleSource** sınıfı ile ilişkili) sınıfının oluşturucusu için bağımsız değişkenlerin sırası önceki SDK’dan değiştirildi. Bu değişiklik iki birim testinin düzeltilmesini gerektirdi: Bunlar derlenebiliyor ancak testleri geçemiyordu.
-   - **AlertingAction** ( **ScheduledQueryRuleSource** sınıfı ile ilişkili) sınıfının oluşturucusu için bağımsız değişkenlerin sırası önceki SDK’dan değiştirildi. Bu değişiklik iki birim testinin düzeltilmesini gerektirdi: Bunlar derlenebiliyor ancak testleri geçemiyordu.
+   - **EmailReceiver** ve **WebhookReceiver** sınıfları için oluşturuculara yeni bir zorunlu bağımsız değişken (**useCommonAlertSchema** adlı bir Boole değeri) eklendi. Şu anda, hataya neden olan bu değişikliği cmdlet’lerden gizlemek için değer **false** olarak ayarlandı. **NOT**: Bu, Uyarılar ekibi tarafından doğrulanması gereken geçici bir değişikliktir.
+   - **Kaynak** (**ScheduledQueryRuleSource** sınıfı ile ilişkili) sınıfının oluşturucusu için bağımsız değişkenlerin sırası önceki SDK’dan değiştirildi. Bu değişiklik iki birim testinin düzeltilmesini gerektirdi: Bunlar derlenebiliyor ancak testleri geçemiyordu.
+   - **AlertingAction** (**ScheduledQueryRuleSource** sınıfı ile ilişkili) sınıfının oluşturucusu için bağımsız değişkenlerin sırası önceki SDK’dan değiştirildi. Bu değişiklik iki birim testinin düzeltilmesini gerektirdi: Bunlar derlenebiliyor ancak testleri geçemiyordu.
 * Ölçüm uyarısı V2 için Dinamik Eşik ölçütlerine yönelik destek eklendi
     - New-AzMetricAlertRuleV2Criteria: Şimdi dinamik eşik ölçütleri de oluşturur
     - Add-AzMetricAlertRuleV2: Şimdi dinamik eşik ölçütlerini de kabul eder
@@ -862,7 +862,7 @@ ms.locfileid: "93409508"
     - Set-AzScheduledQueryRule
     - Update-AzScheduledQueryRule
     - Remove-AzScheduledQueryRule
-    - SQR API hakkında [daha fazla](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules) bilgi
+    - SQR API hakkında [daha fazla](/rest/api/monitor/scheduledqueryrules) bilgi
     - Az.Monitor.md, GenV2 (klasik olmayan) ölçüm tabanlı uyarı kuralı için cmdlet'leri içerecek şekilde güncelleştirildi
 
 #### <a name="aznetwork"></a>Az.Network

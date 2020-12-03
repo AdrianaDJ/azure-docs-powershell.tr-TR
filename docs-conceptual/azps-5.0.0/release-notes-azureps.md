@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 03/10/2020
 ms.custom: devx-track-azurepowershell
 ms.service: azure-powershell
-ms.openlocfilehash: 27073db862b83c5b95f2364355037c1ebd34a3b5
-ms.sourcegitcommit: 2036538797dd088728aee5ac5021472454d82eb2
+ms.openlocfilehash: 5eac1bee53bfadf57d053ad60d6267657b145d67
+ms.sourcegitcommit: 071b8c40c837ed4b2d65ce778339110d9e0899ab
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93407502"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96427148"
 ---
 # <a name="azure-powershell-release-notes"></a>Azure PowerShell sürüm notları
 
@@ -689,7 +689,7 @@ ms.locfileid: "93407502"
 * 'Connect-AzAccount' cmdlet’inin çok iş parçacıklı yürütmede başarısız olmasına neden olabilen bir sorun düzeltildi [#11201]
 
 #### <a name="azaks"></a>Az.Aks
-* Eski [AccessProfile API](https://docs.microsoft.com/rest/api/aks/managedclusters/getaccessprofile)’sinin kullanımı [ListClusterAdmin](https://docs.microsoft.com/rest/api/aks/managedclusters/listclusteradmincredentials) ve [ListClusterUser](https://docs.microsoft.com/rest/api/aks/managedclusters/listclusterusercredentials) API’lerine yönelik çağrılarla değiştirildi
+* Eski [AccessProfile API](/rest/api/aks/managedclusters/getaccessprofile)’sinin kullanımı [ListClusterAdmin](/rest/api/aks/managedclusters/listclusteradmincredentials) ve [ListClusterUser](/rest/api/aks/managedclusters/listclusterusercredentials) API’lerine yönelik çağrılarla değiştirildi
 
 #### <a name="azbatch"></a>Az.Batch
 * Az.Batch, 'Microsoft.Azure.Management.Batch' SDK sürüm 11.0.0 kullanacak şekilde güncelleştirildi
@@ -1207,7 +1207,7 @@ ms.locfileid: "93407502"
 
 ## <a name="0100-preview---april-2020"></a>0.10.0-preview - Nisan 2020
 ### <a name="general"></a>Genel
-* Az modülleri artık Azure Stack Hub’da önizlemede kullanılabilir. Bu, Linux ve macOs ile platformlar arası uyumluluk sağlar. Azure Stack Hub artık Az modülleriyle PowerShell Core’u destekliyor, daha fazla bilgiyi [burada](https://aka.ms/az4AzureStack) bulabilirsiniz
+* Az modülleri artık Azure Stack Hub’da önizlemede kullanılabilir. Bu, Linux ve macOs ile platformlar arası uyumluluk sağlar. Azure Stack Hub artık Az modülleriyle PowerShell Core’u destekliyor, daha fazla bilgiyi [burada](/azure-stack/operator/powershell-install-az-module) bulabilirsiniz
 * Az modülleri profil 2019-03-01-hybrid’i destekliyor:
   - Az.Billing
   - Az.Compute
@@ -1222,7 +1222,7 @@ ms.locfileid: "93407502"
   - Az.Websites
 * Az için Azure Stack Hub ile çalışan üç yeni PowerShell modülü (Az.Databox, Az.IotHub ve Az.EventHub) kullanıma sunuldu
 * Komutlar, AzureRM’nin Az olarak değiştirilmesi gibi küçük değişiklikler ile görece aynı kalır
-* Azure Stack Hub için PowerShell belgelerine güncelleştirilmiş bağlantı [burada](https://aka.ms/InstallASHPowerShell) bulunabilir
+* Azure Stack Hub için PowerShell belgelerine güncelleştirilmiş bağlantı [burada](/azure-stack/operator/powershell-install-az-module) bulunabilir
 
 ## <a name="370---march-2020"></a>3.7.0 - Mart 2020
 #### <a name="azaccounts"></a>Az.Accounts
@@ -1770,7 +1770,7 @@ DatabaseName’in yerine PartnerDatabaseName’in olup olmadığını denetlemey
     - `StorageContainerUrl` tabanlı kaynak dosyaları URL'de belirtilen kapsayıcıyı Batch düğümüne indiriyor.
 * **Get-AzBatchApplication** tarafından döndürülen `PSApplication` öğesinin `ApplicationPackages` özelliği kaldırıldı.
   - Uygulamanın içindeki belirli paketler artık **Get-AzBatchApplicationPackage** kullanılarak alınabilir. Örneğin: `Get-AzBatchApplication -AccountName myaccount -ResourceGroupName myresourcegroup -ApplicationId myapplication`.
-* **Get-AzBatchApplicationPackage** , **New-AzBatchApplicationPackage** , **Remove-AzBatchApplicationPackage** , **Get-AzBatchApplication** , **New-AzBatchApplication** , **Remove-AzBatchApplication** , ve **Set-AzBatchApplication** cmdlet'lerinde `ApplicationId` parametresi `ApplicationName` olarak yeniden adlandırıldı.
+* **Get-AzBatchApplicationPackage**, **New-AzBatchApplicationPackage**, **Remove-AzBatchApplicationPackage**, **Get-AzBatchApplication**, **New-AzBatchApplication**, **Remove-AzBatchApplication**, ve **Set-AzBatchApplication** cmdlet'lerinde `ApplicationId` parametresi `ApplicationName` olarak yeniden adlandırıldı.
   - `ApplicationId` artık `ApplicationName` parametresinin diğer adıdır.
 * `PSUserAccount` öğesine yeni `PSWindowsUserConfiguration` özelliği eklendi.
 * `PSApplicationPackage` içinde `Version` öğesi `Name` olarak yeniden adlandırıldı.
@@ -1781,7 +1781,7 @@ DatabaseName’in yerine PartnerDatabaseName’in olup olmadığını denetlemey
 * `PSCloudServiceConfiguration` içinde `CurrentOSVersion` öğesi `OSVersion` olarak yeniden adlandırıldı.
 * `PSPoolUsageMetrics` içinden `DataEgressGiB` ve `DataIngressGiB` kaldırıldı.
 * **Get-AzBatchNodeAgentSku** kaldırıldı ve bunun yerini **Get-AzBatchSupportedImage** aldı.
-  - **Get-AzBatchSupportedImage** , **Get-AzBatchNodeAgentSku** ile aynı verileri ama daha kullanımı kolay bir biçimde döndürüyor.
+  - **Get-AzBatchSupportedImage**, **Get-AzBatchNodeAgentSku** ile aynı verileri ama daha kullanımı kolay bir biçimde döndürüyor.
   - Artık yeni doğrulanmamış resimler de döndürülüyor. Her resim için `Capabilities` ve `BatchSupportEndOfLife` hakkında ek bilgiler de ekleniyor.
 * **New-AzBatchPool** cmdlet'inin `MountConfiguration` parametresiyle havuzun her düğümünde uzak dosya sistemlerini bağlama özelliği eklendi.
 * Artık trafiğin kaynak bağlantı noktası temelinde havuza ağ erişimini engelleyen ağ güvenlik kuralları destekleniyor. Bu destek `PSNetworkSecurityGroupRule` öğesinin `SourcePortRanges` özelliğiyle sağlanıyor.
@@ -2080,9 +2080,9 @@ DatabaseName’in yerine PartnerDatabaseName’in olup olmadığını denetlemey
 * En son İzleme SDK’sını, yani 0.24.1-preview sürümünü işaret eder
    - Ölçüm cmdlet’lerine hataya neden olmayan değişiklikler ekler, yani Birim sabit listesi birçok yeni değeri destekler. Bunlar salt okunur cmdlet’ler olduğundan girişlerinde değişiklik olmaz.
    - **ActionGroups** istekleri için api-version şimdi **2019-06-01** değerine sahiptir. Önceden **2018-03-01** sürümü kullanılıyordu. Senaryo testleri bu değişikliğe uyum sağlayacak şekilde güncelleştirildi.
-   - **EmailReceiver** ve **WebhookReceiver** sınıfları için oluşturuculara yeni bir zorunlu bağımsız değişken ( **useCommonAlertSchema** adlı bir Boole değeri) eklendi. Şu anda, hataya neden olan bu değişikliği cmdlet’lerden gizlemek için değer **false** olarak ayarlandı. **NOT** : Bu, Uyarılar ekibi tarafından doğrulanması gereken geçici bir değişikliktir.
-   - **Kaynak** ( **ScheduledQueryRuleSource** sınıfı ile ilişkili) sınıfının oluşturucusu için bağımsız değişkenlerin sırası önceki SDK’dan değiştirildi. Bu değişiklik iki birim testinin düzeltilmesini gerektirdi: Bunlar derlenebiliyor ancak testleri geçemiyordu.
-   - **AlertingAction** ( **ScheduledQueryRuleSource** sınıfı ile ilişkili) sınıfının oluşturucusu için bağımsız değişkenlerin sırası önceki SDK’dan değiştirildi. Bu değişiklik iki birim testinin düzeltilmesini gerektirdi: Bunlar derlenebiliyor ancak testleri geçemiyordu.
+   - **EmailReceiver** ve **WebhookReceiver** sınıfları için oluşturuculara yeni bir zorunlu bağımsız değişken (**useCommonAlertSchema** adlı bir Boole değeri) eklendi. Şu anda, hataya neden olan bu değişikliği cmdlet’lerden gizlemek için değer **false** olarak ayarlandı. **NOT**: Bu, Uyarılar ekibi tarafından doğrulanması gereken geçici bir değişikliktir.
+   - **Kaynak** (**ScheduledQueryRuleSource** sınıfı ile ilişkili) sınıfının oluşturucusu için bağımsız değişkenlerin sırası önceki SDK’dan değiştirildi. Bu değişiklik iki birim testinin düzeltilmesini gerektirdi: Bunlar derlenebiliyor ancak testleri geçemiyordu.
+   - **AlertingAction** (**ScheduledQueryRuleSource** sınıfı ile ilişkili) sınıfının oluşturucusu için bağımsız değişkenlerin sırası önceki SDK’dan değiştirildi. Bu değişiklik iki birim testinin düzeltilmesini gerektirdi: Bunlar derlenebiliyor ancak testleri geçemiyordu.
 * Ölçüm uyarısı V2 için Dinamik Eşik ölçütlerine yönelik destek eklendi
     - New-AzMetricAlertRuleV2Criteria: Şimdi dinamik eşik ölçütleri de oluşturur
     - Add-AzMetricAlertRuleV2: Şimdi dinamik eşik ölçütlerini de kabul eder
@@ -2717,7 +2717,7 @@ DatabaseName’in yerine PartnerDatabaseName’in olup olmadığını denetlemey
 #### <a name="azautomation"></a>Az.Automation
 * Get-AzAutomationJobOutputRecord, JSON ve Text kayıt değerlerini işleyecek şekilde güncelleştirildi.
     - [https://github.com/Azure/azure-powershell/issues/8347](https://github.com/Azure/azure-powershell/issues/7977 ) sorunu düzeltildi
-    - [https://github.com/Azure/azure-powershell/issues/8347](https://github.com/Azure/azure-powershell/issues/8600 ) sorunu düzeltildi
+    - [https://github.com/Azure/azure-powershell/issues/8600](https://github.com/Azure/azure-powershell/issues/8600 ) sorunu düzeltildi
 * Start-AzAutomationDscCompilationJob cmdlet'inin davranışı tamamlanmasını beklemek yerine yalnızca işi başlatacak şekilde değiştirildi.
     * [https://github.com/Azure/azure-powershell/issues/8347](https://github.com/Azure/azure-powershell/issues/8347 ) sorunu düzeltildi
 * Get-AzAutomationDscNode için -Name kullanıldığında tüm düğümlerin döndürülmesi sorunu düzeltildi. Artık yalnızca eşleşen düğüm döndürülüyor.
@@ -2805,7 +2805,7 @@ DatabaseName’in yerine PartnerDatabaseName’in olup olmadığını denetlemey
     - Set-AzScheduledQueryRule
     - Update-AzScheduledQueryRule
     - Remove-AzScheduledQueryRule
-    - SQR API hakkında [daha fazla](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules) bilgi
+    - SQR API hakkında [daha fazla](/rest/api/monitor/scheduledqueryrules) bilgi
     - Az.Monitor.md, GenV2 (klasik olmayan) ölçüm tabanlı uyarı kuralı için cmdlet'leri içerecek şekilde güncelleştirildi
 
 #### <a name="aznetwork"></a>Az.Network
@@ -3165,8 +3165,8 @@ DatabaseName’in yerine PartnerDatabaseName’in olup olmadığını denetlemey
 
 #### <a name="azresources"></a>Az.Resources
 * [https://github.com/Azure/azure-powershell/issues/8166](https://github.com/Azure/azure-powershell/issues/8166 ) sorunu düzeltildi
-* [https://github.com/Azure/azure-powershell/issues/8166](https://github.com/Azure/azure-powershell/issues/8235 ) sorunu düzeltildi
-* [https://github.com/Azure/azure-powershell/issues/8235](https://github.com/Azure/azure-powershell/issues/6219 ) sorunu düzeltildi
+* [https://github.com/Azure/azure-powershell/issues/8235](https://github.com/Azure/azure-powershell/issues/8235 ) sorunu düzeltildi
+* [https://github.com/Azure/azure-powershell/issues/6219](https://github.com/Azure/azure-powershell/issues/6219 ) sorunu düzeltildi
 * KeyCredentials’ın tekrar oluşturmasını engelleyen hata düzeltildi
 
 #### <a name="azsql"></a>Az.Sql
@@ -3258,7 +3258,7 @@ Az.RecoveryServices modülü için genel kullanılabilirlik.
 * Kaynak grubu dağıtım cmdlet'lerini yürütmeden önce '-TemplateFile' parametresi yolunun çözülmemesi sorunu düzeltildi
 * Az.Resources: Belgede New-AzureRmPolicyDefinition -Mode varsayılan değeri düzeltildi
 * Az.Resources: [https://github.com/Azure/azure-powershell/issues/9351](https://github.com/Azure/azure-powershell/issues/7522 ) sorunu düzeltildi
-* Az.Resources: [https://github.com/Azure/azure-powershell/issues/9351](https://github.com/Azure/azure-powershell/issues/5747 ) sorunu düzeltildi
+* Az.Resources: https://github.com/Azure/azure-powershell/issues/5747 sorunu düzeltildi
 * 'PSResourceGroupDeployment' nesnesinin biçimlendirme sorunu düzeltildi
     - Burada daha fazla bilgi bulunabilir: https://github.com/Azure/azure-powershell/issues/2123
 
